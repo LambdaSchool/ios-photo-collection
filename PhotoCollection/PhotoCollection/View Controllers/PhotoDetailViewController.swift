@@ -8,9 +8,14 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    var photo: Photo?
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     var photoController: PhotoController?
     var themeHelper: ThemeHelper?
 
@@ -18,6 +23,7 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet var textField: UITextField!
     
     @IBAction func addPhoto(_ sender: Any) {
+        presentImagePickerController()
     }
     
     @IBAction func savePhoto(_ sender: Any) {
@@ -43,9 +49,9 @@ class PhotoDetailViewController: UIViewController {
         guard let themePreference = themeHelper?.themePreference else { return }
         
         if themePreference == "Red" {
-            view.backgroundColor = UIColor.red
+            self.view.backgroundColor = UIColor.red
         } else {
-            view.backgroundColor = UIColor.darkGray
+            self.view.backgroundColor = UIColor.darkGray
         }
     }
     
@@ -59,4 +65,28 @@ class PhotoDetailViewController: UIViewController {
             textField?.text = photo.title
         }
     }
+
+    // MARK: - UIImagePickerControllerDelegate
+    
+    func presentImagePickerController() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // Dismiss the photo library
+        picker.dismiss(animated: true, completion: nil)
+        
+        // Get image the user picked
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        imageView.image = image
+    }
 }
+
+
+
+
+
