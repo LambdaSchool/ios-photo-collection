@@ -17,7 +17,12 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     var photoController: PhotoController?
-    var themeHelper: ThemeHelper?
+    
+    var themeHelper: ThemeHelper? {
+        didSet {
+            setTheme()
+        }
+    }
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var textField: UITextField!
@@ -43,10 +48,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
 
         updateViews()
+        setTheme()
     }
 
     func setTheme() {
-        guard let themePreference = themeHelper?.themePreference else { return }
+        guard let themePreference = themeHelper?.themePreference, self.isViewLoaded else { return }
         
         if themePreference == "Red" {
             self.view.backgroundColor = UIColor.red
@@ -56,14 +62,14 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func updateViews() {
-        if photo == nil {
-            navigationItem.title = "Add Photo"
-        } else {
-            guard let photo = photo else { return }
+        if let photo = photo {
             navigationItem.title = "Edit Photo"
             imageView?.image = UIImage(data: photo.imageData)
             textField?.text = photo.title
+        } else {
+            navigationItem.title = "Add Photo"
         }
+        
     }
 
     // MARK: - UIImagePickerControllerDelegate

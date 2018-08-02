@@ -24,6 +24,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        setTheme()
         collectionView?.reloadData()
     }
 
