@@ -32,14 +32,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="149" height="164"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kvz-8m-xUc">
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kvz-8m-xUc">
                                             <rect key="frame" x="0.0" y="0.0" width="149" height="164"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVt-c3-wh8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="143.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="135.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw8-v7-vvl">
-                                                    <rect key="frame" x="0.0" y="143.5" width="149" height="20.5"/>
+                                                    <rect key="frame" x="53.5" y="143.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -49,14 +49,16 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="kvz-8m-xUc" firstAttribute="top" secondItem="prp-O7-iTQ" secondAttribute="top" id="0fU-jd-MGp"/>
-                                    <constraint firstAttribute="bottom" secondItem="kvz-8m-xUc" secondAttribute="bottom" id="ACc-oo-a9R"/>
-                                    <constraint firstItem="kvz-8m-xUc" firstAttribute="leading" secondItem="prp-O7-iTQ" secondAttribute="leading" id="IR5-Fr-UCJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="kvz-8m-xUc" secondAttribute="trailing" id="i8w-eA-SSy"/>
+                                    <constraint firstItem="kvz-8m-xUc" firstAttribute="centerX" secondItem="prp-O7-iTQ" secondAttribute="centerX" id="LQU-Rb-yXZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="kvz-8m-xUc" secondAttribute="bottom" id="ONU-6Z-Lgp"/>
+                                    <constraint firstItem="kvz-8m-xUc" firstAttribute="centerY" secondItem="prp-O7-iTQ" secondAttribute="centerY" id="ehc-4J-vIl"/>
+                                    <constraint firstAttribute="trailing" secondItem="kvz-8m-xUc" secondAttribute="trailing" id="kdU-zM-HTm"/>
+                                    <constraint firstItem="kvz-8m-xUc" firstAttribute="leading" secondItem="prp-O7-iTQ" secondAttribute="leading" id="t4f-EI-1d3"/>
+                                    <constraint firstItem="kvz-8m-xUc" firstAttribute="top" secondItem="prp-O7-iTQ" secondAttribute="top" id="yhZ-qa-0yY"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="wVt-c3-wh8" id="zeR-oK-I39"/>
-                                    <outlet property="textLabel" destination="nw8-v7-vvl" id="NRo-j8-NL7"/>
+                                    <outlet property="textLabel" destination="nw8-v7-vvl" id="Xhp-v6-seH"/>
                                     <segue destination="jf9-sG-1Dn" kind="show" identifier="ShowPhotoDetail" id="pOA-X6-Mqj"/>
                                 </connections>
                             </collectionViewCell>

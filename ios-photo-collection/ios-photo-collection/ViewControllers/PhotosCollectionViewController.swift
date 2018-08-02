@@ -11,41 +11,42 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
     
     // MARK: - Methods
     
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
-        themePreference == "Dark" ? themeHelper.setThemePreferenceToBlue() : themeHelper.setThemePreferenceToDark()
+        if themePreference == "Dark" {
+            collectionView.backgroundColor = UIColor.blue
+        } else {
+            collectionView.backgroundColor = UIColor.lightGray
+        }
     }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let photoDetailVC = segue.destination as? PhotoDetailViewController,
-            let themeSettingsVC = segue.destination as? ThemeSelectionViewController,
-            let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
         
         if segue.identifier == "ShowAddPhotoDetail" {
-            photoDetailVC.photoController =  photoController
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController else { return }
+            photoDetailVC.photoController = photoController
             photoDetailVC.themeHelper = themeHelper
+            
         } else if segue.identifier == "ShowPhotoDetail" {
-            photoDetailVC.photoController =  photoController
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
+            photoDetailVC.photoController = photoController
             photoDetailVC.photo = photoController.photos[indexPath.item]
             photoDetailVC.themeHelper = themeHelper
+            
         } else if segue.identifier == "ShowThemeSettingsModal" {
+            guard let themeSettingsVC = segue.destination as? ThemeSelectionViewController else { return }
             themeSettingsVC.themeHelper = themeHelper
+            
         }
     }
 

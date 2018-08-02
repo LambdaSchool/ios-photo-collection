@@ -12,8 +12,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Methods
     
-    func updateViews() {
-        
+    private func updateViews() {
+        guard let photo = photo else { return }
+        imageView?.image = UIImage(data: photo.imageData)
+        textLabel?.text = photo.title
     }
     
     
@@ -27,6 +29,5 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
-    
     
 }
