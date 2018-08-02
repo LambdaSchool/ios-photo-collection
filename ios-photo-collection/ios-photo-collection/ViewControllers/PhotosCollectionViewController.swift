@@ -13,7 +13,13 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        photoController.loadFromPersistentStore()
         collectionView.reloadData()
+        setTheme()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     // MARK: - Methods
@@ -21,9 +27,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
         if themePreference == "Dark" {
-            collectionView.backgroundColor = UIColor.blue
-        } else {
             collectionView.backgroundColor = UIColor.lightGray
+        } else {
+            collectionView.backgroundColor = UIColor.blue
         }
     }
 

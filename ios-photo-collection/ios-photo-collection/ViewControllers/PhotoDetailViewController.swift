@@ -11,6 +11,11 @@ import Photos
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
@@ -48,9 +53,9 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     private func setTheme() {
         guard let themePreference = themeHelper?.themePreference else { return }
         if themePreference == "Dark" {
-            self.view.backgroundColor = UIColor.blue
-        } else {
             self.view.backgroundColor = UIColor.lightGray
+        } else {
+            self.view.backgroundColor = UIColor.blue
         }
     }
     
