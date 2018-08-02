@@ -55,6 +55,8 @@
                                     <constraint firstAttribute="trailing" secondItem="kvz-8m-xUc" secondAttribute="trailing" id="i8w-eA-SSy"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="imageView" destination="wVt-c3-wh8" id="zeR-oK-I39"/>
+                                    <outlet property="textLabel" destination="nw8-v7-vvl" id="NRo-j8-NL7"/>
                                     <segue destination="jf9-sG-1Dn" kind="show" identifier="ShowPhotoDetail" id="pOA-X6-Mqj"/>
                                 </connections>
                             </collectionViewCell>
@@ -76,10 +78,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="imageView" destination="wVt-c3-wh8" id="NN8-Ib-ePX"/>
-                        <outlet property="textLabel" destination="nw8-v7-vvl" id="fhO-7q-y0m"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckj-rO-lHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
