@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="876" y="151.57421289355324"/>
         </scene>
-        <!--Title-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="Ca1-R0-jBp">
             <objects>
                 <viewController id="Gnp-q3-Cvn" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -123,7 +123,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i1O-Hs-Pza"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="FOf-vm-Isf">
+                    <navigationItem key="navigationItem" id="FOf-vm-Isf">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="f65-gX-4yx">
                             <connections>
                                 <action selector="savePhoto:" destination="Gnp-q3-Cvn" id="yAR-tx-Hdy"/>
