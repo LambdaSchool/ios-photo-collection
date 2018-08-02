@@ -29,7 +29,7 @@
         <!--Photo List-->
         <scene sceneID="cGC-xL-Opt">
             <objects>
-                <collectionViewController id="TGi-cc-OMm" sceneMemberID="viewController">
+                <collectionViewController id="TGi-cc-OMm" customClass="PhotoCollectionVC" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="337-6t-vog">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
                                 <segue destination="q6N-7P-Qwz" kind="presentation" id="1Ki-QO-ZdH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="vtq-cP-I78">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vtq-cP-I78">
                             <connections>
                                 <segue destination="fRm-a6-549" kind="show" id="lsl-X5-IU5"/>
                             </connections>
@@ -185,6 +185,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lsl-X5-IU5"/>
+        <segue reference="8Pc-8x-nQb"/>
     </inferredMetricsTieBreakers>
 </document>

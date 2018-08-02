@@ -29,12 +29,6 @@ class PhotoDetailVC:UIViewController, UIImagePickerControllerDelegate, UINavigat
 	var controller:PhotoController!
 	var photo:Photo!
 
-	override func viewWillAppear(_ animated: Bool) {
-		if photo == nil {
-			photo = Photo("", nil)
-		}
-	}
-
 
 	@IBOutlet weak var nameField: UITextField!
 	@IBOutlet weak var imgView: UIImageView!
@@ -58,7 +52,6 @@ class PhotoDetailVC:UIViewController, UIImagePickerControllerDelegate, UINavigat
 	{
 		picker.dismiss(animated: true, completion: nil)
 		guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
-		photo.img = image
 		imgView.image = image
 	}
 
@@ -68,6 +61,17 @@ class PhotoDetailVC:UIViewController, UIImagePickerControllerDelegate, UINavigat
 	}
 
 	@IBAction func saveNewPhoto(_ sender: Any) {
+		if photo == nil {
+			photo = Photo(name:"", img:nil)
+		}
+
+		guard let name = nameField.text,
+			let img = imgView.image else {return}
+
+		photo.img = img
+		photo.name = name
+		controller.add(photo)
+		navigationController?.popViewController(animated: true)
 	}
 }
 
@@ -84,11 +88,13 @@ class PhotoCollectionVC: UICollectionViewController
 	}
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
 		if let dest = segue.destination as? PhotoDetailVC {
 			dest.controller = controller
 			if let sender = sender as? PhotoCell {
 				dest.photo = sender.photo
 			}
+			return
 		}
     }
 
