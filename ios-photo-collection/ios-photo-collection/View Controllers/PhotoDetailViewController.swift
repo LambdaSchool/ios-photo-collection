@@ -7,11 +7,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         updateViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateViews()
-    }
-    
     func presentImagePickerController() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -62,7 +57,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         if themePreference == "Dark" {
             view.backgroundColor = UIColor.lightGray
         } else if themePreference == "Red" {
-            view.backgroundColor = UIColor(hue: 0.0139, saturation: 0.67, brightness: 0.95, alpha: 0.85)
+            view.backgroundColor = UIColor(hue: 0.0139, saturation: 0.67, brightness: 0.95, alpha: 1)
         }
     }
     

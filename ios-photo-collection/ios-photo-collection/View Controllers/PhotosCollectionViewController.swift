@@ -3,16 +3,17 @@ import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
+//        setTheme()
         super.viewDidLoad()
         collectionView.reloadData()
-        setTheme()
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setTheme()
         super.viewWillAppear(animated)
         collectionView.reloadData()
-        setTheme()
+        
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,7 +35,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         if themePreference == "Dark" {
             collectionView.backgroundColor = UIColor.lightGray
         } else if themePreference == "Red" {
-            collectionView.backgroundColor = UIColor(hue: 0.0139, saturation: 0.67, brightness: 0.95, alpha: 0.85)
+            collectionView.backgroundColor = UIColor(hue: 0.0139, saturation: 0.67, brightness: 0.95, alpha: 1)
         }
     }
 
