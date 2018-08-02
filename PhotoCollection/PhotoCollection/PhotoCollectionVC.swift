@@ -23,6 +23,23 @@ class PhotoCell: UICollectionViewCell
 
 private let reuseIdentifier = "PhotoCell"
 
+class ThemeController
+{
+	static let greyColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+	static let blueColor = UIColor(red:0.75, green: 0.9, blue: 1.0, alpha: 1.0)
+	static let themeColors = [greyColor, blueColor]
+	static let themeKey = "PhotoCollectionTheme"
+	static var themeIndex: Int {
+		get { return UserDefaults.standard.integer(forKey: ThemeController.themeKey) }
+		// we could do bounds checking here, but whatever
+		set { UserDefaults.standard.set(newValue, forKey: ThemeController.themeKey) }
+	}
+
+	static func getTheme() -> UIColor {
+		return ThemeController.themeColors[themeIndex]
+	}
+}
+
 class PhotoDetailVC:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 {
@@ -32,6 +49,11 @@ class PhotoDetailVC:UIViewController, UIImagePickerControllerDelegate, UINavigat
 
 	@IBOutlet weak var nameField: UITextField!
 	@IBOutlet weak var imgView: UIImageView!
+
+	override func viewWillAppear(_ animated: Bool) {
+		view.backgroundColor = ThemeController.getTheme()
+	}
+
 	@IBAction func choosePhoto(_ sender: Any)
 	{
 		PHPhotoLibrary.requestAuthorization({auth in return})
@@ -70,7 +92,7 @@ class PhotoDetailVC:UIViewController, UIImagePickerControllerDelegate, UINavigat
 
 		photo.img = img
 		photo.name = name
-		controller.add(photo)
+		controller.addUpdate(photo)
 		navigationController?.popViewController(animated: true)
 	}
 }
@@ -79,11 +101,14 @@ class PhotoCollectionVC: UICollectionViewController
 {
 	var controller:PhotoController = PhotoController()
 
+	@IBAction func modalReturn(sender:UIStoryboardSegue) {}
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
 	override func viewWillAppear(_ animated: Bool) {
+		view.backgroundColor = ThemeController.getTheme()
 		collectionView?.reloadData()
 	}
 
@@ -110,4 +135,15 @@ class PhotoCollectionVC: UICollectionViewController
 
         return cell
     }
+}
+
+class ThemeChooserVC:UIViewController {
+	
+	@IBAction func chooseDarkTheme(_ sender: Any) {
+		ThemeController.themeIndex = 0
+	}
+
+	@IBAction func chooseBlueTheme(_ sender: Any) {
+		ThemeController.themeIndex = 1
+	}
 }
