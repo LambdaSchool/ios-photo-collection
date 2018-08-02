@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class PhotoController
 {
-    var photos: [Photo] = []
+    private(set) var photos: [Photo] = []
     
     func createPhoto(imageData: Data, title: String)
     {
         let photo = Photo(imageData: imageData, title: title)
         photos.append(photo)
-        
+        print(photo)
     }
     
     func updatePhoto(photo: Photo, imageData: Data, title: String)

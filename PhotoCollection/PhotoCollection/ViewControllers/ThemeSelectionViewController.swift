@@ -13,6 +13,8 @@ class ThemeSelectionViewController: UIViewController
     @IBOutlet weak var themeOneButton: UIButton!
     @IBOutlet weak var themeTwoButton: UIButton!
     
+    var themeHelper: ThemeHelper?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
