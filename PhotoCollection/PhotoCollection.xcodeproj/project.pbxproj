@@ -14,6 +14,7 @@
 		39F4F61A21139032009EDF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F4F61821139032009EDF39 /* LaunchScreen.storyboard */; };
 		39F4F62421139066009EDF39 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62321139066009EDF39 /* Photo.swift */; };
 		39F4F62721139082009EDF39 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62621139082009EDF39 /* PhotoController.swift */; };
+		39F4F62A21139399009EDF39 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62921139399009EDF39 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		39F4F61B21139032009EDF39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39F4F62321139066009EDF39 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		39F4F62621139082009EDF39 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		39F4F62921139399009EDF39 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				39F4F60F21139031009EDF39 /* AppDelegate.swift */,
+				39F4F62B2113939D009EDF39 /* ThemeHelper */,
 				39F4F62521139069009EDF39 /* Model */,
 				39F4F62821139087009EDF39 /* Model Controller */,
 				39F4F62121139044009EDF39 /* View Controllers */,
@@ -100,6 +103,14 @@
 				39F4F62621139082009EDF39 /* PhotoController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		39F4F62B2113939D009EDF39 /* ThemeHelper */ = {
+			isa = PBXGroup;
+			children = (
+				39F4F62921139399009EDF39 /* ThemeHelper.swift */,
+			);
+			path = ThemeHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				39F4F62421139066009EDF39 /* Photo.swift in Sources */,
 				39F4F61221139031009EDF39 /* ViewController.swift in Sources */,
 				39F4F62721139082009EDF39 /* PhotoController.swift in Sources */,
+				39F4F62A21139399009EDF39 /* ThemeHelper.swift in Sources */,
 				39F4F61021139031009EDF39 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
