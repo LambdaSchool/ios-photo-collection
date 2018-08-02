@@ -25,8 +25,8 @@ private let reuseIdentifier = "PhotoCell"
 
 class ThemeController
 {
-	static let greyColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-	static let blueColor = UIColor(red:0.75, green: 0.9, blue: 1.0, alpha: 1.0)
+	static let greyColor = UIColor(red:0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+	static let blueColor = UIColor(red:0.5, green: 0.8, blue: 1.0, alpha: 1.0)
 	static let themeColors = [greyColor, blueColor]
 	static let themeKey = "PhotoCollectionTheme"
 	static var themeIndex: Int {
@@ -108,7 +108,7 @@ class PhotoCollectionVC: UICollectionViewController
     }
 
 	override func viewWillAppear(_ animated: Bool) {
-		view.backgroundColor = ThemeController.getTheme()
+		collectionView?.backgroundColor = ThemeController.getTheme()
 		collectionView?.reloadData()
 	}
 
@@ -141,9 +141,11 @@ class ThemeChooserVC:UIViewController {
 	
 	@IBAction func chooseDarkTheme(_ sender: Any) {
 		ThemeController.themeIndex = 0
+		dismiss(animated: true, completion: nil)
 	}
 
 	@IBAction func chooseBlueTheme(_ sender: Any) {
 		ThemeController.themeIndex = 1
+		dismiss(animated: true, completion: nil)
 	}
 }
