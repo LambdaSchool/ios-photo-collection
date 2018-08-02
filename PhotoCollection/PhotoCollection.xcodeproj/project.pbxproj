@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		39F4F61021139031009EDF39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F60F21139031009EDF39 /* AppDelegate.swift */; };
-		39F4F61221139031009EDF39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F61121139031009EDF39 /* ViewController.swift */; };
 		39F4F61521139031009EDF39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F4F61321139031009EDF39 /* Main.storyboard */; };
 		39F4F61721139032009EDF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F4F61621139032009EDF39 /* Assets.xcassets */; };
 		39F4F61A21139032009EDF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F4F61821139032009EDF39 /* LaunchScreen.storyboard */; };
 		39F4F62421139066009EDF39 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62321139066009EDF39 /* Photo.swift */; };
 		39F4F62721139082009EDF39 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62621139082009EDF39 /* PhotoController.swift */; };
 		39F4F62A21139399009EDF39 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62921139399009EDF39 /* ThemeHelper.swift */; };
+		39F4F62D2113976A009EDF39 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62C2113976A009EDF39 /* PhotosCollectionViewController.swift */; };
+		39F4F62F2113981A009EDF39 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F62E2113981A009EDF39 /* PhotosCollectionViewCell.swift */; };
+		39F4F63221139909009EDF39 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F63121139909009EDF39 /* PhotoDetailViewController.swift */; };
+		39F4F63521139B4B009EDF39 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4F63421139B4B009EDF39 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39F4F60C21139031009EDF39 /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F4F60F21139031009EDF39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39F4F61121139031009EDF39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39F4F61421139031009EDF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39F4F61621139032009EDF39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39F4F61921139032009EDF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +30,10 @@
 		39F4F62321139066009EDF39 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		39F4F62621139082009EDF39 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		39F4F62921139399009EDF39 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		39F4F62C2113976A009EDF39 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		39F4F62E2113981A009EDF39 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		39F4F63121139909009EDF39 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		39F4F63421139B4B009EDF39 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 				39F4F62B2113939D009EDF39 /* ThemeHelper */,
 				39F4F62521139069009EDF39 /* Model */,
 				39F4F62821139087009EDF39 /* Model Controller */,
+				39F4F6302113981E009EDF39 /* Views */,
 				39F4F62121139044009EDF39 /* View Controllers */,
 				39F4F62221139055009EDF39 /* Storyboards */,
 				39F4F61621139032009EDF39 /* Assets.xcassets */,
@@ -75,7 +82,9 @@
 		39F4F62121139044009EDF39 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				39F4F61121139031009EDF39 /* ViewController.swift */,
+				39F4F62C2113976A009EDF39 /* PhotosCollectionViewController.swift */,
+				39F4F63121139909009EDF39 /* PhotoDetailViewController.swift */,
+				39F4F63421139B4B009EDF39 /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -111,6 +120,14 @@
 				39F4F62921139399009EDF39 /* ThemeHelper.swift */,
 			);
 			path = ThemeHelper;
+			sourceTree = "<group>";
+		};
+		39F4F6302113981E009EDF39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39F4F62E2113981A009EDF39 /* PhotosCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +202,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				39F4F62421139066009EDF39 /* Photo.swift in Sources */,
-				39F4F61221139031009EDF39 /* ViewController.swift in Sources */,
+				39F4F63521139B4B009EDF39 /* ThemeSelectionViewController.swift in Sources */,
 				39F4F62721139082009EDF39 /* PhotoController.swift in Sources */,
 				39F4F62A21139399009EDF39 /* ThemeHelper.swift in Sources */,
+				39F4F63221139909009EDF39 /* PhotoDetailViewController.swift in Sources */,
+				39F4F62D2113976A009EDF39 /* PhotosCollectionViewController.swift in Sources */,
 				39F4F61021139031009EDF39 /* AppDelegate.swift in Sources */,
+				39F4F62F2113981A009EDF39 /* PhotosCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
