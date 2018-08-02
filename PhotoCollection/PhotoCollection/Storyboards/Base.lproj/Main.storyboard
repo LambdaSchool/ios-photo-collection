@@ -168,7 +168,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjX-Z4-mlL">
                                                 <rect key="frame" x="183.5" y="0.0" width="175.5" height="30"/>
-                                                <state key="normal" title="Red"/>
+                                                <state key="normal" title="Pink"/>
                                                 <connections>
                                                     <action selector="selectYourColorHereTheme:" destination="rQ1-ub-Pz0" eventType="touchUpInside" id="QcV-og-eDx"/>
                                                 </connections>

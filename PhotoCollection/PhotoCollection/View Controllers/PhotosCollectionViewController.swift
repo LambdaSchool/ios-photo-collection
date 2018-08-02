@@ -33,8 +33,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
         
-        if themePreference == "Red" {
-            collectionView?.backgroundColor = UIColor.red
+        if themePreference == "Pink" {
+            collectionView?.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         } else {
             collectionView?.backgroundColor = UIColor.darkGray
             
