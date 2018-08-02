@@ -67,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				39F4F60F21139031009EDF39 /* AppDelegate.swift */,
-				39F4F62B2113939D009EDF39 /* ThemeHelper */,
 				39F4F62521139069009EDF39 /* Model */,
 				39F4F62821139087009EDF39 /* Model Controller */,
 				39F4F6302113981E009EDF39 /* Views */,
@@ -110,16 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				39F4F62621139082009EDF39 /* PhotoController.swift */,
-			);
-			path = "Model Controller";
-			sourceTree = "<group>";
-		};
-		39F4F62B2113939D009EDF39 /* ThemeHelper */ = {
-			isa = PBXGroup;
-			children = (
 				39F4F62921139399009EDF39 /* ThemeHelper.swift */,
 			);
-			path = ThemeHelper;
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 		39F4F6302113981E009EDF39 /* Views */ = {

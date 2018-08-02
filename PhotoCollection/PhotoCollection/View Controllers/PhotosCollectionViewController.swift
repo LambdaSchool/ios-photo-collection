@@ -8,55 +8,86 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class PhotosCollectionViewController: UICollectionViewController {
+    
+    var photoController = PhotoController()
+    var themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        // If you didn't set the class in storyboard, then you need to do it here
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Theme Selection
+    
+    func setTheme() {
+        guard let themePreference = themeHelper.themePreference else { return }
+        
+        if themePreference == "Red" {
+            collectionView?.backgroundColor = UIColor.red
+        } else {
+            collectionView?.backgroundColor = UIColor.darkGray
+            
+        }
+        
     }
-
-    /*
+    
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        // Segue from cell
+        if let detailVC = segue.destination as? PhotoDetailViewController {
+            detailVC.photoController = photoController
+            detailVC.themeHelper = themeHelper
+            
+            if segue.identifier == "ShowPhotoDetail" {
+                guard let index = collectionView?.indexPathsForSelectedItems?.first?.item else { return }
+                
+                let photo = photoController.photos[index]
+                detailVC.photo = photo
+            }
+            
+//            else if segue.identifier == "ShowAddPhoto" {
+//
+//            }
+                // Since there is no code here, dont really need to have this
+        }
+        
+//        // Segue from add button
+//        if let showAddPhotoDetailVC = segue.destination as? PhotoDetailViewController {
+//            showAddPhotoDetailVC.photoController = photoController
+//            showAddPhotoDetailVC.themeHelper = themeHelper
+//        }
+            // Can't do this separately because two different segues both go to the same type of destination view controller.
+        
+        // Segue from select theme button
+        if let showSelectThemeVC = segue.destination as? ThemeSelectionViewController {
+            showSelectThemeVC.themeHelper = themeHelper
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
+        
+        let photo = photoController.photos[indexPath.item]
+        
+        cell.imageView?.image = UIImage(data: photo.imageData)
+        cell.textLabel?.text = photo.title
+        
         return cell
     }
 
