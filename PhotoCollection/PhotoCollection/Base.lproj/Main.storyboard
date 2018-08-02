@@ -56,6 +56,8 @@
                                 </constraints>
                                 <size key="customSize" width="140" height="124"/>
                                 <connections>
+                                    <outlet property="imageView" destination="a5n-9N-6B3" id="0c7-VL-qDw"/>
+                                    <outlet property="titleLabel" destination="0J4-eC-paz" id="rK7-pz-XxM"/>
                                     <segue destination="N6G-ka-aD7" kind="show" identifier="ToEditView" id="qdg-qL-yxi"/>
                                 </connections>
                             </collectionViewCell>
@@ -118,6 +120,9 @@
                                 <state key="normal" title="Dark">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeToThemeOne:" destination="A5e-fB-kj8" eventType="touchUpInside" id="BQg-Le-VKW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-d6-ONS">
                                 <rect key="frame" x="233" y="188" width="79" height="30"/>
@@ -125,6 +130,9 @@
                                 <state key="normal" title="Colorful">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeToThemeTwo:" destination="A5e-fB-kj8" eventType="touchUpInside" id="Rpv-vs-0YY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,6 +151,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hnS-WH-Hue"/>
                     </view>
+                    <connections>
+                        <outlet property="themeOneButton" destination="3Ex-Bg-jMW" id="VXs-Z5-aZU"/>
+                        <outlet property="themeTwoButton" destination="Is1-d6-ONS" id="XVn-kt-FQJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFb-3g-zuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,6 +190,9 @@
                                 <state key="normal" title="Add Photo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPhoto:" destination="N6G-ka-aD7" eventType="touchUpInside" id="9Od-bp-r9K"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -194,8 +209,17 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Title" id="LcF-W0-36Z">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="klR-Uo-fhJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="klR-Uo-fhJ">
+                            <connections>
+                                <action selector="save:" destination="N6G-ka-aD7" id="Z3H-iQ-H0V"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="Ftc-ON-kIv" id="UXi-zO-wv2"/>
+                        <outlet property="detailImageView" destination="nBT-Fh-a5C" id="9Ni-lb-V67"/>
+                        <outlet property="titleTextField" destination="wAk-k2-rLY" id="q4r-th-L1x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJa-k1-it8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

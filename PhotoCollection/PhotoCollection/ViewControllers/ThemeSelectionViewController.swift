@@ -10,11 +10,22 @@ import UIKit
 
 class ThemeSelectionViewController: UIViewController
 {
-
+    @IBOutlet weak var themeOneButton: UIButton!
+    @IBOutlet weak var themeTwoButton: UIButton!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
     }
 
-
+    @IBAction func changeToThemeOne(_ sender: Any)
+    {
+        
+    }
+    
+    @IBAction func changeToThemeTwo(_ sender: Any)
+    {
+        
+    }
+    
 }

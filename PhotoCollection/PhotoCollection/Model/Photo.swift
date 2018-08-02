@@ -1,5 +1,5 @@
 //
-//  PhotoController.swift
+//  Photo.swift
 //  PhotoCollection
 //
 //  Created by Carolyn Lea on 8/2/18.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-class PhotoController
+struct Photo: Equatable
 {
-    
+    var imageData: Data
+    var title: String
 }
