@@ -78,6 +78,8 @@
                                 </constraints>
                                 <size key="customSize" width="172" height="160"/>
                                 <connections>
+                                    <outlet property="imgView" destination="LQ9-Qx-CN8" id="Mh1-sy-8dG"/>
+                                    <outlet property="nameLabel" destination="VgW-ki-4CD" id="SRc-cp-mDT"/>
                                     <segue destination="fRm-a6-549" kind="show" id="8Pc-8x-nQb"/>
                                 </connections>
                             </collectionViewCell>
@@ -122,7 +124,7 @@
         <!--New Photo-->
         <scene sceneID="clU-N5-qLu">
             <objects>
-                <viewController id="fRm-a6-549" sceneMemberID="viewController">
+                <viewController id="fRm-a6-549" customClass="PhotoDetailVC" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NlN-Z8-mY3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +135,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-4z-plG">
                                         <rect key="frame" x="122" y="0.0" width="99" height="30"/>
                                         <state key="normal" title="Choose Image"/>
+                                        <connections>
+                                            <action selector="choosePhoto:" destination="fRm-a6-549" eventType="touchUpInside" id="C8I-Jl-bc2"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-xQ-rFb">
                                         <rect key="frame" x="0.0" y="38" width="343" height="30"/>
@@ -163,8 +168,16 @@
                         <viewLayoutGuide key="safeArea" id="9K5-4E-nSB"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Photo" id="b4T-tG-8Dd">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="lQ6-yZ-VKb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="lQ6-yZ-VKb">
+                            <connections>
+                                <action selector="saveNewPhoto:" destination="fRm-a6-549" id="7d2-vt-ojU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imgView" destination="ixe-In-7g7" id="Jdc-gj-LU9"/>
+                        <outlet property="nameField" destination="SSg-xQ-rFb" id="F7Q-UP-nu0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdf-ya-MLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

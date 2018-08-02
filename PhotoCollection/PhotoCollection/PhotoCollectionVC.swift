@@ -7,38 +7,82 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoCell: UICollectionViewCell
 {
+	@IBOutlet weak var imgView: UIImageView!
+	@IBOutlet weak var nameLabel: UILabel!
 	var photo:Photo! {
 		didSet {
-
+			imgView.image = photo.img
+			nameLabel.text = photo.name
 		}
 	}
 }
 
 private let reuseIdentifier = "PhotoCell"
 
-class PhotoDetailVC:UIViewController
+class PhotoDetailVC:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
 {
 	var controller:PhotoController!
 	var photo:Photo!
+
+	override func viewWillAppear(_ animated: Bool) {
+		if photo == nil {
+			photo = Photo("", nil)
+		}
+	}
+
+
+	@IBOutlet weak var nameField: UITextField!
+	@IBOutlet weak var imgView: UIImageView!
+	@IBAction func choosePhoto(_ sender: Any)
+	{
+		PHPhotoLibrary.requestAuthorization({auth in return})
+		if PHPhotoLibrary.authorizationStatus() != .authorized {
+			print("Please allow photo access under Privacy->Photos in settings")
+			return
+		}
+
+		DispatchQueue.main.async {
+			let picker = UIImagePickerController()
+			picker.sourceType = .photoLibrary
+			picker.delegate = self
+			self.present(picker, animated:true)
+		}
+	}
+
+	@objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+	{
+		picker.dismiss(animated: true, completion: nil)
+		guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
+		photo.img = image
+		imgView.image = image
+	}
+
+	@objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
+	{
+		picker.dismiss(animated: true, completion: nil)
+	}
+
+	@IBAction func saveNewPhoto(_ sender: Any) {
+	}
 }
 
-class PhotoCollectionVC: UICollectionViewController {
+class PhotoCollectionVC: UICollectionViewController
+{
 	var controller:PhotoController = PhotoController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
+
+	override func viewWillAppear(_ animated: Bool) {
+		collectionView?.reloadData()
+	}
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let dest = segue.destination as? PhotoDetailVC {
 			dest.controller = controller
