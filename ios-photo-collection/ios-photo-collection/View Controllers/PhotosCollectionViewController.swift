@@ -4,21 +4,61 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        collectionView.reloadData()
+        setTheme()
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+        setTheme()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
+        let photo = photoController.photos[indexPath.row]
+
+        cell.imageView.image = UIImage(data: photo.imageData)
+        cell.photoTextLabel.text = photo.title
+
         return cell
     }
+
+    func setTheme() {
+        guard let themePreference = themeHelper.themePreference else { return }
+        if themePreference == "Dark" {
+            collectionView.backgroundColor = UIColor.lightGray
+        } else if themePreference == "Red" {
+            collectionView.backgroundColor = UIColor(hue: 0.0139, saturation: 0.67, brightness: 0.95, alpha: 0.85)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "AddPhoto") {
+            if let vc = segue.destination as? PhotoDetailViewController {
+                vc.photoController = photoController
+                vc.themeHelper = themeHelper
+            }
+        } else if (segue.identifier == "ShowExistingPhoto") {
+            if let vc = segue.destination as? PhotoDetailViewController {
+                vc.photoController = photoController
+                vc.themeHelper = themeHelper
+                if let index = self.collectionView?.indexPathsForSelectedItems?.first {
+                    vc.photo = photoController.photos[index[0]]
+                }
+            }
+        } else if (segue.identifier == "SelectTheme") {
+            if let vc = segue.destination as? ThemeSelectionViewController {
+                vc.themeHelper = themeHelper
+            }
+        }
+    }
+
+    let photoController: PhotoController = PhotoController()
+    let themeHelper = ThemeHelper(themePreferenceKey: "Dark")
 }

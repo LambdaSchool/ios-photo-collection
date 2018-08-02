@@ -9,7 +9,18 @@
 import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
+    func updateViews() {
+        guard let photo = photo else { return }
+        imageView.image = UIImage(data: photo.imageData)
+        photoTextLabel.text = photo.title
+    }
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var photoTextLabel: UILabel!
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
 }
