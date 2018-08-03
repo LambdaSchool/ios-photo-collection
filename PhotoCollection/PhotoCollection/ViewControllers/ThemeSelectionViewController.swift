@@ -13,21 +13,27 @@ class ThemeSelectionViewController: UIViewController
     @IBOutlet weak var themeOneButton: UIButton!
     @IBOutlet weak var themeTwoButton: UIButton!
     
-    var themeHelper: ThemeHelper?
+    //var themeHelper: ThemeHelper?
+    let themePreferenceKey = "ThemePreferenceKey"
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
     }
 
-    @IBAction func changeToThemeOne(_ sender: Any)
+    @IBAction func selectDarkTheme(_ sender: Any)
     {
-        
+        let userDefaults = UserDefaults.standard
+        userDefaults.set("Dark", forKey: themePreferenceKey)
+        //themeHelper?.setThemePreferenceToDark()
     }
     
-    @IBAction func changeToThemeTwo(_ sender: Any)
+    @IBAction func selectPinkTheme(_ sender: Any)
     {
-        
+        let userDefaults = UserDefaults.standard
+        userDefaults.set("Pink", forKey: themePreferenceKey)
+        //themeHelper?.setThemePreferenceToPink()
     }
+    
     
 }

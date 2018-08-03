@@ -13,17 +13,19 @@ private let reuseIdentifier = "PhotoCell"
 class PhotosCollectionViewController: UICollectionViewController
 {
     let photoController = PhotoController()
-    //let themeHelper = ThemeHelper(themePreference: "", preferenceKey: "")
+    var themeHelper = ThemeHelper()
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        
+        setTheme()
         collectionView?.reloadData()
     }
     
@@ -35,6 +37,7 @@ class PhotosCollectionViewController: UICollectionViewController
         {
             guard let addView = segue.destination as? PhotoDetailViewController else {return}
             addView.photoController = photoController
+            //addView.themeHelper = themeHelper
         }
         else if segue.identifier == "ToEditView"
         {
@@ -42,10 +45,12 @@ class PhotosCollectionViewController: UICollectionViewController
                 let indexPath = collectionView?.indexPath(for: cell) else {return}
             editView.photoController = photoController
             editView.photo = photoController.photos[indexPath.row]
+            //editView.themeHelper = themeHelper
         }
         else if segue.identifier == "ShowTheme"
         {
             guard let themeView = segue.destination as? ThemeSelectionViewController else {return}
+            //themeView.themeHelper = themeHelper
         }
         
     }
@@ -68,6 +73,21 @@ class PhotosCollectionViewController: UICollectionViewController
         return cell
     }
 
+    func setTheme()
+    {
+        guard let currentTheme = themeHelper.themePreference else {return}
+        if currentTheme == "Dark"
+        {
+            collectionView?.backgroundColor = UIColor.black
+            print("CollectionView should be black")
+        }
+        else if currentTheme == "Pink"
+        {
+            collectionView?.backgroundColor = UIColor.magenta
+            print("CollectionView should be magenta")
+        }
+    }
     
 
+    @IBAction func unwindToPhotosCollectionViewController(_ sender: UIStoryboardSegue) {}
 }

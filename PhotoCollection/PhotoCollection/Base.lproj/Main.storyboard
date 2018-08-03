@@ -94,20 +94,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQ1-Za-wdf">
-                                <rect key="frame" x="16" y="118" width="351" height="17"/>
+                                <rect key="frame" x="0.0" y="118" width="375" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="WvI-zR-GXz"/>
+                                    <constraint firstAttribute="height" constant="32" id="Und-Ic-gPK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme Selection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x2-zp-JRx">
-                                <rect key="frame" x="16" y="65" width="343" height="38"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="N49-JD-yK0"/>
+                                    <constraint firstAttribute="height" constant="38" id="GBl-uW-xJV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -115,44 +115,45 @@
                                 <rect key="frame" x="74" y="188" width="79" height="30"/>
                                 <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="DBV-bO-diS"/>
-                                    <constraint firstAttribute="width" constant="79" id="qfv-at-0VD"/>
+                                    <constraint firstAttribute="width" constant="79" id="C3R-sw-QiP"/>
+                                    <constraint firstAttribute="height" constant="30" id="g2R-Sa-dT2"/>
                                 </constraints>
                                 <state key="normal" title="Dark">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="changeToThemeOne:" destination="A5e-fB-kj8" eventType="touchUpInside" id="BQg-Le-VKW"/>
+                                    <action selector="selectDarkTheme:" destination="A5e-fB-kj8" eventType="touchUpInside" id="czf-fw-f4r"/>
+                                    <segue destination="TS1-ex-kqi" kind="unwind" unwindAction="unwindToPhotosCollectionViewController:" id="UqM-Sq-lOs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-d6-ONS">
                                 <rect key="frame" x="233" y="188" width="79" height="30"/>
                                 <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HW9-4a-pDn"/>
-                                    <constraint firstAttribute="width" constant="79" id="aBT-Wk-NE3"/>
+                                    <constraint firstAttribute="height" constant="30" id="IZ8-r7-ZF8"/>
+                                    <constraint firstAttribute="width" constant="79" id="NQv-oQ-SOe"/>
                                 </constraints>
-                                <state key="normal" title="Colorful">
+                                <state key="normal" title="Pink">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="changeToThemeTwo:" destination="A5e-fB-kj8" eventType="touchUpInside" id="Rpv-vs-0YY"/>
+                                    <action selector="selectPinkTheme:" destination="A5e-fB-kj8" eventType="touchUpInside" id="7Sb-wf-RfO"/>
+                                    <segue destination="TS1-ex-kqi" kind="unwind" unwindAction="unwindToPhotosCollectionViewController:" id="wXr-5f-E23"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hnS-WH-Hue" firstAttribute="trailing" secondItem="GQ1-Za-wdf" secondAttribute="trailing" constant="8" id="67O-La-JiQ"/>
-                            <constraint firstItem="3Ex-Bg-jMW" firstAttribute="top" secondItem="GQ1-Za-wdf" secondAttribute="bottom" constant="53" id="A2r-ZB-Nnq"/>
-                            <constraint firstItem="hnS-WH-Hue" firstAttribute="trailing" secondItem="3x2-zp-JRx" secondAttribute="trailing" constant="16" id="DpT-z6-NJn"/>
-                            <constraint firstItem="Is1-d6-ONS" firstAttribute="top" secondItem="GQ1-Za-wdf" secondAttribute="bottom" constant="53" id="GYd-t5-FyT"/>
-                            <constraint firstItem="Is1-d6-ONS" firstAttribute="leading" secondItem="3Ex-Bg-jMW" secondAttribute="trailing" constant="80" id="Hbw-8K-Dqb"/>
-                            <constraint firstItem="3Ex-Bg-jMW" firstAttribute="leading" secondItem="hnS-WH-Hue" secondAttribute="leading" constant="74" id="Mxp-AQ-WYw"/>
-                            <constraint firstItem="3x2-zp-JRx" firstAttribute="top" secondItem="hnS-WH-Hue" secondAttribute="top" constant="45" id="bu9-G1-Hrl"/>
-                            <constraint firstItem="hnS-WH-Hue" firstAttribute="trailing" secondItem="Is1-d6-ONS" secondAttribute="trailing" constant="63" id="cJP-0r-GDy"/>
-                            <constraint firstItem="GQ1-Za-wdf" firstAttribute="leading" secondItem="hnS-WH-Hue" secondAttribute="leading" constant="16" id="fPr-su-K4b"/>
-                            <constraint firstItem="GQ1-Za-wdf" firstAttribute="top" secondItem="3x2-zp-JRx" secondAttribute="bottom" constant="15" id="k1m-sL-UfW"/>
-                            <constraint firstItem="3x2-zp-JRx" firstAttribute="leading" secondItem="hnS-WH-Hue" secondAttribute="leading" constant="16" id="ov3-mU-VSL"/>
+                            <constraint firstItem="GQ1-Za-wdf" firstAttribute="leading" secondItem="hnS-WH-Hue" secondAttribute="leading" id="2sb-Ge-TdJ"/>
+                            <constraint firstItem="3x2-zp-JRx" firstAttribute="leading" secondItem="hnS-WH-Hue" secondAttribute="leading" id="FYO-C4-3B6"/>
+                            <constraint firstItem="GQ1-Za-wdf" firstAttribute="trailing" secondItem="hnS-WH-Hue" secondAttribute="trailing" id="Kvi-9o-yaT"/>
+                            <constraint firstItem="GQ1-Za-wdf" firstAttribute="top" secondItem="3x2-zp-JRx" secondAttribute="bottom" constant="15" id="XsZ-ND-hra"/>
+                            <constraint firstItem="hnS-WH-Hue" firstAttribute="trailing" secondItem="Is1-d6-ONS" secondAttribute="trailing" constant="63" id="app-97-Yuw"/>
+                            <constraint firstItem="Is1-d6-ONS" firstAttribute="top" secondItem="GQ1-Za-wdf" secondAttribute="bottom" constant="38" id="bZQ-11-SgV"/>
+                            <constraint firstItem="3x2-zp-JRx" firstAttribute="trailing" secondItem="hnS-WH-Hue" secondAttribute="trailing" id="i0J-XE-ZTU"/>
+                            <constraint firstItem="3Ex-Bg-jMW" firstAttribute="top" secondItem="GQ1-Za-wdf" secondAttribute="bottom" constant="38" id="nnn-kc-m8i"/>
+                            <constraint firstItem="3x2-zp-JRx" firstAttribute="top" secondItem="hnS-WH-Hue" secondAttribute="top" constant="45" id="v69-IV-GLI"/>
+                            <constraint firstItem="3Ex-Bg-jMW" firstAttribute="leading" secondItem="hnS-WH-Hue" secondAttribute="leading" constant="74" id="w7D-8V-BJS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hnS-WH-Hue"/>
                     </view>
@@ -162,6 +163,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFb-3g-zuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TS1-ex-kqi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1496.8" y="634.632683658171"/>
         </scene>
@@ -220,7 +222,7 @@
                     <navigationItem key="navigationItem" title="Title" id="LcF-W0-36Z">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="klR-Uo-fhJ">
                             <connections>
-                                <action selector="save:" destination="N6G-ka-aD7" id="Z3H-iQ-H0V"/>
+                                <action selector="savePhoto:" destination="N6G-ka-aD7" id="GzZ-24-3pb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

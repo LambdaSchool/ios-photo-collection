@@ -15,25 +15,26 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addPhotoButton: UIButton!
     
-    var photoController = PhotoController()
+    var photoController: PhotoController?
     var photo: Photo?
-    var themeHelper: ThemeHelper?
+    //var themeHelper: ThemeHelper?
     var dataOfImage: Data?
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        //setTheme()
         updateViews()
     }
     
-    @IBAction func save(_ sender: Any)
+    @IBAction func savePhoto(_ sender: Any)
     {
         if photo == nil
         {
             guard let title = titleTextField.text,
                 let imageData = dataOfImage else {return}
             
-            photoController.createPhoto(imageData: imageData, title: title)
+            photoController?.createPhoto(imageData: imageData, title: title)
             
             
         }
@@ -43,7 +44,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
                 let chosenImage = detailImageView.image,
                 let imageData = UIImagePNGRepresentation(chosenImage) else {return}
             
-            photoController.updatePhoto(photo: photo!, imageData: imageData, title: title)
+            photoController?.updatePhoto(photo: photo!, imageData: imageData, title: title)
         }
         navigationController?.popViewController(animated: true)
     }
@@ -141,4 +142,17 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         detailImageView.image = UIImage(data: photo.imageData)
         
     }
+    
+//    func setTheme()
+//    {
+//        guard let currentTheme = themeHelper?.themePreference else {return}
+//        if currentTheme == "Dark"
+//        {
+//            self.view?.backgroundColor = UIColor.black
+//        }
+//        else if currentTheme == "Pink"
+//        {
+//            self.view?.backgroundColor = UIColor.magenta
+//        }
+//    }
 }
