@@ -25,6 +25,7 @@ class ThemeSelectionViewController: UIViewController
     {
         let userDefaults = UserDefaults.standard
         userDefaults.set("Dark", forKey: themePreferenceKey)
+        dismiss(animated: true, completion: nil)
         //themeHelper?.setThemePreferenceToDark()
     }
     
@@ -32,6 +33,7 @@ class ThemeSelectionViewController: UIViewController
     {
         let userDefaults = UserDefaults.standard
         userDefaults.set("Pink", forKey: themePreferenceKey)
+        dismiss(animated: true, completion: nil)
         //themeHelper?.setThemePreferenceToPink()
     }
     

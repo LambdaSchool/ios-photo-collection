@@ -19,7 +19,8 @@ class PhotosCollectionViewController: UICollectionViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        title = "Photo Collection"
+        photoController.loadFromPersistentStore()
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -78,16 +79,14 @@ class PhotosCollectionViewController: UICollectionViewController
         guard let currentTheme = themeHelper.themePreference else {return}
         if currentTheme == "Dark"
         {
-            collectionView?.backgroundColor = UIColor.black
-            print("CollectionView should be black")
+            collectionView?.backgroundColor = UIColor.darkGray
         }
         else if currentTheme == "Pink"
         {
             collectionView?.backgroundColor = UIColor.magenta
-            print("CollectionView should be magenta")
         }
     }
     
 
-    @IBAction func unwindToPhotosCollectionViewController(_ sender: UIStoryboardSegue) {}
+    //@IBAction func unwindToPhotosCollectionViewController(_ sender: UIStoryboardSegue) {}
 }

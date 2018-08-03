@@ -26,5 +26,9 @@ class PhotosCollectionViewCell: UICollectionViewCell
         guard let photo = photo else {return}
         imageView.image = UIImage(data: photo.imageData)
         titleLabel.text = photo.title
+        
+        
+        
+        
     }
 }

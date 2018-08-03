@@ -17,13 +17,13 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     var photoController: PhotoController?
     var photo: Photo?
-    //var themeHelper: ThemeHelper?
+    var themeHelper = ThemeHelper()
     var dataOfImage: Data?
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        //setTheme()
+        setTheme()
         updateViews()
     }
     
@@ -35,8 +35,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
                 let imageData = dataOfImage else {return}
             
             photoController?.createPhoto(imageData: imageData, title: title)
-            
-            
         }
         else
         {
@@ -143,16 +141,16 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-//    func setTheme()
-//    {
-//        guard let currentTheme = themeHelper?.themePreference else {return}
-//        if currentTheme == "Dark"
-//        {
-//            self.view?.backgroundColor = UIColor.black
-//        }
-//        else if currentTheme == "Pink"
-//        {
-//            self.view?.backgroundColor = UIColor.magenta
-//        }
-//    }
+    func setTheme()
+    {
+        guard let currentTheme = themeHelper.themePreference else {return}
+        if currentTheme == "Dark"
+        {
+            self.view?.backgroundColor = UIColor.darkGray
+        }
+        else if currentTheme == "Pink"
+        {
+            self.view?.backgroundColor = UIColor.magenta
+        }
+    }
 }
