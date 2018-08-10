@@ -26,7 +26,23 @@ class PhotosCollectionViewController: UICollectionViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhoto"{
-            
+            guard let index = collectionView?.indexPathsForSelectedItems?.first?.item,
+            let detailVC = segue.destination as? PhotoDetailViewController else {return}
+            let photo = photoController.photos[index]
+            detailVC.photoController = photoController
+            detailVC.photo = photo
+            detailVC.themeHelper = themeHelper
+        }
+        
+        if segue.identifier == "addPhoto"{
+            guard let detailVC = segue.destination as? PhotoDetailViewController else {return}
+            detailVC.photoController = photoController
+            detailVC.themeHelper = themeHelper
+        }
+        
+        if segue.identifier == "SelectTheme"{
+            guard let detailVC = segue.destination as? ThemeSelectionViewController else {return}
+            detailVC.themeHelper = themeHelper
         }
     }
 
