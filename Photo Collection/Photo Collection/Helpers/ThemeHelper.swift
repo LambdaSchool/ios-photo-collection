@@ -16,7 +16,7 @@ class ThemeHelper {
     // MARK: - Initializers
     init() {
         if themePreference == nil {
-            setThemePreferenceToLight()
+            setThemePreferenceToDark()
         }
     }
     

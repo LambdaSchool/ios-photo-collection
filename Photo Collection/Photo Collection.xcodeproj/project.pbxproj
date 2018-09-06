@@ -98,10 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				34DEC4352141B38100A5F3AE /* Main.storyboard */,
-				34DEC4512141BA3E00A5F3AE /* PhotoDetailViewController.swift */,
 				34DEC4532141BCA100A5F3AE /* ThemeSelectionViewController.swift */,
-				34DEC44F2141B96500A5F3AE /* PhotosCollectionViewCell.swift */,
+				34DEC4512141BA3E00A5F3AE /* PhotoDetailViewController.swift */,
 				34DEC44D2141B88B00A5F3AE /* PhotosCollectionViewController.swift */,
+				34DEC44F2141B96500A5F3AE /* PhotosCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

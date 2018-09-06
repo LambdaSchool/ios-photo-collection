@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="1750" y="-567"/>
         </scene>
-        <!--Photos Collection View Controller-->
+        <!--Photo Collection-->
         <scene sceneID="7p7-B0-7iV">
             <objects>
                 <collectionViewController id="QU7-Ay-80P" customClass="PhotosCollectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +89,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xta-fw-HGH">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="190"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rXK-SE-BLd">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rXK-SE-BLd">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="161.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9H-Dr-d50">
@@ -120,7 +120,7 @@
                             <outlet property="delegate" destination="QU7-Ay-80P" id="iEm-6X-Fan"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="3jT-rG-xaV">
+                    <navigationItem key="navigationItem" title="Photo Collection" id="3jT-rG-xaV">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="TFV-P8-Xoi">
                             <connections>
                                 <segue destination="yiZ-ee-Czm" kind="presentation" identifier="SelectThemeIdentifier" id="pBV-1x-vug"/>
@@ -146,20 +146,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-J0-I6q">
-                                <rect key="frame" x="20" y="80" width="335" height="301.5"/>
+                                <rect key="frame" x="20" y="132" width="335" height="275.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqO-aN-1FP">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="225.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqO-aN-1FP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="199.5"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOa-pM-l83">
-                                        <rect key="frame" x="0.0" y="233.5" width="335" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOa-pM-l83">
+                                        <rect key="frame" x="0.0" y="207.5" width="335" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="aXc-Qd-1yt" eventType="touchUpInside" id="aeX-Ze-6We"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add A Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1s4-Th-a7j">
-                                        <rect key="frame" x="0.0" y="271.5" width="335" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add A Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1s4-Th-a7j">
+                                        <rect key="frame" x="0.0" y="245.5" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -198,8 +198,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CKR-sn-Ed0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KRr-7Q-nKD">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KRr-7Q-nKD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
