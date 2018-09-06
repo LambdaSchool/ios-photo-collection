@@ -9,18 +9,10 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    func setTheme() {
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -30,6 +22,14 @@ class PhotoDetailViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+     
+     you do it in the “didFinishPickingMediaWithInfo method
+     You have to adopt UIImagePickerControllerDelegate
+     
+     From Jason Modisett to Everyone: (07:34 PM)
+     
+     picker.dismiss(animated: true, completion: nil)                  guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }                  photoImageView.image = image
+     
     */
     
     @IBAction func savePhoto(_ sender: Any) {

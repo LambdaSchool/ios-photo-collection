@@ -71,7 +71,7 @@
                     <navigationItem key="navigationItem" id="6kC-e3-GoI">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="tax-eD-eLD">
                             <connections>
-                                <segue destination="d7l-jb-Yp2" kind="presentation" id="w8O-bb-q7d"/>
+                                <segue destination="d7l-jb-Yp2" kind="presentation" identifier="SetTheme" id="w8O-bb-q7d"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UQZ-ip-seA">
@@ -216,6 +216,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DWF-ek-OHQ"/>
+        <segue reference="KgJ-tv-C8f"/>
     </inferredMetricsTieBreakers>
 </document>

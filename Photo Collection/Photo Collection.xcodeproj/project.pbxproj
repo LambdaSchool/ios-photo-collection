@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7B2479BE2141B735006B334E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2479BD2141B735006B334E /* AppDelegate.swift */; };
-		7B2479C02141B735006B334E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2479BF2141B735006B334E /* ViewController.swift */; };
 		7B2479C32141B735006B334E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2479C12141B735006B334E /* Main.storyboard */; };
 		7B2479C52141B73D006B334E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2479C42141B73D006B334E /* Assets.xcassets */; };
 		7B2479C82141B73D006B334E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2479C62141B73D006B334E /* LaunchScreen.storyboard */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		7B2479BA2141B735006B334E /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2479BD2141B735006B334E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B2479BF2141B735006B334E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B2479C22141B735006B334E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B2479C42141B73D006B334E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B2479C72141B73D006B334E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				7B2479BD2141B735006B334E /* AppDelegate.swift */,
-				7B2479BF2141B735006B334E /* ViewController.swift */,
 				7B2479C12141B735006B334E /* Main.storyboard */,
 				7B2479F52141D48D006B334E /* PhotoDetailViewController.swift */,
 				7B2479F72141D8C4006B334E /* ThemeSelectionViewController.swift */,
@@ -279,7 +276,6 @@
 			files = (
 				7B2479EC2141BE61006B334E /* Photo.swift in Sources */,
 				7B2479F22141CFF2006B334E /* PhotosCollectionViewController.swift in Sources */,
-				7B2479C02141B735006B334E /* ViewController.swift in Sources */,
 				7B2479EE2141BE98006B334E /* PhotoController.swift in Sources */,
 				7B2479F42141D1BA006B334E /* PhotoCollectionViewCell.swift in Sources */,
 				7B2479F02141C042006B334E /* ThemeHelper.swift in Sources */,
