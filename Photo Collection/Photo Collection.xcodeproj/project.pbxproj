@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		A19E4C212141D3D400E23F09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C202141D3D400E23F09 /* AppDelegate.swift */; };
-		A19E4C232141D3D400E23F09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C222141D3D400E23F09 /* ViewController.swift */; };
 		A19E4C262141D3D400E23F09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19E4C242141D3D400E23F09 /* Main.storyboard */; };
 		A19E4C282141D3D600E23F09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19E4C272141D3D600E23F09 /* Assets.xcassets */; };
 		A19E4C2B2141D3D600E23F09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19E4C292141D3D600E23F09 /* LaunchScreen.storyboard */; };
 		A19E4C332141D3ED00E23F09 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C322141D3ED00E23F09 /* Photo.swift */; };
 		A19E4C352141D43C00E23F09 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C342141D43C00E23F09 /* PhotoController.swift */; };
 		A19E4C372141D6C600E23F09 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C362141D6C600E23F09 /* ThemeHelper.swift */; };
+		A19E4C392141DB2700E23F09 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C382141DB2700E23F09 /* PhotosCollectionViewController.swift */; };
+		A19E4C3B2141DC3200E23F09 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C3A2141DC3200E23F09 /* PhotosCollectionViewCell.swift */; };
+		A19E4C3D2141DDBF00E23F09 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C3C2141DDBF00E23F09 /* PhotoDetailViewController.swift */; };
+		A19E4C3F2141E3CD00E23F09 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19E4C3E2141E3CD00E23F09 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A19E4C1D2141D3D400E23F09 /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19E4C202141D3D400E23F09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A19E4C222141D3D400E23F09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A19E4C252141D3D400E23F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A19E4C272141D3D600E23F09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A19E4C2A2141D3D600E23F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +30,10 @@
 		A19E4C322141D3ED00E23F09 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A19E4C342141D43C00E23F09 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		A19E4C362141D6C600E23F09 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		A19E4C382141DB2700E23F09 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		A19E4C3A2141DC3200E23F09 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		A19E4C3C2141DDBF00E23F09 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		A19E4C3E2141E3CD00E23F09 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +66,15 @@
 		A19E4C1F2141D3D400E23F09 /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
+				A19E4C382141DB2700E23F09 /* PhotosCollectionViewController.swift */,
 				A19E4C342141D43C00E23F09 /* PhotoController.swift */,
 				A19E4C362141D6C600E23F09 /* ThemeHelper.swift */,
 				A19E4C322141D3ED00E23F09 /* Photo.swift */,
 				A19E4C202141D3D400E23F09 /* AppDelegate.swift */,
-				A19E4C222141D3D400E23F09 /* ViewController.swift */,
 				A19E4C242141D3D400E23F09 /* Main.storyboard */,
+				A19E4C3E2141E3CD00E23F09 /* ThemeSelectionViewController.swift */,
+				A19E4C3C2141DDBF00E23F09 /* PhotoDetailViewController.swift */,
+				A19E4C3A2141DC3200E23F09 /* PhotosCollectionViewCell.swift */,
 				A19E4C272141D3D600E23F09 /* Assets.xcassets */,
 				A19E4C292141D3D600E23F09 /* LaunchScreen.storyboard */,
 				A19E4C2C2141D3D600E23F09 /* Info.plist */,
@@ -145,10 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19E4C332141D3ED00E23F09 /* Photo.swift in Sources */,
-				A19E4C232141D3D400E23F09 /* ViewController.swift in Sources */,
+				A19E4C3F2141E3CD00E23F09 /* ThemeSelectionViewController.swift in Sources */,
 				A19E4C352141D43C00E23F09 /* PhotoController.swift in Sources */,
 				A19E4C372141D6C600E23F09 /* ThemeHelper.swift in Sources */,
+				A19E4C3D2141DDBF00E23F09 /* PhotoDetailViewController.swift in Sources */,
+				A19E4C392141DB2700E23F09 /* PhotosCollectionViewController.swift in Sources */,
 				A19E4C212141D3D400E23F09 /* AppDelegate.swift in Sources */,
+				A19E4C3B2141DC3200E23F09 /* PhotosCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
