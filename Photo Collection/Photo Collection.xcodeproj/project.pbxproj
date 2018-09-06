@@ -13,6 +13,7 @@
 		34DEC43C2141B38200A5F3AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DEC43A2141B38200A5F3AE /* LaunchScreen.storyboard */; };
 		34DEC4452141B46D00A5F3AE /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEC4442141B46D00A5F3AE /* Photo.swift */; };
 		34DEC4492141B4DC00A5F3AE /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEC4482141B4DC00A5F3AE /* PhotoController.swift */; };
+		34DEC44B2141B64B00A5F3AE /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEC44A2141B64B00A5F3AE /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		34DEC43D2141B38200A5F3AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34DEC4442141B46D00A5F3AE /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		34DEC4482141B4DC00A5F3AE /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		34DEC44A2141B64B00A5F3AE /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				34DEC4312141B38100A5F3AE /* AppDelegate.swift */,
 				34DEC4462141B47C00A5F3AE /* Model */,
 				34DEC4472141B49100A5F3AE /* View */,
+				34DEC44C2141B64F00A5F3AE /* Helpers */,
 				34DEC4432141B3A600A5F3AE /* Resrouces */,
 			);
 			path = "Photo Collection";
@@ -89,6 +92,14 @@
 				34DEC4352141B38100A5F3AE /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		34DEC44C2141B64F00A5F3AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				34DEC44A2141B64B00A5F3AE /* ThemeHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				34DEC4492141B4DC00A5F3AE /* PhotoController.swift in Sources */,
 				34DEC4452141B46D00A5F3AE /* Photo.swift in Sources */,
 				34DEC4322141B38100A5F3AE /* AppDelegate.swift in Sources */,
+				34DEC44B2141B64B00A5F3AE /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
