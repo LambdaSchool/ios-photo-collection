@@ -6,12 +6,16 @@
 //  Copyright © 2018 Dillon McElhinney. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ThemeHelper {
     
     // MARK: - Properties
     let themePreferenceKey = "ThemePreference"
+    
+    static var bodyTextColor: UIColor = .black
+    static var backgroundColor: UIColor = .white
+    static var navBarColor: UIBarStyle = .default
     
     // MARK: - Initializers
     init() {
@@ -23,10 +27,16 @@ class ThemeHelper {
     // MARK: - Utility Functions
     func setThemePreferenceToDark() {
         UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
+        ThemeHelper.bodyTextColor = .white
+        ThemeHelper.backgroundColor = .darkGray
+        ThemeHelper.navBarColor = .black
     }
     
     func setThemePreferenceToLight() {
         UserDefaults.standard.set("Light", forKey: themePreferenceKey)
+        ThemeHelper.bodyTextColor = .black
+        ThemeHelper.backgroundColor = .white
+        ThemeHelper.navBarColor = .default
     }
     
     var themePreference: String? {

@@ -84,17 +84,16 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         title = "Edit Photo"
         photoImageView.image = UIImage(data: photo.imageData)
         titleTextField.text = photo.title
-        addPhotoButton.setTitle("Edit Photo", for: .normal)
+        addPhotoButton.setTitle("Change Photo", for: .normal)
     }
     
     private func setTheme() {
-        guard let theme = themeHelper?.themePreference else { return }
+        guard themeHelper?.themePreference != nil else { return }
         
-        if theme == "Light" {
-            view.backgroundColor = .white
-        } else {
-            view.backgroundColor = .darkGray
-        }
+        view.backgroundColor = ThemeHelper.backgroundColor
+        titleTextField.backgroundColor = ThemeHelper.backgroundColor
+        titleTextField.textColor = ThemeHelper.bodyTextColor
+        
     }
     
     private func presentImagePickerController() {

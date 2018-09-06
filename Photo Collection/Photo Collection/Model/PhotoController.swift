@@ -13,12 +13,18 @@ class PhotoController {
     // MARK: - Properties
     private(set) var photos: [Photo] = []
     
+    // MARK: - Initializers
+    init() {
+        loadFromPersistentStore()
+    }
+    
     // MARK: - CRUD Methods
     // Create a new photo and add it to the array
     func createPhoto(title: String, imageData: Data) {
         let photo = Photo(imageData: imageData, title: title)
         
         photos.append(photo)
+        saveToPersistentStore()
     }
     
     // Update an existing photo in the array
@@ -27,7 +33,40 @@ class PhotoController {
         
         photos[index].title = title
         photos[index].imageData = imageData
+        saveToPersistentStore()
     }
     
     // TODO: - Add Persistence Methods
+    private func saveToPersistentStore() {
+        guard let url = persistentStoreURL else { return }
+        let plistEncoder = PropertyListEncoder()
+        
+        do {
+            let photosData = try plistEncoder.encode(photos)
+            try photosData.write(to: url)
+        } catch {
+            NSLog("There was an error saving to persistent store: \(error)")
+        }
+    }
+    
+    private func loadFromPersistentStore() {
+        guard let url = persistentStoreURL,
+            FileManager.default.fileExists(atPath: url.path) else { return }
+        let plistDecoder = PropertyListDecoder()
+        
+        do {
+            let photosData = try Data(contentsOf: url)
+            photos = try plistDecoder.decode([Photo].self, from: photosData)
+        } catch {
+            NSLog("There was an error loading from persistent store: \(error)")
+        }
+    }
+    
+    
+    private var persistentStoreURL: URL? {
+        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let photosFile = "photos.plist"
+        
+        return documentsURL.appendingPathComponent(photosFile)
+    }
 }

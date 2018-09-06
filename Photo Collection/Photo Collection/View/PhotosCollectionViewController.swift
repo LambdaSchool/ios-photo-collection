@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Properties
     let photoController = PhotoController()
@@ -31,9 +31,20 @@ class PhotosCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
         let photo = photoController.photos[indexPath.item]
         
+        cell.themeHelper = themeHelper
         cell.photo = photo
     
         return cell
+    }
+    
+    // MARK: - UI Collection View Delegate Flow Layout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //Get the photo for the cell
+        let photo = photoController.photos[indexPath.item]
+        //Calculate the size based on the aspect ratio of the image
+        let size  = CGSize(width: 160, height: (160 * photo.aspect) + 30)
+        
+        return size
     }
     
     // MARK: - Navigation
@@ -66,14 +77,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     // MARK: - Private Utility Methods
     func setTheme() {
-        guard let theme = themeHelper.themePreference else { return }
+        guard themeHelper.themePreference != nil else { return }
         
-        if theme == "Light" {
-            collectionView?.backgroundColor = .white
-            navigationController?.navigationBar.barStyle = .default
-        } else {
-            collectionView?.backgroundColor = .darkGray
-            navigationController?.navigationBar.barStyle = .black
-        }
+        collectionView?.backgroundColor = ThemeHelper.backgroundColor
+        navigationController?.navigationBar.barStyle = ThemeHelper.navBarColor
+
     }
 }
