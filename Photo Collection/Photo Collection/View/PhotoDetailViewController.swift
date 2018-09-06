@@ -11,6 +11,7 @@ import Photos
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // MARK: - Properties
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
@@ -19,7 +20,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addPhotoButton: UIButton!
     
-    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,12 +29,16 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
 
     // MARK: - UI Methods
     @IBAction func addPhoto(_ sender: Any) {
+        // Check authorization status for the photo library
         let status = PHPhotoLibrary.authorizationStatus()
         
         if status == .authorized {
+            // If authorized, present the image picker
             presentImagePickerController()
         } else if status == .notDetermined {
+            // If it is not determined, ask for authorization
             PHPhotoLibrary.requestAuthorization { (status) in
+                //If it comes back as authorized, present the image picker
                 if status == .authorized {
                     self.presentImagePickerController()
                 }
@@ -70,7 +75,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: Private Utility Methods
     private func updateViews() {
-        //addPhotoButton.setTitle("Add Photo", for: .normal)
         setTheme()
         guard let photo = photo else {
             title = "Add Photo"

@@ -28,4 +28,6 @@ class PhotoController {
         photos[index].title = title
         photos[index].imageData = imageData
     }
+    
+    // TODO: - Add Persistence Methods
 }

@@ -13,6 +13,7 @@ class ThemeSelectionViewController: UIViewController {
     // MARK: - Properties
     var themeHelper: ThemeHelper?
 
+    // MARK: - UI Methods
     @IBAction func selectDarkTheme(_ sender: Any) {
         themeHelper?.setThemePreferenceToDark()
         

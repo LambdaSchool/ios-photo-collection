@@ -9,6 +9,7 @@
 import Foundation
 
 struct Photo: Equatable {
+    // MARK: - Properties
     var imageData: Data
     var title: String
 }
