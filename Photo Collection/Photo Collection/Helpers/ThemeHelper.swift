@@ -30,6 +30,6 @@ class ThemeHelper {
     }
     
     var themePreference: String? {
-        UserDefaults.standard.string(forKey: themePreferenceKey)
+        return UserDefaults.standard.string(forKey: themePreferenceKey)
     }
 }
