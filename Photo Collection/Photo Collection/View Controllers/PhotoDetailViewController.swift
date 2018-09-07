@@ -18,7 +18,8 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     private func setTheme() {
         guard let pref = themeHelper?.themePreference else { return }
-        view.backgroundColor = pref == "dark" ? .darkGray : .white
+        view.backgroundColor = pref == "dark" ? UIColor.darkGray : .white
+        photoTitleTextField.textColor = pref == "dark" ? .white : .darkGray
     }
     
     private func updateViews() {
@@ -88,7 +89,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        photoImageView.image = image
+    }
     
     var photoController: PhotoController?
     var photo: Photo?
