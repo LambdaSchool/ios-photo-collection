@@ -11,7 +11,7 @@ import Foundation
 class ThemeHelper {
     
     init() {
-        if themPreference == nil {
+        if themePreference == nil {
             setThemePreferenceToDark()
         }
     }
@@ -26,7 +26,7 @@ class ThemeHelper {
         UserDefaults.standard.set("Blue", forKey: themePreferenceKey)
     }
     
-    var themPreference: String? {
+    var themePreference: String? {
         return UserDefaults.standard.string(forKey: themePreferenceKey)
     }
 }
