@@ -7,35 +7,93 @@
 //
 
 import UIKit
+import Photos
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateViews()
+    }
     
     func setTheme() {
+        guard let themeHelper = themeHelper else { return }
         
+        let themePreference = themeHelper.themePreferenceKey
+        
+        if themePreference == "Dark" {
+            view.backgroundColor = UIColor.lightGray
+        } else if themePreference == "Yellow" {
+            view.backgroundColor = UIColor.yellow
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    private func updateViews() {
+        setTheme()
+        
+        guard let photo = photo else {
+            title = "Create Photo"
+            return }
+        
+        title = ""
+        
+        photoImageView.image = UIImage(data: photo.imageData)
+        addPhotoButton.setTitle("Change Button", for: .normal)
+        titleTextField.text = photo.title
     }
-     
-     you do it in the “didFinishPickingMediaWithInfo method
-     You have to adopt UIImagePickerControllerDelegate
-     
-     From Jason Modisett to Everyone: (07:34 PM)
-     
-     picker.dismiss(animated: true, completion: nil)                  guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }                  photoImageView.image = image
-     
-    */
     
     @IBAction func savePhoto(_ sender: Any) {
+        guard let title = titleTextField.text,
+            let photoImage = photoImageView.image,
+            let imageData = UIImagePNGRepresentation(photoImage) else { return }
+        
+        if let photo = photo {
+            //Update it.
+            photoController?.update(photo: photo, imageData: imageData, title: title)
+            
+        } else {
+            //Create a new one.
+            photoController?.create(imageData: imageData, title: title)
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addPhoto(_ sender: Any) {
+        
+        let status = PHPhotoLibrary.authorizationStatus()
+        
+        if status == .authorized {
+            presentImagePickerController()
+        } else if status == .notDetermined {
+            PHPhotoLibrary.requestAuthorization { (authorizationStatus) in
+                if authorizationStatus == .authorized {
+                    self.presentImagePickerController()
+                }
+            }
+        }
+    }
+
+
+    func presentImagePickerController() {
+        
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        
+        photoImageView.image = image
     }
     
     var photo: Photo?

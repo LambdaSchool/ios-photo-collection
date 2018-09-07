@@ -10,7 +10,14 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView?.reloadData()
+        setTheme()
+    }
 
     // MARK: UICollectionViewDataSource
 
@@ -28,12 +35,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     func setTheme() {
-        guard let themePreference = themeHelper.themePreferenceKey else { return }
+        let themePreference = themeHelper.themePreference
+        if themePreference == nil { return }
         
         if themePreference == "Dark" {
-            self.backgroundColor = UIColor.darkGray
+            collectionView?.backgroundColor = UIColor.lightgray
         } else if themePreference == "Yellow" {
-            self.backgroundColor == UIColor.yellow
+            collectionView?.backgroundColor = UIColor.yellow
         }
         
     }
@@ -44,7 +52,8 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == "ViewPhoto" {
             guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
             
-            let indexPath = collectionView?.indexPathsForSelectedItems.first
+            guard let indexPaths = collectionView?.indexPathsForSelectedItems,
+                let indexPath = indexPaths.first else { return }
             let photo = photoController.photos[indexPath.item]
             
             destinationVC.photoController = photoController
