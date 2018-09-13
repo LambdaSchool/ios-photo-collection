@@ -12,6 +12,7 @@
 		822048CF214AECF500E36DAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822048CD214AECF500E36DAF /* Main.storyboard */; };
 		822048D1214AECF700E36DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822048D0214AECF700E36DAF /* Assets.xcassets */; };
 		822048D4214AECF700E36DAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822048D2214AECF700E36DAF /* LaunchScreen.storyboard */; };
+		822048DD214AED6700E36DAF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822048DC214AED6700E36DAF /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		822048D0214AECF700E36DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		822048D3214AECF700E36DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		822048D5214AECF700E36DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		822048DC214AED6700E36DAF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +56,9 @@
 		822048C8214AECF500E36DAF /* Photo-Collection */ = {
 			isa = PBXGroup;
 			children = (
-				822048CB214AECF500E36DAF /* ViewController.swift */,
-				822048CD214AECF500E36DAF /* Main.storyboard */,
+				822048DF214AED7300E36DAF /* View Controller */,
+				822048DE214AED6B00E36DAF /* View */,
+				822048E0214AED7A00E36DAF /* Model */,
 				822048DB214AED0100E36DAF /* Supporting files */,
 			);
 			path = "Photo-Collection";
@@ -70,6 +73,30 @@
 				822048D5214AECF700E36DAF /* Info.plist */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		822048DE214AED6B00E36DAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				822048CD214AECF500E36DAF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		822048DF214AED7300E36DAF /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				822048CB214AECF500E36DAF /* ViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		822048E0214AED7A00E36DAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				822048DC214AED6700E36DAF /* Photo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822048DD214AED6700E36DAF /* Photo.swift in Sources */,
 				822048CC214AECF500E36DAF /* ViewController.swift in Sources */,
 				822048CA214AECF500E36DAF /* AppDelegate.swift in Sources */,
 			);
