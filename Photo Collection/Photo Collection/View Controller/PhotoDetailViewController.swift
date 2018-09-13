@@ -20,6 +20,9 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var themeHelper: ThemeHelper?
     
     func updateViews(){
+        
+        guard isViewLoaded else {return}
+        setTheme()
         if let photo = photo {
             navigationItem.title = photo.title
             imageView.image = UIImage(data: photo.imageData)
@@ -34,15 +37,20 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         view?.backgroundColor = UIColor(named: themePref)
     }
     
+   
     @IBAction func save(_ sender: Any) {
-        guard let title = textField.text,
-            let imageData =  UIImagePNGRepresentation(imageView.image!) else {return}
+    guard let title = textField.text,
+            let image = imageView.image,
+            let imageData =  UIImagePNGRepresentation(image) else {return}
         if let photo = photo{
             photoController?.updatePhoto(photo: photo, title: title, imageData: imageData)
         }else{
             photoController?.createPhoto(title: title, imageData: imageData)
         }
+        navigationController?.popViewController(animated: true)
     }
+    
+    
     @IBAction func addPhoto(_ sender: Any) {
         PHPhotoLibrary.requestAuthorization { (permission) in
             if permission == .authorized {

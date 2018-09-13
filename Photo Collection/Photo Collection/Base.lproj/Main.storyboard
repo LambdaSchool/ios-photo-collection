@@ -151,7 +151,7 @@
                     <navigationItem key="navigationItem" title="Title" id="LMk-ov-QM4">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="CKg-y0-4R6">
                             <connections>
-                                <action selector="save:" destination="nZe-B8-a6l" id="pYx-mC-90C"/>
+                                <action selector="save:" destination="nZe-B8-a6l" id="b4P-ro-J4c"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
