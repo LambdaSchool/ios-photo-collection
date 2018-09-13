@@ -10,7 +10,14 @@ import UIKit
 import Photos
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-   
- 
-
+    
+    var photo: Photo?
+    var photoController: PhotoController?
+    var themeHelper: ThemeHelper?
+    
+    @IBAction func save(_ sender: Any) {
+    }
+    @IBOutlet weak var addPhoto: UIButton!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
 }

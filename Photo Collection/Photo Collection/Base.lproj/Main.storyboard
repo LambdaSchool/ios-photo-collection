@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TqI-hn-jE2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TqI-hn-jE2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,8 +46,8 @@
                                     </subviews>
                                 </view>
                                 <connections>
-                                    <outlet property="imageView" destination="TEF-Hj-VpU" id="Qpi-tL-5d8"/>
-                                    <outlet property="label" destination="bbu-TZ-uTn" id="k2V-Yo-XcR"/>
+                                    <outlet property="imageView" destination="TEF-Hj-VpU" id="F6X-pV-cyw"/>
+                                    <outlet property="textLabel" destination="bbu-TZ-uTn" id="jBl-Gd-Mlt"/>
                                     <segue destination="nZe-B8-a6l" kind="show" identifier="showPhoto" id="dwJ-W9-2Uy"/>
                                 </connections>
                             </collectionViewCell>
@@ -96,15 +96,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dark"/>
                                 <connections>
-                                    <action selector="selectDarkTheme:" destination="5K0-iz-iC6" eventType="touchUpInside" id="NI2-2I-TRE"/>
+                                    <action selector="selectDarkTheme:" destination="5K0-iz-iC6" eventType="touchUpInside" id="aqT-g0-pDd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSO-zb-dh8">
-                                <rect key="frame" x="262" y="155" width="31" height="30"/>
+                                <rect key="frame" x="263" y="155" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Blue"/>
+                                <state key="normal" title="Red"/>
                                 <connections>
-                                    <action selector="selectYourColorHereTheme:" destination="5K0-iz-iC6" eventType="touchUpInside" id="Vys-Xk-ilW"/>
+                                    <action selector="selectRedTheme:" destination="5K0-iz-iC6" eventType="touchUpInside" id="itE-8z-WMq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,9 +132,6 @@
                                 <rect key="frame" x="151" y="425" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Photo"/>
-                                <connections>
-                                    <action selector="addPhotoButton:" destination="nZe-B8-a6l" eventType="touchUpInside" id="bX4-Ys-xMJ"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DsV-yr-lG0">
                                 <rect key="frame" x="16" y="463" width="343" height="30"/>
@@ -151,14 +148,15 @@
                     <navigationItem key="navigationItem" title="Title" id="LMk-ov-QM4">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="CKg-y0-4R6">
                             <connections>
-                                <action selector="Save:" destination="nZe-B8-a6l" id="xQZ-RJ-2am"/>
+                                <action selector="save:" destination="nZe-B8-a6l" id="pYx-mC-90C"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="Iuq-Kx-qWU" id="b5M-0D-lqn"/>
-                        <outlet property="textField" destination="DsV-yr-lG0" id="QcY-9V-5gH"/>
+                        <outlet property="addPhoto" destination="dUh-ga-3wl" id="4ou-YV-BU1"/>
+                        <outlet property="imageView" destination="Iuq-Kx-qWU" id="uJv-LJ-Qt5"/>
+                        <outlet property="textField" destination="DsV-yr-lG0" id="LJ8-jh-VbK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcG-E9-qMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,6 +183,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dwJ-W9-2Uy"/>
+        <segue reference="91m-F0-C4Q"/>
     </inferredMetricsTieBreakers>
 </document>

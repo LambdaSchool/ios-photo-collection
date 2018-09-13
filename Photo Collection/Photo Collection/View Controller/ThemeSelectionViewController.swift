@@ -9,8 +9,12 @@
 import UIKit
 
 class ThemeSelectionViewController: UIViewController {
-
-
-
     
+    var themeHelper: ThemeHelper?
+   
+    @IBAction func selectDarkTheme(_ sender: Any) {
+    }
+    
+    @IBAction func selectRedTheme(_ sender: Any) {
+    }
 }
