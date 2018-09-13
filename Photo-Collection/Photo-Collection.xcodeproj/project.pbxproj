@@ -14,6 +14,7 @@
 		822048D4214AECF700E36DAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822048D2214AECF700E36DAF /* LaunchScreen.storyboard */; };
 		822048DD214AED6700E36DAF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822048DC214AED6700E36DAF /* Photo.swift */; };
 		822048E2214AEE1700E36DAF /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822048E1214AEE1700E36DAF /* PhotoController.swift */; };
+		822048E5214AEFAF00E36DAF /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822048E4214AEFAF00E36DAF /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		822048D5214AECF700E36DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		822048DC214AED6700E36DAF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		822048E1214AEE1700E36DAF /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		822048E4214AEFAF00E36DAF /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,11 @@
 		822048C8214AECF500E36DAF /* Photo-Collection */ = {
 			isa = PBXGroup;
 			children = (
-				822048E3214AEE1B00E36DAF /* Model Controller */,
-				822048DF214AED7300E36DAF /* View Controller */,
-				822048DE214AED6B00E36DAF /* View */,
+				822048E4214AEFAF00E36DAF /* ThemeHelper.swift */,
 				822048E0214AED7A00E36DAF /* Model */,
+				822048E3214AEE1B00E36DAF /* Model Controller */,
+				822048DE214AED6B00E36DAF /* View */,
+				822048DF214AED7300E36DAF /* View Controller */,
 				822048DB214AED0100E36DAF /* Supporting files */,
 			);
 			path = "Photo-Collection";
@@ -184,6 +187,7 @@
 				822048DD214AED6700E36DAF /* Photo.swift in Sources */,
 				822048CC214AECF500E36DAF /* ViewController.swift in Sources */,
 				822048E2214AEE1700E36DAF /* PhotoController.swift in Sources */,
+				822048E5214AEFAF00E36DAF /* ThemeHelper.swift in Sources */,
 				822048CA214AECF500E36DAF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
