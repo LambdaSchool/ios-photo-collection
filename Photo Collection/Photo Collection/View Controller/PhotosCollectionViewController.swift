@@ -20,8 +20,16 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == "addPhoto"{
             guard let detailVC = segue.destination as? PhotoDetailViewController else {return}
             detailVC.photoController = photoController
-        }else if segue.identifier = "showPhoto"{
-            guard let detailV
+            detailVC.themeHelper = themeHelper
+        }else if segue.identifier == "showPhoto"{
+            guard let detailVC = segue.destination as? PhotoDetailViewController,
+                let index = collectionView?.indexPathsForVisibleItems.first?.item else {return}
+                let photo = photoController.photos[index]
+                detailVC.photoController = photoController
+                detailVC.photo = photo
+        }else if segue.identifier == "SelectTheme"{
+            guard let detailVC = segue.destination as? ThemeSelectionViewController else {return}
+            detailVC.themeHelper = themeHelper
         }
        
     }

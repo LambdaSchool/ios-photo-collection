@@ -132,6 +132,9 @@
                                 <rect key="frame" x="151" y="425" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="nZe-B8-a6l" eventType="touchUpInside" id="7dt-Ud-TeI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DsV-yr-lG0">
                                 <rect key="frame" x="16" y="463" width="343" height="30"/>
@@ -154,7 +157,6 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addPhoto" destination="dUh-ga-3wl" id="4ou-YV-BU1"/>
                         <outlet property="imageView" destination="Iuq-Kx-qWU" id="uJv-LJ-Qt5"/>
                         <outlet property="textField" destination="DsV-yr-lG0" id="LJ8-jh-VbK"/>
                     </connections>
