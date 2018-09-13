@@ -9,8 +9,13 @@
 import Foundation
 
 struct Photo: Equatable {
-    let imageData: Data
-    let title: String
+    
+    // MARK: - Properties
+    
+    var imageData: Data
+    var title: String
+    
+    // MARK: - Initializer
     
     init(title: String, imageData: Data) {
         self.title = title
