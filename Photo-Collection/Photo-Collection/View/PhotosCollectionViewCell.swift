@@ -10,12 +10,18 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoTextLabel: UILabel!
+    
+    // MARK: - Computed properties
     
     var photo: Photo? {
         didSet { updateViews() }
     }
+    
+    // MARK: - Functions
     
     private func updateViews() {
         guard let title = photo?.title,

@@ -11,6 +11,8 @@ import Photos
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // MARK: - Properties
+    
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
@@ -19,10 +21,20 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var addPhotoButtonOutlet: UIButton!
     @IBOutlet weak var photoTextField: UITextField!
     
+    // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+    }
+    
+    func updateViews() {
+        // setTheme()
+        
+        if let photo = photo {
+            photoTextField.text = photo.title
+            photoImageView.image = UIImage(data: photo.imageData)
+        }
     }
     
     @IBAction func addPhotoTapped(_ sender: Any) {
@@ -50,15 +62,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             photoController?.createPhoto(title: title, imageData: imageData)
         }
         navigationController?.popViewController(animated: true)
-    }
-    
-    func updateViews() {
-        // setTheme()
-        
-        if let photo = photo {
-            photoTextField.text = photo.title
-            photoImageView.image = UIImage(data: photo.imageData)
-        }
     }
     
 //    Create a setTheme function.

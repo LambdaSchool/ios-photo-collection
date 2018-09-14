@@ -12,12 +12,29 @@ private let reuseIdentifier = "PhotoCollectionCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
+    // MARK: - Properties
+    
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
 
+    // MARK: - Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    }
+    
+    
+    //    Create a function called setTheme(). This function should:
+    //    Get the current themePreference from the themeHelper.
+    //    Make sure that it has a value, or return out of the function.
+    //    Based on the value, change the collection view's background color depending on whether the theme is dark
+    //    or the other color you selected.
+    
+    func setTheme() {
+        guard let currentTheme = themeHelper.themePreference else { return }
+        
+        if
     }
 
     // MARK: - Navigation
@@ -59,17 +76,4 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         return cell
     }
-
-//    Create a function called setTheme(). This function should:
-//    Get the current themePreference from the themeHelper.
-//    Make sure that it has a value, or return out of the function.
-//    Based on the value, change the collection view's background color depending on whether the theme is dark
-//    or the other color you selected.
-    
-    func setTheme() {
-        guard let currentTheme = themeHelper.themePreference else { return }
-
-        if
-    }
-
 }
