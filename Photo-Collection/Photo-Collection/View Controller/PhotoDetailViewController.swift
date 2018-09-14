@@ -34,6 +34,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         if let photo = photo {
             photoTextField.text = photo.title
             photoImageView.image = UIImage(data: photo.imageData)
+            self.navigationItem.title = "Edit Photo"
+            addPhotoButtonOutlet.setTitle("Change Photo", for: .normal)
+        } else {
+            self.navigationItem.title = "Create Photo"
+            addPhotoButtonOutlet.setTitle("Add Photo", for: .normal)
         }
     }
     
@@ -53,12 +58,13 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func saveBarButtonTapped(_ sender: Any) {
+        guard let title = photoTextField.text, title != "",
+              let image = photoImageView.image,
+              let imageData = UIImageJPEGRepresentation(image, 1.0) else { return }
         
         if let photo = photo {
-            photoController?.updatePhoto(photo: photo, title: photo.title, imageData: photo.imageData)
+            photoController?.updatePhoto(photo: photo, title: title, imageData: imageData)
         } else {
-            guard let title = photo?.title,
-                  let imageData = photo?.imageData else { return}
             photoController?.createPhoto(title: title, imageData: imageData)
         }
         navigationController?.popViewController(animated: true)

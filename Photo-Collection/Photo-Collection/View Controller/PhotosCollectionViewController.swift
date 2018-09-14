@@ -22,6 +22,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView?.reloadData()
     }
     
     
@@ -31,11 +32,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     //    Based on the value, change the collection view's background color depending on whether the theme is dark
     //    or the other color you selected.
     
-    func setTheme() {
-        guard let currentTheme = themeHelper.themePreference else { return }
-        
-        if
-    }
+//    func setTheme() {
+//        guard let currentTheme = themeHelper.themePreference else { return }
+//
+//    }
 
     // MARK: - Navigation
 
