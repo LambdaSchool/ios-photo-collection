@@ -69,7 +69,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="jFQ-H8-pAd">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="kme-t4-fiw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="kme-t4-fiw">
+                            <connections>
+                                <segue destination="qk8-Ka-9Xj" kind="presentation" identifier="SelectThemeSegua" id="w9C-x7-WPl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uOt-Rd-oyu">
                             <connections>
                                 <segue destination="uw6-ET-8J6" kind="show" identifier="AddButtonSegue" id="Ltw-i7-Vwu"/>
@@ -135,7 +139,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoe-wh-xuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="-56"/>
+            <point key="canvasLocation" x="1732" y="222"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="ydV-w5-05c">
+            <objects>
+                <viewController id="qk8-Ka-9Xj" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rt4-Mr-OcL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f8l-Lt-gNf">
+                                <rect key="frame" x="30" y="60" width="315" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you woul like to use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMa-IY-OCr">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="25"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6D2-hp-69h">
+                                        <rect key="frame" x="0.0" y="33" width="315" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDp-s5-YWg">
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="37"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                                <state key="normal" title="Dark">
+                                                    <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="qk8-Ka-9Xj" eventType="touchUpInside" id="nSa-JY-rFP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-oc-owp">
+                                                <rect key="frame" x="161.5" y="0.0" width="153.5" height="37"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                                <state key="normal" title="Aqua">
+                                                    <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectAquaTheme:" destination="qk8-Ka-9Xj" eventType="touchUpInside" id="AB1-bK-IUr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f8l-Lt-gNf" firstAttribute="leading" secondItem="SHG-9J-EG7" secondAttribute="leading" constant="30" id="46E-mp-4rf"/>
+                            <constraint firstItem="SHG-9J-EG7" firstAttribute="trailing" secondItem="f8l-Lt-gNf" secondAttribute="trailing" constant="30" id="TH6-Iz-jXf"/>
+                            <constraint firstItem="f8l-Lt-gNf" firstAttribute="top" secondItem="SHG-9J-EG7" secondAttribute="top" constant="40" id="xSp-Ck-FTC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SHG-9J-EG7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwj-Cw-dVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="-475"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r0i-uk-lmR">
