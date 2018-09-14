@@ -27,19 +27,19 @@ class ThemeHelper {
     // MARK: - Computed properties
     
     var themePreference: String? {
-        let userDefaults = UserDefaults.standard
-        return userDefaults.string(forKey: themePreferenceKey)
+        let defaults = UserDefaults.standard
+        return defaults.string(forKey: themePreferenceKey)
     }
     
     // MARK: -Functions
     
     func setThemePreferenceToDark() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set("Dark", forKey: themePreferenceKey)
+        let defaults = UserDefaults.standard
+        defaults.set("Dark", forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToAqua() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set("Aqua", forKey: themePreferenceKey)
+        let defaults = UserDefaults.standard
+        defaults.set("Aqua", forKey: themePreferenceKey)
     }
 }
