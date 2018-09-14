@@ -17,6 +17,7 @@
 		F133A083214AFC76007BBCF6 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133A082214AFC76007BBCF6 /* PhotosCollectionViewController.swift */; };
 		F133A085214B00C8007BBCF6 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133A084214B00C8007BBCF6 /* PhotoDetailViewController.swift */; };
 		F133A087214B04AF007BBCF6 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133A086214B04AF007BBCF6 /* ThemeSelectionViewController.swift */; };
+		F133A089214B0D20007BBCF6 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133A088214B0D20007BBCF6 /* PhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F133A082214AFC76007BBCF6 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		F133A084214B00C8007BBCF6 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		F133A086214B04AF007BBCF6 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
+		F133A088214B0D20007BBCF6 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		F133A07B214AE216007BBCF6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F133A088214B0D20007BBCF6 /* PhotosCollectionViewCell.swift */,
 				F133A082214AFC76007BBCF6 /* PhotosCollectionViewController.swift */,
 				F133A084214B00C8007BBCF6 /* PhotoDetailViewController.swift */,
 				F133A086214B04AF007BBCF6 /* ThemeSelectionViewController.swift */,
@@ -195,6 +198,7 @@
 				F133A07F214AE30C007BBCF6 /* PhotoController.swift in Sources */,
 				F133A081214AEDE7007BBCF6 /* ThemeHelper.swift in Sources */,
 				F133A087214B04AF007BBCF6 /* ThemeSelectionViewController.swift in Sources */,
+				F133A089214B0D20007BBCF6 /* PhotosCollectionViewCell.swift in Sources */,
 				F133A083214AFC76007BBCF6 /* PhotosCollectionViewController.swift in Sources */,
 				F133A066214AE186007BBCF6 /* AppDelegate.swift in Sources */,
 			);

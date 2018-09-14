@@ -10,20 +10,18 @@ import Foundation
 
 class ThemeHelper {
     
-    let themePreferenceKey: String
+    let themePreferenceKey = ""
     
     var themePreference: String? {
-        return themePreferenceKey
+        return UserDefaults.standard.string(forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToDark() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set("Dark", forKey: themePreferenceKey)
+        UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
     }
     
-    func setThemePreferenceToRed() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set("Red", forKey: themePreferenceKey)
+    func setThemePreferenceToLight() {
+        UserDefaults.standard.set("Light", forKey: themePreferenceKey)
     }
     
 }
