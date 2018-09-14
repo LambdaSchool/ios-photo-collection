@@ -22,19 +22,21 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView?.reloadData()
+        setTheme()
     }
+
+    // MARK: - Set theme
     
-    
-    //    Create a function called setTheme(). This function should:
-    //    Get the current themePreference from the themeHelper.
-    //    Make sure that it has a value, or return out of the function.
-    //    Based on the value, change the collection view's background color depending on whether the theme is dark
-    //    or the other color you selected.
-    
-//    func setTheme() {
-//        guard let currentTheme = themeHelper.themePreference else { return }
-//
-//    }
+    func setTheme() {
+        
+        if let currentTheme = themeHelper.themePreference {
+            if currentTheme == "Aqua" {
+                self.collectionView?.backgroundColor = .blue
+            } else if currentTheme == "Dark" {
+                self.collectionView?.backgroundColor = .gray
+            }
+        }
+    }
 
     // MARK: - Navigation
     

@@ -29,7 +29,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func updateViews() {
-        // setTheme()
+        setTheme()
         
         if let photo = photo {
             photoTextField.text = photo.title
@@ -70,13 +70,18 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         navigationController?.popViewController(animated: true)
     }
     
-//    Create a setTheme function.
-//    This should do the same thing as the setTheme method in your collection view controller,
-//    except that it should change the view controller's view's background color instead.
+    // MARK: - Set theme
     
-//    func setTheme() {
-//
-//    }
+    func setTheme() {
+        
+        if let currentTheme = themeHelper?.themePreference {
+            if currentTheme == "Aqua" {
+                self.view.backgroundColor = .blue
+            } else if currentTheme == "Dark" {
+                self.view.backgroundColor = .gray
+            }
+        }
+    }
     
     // MARK: - Image picker
     
