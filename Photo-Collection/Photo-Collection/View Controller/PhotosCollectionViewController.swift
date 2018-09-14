@@ -19,9 +19,8 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // MARK: - Functions
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         collectionView?.reloadData()
     }
     
@@ -38,10 +37,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 //    }
 
     // MARK: - Navigation
-
-//    The segue from the cell should pass the themeController, photoController, and the photo.
-//    The segue from the "Add" bar button item should pass the the themeController and the photoController.
-//    The segue from the "Select Theme" bar button item should pass the themeController.
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CollectionCellSegue" {
@@ -49,7 +44,12 @@ class PhotosCollectionViewController: UICollectionViewController {
             
             destionationVC.themeHelper = themeHelper
             destionationVC.photoController = photoController
-            //destionationVC.photo = 
+            
+            guard let cell = sender as? PhotosCollectionViewCell,
+                  let index = collectionView?.indexPath(for: cell) else { return }
+            
+            let thePhoto = photoController.photos[index.item]
+            destionationVC.photo = thePhoto
             
         } else if segue.identifier == "AddButtonSegue" {
             guard let destionationVC = segue.destination as? PhotoDetailViewController else { return }
@@ -69,10 +69,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
         let thePhoto = photoController.photos[indexPath.item]
         
-        cell.photo = thePhoto
+        cell.photoTextLabel.text = thePhoto.title
+        cell.photoImageView.image = UIImage(data: thePhoto.imageData)
         
         return cell
     }
