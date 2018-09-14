@@ -21,6 +21,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     // MARK: - Navigation
+
+//    The segue from the cell should pass the themeController, photoController, and the photo.
+//    The segue from the "Add" bar button item should pass the the themeController and the photoController.
+//    The segue from the "Select Theme" bar button item should pass the themeController.
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CollectionCellSegue" {
@@ -55,11 +59,17 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         return cell
     }
+
+//    Create a function called setTheme(). This function should:
+//    Get the current themePreference from the themeHelper.
+//    Make sure that it has a value, or return out of the function.
+//    Based on the value, change the collection view's background color depending on whether the theme is dark
+//    or the other color you selected.
     
-//    func setTheme() {
-//        guard let currentTheme = themeHelper.themePreference else { return }
-//
-//        if
-//    }
+    func setTheme() {
+        guard let currentTheme = themeHelper.themePreference else { return }
+
+        if
+    }
 
 }
