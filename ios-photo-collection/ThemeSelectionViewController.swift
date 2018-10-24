@@ -1,20 +1,15 @@
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class ThemeSelectionViewController: UIViewController {
 
-    var photoController: PhotoController?
-    var photo: Photo?
     var themeHelper: ThemeHelper?
     
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var textField: UITextField!
-    
-    @IBAction func addPhotoButton(_ sender: Any) {
+    @IBAction func selectDarkTheme(_ sender: Any) {
     }
     
-    @IBAction func savePhotoButton(_ sender: Any) {
+    @IBAction func selectYourColorHereTheme(_ sender: Any) {
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

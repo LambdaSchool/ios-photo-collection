@@ -18,6 +18,7 @@
 		488A9E2A217FCDEA00CB1FA2 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A9E29217FCDEA00CB1FA2 /* PhotosCollectionViewCell.swift */; };
 		488A9E2C217FCDFB00CB1FA2 /* PhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488A9E2B217FCDFB00CB1FA2 /* PhotosCollectionViewCell.xib */; };
 		488A9E2E217FD09C00CB1FA2 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A9E2D217FD09C00CB1FA2 /* PhotoDetailViewController.swift */; };
+		488A9E30217FE0E300CB1FA2 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A9E2F217FE0E300CB1FA2 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		488A9E29217FCDEA00CB1FA2 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		488A9E2B217FCDFB00CB1FA2 /* PhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		488A9E2D217FD09C00CB1FA2 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		488A9E2F217FE0E300CB1FA2 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				488A9E29217FCDEA00CB1FA2 /* PhotosCollectionViewCell.swift */,
 				488A9E2B217FCDFB00CB1FA2 /* PhotosCollectionViewCell.xib */,
 				488A9E2D217FD09C00CB1FA2 /* PhotoDetailViewController.swift */,
+				488A9E2F217FE0E300CB1FA2 /* ThemeSelectionViewController.swift */,
 				488A9E13217FBA1500CB1FA2 /* Main.storyboard */,
 				488A9E16217FBA1700CB1FA2 /* Assets.xcassets */,
 				488A9E18217FBA1700CB1FA2 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				488A9E24217FBCA400CB1FA2 /* Photo.swift in Sources */,
+				488A9E30217FE0E300CB1FA2 /* ThemeSelectionViewController.swift in Sources */,
 				488A9E22217FBAB700CB1FA2 /* PhotoController.swift in Sources */,
 				488A9E28217FCC2F00CB1FA2 /* PhotosCollectionViewController.swift in Sources */,
 				488A9E2E217FD09C00CB1FA2 /* PhotoDetailViewController.swift in Sources */,
