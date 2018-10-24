@@ -5,9 +5,13 @@ class ThemeSelectionViewController: UIViewController {
     var themeHelper: ThemeHelper?
     
     @IBAction func selectDarkTheme(_ sender: Any) {
+        setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectYourColorHereTheme(_ sender: Any) {
+        setThemePreferenceToBlue()
+        dismiss(animated: true, completion: nil)
     }
     
     
