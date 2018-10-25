@@ -1,4 +1,5 @@
 import UIKit
+import Photos
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -11,62 +12,78 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func addPhotoButton(_ sender: Any) {
-        //not sure about this
-//        directions: The addImage action should present a UIImagePickerController that
-//        allows the user to select an image to add to the Photo object.
-        
-//        Note: Make sure you request authorization to access the photo library,
-//        and add the "Privacy - Photo Library Usage Description" key-value pair in
-//        the info.plist.
-        
-//        Note: implement the didFinishPickingMediaWithInfo method to get the image the
-//        user selects, then dismiss the image picker.
-        
-        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
-        switch authorizationStatus {
-        case .authorized:
-            presentImagePickerController()
-        default:
-            PHPhotoLibrary.requestAuthorization { status in
-                if status == .authorized {
-                    self.presentImagePickerController()
-                    
-                    didFinishPickingMediaWithInfo: [UIImagePickerController.InfoKey : dismiss])
+        PHPhotoLibrary.requestAuthorization { (permission) in
+            if permission == .authorized {
+                print("User granted us access")
+                
+                DispatchQueue.main.async{
+                    // Get user photo here
+                    self.presentImagePickerController() //closures need self
                 }
             }
         }
     }
     
+    func presentImagePickerController() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self // this specifies that this is the delegate
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //picture chosen and then returns image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return }
+        imageView.image = image // place image chosen to imageview on storyboard
+        
+    }
+    //dismiss
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func savePhotoButton(_ sender: Any) {
         //update the photo if it has a value, or create a new instance of photo using the methods in the photoController
-        guard let index = photos.index(of: photo) else {return}
-        let photoController = PhotoController()
+        guard let title = textField.text,
+            let image = imageView.image,
+            let imageData = image.pngData() else { return }
+        
+        if let photo = photo {
+            photoController?.updatePhoto(photo: photo, title: title)
+        } else {
+            photoController?.createPhoto(imageData: imageData, title: title)
+        }
         navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //You can then put that UIImage in the image view. Call it in the viewDidLoad
-        let imageView = UIImage
+        updateViews()
+        setTheme()
 
     }
     //not sure how to change this so background changes instead of viewcontroller's view's
     func setTheme(){
-        var themePreference: String? {
-            let userDefaults = UserDefaults.standard
-            if let themePreference = userDefaults.string(forKey: themePreferenceKey){
-                return themePreference
-            }
-            else{ return }
+        guard let themePreference = themeHelper?.themePreference else {return}
+        if themePreference == "Dark" {
+            self.view.backgroundColor = .darkGray
+        } else {
+            self.view.backgroundColor = .blue
         }
+        
     }
     func updateViews(){
-        setTheme()
-        
         // You will need to use the UIImage(data: Data) initializer to convert the photo's imageData to a UIImage
-        init(data: Data){
-            self.imageData = UIImage
+        if let photo = photo {
+            navigationItem.title = "Edit Photo"
+            imageView?.image = UIImage(data: photo.imageData)
+            textField?.text = photo.title
+        } else {
+            navigationItem.title = "Add Photo"
+            
         }
     }
-
 }

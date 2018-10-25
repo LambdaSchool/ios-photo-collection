@@ -33,7 +33,7 @@ class PhotosCollectionViewController: UICollectionViewController{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else {return UICollectionViewCell()}
         
         let photo = photos[indexPath.item]
-        cell.imageView.image = photo.imageData
+        cell.imageView.image = UIImage(data: photo.imageData)
         cell.label.text = photo.title
         
         return cell
@@ -43,33 +43,37 @@ class PhotosCollectionViewController: UICollectionViewController{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         // Fetch image
-        let photo = photos[indexPath.row]
+        let photo = photos[indexPath.item]
+        guard let image = UIImage(data: photo.imageData) else { return CGSize(width: 50.0, height: 50.0) }
         // Fetch largest dimension of the image, whether width or height
         let maxDimension = max(image.size.width, image.size.height)
         // Calculate how to scale that largest dimension into `targetDimension`
         let scale = targetDimension / maxDimension
         // Return scaled dimensions
-        return CGSize(width: photo.size.width * scale, height: photo.size.height * scale)
+        return CGSize(width: image.size.width * scale, height: image.size.height * scale)
     }
     
     func setTheme(){
-        var themePreference: String? {
-            let userDefaults = UserDefaults.standard
-            if let themePreference = userDefaults.string(forKey: themePreferenceKey){
-                return themePreference
-            }
-            else{ return }
+        guard let themePreference = themeHelper.themePreference else {return}
+        if themePreference == "Dark" {
+            collectionView.backgroundColor = .darkGray
+        } else {
+            collectionView.backgroundColor = .blue
         }
-    }
+        
+        }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let photoDestination = segue.destination as? PhotoDetailViewController else {return}
-        if segue.identifier == "addSegue"{
-            PhotoDetailViewController = destination
+//        if segue.identifier == "addSegue"{
+//            PhotoDetailViewController = destination
         if segue.identifier == "selectThemeSegue"{
-            ThemeSelectionViewController = destination
+            guard let SelectionViewController = segue.destination as? ThemeSelectionViewController else {return}
+            SelectionViewController.themeHelper = themeHelper
+            
        
             //need to add segue from the cell should pass the themeController, photoController, and the photo for some reason I couldn't make the segue
             }
         }
     }
-}
+
