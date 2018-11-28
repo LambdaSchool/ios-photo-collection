@@ -18,6 +18,7 @@
 		A200EEB521AF50D600741AE2 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200EEB421AF50D600741AE2 /* PhotosCollectionViewController.swift */; };
 		A200EEB721AF516F00741AE2 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200EEB621AF516F00741AE2 /* PhotosCollectionViewCell.swift */; };
 		A200EEB921AF527100741AE2 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200EEB821AF527100741AE2 /* PhotoDetailViewController.swift */; };
+		A200EEBB21AF54F600741AE2 /* ThemesSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200EEBA21AF54F600741AE2 /* ThemesSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A200EEB421AF50D600741AE2 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		A200EEB621AF516F00741AE2 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		A200EEB821AF527100741AE2 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		A200EEBA21AF54F600741AE2 /* ThemesSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				A200EEB021AF35C700741AE2 /* PhotoController.swift */,
 				A200EEB621AF516F00741AE2 /* PhotosCollectionViewCell.swift */,
 				A200EEB821AF527100741AE2 /* PhotoDetailViewController.swift */,
+				A200EEBA21AF54F600741AE2 /* ThemesSelectionViewController.swift */,
 				A200EEB421AF50D600741AE2 /* PhotosCollectionViewController.swift */,
 				A200EEA021AF354400741AE2 /* Main.storyboard */,
 				A200EEA321AF354400741AE2 /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 				A200EEB121AF35C700741AE2 /* PhotoController.swift in Sources */,
 				A200EEB521AF50D600741AE2 /* PhotosCollectionViewController.swift in Sources */,
 				A200EEB321AF3B9A00741AE2 /* ThemeHelper.swift in Sources */,
+				A200EEBB21AF54F600741AE2 /* ThemesSelectionViewController.swift in Sources */,
 				A200EEB921AF527100741AE2 /* PhotoDetailViewController.swift in Sources */,
 				A200EE9D21AF354400741AE2 /* AppDelegate.swift in Sources */,
 			);

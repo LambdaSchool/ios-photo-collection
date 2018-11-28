@@ -1,5 +1,5 @@
 //
-//  PhotoDetailViewController.swift
+//  ThemesSelectionViewController.swift
 //  LambdaPhotoCollection
 //
 //  Created by Austin Cole on 11/28/18.
@@ -8,28 +8,21 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class ThemesSelectionViewController: UIViewController {
 
-    var photoController: PhotoController?
-    var photo: Photo?
     var themeHelper: ThemeHelper?
-    
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var textField: UITextField!
-    
-    
-    @IBAction func addPhoto(_ sender: Any) {
-        
-        
-    }
-    
-    
-    @IBAction func savePhoto(_ sender: Any) {
-    }
-    
 
+    
+    @IBAction func selectDarkTheme(_ sender: Any) {
+    }
+    
+    @IBAction func selectYellowTheme(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
