@@ -12,6 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,6 +56,17 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {fatalError("Unable to retreive layout")}
+        
+        let amount: CGFloat = 32
+        layout.sectionInset = UIEdgeInsets(top:amount, left: amount, bottom: amount, right: amount)
+        layout.itemSize = CGSize(width: 120, height: 120)
+        layout.headerReferenceSize = CGSize(width: collectionView.bounds.width, height: 32)
+        
+        
+    }
     // MARK: UICollectionViewDelegate
 
     /*
