@@ -68,6 +68,7 @@
 			children = (
 				11985BE921AF452200E55053 /* Storyboards */,
 				11985BE821AF450900E55053 /* Model */,
+				11985BF621AF572800E55053 /* View Controllers */,
 				11985BF521AF4A9C00E55053 /* Helpers */,
 				11985BEA21AF454C00E55053 /* Resources */,
 			);
@@ -87,10 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				11985BD621AF437C00E55053 /* Main.storyboard */,
-				11985BED21AF47E100E55053 /* PhotosCollectionViewController.swift */,
-				11985BEF21AF481400E55053 /* PhotosCollectionViewCell.swift */,
-				11985BF121AF486800E55053 /* PhotoDetailViewController.swift */,
-				11985BF321AF488F00E55053 /* ThemeViewController.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -112,6 +109,17 @@
 				11985BEB21AF456700E55053 /* ThemeHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11985BF621AF572800E55053 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11985BED21AF47E100E55053 /* PhotosCollectionViewController.swift */,
+				11985BEF21AF481400E55053 /* PhotosCollectionViewCell.swift */,
+				11985BF121AF486800E55053 /* PhotoDetailViewController.swift */,
+				11985BF321AF488F00E55053 /* ThemeViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PhotoCollection/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhotoCollection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PhotoCollection/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhotoCollection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
