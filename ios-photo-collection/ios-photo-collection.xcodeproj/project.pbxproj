@@ -13,6 +13,8 @@
 		D1F9937221AF487D00DA4B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F9937121AF487D00DA4B07 /* Assets.xcassets */; };
 		D1F9937521AF487D00DA4B07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F9937321AF487D00DA4B07 /* LaunchScreen.storyboard */; };
 		D1F9937D21AF48CC00DA4B07 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F9937C21AF48CC00DA4B07 /* Photo.swift */; };
+		D1F9937F21AF4A6A00DA4B07 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F9937E21AF4A6A00DA4B07 /* PhotoController.swift */; };
+		D1F9938121AF50DB00DA4B07 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F9938021AF50DB00DA4B07 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D1F9937421AF487D00DA4B07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1F9937621AF487D00DA4B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1F9937C21AF48CC00DA4B07 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		D1F9937E21AF4A6A00DA4B07 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		D1F9938021AF50DB00DA4B07 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				D1F9936C21AF487C00DA4B07 /* ViewController.swift */,
 				D1F9936E21AF487C00DA4B07 /* Main.storyboard */,
 				D1F9937C21AF48CC00DA4B07 /* Photo.swift */,
+				D1F9938021AF50DB00DA4B07 /* ThemeHelper.swift */,
+				D1F9937E21AF4A6A00DA4B07 /* PhotoController.swift */,
 				D1F9937121AF487D00DA4B07 /* Assets.xcassets */,
 				D1F9937321AF487D00DA4B07 /* LaunchScreen.storyboard */,
 				D1F9937621AF487D00DA4B07 /* Info.plist */,
@@ -140,6 +146,8 @@
 			files = (
 				D1F9937D21AF48CC00DA4B07 /* Photo.swift in Sources */,
 				D1F9936D21AF487C00DA4B07 /* ViewController.swift in Sources */,
+				D1F9937F21AF4A6A00DA4B07 /* PhotoController.swift in Sources */,
+				D1F9938121AF50DB00DA4B07 /* ThemeHelper.swift in Sources */,
 				D1F9936B21AF487C00DA4B07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
