@@ -14,12 +14,14 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    var photo: Photo?
+    var photo: Photo? {didSet { updateViews()}}
     
     func updateViews() {
         
-        
     }
+
+    
+    
     
     
     
