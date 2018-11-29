@@ -39,12 +39,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return photoController.photos.count
@@ -89,26 +83,27 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let identifier = segue.identifier
-        guard let indexPath = collectionView.indexPathsForSelectedItems else {return}
+        guard let indexPath = collectionView?.indexPathsForSelectedItems?.first else {return}
         
         switch identifier{
         case "selectThemeSegue":
             guard let destination = segue.destination as? ThemeSelectionViewController else {return} // could put fatal errors
-            
-            guard let theme = themeHelper
-            
-            
+            destination.themeHelper = themeHelper
             
         case "showDetail":
             guard let destination = segue.destination as? PhotoDetailViewController else {return} // could put fatal errors
-            guard let theme = segue.destination as? PhotoDetailViewController else {return} // could put fatal errors
+            destination.themeHelper = themeHelper
+            destination.photoController = photoController
+            destination.photo = photoController.photos[indexPath.item]
             
-                let
-                destination.crayon = crayon
         case "addSegue":
             guard let destination = segue.destination as? PhotoDetailViewController else {return} // could put fatal errors
+            
+            destination.themeHelper = themeHelper
+            destination.photoController = photoController
+            
         default:
             return
         }
