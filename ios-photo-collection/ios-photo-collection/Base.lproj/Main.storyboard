@@ -139,6 +139,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="bOg-KI-UyE" id="5uO-UD-qKy"/>
+                        <outlet property="photoTitleTextField" destination="L3J-nf-84Y" id="DFd-EU-T4B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hri-uQ-4e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
