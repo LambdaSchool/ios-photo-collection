@@ -33,6 +33,7 @@ class ThemeHelper: UserDefaults {
     init (){
         
         if themePreference == nil {
+            super.init()
             self.setThemePerferenceToDark()
         }
     }

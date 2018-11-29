@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,18 +41,24 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let reuseIdentifier = "cell"
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else {fatalError()}
+        
+        cell.nameLabel.text = photoController.photos[indexPath.row].title
+        
+        
+        cell.imageView.image = UIImage(data: photoController.photos[indexPath.row].imageData)
         // Configure the cell
     
         return cell
@@ -67,35 +75,43 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         
     }
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    func setTheme(){
+        guard let currentTheme = themeHelper.themePerference else {return}
+        switch currentTheme{
+        case "Dark":
+            self.view.backgroundColor = .black
+        case "Blue":
+            self.view.backgroundColor = .blue
+        default:
+            self.view.backgroundColor = .black
+        }
     }
-    */
+    
+    
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = segue.identifier
+        guard let indexPath = collectionView.indexPathsForSelectedItems else {return}
+        
+        switch identifier{
+        case "selectThemeSegue":
+            guard let destination = segue.destination as? ThemeSelectionViewController else {return} // could put fatal errors
+            
+            guard let theme = themeHelper
+            
+            
+            
+        case "showDetail":
+            guard let destination = segue.destination as? PhotoDetailViewController else {return} // could put fatal errors
+            guard let theme = segue.destination as? PhotoDetailViewController else {return} // could put fatal errors
+            
+                let
+                destination.crayon = crayon
+        case "addSegue":
+            guard let destination = segue.destination as? PhotoDetailViewController else {return} // could put fatal errors
+        default:
+            return
+        }
+    }
 
 }
