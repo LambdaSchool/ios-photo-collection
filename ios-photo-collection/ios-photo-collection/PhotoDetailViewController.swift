@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class PhotoDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,12 +76,11 @@ class PhotoDetailViewController: UIViewController,UIImagePickerControllerDelegat
         } else { return }
     }
     
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         
-        // don't understand this:
-        //        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        //        imageView.image = image
+        let image = info[.originalImage] as? UIImage
+        imageView.image = image
     }
     
     func setTheme(){

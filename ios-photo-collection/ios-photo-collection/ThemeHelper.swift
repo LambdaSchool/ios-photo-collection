@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-class ThemeHelper: UserDefaults {
+class ThemeHelper {
     
     init (){
-        super.init()
         if self.themePreference == nil { self.setThemePerferenceToDark()}
     }
     
