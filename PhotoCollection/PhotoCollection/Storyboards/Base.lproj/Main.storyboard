@@ -109,6 +109,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icf-Jv-tkC">
                                         <rect key="frame" x="0.0" y="301" width="335" height="30"/>
                                         <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhotoButton:" destination="UDy-CH-QW4" eventType="touchUpInside" id="z2a-r6-mgf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -123,8 +126,16 @@
                         <viewLayoutGuide key="safeArea" id="QPM-Cn-1qj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Photo" id="ezF-Zj-sAF">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="fG8-KQ-v4L"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="fG8-KQ-v4L">
+                            <connections>
+                                <action selector="savePhoto:" destination="UDy-CH-QW4" id="oYT-RA-NlL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoCaptionTextField" destination="UuR-DV-jCZ" id="5RU-la-57O"/>
+                        <outlet property="photoImageView" destination="MKc-tg-lUs" id="9wG-gN-b7E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgm-dO-cRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
