@@ -11,17 +11,24 @@ import UIKit
 
 class ThemeHelper: UserDefaults {
     
-    let themePreferenceKey: String
-    var themePreference: String?
-    
-    func setThemePerferenceToDark() {
-        UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
+    init (){
+        if themePreference == nil { setThemePerferenceToDark()}
     }
     
+    let themePreferenceKey: String = "themePreferenceKey"
+    var themePreference: String? {
+        return defaults.string(forKey: themePreferenceKey)
+    }
+    let defaults = UserDefaults.standard
+    
+    
+    func setThemePerferenceToDark() {
+        defaults.set("Dark", forKey: themePreferenceKey)
+    }
     
     // TODO: Test this color to make sure it works
     func setThemePreferenceToBlue(){
-        UserDefaults.standard.set("Blue", forKey: themePreferenceKey)
+        defaults.set("Blue", forKey: themePreferenceKey)
     }
     
     var themePerference: String? {
@@ -30,12 +37,6 @@ class ThemeHelper: UserDefaults {
         }
     }
     
-    init (){
-        
-        if themePreference == nil {
-            super.init()
-            self.setThemePerferenceToDark()
-        }
-    }
+    
     
 }

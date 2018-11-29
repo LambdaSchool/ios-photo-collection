@@ -78,8 +78,10 @@ class PhotoDetailViewController: UIViewController,UIImagePickerControllerDelegat
     
     private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        imageView.image = image
+        
+        // don't understand this:
+        //        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        //        imageView.image = image
     }
     
     func setTheme(){
