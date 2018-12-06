@@ -55,11 +55,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="setDarkTheme:" destination="Xr0-1x-Mgm" eventType="touchUpInside" id="ANY-E7-1em"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-vE-xKM">
                                                 <rect key="frame" x="96" y="0.0" width="39" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Light"/>
+                                                <connections>
+                                                    <action selector="setLightTheme:" destination="Xr0-1x-Mgm" eventType="touchUpInside" id="Yrk-VJ-wTP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -93,7 +99,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3NB-Sf-fCw" customClass="PhotoCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="3NB-Sf-fCw" customClass="PhotoCollectionViewCell">
                                 <rect key="frame" x="37.5" y="0.0" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -122,6 +128,10 @@
                                     <constraint firstItem="pVf-7b-nJ7" firstAttribute="top" secondItem="3NB-Sf-fCw" secondAttribute="topMargin" constant="8" id="YPG-83-nER"/>
                                     <constraint firstItem="pVf-7b-nJ7" firstAttribute="leading" secondItem="3NB-Sf-fCw" secondAttribute="leadingMargin" constant="8" id="cA1-jM-sjR"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="photoImageView" destination="sDz-ey-spX" id="Hl9-po-nIG"/>
+                                    <outlet property="photoTitleLabel" destination="nsd-Av-5Ba" id="Jtj-ar-jnA"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -170,6 +180,9 @@
                                                 <rect key="frame" x="150.5" y="0.0" width="74" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="Add Photo"/>
+                                                <connections>
+                                                    <action selector="addPhoto:" destination="2kb-05-dqc" eventType="touchUpInside" id="Cft-k6-GGs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -191,8 +204,16 @@
                         <viewLayoutGuide key="safeArea" id="6y4-AZ-J0l"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Photo" id="iy3-Pn-8TG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HMO-FS-cNF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HMO-FS-cNF">
+                            <connections>
+                                <action selector="savePhoto:" destination="2kb-05-dqc" id="Mfo-j1-jzy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="cWm-9r-0PN" id="6aO-x1-9a1"/>
+                        <outlet property="photoTitleTextField" destination="OXj-6g-uEJ" id="WvH-nj-ws5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VV1-bU-FTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
