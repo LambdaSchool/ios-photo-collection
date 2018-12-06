@@ -129,12 +129,15 @@
                         <viewLayoutGuide key="safeArea" id="JOr-vz-tHX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Photo" id="YfM-KP-KBS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="V8D-AG-Leq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="V8D-AG-Leq">
+                            <connections>
+                                <action selector="savePhoto:" destination="8qf-Y4-vuD" id="Owx-O3-k31"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="photoImageView" destination="ZP8-Xg-Voh" id="FHT-2g-CnD"/>
                         <outlet property="photoTextField" destination="NAx-sh-seQ" id="QIo-YZ-hHa"/>
-                        <outlet property="savePhoto" destination="V8D-AG-Leq" id="4ft-DZ-b7Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vR-XC-t6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
