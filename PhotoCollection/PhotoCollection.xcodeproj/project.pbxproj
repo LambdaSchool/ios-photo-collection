@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3716A60B21B9CBE800A6A622 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A60A21B9CBE800A6A622 /* Photo.swift */; };
 		3716A60D21B9CE7000A6A622 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A60C21B9CE7000A6A622 /* PhotoModel.swift */; };
+		3716A60F21B9E8F100A6A622 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716A60E21B9E8F100A6A622 /* ThemeHelper.swift */; };
 		377A6E7C21B9B92B0095C95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A6E7B21B9B92B0095C95C /* AppDelegate.swift */; };
 		377A6E8121B9B92B0095C95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377A6E7F21B9B92B0095C95C /* Main.storyboard */; };
 		377A6E8321B9B92E0095C95C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 377A6E8221B9B92E0095C95C /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		3716A60A21B9CBE800A6A622 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3716A60C21B9CE7000A6A622 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		3716A60E21B9E8F100A6A622 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		377A6E7821B9B92B0095C95C /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		377A6E7B21B9B92B0095C95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		377A6E8021B9B92B0095C95C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				3716A60C21B9CE7000A6A622 /* PhotoModel.swift */,
 				377A6E9321B9C6520095C95C /* PhotoCollectionViewCell.swift */,
 				377A6E7F21B9B92B0095C95C /* Main.storyboard */,
+				3716A60E21B9E8F100A6A622 /* ThemeHelper.swift */,
 				377A6E8221B9B92E0095C95C /* Assets.xcassets */,
 				377A6E8421B9B92E0095C95C /* LaunchScreen.storyboard */,
 				377A6E8721B9B92E0095C95C /* Info.plist */,
@@ -157,6 +160,7 @@
 				3716A60D21B9CE7000A6A622 /* PhotoModel.swift in Sources */,
 				377A6E7C21B9B92B0095C95C /* AppDelegate.swift in Sources */,
 				377A6E9021B9C6240095C95C /* PhotoCollectionViewController.swift in Sources */,
+				3716A60F21B9E8F100A6A622 /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        setTheme()
         setupCollectionViewLayout()
         collectionView.reloadData()
         
@@ -51,6 +51,22 @@ class PhotoCollectionViewController: UICollectionViewController {
         let dimension = (collectionView.bounds.width - 36) / 2
         layout.itemSize = CGSize(width: dimension, height: dimension)
        // layout.headerReferenceSize = CGSize(width: collectionView.bounds.width, height: 64)
+    }
+    
+    func setTheme() {
+        //Get the theme preference
+        let theme = ThemeHelper.shared.themePreference
+        
+        switch theme {
+        case "Light":
+            navigationController?.navigationBar.barStyle = .default
+           
+        case "Dark":
+            navigationController?.navigationBar.barStyle = .black
+            
+        default:
+            break
+        }
     }
 
     
