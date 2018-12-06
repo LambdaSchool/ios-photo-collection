@@ -8,13 +8,16 @@
 
 import UIKit
 
-class PhotoCollectionViewController: UICollection
-ViewController {
+class PhotoCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
     }
     
 
