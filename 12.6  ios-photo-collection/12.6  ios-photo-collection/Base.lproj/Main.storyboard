@@ -56,10 +56,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-04-gq4">
                                                 <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                 <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="setDarkTheme:" destination="kzm-4J-1sk" eventType="touchUpInside" id="RIQ-17-lWn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih0-uF-MDp">
                                                 <rect key="frame" x="93" y="0.0" width="35" height="30"/>
                                                 <state key="normal" title="Light"/>
+                                                <connections>
+                                                    <action selector="setLightTheme:" destination="kzm-4J-1sk" eventType="touchUpInside" id="du9-nu-eE8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -93,7 +99,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="k7f-fR-CYR" customClass="PhotoCollectionViewCell" customModule="_2_6__ios_photo_collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="k7f-fR-CYR" customClass="PhotoCollectionViewCell" customModule="_2_6__ios_photo_collection" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="0.0" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -122,6 +128,10 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="U59-mw-eqB" secondAttribute="bottom" constant="8" id="szM-Tv-wob"/>
                                     <constraint firstItem="U59-mw-eqB" firstAttribute="leading" secondItem="k7f-fR-CYR" secondAttribute="leadingMargin" constant="8" id="vNg-1N-JFt"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="photoImageView" destination="uXK-F0-geN" id="ELt-fg-i8i"/>
+                                    <outlet property="photoTitleLabel" destination="lTg-0r-12Y" id="mtO-iE-5AD"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -175,6 +185,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vp-ai-vxR">
                                                 <rect key="frame" x="139.5" y="0.0" width="72" height="30"/>
                                                 <state key="normal" title="Add Photo"/>
+                                                <connections>
+                                                    <action selector="addPhoto:" destination="2h8-aC-EpR" eventType="touchUpInside" id="nSg-dR-LKZ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -190,8 +203,16 @@
                         <viewLayoutGuide key="safeArea" id="Bkh-NC-Je9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Photo" id="BcE-UM-gt8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zkq-f1-arN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zkq-f1-arN">
+                            <connections>
+                                <action selector="savePhoto:" destination="2h8-aC-EpR" id="Ua5-rf-bfK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="9kY-oc-7sw" id="Qoo-G7-Nzz"/>
+                        <outlet property="photoTitleTextField" destination="YXb-uz-HAc" id="GiX-cN-UVs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfy-iF-24i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
