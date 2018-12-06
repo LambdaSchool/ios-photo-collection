@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1Mk-NZ-0zE" customClass="PhotoCollectionViewCell" customModule="MBP_iOS4_PhotoCollection_Dillon_Walkthrough" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="1Mk-NZ-0zE" customClass="PhotoCollectionViewCell" customModule="MBP_iOS4_PhotoCollection_Dillon_Walkthrough" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="0.0" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -54,6 +54,10 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="cei-H6-F9B" secondAttribute="trailing" constant="8" id="Veb-32-OhR"/>
                                     <constraint firstItem="cei-H6-F9B" firstAttribute="top" secondItem="1Mk-NZ-0zE" secondAttribute="topMargin" constant="8" id="qv5-b2-5et"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="photoImageView" destination="gUR-0R-I6L" id="5bu-1O-pYI"/>
+                                    <outlet property="photoTitle" destination="gMR-dt-W2R" id="EoV-Fa-Hz3"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -81,7 +85,7 @@
         <!--Create Photo-->
         <scene sceneID="Wl7-xs-Hsz">
             <objects>
-                <viewController id="8qf-Y4-vuD" customClass="PhotoDetailController" customModule="MBP_iOS4_PhotoCollection_Dillon_Walkthrough" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8qf-Y4-vuD" customClass="PhotoDetailViewController" customModule="MBP_iOS4_PhotoCollection_Dillon_Walkthrough" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aXj-5L-oMf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,6 +105,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlC-Eo-POh">
                                                 <rect key="frame" x="131.5" y="0.0" width="72" height="30"/>
                                                 <state key="normal" title="Add Photo"/>
+                                                <connections>
+                                                    <action selector="addPhoto:" destination="8qf-Y4-vuD" eventType="touchUpInside" id="yJB-EH-5mg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -124,6 +131,11 @@
                     <navigationItem key="navigationItem" title="Create Photo" id="YfM-KP-KBS">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="V8D-AG-Leq"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="ZP8-Xg-Voh" id="FHT-2g-CnD"/>
+                        <outlet property="photoTextField" destination="NAx-sh-seQ" id="QIo-YZ-hHa"/>
+                        <outlet property="savePhoto" destination="V8D-AG-Leq" id="4ft-DZ-b7Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vR-XC-t6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,10 +170,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgK-hs-dF4">
                                                 <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                 <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="setDarkTheme:" destination="VjI-FD-nwt" eventType="touchUpInside" id="fUZ-E3-iL3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY7-Kl-Fqh">
                                                 <rect key="frame" x="124" y="0.0" width="35" height="30"/>
                                                 <state key="normal" title="Light"/>
+                                                <connections>
+                                                    <action selector="setLightTheme:" destination="VjI-FD-nwt" eventType="touchUpInside" id="7Dc-38-iay"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

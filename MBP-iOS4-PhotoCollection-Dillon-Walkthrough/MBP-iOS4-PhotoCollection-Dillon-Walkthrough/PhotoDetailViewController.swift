@@ -8,7 +8,20 @@
 
 import UIKit
 
-class PhotoDetailController: UIViewController {
+class PhotoDetailViewController: UIViewController {
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    @IBOutlet weak var photoTextField: UITextField!
+    
+    
+    @IBAction func addPhoto(_ sender: Any) {
+    }
+    
+    
+    @IBOutlet weak var savePhoto: UIBarButtonItem!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
