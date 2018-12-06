@@ -8,17 +8,12 @@
 
 import UIKit
 
-class PhotCollectionCollectionViewController: UICollectionViewController {
+class PhotoCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+     
         // Do any additional setup after loading the view.
     }
 
@@ -33,25 +28,44 @@ class PhotCollectionCollectionViewController: UICollectionViewController {
     */
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    
+    override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+        collectionView.reloadData()
+        setupCollectionViewLayout()
+        
     }
 
+  
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 
+        return PhotoModel.shared.numberOfPhotos
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
+        let photo = PhotoModel.shared.photo(at: indexPath)
+        let image = UIImage(data: photo.imageData)
+            
+        cell.photoImageView.image = image
+        cell.photoTitleLable.text = photo.title
+            
+     // Configure the cell
     
         return cell
     }
 
+    
+    private func setupCollectionViewLayout() {
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { fatalError("Unable to retrieve layout")}
+        
+        let inset: CGFloat = 12
+        layout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        let dimension = (collectionView.bounds.width - 36) / 2
+        layout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

@@ -13,7 +13,7 @@
         <!--Photo Collection-->
         <scene sceneID="9hW-WX-zBv">
             <objects>
-                <collectionViewController id="IpL-Ws-9gC" customClass="PhotCollectionCollectionViewController" customModule="MBP_iOS4_PhotoCollection_Dillon_Walkthrough" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="IpL-Ws-9gC" customClass="PhotoCollectionViewController" customModule="MBP_iOS4_PhotoCollection_Dillon_Walkthrough" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vEy-AL-Joq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,10 +35,10 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cei-H6-F9B">
                                             <rect key="frame" x="10" y="20" width="280" height="225"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUR-0R-I6L">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="gUR-0R-I6L">
                                                     <rect key="frame" x="0.0" y="0.0" width="268" height="219.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMR-dt-W2R">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMR-dt-W2R">
                                                     <rect key="frame" x="0.0" y="227.5" width="268" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="photoImageView" destination="gUR-0R-I6L" id="5bu-1O-pYI"/>
-                                    <outlet property="photoTitle" destination="gMR-dt-W2R" id="EoV-Fa-Hz3"/>
+                                    <outlet property="photoTitleLable" destination="gMR-dt-W2R" id="gnB-Cu-b5S"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
