@@ -16,6 +16,10 @@ class PhotoModel {
     // MARK: - Properties
     private var photos: [Photo] = []
     
+    var numberOfPhotos : Int {
+        return photos.count
+    }
+    
     // MARK: - CRUD Methods
     func addPhoto(title: String, imageData: Data) {
         let photo = Photo(title: title, imageData: imageData)
