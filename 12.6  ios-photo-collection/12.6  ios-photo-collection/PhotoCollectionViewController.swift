@@ -8,6 +8,7 @@ class PhotoCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
         setupCollectionViewLayout()
+        setTheme()
     }
 
     // MARK: UICollectionViewDataSource
@@ -36,5 +37,24 @@ class PhotoCollectionViewController: UICollectionViewController {
         layout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
         let dimension = (collectionView.bounds.width - 36) / 2
         layout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
+    func setTheme() {
+        let theme = ThemeHelper.shared.themePreference
+        
+        switch theme {
+        case "Light":
+            navigationController?.navigationBar.barStyle = .default
+            // change color of words
+            navigationController?.navigationBar.tintColor = .blue
+            view.backgroundColor = .white
+        case "Dark":
+            navigationController?.navigationBar.barStyle = .black
+            navigationController?.navigationBar.tintColor = .red
+            view.backgroundColor = .darkGray
+            
+        default:
+            break
+        }
     }
 }
