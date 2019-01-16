@@ -57,6 +57,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="p1p-j2-eRM" id="s2Z-s5-Z7i"/>
                                     <outlet property="photoImageView" destination="Zpb-e8-hmL" id="k7F-Hl-7cH"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segueFromCell" id="QuW-hC-1So"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -67,23 +68,70 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="9Z9-po-1Z3">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="52R-Pf-nIR"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="75Q-rc-rWk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="75Q-rc-rWk">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="addButtonSegue" id="UPr-Xq-d9c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aj-pt-43h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="528.79999999999995" y="135.38230884557723"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoCollectionApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotoDetailViewController" customModule="PhotoCollectionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cDX-Zo-G24">
+                                <rect key="frame" x="20" y="84" width="335" height="204"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1na-3e-NVu">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="128"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSI-WO-bda">
+                                        <rect key="frame" x="0.0" y="136" width="335" height="30"/>
+                                        <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhotoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eo6-OC-eud"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbB-5K-07Z">
+                                        <rect key="frame" x="0.0" y="174" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1na-3e-NVu" firstAttribute="top" secondItem="cDX-Zo-G24" secondAttribute="top" id="WVS-4j-hHN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cDX-Zo-G24" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="25h-2g-Sm9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cDX-Zo-G24" secondAttribute="bottom" constant="379" id="akt-0G-MHk"/>
+                            <constraint firstItem="cDX-Zo-G24" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bto-ph-9NE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cDX-Zo-G24" secondAttribute="trailing" constant="20" id="osD-Gc-Pla"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="TRH-9g-W9t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Qby-OH-K4l">
+                            <connections>
+                                <action selector="savePhoto:" destination="BYZ-38-t0r" id="36m-EC-4Vu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoTextField" destination="gbB-5K-07Z" id="Z6I-LQ-sa3"/>
+                        <outlet property="photoImageView" destination="1na-3e-NVu" id="cPn-mT-5N1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,4 +156,7 @@
             <point key="canvasLocation" x="-164" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UPr-Xq-d9c"/>
+    </inferredMetricsTieBreakers>
 </document>
