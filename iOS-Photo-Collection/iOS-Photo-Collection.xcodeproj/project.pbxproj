@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		272C582D21EFC88800F4F29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C582C21EFC88800F4F29C /* AppDelegate.swift */; };
-		272C582F21EFC88800F4F29C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C582E21EFC88800F4F29C /* ViewController.swift */; };
 		272C583221EFC88800F4F29C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272C583021EFC88800F4F29C /* Main.storyboard */; };
 		272C583421EFC88900F4F29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272C583321EFC88900F4F29C /* Assets.xcassets */; };
 		272C583721EFC88900F4F29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272C583521EFC88900F4F29C /* LaunchScreen.storyboard */; };
+		272C583F21EFC9EC00F4F29C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C583E21EFC9EC00F4F29C /* Photo.swift */; };
+		272C584121EFCA5900F4F29C /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C584021EFCA5900F4F29C /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		272C582921EFC88800F4F29C /* iOS-Photo-Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Photo-Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		272C582C21EFC88800F4F29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		272C582E21EFC88800F4F29C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		272C583121EFC88800F4F29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272C583321EFC88900F4F29C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272C583621EFC88900F4F29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272C583821EFC88900F4F29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272C583E21EFC9EC00F4F29C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		272C584021EFCA5900F4F29C /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,30 @@
 			isa = PBXGroup;
 			children = (
 				272C582C21EFC88800F4F29C /* AppDelegate.swift */,
-				272C582E21EFC88800F4F29C /* ViewController.swift */,
 				272C583021EFC88800F4F29C /* Main.storyboard */,
+				272C584221EFCA5D00F4F29C /* Models */,
+				272C584321EFCA6600F4F29C /* Model Controllers */,
 				272C583321EFC88900F4F29C /* Assets.xcassets */,
 				272C583521EFC88900F4F29C /* LaunchScreen.storyboard */,
 				272C583821EFC88900F4F29C /* Info.plist */,
 			);
 			path = "iOS-Photo-Collection";
+			sourceTree = "<group>";
+		};
+		272C584221EFCA5D00F4F29C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				272C583E21EFC9EC00F4F29C /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		272C584321EFCA6600F4F29C /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				272C584021EFCA5900F4F29C /* PhotoController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272C582F21EFC88800F4F29C /* ViewController.swift in Sources */,
+				272C583F21EFC9EC00F4F29C /* Photo.swift in Sources */,
+				272C584121EFCA5900F4F29C /* PhotoController.swift in Sources */,
 				272C582D21EFC88800F4F29C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
