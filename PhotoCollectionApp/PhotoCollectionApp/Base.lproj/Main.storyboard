@@ -67,7 +67,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="9Z9-po-1Z3">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="52R-Pf-nIR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="52R-Pf-nIR">
+                            <connections>
+                                <segue destination="DNk-mj-HAE" kind="presentation" identifier="selectThemeSegue" id="H08-Cj-gBe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="75Q-rc-rWk">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="addButtonSegue" id="UPr-Xq-d9c"/>
@@ -135,7 +139,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440.8" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1217" y="136"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="EtQ-NO-tJe">
+            <objects>
+                <viewController id="DNk-mj-HAE" customClass="ThemeSelectionViewController" customModule="PhotoCollectionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6xu-sG-g1n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the theme you would like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-1R-lJy">
+                                <rect key="frame" x="20" y="72" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eJ-3O-VXx">
+                                <rect key="frame" x="101" y="125" width="33" height="30"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkThemeButton:" destination="DNk-mj-HAE" eventType="touchUpInside" id="Ve5-Iy-CR3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-2u-dZL">
+                                <rect key="frame" x="238" y="125" width="35" height="30"/>
+                                <state key="normal" title="Light"/>
+                                <connections>
+                                    <action selector="selectLightThemeButton:" destination="DNk-mj-HAE" eventType="touchUpInside" id="lIb-2I-aUv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l6Q-6a-x5b" firstAttribute="bottom" secondItem="9eJ-3O-VXx" secondAttribute="bottom" constant="512" id="L3X-3S-z2z"/>
+                            <constraint firstItem="AkE-1R-lJy" firstAttribute="leading" secondItem="l6Q-6a-x5b" secondAttribute="leading" constant="20" id="Zkh-wt-rc4"/>
+                            <constraint firstItem="l6Q-6a-x5b" firstAttribute="bottom" secondItem="8ne-2u-dZL" secondAttribute="bottom" constant="512" id="ayE-0S-mCv"/>
+                            <constraint firstItem="l6Q-6a-x5b" firstAttribute="trailing" secondItem="AkE-1R-lJy" secondAttribute="trailing" constant="20" id="eFp-yp-JgU"/>
+                            <constraint firstItem="l6Q-6a-x5b" firstAttribute="trailing" secondItem="8ne-2u-dZL" secondAttribute="trailing" constant="102" id="eog-6R-oHg"/>
+                            <constraint firstItem="9eJ-3O-VXx" firstAttribute="top" secondItem="AkE-1R-lJy" secondAttribute="bottom" constant="32.5" id="lqQ-zl-HaH"/>
+                            <constraint firstItem="9eJ-3O-VXx" firstAttribute="leading" secondItem="l6Q-6a-x5b" secondAttribute="leading" constant="101" id="mBR-6B-TGB"/>
+                            <constraint firstItem="8ne-2u-dZL" firstAttribute="leading" secondItem="9eJ-3O-VXx" secondAttribute="trailing" constant="104" id="zft-Q8-k1J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l6Q-6a-x5b"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pE-ZF-K2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1896.8" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3s-YZ-0ud">
