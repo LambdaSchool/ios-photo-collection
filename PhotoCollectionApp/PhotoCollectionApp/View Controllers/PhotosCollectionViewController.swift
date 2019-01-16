@@ -62,11 +62,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotosCollectionViewCell
         
         let photo = photoController.photos[indexPath.item]
-        let image = UIImage(data: photo.imageData)
-        cell.photoImageView.image = image
-        cell.descriptionLabel.text = photo.title
-    
-        // Configure the cell
+        cell.photo = photo
     
         return cell
     }

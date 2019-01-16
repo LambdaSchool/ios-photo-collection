@@ -17,6 +17,8 @@ class PhotoController {
     }
     
     func update(photo: Photo, data: Data, string: String){
-        
+        guard let index = photos.index(of: photo) else {return}
+        photos[index].title = string
+        photos[index].imageData = data
     }
 }

@@ -37,19 +37,27 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
-        guard let title = infoTextField.text, !title.isEmpty, let image = photoImageView.image, let imageData = image.pngData() else {return}
+    
+        guard let title = infoTextField.text, !title.isEmpty, let image = photoImageView.image, let imageData = image.pngData() else { return}
+        if let photo = photo {
+            photoController?.update(photo: photo, data: imageData, string: title)
+        } else {
         photoController?.createPhotos(with: imageData, and: title)
+   
+        }
         navigationController?.popViewController(animated: true)
+         
     }
     
     private func updateView(){
         setTheme()
         
-        guard let photo = photo?.imageData else {return}
+        guard let photo = photo else {return}
         
-        let image = UIImage(data: photo)
+        let image = UIImage(data: photo.imageData)
         
         photoImageView.image = image
+        infoTextField.text = photo.title
     }
     
     func setTheme(){
