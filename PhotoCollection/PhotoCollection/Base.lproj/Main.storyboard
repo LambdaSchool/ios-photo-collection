@@ -66,7 +66,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photos Collection" id="vD1-bB-Fi2">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="cl7-Qz-A6t"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="cl7-Qz-A6t">
+                            <connections>
+                                <segue destination="Bgg-3S-MVf" kind="presentation" identifier="ThemeSegue" id="zQy-Ir-OvJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="R0A-Gg-rLZ">
                             <connections>
                                 <segue destination="pnc-kl-AOx" kind="show" identifier="AddSegue" id="ywn-V8-Bp0"/>
@@ -76,7 +80,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDu-R4-XyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="116.49175412293854"/>
+            <point key="canvasLocation" x="905" y="116"/>
         </scene>
         <!--Create Photo-->
         <scene sceneID="WwA-jE-V2y">
@@ -132,7 +136,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMA-WI-wmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1633" y="116"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="RXa-vh-wFZ">
+            <objects>
+                <viewController id="Bgg-3S-MVf" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pwr-1V-zY0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zcl-TC-H9O">
+                                <rect key="frame" x="127" y="302.5" width="121" height="62.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9V-3w-cfV">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="l7u-cd-ny3">
+                                        <rect key="frame" x="0.0" y="26.5" width="121" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtA-dY-8hI">
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="Bgg-3S-MVf" eventType="touchUpInside" id="M4u-Tu-SQY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hm2-Fa-st0">
+                                                <rect key="frame" x="63" y="0.0" width="58" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="Yellow"/>
+                                                <connections>
+                                                    <action selector="selectYellowTheme:" destination="Bgg-3S-MVf" eventType="touchUpInside" id="VAo-iR-ayQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zcl-TC-H9O" firstAttribute="centerX" secondItem="Pwr-1V-zY0" secondAttribute="centerX" id="20M-vR-mk6"/>
+                            <constraint firstItem="Zcl-TC-H9O" firstAttribute="centerY" secondItem="Pwr-1V-zY0" secondAttribute="centerY" id="8Tf-hF-335"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z4C-Mg-gUU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIp-dr-QUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="823"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SSB-pC-ip7">
