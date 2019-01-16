@@ -101,6 +101,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="eIS-xo-MMh" id="0cp-du-AIm"/>
                                     <outlet property="photoLabel" destination="XFm-TQ-ZtS" id="ffg-mv-RfI"/>
+                                    <segue destination="eLh-kT-HiB" kind="show" identifier="cellSegue" id="jlm-vf-gS2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -117,7 +118,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="seS-ZD-kAe">
                             <connections>
-                                <segue destination="eLh-kT-HiB" kind="show" id="z2Q-jc-m1w"/>
+                                <segue destination="eLh-kT-HiB" kind="show" identifier="createSegue" id="z2Q-jc-m1w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -201,7 +202,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPX-aZ-zO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="-1050"/>
+            <point key="canvasLocation" x="806" y="-1055"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jlm-vf-gS2"/>
+    </inferredMetricsTieBreakers>
 </document>

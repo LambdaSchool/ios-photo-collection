@@ -12,6 +12,7 @@ class PhotoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
 
         // Do any additional setup after loading the view.
     }
@@ -28,6 +29,26 @@ class PhotoDetailViewController: UIViewController {
     }
     
     @IBAction func savePhoto(_ sender: Any) {
+        if photo != nil{
+//            photoController?.Update(photo: <#T##Photo#>, data: <#T##Data#>, string: <#T##String#>)
+        }
+    }
+    
+    func setTheme(){
+        if themeHelper!.themePreference != nil {
+            let preference = themeHelper!.themePreference
+            self.view.backgroundColor = (preference == "dark") ? .black : .blue
+            
+        }
+    }
+    
+    func updateViews(){
+        setTheme()
+        if photo != nil {
+            imageView.image = UIImage(data: (photo?.imageData)!)
+            textField.text = photo?.title
+        }
+        
     }
     /*
     // MARK: - Navigation
