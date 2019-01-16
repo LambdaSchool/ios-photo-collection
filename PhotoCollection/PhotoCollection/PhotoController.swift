@@ -12,14 +12,14 @@ class PhotoController {
     
     var photos: [Photo] = []
     
-    func create(image: Data, imageTitle: String) {
-        let photo = Photo(imageData: image, title: imageTitle)
+    func create(imageContainer: Data, imageTitle: String) {
+        let photo = Photo(imageData: imageContainer, title: imageTitle)
         photos.append(photo)
     }
     
-    func update(photo: Photo, image: Data, imageTitle: String) {
+    func update(photo: Photo, imageContainer: Data, imageTitle: String) {
         guard let index = photos.index(of: photo) else { return }
-        photos[index].imageData = image
+        photos[index].imageData = imageContainer
         photos[index].title = imageTitle
         
     }

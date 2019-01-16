@@ -10,14 +10,13 @@ import Foundation
 
 
 class ThemeHelper {
-    let themePreferenceKey: String
+    let themePreferenceKey: String = "themePreferenceKey"
     
-    init(themePreferenceKey: String) {
-        self.themePreferenceKey = themePreferenceKey
-        
-        if themePreferenceKey == nil {
+    init() {
+
+        if themePreference == nil {
             let userDefaults = UserDefaults.standard
-            userDefaults.set("Pink", forKey: themePreferenceKey)
+            userDefaults.set("Blue", forKey: themePreferenceKey)
         }
     }
     
@@ -28,41 +27,15 @@ class ThemeHelper {
     
     func setThemePreferenceToYourColorHere() {
         let userDefaults = UserDefaults.standard
-        userDefaults.set("Pink", forKey: themePreferenceKey)
+        userDefaults.set("Blue", forKey: themePreferenceKey)
     }
     
     var themePreference: String? {
         let shouldShowColor = UserDefaults.standard.string(forKey: themePreferenceKey)
-        
-        if shouldShowColor != nil {
-            return shouldShowColor
-        } else {
-            return nil
-        }
-        
+        return shouldShowColor
+       
     }
     
 }
 
 
-
-
-/*
- override func viewWillAppear(_ animated: Bool) {
- super.viewWillAppear(animated)
- updateViews()
- }
- 
- @IBAction func changeShouldShowPluto(_ sender: UISwitch) {
- let userDefaults = UserDefaults.standard
- userDefaults.set(sender.isOn, forKey: .shouldShowPlutoKey)
- }
- 
- private func updateViews() {
- let userDefaults = UserDefaults.standard
- shouldShowPlutoSwitch.isOn = userDefaults.bool(forKey: .shouldShowPlutoKey)
- }
- 
- @IBOutlet weak var shouldShowPlutoSwitch: UISwitch!
- 
- */
