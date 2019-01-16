@@ -10,8 +10,33 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
     
-    var photoController = PhotoController()
+    var photoController: PhotoController?
+    var photo: Photo?
+    var themeHelper: ThemeHelper?
+    
+    
+    @IBOutlet weak var photoImageView: UIImageView!
 
+    @IBOutlet weak var photoTextField: UITextField!
+    
+    
+    @IBAction func addPhoto(_ sender: UIButton) {
+
+
+
+    }
+    
+
+    
+    @IBAction func savePhoto(_ sender: UIBarButtonItem) {
+ 
+        
+    
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

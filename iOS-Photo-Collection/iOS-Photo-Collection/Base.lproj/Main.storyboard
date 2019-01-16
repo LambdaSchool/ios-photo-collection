@@ -48,6 +48,7 @@
                                 <connections>
                                     <outlet property="photoView" destination="Yjz-bh-3bH" id="kpd-95-9uT"/>
                                     <outlet property="title" destination="mYx-PT-cDU" id="OxA-tN-uCo"/>
+                                    <segue destination="ju3-vJ-URa" kind="show" identifier="CellSegue" id="bjT-Zn-yBa"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -81,6 +82,9 @@
                                 <rect key="frame" x="151" y="393" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="ju3-vJ-URa" eventType="touchUpInside" id="zot-41-0I0"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hD1-HQ-sV3">
                                 <rect key="frame" x="139" y="355" width="97" height="30"/>
@@ -98,8 +102,16 @@
                         <viewLayoutGuide key="safeArea" id="vq8-bn-qTu"/>
                     </view>
                     <navigationItem key="navigationItem" id="S85-6W-1Yf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zfu-5C-M5r"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zfu-5C-M5r">
+                            <connections>
+                                <action selector="savePhoto:" destination="ju3-vJ-URa" id="Vuh-dS-k9c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="0WK-Ci-vD2" id="dKv-Rw-9Dc"/>
+                        <outlet property="photoTextField" destination="hD1-HQ-sV3" id="Wyu-lV-b86"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hD-Ky-tFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,4 +136,7 @@
             <point key="canvasLocation" x="370" y="182"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bjT-Zn-yBa"/>
+    </inferredMetricsTieBreakers>
 </document>
