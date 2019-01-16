@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,6 +48,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="C5e-FU-t6i" id="bDB-ng-mEc"/>
                                     <outlet property="photoLabel" destination="CGx-3d-n4k" id="qhy-f6-vqH"/>
+                                    <segue destination="QJs-pG-zWn" kind="show" identifier="cellDetail" id="5My-9L-Cid"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -56,13 +58,110 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="iAa-6W-kZ0">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="VJi-CZ-CY9"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CAt-oN-VVw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="VJi-CZ-CY9">
+                            <connections>
+                                <segue destination="Plq-eO-7n7" kind="presentation" identifier="selectTheme" id="isE-gO-xuB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CAt-oN-VVw">
+                            <connections>
+                                <segue destination="QJs-pG-zWn" kind="show" identifier="photoDetail" id="iJU-Hl-xVz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysx-2a-qVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="478" y="155"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="WOY-DW-z4h">
+            <objects>
+                <viewController id="QJs-pG-zWn" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JER-lZ-FQd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBL-cr-eNr">
+                                <rect key="frame" x="67" y="181" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8z7-9T-2TF">
+                                <rect key="frame" x="151" y="340" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="QJs-pG-zWn" eventType="touchUpInside" id="QXo-13-a3T"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vqw-By-dhy">
+                                <rect key="frame" x="139" y="396" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MT9-xj-OeE"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="FY0-Cc-Inf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5tY-zW-FVg">
+                            <connections>
+                                <action selector="savePhoto:" destination="QJs-pG-zWn" id="4mA-l8-w1q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="UBL-cr-eNr" id="FJe-Ev-dNj"/>
+                        <outlet property="titleTextField" destination="Vqw-By-dhy" id="tyQ-Uc-wh1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HX9-7o-ggH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="155"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="OQD-2W-pje">
+            <objects>
+                <viewController id="Plq-eO-7n7" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ToB-Tx-Gs8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a theme you would like to use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldb-wn-LGf">
+                                <rect key="frame" x="48" y="82" width="278" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYZ-L4-BIW">
+                                <rect key="frame" x="218" y="167" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pink"/>
+                                <connections>
+                                    <action selector="selectPinkTheme:" destination="Plq-eO-7n7" eventType="touchUpInside" id="hvI-Qc-7jr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkU-sy-FIo">
+                                <rect key="frame" x="120" y="167" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkTheme:" destination="Plq-eO-7n7" eventType="touchUpInside" id="XQv-K7-rXt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="At6-au-mnm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0r-bo-Qic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744.8" y="153.37331334332833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DiE-AO-QI7">
@@ -83,4 +182,7 @@
             <point key="canvasLocation" x="-189.59999999999999" y="155.17241379310346"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iJU-Hl-xVz"/>
+    </inferredMetricsTieBreakers>
 </document>

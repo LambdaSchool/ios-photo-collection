@@ -17,6 +17,8 @@
 		BB6CAB1021EFC56C00C92927 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CAB0F21EFC56C00C92927 /* ThemeHelper.swift */; };
 		BB6CAB1221EFCC0E00C92927 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CAB1121EFCC0E00C92927 /* PhotosCollectionViewController.swift */; };
 		BB6CAB1421EFCC8500C92927 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CAB1321EFCC8500C92927 /* PhotosCollectionViewCell.swift */; };
+		BB6CAB1621EFCDF300C92927 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CAB1521EFCDF300C92927 /* PhotoDetailViewController.swift */; };
+		BB6CAB1821EFD06200C92927 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CAB1721EFD06200C92927 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		BB6CAB0F21EFC56C00C92927 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		BB6CAB1121EFCC0E00C92927 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		BB6CAB1321EFCC8500C92927 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB6CAB1521EFCDF300C92927 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		BB6CAB1721EFD06200C92927 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				BB6CAB0F21EFC56C00C92927 /* ThemeHelper.swift */,
 				BB6CAB1121EFCC0E00C92927 /* PhotosCollectionViewController.swift */,
 				BB6CAB1321EFCC8500C92927 /* PhotosCollectionViewCell.swift */,
+				BB6CAB1521EFCDF300C92927 /* PhotoDetailViewController.swift */,
+				BB6CAB1721EFD06200C92927 /* ThemeSelectionViewController.swift */,
 				BB6CAAFD21EFC1FA00C92927 /* Main.storyboard */,
 				BB6CAB0021EFC1FC00C92927 /* Assets.xcassets */,
 				BB6CAB0221EFC1FC00C92927 /* LaunchScreen.storyboard */,
@@ -156,6 +162,8 @@
 				BB6CAB0E21EFC2FD00C92927 /* PhotoController.swift in Sources */,
 				BB6CAB1221EFCC0E00C92927 /* PhotosCollectionViewController.swift in Sources */,
 				BB6CAB1021EFC56C00C92927 /* ThemeHelper.swift in Sources */,
+				BB6CAB1621EFCDF300C92927 /* PhotoDetailViewController.swift in Sources */,
+				BB6CAB1821EFD06200C92927 /* ThemeSelectionViewController.swift in Sources */,
 				BB6CAAFA21EFC1FA00C92927 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
