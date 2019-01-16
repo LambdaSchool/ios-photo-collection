@@ -15,7 +15,7 @@ class ThemeSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         // Do any additional setup after loading the view.
     }
     
@@ -28,5 +28,5 @@ class ThemeSelectionViewController: UIViewController {
         themeHelper?.setThemePreferenceToLight()
         dismiss(animated: true, completion: nil)
     }
-    
+   
 }
