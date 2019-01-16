@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,6 +58,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="9pp-iZ-FW1" id="o60-tv-9W1"/>
                                     <outlet property="photoNameLabel" destination="OkX-Be-mM8" id="xHO-r3-h3i"/>
+                                    <segue destination="PoT-2w-KwP" kind="show" identifier="PhotoDetail" id="NjM-Bp-CFl"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -66,10 +68,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="X93-ok-rh6">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="fEl-m9-VJo"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="fEl-m9-VJo">
+                            <connections>
+                                <segue destination="Uh0-ma-jH3" kind="presentation" identifier="ThemeSelect" id="lu5-8Q-80Q"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bwz-0k-67Z">
                             <connections>
-                                <segue destination="PoT-2w-KwP" kind="show" identifier="PhotoDetail" id="bYv-1Y-lPh"/>
+                                <segue destination="PoT-2w-KwP" kind="show" identifier="AddPhoto" id="bYv-1Y-lPh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -78,20 +84,117 @@
             </objects>
             <point key="canvasLocation" x="1044" y="-82"/>
         </scene>
-        <!--Photo Detail View Controller-->
+        <!--Theme Selection View Controller-->
+        <scene sceneID="hn7-Oi-qvU">
+            <objects>
+                <viewController id="Uh0-ma-jH3" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fZJ-yL-haR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="nWZ-6k-T1h">
+                                <rect key="frame" x="20" y="60" width="335" height="106"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your theme?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgZ-YS-5vk">
+                                        <rect key="frame" x="39" y="0.0" width="257" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="0dM-69-Qxg">
+                                        <rect key="frame" x="71" y="76" width="193" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-yc-yKq">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                                <state key="normal" title="Dark Mode"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="Uh0-ma-jH3" eventType="touchUpInside" id="ONa-cn-BjM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33l-ed-nCh">
+                                                <rect key="frame" x="115" y="0.0" width="78" height="30"/>
+                                                <state key="normal" title="Purple Rain"/>
+                                                <connections>
+                                                    <action selector="selectPurpleTheme:" destination="Uh0-ma-jH3" eventType="touchUpInside" id="iRi-Mj-M2g"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CIN-Xe-kRQ" firstAttribute="trailing" secondItem="nWZ-6k-T1h" secondAttribute="trailing" constant="20" id="8Rb-Gc-aUe"/>
+                            <constraint firstItem="nWZ-6k-T1h" firstAttribute="top" secondItem="CIN-Xe-kRQ" secondAttribute="top" constant="40" id="ZIP-e4-pj3"/>
+                            <constraint firstItem="nWZ-6k-T1h" firstAttribute="leading" secondItem="CIN-Xe-kRQ" secondAttribute="leading" constant="20" id="hAr-Ot-VVi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CIN-Xe-kRQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frr-W3-ae1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="628"/>
+        </scene>
+        <!--Create Photo-->
         <scene sceneID="96U-Ng-PJ2">
             <objects>
                 <viewController id="PoT-2w-KwP" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fes-Wy-jnP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-Cj-KhT">
+                                <rect key="frame" x="20" y="156" width="335" height="275.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLx-fg-HCq">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="187.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Exm-AG-DCY">
+                                        <rect key="frame" x="0.0" y="207.5" width="335" height="68"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qW1-tk-cAl">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <state key="normal" title="Add Photo"/>
+                                                <connections>
+                                                    <action selector="addPhoto:" destination="PoT-2w-KwP" eventType="touchUpInside" id="uUg-a0-FsL"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1O-R2-6xG">
+                                                <rect key="frame" x="0.0" y="38" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qkh-sK-t0C" firstAttribute="trailing" secondItem="Moe-Cj-KhT" secondAttribute="trailing" constant="20" id="Bfn-3h-EYg"/>
+                            <constraint firstItem="Moe-Cj-KhT" firstAttribute="top" secondItem="Qkh-sK-t0C" secondAttribute="top" constant="40" id="Bic-ij-KmY"/>
+                            <constraint firstItem="Moe-Cj-KhT" firstAttribute="height" secondItem="Qkh-sK-t0C" secondAttribute="height" multiplier="1/2" id="FKw-R0-57h"/>
+                            <constraint firstItem="Moe-Cj-KhT" firstAttribute="leading" secondItem="Qkh-sK-t0C" secondAttribute="leading" constant="20" id="a71-mX-GaJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qkh-sK-t0C"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create Photo" id="Rr2-ix-9Q4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="97x-nE-eyO">
+                            <connections>
+                                <action selector="savePhoto:" destination="PoT-2w-KwP" id="ChG-3X-KZv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoImage" destination="kLx-fg-HCq" id="jKe-lb-7uW"/>
+                        <outlet property="photoNameText" destination="c1O-R2-6xG" id="sLH-7j-ACS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGn-tU-kPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1810" y="-430"/>
+            <point key="canvasLocation" x="1762" y="-82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v69-Xy-9x9">
@@ -109,7 +212,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IC5-3E-Sv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192.80000000000001" y="-82.3088455772114"/>
+            <point key="canvasLocation" x="298" y="-82"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NjM-Bp-CFl"/>
+    </inferredMetricsTieBreakers>
 </document>
