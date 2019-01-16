@@ -10,7 +10,7 @@ import Foundation
 class ThemeHelper {
     let themePreferenceKey = "themePreferenceKey"
     
-   private init() {
+   init() {
         if themePreference == nil {
             setThemePreferenceToLight()
         }

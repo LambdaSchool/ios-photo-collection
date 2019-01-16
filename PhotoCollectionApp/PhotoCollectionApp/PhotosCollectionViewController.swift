@@ -8,20 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
 
     /*
@@ -36,25 +31,41 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotosCollectionViewCell
+        
+        let photo = photoController.photos[indexPath.item]
+        let image = UIImage(data: photo.imageData)
+        cell.photoImageView.image = image
+        cell.descriptionLabel.text = photo.title
     
         // Configure the cell
     
         return cell
     }
-
+    func setTheme(){
+        guard let theme = themeHelper.themePreference else {return}
+        
+        switch theme {
+        case "Light":
+            navigationController?.navigationBar.barStyle = .default
+            navigationController?.navigationBar.tintColor = .blue
+            view.backgroundColor = .white
+        case "Dark":
+            navigationController?.navigationBar.barStyle = .black
+            navigationController?.navigationBar.tintColor = .gray
+            view.backgroundColor = .darkGray
+        default:
+            break
+        }
+        
+    }
     // MARK: UICollectionViewDelegate
 
     /*
