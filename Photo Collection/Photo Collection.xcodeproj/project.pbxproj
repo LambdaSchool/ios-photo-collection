@@ -18,7 +18,6 @@
 		A2AE8FEF21EFCF23004989A4 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE8FEE21EFCF23004989A4 /* PhotosCollectionViewCell.swift */; };
 		A2AE8FF121EFCFF7004989A4 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE8FF021EFCFF7004989A4 /* PhotoDetailViewController.swift */; };
 		A2AE8FF321EFD45A004989A4 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE8FF221EFD45A004989A4 /* ThemeSelectionViewController.swift */; };
-		A2AE8FF521EFD731004989A4 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE8FF421EFD731004989A4 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		A2AE8FEE21EFCF23004989A4 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2AE8FF021EFCFF7004989A4 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		A2AE8FF221EFD45A004989A4 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
-		A2AE8FF421EFD731004989A4 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				A2AE8FE321EFBF82004989A4 /* Photo.swift */,
-				A2AE8FF421EFD731004989A4 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,7 +182,6 @@
 				A2AE8FE721EFBFD4004989A4 /* PhotoController.swift in Sources */,
 				A2AE8FEA21EFC674004989A4 /* ThemeHelper.swift in Sources */,
 				A2AE8FF121EFCFF7004989A4 /* PhotoDetailViewController.swift in Sources */,
-				A2AE8FF521EFD731004989A4 /* PhotoCollectionViewCell.swift in Sources */,
 				A2AE8FEC21EFCE1B004989A4 /* PhotosCollectionViewController.swift in Sources */,
 				A2AE8FD221EFBCE1004989A4 /* AppDelegate.swift in Sources */,
 				A2AE8FEF21EFCF23004989A4 /* PhotosCollectionViewCell.swift in Sources */,
