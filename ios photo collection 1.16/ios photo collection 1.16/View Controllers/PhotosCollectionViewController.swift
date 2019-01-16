@@ -1,14 +1,6 @@
-//
-//  PhotosCollectionViewController.swift
-//  ios photo collection 1.16
-//
-//  Created by Lambda_School_Loaner_18 on 1/16/19.
-//  Copyright © 2019 SeanDoyle. All rights reserved.
-//
-
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
