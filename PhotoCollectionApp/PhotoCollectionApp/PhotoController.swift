@@ -8,7 +8,7 @@
 
 import Foundation
 class PhotoController {
-    var photos: [Photo] = []
+   private(set) var photos: [Photo] = []
     
     
     func createPhotos(with data: Data, and title: String) {
