@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos Collection View Controller-->
+        <!--PhotoCollection-->
         <scene sceneID="LkR-9h-7aS">
             <objects>
                 <collectionViewController id="abR-kM-gb7" customClass="PhotosCollectionViewController" customModule="iOS_Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,8 +57,12 @@
                             <outlet property="delegate" destination="abR-kM-gb7" id="L50-Qb-7VK"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="bmg-9B-327">
-                        <barButtonItem key="leftBarButtonItem" title="Set Theme" id="ixT-b1-GMX"/>
+                    <navigationItem key="navigationItem" title="PhotoCollection" id="bmg-9B-327">
+                        <barButtonItem key="leftBarButtonItem" title="Set Theme" id="ixT-b1-GMX">
+                            <connections>
+                                <segue destination="aBN-5L-lWA" kind="presentation" identifier="ThemeSelectorSegue" id="EXy-eV-grA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SJX-yj-XJ3">
                             <connections>
                                 <segue destination="ju3-vJ-URa" kind="show" identifier="AddPhoto" id="Qe2-j8-TDX"/>
@@ -69,6 +73,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8EY-B6-OeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117.5999999999999" y="180.35982008995504"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="17X-XM-Th9">
+            <objects>
+                <viewController id="aBN-5L-lWA" customClass="ThemeSelectionViewController" customModule="iOS_Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dax-nf-bhM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYU-sh-zir">
+                                <rect key="frame" x="68" y="100" width="239" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnb-AQ-ay8">
+                                <rect key="frame" x="83" y="157" width="209" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vb-OP-4xm">
+                                <rect key="frame" x="90" y="226" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="setDarkTheme:" destination="aBN-5L-lWA" eventType="touchUpInside" id="Rsy-9M-x4H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDQ-kW-S22">
+                                <rect key="frame" x="252" y="226" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Light"/>
+                                <connections>
+                                    <action selector="setLightTheme:" destination="aBN-5L-lWA" eventType="touchUpInside" id="rjl-CG-pIu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CQW-EY-eh7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pr8-EH-1GW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="909"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="3bd-iw-RBw">
@@ -122,8 +173,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vJr-xq-hHc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2vB-ap-yd0">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2vB-ap-yd0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
