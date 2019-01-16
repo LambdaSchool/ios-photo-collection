@@ -67,19 +67,67 @@
 			isa = PBXGroup;
 			children = (
 				7AAEEF5921EF799000900F2A /* AppDelegate.swift */,
-				7AAEEF5B21EF799000900F2A /* PhotoDetailViewController.swift */,
-				7AAEEF7521EF899000900F2A /* ThemeSelectionViewController.swift */,
-				7AAEEF6B21EF79D300900F2A /* Photo.swift */,
-				7AAEEF6D21EF7A3500900F2A /* PhotoController.swift */,
-				7AAEEF6F21EF7B6900900F2A /* ThemeHelper.swift */,
-				7AAEEF7121EF82C600900F2A /* PhotosCollectionViewController.swift */,
-				7AAEEF7321EF853000900F2A /* PhotosCollectionViewCell.swift */,
-				7AAEEF5D21EF799000900F2A /* Main.storyboard */,
+				7AAEEFA021EFD83400900F2A /* View Controllers */,
+				7AAEEFA121EFD84600900F2A /* Model */,
+				7AAEEFA221EFD84D00900F2A /* Model Controller */,
+				7AAEEFA321EFD85B00900F2A /* Helper Files */,
+				7AAEEF9F21EFD82500900F2A /* Views */,
+				7AAEEFA421EFD86C00900F2A /* Storyboards */,
 				7AAEEF6021EF799300900F2A /* Assets.xcassets */,
-				7AAEEF6221EF799300900F2A /* LaunchScreen.storyboard */,
 				7AAEEF6521EF799300900F2A /* Info.plist */,
 			);
 			path = PhotoCollectionApp;
+			sourceTree = "<group>";
+		};
+		7AAEEF9F21EFD82500900F2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AAEEF7321EF853000900F2A /* PhotosCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AAEEFA021EFD83400900F2A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AAEEF5B21EF799000900F2A /* PhotoDetailViewController.swift */,
+				7AAEEF7521EF899000900F2A /* ThemeSelectionViewController.swift */,
+				7AAEEF7121EF82C600900F2A /* PhotosCollectionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7AAEEFA121EFD84600900F2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AAEEF6B21EF79D300900F2A /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AAEEFA221EFD84D00900F2A /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AAEEF6D21EF7A3500900F2A /* PhotoController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		7AAEEFA321EFD85B00900F2A /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AAEEF6F21EF7B6900900F2A /* ThemeHelper.swift */,
+			);
+			path = "Helper Files";
+			sourceTree = "<group>";
+		};
+		7AAEEFA421EFD86C00900F2A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7AAEEF5D21EF799000900F2A /* Main.storyboard */,
+				7AAEEF6221EF799300900F2A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
