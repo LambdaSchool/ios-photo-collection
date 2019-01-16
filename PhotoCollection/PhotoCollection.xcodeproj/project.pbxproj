@@ -14,6 +14,7 @@
 		77A1B2A421EFC61300DFE5AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A1B2A221EFC61300DFE5AF /* LaunchScreen.storyboard */; };
 		77A1B2AC21EFC65000DFE5AF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1B2AB21EFC65000DFE5AF /* Photo.swift */; };
 		77A1B2AF21EFC6BB00DFE5AF /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1B2AE21EFC6BB00DFE5AF /* PhotoController.swift */; };
+		77A1B2B221EFC8D900DFE5AF /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1B2B121EFC8D900DFE5AF /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		77A1B2A521EFC61300DFE5AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77A1B2AB21EFC65000DFE5AF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		77A1B2AE21EFC6BB00DFE5AF /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		77A1B2B121EFC8D900DFE5AF /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				77A1B2A021EFC61300DFE5AF /* Assets.xcassets */,
 				77A1B2A221EFC61300DFE5AF /* LaunchScreen.storyboard */,
 				77A1B2A521EFC61300DFE5AF /* Info.plist */,
+				77A1B2B121EFC8D900DFE5AF /* ThemeHelper.swift */,
 			);
 			path = PhotoCollection;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				77A1B2AC21EFC65000DFE5AF /* Photo.swift in Sources */,
 				77A1B29C21EFC61300DFE5AF /* ViewController.swift in Sources */,
 				77A1B2AF21EFC6BB00DFE5AF /* PhotoController.swift in Sources */,
+				77A1B2B221EFC8D900DFE5AF /* ThemeHelper.swift in Sources */,
 				77A1B29A21EFC61300DFE5AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
