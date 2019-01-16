@@ -13,6 +13,7 @@
 		272C583721EFC88900F4F29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272C583521EFC88900F4F29C /* LaunchScreen.storyboard */; };
 		272C583F21EFC9EC00F4F29C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C583E21EFC9EC00F4F29C /* Photo.swift */; };
 		272C584121EFCA5900F4F29C /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C584021EFCA5900F4F29C /* PhotoController.swift */; };
+		272C584521EFE62900F4F29C /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C584421EFE62900F4F29C /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		272C583821EFC88900F4F29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		272C583E21EFC9EC00F4F29C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		272C584021EFCA5900F4F29C /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		272C584421EFE62900F4F29C /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				272C582C21EFC88800F4F29C /* AppDelegate.swift */,
 				272C583021EFC88800F4F29C /* Main.storyboard */,
+				272C584621EFE63300F4F29C /* Helpers */,
 				272C584221EFCA5D00F4F29C /* Models */,
 				272C584321EFCA6600F4F29C /* Model Controllers */,
 				272C583321EFC88900F4F29C /* Assets.xcassets */,
@@ -81,6 +84,14 @@
 				272C584021EFCA5900F4F29C /* PhotoController.swift */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		272C584621EFE63300F4F29C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				272C584421EFE62900F4F29C /* ThemeHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 				272C583F21EFC9EC00F4F29C /* Photo.swift in Sources */,
 				272C584121EFCA5900F4F29C /* PhotoController.swift in Sources */,
 				272C582D21EFC88800F4F29C /* AppDelegate.swift in Sources */,
+				272C584521EFE62900F4F29C /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
