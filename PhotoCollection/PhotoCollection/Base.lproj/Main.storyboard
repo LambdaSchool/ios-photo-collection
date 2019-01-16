@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -66,12 +67,72 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photos Collection" id="vD1-bB-Fi2">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="cl7-Qz-A6t"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R0A-Gg-rLZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R0A-Gg-rLZ">
+                            <connections>
+                                <segue destination="pnc-kl-AOx" kind="show" identifier="AddSegue" id="ywn-V8-Bp0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDu-R4-XyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="116.49175412293854"/>
+        </scene>
+        <!--Create Photo-->
+        <scene sceneID="WwA-jE-V2y">
+            <objects>
+                <viewController id="pnc-kl-AOx" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zvD-yv-QmK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DwL-IQ-adX">
+                                <rect key="frame" x="40" y="156" width="295" height="376"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfD-Wa-7zO">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="295"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwk-7L-mfn">
+                                        <rect key="frame" x="0.0" y="305" width="295" height="31"/>
+                                        <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="pnc-kl-AOx" eventType="touchUpInside" id="2aS-Uf-u3y"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYh-4B-QqQ">
+                                        <rect key="frame" x="0.0" y="346" width="295" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ivy-oR-SG6" firstAttribute="bottom" secondItem="DwL-IQ-adX" secondAttribute="bottom" constant="135" id="AqB-MI-8cU"/>
+                            <constraint firstItem="DwL-IQ-adX" firstAttribute="top" secondItem="Ivy-oR-SG6" secondAttribute="top" constant="40" id="JTp-Nt-w3m"/>
+                            <constraint firstItem="Ivy-oR-SG6" firstAttribute="trailing" secondItem="DwL-IQ-adX" secondAttribute="trailing" constant="40" id="KYW-g6-OQc"/>
+                            <constraint firstItem="DwL-IQ-adX" firstAttribute="leading" secondItem="Ivy-oR-SG6" secondAttribute="leading" constant="40" id="ZHV-Oa-MEV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ivy-oR-SG6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Photo" id="fWJ-Xn-sxf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WeL-6U-UTc">
+                            <connections>
+                                <action selector="savePhoto:" destination="pnc-kl-AOx" id="HnF-1n-ro6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="vfD-Wa-7zO" id="HSA-c7-yMT"/>
+                        <outlet property="textField" destination="bYh-4B-QqQ" id="jCN-Dp-tWh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMA-WI-wmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="116.49175412293854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SSB-pC-ip7">

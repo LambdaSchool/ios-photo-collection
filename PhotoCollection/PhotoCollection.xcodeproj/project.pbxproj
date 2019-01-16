@@ -16,6 +16,7 @@
 		77A1B2B221EFC8D900DFE5AF /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1B2B121EFC8D900DFE5AF /* ThemeHelper.swift */; };
 		77A1B2B421EFCEC200DFE5AF /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1B2B321EFCEC200DFE5AF /* PhotosCollectionViewController.swift */; };
 		77A1B2B721EFD04700DFE5AF /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1B2B621EFD04700DFE5AF /* PhotosCollectionViewCell.swift */; };
+		77A1B2BA21EFD2D500DFE5AF /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A1B2B921EFD2D500DFE5AF /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		77A1B2B121EFC8D900DFE5AF /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		77A1B2B321EFCEC200DFE5AF /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		77A1B2B621EFD04700DFE5AF /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		77A1B2B921EFD2D500DFE5AF /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				77A1B2B321EFCEC200DFE5AF /* PhotosCollectionViewController.swift */,
+				77A1B2B921EFD2D500DFE5AF /* PhotoDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				77A1B2AC21EFC65000DFE5AF /* Photo.swift in Sources */,
 				77A1B2AF21EFC6BB00DFE5AF /* PhotoController.swift in Sources */,
 				77A1B2B221EFC8D900DFE5AF /* ThemeHelper.swift in Sources */,
+				77A1B2BA21EFD2D500DFE5AF /* PhotoDetailViewController.swift in Sources */,
 				77A1B2B421EFCEC200DFE5AF /* PhotosCollectionViewController.swift in Sources */,
 				77A1B29A21EFC61300DFE5AF /* AppDelegate.swift in Sources */,
 				77A1B2B721EFD04700DFE5AF /* PhotosCollectionViewCell.swift in Sources */,
