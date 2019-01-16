@@ -22,23 +22,23 @@
                             <size key="itemSize" width="153" height="157"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="4" minY="7" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="4" minY="2" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="fvf-P4-FwN" customClass="PhotosCollectionViewCell" customModule="PhotoCollectionApp" customModuleProvider="target">
-                                <rect key="frame" x="4" y="7" width="153" height="157"/>
+                                <rect key="frame" x="4" y="2" width="153" height="157"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="153" height="157"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nFG-zQ-SkT">
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nFG-zQ-SkT">
                                             <rect key="frame" x="0.0" y="0.0" width="153" height="157"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zpb-e8-hmL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="126.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Zpb-e8-hmL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="128.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-j2-eRM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-j2-eRM">
                                                     <rect key="frame" x="0.0" y="136.5" width="153" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -49,10 +49,10 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="nFG-zQ-SkT" secondAttribute="bottom" id="2Zq-wQ-paJ"/>
-                                    <constraint firstItem="nFG-zQ-SkT" firstAttribute="leading" secondItem="fvf-P4-FwN" secondAttribute="leading" id="5Qn-s7-OFo"/>
-                                    <constraint firstAttribute="trailing" secondItem="nFG-zQ-SkT" secondAttribute="trailing" id="V0Z-0M-vBz"/>
-                                    <constraint firstItem="nFG-zQ-SkT" firstAttribute="top" secondItem="fvf-P4-FwN" secondAttribute="top" id="pja-3I-dX8"/>
+                                    <constraint firstAttribute="bottom" secondItem="nFG-zQ-SkT" secondAttribute="bottom" id="MgB-GN-tAD"/>
+                                    <constraint firstItem="nFG-zQ-SkT" firstAttribute="top" secondItem="fvf-P4-FwN" secondAttribute="top" id="rLJ-aQ-J9Q"/>
+                                    <constraint firstItem="nFG-zQ-SkT" firstAttribute="leading" secondItem="fvf-P4-FwN" secondAttribute="leading" id="xbz-8c-SVt"/>
+                                    <constraint firstAttribute="trailing" secondItem="nFG-zQ-SkT" secondAttribute="trailing" id="zyp-a4-LVj"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="p1p-j2-eRM" id="s2Z-s5-Z7i"/>
@@ -94,17 +94,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cDX-Zo-G24">
                                 <rect key="frame" x="20" y="84" width="335" height="204"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1na-3e-NVu">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1na-3e-NVu">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="128"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSI-WO-bda">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSI-WO-bda">
                                         <rect key="frame" x="0.0" y="136" width="335" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhotoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eo6-OC-eud"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbB-5K-07Z">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbB-5K-07Z">
                                         <rect key="frame" x="0.0" y="174" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -208,6 +208,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UPr-Xq-d9c"/>
+        <segue reference="QuW-hC-1So"/>
     </inferredMetricsTieBreakers>
 </document>

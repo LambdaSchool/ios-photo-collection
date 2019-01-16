@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -27,6 +27,14 @@ class PhotoDetailViewController: UIViewController {
     }
 
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
+        
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {return}
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+        
     }
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
         guard let title = infoTextField.text, !title.isEmpty, let image = photoImageView.image, let imageData = image.pngData() else {return}
@@ -60,3 +68,12 @@ class PhotoDetailViewController: UIViewController {
     
 }
 
+extension PhotoDetailViewController {
+    // MARK: - ImagePicker Controller
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        defer { picker.dismiss(animated: true)}
+        guard let image = info[.originalImage] as? UIImage else {return}
+        photoImageView.image = image
+    }
+}
