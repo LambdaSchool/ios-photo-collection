@@ -20,13 +20,14 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    var existingPhoto : Bool = true
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func addPhoto(_ sender: UIButton) {
-        
+        existingPhoto = false
         let pickerVC = UIImagePickerController()
         pickerVC.sourceType = .photoLibrary
         pickerVC.allowsEditing = true
@@ -36,13 +37,13 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func savePhoto(_ sender: Any) {
-        if photo != nil{
+        if existingPhoto && imageView.image != nil && textField.text != nil{
             photoController!.Update(photo: photo!, data: (photo?.imageData)!, string: (photo?.title)!)
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         } else if imageView.image != nil && textField.text != nil {
             let data = imageView.image!.pngData()
-            photoController!.Create(imageData: data!, title: textField.text!)
-            self.navigationController?.popViewController(animated: true)
+            photoController!.Create(imageData: data!, title: textField.text ?? " ")
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     
