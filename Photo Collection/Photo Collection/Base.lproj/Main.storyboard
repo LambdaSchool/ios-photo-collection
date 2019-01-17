@@ -91,26 +91,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdY-l7-bjj">
-                                            <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-xo-MMh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="148.66666666666666"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFm-TQ-ZtS">
-                                                    <rect key="frame" x="0.0" y="149.66666666666666" width="170" height="20.333333333333343"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="XFm-TQ-ZtS" secondAttribute="bottom" id="EX3-zO-iuy"/>
-                                                <constraint firstItem="eIS-xo-MMh" firstAttribute="top" secondItem="xdY-l7-bjj" secondAttribute="top" id="du7-md-Zik"/>
-                                            </constraints>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFm-TQ-ZtS">
+                                            <rect key="frame" x="64.333333333333329" y="149.66666666666666" width="41.666666666666671" height="20.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-xo-MMh">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="145.66666666666666"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XFm-TQ-ZtS" secondAttribute="bottom" id="4YV-j6-kcU"/>
+                                    <constraint firstItem="eIS-xo-MMh" firstAttribute="top" secondItem="ptE-Rn-ZH1" secondAttribute="top" id="5dP-dA-JuT"/>
+                                    <constraint firstItem="eIS-xo-MMh" firstAttribute="width" secondItem="ptE-Rn-ZH1" secondAttribute="width" id="7rt-T0-VDb"/>
+                                    <constraint firstItem="eIS-xo-MMh" firstAttribute="centerX" secondItem="ptE-Rn-ZH1" secondAttribute="centerX" id="iiV-BR-5Zp"/>
+                                    <constraint firstItem="eIS-xo-MMh" firstAttribute="height" secondItem="ptE-Rn-ZH1" secondAttribute="height" multiplier="6/7" id="kxd-jq-XXn"/>
+                                    <constraint firstItem="XFm-TQ-ZtS" firstAttribute="centerX" secondItem="ptE-Rn-ZH1" secondAttribute="centerX" id="sJJ-w6-CN6"/>
+                                </constraints>
                                 <size key="customSize" width="170" height="170"/>
                                 <connections>
                                     <outlet property="imageView" destination="eIS-xo-MMh" id="0cp-du-AIm"/>
