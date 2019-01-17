@@ -24,6 +24,14 @@ class PhotoCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
+    // MARK: - Lifecycle Methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView?.reloadData()
+        setTheme()
+    }
 
     // MARK: - Navigation
 
