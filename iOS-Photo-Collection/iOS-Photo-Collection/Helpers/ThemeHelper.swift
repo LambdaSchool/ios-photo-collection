@@ -28,7 +28,7 @@ class ThemeHelper {
         return userDefaults.string(forKey: themePreferenceKey)
     }
     
-    private init () {
+    init () {
         let userDefaults = UserDefaults.standard
         if userDefaults.string(forKey: themePreferenceKey) == nil {
             userDefaults.set("Light", forKey: themePreferenceKey)

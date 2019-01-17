@@ -12,7 +12,11 @@ private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
-    override func viewDidLoad() {
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
+    
+     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -36,24 +40,36 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
+        
+        let photo = photoController.photos[indexPath.item]
+        let image = UIImage(data: photo.imageData)
+        let title = photo.title
+        
+        
+        cell.photoView.image = image
+        cell.title.text = title
+        
+        
+        
+        
     
         // Configure the cell
     
         return cell
     }
+    
+    
+    
+    
 
     // MARK: UICollectionViewDelegate
 
