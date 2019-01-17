@@ -41,7 +41,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             self.navigationController?.popViewController(animated: true)
         } else if imageView.image != nil && textField.text != nil {
             let data = imageView.image!.pngData()
-            photoController?.Create(imageData: data!, title: textField.text!)
+            photoController!.Create(imageData: data!, title: textField.text!)
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -57,6 +57,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     func updateViews(){
         setTheme()
         if photo != nil {
+            textField.isUserInteractionEnabled = true
             imageView.image = UIImage(data: (photo?.imageData)!)
             textField.text = photo?.title
         }
@@ -65,6 +66,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = (info[UIImagePickerController.InfoKey.editedImage] as! UIImage)
+        textField.isUserInteractionEnabled = true
         picker.dismiss(animated: true, completion: nil)
     }
     /*
