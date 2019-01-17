@@ -87,27 +87,30 @@
         <scene sceneID="IZg-x9-yab">
             <objects>
                 <viewController id="yyU-NY-p7m" customClass="PhotoCetailViewController" customModule="ios_photo_collection_1_16" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="VUF-os-yQo">
+                    <view key="view" contentMode="scaleToFill" id="VUF-os-yQo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="1Iq-qT-FQ4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iVV-Hm-Fos">
+                                <rect key="frame" x="8" y="84" width="359" height="435"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXo-fL-FIz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fXo-fL-FIz">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="359"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="fXo-fL-FIz" secondAttribute="height" multiplier="2/3" id="byW-hp-Yko"/>
+                                            <constraint firstAttribute="width" secondItem="fXo-fL-FIz" secondAttribute="height" id="Jhj-XK-vZc"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-F6-Dij">
-                                        <rect key="frame" x="0.0" y="473" width="375" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter photo description'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7b-F6-Dij">
+                                        <rect key="frame" x="0.0" y="367" width="359" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="yyU-NY-p7m" eventType="editingDidEnd" id="sf8-s3-9bT"/>
+                                        </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjF-Xq-PHT">
-                                        <rect key="frame" x="0.0" y="529" width="375" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjF-Xq-PHT">
+                                        <rect key="frame" x="0.0" y="405" width="359" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                     </button>
                                 </subviews>
@@ -115,15 +118,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LV3-IS-dp7" firstAttribute="bottom" secondItem="1Iq-qT-FQ4" secondAttribute="bottom" id="Cod-fJ-EpZ"/>
-                            <constraint firstItem="1Iq-qT-FQ4" firstAttribute="top" secondItem="LV3-IS-dp7" secondAttribute="top" id="QJD-7I-o4X"/>
-                            <constraint firstItem="LV3-IS-dp7" firstAttribute="trailing" secondItem="1Iq-qT-FQ4" secondAttribute="trailing" id="Y5q-QO-PC1"/>
-                            <constraint firstItem="1Iq-qT-FQ4" firstAttribute="leading" secondItem="LV3-IS-dp7" secondAttribute="leading" id="ebq-qu-QSQ"/>
+                            <constraint firstItem="LV3-IS-dp7" firstAttribute="trailing" secondItem="iVV-Hm-Fos" secondAttribute="trailing" constant="8" id="5Cr-aU-qHI"/>
+                            <constraint firstItem="iVV-Hm-Fos" firstAttribute="top" secondItem="LV3-IS-dp7" secondAttribute="top" constant="20" id="TOK-Hw-aTI"/>
+                            <constraint firstItem="iVV-Hm-Fos" firstAttribute="leading" secondItem="LV3-IS-dp7" secondAttribute="leading" constant="8" id="zbQ-xA-kfE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LV3-IS-dp7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="3Mb-1e-7Ca">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="oHL-RP-R4B"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="oHL-RP-R4B">
+                            <connections>
+                                <action selector="saveAction:" destination="yyU-NY-p7m" id="DAM-fZ-aU3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="fXo-fL-FIz" id="JtH-YS-hu7"/>

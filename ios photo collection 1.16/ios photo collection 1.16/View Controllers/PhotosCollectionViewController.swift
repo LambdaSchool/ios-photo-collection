@@ -19,6 +19,12 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView?.reloadData()
+    }
 
     /*
     // MARK: - Navigation
@@ -41,11 +47,34 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let photo = photoController.photos[indexPath.item]
     
-        cell.imageView.image = photo.image
-        cell.labelOutlet.text = photo.text
+    //    cell.imageView.image = photo.imageData
+        cell.labelOutlet.text = photo.title
     
         return cell
     }
+    
+    func setTheme() {
+        guard let themePreference = themeHelper.themePreference else { return }
+        
+        if themePreference == "Blue" {
+            collectionView.backgroundColor = UIColor.blue
+            collectionView.backgroundColor = UIColor.darkGray
+        }
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let detailViewController = segue.destination as? PhotoDetailViewController {
+//            detailViewController.photoController = photoController
+//            detailViewController.themeHelper = themeHelper
+//
+//            if segue.identifier == "PhotoSegue" {
+//                guard let index = collectionView?.indexPathsForSelectedItems?.first?.item else { return }
+//                let photo = photoController.photos[index]
+//                detailViewController.photo = photo
+//            } else if segue.identifier == "AddPhotoSegue" {
+//            }
+ //       }
+  //  }
 
     // MARK: UICollectionViewDelegate
 
