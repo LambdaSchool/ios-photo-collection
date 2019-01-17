@@ -38,6 +38,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         guard let photo = photo else { return }
         
         imageView.image = UIImage(data: photo.imageData)
+        titleTextField.text = photo.title
     }
     
     

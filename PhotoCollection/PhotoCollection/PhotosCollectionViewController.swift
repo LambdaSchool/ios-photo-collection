@@ -19,7 +19,12 @@ class PhotosCollectionViewController: UICollectionViewController {
         setTheme()
        
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView.reloadData()
+    }
     
     // MARK: - Navigation
 
@@ -40,7 +45,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             addPhotoController.themeHelper = themeHelper
             addPhotoController.photoController = photoController
             
-        }else if segue.identifier == "addPhoto" {
+        }else if segue.identifier == "selectTheme" {
             guard let selectThemeController = segue.destination as? ThemeSelectionViewController else { return }
             
             selectThemeController.themeHelper = themeHelper
@@ -63,7 +68,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Configure the cell
         let photo = photoController.photos[indexPath.item]
        // cell.imageView.image = photo.imageData
-        cell.photoLabel.text = photo.title
+        cell.photo = photo
         
     
         return cell
