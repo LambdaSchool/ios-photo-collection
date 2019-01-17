@@ -11,15 +11,16 @@ import UIKit
 class ThemeSelectionViewController: UIViewController {
 
     @IBAction func selectDarkTheme(_ sender: Any) {
-        
-    }
-    @IBAction func selectPurpleTheme(_ sender: Any) {
-        
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func selectPurpleTheme(_ sender: Any) {
+        themeHelper?.setThemePreferenceToPurple()
+        dismiss(animated: true, completion: nil)
+    }
     
     //MARK: - Properties
     
-    var themeHelper: ThemeHelper? 
-
+    var themeHelper: ThemeHelper?
 }

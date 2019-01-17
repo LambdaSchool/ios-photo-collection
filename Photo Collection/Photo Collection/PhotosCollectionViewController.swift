@@ -23,8 +23,8 @@ class PhotosCollectionViewController: UICollectionViewController {
             addDetailVC.themeHelper = themeHelper
             
         } else if segue.identifier == "PhotoDetail" {
-            guard let photoDetailVC = segue.destination as? PhotoDetailViewController else { return }
-            guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
             let photo = photoController.photos[indexPath.item]
             
             photoDetailVC.photoController = photoController
