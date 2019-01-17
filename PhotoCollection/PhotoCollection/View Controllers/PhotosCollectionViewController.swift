@@ -14,33 +14,15 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        setTheme()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView.reloadData()
     }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoController.photos.count
@@ -58,31 +40,30 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
-        guard let key = UserDefaults.standard.string(forKey: themeHelper.themePreferenceKey) else { return }
+        guard let currentTheme = themeHelper.themePreference else { return }
         
-        if key == "Dark" {
-            view.backgroundColor = .gray
-        } else if key == "Yellow" {
-            view.backgroundColor = .yellow
+        if currentTheme == "Dark" {
+            collectionView.backgroundColor = .gray
+        } else if currentTheme == "Yellow" {
+            collectionView.backgroundColor = .yellow
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddSegue" {
-            guard let addVC = segue.destination as? PhotoDetailViewController,
-            let cell = sender as? PhotosCollectionViewCell else { return }
-            addVC.themeHelper = cell.themeHelper
-            addVC.photoController = cell.photoController
+            guard let addVC = segue.destination as? PhotoDetailViewController else { return }
+            addVC.themeHelper = themeHelper
+            addVC.photoController = photoController
         } else if segue.identifier == "EditSegue" {
             guard let editVC = segue.destination as? PhotoDetailViewController,
-            let cell = sender as? PhotosCollectionViewCell else { return }
-            editVC.themeHelper = cell.themeHelper
-            editVC.photoController = cell.photoController
-            editVC.photo = cell.photo
+            let cell = sender as? PhotosCollectionViewCell,
+            let indexPath = collectionView.indexPath(for: cell) else { return }
+            editVC.themeHelper = themeHelper
+            editVC.photoController = photoController
+            editVC.photo = photoController.photos[indexPath.item]
         } else if segue.identifier == "ThemeSegue" {
-            guard let themeVC = segue.destination as? ThemeSelectionViewController,
-            let cell = sender as? PhotosCollectionViewCell else { return }
-            themeVC.themeHelper = cell.themeHelper
+            guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+            themeVC.themeHelper = themeHelper
         }
     }
     
