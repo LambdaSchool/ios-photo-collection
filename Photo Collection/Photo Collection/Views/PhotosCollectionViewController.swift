@@ -41,14 +41,13 @@ class PhotosCollectionViewController: UICollectionViewController {
             let detailVC = segue.destination as! PhotoDetailViewController
             detailVC.photoController = photoController
             detailVC.themeHelper     = themeHelper
-//        case "cellSegue":
-//            let tap = self.collectionView.indexPath(for: sender as! UICollectionViewCell)
-//
-//            if photoController.photos.count != 0 {
-//                tap
-//                photoController.Update(photo: <#T##Photo#>, data: <#T##Data#>, string: <#T##String#>)
-//            }
-//            guard let cellVC = segue.destination as?
+           
+        case "cellSegue":
+            let cellVC = segue.destination as? PhotoDetailViewController
+            let cell = sender as? UICollectionViewCell
+            let indexPath = collectionView.indexPath(for: cell!)
+            cellVC?.themeHelper      = themeHelper
+            cellVC?.photo            = photoController.photos[indexPath!.item]
         default:
              fatalError("segue could not be prepared for")
         }

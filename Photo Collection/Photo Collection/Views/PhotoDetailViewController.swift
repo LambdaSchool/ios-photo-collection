@@ -42,7 +42,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             self.navigationController?.popToRootViewController(animated: true)
         } else if imageView.image != nil && textField.text != nil {
             let data = imageView.image!.pngData()
-            photoController!.Create(imageData: data!, title: textField.text ?? " ")
+            photoController!.Create(imageData: data!, title: textField.text!)
             self.navigationController?.popToRootViewController(animated: true)
         }
     }
