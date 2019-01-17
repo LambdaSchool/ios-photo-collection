@@ -18,6 +18,7 @@ class PhotoController {
     }
     
     func Update(photo : Photo, data : Data, string : String){
+        if photos.count == 0 { fatalError("No photo exists to be updated")}
         var index = 0
         while index < photos.count{
             if photos[index] == photo {

@@ -26,6 +26,9 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        setTheme()
+    }
 
     
     // MARK: - Navigation
@@ -77,10 +80,18 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     func setTheme() {
         if themeHelper.themePreference == nil  {
+            themeHelper.setThemePreferenceToDark()
             self.collectionView.backgroundColor = UIColor.darkGray
             return
         }
-        self.collectionView.backgroundColor = (themeHelper.themePreference == "Dark" ) ? .darkGray : .cyan
+        if (themeHelper.themePreference?.contains("Dark"))!{
+            self.collectionView.backgroundColor = UIColor.darkGray
+            return
+        }
+        if (themeHelper.themePreference?.contains("Blue"))!{
+            self.collectionView.backgroundColor = UIColor.cyan
+            return
+        }
     }
 
     // MARK: UICollectionViewDelegate
