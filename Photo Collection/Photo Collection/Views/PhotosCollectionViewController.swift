@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "photocell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
@@ -28,6 +28,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setTheme()
+        self.collectionView.reloadData()
     }
 
     
@@ -46,11 +47,12 @@ class PhotosCollectionViewController: UICollectionViewController {
             detailVC.themeHelper     = themeHelper
            
         case "cellSegue":
-            let cellVC = segue.destination as? PhotoDetailViewController
-            let cell = sender as? UICollectionViewCell
-            let indexPath = collectionView.indexPath(for: cell!)
-            cellVC?.themeHelper      = themeHelper
-            cellVC?.photo            = photoController.photos[indexPath!.item]
+            let cellVC = segue.destination as! PhotoDetailViewController
+            let cell = sender as! UICollectionViewCell
+            let indexPath = collectionView.indexPath(for: cell)
+            cellVC.photoController  = photoController
+            cellVC.themeHelper      = themeHelper
+            cellVC.photo            = photoController.photos[indexPath!.item]
         default:
              fatalError("segue could not be prepared for")
         }
@@ -68,7 +70,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photocell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
         guard let unwrappedCell = cell as? PhotosCollectionViewCell else { fatalError("No photo cell")}
         
         let photo = photoController.photos[indexPath.item]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lrs-u3-XFh">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,36 +15,36 @@
             <objects>
                 <viewController id="gMK-oS-7B1" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CHT-hq-rgm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veJ-P0-OUl">
-                                <rect key="frame" x="47" y="70" width="281" height="167"/>
+                                <rect key="frame" x="51.666666666666657" y="94" width="310.66666666666674" height="224"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbR-eK-uhU">
-                                        <rect key="frame" x="0.0" y="0.0" width="281" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="89"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your preferred theme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-TC-rpR">
-                                        <rect key="frame" x="0.0" y="46" width="281" height="70"/>
+                                        <rect key="frame" x="0.0" y="64.333333333333343" width="310.66666666666669" height="89"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Q0y-FN-8HM">
-                                        <rect key="frame" x="0.0" y="97" width="281" height="70"/>
+                                        <rect key="frame" x="0.0" y="135" width="310.66666666666669" height="89"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCi-jd-6ws">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160.33333333333334" height="89"/>
                                                 <state key="normal" title="Dark"/>
                                                 <connections>
                                                     <action selector="selectDarkTheme:" destination="gMK-oS-7B1" eventType="touchUpInside" id="9mP-cA-vCg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-SL-vYr">
-                                                <rect key="frame" x="145" y="0.0" width="136" height="70"/>
+                                                <rect key="frame" x="160.33333333333331" y="0.0" width="150.33333333333331" height="89"/>
                                                 <state key="normal" title="Blue"/>
                                                 <connections>
                                                     <action selector="selectYourColorHereTheme:" destination="gMK-oS-7B1" eventType="touchUpInside" id="4dn-5v-gsT"/>
@@ -74,7 +74,7 @@
             <objects>
                 <collectionViewController title="Photo Collection" id="hZT-A7-UMa" customClass="PhotosCollectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="j7l-dX-wir">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="quW-tH-AjS">
@@ -98,7 +98,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="150"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFm-TQ-ZtS">
-                                                    <rect key="frame" x="0.0" y="151" width="170" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="151" width="170" height="20.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -153,26 +153,23 @@
             <objects>
                 <viewController id="eLh-kT-HiB" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4Y-7w-c3k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sbM-2f-FSI">
-                                <rect key="frame" x="11" y="167.5" width="353" height="455"/>
+                                <rect key="frame" x="12.333333333333343" y="167.5" width="389.33333333333326" height="455"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSd-vG-XMw">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="379"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="389.33333333333331" height="379"/>
                                     </imageView>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wa-L2-49Q">
-                                        <rect key="frame" x="0.0" y="387" width="353" height="30"/>
+                                        <rect key="frame" x="0.0" y="387" width="389.33333333333331" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="textField:" destination="eLh-kT-HiB" eventType="editingDidEnd" id="IBw-Br-3Qw"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD0-OF-hhX">
-                                        <rect key="frame" x="0.0" y="425" width="353" height="30"/>
+                                        <rect key="frame" x="0.0" y="425" width="389.33333333333331" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="eLh-kT-HiB" eventType="touchUpInside" id="ZJX-uB-gQj"/>
@@ -202,7 +199,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="eSd-vG-XMw" id="1zu-CU-78p"/>
-                        <outlet property="textField" destination="7wa-L2-49Q" id="L3c-EB-uec"/>
+                        <outlet property="textField" destination="7wa-L2-49Q" id="4Db-l1-9g3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miO-5p-ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,7 +212,7 @@
                 <navigationController title="Photo Collection" automaticallyAdjustsScrollViewInsets="NO" id="lrs-u3-XFh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="F9e-Xg-dnI">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

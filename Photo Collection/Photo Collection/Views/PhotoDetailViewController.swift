@@ -13,21 +13,19 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-
         // Do any additional setup after loading the view.
     }
     
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
-    var existingPhoto : Bool = true
     
     @IBOutlet weak var imageView: UIImageView!
+    
     
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func addPhoto(_ sender: UIButton) {
-        existingPhoto = false
         let pickerVC = UIImagePickerController()
         pickerVC.sourceType = .photoLibrary
         pickerVC.allowsEditing = true
@@ -36,15 +34,20 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    @IBAction func savePhoto(_ sender: Any) {
-        if existingPhoto && imageView.image != nil && textField.text != nil{
-            photoController!.Update(photo: photo!, data: (photo?.imageData)!, string: (photo?.title)!)
-            self.navigationController?.popToRootViewController(animated: true)
-        } else if imageView.image != nil && textField.text != nil {
-            let data = imageView.image!.pngData()
-            photoController!.Create(imageData: data!, title: textField.text!)
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+    @IBAction func savePhoto(_ sender: UIBarButtonItem) {
+        guard let photoController = photoController,
+            let text = textField.text,
+            let image = imageView.image,
+            let imageData = image.pngData()
+            else { return }
+            if let photo = photo{
+                photoController.Update(photo: photo, data: imageData, string: text)
+            } else {
+                
+                photoController.Create(imageData: imageData, title: text)
+                
+            }
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setTheme() {
@@ -70,14 +73,5 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         textField.isUserInteractionEnabled = true
         picker.dismiss(animated: true, completion: nil)
     }
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//        let collectionVC = segue.destination as! PhotosCollectionViewController
-//        collectionVC.photoController.photos = (photoController?.photos)!
-//    }
-
 }
+
