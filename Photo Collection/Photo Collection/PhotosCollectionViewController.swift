@@ -8,13 +8,14 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setTheme()
+        collectionView.reloadData()
     }
     
     // MARK: - Navigation

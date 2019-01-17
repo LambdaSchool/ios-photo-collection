@@ -10,21 +10,35 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         updateViews()
     }
     
     @IBAction func addPhoto(_ sender: Any) {
-      let imagePicker = UIImagePickerController()
-        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+        imagePicker.delegate = self
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        photoImage.image = pickedImage
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func savePhoto(_ sender: Any) {
-        if let photo = photo {
-            photoController?.updatePhoto(photo: <#T##Photo#>, imageData: <#T##Data#>, title: <#T##String#>)
-        }
+        guard let title = photoNameText.text, !title.isEmpty,
+            let image = photoImage.image,
+            let imageData = image.pngData() else { return }
         
+        if let photo = photo {
+            photoController?.updatePhoto(photo: photo, imageData: imageData, title: title)
+        } else {
+            photoController?.createPhoto(imageData: imageData, title: title)
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     private func setTheme() {
