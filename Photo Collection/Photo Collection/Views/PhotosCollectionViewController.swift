@@ -17,6 +17,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,10 +35,10 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Get the new view controller using [segue destinationViewController].
         switch segue.identifier {
         case "themeSegue":
-            guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
-            themeVC.themeHelper = themeHelper
+             let themeVC = segue.destination as! ThemeSelectionViewController
+             themeVC.themeHelper = themeHelper
         case "createSegue":
-            guard let detailVC = segue.destination as? PhotoDetailViewController else { return }
+            let detailVC = segue.destination as! PhotoDetailViewController
             detailVC.photoController = photoController
             detailVC.themeHelper     = themeHelper
 //        case "cellSegue":
@@ -49,7 +50,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 //            }
 //            guard let cellVC = segue.destination as?
         default:
-            return
+             fatalError("segue could not be prepared for")
         }
         // Pass the selected object to the new view controller.
     }
@@ -67,7 +68,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photocell", for: indexPath)
         guard let unwrappedCell = cell as? PhotosCollectionViewCell else { fatalError("No photo cell")}
-        cell.tag = indexPath.item
         
         let photo = photoController.photos[indexPath.item]
         unwrappedCell.imageView.image = UIImage(data: photo.imageData)
@@ -77,11 +77,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
-        if themeHelper.themePreference != nil {
-            let preference = themeHelper.themePreference
-            self.collectionView.backgroundColor = (preference == "dark") ? .black : .blue
+        if themeHelper.themePreference == nil  {
+            self.collectionView.backgroundColor = UIColor.darkGray
+            return
         }
-        
+        self.collectionView.backgroundColor = (themeHelper.themePreference == "Dark" ) ? .darkGray : .cyan
     }
 
     // MARK: UICollectionViewDelegate
@@ -116,3 +116,4 @@ class PhotosCollectionViewController: UICollectionViewController {
     */
 
 }
+

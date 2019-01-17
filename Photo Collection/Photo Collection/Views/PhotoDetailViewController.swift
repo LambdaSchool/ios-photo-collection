@@ -46,11 +46,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    func setTheme(){
+    func setTheme() {
         if themeHelper!.themePreference != nil {
-            let preference = themeHelper!.themePreference
-            self.view.backgroundColor = (preference == "dark") ? .black : .blue
-//            self.navigationController?.popViewController(animated: true)
+        self.view.backgroundColor = (themeHelper!.themePreference == "Dark") ? .darkGray : .cyan
+        } else {
+            self.view.backgroundColor = UIColor.darkGray
         }
     }
     
@@ -69,14 +69,14 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         textField.isUserInteractionEnabled = true
         picker.dismiss(animated: true, completion: nil)
     }
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        let collectionVC = segue.destination as! PhotosCollectionViewController
+//        collectionVC.photoController.photos = (photoController?.photos)!
+//    }
 
 }
