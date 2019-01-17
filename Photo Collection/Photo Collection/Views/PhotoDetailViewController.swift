@@ -30,7 +30,10 @@ class PhotoDetailViewController: UIViewController {
     
     @IBAction func savePhoto(_ sender: Any) {
         if photo != nil{
-//            photoController?.Update(photo: <#T##Photo#>, data: <#T##Data#>, string: <#T##String#>)
+            photoController!.Update(photo: photo!, data: (photo?.imageData)!, string: (photo?.title)!)
+        } else if imageView.image != nil && textField.text != nil {
+            let data = imageView.image!.pngData()
+            photoController?.Create(imageData: data!, title: textField.text!)
         }
     }
     

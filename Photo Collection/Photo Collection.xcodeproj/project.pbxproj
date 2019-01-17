@@ -98,8 +98,8 @@
 		A2AE8FED21EFCE1F004989A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A2AE8FEB21EFCE1B004989A4 /* PhotosCollectionViewController.swift */,
 				A2AE8FEE21EFCF23004989A4 /* PhotosCollectionViewCell.swift */,
+				A2AE8FEB21EFCE1B004989A4 /* PhotosCollectionViewController.swift */,
 				A2AE8FF021EFCFF7004989A4 /* PhotoDetailViewController.swift */,
 				A2AE8FF221EFD45A004989A4 /* ThemeSelectionViewController.swift */,
 			);
