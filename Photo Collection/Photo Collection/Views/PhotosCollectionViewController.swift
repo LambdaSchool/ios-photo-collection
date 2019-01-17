@@ -8,7 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
@@ -22,7 +21,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
 
         // Do any additional setup after loading the view.
     }
