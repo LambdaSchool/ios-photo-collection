@@ -12,6 +12,11 @@ private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
