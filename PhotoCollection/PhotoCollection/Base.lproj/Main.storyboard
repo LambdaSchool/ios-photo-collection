@@ -52,7 +52,7 @@
                                 <connections>
                                     <outlet property="imageLabel" destination="9W7-an-JC7" id="feX-ac-Rrm"/>
                                     <outlet property="imageView" destination="0Ut-mc-rYo" id="thG-GI-wZM"/>
-                                    <segue destination="h6N-3f-EWU" kind="show" identifier="toDetailVC" id="FJc-LU-R6P"/>
+                                    <segue destination="h6N-3f-EWU" kind="show" identifier="PhotoCellSegue" id="FJc-LU-R6P"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -64,12 +64,12 @@
                     <navigationItem key="navigationItem" id="Wrb-rI-ixZ">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="cUg-XM-FMs">
                             <connections>
-                                <segue destination="qsL-Ib-Z4d" kind="presentation" identifier="toThemeVC" id="dRP-vP-nfk"/>
+                                <segue destination="qsL-Ib-Z4d" kind="presentation" identifier="ThemeSelectSegue" id="dRP-vP-nfk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="4CF-7l-qSE">
                             <connections>
-                                <segue destination="h6N-3f-EWU" kind="show" identifier="toAddVC" id="hRe-BB-UYp"/>
+                                <segue destination="h6N-3f-EWU" kind="show" identifier="AddButtonSegue" id="hRe-BB-UYp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -102,11 +102,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVb-0E-q85">
-                                <rect key="frame" x="218" y="267" width="69" height="30"/>
+                                <rect key="frame" x="252" y="267" width="35" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Light Blue"/>
+                                <state key="normal" title="Cyan"/>
                                 <connections>
-                                    <action selector="selectLightBlueTheme:" destination="qsL-Ib-Z4d" eventType="touchUpInside" id="VJZ-bR-dY1"/>
+                                    <action selector="selectCyanTheme:" destination="qsL-Ib-Z4d" eventType="touchUpInside" id="ASG-s5-f4W"/>
                                 </connections>
                             </button>
                         </subviews>

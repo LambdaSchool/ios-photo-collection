@@ -30,7 +30,7 @@ class ThemeSelectionViewController: UIViewController {
     @IBAction func selectDarkTheme(_ sender: Any) {
     }
     
-    @IBAction func selectLightBlueTheme(_ sender: Any) {
+    @IBAction func selectCyanTheme(_ sender: Any) {
     }
     
     var themeHelper: ThemeHelper?
