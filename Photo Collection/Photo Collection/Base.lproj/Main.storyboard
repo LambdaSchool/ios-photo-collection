@@ -94,6 +94,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0l-9m-cMY">
+                                <rect key="frame" x="169" y="617" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="stP-5c-sTa" eventType="touchUpInside" id="4JO-d6-nsV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -107,10 +114,16 @@
                             <constraint firstItem="wrz-nd-0ke" firstAttribute="top" secondItem="GLE-E6-ZwJ" secondAttribute="bottom" constant="106" id="TEl-Ig-3xU"/>
                             <constraint firstItem="wrz-nd-0ke" firstAttribute="leading" secondItem="347-9O-zrX" secondAttribute="trailing" constant="43" id="TOD-dF-QbI"/>
                             <constraint firstItem="GLE-E6-ZwJ" firstAttribute="top" secondItem="qGl-et-Afa" secondAttribute="top" constant="20" id="XHU-Vr-Bv0"/>
+                            <constraint firstItem="m0l-9m-cMY" firstAttribute="centerX" secondItem="28n-LA-ZRF" secondAttribute="centerX" id="hsQ-Qn-dDT"/>
                             <constraint firstItem="qGl-et-Afa" firstAttribute="trailing" secondItem="wrz-nd-0ke" secondAttribute="trailing" constant="16" id="iNG-Gw-NB4"/>
+                            <constraint firstItem="m0l-9m-cMY" firstAttribute="top" secondItem="vSm-eM-64o" secondAttribute="bottom" constant="34" id="jJr-CZ-cmw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qGl-et-Afa"/>
                     </view>
+                    <connections>
+                        <outlet property="darkThemeIndicator" destination="T3d-od-pTn" id="Dm7-P6-qG5"/>
+                        <outlet property="lightThemeIndicator" destination="vSm-eM-64o" id="kF7-TV-sQR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="us6-sm-Upr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,7 +144,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XRG-To-yDj" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="XRG-To-yDj" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -151,12 +164,11 @@
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="bottomMargin" secondItem="cnj-73-Ry8" secondAttribute="bottom" constant="6" id="4gb-C5-h2V"/>
+                                    <constraint firstItem="cnj-73-Ry8" firstAttribute="centerX" secondItem="QQX-Gd-Cad" secondAttribute="centerX" id="GE1-U4-exO"/>
                                     <constraint firstItem="cnj-73-Ry8" firstAttribute="top" secondItem="QQX-Gd-Cad" secondAttribute="bottom" constant="8" id="Kq2-q0-EJN"/>
                                     <constraint firstItem="QQX-Gd-Cad" firstAttribute="leading" secondItem="XRG-To-yDj" secondAttribute="leading" constant="20" id="M2I-m7-xPY"/>
                                     <constraint firstAttribute="trailing" secondItem="QQX-Gd-Cad" secondAttribute="trailing" constant="20" id="P91-tO-Jsc"/>
-                                    <constraint firstItem="cnj-73-Ry8" firstAttribute="leading" secondItem="XRG-To-yDj" secondAttribute="leadingMargin" constant="46" id="fmr-Xx-SsT"/>
                                     <constraint firstItem="QQX-Gd-Cad" firstAttribute="top" secondItem="XRG-To-yDj" secondAttribute="top" constant="6" id="ovy-9b-Suh"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="cnj-73-Ry8" secondAttribute="trailing" constant="46" id="swX-Yk-jgK"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="QQX-Gd-Cad" id="zli-8J-sex"/>
@@ -187,7 +199,7 @@
             </objects>
             <point key="canvasLocation" x="1863.2" y="125.4872563718141"/>
         </scene>
-        <!--Title-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="bSg-U5-PeF">
             <objects>
                 <viewController id="fPB-fx-v6g" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
@@ -228,7 +240,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BdF-ie-Emi"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="ejd-Px-gEV">
+                    <navigationItem key="navigationItem" id="ejd-Px-gEV">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="fvH-PY-86S">
                             <connections>
                                 <action selector="savePhoto:" destination="fPB-fx-v6g" id="WYB-g5-439"/>
@@ -236,6 +248,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoButton" destination="mfh-c7-Wjl" id="Qbv-J4-Iek"/>
                         <outlet property="imageView" destination="1uY-W7-vIG" id="VDJ-60-lvz"/>
                         <outlet property="textField" destination="rrC-7s-FRM" id="IW2-J0-iKI"/>
                     </connections>

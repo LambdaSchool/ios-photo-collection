@@ -5,15 +5,15 @@
 //  Created by Cameron Dunn on 1/16/19.
 //  Copyright © 2019 Cameron Dunn. All rights reserved.
 //
-
+extension String{
+    static var dark = "Dark"
+    static var light = "Light"
+}
 import Foundation
 
 class ThemeHelper{
     var themePreferenceKey : String = "ThemePreference"
-    enum themes : String{
-        case Dark
-        case Light
-    }
+    
     var themePreference : String?{
         return UserDefaults.standard.string(forKey: themePreferenceKey)
     }
@@ -23,9 +23,9 @@ class ThemeHelper{
         }
     }
     func setThemePreferenceToDark(){
-        UserDefaults.standard.set(themes.Dark, forKey: themePreferenceKey)
+        UserDefaults.standard.set(String.dark, forKey: themePreferenceKey)
     }
     func setThemePreferenceToLight(){
-        UserDefaults.standard.set(themes.Light, forKey: themePreferenceKey)
+        UserDefaults.standard.set(String.light, forKey: themePreferenceKey)
     }
 }
