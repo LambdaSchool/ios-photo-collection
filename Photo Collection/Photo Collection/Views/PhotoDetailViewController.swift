@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +26,23 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func addPhoto(_ sender: UIButton) {
+        
+        let pickerVC = UIImagePickerController()
+        pickerVC.sourceType = .photoLibrary
+        pickerVC.allowsEditing = true
+        pickerVC.delegate = self
+        present(pickerVC, animated: true)
+        
     }
     
     @IBAction func savePhoto(_ sender: Any) {
         if photo != nil{
             photoController!.Update(photo: photo!, data: (photo?.imageData)!, string: (photo?.title)!)
+            self.navigationController?.popViewController(animated: true)
         } else if imageView.image != nil && textField.text != nil {
             let data = imageView.image!.pngData()
             photoController?.Create(imageData: data!, title: textField.text!)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -41,7 +50,7 @@ class PhotoDetailViewController: UIViewController {
         if themeHelper!.themePreference != nil {
             let preference = themeHelper!.themePreference
             self.view.backgroundColor = (preference == "dark") ? .black : .blue
-            
+//            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -52,6 +61,11 @@ class PhotoDetailViewController: UIViewController {
             textField.text = photo?.title
         }
         
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = (info[UIImagePickerController.InfoKey.editedImage] as! UIImage)
+        picker.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
