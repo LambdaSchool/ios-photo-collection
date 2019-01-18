@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "PhotoCell"
-
 class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +47,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoController.photos.count
     }
+    
+    let reuseIdentifier = "PhotoCell"
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotosCollectionViewCell
