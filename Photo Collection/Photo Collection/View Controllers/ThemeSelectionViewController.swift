@@ -10,4 +10,9 @@ import UIKit
 
 class ThemeSelectionViewController: UIViewController {
     
+    
+    
+    // MARK: - Properties
+    
+    let themeHelper = ThemeHelper()
 }

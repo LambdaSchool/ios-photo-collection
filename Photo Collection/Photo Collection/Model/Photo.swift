@@ -8,17 +8,7 @@
 
 import Foundation
 
-class Photo {
+struct Photo: Equatable {
     var imageData: Data
     var title: String
-    
-    init(imageData: Data, title: String) {
-        self.imageData = imageData
-        self.title = title
-    }
 }
-
-//struct Photo {
-//    var imageData: Data
-//    var title: String
-//}

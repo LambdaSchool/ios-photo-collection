@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PhotoDetailViewController.swift
 //  Photo Collection
 //
 //  Created by Stuart on 1/23/19.
@@ -10,9 +10,14 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
+    
+    
     // MARK: - IBOutlets & Properties
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
 }
 
