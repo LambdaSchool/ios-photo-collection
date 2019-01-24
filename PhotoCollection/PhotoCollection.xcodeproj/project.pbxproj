@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27173BF521FA71ED000558C7 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27173BF421FA71ED000558C7 /* PhotoController.swift */; };
 		27253D8B21FA16A70086AD06 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27253D8A21FA16A70086AD06 /* PhotoModel.swift */; };
 		279A199421F92E2B00B61922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A199321F92E2B00B61922 /* AppDelegate.swift */; };
 		279A199621F92E2B00B61922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279A199521F92E2B00B61922 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27173BF421FA71ED000558C7 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		27253D8A21FA16A70086AD06 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		279A199021F92E2B00B61922 /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279A199321F92E2B00B61922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		27173BF621FA71F4000558C7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27173BF421FA71ED000558C7 /* PhotoController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		279A198721F92E2B00B61922 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		279A199221F92E2B00B61922 /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
+				27173BF621FA71F4000558C7 /* View Controllers */,
 				27173BF321FA7160000558C7 /* Models */,
 				279A199321F92E2B00B61922 /* AppDelegate.swift */,
 				279A199521F92E2B00B61922 /* ViewController.swift */,
@@ -148,6 +159,7 @@
 			files = (
 				27253D8B21FA16A70086AD06 /* PhotoModel.swift in Sources */,
 				279A199621F92E2B00B61922 /* ViewController.swift in Sources */,
+				27173BF521FA71ED000558C7 /* PhotoController.swift in Sources */,
 				279A199421F92E2B00B61922 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
