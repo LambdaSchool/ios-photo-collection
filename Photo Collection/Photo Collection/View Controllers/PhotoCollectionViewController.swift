@@ -55,11 +55,15 @@ class PhotoCollectionViewController: UICollectionViewController {
             guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
             
             guard let photoCell = sender as? PhotoCollectionViewCell,
-                  let indexPath = collectionView?.indexPath(for: photoCell) else { return }
+                  let index = collectionView?.indexPath(for: photoCell) else { return }
             
-            let photo = photoController.photos[indexPath.item]
+            let photo = photoController.photos[index.item]
+            destinationVC.photo = photo
             
-            destinationVC.imageView.image = photo.imageData//UIImage(data: photo.imageData)
+            destinationVC.themeHelper = themeHelper
+        } else if segue.identifier == "AddButtonSegue" {
+            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
+            destinationVC.themeHelper = themeHelper
         }
     }
     

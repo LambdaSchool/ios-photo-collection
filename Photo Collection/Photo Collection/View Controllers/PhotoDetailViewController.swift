@@ -13,7 +13,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - Set Theme
     
     func setTheme() {
-        if let currentTheme = themeHelper.themePreference {
+        if let currentTheme = themeHelper?.themePreference {
             if currentTheme == "Aqua" {
                 self.view.backgroundColor = .blue
             } else if currentTheme == "Dark" {
@@ -26,15 +26,19 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     func updateViews() {
         setTheme()
+        
+        if let photo = photo {
+            imageView.image = photo.imageData //UIImage(data: photo.imageData)
+        }
     }
     
     // MARK: - Lifecycle Methods
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         updateViews()
     }
-    
+
     // MARK: - Image Picker
     
     func presentImagePickerController() {
@@ -59,6 +63,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var photo: Photo?
     
     let photoController = PhotoController()
-    let themeHelper = ThemeHelper()
-}
+    var themeHelper: ThemeHelper?
+    
+    }
 
