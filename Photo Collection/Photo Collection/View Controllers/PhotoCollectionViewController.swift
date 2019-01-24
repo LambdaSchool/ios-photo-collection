@@ -10,6 +10,26 @@ import UIKit
 
 class PhotoCollectionViewController: UICollectionViewController {
     
+    // MARK: - Set Theme
+    
+    func setTheme() {
+        if let currentTheme = themeHelper.themePreference {
+            if currentTheme == "Aqua" {
+                self.collectionView?.backgroundColor = .blue
+            } else if currentTheme == "Dark" {
+                self.collectionView?.backgroundColor = .gray
+            }
+        }
+    }
+    
+    // MARK: - Lifecycle Methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView?.reloadData()
+        setTheme()
+    }
+    
     // MARK: - CollectionViewControllerDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
