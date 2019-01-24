@@ -10,12 +10,22 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
+    // MARK: IBActions & Properties
     
+    @IBAction func addPhoto(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func savePhoto(_ sender: UIBarButtonItem) {
+        
+    }
     
     // MARK: - IBOutlets & Properties
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    
+    var photo: Photo?
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()

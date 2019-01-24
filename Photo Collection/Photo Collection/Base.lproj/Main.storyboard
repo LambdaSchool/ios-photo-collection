@@ -33,6 +33,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-bI-r4h">
                                         <rect key="frame" x="0.0" y="38" width="359" height="30"/>
                                         <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="utV-wg-HyM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -50,7 +53,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="968-xk-DKA">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="gN9-Id-3mv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="gN9-Id-3mv">
+                            <connections>
+                                <action selector="savePhoto:" destination="BYZ-38-t0r" id="lQT-9l-ZVl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="toO-JR-7oF" id="Uzo-ue-1LA"/>
@@ -160,21 +167,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLb-fi-tj0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLb-fi-tj0">
                                 <rect key="frame" x="95" y="318" width="33" height="30"/>
                                 <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkTheme:" destination="Usl-G0-kAc" eventType="touchUpInside" id="dcd-Kk-Yu4"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZH-Ae-KpC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZH-Ae-KpC">
                                 <rect key="frame" x="245" y="318" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aqua"/>
+                                <connections>
+                                    <action selector="selectAquaTheme:" destination="Usl-G0-kAc" eventType="touchUpInside" id="UgR-wv-oQi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uLb-fi-tj0" firstAttribute="top" secondItem="O7l-Q4-hyT" secondAttribute="bottom" constant="64" id="2n5-DO-Ugj"/>
                             <constraint firstItem="O7l-Q4-hyT" firstAttribute="top" secondItem="KX3-cY-PWP" secondAttribute="top" constant="207" id="6Vb-Os-Rsi"/>
+                            <constraint firstItem="pZH-Ae-KpC" firstAttribute="top" secondItem="O7l-Q4-hyT" secondAttribute="bottom" constant="64" id="AnW-lu-eO8"/>
                             <constraint firstItem="O7l-Q4-hyT" firstAttribute="leading" secondItem="KX3-cY-PWP" secondAttribute="leading" constant="64" id="bYv-ya-Tjs"/>
+                            <constraint firstItem="uLb-fi-tj0" firstAttribute="leading" secondItem="KX3-cY-PWP" secondAttribute="leading" constant="95" id="biL-du-yMh"/>
+                            <constraint firstItem="KX3-cY-PWP" firstAttribute="trailing" secondItem="pZH-Ae-KpC" secondAttribute="trailing" constant="95" id="fqy-sW-AX9"/>
                             <constraint firstItem="KX3-cY-PWP" firstAttribute="trailing" secondItem="O7l-Q4-hyT" secondAttribute="trailing" constant="64" id="n4c-eW-5Kb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KX3-cY-PWP"/>
