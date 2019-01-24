@@ -12,14 +12,14 @@ class ThemeHelper {
     
     let themePreferenceKey: String = ""
     
+    let userDefaults = UserDefaults.standard
+    
     func setThemePreferenceToDark() {
-        let userDefaults = UserDefaults.standard
-        let themePreference = userDefaults.string(forKey: themePreferenceKey)
-        return themePreference
+        userDefaults.set("Dark", forKey: themePreferenceKey)
     }
     
-    
-    
-    
+    func setThemePreferenceToLight() {
+        userDefaults.set("Light", forKey: themePreferenceKey)
+    }
     
 }
