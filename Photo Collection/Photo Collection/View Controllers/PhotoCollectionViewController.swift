@@ -17,7 +17,7 @@ class PhotoCollectionViewController: UICollectionViewController {
             if currentTheme == "Aqua" {
                 self.collectionView?.backgroundColor = .blue
             } else if currentTheme == "Dark" {
-                self.collectionView?.backgroundColor = .gray
+                self.collectionView?.backgroundColor = .black
             }
         }
     }
@@ -42,10 +42,25 @@ class PhotoCollectionViewController: UICollectionViewController {
         guard let photoCell = cell as? PhotoCollectionViewCell else { return cell }
         let photo = photoController.photos[indexPath.item]
         
-        photoCell.imageView.image = UIImage(data: photo.imageData)
+        photoCell.imageView.image = photo.imageData//UIImage(data: photo.imageData)
         photoCell.imageLabel.text = photo.title
         
         return photoCell
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PhotoCellSegue" {
+            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
+            
+            guard let photoCell = sender as? PhotoCollectionViewCell,
+                  let indexPath = collectionView?.indexPath(for: photoCell) else { return }
+            
+            let photo = photoController.photos[indexPath.item]
+            
+            destinationVC.imageView.image = photo.imageData//UIImage(data: photo.imageData)
+        }
     }
     
     // MARK: - Properties

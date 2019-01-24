@@ -8,8 +8,39 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate {
 
+    // MARK: - Set Theme
+    
+    func setTheme() {
+        if let currentTheme = themeHelper.themePreference {
+            if currentTheme == "Aqua" {
+                self.view.backgroundColor = .blue
+            } else if currentTheme == "Dark" {
+                self.view.backgroundColor = .black
+            }
+        }
+    }
+    
+    // MARK: - Update Views
+    
+    func updateViews() {
+        setTheme()
+    }
+    
+    // MARK: - Lifecycle Methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
+    }
+    
+    // MARK: - Image Picker
+    
+    func presentImagePickerController() {
+        
+    }
+    
     // MARK: IBActions & Properties
     
     @IBAction func addPhoto(_ sender: UIButton) {

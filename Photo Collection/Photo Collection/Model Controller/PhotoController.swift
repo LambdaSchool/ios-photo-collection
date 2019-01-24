@@ -6,16 +6,16 @@
 //  Copyright © 2019 Stuart. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PhotoController {
     
-    func createPhoto(with imageData: Data, title: String) {
+    func createPhoto(with imageData: UIImage, title: String) {
         let photo = Photo(imageData: imageData, title: title)
         photos.append(photo)
     }
     
-    func update(_ photo: Photo, newImageData: Data, newTitle: String) {
+    func update(_ photo: Photo, newImageData: UIImage, newTitle: String) {
         guard let index = photos.index(of: photo) else { return }
         var updatePhoto = photo
         
@@ -25,5 +25,7 @@ class PhotoController {
         photos[index] = updatePhoto
     }
     
-    private(set) var photos: [Photo] = []
+    private(set) var photos: [Photo] = [
+    Photo(title: "programmer", imageData: "programmer")
+    ]
 }

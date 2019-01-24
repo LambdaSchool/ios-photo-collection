@@ -13,16 +13,16 @@ class ThemeSelectionViewController: UIViewController {
     // IBActions & Logic
     
     @IBAction func selectDarkTheme(_ sender: UIButton) {
-        themeHelper?.setThemePreferenceToDark()
+        themeHelper.setThemePreferenceToDark()
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectAquaTheme(_ sender: UIButton) {
-        themeHelper?.setThemePreferenceToAqua()
+        themeHelper.setThemePreferenceToAqua()
         dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Properties
     
-    var themeHelper: ThemeHelper? = ThemeHelper()
+    let themeHelper = ThemeHelper()
 }
