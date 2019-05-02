@@ -14,6 +14,7 @@
 		42EB779A227B850B008787E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EB7798227B850B008787E1 /* LaunchScreen.storyboard */; };
 		42EB77A2227B85DC008787E1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB77A1227B85DC008787E1 /* Photo.swift */; };
 		42EB77A4227B866B008787E1 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB77A3227B866B008787E1 /* PhotoController.swift */; };
+		42EB77A6227B8864008787E1 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB77A5227B8864008787E1 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		42EB779B227B850B008787E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42EB77A1227B85DC008787E1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		42EB77A3227B866B008787E1 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		42EB77A5227B8864008787E1 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				42EB778F227B8509008787E1 /* AppDelegate.swift */,
 				42EB7791227B8509008787E1 /* ViewController.swift */,
 				42EB77A3227B866B008787E1 /* PhotoController.swift */,
+				42EB77A5227B8864008787E1 /* ThemeHelper.swift */,
 				42EB77A1227B85DC008787E1 /* Photo.swift */,
 				42EB7793227B8509008787E1 /* Main.storyboard */,
 				42EB7796227B850B008787E1 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				42EB77A2227B85DC008787E1 /* Photo.swift in Sources */,
 				42EB7792227B8509008787E1 /* ViewController.swift in Sources */,
 				42EB77A4227B866B008787E1 /* PhotoController.swift in Sources */,
+				42EB77A6227B8864008787E1 /* ThemeHelper.swift in Sources */,
 				42EB7790227B8509008787E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
