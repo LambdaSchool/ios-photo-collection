@@ -90,7 +90,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photos" id="L7q-gZ-f4Z">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Ib4-Np-BT6"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Ib4-Np-BT6">
+                            <connections>
+                                <segue destination="W2A-Q7-3xh" kind="presentation" id="aYP-AH-44Q"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ndp-j4-c9E">
                             <connections>
                                 <segue destination="YT2-HC-pKc" kind="show" identifier="add" id="2Qy-mR-zmp"/>
@@ -154,10 +158,50 @@
                     <navigationItem key="navigationItem" title="Title" id="U9E-5c-gtT">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="qMY-Ko-CtO"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="FMu-tl-D8Q" id="10c-kE-Whc"/>
+                        <outlet property="imageView" destination="19j-E2-XY0" id="Bxk-K9-lhS"/>
+                        <outlet property="textFeild" destination="0z8-7G-aBQ" id="0dW-kJ-6Zp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uc6-w5-AcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2002.8985507246377" y="95.758928571428569"/>
+        </scene>
+        <!--PHOTO COLLECTION-->
+        <scene sceneID="9Wq-FG-xoy">
+            <objects>
+                <viewController id="bEr-v4-7KX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CpM-Pf-0HE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UO-hG-XPj">
+                                <rect key="frame" x="151" y="296" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOX-X2-Vd0">
+                                <rect key="frame" x="184" y="372" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaZ-Fz-Js0">
+                                <rect key="frame" x="20" y="140" width="363" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ruv-IF-SDF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PHOTO COLLECTION" id="teg-Vj-5Y3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouS-d5-A3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031.8840579710147" y="-619.41964285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qp6-Hd-EmS">
@@ -176,6 +220,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVL-rq-zfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="211.59420289855075" y="96.428571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Piz-J2-orC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W2A-Q7-3xh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="EPW-MF-QJe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bEr-v4-7KX" kind="relationship" relationship="rootViewController" id="lgv-5D-0C5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-xm-Cpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121.7391304347827" y="-619.41964285714278"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

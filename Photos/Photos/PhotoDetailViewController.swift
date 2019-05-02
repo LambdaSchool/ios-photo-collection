@@ -15,6 +15,10 @@ class PhotoDetailViewController: UIViewController {
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var textFeild: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

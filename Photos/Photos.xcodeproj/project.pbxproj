@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1B0A42227B989D00DBAEF0 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B0A41227B989D00DBAEF0 /* ThemeSelectionViewController.swift */; };
 		57111187227B8322000483E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57111186227B8322000483E8 /* AppDelegate.swift */; };
 		5711118C227B8322000483E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5711118A227B8322000483E8 /* Main.storyboard */; };
 		5711118E227B832B000483E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5711118D227B832B000483E8 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1B0A41227B989D00DBAEF0 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 		57111183227B8322000483E8 /* Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57111186227B8322000483E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5711118B227B8322000483E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				57111186227B8322000483E8 /* AppDelegate.swift */,
 				5711118A227B8322000483E8 /* Main.storyboard */,
+				1C1B0A41227B989D00DBAEF0 /* ThemeSelectionViewController.swift */,
 				5711118D227B832B000483E8 /* Assets.xcassets */,
 				5711118F227B832B000483E8 /* LaunchScreen.storyboard */,
 				57111192227B832B000483E8 /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5711119B227B85A4000483E8 /* PhotoController.swift in Sources */,
+				1C1B0A42227B989D00DBAEF0 /* ThemeSelectionViewController.swift in Sources */,
 				57111199227B8545000483E8 /* Photo.swift in Sources */,
 				57111187227B8322000483E8 /* AppDelegate.swift in Sources */,
 				571111A3227B8C53000483E8 /* PhotoDetailViewController.swift in Sources */,
