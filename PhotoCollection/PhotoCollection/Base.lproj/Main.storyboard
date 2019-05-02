@@ -59,6 +59,7 @@
                                 <connections>
                                     <outlet property="photoImageView" destination="0Ck-q1-FCF" id="BOu-sv-hBs"/>
                                     <outlet property="photoLabel" destination="jSV-dO-Wsj" id="PL2-Dj-Mt6"/>
+                                    <segue destination="Vp0-GC-dEs" kind="show" identifier="PhotoDetail" id="51W-xd-wMG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -71,7 +72,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="p6y-W5-Vnf">
                                 <connections>
-                                    <segue destination="Vp0-GC-dEs" kind="show" id="ZVg-zL-iF6"/>
+                                    <segue destination="Vp0-GC-dEs" kind="show" identifier="AddPhoto" id="ZVg-zL-iF6"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Select Theme" id="sh3-fe-q9F">
@@ -217,4 +218,7 @@
             <point key="canvasLocation" x="207.24637681159422" y="162.72321428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZVg-zL-iF6"/>
+    </inferredMetricsTieBreakers>
 </document>
