@@ -56,11 +56,10 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let photo = photoController.photos[indexPath.item]
         
-        cell.textLabel.text = photo.title
-        cell.imageView.image = photo.imageData(
+        let image = UIImage(data: photo.imageData)
         
-    
-        // Configure the cell
+        cell.textLabel.text = photo.title
+        cell.imageView.image = image
     
         return cell
     }
