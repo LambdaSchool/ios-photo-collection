@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V7O-cS-Bnn" customClass="PhotosCollectionViewCell" customModule="ios_photo_collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="V7O-cS-Bnn" customClass="PhotosCollectionViewCell" customModule="ios_photo_collection" customModuleProvider="target">
                                 <rect key="frame" x="8" y="8" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="bottom" secondItem="z7l-uV-dfQ" secondAttribute="bottom" id="kht-6S-5ma"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="image" destination="RAw-OH-RZm" id="7ie-AE-JBo"/>
+                                    <outlet property="imageView" destination="RAw-OH-RZm" id="7ie-AE-JBo"/>
                                     <outlet property="label" destination="juQ-vy-6CL" id="two-Ap-rJ3"/>
                                     <segue destination="aoH-4q-QYC" kind="show" identifier="ViewPhoto" id="eOa-MC-ho1"/>
                                 </connections>
