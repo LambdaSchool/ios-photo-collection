@@ -20,8 +20,6 @@ class ThemeHelper {
     
     var themePreference: String? {
         var result = ""
-        
-        
         return result
     }
     
@@ -29,15 +27,11 @@ class ThemeHelper {
         
         let userDefaults = UserDefaults.standard
         //userDefaults.set(<#T##url: URL?##URL?#>, forKey: <#T##String#>)
-        
-        
     }
     
     func setThemePreferenceToYourColorHere() {
         //set preference to any other color
     }
-    
-    
     
     
 }

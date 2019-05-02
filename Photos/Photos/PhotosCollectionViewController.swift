@@ -18,6 +18,4 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     
     
-    
-    
 }
