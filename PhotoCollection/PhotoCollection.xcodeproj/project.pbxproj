@@ -14,6 +14,7 @@
 		C4DB86AF227B737400B4582C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4DB86AD227B737400B4582C /* Main.storyboard */; };
 		C4DB86B1227B737500B4582C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4DB86B0227B737500B4582C /* Assets.xcassets */; };
 		C4DB86B4227B737500B4582C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4DB86B2227B737500B4582C /* LaunchScreen.storyboard */; };
+		C4DB86BC227B818600B4582C /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB86BB227B818600B4582C /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C4DB86B0227B737500B4582C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4DB86B3227B737500B4582C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4DB86B5227B737500B4582C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4DB86BB227B818600B4582C /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				C4DB86A9227B737400B4582C /* AppDelegate.swift */,
 				C4DB86AB227B737400B4582C /* ViewController.swift */,
 				3D4B5FD1227B7F3700952C98 /* PhotoController.swift */,
+				C4DB86BB227B818600B4582C /* ThemeHelper.swift */,
 				3D4B5FCF227B7EFD00952C98 /* Photo.swift */,
 				C4DB86AD227B737400B4582C /* Main.storyboard */,
 				C4DB86B0227B737500B4582C /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				3D4B5FD0227B7EFD00952C98 /* Photo.swift in Sources */,
 				C4DB86AC227B737400B4582C /* ViewController.swift in Sources */,
 				3D4B5FD2227B7F3700952C98 /* PhotoController.swift in Sources */,
+				C4DB86BC227B818600B4582C /* ThemeHelper.swift in Sources */,
 				C4DB86AA227B737400B4582C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
