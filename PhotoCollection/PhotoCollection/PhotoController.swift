@@ -17,6 +17,12 @@ class PhotoController {
     }
     
     func update(photo: Photo, title: String, image: Data) {
-        #warning("Incomplete implementation.")
+        
+        // Find photo in photos
+        guard let index = photos.firstIndex(of: photo) else { return }
+        
+        // Update photo with new parameters
+        photos[index].title = title
+        photos[index].imageData = image
     }
 }
