@@ -66,6 +66,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             return
         }
         photoController?.createPhoto(title: title, image: photoData)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
