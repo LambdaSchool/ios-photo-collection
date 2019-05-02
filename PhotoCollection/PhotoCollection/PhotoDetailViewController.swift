@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
-    
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
@@ -19,12 +19,43 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateViews()
+    }
+    
+    
+    func setTheme() {
+        guard let themePreference = themeHelper?.themePreference else { return }
+        switch themePreference {
+        case "Dark":
+            view.backgroundColor = .gray
+        case "Red":
+            view.backgroundColor = .magenta
+        default :
+            return
+        }
+    }
+    
+    func updateViews() {
+        setTheme()
+        if let photo = photo {
+            addPhotoImageView.image = UIImage(data: photo.imageData)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    }
+    
     
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
+       
     }
     
     /*
