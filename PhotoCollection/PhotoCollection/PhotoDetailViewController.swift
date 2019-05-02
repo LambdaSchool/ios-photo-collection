@@ -61,12 +61,16 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             print("Error: no title")
             return
         }
-        guard let photoData = addPhotoImageView.image!.pngData() else {
-            print("Error: image could not be converted to data.")
+        guard let image = addPhotoImageView.image else {
+            print("Error: there is no image in the view.")
             return
         }
-        photoController?.createPhoto(title: title, image: photoData)
-        
+        guard let imageData = image.pngData() else {
+            print("Error: image could not be converted to data")
+            return
+        }
+        photoController?.createPhoto(title: title, image: imageData)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
