@@ -12,4 +12,14 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var textLabel: UILabel!
     
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    func updateViews() {
+        
+    }
+    
 }
