@@ -9,31 +9,37 @@
 import UIKit
 
 class ThemeHelper {
-    
     let themePreferenceKey: String
-    let userDefaults = UserDefaults.standard
     
-    init(themePreferenceKey: String) {
-        self.themePreferenceKey = themePreferenceKey
-        //Check if themePreference value is nil. If it is, call one of the setThemePreferences
-        if themePreferenceKey == nil {
-            setThemePreferenceToBlue()
+    // Computed properties must use var not let as they can change
+    var themePreference: String? {
+        get {
+            return UserDefaults.standard.string(forKey: themePreferenceKey)
+        }
+    }
+
+    init() {
+        // If themePreferenceKey is nil it means it's the first time a user has opened the app.
+        
+        //Give a dummy value to themePreferenceKey
+        self.themePreferenceKey = "-1"
+        
+        if self.themePreference == nil
+        {
+            self.setThemePreferenceToDark()
         }
     }
     
     func setThemePreferenceToDark() {
-        userDefaults.setValue("Dark", forKey: themePreferenceKey)
+        UserDefaults.standard.set(String.dark, forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToBlue() {
-        userDefaults.setValue("Blue", forKey: themePreferenceKey)
+        UserDefaults.standard.set(String.blue, forKey: themePreferenceKey)
     }
     
-    func themePreference() -> String? {
-        return userDefaults.string(forKey: themePreferenceKey)
-    
-    }
-    
-    
-    
+}
+extension String {
+    static var dark = "Dark"
+    static var blue = "Blue"
 }

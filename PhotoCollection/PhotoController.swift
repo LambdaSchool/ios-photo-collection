@@ -20,8 +20,8 @@ class PhotoController {
     func update(photo: Photo, imageData: Data, title: String) {
         if let i = photos.firstIndex(of: photo)
         {
-            photos[i].imageData = imageData
-            photos[i].title = title
+            self.photos[i].imageData = imageData
+            self.photos[i].title = title
         }
     }
 }
