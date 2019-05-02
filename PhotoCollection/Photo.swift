@@ -8,14 +8,19 @@
 
 import UIKit
 
-struct Photo: Equatable {
-    
-    var imageData: UIImage
+class Photo {
+    var imageData: Data
     var title: String
     
     init(imageData: Data, title: String) {
-        self.imageData = UIImage(data: imageData)!
+        self.imageData = imageData
+            //UIImage(data: imageData)!
         self.title = title
     }
     
+}
+extension Photo : Equatable {
+    static func == (lhs: Photo, rhs: Photo) -> Bool {
+        return lhs.imageData == rhs.imageData
+    }
 }

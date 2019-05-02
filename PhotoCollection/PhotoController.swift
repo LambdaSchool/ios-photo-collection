@@ -9,23 +9,19 @@
 import Foundation
 
 class PhotoController {
-    
     var photos: [Photo] = []
-    
-    init() {
-        //Create method
-        
-    }
     
     func createPhoto(imageData: Data, title: String) {
         let photo = Photo(imageData: imageData, title: title)
         
         photos.append(photo)
-        
     }
     
-    func update(Photo: Photo, imageData: Data, title: String) {
-        
+    func update(photo: Photo, imageData: Data, title: String) {
+        if let i = photos.firstIndex(of: photo)
+        {
+            photos[i].imageData = imageData
+            photos[i].title = title
+        }
     }
-    
 }
