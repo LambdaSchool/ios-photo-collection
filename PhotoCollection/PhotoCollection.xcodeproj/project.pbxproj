@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D11A9B2F227B7DA700363163 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11A9B2E227B7DA700363163 /* PhotoController.swift */; };
+		D11A9B31227B82B400363163 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11A9B30227B82B400363163 /* PhotosCollectionViewController.swift */; };
 		EC39B90C227B7BB60048A606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC39B90B227B7BB60048A606 /* AppDelegate.swift */; };
 		EC39B90E227B7BB60048A606 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC39B90D227B7BB60048A606 /* ViewController.swift */; };
 		EC39B911227B7BB60048A606 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC39B90F227B7BB60048A606 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		D11A9B2E227B7DA700363163 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		D11A9B30227B82B400363163 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		EC39B908227B7BB60048A606 /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC39B90B227B7BB60048A606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC39B90D227B7BB60048A606 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				EC39B90B227B7BB60048A606 /* AppDelegate.swift */,
 				EC39B90D227B7BB60048A606 /* ViewController.swift */,
 				EC39B90F227B7BB60048A606 /* Main.storyboard */,
+				D11A9B30227B82B400363163 /* PhotosCollectionViewController.swift */,
 				EC39B91D227B7C630048A606 /* Photo.swift */,
 				EC39B91F227B7F820048A606 /* ThemeHelper.swift */,
 				D11A9B2E227B7DA700363163 /* PhotoController.swift */,
@@ -147,6 +150,7 @@
 				EC39B91E227B7C630048A606 /* Photo.swift in Sources */,
 				EC39B90E227B7BB60048A606 /* ViewController.swift in Sources */,
 				D11A9B2F227B7DA700363163 /* PhotoController.swift in Sources */,
+				D11A9B31227B82B400363163 /* PhotosCollectionViewController.swift in Sources */,
 				EC39B920227B7F820048A606 /* ThemeHelper.swift in Sources */,
 				EC39B90C227B7BB60048A606 /* AppDelegate.swift in Sources */,
 			);
