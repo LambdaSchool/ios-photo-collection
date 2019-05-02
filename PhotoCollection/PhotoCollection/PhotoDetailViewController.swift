@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoController: PhotoController?
     var photo: Photo?
@@ -36,11 +36,44 @@ class PhotoDetailViewController: UIViewController {
     */
 
     @IBAction func addPhotoButtonPressed(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.mediaTypes = ["public.image"]
+        imagePicker.sourceType = .photoLibrary
         
+        present(imagePicker, animated: true, completion: nil)
+        
+        updateViews()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[.editedImage] as? UIImage else {return}
+        imageView.image = image
     }
     
     @IBAction func saveItemPressed(_ sender: Any) {
-       guard let photoController?.photos
+        
+        
+        print("Saved")
+        
+        guard let image = imageView.image?.pngData() else {return}
+        guard let title = textField.text else {return}
+        photoController?.createPhoto(photo: Photo(imageData: image, title: title))
+       
+//        if photo == nil {
+//            guard let imageData = imageView.image?.pngData(),
+//            let title = textField.text
+//            else {return}
+//
+//            photoController?.createPhoto(photo: Photo(imageData: imageData, title: title))
+//        } else {
+//            guard let photo = photo else {return}
+//            photoController?.update(photo: photo, data: photo.imageData, title: photo.title)
+//        }
+//
+       self.navigationController?.popViewController(animated: true)
     }
     
     func updateViews() {

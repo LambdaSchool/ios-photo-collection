@@ -14,6 +14,7 @@ class PhotoController {
     
     func createPhoto(photo: Photo) {
         
+        print("Created photo")
         photos.append(photo)
         
     }

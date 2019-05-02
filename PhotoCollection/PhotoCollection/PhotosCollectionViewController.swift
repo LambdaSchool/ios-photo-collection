@@ -14,7 +14,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
-    let photo: Photo? = nil
+//    let photo: Photo? = nil
     
 
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,8 +39,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             let cellVC: PhotoDetailViewController = segue.destination as! PhotoDetailViewController
             cellVC.themeHelper = themeHelper
             cellVC.photoController = photoController
-            //TODO: Fix photo
-            cellVC.photo = photo
+            cellVC.photo = nil
         } else if segue.identifier == "AddPhoto" {
             let addVC: PhotoDetailViewController = segue.destination as! PhotoDetailViewController
             addVC.themeHelper = themeHelper
@@ -80,9 +79,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         let theme = themeHelper.themePreference
         
         if theme == "Dark" {
-            self.collectionView.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
+            self.view.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
         } else {
-            self.collectionView.backgroundColor = #colorLiteral(red: 0.2272256538, green: 0.5468909038, blue: 0.9551692034, alpha: 1)
+            self.view.backgroundColor = #colorLiteral(red: 0.2272256538, green: 0.5468909038, blue: 0.9551692034, alpha: 1)
         }
     }
 
