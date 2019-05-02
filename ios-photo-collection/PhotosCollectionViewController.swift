@@ -45,4 +45,26 @@ class PhotosCollectionViewController: UICollectionViewController {
 		
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		AddPhoto
+//		ViewPhoto
+//		SelectTheme
+		if segue.identifier == "AddPhoto" {
+			guard let dest = segue.destination as? PhotoDetailViewController else { return }
+			dest.themeHelper = themeHelper
+			dest.photoController = photoController
+		} else if segue.identifier == "ViewPhoto" {
+			guard let dest = segue.destination as? PhotoDetailViewController else { return }
+			guard let cell = sender as? PhotosCollectionViewCell else { return }
+			guard let indexPath = collectionView.indexPath(for: cell) else { return }
+			dest.themeHelper = themeHelper
+			dest.photoController = photoController
+			dest.photo = photoController.photos[indexPath.item]
+		} else if segue.identifier == "SelectTheme" {
+			guard let dest = segue.destination as? ThemeSelectionViewController else { return }
+			dest.themeHelper = themeHelper
+		}
+		
+	}
+	
 }
