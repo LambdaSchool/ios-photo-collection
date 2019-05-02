@@ -10,6 +10,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="Uu9-ju-aIq">
+            <objects>
+                <viewController id="TZh-KA-rkH" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ugv-3M-0cn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Theme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQg-Pb-x2C">
+                                <rect key="frame" x="16" y="108" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-sE-L1q">
+                                <rect key="frame" x="16" y="136.5" width="382" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZ2-HG-PJ5">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="30"/>
+                                        <state key="normal" title="Purple"/>
+                                        <connections>
+                                            <action selector="selectPurpleThemeButtonTapped:" destination="TZh-KA-rkH" eventType="touchUpInside" id="oVp-Dz-IAN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuB-F4-HWM">
+                                        <rect key="frame" x="209" y="0.0" width="173" height="30"/>
+                                        <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkThemeButtonTapped:" destination="TZh-KA-rkH" eventType="touchUpInside" id="nEJ-GD-NEE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v0A-sE-L1q" firstAttribute="top" secondItem="IQg-Pb-x2C" secondAttribute="bottom" constant="8" id="5Uw-Oh-Y6C"/>
+                            <constraint firstItem="TZP-05-1SO" firstAttribute="trailing" secondItem="v0A-sE-L1q" secondAttribute="trailing" constant="16" id="AIT-Dt-VNN"/>
+                            <constraint firstItem="v0A-sE-L1q" firstAttribute="leading" secondItem="TZP-05-1SO" secondAttribute="leading" constant="16" id="DD9-Wi-w9z"/>
+                            <constraint firstItem="IQg-Pb-x2C" firstAttribute="top" secondItem="TZP-05-1SO" secondAttribute="top" constant="64" id="Do4-zw-I1p"/>
+                            <constraint firstItem="TZP-05-1SO" firstAttribute="trailing" secondItem="IQg-Pb-x2C" secondAttribute="trailing" constant="16" id="der-fY-0xj"/>
+                            <constraint firstItem="IQg-Pb-x2C" firstAttribute="leading" secondItem="TZP-05-1SO" secondAttribute="leading" constant="16" id="gIW-SR-MYp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TZP-05-1SO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="in7-c4-xmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972.46376811594212" y="-505.58035714285711"/>
+        </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="0W1-iY-A40">
             <objects>
@@ -79,7 +129,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="27X-gK-6C3">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Syo-VZ-T49"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Syo-VZ-T49">
+                            <connections>
+                                <segue destination="TZh-KA-rkH" kind="presentation" identifier="SelectTheme" id="Cbn-uM-l3f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DNn-VH-00r">
                             <connections>
                                 <segue destination="Ftc-ga-mno" kind="show" identifier="SaveButton" id="p0s-3W-vMk"/>
