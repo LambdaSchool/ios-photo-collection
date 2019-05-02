@@ -23,4 +23,9 @@ class PhotoController {
         photos.append(photo)
         
     }
+    
+    func update(Photo: Photo, imageData: Data, title: String) {
+        
+    }
+    
 }
