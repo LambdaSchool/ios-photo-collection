@@ -79,7 +79,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="W99-Vg-InZ">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="eKg-Rf-wAd"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="eKg-Rf-wAd">
+                            <connections>
+                                <segue destination="Col-bT-ySZ" kind="presentation" identifier="SelectTheme" id="dIl-mJ-QDM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="s0k-dc-DNb">
                             <connections>
                                 <segue destination="aoH-4q-QYC" kind="show" identifier="AddPhoto" id="yKT-DM-D0o"/>
@@ -137,6 +141,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oq-XX-yxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1475" y="179"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="U2D-31-L27">
+            <objects>
+                <viewController id="Col-bT-ySZ" customClass="ThemeSelectionViewController" customModule="ios_photo_collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Fu-wR-Rxo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nws-fA-iVH">
+                                <rect key="frame" x="186" y="272" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t4M-5r-L4D">
+                                <rect key="frame" x="69" y="111" width="283" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Dark"/>
+                                    <segment title="Surpirse!?!?!?!?!?!"/>
+                                </segments>
+                                <connections>
+                                    <action selector="buttonSelectorValueChanged:" destination="Col-bT-ySZ" eventType="valueChanged" id="dUN-Tx-8F4"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4x4-ej-r8h"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjS-Wr-AFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="1025"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WUE-is-Wu7">
