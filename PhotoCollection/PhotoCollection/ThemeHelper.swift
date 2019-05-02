@@ -20,7 +20,7 @@ class ThemeHelper {
         
         if themePreference == nil {
             setThemePreferenceToDark()
-        }
+        } 
     }
     
     func setThemePreferenceToDark() {
