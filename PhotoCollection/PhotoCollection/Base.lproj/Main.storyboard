@@ -76,7 +76,7 @@
                             <inset key="sectionInset" minX="16" minY="1" maxX="16" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="5aJ-qo-Ncg" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="5aJ-qo-Ncg" customClass="PhotoCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
                                 <rect key="frame" x="16" y="1" width="150" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -104,8 +104,8 @@
                                     <constraint firstItem="edt-gH-fuw" firstAttribute="centerX" secondItem="5aJ-qo-Ncg" secondAttribute="centerX" id="wIv-4K-tim"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="imageView" destination="Jrh-v5-ANI" id="w6D-m0-0op"/>
-                                    <outlet property="photoLabel" destination="edt-gH-fuw" id="m2H-id-lYt"/>
+                                    <outlet property="imageLabel" destination="edt-gH-fuw" id="Tnl-rk-cfh"/>
+                                    <outlet property="imageView" destination="Jrh-v5-ANI" id="YeX-NF-Tze"/>
                                     <segue destination="32b-g5-YMp" kind="show" identifier="ShowPhoto" id="3nS-PF-sDj"/>
                                 </connections>
                             </collectionViewCell>
