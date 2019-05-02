@@ -12,6 +12,17 @@ private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    let photoController = PhotoController()
+    //let themeHelper = ThemeHelper()
+    
+  
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +35,15 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "PhotoDetailSegue" {
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController,
+                let cell = sender as? PhotosCollectionViewController else { return }
+            
+        }
     }
-    */
+
 
     // MARK: UICollectionViewDataSource
 
@@ -44,16 +55,36 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotosCollectionViewCell
     
-        // Configure the cell
+        let photo = photoController.photos[indexPath.item]
+        cell.photoLabel.text = photo.title
+        //cell.photoView.image = photo.imageData    Problem
     
         return cell
     }
+    
+    
+    func setTheme() {
+        guard let themePreference = ThemeHelper.themePreference else { return }
+        
+        if themePreference == "Dark" {
+            view.backgroundColor = .black
+            //PhotosCollectionViewController.setTheme()     Possible Problem :'(
+            
+        } else if themePreference == "Light" {
+            view.backgroundColor = .lightGray
+        }
+        
+    }
+    
+    
+    
+    
 
     // MARK: UICollectionViewDelegate
 
