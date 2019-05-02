@@ -57,9 +57,14 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
-        guard let title = photoTextField.text,
-        let photoData = addPhotoImageView.image!.pngData()
-        else { return }
+        guard let title = photoTextField.text else {
+            print("Error: no title")
+            return
+        }
+        guard let photoData = addPhotoImageView.image!.pngData() else {
+            print("Error: image could not be converted to data.")
+            return
+        }
         photoController?.createPhoto(title: title, image: photoData)
     }
     

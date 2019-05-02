@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class PhotoController {
     
     var photos: [Photo] = []
+    
+    init() {
+        let earth = Photo(imageData: UIImage(named: "earth")!.pngData()!, title: "YEARTH")
+        photos.append(earth)
+    }
     
     func createPhoto(title: String, image: Data) {
         photos.append(Photo(imageData: image, title: title))

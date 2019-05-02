@@ -85,7 +85,4 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
-
-
 }

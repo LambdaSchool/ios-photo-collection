@@ -95,42 +95,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FOo-xm-ZEk">
-                                <rect key="frame" x="111.5" y="136" width="191.5" height="82"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPC-pF-Oy6">
-                                        <rect key="frame" x="0.0" y="0.0" width="191.5" height="36"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4xE-pI-jlh">
-                                        <rect key="frame" x="0.0" y="52" width="191.5" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-Rd-A84">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
-                                                <state key="normal" title="Dark"/>
-                                                <connections>
-                                                    <action selector="darkButtonPressed:" destination="iBx-tc-gR4" eventType="touchUpInside" id="TdL-c5-1CS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csr-3f-ma7">
-                                                <rect key="frame" x="99.5" y="0.0" width="92" height="30"/>
-                                                <state key="normal" title="Red"/>
-                                                <connections>
-                                                    <action selector="redButtonPressed:" destination="iBx-tc-gR4" eventType="touchUpInside" id="bcn-Wd-nVq"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-Rd-A84">
+                                <rect key="frame" x="111.5" y="479" width="33" height="30"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="darkButtonPressed:" destination="iBx-tc-gR4" eventType="touchUpInside" id="TdL-c5-1CS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csr-3f-ma7">
+                                <rect key="frame" x="273" y="479" width="30" height="30"/>
+                                <state key="normal" title="Red"/>
+                                <connections>
+                                    <action selector="redButtonPressed:" destination="iBx-tc-gR4" eventType="touchUpInside" id="bcn-Wd-nVq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPC-pF-Oy6">
+                                <rect key="frame" x="111.5" y="435" width="191.5" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FOo-xm-ZEk" firstAttribute="top" secondItem="fmq-24-Lcb" secondAttribute="top" constant="92" id="QOt-8J-sBK"/>
-                            <constraint firstItem="fmq-24-Lcb" firstAttribute="bottom" secondItem="FOo-xm-ZEk" secondAttribute="bottom" constant="644" id="UNS-xm-Idj"/>
-                            <constraint firstItem="FOo-xm-ZEk" firstAttribute="centerX" secondItem="kEP-cE-vj6" secondAttribute="centerX" id="grb-5T-Y35"/>
+                            <constraint firstItem="KPC-pF-Oy6" firstAttribute="centerX" secondItem="fmq-24-Lcb" secondAttribute="centerX" id="5Q7-AS-AHs"/>
+                            <constraint firstItem="fyf-Rd-A84" firstAttribute="leading" secondItem="KPC-pF-Oy6" secondAttribute="leading" id="BUw-az-P48"/>
+                            <constraint firstItem="fyf-Rd-A84" firstAttribute="top" secondItem="KPC-pF-Oy6" secondAttribute="bottom" constant="8" id="EOU-rG-VgF"/>
+                            <constraint firstItem="KPC-pF-Oy6" firstAttribute="centerY" secondItem="fmq-24-Lcb" secondAttribute="centerY" id="GGb-Ad-Uk4"/>
+                            <constraint firstItem="csr-3f-ma7" firstAttribute="top" secondItem="KPC-pF-Oy6" secondAttribute="bottom" constant="8" id="KpI-UK-fZW"/>
+                            <constraint firstItem="csr-3f-ma7" firstAttribute="trailing" secondItem="KPC-pF-Oy6" secondAttribute="trailing" id="e5u-MS-jP5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fmq-24-Lcb"/>
                     </view>
@@ -138,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CF-DG-BZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1890" y="-200"/>
+            <point key="canvasLocation" x="1889.8550724637682" y="-200.22321428571428"/>
         </scene>
         <!--Create Photo-->
         <scene sceneID="FZc-DC-dzh">
