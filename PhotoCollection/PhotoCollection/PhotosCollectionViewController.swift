@@ -11,6 +11,7 @@ import UIKit
 private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
     
@@ -18,28 +19,35 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         setTheme()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       setTheme()
+        setTheme()
+        collectionView.reloadData()
     }
     
     func setTheme() {
-        guard let themePreference = themeHelper.themePreference else { return }
+        
+        guard let themePreference = themeHelper.themePreference else {
+            print("Error: Theme preference is nil.")
+            return
+        }
         
         if themePreference == "Dark" {
             collectionView.backgroundView?.backgroundColor = .gray
         } else {
             collectionView.backgroundView?.backgroundColor = .magenta
         }
+        
+        collectionView.reloadData()
     }
-    
     
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
+        
         if segue.identifier == "PhotoDetail" || segue.identifier == "AddPhoto" {
             guard let destinationVC = segue.destination as? PhotoDetailViewController,
             let indexPath = collectionView.indexPathsForSelectedItems!.first
@@ -65,7 +73,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return photoController.photos.count
     }
 
