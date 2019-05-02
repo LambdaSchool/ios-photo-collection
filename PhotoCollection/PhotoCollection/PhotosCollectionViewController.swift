@@ -27,21 +27,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
-        
-        guard let themePreference = themeHelper.themePreference else {
-            print("Error: Theme preference is nil.")
+        guard let themePreference = themeHelper.themePreference else { return }
+        switch themePreference {
+        case "Dark":
+            collectionView.backgroundColor = .gray
+        case "Red":
+            collectionView.backgroundColor = .magenta
+        default :
             return
         }
-        
-        if themePreference == "Dark" {
-            collectionView.backgroundView?.backgroundColor = .gray
-        } else {
-            collectionView.backgroundView?.backgroundColor = .magenta
-        }
-        
-        collectionView.reloadData()
     }
-    
     
     // MARK: - Navigation
 
