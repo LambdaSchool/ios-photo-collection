@@ -8,22 +8,26 @@
 
 import UIKit
 
-extension String {
-	static let themePreferenceKey = "themePreferenceKey"
-}
 
 class ThemeHelper {
-    
-	var themePreference: String?
 	
+	init() {
+		guard themePreference == nil else { return }
+		setThemePreferenceToDark()
+	}
+    
+    var themePreference: String? {
+		return defaults.string(forKey: .themePreferenceKey)
+    }
+    
 	let defaults = UserDefaults.standard
     
     func setThemePreferenceToDark() {
 		defaults.set("Dark", forKey: .themePreferenceKey)
     }
 
-    func setThemePreferenceToYourColorHere() {
-        
+    func setThemePreferenceToNeonPink() {
+        defaults.set("Neon Pink", forKey: .themePreferenceKey)
     }
     
    
