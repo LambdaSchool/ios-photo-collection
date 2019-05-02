@@ -21,11 +21,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         updateViews()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         updateViews()
     }
-    
     
     func setTheme() {
         guard let themePreference = themeHelper?.themePreference else { return }
@@ -47,15 +47,29 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+       
+        picker.dismiss(animated: true, completion: nil)
         
+        guard let image = info[.originalImage] as? UIImage else { return }
+        
+        addPhotoImageView.image = image
     }
     
     
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
+        guard let title = photoTextField.text,
+        let photoData = addPhotoImageView.image!.pngData()
+        else { return }
+        photoController?.createPhoto(title: title, image: photoData)
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
-       
+        print("add photo button pressed")
+        let pickerVC = UIImagePickerController()
+        pickerVC.sourceType = .photoLibrary
+        pickerVC.allowsEditing = false
+        pickerVC.delegate = self
+        present(pickerVC, animated: true, completion: nil)
     }
     
     /*

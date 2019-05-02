@@ -148,38 +148,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Txw-Gp-0xe">
-                                <rect key="frame" x="16" y="156" width="382" height="448"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nxf-KV-EZT">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="382"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="nxf-KV-EZT" secondAttribute="height" id="K2X-vl-Hpk"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MZ-j6-SPZ">
-                                        <rect key="frame" x="0.0" y="390" width="382" height="20"/>
-                                        <state key="normal" title="Add Photo"/>
-                                        <connections>
-                                            <action selector="addPhoto:" destination="Vp0-GC-dEs" eventType="touchUpInside" id="JIi-y1-0Ca"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qq-d9-NHG">
-                                        <rect key="frame" x="0.0" y="418" width="382" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nxf-KV-EZT">
+                                <rect key="frame" x="57" y="156" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nxf-KV-EZT" secondAttribute="height" id="K2X-vl-Hpk"/>
+                                    <constraint firstAttribute="height" constant="300" id="hbc-8S-5dZ"/>
+                                    <constraint firstAttribute="width" constant="300" id="rf8-iD-Wnd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MZ-j6-SPZ">
+                                <rect key="frame" x="171" y="464" width="72" height="30"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="Vp0-GC-dEs" eventType="touchUpInside" id="JIi-y1-0Ca"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qq-d9-NHG">
+                                <rect key="frame" x="16" y="502" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Txw-Gp-0xe" firstAttribute="leading" secondItem="cnM-bi-U6I" secondAttribute="leading" constant="16" id="2jX-qq-v8s"/>
-                            <constraint firstItem="Txw-Gp-0xe" firstAttribute="centerX" secondItem="zUe-VZ-Ssr" secondAttribute="centerX" id="Qsr-3w-1Nb"/>
-                            <constraint firstItem="cnM-bi-U6I" firstAttribute="trailing" secondItem="Txw-Gp-0xe" secondAttribute="trailing" constant="16" id="b70-zz-G9M"/>
-                            <constraint firstItem="Txw-Gp-0xe" firstAttribute="top" secondItem="cnM-bi-U6I" secondAttribute="top" constant="16" id="era-7U-qI1"/>
-                            <constraint firstItem="Txw-Gp-0xe" firstAttribute="height" secondItem="zUe-VZ-Ssr" secondAttribute="height" multiplier="0.5" id="tTv-Eh-xxi"/>
+                            <constraint firstItem="7MZ-j6-SPZ" firstAttribute="top" secondItem="nxf-KV-EZT" secondAttribute="bottom" constant="8" id="1JT-c6-tGk"/>
+                            <constraint firstItem="cnM-bi-U6I" firstAttribute="trailing" secondItem="8qq-d9-NHG" secondAttribute="trailing" constant="16" id="BsR-Mx-QAu"/>
+                            <constraint firstItem="7MZ-j6-SPZ" firstAttribute="centerX" secondItem="zUe-VZ-Ssr" secondAttribute="centerX" id="Fbj-D8-9BD"/>
+                            <constraint firstItem="nxf-KV-EZT" firstAttribute="top" secondItem="cnM-bi-U6I" secondAttribute="top" constant="16" id="HJI-BA-gNG"/>
+                            <constraint firstItem="8qq-d9-NHG" firstAttribute="leading" secondItem="cnM-bi-U6I" secondAttribute="leading" constant="16" id="R7M-Al-raA"/>
+                            <constraint firstItem="7MZ-j6-SPZ" firstAttribute="top" secondItem="nxf-KV-EZT" secondAttribute="bottom" constant="8" id="cwy-Bl-JjG"/>
+                            <constraint firstItem="8qq-d9-NHG" firstAttribute="top" secondItem="7MZ-j6-SPZ" secondAttribute="bottom" constant="8" id="vz2-PU-TCV"/>
+                            <constraint firstItem="8qq-d9-NHG" firstAttribute="top" secondItem="7MZ-j6-SPZ" secondAttribute="bottom" constant="8" id="yBG-yF-FSW"/>
+                            <constraint firstItem="nxf-KV-EZT" firstAttribute="centerX" secondItem="zUe-VZ-Ssr" secondAttribute="centerX" id="yFH-fF-j37"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cnM-bi-U6I"/>
                     </view>
