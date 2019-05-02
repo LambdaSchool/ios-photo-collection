@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D11A9B2F227B7DA700363163 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11A9B2E227B7DA700363163 /* PhotoController.swift */; };
 		EC39B90C227B7BB60048A606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC39B90B227B7BB60048A606 /* AppDelegate.swift */; };
 		EC39B90E227B7BB60048A606 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC39B90D227B7BB60048A606 /* ViewController.swift */; };
 		EC39B911227B7BB60048A606 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC39B90F227B7BB60048A606 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D11A9B2E227B7DA700363163 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		EC39B908227B7BB60048A606 /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC39B90B227B7BB60048A606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC39B90D227B7BB60048A606 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +61,11 @@
 				EC39B90B227B7BB60048A606 /* AppDelegate.swift */,
 				EC39B90D227B7BB60048A606 /* ViewController.swift */,
 				EC39B90F227B7BB60048A606 /* Main.storyboard */,
+				EC39B91D227B7C630048A606 /* Photo.swift */,
+				D11A9B2E227B7DA700363163 /* PhotoController.swift */,
 				EC39B912227B7BB70048A606 /* Assets.xcassets */,
 				EC39B914227B7BB70048A606 /* LaunchScreen.storyboard */,
 				EC39B917227B7BB70048A606 /* Info.plist */,
-				EC39B91D227B7C630048A606 /* Photo.swift */,
 			);
 			path = PhotoCollection;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				EC39B91E227B7C630048A606 /* Photo.swift in Sources */,
 				EC39B90E227B7BB60048A606 /* ViewController.swift in Sources */,
+				D11A9B2F227B7DA700363163 /* PhotoController.swift in Sources */,
 				EC39B90C227B7BB60048A606 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
