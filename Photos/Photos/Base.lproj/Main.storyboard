@@ -161,11 +161,17 @@
                         <viewLayoutGuide key="safeArea" id="ZyA-My-fs4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="U9E-5c-gtT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qMY-Ko-CtO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qMY-Ko-CtO">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="YT2-HC-pKc" id="oId-lh-Ncv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="FMu-tl-D8Q" id="07X-ok-fcX"/>
                         <outlet property="addPhotoButton" destination="FMu-tl-D8Q" id="10c-kE-Whc"/>
                         <outlet property="imageView" destination="19j-E2-XY0" id="Bxk-K9-lhS"/>
+                        <outlet property="saveButton" destination="qMY-Ko-CtO" id="Map-91-fbd"/>
                         <outlet property="textFeild" destination="0z8-7G-aBQ" id="0dW-kJ-6Zp"/>
                     </connections>
                 </viewController>
