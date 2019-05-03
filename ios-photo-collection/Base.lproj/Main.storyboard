@@ -103,27 +103,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21j-Z0-nqx">
-                                <rect key="frame" x="87" y="114" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eob-WJ-Sxw">
-                                <rect key="frame" x="171" y="286" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eob-WJ-Sxw">
+                                <rect key="frame" x="171" y="816" width="72" height="30"/>
                                 <state key="normal" title="Add Photo"/>
                                 <connections>
                                     <action selector="addPhoto:" destination="aoH-4q-QYC" eventType="touchUpInside" id="Q1M-Dp-hc6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nod-IS-4a5">
-                                <rect key="frame" x="159" y="382" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nod-IS-4a5">
+                                <rect key="frame" x="16" y="770" width="382" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="21j-Z0-nqx">
+                                <rect key="frame" x="16" y="104" width="382" height="650"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FFU-6G-zed" firstAttribute="trailing" secondItem="21j-Z0-nqx" secondAttribute="trailing" constant="16" id="9fv-rv-or0"/>
+                            <constraint firstItem="Eob-WJ-Sxw" firstAttribute="centerX" secondItem="J7s-oo-I9M" secondAttribute="centerX" id="MEc-CN-EsM"/>
+                            <constraint firstItem="21j-Z0-nqx" firstAttribute="top" secondItem="FFU-6G-zed" secondAttribute="top" constant="16" id="Mxd-Xu-cbw"/>
+                            <constraint firstItem="FFU-6G-zed" firstAttribute="trailing" secondItem="nod-IS-4a5" secondAttribute="trailing" constant="16" id="Vza-Cl-U4t"/>
+                            <constraint firstItem="nod-IS-4a5" firstAttribute="top" secondItem="21j-Z0-nqx" secondAttribute="bottom" constant="16" id="d6d-Ms-fQd"/>
+                            <constraint firstItem="21j-Z0-nqx" firstAttribute="leading" secondItem="FFU-6G-zed" secondAttribute="leading" constant="16" id="gK1-Id-2gc"/>
+                            <constraint firstItem="FFU-6G-zed" firstAttribute="bottom" secondItem="Eob-WJ-Sxw" secondAttribute="bottom" constant="16" id="i3c-Go-tlg"/>
+                            <constraint firstItem="Eob-WJ-Sxw" firstAttribute="top" secondItem="nod-IS-4a5" secondAttribute="bottom" constant="16" id="kqh-de-rr5"/>
+                            <constraint firstItem="nod-IS-4a5" firstAttribute="leading" secondItem="FFU-6G-zed" secondAttribute="leading" constant="16" id="oFO-kq-QVh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FFU-6G-zed"/>
                     </view>
                     <navigationItem key="navigationItem" title="PhotoDetail" id="nZ5-qG-EC1">
@@ -150,26 +158,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nws-fA-iVH">
-                                <rect key="frame" x="186" y="272" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t4M-5r-L4D">
-                                <rect key="frame" x="69" y="111" width="283" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Dark"/>
-                                    <segment title="Surpirse!?!?!?!?!?!"/>
-                                </segments>
-                                <connections>
-                                    <action selector="buttonSelectorValueChanged:" destination="Col-bT-ySZ" eventType="valueChanged" id="dUN-Tx-8F4"/>
-                                </connections>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="NxK-9o-Z7X">
+                                <rect key="frame" x="16" y="394.5" width="382" height="107"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A MODE!!!!!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nws-fA-iVH">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t4M-5r-L4D">
+                                        <rect key="frame" x="0.0" y="79" width="382" height="29"/>
+                                        <segments>
+                                            <segment title="Dark"/>
+                                            <segment title="Surpirse!?!?!?!?!?!"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="buttonSelectorValueChanged:" destination="Col-bT-ySZ" eventType="valueChanged" id="dUN-Tx-8F4"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NxK-9o-Z7X" firstAttribute="leading" secondItem="4x4-ej-r8h" secondAttribute="leading" constant="16" id="9qx-zP-AGg"/>
+                            <constraint firstItem="4x4-ej-r8h" firstAttribute="trailing" secondItem="NxK-9o-Z7X" secondAttribute="trailing" constant="16" id="JxY-oW-8ti"/>
+                            <constraint firstItem="NxK-9o-Z7X" firstAttribute="centerY" secondItem="4Fu-wR-Rxo" secondAttribute="centerY" id="K10-bL-s2r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4x4-ej-r8h"/>
                     </view>
                     <connections>
