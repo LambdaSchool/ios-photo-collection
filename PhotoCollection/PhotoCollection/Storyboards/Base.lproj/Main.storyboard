@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,6 +48,7 @@
                                 <connections>
                                     <outlet property="photoImageView" destination="oAX-w9-dO2" id="6vk-XM-Wla"/>
                                     <outlet property="titleLabel" destination="l7y-Xb-l0s" id="20l-zg-t5Y"/>
+                                    <segue destination="tr9-OM-iIn" kind="show" identifier="ShowPhoto" id="ppA-ry-4IC"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -57,12 +59,63 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="94x-NC-yY5">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Lae-KH-JGK"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tiw-1q-eYq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tiw-1q-eYq">
+                            <connections>
+                                <segue destination="tr9-OM-iIn" kind="show" identifier="AddPhoto" id="YS5-7G-ok7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDB-2T-n6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855.07246376811599" y="35.491071428571423"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="TVr-Fq-LA2">
+            <objects>
+                <viewController id="tr9-OM-iIn" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMm-iS-oH3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="osg-ZJ-9Im">
+                                <rect key="frame" x="87" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-Xo-Hgg">
+                                <rect key="frame" x="171" y="389" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoButtonPressed:" destination="tr9-OM-iIn" eventType="touchUpInside" id="vbE-jt-uj8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rH6-eQ-9gl">
+                                <rect key="frame" x="159" y="461" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SLF-RJ-3vM"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="1lf-m9-kcV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yPi-Kq-UOB">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="tr9-OM-iIn" id="wpH-op-xVf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="osg-ZJ-9Im" id="f9x-sw-Uyd"/>
+                        <outlet property="titleTextField" destination="rH6-eQ-9gl" id="1G0-4Z-BJH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNi-wD-sqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661" y="35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IfU-xK-EU3">
@@ -83,4 +136,7 @@
             <point key="canvasLocation" x="-55.072463768115945" y="35.491071428571423"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ppA-ry-4IC"/>
+    </inferredMetricsTieBreakers>
 </document>
