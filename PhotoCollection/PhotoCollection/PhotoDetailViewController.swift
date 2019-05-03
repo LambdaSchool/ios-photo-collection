@@ -24,17 +24,12 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateViews()
     }
-    */
-
+    
     @IBAction func addPhotoButtonPressed(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -43,8 +38,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)
-        
-        updateViews()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -54,26 +47,20 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func saveItemPressed(_ sender: Any) {
-        
-        
-        print("Saved")
-        
-        guard let image = imageView.image?.pngData() else {return}
-        guard let title = textField.text else {return}
-        photoController?.createPhoto(photo: Photo(imageData: image, title: title))
-       
-//        if photo == nil {
-//            guard let imageData = imageView.image?.pngData(),
-//            let title = textField.text
-//            else {return}
-//
-//            photoController?.createPhoto(photo: Photo(imageData: imageData, title: title))
-//        } else {
-//            guard let photo = photo else {return}
-//            photoController?.update(photo: photo, data: photo.imageData, title: photo.title)
-//        }
-//
-       self.navigationController?.popViewController(animated: true)
+        guard let title = textField.text else {
+            print("Error: no title")
+            return
+        }
+        guard let image = imageView.image else {
+            print("Error: there is no image in the view.")
+            return
+        }
+        guard let imageData = image.pngData() else {
+            print("Error: image could not be converted to data")
+            return
+        }
+        photoController?.createPhoto(data: imageData, title: title)
+        navigationController?.popViewController(animated: true)
     }
     
     func updateViews() {
