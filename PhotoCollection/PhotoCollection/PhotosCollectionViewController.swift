@@ -19,7 +19,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTheme()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,7 +30,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        setTheme()
         super.viewWillAppear(animated)
         
         collectionView.reloadData()
@@ -57,7 +57,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 //            addVC.themeHelper = themeHelper
 //            addVC.photoController = photoController
         } else if segue.identifier == "SelectTheme" {
-            let selectVC: ThemeSelectionViewController = segue.destination as! ThemeSelectionViewController
+            guard let selectVC = segue.destination as? ThemeSelectionViewController else { return }
             selectVC.themeHelper = themeHelper
         }
     }
@@ -87,12 +87,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
-        let theme = themeHelper.themePreference
-        
-        if theme == "Dark" {
-            self.view.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
-        } else {
-            self.view.backgroundColor = #colorLiteral(red: 0.2272256538, green: 0.5468909038, blue: 0.9551692034, alpha: 1)
+        guard let themePreference = themeHelper.themePreference else { return }
+        switch themePreference {
+        case "Dark":
+            collectionView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
+        case "Blue":
+            collectionView.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+        default :
+            return
         }
     }
 
