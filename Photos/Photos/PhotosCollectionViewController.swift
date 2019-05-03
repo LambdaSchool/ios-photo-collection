@@ -15,6 +15,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
     
     @IBAction func setTheme(_ sender: Any) {
@@ -27,6 +33,20 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "add" {
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController else {return}
+            photoDetailVC.photoController = photoController
+            
+        } else if segue.identifier == "Cell" {
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let cell = sender as? PhotosCollectionViewCell else {return}
+            photoDetailVC.photoController = photoController
+            photoDetailVC.photo = cell.photo
+        } else if segue.identifier == "setTheme" {
+            //theme
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotosCollectionViewCell
         
@@ -34,9 +54,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         let photo = photoController.photos[indexPath.item]
         
         cell.photo = photo
-        
-        cell.imageTitle.text = photo.title
-        cell.photo?.imageData = photo.imageData
         
         return cell
     }

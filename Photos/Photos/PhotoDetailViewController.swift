@@ -24,6 +24,22 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
+    }
+    
+    func updateViews() {
+        guard let photo = photo else {
+            print("No photo")
+            return
+        }
+            let image = UIImage(data: photo.imageData)
+            imageView.image = image
+            textFeild.text = photo.title
     }
     
     
@@ -64,8 +80,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
         if let photoObject = photo {
             photoController?.update(photo: photoObject, imageData: data, title: title)
+            print("updated photo")
         } else {
             photoController?.create(imageData: data, title: title)
+            print("created photo")
         }
         
         
