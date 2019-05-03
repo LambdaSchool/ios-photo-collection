@@ -172,6 +172,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4x4-ej-r8h"/>
                     </view>
+                    <connections>
+                        <outlet property="themeSelector" destination="t4M-5r-L4D" id="dgM-EO-R0A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjS-Wr-AFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
