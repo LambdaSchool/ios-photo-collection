@@ -13,15 +13,6 @@ class ThemeSelectionViewController: UIViewController {
     // MARK: - Properties
     var themeHelper: ThemeHelper?
     
-    // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     // MARK: - IBAction
     @IBAction func selectDarkTheme(_ sender: Any) {
         guard let themeHelper = self.themeHelper else { return }
@@ -34,5 +25,16 @@ class ThemeSelectionViewController: UIViewController {
         themeHelper.setThemePreferenceToBlue()
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+
     
 }
