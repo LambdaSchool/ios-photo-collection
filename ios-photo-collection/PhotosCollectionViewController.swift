@@ -23,6 +23,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		updateViews()
+	}
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoController.photos.count
@@ -46,9 +51,9 @@ class PhotosCollectionViewController: UICollectionViewController {
 			
 		}
 		if newTheme == "Dark" {
-			collectionView.backgroundColor = .clear
-			collectionView.backgroundView = UIView(frame: collectionView.bounds)
-			collectionView.backgroundView?.backgroundColor = .black
+			collectionView.backgroundColor = .black
+//			collectionView.backgroundView = UIView(frame: collectionView.bounds)
+//			collectionView.backgroundView?.backgroundColor = .red
 		} else {
 			collectionView.backgroundColor = UIColor(red: 1.0, green: 136 / 255, blue: 253 / 255, alpha: 1.0)
 		}
