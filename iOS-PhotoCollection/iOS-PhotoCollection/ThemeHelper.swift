@@ -1,16 +1,20 @@
 import UIKit
 import Foundation
 
+
+
+
 class ThemeHelper{
-    let themePreferenceKey: String
-    //let helper = ThemeHelper(themePreferenceKey: "")
     
-    init(themePreferenceKey: String) {
-        self.themePreferenceKey = themePreferenceKey
-        if themePreference == nil || themePreferenceKey.isEmpty {setThemePreferenceToRed()}
+    let themePreferenceKey: String = "THEME_PREF"
+    
+    init(){
+        
+        if themePreference == nil || themePreference == "" {
+            setThemePreferenceToRed()
+        }
     }
-
-
+    
     func setThemePreferenceToDark(){
         UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
     }
