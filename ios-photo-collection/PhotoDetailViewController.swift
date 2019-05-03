@@ -25,6 +25,7 @@ class PhotoDetailViewController: UIViewController {
 				photoController?.createPhoto(titled: title, imageData: data)
 			}
 		}
+		navigationController?.popViewController(animated: true)
 	}
 	
 	@IBAction func addPhoto(_ sender: Any) {
