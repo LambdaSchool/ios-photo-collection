@@ -184,8 +184,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="actualTextField" destination="Xnt-Wd-IWw" id="EGX-nt-oBa"/>
                         <outlet property="imageView" destination="ze7-zA-nkj" id="0kp-ad-1Lp"/>
-                        <outlet property="textField" destination="env-Bc-6D6" id="5V2-g2-VvY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xx-J1-42b" userLabel="First Responder" sceneMemberID="firstResponder"/>
