@@ -12,7 +12,11 @@ import UIKit
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoController: PhotoController?
-    var photo: Photo?
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
     var themeHelper: ThemeHelper?
     
     @IBOutlet weak var imageView: UIImageView!
@@ -33,7 +37,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func updateViews() {
-        guard let photo = photo else {
+        guard let photo = photo, isViewLoaded else {
             print("No photo")
             return
         }
@@ -58,16 +62,19 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        //getting user input and converting to ui image
-        guard let original = info[.originalImage] as? UIImage else { return }
+        //getting user input and converting to ui image\
+    
+        guard let original = info[.originalImage] as? UIImage else {
+            print("no image")
+            return
+        }
         //imageView.contentMode = .scaleAspectFit
         imageView.image = original
-        
+        picker.dismiss(animated: true, completion: nil)
         //library view will disappear
-        dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -85,8 +92,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             photoController?.create(imageData: data, title: title)
             print("created photo")
         }
-        
-        
         //taking us back to the home page
         navigationController?.popViewController(animated: true)
     }
