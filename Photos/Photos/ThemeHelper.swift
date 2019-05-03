@@ -16,7 +16,7 @@ class ThemeHelper {
         
         if themePreference == nil {
             let userDefaults = UserDefaults.standard
-            userDefaults.set("Blue", forKey: themePreferenceKey)
+            userDefaults.set("Light", forKey: themePreferenceKey)
         }
     }
     
@@ -27,13 +27,12 @@ class ThemeHelper {
     
     func setThemePreferenceToYourColorHere() {
         let userDefaults = UserDefaults.standard
-        userDefaults.set("Blue", forKey: themePreferenceKey)
+        userDefaults.set("Light", forKey: themePreferenceKey)
     }
     
     var themePreference: String? {
         let shouldShowColor = UserDefaults.standard.string(forKey: themePreferenceKey)
         return shouldShowColor
-        
     }
     
 }

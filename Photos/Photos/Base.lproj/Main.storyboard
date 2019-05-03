@@ -68,7 +68,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Ib4-Np-BT6">
                             <connections>
                                 <action selector="setTheme:" destination="bQD-hd-LwR" id="VTd-3l-WCh"/>
-                                <segue destination="W2A-Q7-3xh" kind="presentation" identifier="setTheme" id="aYP-AH-44Q"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ndp-j4-c9E">
@@ -77,6 +76,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="bEr-v4-7KX" kind="presentation" identifier="setTheme" id="aha-fM-cCZ"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bla-2d-eEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,39 +156,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaZ-Fz-Js0">
-                                <rect key="frame" x="16" y="190" width="382" height="23"/>
+                                <rect key="frame" x="16" y="94" width="382" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="187" translatesAutoresizingMaskIntoConstraints="NO" id="7rw-Lq-fge">
-                                <rect key="frame" x="80" y="263" width="254" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UO-hG-XPj">
-                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
-                                        <state key="normal" title="Blue"/>
-                                        <connections>
-                                            <action selector="blueButtonPressed:" destination="bEr-v4-7KX" eventType="touchUpInside" id="cEq-sb-Z3b"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOX-X2-Vd0">
-                                        <rect key="frame" x="221" y="0.0" width="33" height="30"/>
-                                        <state key="normal" title="Dark"/>
-                                        <connections>
-                                            <action selector="darkButtonPressed:" destination="bEr-v4-7KX" eventType="touchUpInside" id="NGu-Zr-Rlt"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UO-hG-XPj">
+                                <rect key="frame" x="100" y="177" width="35" height="30"/>
+                                <state key="normal" title="Light"/>
+                                <connections>
+                                    <action selector="blueButtonPressed:" destination="bEr-v4-7KX" eventType="touchUpInside" id="cEq-sb-Z3b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOX-X2-Vd0">
+                                <rect key="frame" x="281" y="177" width="33" height="30"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="darkButtonPressed:" destination="bEr-v4-7KX" eventType="touchUpInside" id="NGu-Zr-Rlt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ruv-IF-SDF" firstAttribute="trailing" secondItem="eOX-X2-Vd0" secondAttribute="trailing" constant="100" id="5sW-kt-ryg"/>
+                            <constraint firstItem="2UO-hG-XPj" firstAttribute="leading" secondItem="ruv-IF-SDF" secondAttribute="leading" constant="100" id="L1G-s7-zuE"/>
                             <constraint firstItem="DaZ-Fz-Js0" firstAttribute="leading" secondItem="ruv-IF-SDF" secondAttribute="leading" constant="16" id="Nti-tN-E1b"/>
+                            <constraint firstItem="2UO-hG-XPj" firstAttribute="top" secondItem="DaZ-Fz-Js0" secondAttribute="bottom" constant="60" id="OiF-A0-teE"/>
                             <constraint firstItem="DaZ-Fz-Js0" firstAttribute="top" secondItem="ruv-IF-SDF" secondAttribute="top" constant="50" id="Y7V-Jf-Ue5"/>
-                            <constraint firstItem="7rw-Lq-fge" firstAttribute="leading" secondItem="ruv-IF-SDF" secondAttribute="leading" constant="80" id="bAk-WG-3pA"/>
                             <constraint firstItem="ruv-IF-SDF" firstAttribute="trailing" secondItem="DaZ-Fz-Js0" secondAttribute="trailing" constant="16" id="hOV-mB-O2q"/>
-                            <constraint firstItem="7rw-Lq-fge" firstAttribute="top" secondItem="DaZ-Fz-Js0" secondAttribute="bottom" constant="50" id="s2C-uO-5Fn"/>
-                            <constraint firstItem="ruv-IF-SDF" firstAttribute="trailing" secondItem="7rw-Lq-fge" secondAttribute="trailing" constant="80" id="sAY-Nj-mjO"/>
+                            <constraint firstItem="eOX-X2-Vd0" firstAttribute="top" secondItem="DaZ-Fz-Js0" secondAttribute="bottom" constant="60" id="xpb-s2-h8X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ruv-IF-SDF"/>
                     </view>
@@ -199,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouS-d5-A3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="-619"/>
+            <point key="canvasLocation" x="1121.7391304347827" y="-587.27678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qp6-Hd-EmS">
@@ -218,24 +216,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVL-rq-zfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="211.59420289855075" y="96.428571428571431"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Piz-J2-orC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W2A-Q7-3xh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="EPW-MF-QJe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bEr-v4-7KX" kind="relationship" relationship="rootViewController" id="lgv-5D-0C5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-xm-Cpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1121.7391304347827" y="-619.41964285714278"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -12,6 +12,7 @@ import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +21,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setTheme()
         collectionView.reloadData()
     }
     
     @IBAction func setTheme(_ sender: Any) {
-        performSegue(withIdentifier: "setThem", sender: self)
+        performSegue(withIdentifier: "setTheme", sender: self)
     }
     
     
@@ -37,13 +39,16 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == "add" {
             guard let photoDetailVC = segue.destination as? PhotoDetailViewController else {return}
             photoDetailVC.photoController = photoController
-            
+            photoDetailVC.themeHelper = themeHelper
         } else if segue.identifier == "Cell" {
             guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let cell = sender as? PhotosCollectionViewCell else {return}
             photoDetailVC.photoController = photoController
             photoDetailVC.photo = cell.photo
+            photoDetailVC.themeHelper = themeHelper
         } else if segue.identifier == "setTheme" {
-            //theme
+            guard let selectThemeController = segue.destination as? ThemeSelectionViewController else { return }
+            selectThemeController.themeHelper = themeHelper
+            
         }
     }
     
@@ -56,6 +61,16 @@ class PhotosCollectionViewController: UICollectionViewController {
         cell.photo = photo
         
         return cell
+    }
+    
+    func setTheme() {
+        guard let theme = themeHelper.themePreference else { return }
+        
+        if theme == "Light" {
+            collectionView.backgroundColor = .white
+        } else if theme == "Dark" {
+            collectionView.backgroundColor = .gray
+        } 
     }
     
     

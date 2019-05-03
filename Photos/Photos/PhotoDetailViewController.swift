@@ -32,6 +32,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func updateViews() {
+        setTheme()
         guard let photo = photo else {
             print("No photo")
             return
@@ -90,6 +91,18 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         }
         //taking us back to the home page
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func setTheme() {
+        guard let theme = themeHelper?.themePreference else { return }
+        
+        if theme == "Light" {
+            view.backgroundColor = .white
+        } else if theme == "Dark" {
+            view.backgroundColor = .gray
+        }
+        
     }
     
     
