@@ -8,9 +8,8 @@
 
 import Foundation
 
-
+//photo object
 struct Photo: Equatable {
-    
     var imageData: Data
     var title: String
     

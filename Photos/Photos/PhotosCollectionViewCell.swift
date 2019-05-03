@@ -11,29 +11,27 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    
+    //properties
     @IBOutlet weak var imageTitle: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     
-    
+    //computed property
     var photo: Photo? {
         didSet {
             updateViews()
         }
     }
     
+    //updates cell
     func updateViews() {
-        // needs logic to set photoimageview and imagetitle
+        //checking for photo
         guard let photo = photo else {
-            print("No Photo")
             return
         }
-        
+        //setting properties
         imageTitle.text = photo.title
         let image = UIImage(data: photo.imageData)
         photoImageView.image = image
-        print("updated views")
     }
-    
     
 }
