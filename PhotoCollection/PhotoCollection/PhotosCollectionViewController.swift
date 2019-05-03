@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "PhotoCell"
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController /*, PhotoTableViewCellDelegate*/ {
     
     let photoController = PhotoController()
     var themeHelper = ThemeHelper()
@@ -28,15 +28,36 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "PhotosCollectionViewCell" {
+            guard let photosCollectionVC = segue.destination as? PhotoDetailViewController else { return }
+            guard let cell = sender as? PhotosCollectionViewCell else { return }
+            
+            photosCollectionVC.photoController = photoController
+            photosCollectionVC.themeHelper = themeHelper
+            photosCollectionVC.photo = cell.photo
+        } else if segue.identifier == "AddButton" {
+            guard let addPhotoVC = segue.destination as? PhotoDetailViewController else { return }
+            
+            addPhotoVC.photoController = photoController
+            addPhotoVC.themeHelper = themeHelper
+        } else if segue.identifier == "SelectTheme" {
+            guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+            
+            themeVC.themeHelper = themeHelper
+        }
+        
+        
+       
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
@@ -52,16 +73,37 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
+        let photocell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
         
         let photo = photoController.photos[indexPath.item]
         
+        photocell.photo = photo
+        
         let image = UIImage(data: photo.imageData)
         
-        cell.textLabel.text = photo.title
-        cell.imageView.image = image
+        
+        
+        photocell.textLabel.text = photo.title
+        photocell.imageView.image = image
     
-        return cell
+        return photocell
+    }
+    
+    
+    // MARK: - Theme
+    
+    func setTheme() {
+        guard let currentThemePreference = themeHelper.themePreference else { return }
+        
+        if currentThemePreference == "Dark" {
+            collectionView.backgroundColor = .gray
+        } else {
+            collectionView.backgroundColor = .purple
+        }
+        
+        
+        // TODO: Dan look into this: collectionView.backgroundColor = UIColor(named: "White")
+        
     }
 
     // MARK: UICollectionViewDelegate

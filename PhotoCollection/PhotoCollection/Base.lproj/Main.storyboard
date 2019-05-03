@@ -136,7 +136,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DNn-VH-00r">
                             <connections>
-                                <segue destination="Ftc-ga-mno" kind="show" identifier="SaveButton" id="p0s-3W-vMk"/>
+                                <segue destination="Ftc-ga-mno" kind="show" identifier="AddButton" id="p0s-3W-vMk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
