@@ -12,11 +12,7 @@ import UIKit
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoController: PhotoController?
-    var photo: Photo? {
-        didSet {
-            updateViews()
-        }
-    }
+    var photo: Photo?
     var themeHelper: ThemeHelper?
     
     @IBOutlet weak var imageView: UIImageView!
@@ -33,19 +29,18 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateViews()
     }
     
     func updateViews() {
-        guard let photo = photo, isViewLoaded else {
+        guard let photo = photo else {
             print("No photo")
             return
         }
             let image = UIImage(data: photo.imageData)
             imageView.image = image
             textFeild.text = photo.title
+        print("Photo")
     }
-    
     
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -53,8 +48,9 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
         imagePicker.delegate = self
         //research
-        imagePicker.allowsEditing = false
         //library
+        
+        imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
         //
