@@ -15,7 +15,11 @@ class PhotosCollectionViewController: UICollectionViewController {
 	let photoController = PhotoController()
 	let themeHelper = ThemeHelper()
 	
-
+	func updateViews() {
+		collectionView.reloadData()
+		setTheme()
+		
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
     }
