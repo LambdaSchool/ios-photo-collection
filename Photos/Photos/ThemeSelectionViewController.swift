@@ -15,21 +15,21 @@ class ThemeSelectionViewController: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     
     
+    var themeHelper: ThemeHelper?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    
         // Do any additional setup after loading the view.
     }
     
     @IBAction func darkButtonPressed(_ sender: Any) {
-        // needs logic
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func blueButtonPressed(_ sender: Any) {
-        // needs logic
+        themeHelper?.setThemePreferenceToYourColorHere()
+        dismiss(animated: true, completion: nil)
     }
-
 }
