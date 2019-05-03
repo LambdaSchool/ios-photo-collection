@@ -28,6 +28,10 @@ class PhotoDetailViewController: UIViewController {
 	}
 	
 	@IBAction func addPhoto(_ sender: Any) {
+		let picker = UIImagePickerController()
+		picker.sourceType = .photoLibrary
+		picker.delegate = self
+		present(picker, animated: true)
 	}
 	
 	@IBOutlet weak var photoImageView: UIImageView!
@@ -62,5 +66,20 @@ class PhotoDetailViewController: UIViewController {
 		photoImageView.image = image
 		photoTextView.text = photo.title
 		
+	}
+}
+
+extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		guard let importImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {return}
+		
+		dismiss(animated: true)
+		photoImageView.image = importImage
+
+	}
+	
+	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+		dismiss(animated: true)
 	}
 }
