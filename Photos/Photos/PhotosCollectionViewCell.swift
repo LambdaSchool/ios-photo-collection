@@ -23,7 +23,9 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-        // needs logic
+        // needs logic to set photoimageview and imagetitle
+        imageTitle.text = photo?.title
+        //photoImageView.image = photo?.imageData
     }
     
     
