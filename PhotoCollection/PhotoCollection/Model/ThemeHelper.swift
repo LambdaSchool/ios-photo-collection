@@ -27,5 +27,8 @@ class ThemeHelper {
     }
     
     let themePreferenceKey = ""
-    var themePrefrence: String?
+    var themePrefrence: String? {
+        let userDefaults = UserDefaults.standard
+        return userDefaults.string(forKey: themePreferenceKey)
+    }
 }
