@@ -13,6 +13,11 @@ private let reuseIdentifier = "PhotoCell"
 class PhotosCollectionViewController: UICollectionViewController {
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        photoController.loadFromPersistentStore()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
