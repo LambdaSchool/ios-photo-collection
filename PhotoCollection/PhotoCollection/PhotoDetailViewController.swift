@@ -25,7 +25,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateViews()
+    }
     
     func setTheme() {
         guard let themePreference = themeHelper?.themePreference else {return}
@@ -47,6 +50,8 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true, completion: nil)
@@ -58,17 +63,21 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         guard let title = inputTextField.text else {
+            print("Error: no title")
             return
         }
         guard let image = photoImageView.image else {
+            print("Error: there is no image in the view.")
             return
         }
         guard let imageData = image.pngData() else {
+            print("Error: image could not be converted to data")
             return
         }
-        photoController?.createPhoto(title: title, imageData: imageData)
+        photoController?.createPhoto(title: title, image: imageData)
         navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func addPhotoButtonPressed(_ sender: Any) {
         let pickerVC = UIImagePickerController()
         pickerVC.sourceType = .photoLibrary
