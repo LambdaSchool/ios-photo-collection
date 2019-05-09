@@ -14,7 +14,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTheme()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -22,6 +22,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView.reloadData()
     }
 
 
@@ -33,7 +38,6 @@ class PhotosCollectionViewController: UICollectionViewController {
             let destinationVC = segue.destination as! PhotoDetailViewController
             destinationVC.themeHelper = themeHelper
             destinationVC.photoController = photoController
-
             guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
             destinationVC.photo = photoController.photos[indexPath.item]
         } else if segue.identifier  == "AddPhoto" {
@@ -47,11 +51,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     func setTheme() {
-        let currentTheme = themeHelper.themePreference
-        if currentTheme == "Dark" {
+        guard let themePreference = themeHelper.themePreference else { return }
+        switch themePreference {
+        case "Dark":
             collectionView.backgroundColor = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1)
-        } else if currentTheme == "Green" {
-            collectionView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        case "Green":
+            collectionView.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+        default :
+            return
         }
     }
 
@@ -62,18 +69,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotosCollectionViewCell
-
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell()}
         let photo = photoController.photos[indexPath.item]
 
-        cell.photoImageView.image = UIImage(data: photo.imageData)
-        cell.photoLabel.text = photo.title
-    
+        cell.photo = photo
         // Configure the cell
-    
+
         return cell
     }
-
 
 
     let photoController = PhotoController()
