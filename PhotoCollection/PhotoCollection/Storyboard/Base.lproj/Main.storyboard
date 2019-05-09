@@ -90,7 +90,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Udf-Bh-pbS">
                             <connections>
-                                <segue destination="JPa-cM-OeH" kind="show" identifier="ToPhotoDetail" id="Xg5-zF-FKY"/>
+                                <segue destination="JPa-cM-OeH" kind="show" identifier="AddPhotoSegue" id="Xg5-zF-FKY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -237,6 +237,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tk7-8x-z5w"/>
+        <segue reference="Xg5-zF-FKY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,15 +16,34 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "PhotoCell":
+            guard let toPhotoDetailVC = segue.destination as? PhotoDetailViewController else { return }
+            toPhotoDetailVC.photoController = photoController
+            toPhotoDetailVC.themeHelper = themeHelper
+            
+            guard let photoIndex = collectionView?.indexPathsForSelectedItems?.first?.item else { return }
+            let photo = photoController.photos[photoIndex]
+            toPhotoDetailVC.photo = photo
+            
+        case "AddPhotoSegue":
+            guard let addPhotoVC = segue.destination as? PhotoDetailViewController else { return }
+            addPhotoVC.photoController = photoController
+            addPhotoVC.themeHelper = themeHelper
+            
+        case "ToThemeSelection":
+            guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+            themeVC.themeHelper = themeHelper
+        default:
+            break
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -45,7 +64,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
+        guard let theme = themeHelper.themePrefrence else { return }
         
+        if theme == "Dark" {
+            view.backgroundColor = .darkGray
+        } else if theme == "Cyan" {
+            view.backgroundColor = .cyan
+        }
     }
 
     let photoController = PhotoController()
