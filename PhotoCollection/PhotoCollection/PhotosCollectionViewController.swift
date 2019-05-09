@@ -39,7 +39,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PhotoDetail" {
+        if segue.identifier == "EditPhoto" {
             
             guard let destinationVC = segue.destination as? PhotoDetailViewController,
                 let indexPath = collectionView.indexPathsForSelectedItems!.first
