@@ -9,7 +9,7 @@
 import Foundation
 
 
-class PhotoCollection {
+class PhotoController {
     
     var photos: [Photo] = []
     
