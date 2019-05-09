@@ -63,7 +63,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="js9-4a-KYc">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Kpk-dE-wcz"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Kpk-dE-wcz">
+                            <connections>
+                                <segue destination="Ox1-uz-lh7" kind="presentation" identifier="SelectTheme" id="Q0d-wi-tpa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sb0-dr-kPp">
                             <connections>
                                 <segue destination="D3y-Le-3fu" kind="show" identifier="AddPhoto" id="nhW-R4-dDH"/>
@@ -73,7 +77,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pj-fM-aGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.97101449275374" y="141.96428571428569"/>
+            <point key="canvasLocation" x="1197" y="142"/>
         </scene>
         <!--Title-->
         <scene sceneID="gcw-Zu-Aj3">
@@ -111,9 +115,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FtW-1Z-eGa" firstAttribute="trailing" secondItem="0Ye-FJ-br2" secondAttribute="trailing" constant="87" id="1LP-XT-woU"/>
+                            <constraint firstItem="uV5-Ks-9Ss" firstAttribute="leading" secondItem="FtW-1Z-eGa" secondAttribute="leading" constant="87" id="2Ym-on-nbb"/>
+                            <constraint firstItem="FtW-1Z-eGa" firstAttribute="trailing" secondItem="7Kg-YH-j2c" secondAttribute="trailing" constant="87" id="Cco-wB-fGI"/>
+                            <constraint firstItem="0Ye-FJ-br2" firstAttribute="leading" secondItem="FtW-1Z-eGa" secondAttribute="leading" constant="87" id="FN0-Lt-aZk"/>
                             <constraint firstItem="FtW-1Z-eGa" firstAttribute="bottom" secondItem="jTD-Dd-hrD" secondAttribute="bottom" constant="438" id="LZs-AN-but"/>
                             <constraint firstItem="jTD-Dd-hrD" firstAttribute="top" secondItem="FtW-1Z-eGa" secondAttribute="top" constant="83" id="LbW-LP-VV5"/>
                             <constraint firstItem="7Kg-YH-j2c" firstAttribute="leading" secondItem="FtW-1Z-eGa" secondAttribute="leading" constant="87" id="sEk-3z-0yQ"/>
+                            <constraint firstItem="FtW-1Z-eGa" firstAttribute="trailing" secondItem="uV5-Ks-9Ss" secondAttribute="trailing" constant="87" id="yjR-LJ-RZw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FtW-1Z-eGa"/>
                     </view>
@@ -129,12 +138,11 @@
                     <connections>
                         <outlet property="photoImageView" destination="uV5-Ks-9Ss" id="W4g-2g-bky"/>
                         <outlet property="photoTextField" destination="0Ye-FJ-br2" id="eSU-Iy-9Lp"/>
-                        <outlet property="photoTextLabel" destination="0Ye-FJ-br2" id="67p-yc-Xcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GM9-Pn-PW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1729" y="142"/>
+            <point key="canvasLocation" x="2010" y="-360"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m76-K3-FW9">
@@ -152,7 +160,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igb-Dr-cbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="141.96428571428569"/>
+            <point key="canvasLocation" x="-220" y="135"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="ktY-fN-agN">
+            <objects>
+                <viewController id="Ox1-uz-lh7" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vwf-W4-bNw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsb-ZB-vfW">
+                                <rect key="frame" x="108" y="118" width="198" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="114" translatesAutoresizingMaskIntoConstraints="NO" id="9hC-FW-bB9">
+                                <rect key="frame" x="115" y="249" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nw2-Tp-xVQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                        <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkTheme:" destination="Ox1-uz-lh7" eventType="touchUpInside" id="VTq-jL-gjH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aL-nA-NBf">
+                                        <rect key="frame" x="147" y="0.0" width="42" height="30"/>
+                                        <state key="normal" title="Green"/>
+                                        <connections>
+                                            <action selector="selectGreentheme:" destination="Ox1-uz-lh7" eventType="touchUpInside" id="g5d-BR-8Xb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dsb-ZB-vfW" firstAttribute="top" secondItem="3aK-Ww-Hay" secondAttribute="top" constant="74" id="TXF-fh-I3F"/>
+                            <constraint firstItem="3aK-Ww-Hay" firstAttribute="trailing" secondItem="dsb-ZB-vfW" secondAttribute="trailing" constant="108" id="c6s-7T-AM4"/>
+                            <constraint firstItem="dsb-ZB-vfW" firstAttribute="leading" secondItem="3aK-Ww-Hay" secondAttribute="leading" constant="108" id="daw-oA-AVr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3aK-Ww-Hay"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYI-3V-6ZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="458" y="-360"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
