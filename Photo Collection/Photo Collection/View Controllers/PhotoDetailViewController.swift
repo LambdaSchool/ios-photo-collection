@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Photos
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var nameTextField: UITextField!
     
     var photoController: PhotoController?
     var photo: Photo?
@@ -17,14 +21,87 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
 
     @IBAction func addPhoto(_ sender: Any) {
+        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
+        
+        switch authorizationStatus {
+        case .authorized:
+            presentImagePickerController()
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status {
+                case .authorized:
+                    self.presentImagePickerController()
+                    
+                default:
+                    break
+                }
+            }
+        default:
+            break
+        }
     }
    
     @IBAction func savePhoto(_ sender: Any) {
+        guard let photo = photo else {
+            // We're saving a new photo
+            
+            guard let text = nameTextField.text,
+                let image = photoImageView.image else { return}
+            
+            guard let imageData = image.pngData() else { return }
+            
+            photoController?.createPhoto(with: imageData, with: text)
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        
+        // We're updating a photo
+        
+        guard let text = nameTextField.text,
+            let image = photoImageView.image else { return}
+        
+        guard let imageData = image.pngData() else { return }
+        
+        photoController?.updatePhoto(photo: photo, imageData: imageData, title: text)
+    }
+    
+    func setTheme() {
+        guard let themePreference = themeHelper?.themePreference else { return }
+        
+        if themePreference == "Dark" {
+            view.backgroundColor = UIColor.lightGray
+        } else {
+            view.backgroundColor = UIColor.green
+        }
+    }
+    
+    private func updateViews() {
+        guard let photo = photo else { return }
+        
+        let image = UIImage(data: photo.imageData)
+        photoImageView.image = image
+        nameTextField.text = photo.title
+    }
+    
+    func presentImagePickerController() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        let pickerController = UIImagePickerController()
+        pickerController.sourceType = .photoLibrary
+        pickerController.delegate = self
+        
+        present(pickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[.originalImage] as? UIImage else { return }
+        photoImageView.image = image
     }
     
     /*
@@ -38,3 +115,4 @@ class PhotoDetailViewController: UIViewController {
     */
 
 }
+
