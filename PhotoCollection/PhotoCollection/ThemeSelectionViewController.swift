@@ -9,7 +9,7 @@
 import UIKit
 
 class ThemeSelectionViewController: UIViewController {
-
+    var themeHelper: ThemeHelper?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +27,15 @@ class ThemeSelectionViewController: UIViewController {
     }
     */
     @IBOutlet weak var selectDarkTheme: UIStackView!
+    
+    
+    @IBAction func selectDarkThemePressed(_ sender: Any) {
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func selectBlueTheme(_ sender: Any) {
+        themeHelper?.setThemePreferenceToBlue()
+        dismiss(animated: true, completion: nil)
     }
     
 }

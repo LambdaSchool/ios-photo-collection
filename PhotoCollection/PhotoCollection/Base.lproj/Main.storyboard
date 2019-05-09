@@ -36,6 +36,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFM-DS-SaM">
                                         <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                         <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkThemePressed:" destination="WdK-fH-duj" eventType="touchUpInside" id="ctd-ac-9PZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfw-cZ-v2P">
                                         <rect key="frame" x="121" y="0.0" width="31" height="30"/>
@@ -82,7 +85,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EditPhoto" id="u0E-yB-9Us" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="u0E-yB-9Us" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="140" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -129,7 +132,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="rCf-Ne-u8I" id="nFU-dm-Fsw"/>
                                     <outlet property="photoImageView" destination="PCu-jm-sxX" id="7cD-hl-BnG"/>
-                                    <segue destination="4CH-Uz-hL2" kind="show" id="U1V-Wl-Xr5"/>
+                                    <segue destination="4CH-Uz-hL2" kind="show" identifier="EditPhoto" id="U1V-Wl-Xr5"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -141,7 +144,7 @@
                     <navigationItem key="navigationItem" title="Photo Collection" id="gBz-Ks-wEb">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="RvR-JU-DCJ">
                             <connections>
-                                <segue destination="WdK-fH-duj" kind="presentation" id="hvf-5c-vhp"/>
+                                <segue destination="WdK-fH-duj" kind="presentation" identifier="SelectTheme" id="hvf-5c-vhp"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wo1-Pg-LJs">
@@ -229,6 +232,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jzq-ev-rC5"/>
+        <segue reference="U1V-Wl-Xr5"/>
     </inferredMetricsTieBreakers>
 </document>
