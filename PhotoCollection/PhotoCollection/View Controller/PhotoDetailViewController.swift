@@ -13,21 +13,34 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    func updateViews() {
+        setTheme()
         
+        guard let photo = photo else { return }
+        let image = UIImage(data: photo.imageData)
+        photoImageView.image = image
+    }
+
+    func setTheme() {
+        guard let theme = themeHelper?.themePrefrence else { return }
+        
+        if theme == "Dark" {
+            view.backgroundColor = .darkGray
+        } else if theme == "Cyan" {
+            view.backgroundColor = .cyan
+        }
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let photo = photo,
+            let image = UIImage(data: photo.imageData),
+            let photoImage = photoImageView.image,
+            let name = nameTextField.text else { return }
+        
+        photoController?.createPhoto(for: photoImage, title: name)
     }
     
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
