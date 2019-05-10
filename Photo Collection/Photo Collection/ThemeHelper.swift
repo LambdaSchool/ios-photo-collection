@@ -31,8 +31,8 @@ class ThemeHelper {
     } // end of set theme to dark function
     
     
-    func setThemePreferenceToGray() {
+    func setThemePreferenceToGreen() {
         let userDefaults = UserDefaults.standard
-        userDefaults.set("Gray", forKey: .themePreferenceKey)
+        userDefaults.set("Green", forKey: .themePreferenceKey)
     } // end of set theme to gray function
 }

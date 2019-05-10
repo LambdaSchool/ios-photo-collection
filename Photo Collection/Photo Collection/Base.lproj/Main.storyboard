@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="a44-xG-ywD" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="a44-xG-ywD" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="8" y="8" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -53,7 +53,9 @@
                                     <constraint firstItem="scg-uP-dKd" firstAttribute="centerX" secondItem="t5P-ka-lyW" secondAttribute="centerX" id="uFO-Hs-emK"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="VkE-EO-QJt" kind="show" id="cZZ-XT-4pe"/>
+                                    <outlet property="imageView" destination="t5P-ka-lyW" id="ppu-zx-Hjl"/>
+                                    <outlet property="photoLabel" destination="scg-uP-dKd" id="zFW-qB-arU"/>
+                                    <segue destination="VkE-EO-QJt" kind="show" identifier="PhotoDetailsSegue" id="cZZ-XT-4pe"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -65,12 +67,12 @@
                     <navigationItem key="navigationItem" id="cSh-39-dxl">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="ebh-7W-guG">
                             <connections>
-                                <segue destination="ad6-40-3w1" kind="presentation" id="Zmg-ez-rbn"/>
+                                <segue destination="ad6-40-3w1" kind="presentation" identifier="SelectThemeSegue" id="Zmg-ez-rbn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qju-2P-hjI">
                             <connections>
-                                <segue destination="VkE-EO-QJt" kind="show" id="6zc-ct-62y"/>
+                                <segue destination="VkE-EO-QJt" kind="show" identifier="AddPhotoSegue" id="6zc-ct-62y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,10 +98,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaQ-Cv-DJR">
                                 <rect key="frame" x="109" y="283" width="33" height="30"/>
                                 <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="darkThemePressed:" destination="ad6-40-3w1" eventType="touchUpInside" id="Buf-R5-XJC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTt-uL-eCP">
-                                <rect key="frame" x="263" y="283" width="33" height="30"/>
-                                <state key="normal" title="Gray"/>
+                                <rect key="frame" x="254" y="283" width="42" height="30"/>
+                                <state key="normal" title="Green"/>
+                                <connections>
+                                    <action selector="greenThemePressed:" destination="ad6-40-3w1" eventType="touchUpInside" id="p0k-pD-zHp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,6 +141,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INB-MS-Ntb">
                                 <rect key="frame" x="171" y="347" width="72" height="30"/>
                                 <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="VkE-EO-QJt" eventType="touchUpInside" id="6kn-eJ-hSJ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title to this photo:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Md-pv-wGY">
                                 <rect key="frame" x="16" y="385" width="382" height="30"/>
@@ -157,8 +168,16 @@
                         <viewLayoutGuide key="safeArea" id="0hl-Cs-GTh"/>
                     </view>
                     <navigationItem key="navigationItem" id="vcD-TP-8Vs">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oqu-gC-Bk1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oqu-gC-Bk1">
+                            <connections>
+                                <action selector="savePhoto:" destination="VkE-EO-QJt" id="bJx-kB-V9q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newImageTitle" destination="3Md-pv-wGY" id="o5s-cW-D9s"/>
+                        <outlet property="newImageView" destination="4LE-Lq-J5i" id="JAH-c5-3cd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drR-D3-9cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
