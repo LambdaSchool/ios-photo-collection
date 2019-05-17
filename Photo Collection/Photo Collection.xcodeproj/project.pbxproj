@@ -17,6 +17,8 @@
 		F61F3E8A228E4F0000859593 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E89228E4F0000859593 /* ThemeHelper.swift */; };
 		F61F3E8C228E5C6900859593 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E8B228E5C6900859593 /* PhotosCollectionViewController.swift */; };
 		F61F3E8E228E5F5500859593 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E8D228E5F5500859593 /* PhotoCollectionViewCell.swift */; };
+		F61F3E90228F4C2100859593 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E8F228F4C2100859593 /* PhotoDetailViewController.swift */; };
+		F61F3E92228F51FB00859593 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E91228F51FB00859593 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		F61F3E89228E4F0000859593 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		F61F3E8B228E5C6900859593 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		F61F3E8D228E5F5500859593 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F61F3E8F228F4C2100859593 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		F61F3E91228F51FB00859593 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			children = (
 				F61F3E89228E4F0000859593 /* ThemeHelper.swift */,
 				F61F3E8B228E5C6900859593 /* PhotosCollectionViewController.swift */,
+				F61F3E91228F51FB00859593 /* ThemeSelectionViewController.swift */,
+				F61F3E8F228F4C2100859593 /* PhotoDetailViewController.swift */,
 				F61F3E87228E4A1600859593 /* PhotoController.swift */,
 				F61F3E71228E489900859593 /* ViewController.swift */,
 				F61F3E8D228E5F5500859593 /* PhotoCollectionViewCell.swift */,
@@ -188,6 +194,8 @@
 				F61F3E8C228E5C6900859593 /* PhotosCollectionViewController.swift in Sources */,
 				F61F3E8E228E5F5500859593 /* PhotoCollectionViewCell.swift in Sources */,
 				F61F3E8A228E4F0000859593 /* ThemeHelper.swift in Sources */,
+				F61F3E90228F4C2100859593 /* PhotoDetailViewController.swift in Sources */,
+				F61F3E92228F51FB00859593 /* ThemeSelectionViewController.swift in Sources */,
 				F61F3E70228E489900859593 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
