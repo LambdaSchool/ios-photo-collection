@@ -15,6 +15,8 @@
 		F61F3E86228E495800859593 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E85228E495800859593 /* Photo.swift */; };
 		F61F3E88228E4A1600859593 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E87228E4A1600859593 /* PhotoController.swift */; };
 		F61F3E8A228E4F0000859593 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E89228E4F0000859593 /* ThemeHelper.swift */; };
+		F61F3E8C228E5C6900859593 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E8B228E5C6900859593 /* PhotosCollectionViewController.swift */; };
+		F61F3E8E228E5F5500859593 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F3E8D228E5F5500859593 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		F61F3E85228E495800859593 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F61F3E87228E4A1600859593 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		F61F3E89228E4F0000859593 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		F61F3E8B228E5C6900859593 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		F61F3E8D228E5F5500859593 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +84,11 @@
 		F61F3E82228E491500859593 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				F61F3E71228E489900859593 /* ViewController.swift */,
-				F61F3E87228E4A1600859593 /* PhotoController.swift */,
 				F61F3E89228E4F0000859593 /* ThemeHelper.swift */,
+				F61F3E8B228E5C6900859593 /* PhotosCollectionViewController.swift */,
+				F61F3E87228E4A1600859593 /* PhotoController.swift */,
+				F61F3E71228E489900859593 /* ViewController.swift */,
+				F61F3E8D228E5F5500859593 /* PhotoCollectionViewCell.swift */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				F61F3E86228E495800859593 /* Photo.swift in Sources */,
 				F61F3E88228E4A1600859593 /* PhotoController.swift in Sources */,
 				F61F3E72228E489900859593 /* ViewController.swift in Sources */,
+				F61F3E8C228E5C6900859593 /* PhotosCollectionViewController.swift in Sources */,
+				F61F3E8E228E5F5500859593 /* PhotoCollectionViewCell.swift in Sources */,
 				F61F3E8A228E4F0000859593 /* ThemeHelper.swift in Sources */,
 				F61F3E70228E489900859593 /* AppDelegate.swift in Sources */,
 			);
