@@ -12,6 +12,9 @@
 		A23E9F3422B2E10B0030AF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23E9F3222B2E10B0030AF8E /* Main.storyboard */; };
 		A23E9F3622B2E10C0030AF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A23E9F3522B2E10C0030AF8E /* Assets.xcassets */; };
 		A23E9F3922B2E10C0030AF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23E9F3722B2E10C0030AF8E /* LaunchScreen.storyboard */; };
+		A23E9F4122B2E16B0030AF8E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E9F4022B2E16B0030AF8E /* Photo.swift */; };
+		A23E9F4322B2E1DD0030AF8E /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E9F4222B2E1DD0030AF8E /* PhotoController.swift */; };
+		A23E9F4722B2E3670030AF8E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E9F4622B2E3670030AF8E /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		A23E9F3522B2E10C0030AF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A23E9F3822B2E10C0030AF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A23E9F3A22B2E10C0030AF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A23E9F4022B2E16B0030AF8E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A23E9F4222B2E1DD0030AF8E /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		A23E9F4622B2E3670030AF8E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +63,30 @@
 				A23E9F2E22B2E10B0030AF8E /* AppDelegate.swift */,
 				A23E9F3022B2E10B0030AF8E /* ViewController.swift */,
 				A23E9F3222B2E10B0030AF8E /* Main.storyboard */,
+				A23E9F4422B2E1ED0030AF8E /* Models */,
+				A23E9F4522B2E1F90030AF8E /* Model Controllers */,
 				A23E9F3522B2E10C0030AF8E /* Assets.xcassets */,
 				A23E9F3722B2E10C0030AF8E /* LaunchScreen.storyboard */,
 				A23E9F3A22B2E10C0030AF8E /* Info.plist */,
 			);
 			path = "ios-photo-collection";
+			sourceTree = "<group>";
+		};
+		A23E9F4422B2E1ED0030AF8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A23E9F4022B2E16B0030AF8E /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A23E9F4522B2E1F90030AF8E /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A23E9F4222B2E1DD0030AF8E /* PhotoController.swift */,
+				A23E9F4622B2E3670030AF8E /* ThemeHelper.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23E9F4122B2E16B0030AF8E /* Photo.swift in Sources */,
 				A23E9F3122B2E10B0030AF8E /* ViewController.swift in Sources */,
+				A23E9F4322B2E1DD0030AF8E /* PhotoController.swift in Sources */,
+				A23E9F4722B2E3670030AF8E /* ThemeHelper.swift in Sources */,
 				A23E9F2F22B2E10B0030AF8E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
