@@ -20,6 +20,13 @@ class PhotoDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func addPhoto(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func savePhoto(_ sender: UIBarButtonItem) {
+        
+    }
 
     /*
     // MARK: - Navigation
