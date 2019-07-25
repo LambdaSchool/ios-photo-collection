@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ThemeHelper {
     let themePreferenceKey: String = "ThemePreference"
@@ -24,9 +25,18 @@ class ThemeHelper {
         
     }
     
-    func setThemePreferenceToWhite(){
+    func setThemePreferenceToBlue(){
         
-        userDefault.set("White", forKey: themePreferenceKey)
+        userDefault.set("Blue", forKey: themePreferenceKey)
         
+    }
+    
+    func setTheme() -> UIColor {
+        guard let themePreference = themePreference else { return UIColor.white }
+        if themePreference == "Dark" {
+            return UIColor.black
+        } else {
+            return UIColor.blue
+        }
     }
 }
