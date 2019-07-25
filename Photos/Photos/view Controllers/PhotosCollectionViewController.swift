@@ -31,16 +31,18 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		switch segue.identifier {
-//		case "SetThemeSegue":
-//			<#code#>
-//		case "AddPhotoSegue":
-//
-//		case "PhotoDetailSegue":
-//
-//		default:
-//			()
-//		}
+        
+        switch segue.identifier {
+        case "SetThemeSegue":
+            guard let setThemeVC = segue.destination as? ThemeSelectionViewController else {return}
+        case "AddPhotoSegue":
+              guard let addPhotoVC = segue.destination as? AddPhotoViewController else {return}
+        case "PhotoDetailSegue":
+            guard let photoDetailVC = segue.destination as? AddPhotoViewController else {return}
+            
+        default:
+            ()
+        }
     }
 
     // MARK: UICollectionViewDataSource

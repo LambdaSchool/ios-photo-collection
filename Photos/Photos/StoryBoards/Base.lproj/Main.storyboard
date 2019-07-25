@@ -10,15 +10,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Theme Selection View Controller-->
         <scene sceneID="Z4k-LO-Bvs">
             <objects>
-                <viewController id="mLI-qu-Gek" sceneMemberID="viewController">
+                <viewController id="mLI-qu-Gek" customClass="ThemeSelectionViewController" customModule="Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="46y-3W-HIX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Theme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDU-Vn-xFB">
+                                <rect key="frame" x="20" y="74" width="374" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="← Swipe Left For Dark          Swipe Right for Red →" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ain-N8-tzG">
+                                <rect key="frame" x="15.5" y="437.5" width="383" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fH-lc-1sG">
+                                <rect key="frame" x="178" y="766" width="58" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="oKp-3Q-76d" firstAttribute="trailing" secondItem="dDU-Vn-xFB" secondAttribute="trailing" constant="20" id="51l-5t-kzv"/>
+                            <constraint firstItem="6fH-lc-1sG" firstAttribute="centerX" secondItem="46y-3W-HIX" secondAttribute="centerX" id="54F-Zu-4g1"/>
+                            <constraint firstItem="ain-N8-tzG" firstAttribute="centerY" secondItem="46y-3W-HIX" secondAttribute="centerY" id="AwO-Uf-U2N"/>
+                            <constraint firstItem="dDU-Vn-xFB" firstAttribute="top" secondItem="oKp-3Q-76d" secondAttribute="top" constant="30" id="V3y-Iq-h3H"/>
+                            <constraint firstItem="ain-N8-tzG" firstAttribute="centerX" secondItem="46y-3W-HIX" secondAttribute="centerX" id="oH6-EV-29F"/>
+                            <constraint firstItem="dDU-Vn-xFB" firstAttribute="leading" secondItem="oKp-3Q-76d" secondAttribute="leading" constant="20" id="qqt-v4-nrt"/>
+                            <constraint firstItem="oKp-3Q-76d" firstAttribute="bottom" secondItem="6fH-lc-1sG" secondAttribute="bottom" constant="60" id="vFg-p6-pt9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oKp-3Q-76d"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Y5X-d1-qsH" appends="YES" id="L4W-KG-lVt"/>
@@ -102,11 +130,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="r0h-k3-4SB">
-                        <barButtonItem key="leftBarButtonItem" title="SelectedTheme" id="j1M-f7-lyN">
-                            <connections>
-                                <segue destination="mLI-qu-Gek" kind="presentation" identifier="SetThemeSegue" id="Hlc-Ns-A9j"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="SelectedTheme" id="j1M-f7-lyN"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2ng-sW-D0b">
                             <connections>
                                 <segue destination="QeQ-ji-gCS" kind="show" identifier="AddPhotoSegue" id="Ggg-Ob-pYl"/>
@@ -121,7 +145,7 @@
         <!--Add Photo-->
         <scene sceneID="wb9-LP-7k2">
             <objects>
-                <viewController id="QeQ-ji-gCS" sceneMemberID="viewController">
+                <viewController id="QeQ-ji-gCS" customClass="AddPhotoViewController" customModule="Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hvG-bB-9aW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +161,9 @@
                                 <rect key="frame" x="163" y="376" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Photo"/>
+                                <connections>
+                                    <action selector="selectButtonPressed:" destination="QeQ-ji-gCS" eventType="touchUpInside" id="DmT-9H-W8Z"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hi" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kN-oV-brx">
                                 <rect key="frame" x="159" y="433" width="97" height="30"/>
@@ -154,8 +181,16 @@
                         <viewLayoutGuide key="safeArea" id="Nd7-da-2Ai"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Photo" id="opF-1l-nJH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6Gn-7X-S03"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6Gn-7X-S03">
+                            <connections>
+                                <action selector="saveTapped:" destination="QeQ-ji-gCS" id="JCW-jN-pI5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="vGn-M7-4dO" id="H0k-6u-idF"/>
+                        <outlet property="selectPhotoButton" destination="NuK-UD-K6E" id="qR3-8x-30d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h56-ZB-Otp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

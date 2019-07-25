@@ -9,22 +9,24 @@
 import UIKit
 
 class AddPhotoViewController: UIViewController {
-
+    // MARK: -Properties
+    var photoController: PhotoController?
+    var photo:Photo?
+    var themeHelper:ThemeHelper?
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var selectPhotoButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: -Actions
+    @IBAction func saveTapped(_ sender: UIBarButtonItem) {
     }
-    */
-
+    
+    @IBAction func selectButtonPressed(_ sender: UIButton) {
+    }
 }
