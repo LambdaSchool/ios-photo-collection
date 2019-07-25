@@ -10,14 +10,23 @@ import UIKit
 
 class ThemeSelectionViewController: UIViewController {
     
+    var themeHelper: ThemeHelper? 
     
-
+    @IBOutlet weak var doneButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func rightGestureSwipe(_ sender: UISwipeGestureRecognizer) {
+    }
+    @IBAction func leftGestureSwipe(_ sender: UISwipeGestureRecognizer) {
+    }
+    @IBAction func doneTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }

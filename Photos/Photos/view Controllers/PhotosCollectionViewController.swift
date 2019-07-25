@@ -35,10 +35,15 @@ class PhotosCollectionViewController: UICollectionViewController {
         switch segue.identifier {
         case "SetThemeSegue":
             guard let setThemeVC = segue.destination as? ThemeSelectionViewController else {return}
+            setThemeVC.themeHelper = themeHelper
         case "AddPhotoSegue":
-              guard let addPhotoVC = segue.destination as? AddPhotoViewController else {return}
+            guard let addPhotoVC = segue.destination as? AddPhotoViewController else {return}
+            addPhotoVC.photoController = photoController
+            addPhotoVC.themeHelper = themeHelper
         case "PhotoDetailSegue":
             guard let photoDetailVC = segue.destination as? AddPhotoViewController else {return}
+            guard let photo = collectionView.indexPathsForSelectedItems else {return}
+            
             
         default:
             ()
