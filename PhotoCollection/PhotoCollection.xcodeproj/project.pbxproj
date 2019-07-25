@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		75BB935822EA386F002C57AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB935722EA386F002C57AF /* AppDelegate.swift */; };
-		75BB935A22EA386F002C57AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB935922EA386F002C57AF /* ViewController.swift */; };
 		75BB935D22EA386F002C57AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BB935B22EA386F002C57AF /* Main.storyboard */; };
 		75BB935F22EA3873002C57AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BB935E22EA3873002C57AF /* Assets.xcassets */; };
 		75BB936222EA3873002C57AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BB936022EA3873002C57AF /* LaunchScreen.storyboard */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		75BB935422EA386F002C57AF /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BB935722EA386F002C57AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75BB935922EA386F002C57AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		75BB935C22EA386F002C57AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75BB935E22EA3873002C57AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75BB936122EA3873002C57AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				75BB935722EA386F002C57AF /* AppDelegate.swift */,
-				75BB935922EA386F002C57AF /* ViewController.swift */,
 				75BB935B22EA386F002C57AF /* Main.storyboard */,
 				F095E51E22EA44F400B568F5 /* ThemeSelectionViewController.swift */,
 				F095E51C22EA421C00B568F5 /* PhotoDetailViewController.swift */,
@@ -158,7 +155,6 @@
 			files = (
 				75BB936A22EA38A2002C57AF /* Photo.swift in Sources */,
 				F095E51B22EA401A00B568F5 /* PhotosCollectionViewCell.swift in Sources */,
-				75BB935A22EA386F002C57AF /* ViewController.swift in Sources */,
 				75BB936C22EA38E6002C57AF /* PhotoController.swift in Sources */,
 				F095E51922EA3F9900B568F5 /* PhotosCollectionViewController.swift in Sources */,
 				75BB936E22EA3B0E002C57AF /* ThemeHelper.swift in Sources */,

@@ -20,9 +20,13 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
+        
+        //self.backgroundColor = .red
         guard let photo = photo else { return }
+        
         imageView.image = UIImage(data: photo.imageData)
         Label.text = photo.title
+        
     }
     
     

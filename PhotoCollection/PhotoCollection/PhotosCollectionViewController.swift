@@ -19,9 +19,16 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = themeHelper.setTheme()
+        
 
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.backgroundColor = themeHelper.setTheme()
+        collectionView.backgroundColor = .clear
+        collectionView.reloadData()
     }
 
     // MARK: - Navigation
