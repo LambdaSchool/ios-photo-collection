@@ -69,6 +69,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="39h-F2-CTD" id="5Xj-Av-Xg7"/>
                                     <outlet property="photoLabel" destination="vIv-Oa-WQW" id="MyH-UR-n2J"/>
+                                    <segue destination="DZu-sn-58W" kind="show" identifier="ShowDetailSegue" id="Lsz-RK-v8y"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -78,10 +79,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="MaZ-bn-WGK">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Pxs-Vq-9GJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Pxs-Vq-9GJ">
+                            <connections>
+                                <segue destination="vzL-UK-lgo" kind="presentation" identifier="SelectThemeSegue" id="rU6-vb-S6i"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Ea-8w-cOL">
                             <connections>
-                                <segue destination="DZu-sn-58W" kind="show" id="PgX-1d-qrp"/>
+                                <segue destination="DZu-sn-58W" kind="show" identifier="AddPhotoSegue" id="PgX-1d-qrp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -133,7 +138,11 @@
                         <viewLayoutGuide key="safeArea" id="cr4-1x-VLy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Photo" id="PnL-13-AUs">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LrL-Hc-2wV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LrL-Hc-2wV">
+                            <connections>
+                                <action selector="sveButtonTapped:" destination="DZu-sn-58W" id="JWH-g8-QFE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="ybz-cb-Zr1" id="yzc-Iq-tAc"/>
@@ -142,7 +151,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZB-1u-cN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589.8550724637682" y="-199.55357142857142"/>
+            <point key="canvasLocation" x="1739" y="250"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="FQV-fS-yc9">
+            <objects>
+                <viewController id="vzL-UK-lgo" customClass="ThemeSelectionViewController" customModule="iOS_Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vxM-d6-K37">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="tZM-ai-91C">
+                                <rect key="frame" x="20" y="124" width="374" height="145.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="PhotoCollection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL9-dC-1OB">
+                                        <rect key="frame" x="1.5" y="0.0" width="371" height="59"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWE-F3-tgi">
+                                        <rect key="frame" x="38" y="77" width="298.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="8ZA-XT-Ouy">
+                                        <rect key="frame" x="111" y="115.5" width="152" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Id-7p-QJ7">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                                <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="vzL-UK-lgo" eventType="touchUpInside" id="vo1-uv-fjF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hU-qk-9f5">
+                                                <rect key="frame" x="121" y="0.0" width="31" height="30"/>
+                                                <state key="normal" title="Blue"/>
+                                                <connections>
+                                                    <action selector="selectYourColorHereTheme:" destination="vzL-UK-lgo" eventType="touchUpInside" id="EQR-lA-Iha"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tZM-ai-91C" firstAttribute="top" secondItem="d2b-xi-ahh" secondAttribute="top" constant="80" id="3z9-rg-Tfl"/>
+                            <constraint firstItem="tZM-ai-91C" firstAttribute="leading" secondItem="d2b-xi-ahh" secondAttribute="leading" constant="20" id="Z9L-Se-6tR"/>
+                            <constraint firstItem="d2b-xi-ahh" firstAttribute="trailing" secondItem="tZM-ai-91C" secondAttribute="trailing" constant="20" id="Zi1-KT-iiu"/>
+                            <constraint firstItem="d2b-xi-ahh" firstAttribute="bottom" secondItem="tZM-ai-91C" secondAttribute="bottom" constant="592.5" id="bya-Fu-hai"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d2b-xi-ahh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lR5-8b-Rcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="-454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xWM-gj-g4s">
@@ -163,4 +231,7 @@
             <point key="canvasLocation" x="-110.14492753623189" y="-181.47321428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lsz-RK-v8y"/>
+    </inferredMetricsTieBreakers>
 </document>

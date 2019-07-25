@@ -1,24 +1,19 @@
 //
-//  PhotoDetailViewController.swift
+//  ThemeSelectionViewController.swift
 //  iOS Photo Collection
 //
-//  Created by Steven Leyva on 7/25/19.
+//  Created by Jake Connerly on 7/25/19.
 //  Copyright © 2019 jake connerly. All rights reserved.
 //
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class ThemeSelectionViewController: UIViewController {
     
     //
-    // MARK: - IBOutlets and Properties
+    //MARK: - IBOutlets and Properties
     //
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var textField: UITextField!
-    
-    var photoController: PhotoController?
-    var photo: Photo?
     var themeHelper: ThemeHelper?
     
     //
@@ -35,15 +30,13 @@ class PhotoDetailViewController: UIViewController {
     //MARK: - IBActions and Methods
     //
     
-    @IBAction func addPhoto(_ sender: UIButton) {
+    @IBAction func selectDarkTheme(_ sender: UIButton) {
     }
-    @IBAction func sveButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func selectYourColorHereTheme(_ sender: UIButton) {
     }
     
     /*
-     //
-     // MARK: - Navigation
-     //
+    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
