@@ -35,8 +35,8 @@ class ThemeHelper {
             setThemePreferenceToDark()
         }
         
+        //TODO: Come back and ask Michael about this (Andrew R.)
         guard themePreference == nil else { return }
-            setThemePreferenceToDark()
-        
+        setThemePreferenceToDark()
         }
 }
