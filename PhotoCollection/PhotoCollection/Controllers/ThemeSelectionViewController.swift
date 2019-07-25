@@ -30,8 +30,12 @@ class ThemeSelectionViewController: UIViewController {
     */
 
 	@IBAction func darkMode(_ sender: Any) {
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
 	}
 	
 	@IBAction func blueMode(_ sender: Any) {
+        themeHelper?.setThemePreferenceToYourColorHere()
+        dismiss(animated: true, completion: nil)
 	}
 }

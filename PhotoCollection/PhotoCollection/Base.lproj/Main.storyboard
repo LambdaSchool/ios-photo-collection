@@ -67,6 +67,8 @@
                                     <constraint firstItem="UKd-yG-Iwk" firstAttribute="top" secondItem="Uwe-2R-f68" secondAttribute="top" id="mSU-Dc-Hds"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="photoImage" destination="5qN-kv-LQC" id="zmK-wl-Jcd"/>
+                                    <outlet property="photoLabel" destination="GpK-XZ-vvo" id="2vw-Bv-OB0"/>
                                     <segue destination="dwJ-CV-Okd" kind="show" id="wQi-dn-2uM"/>
                                 </connections>
                             </collectionViewCell>
