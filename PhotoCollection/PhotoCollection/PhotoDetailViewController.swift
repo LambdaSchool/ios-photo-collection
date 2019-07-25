@@ -50,6 +50,8 @@ class PhotoDetailViewController: UIViewController {
             
             photoController?.photos.append(newPhoto)
         }
+        photoController?.saveToPersistentStorage()
+        
         navigationController?.popViewController(animated: true)
     }
     @IBAction func addPhoto(_ sender: Any) {
