@@ -15,18 +15,40 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
     }
 
-    /*
+    //
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowDetailSegue" {
+            guard let showDetailVC = segue.destination as? PhotoDetailViewController,
+                  let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+            showDetailVC.themeHelper = themeHelper
+            showDetailVC.photoController = photoController
+            showDetailVC.photo = photoController.photos[indexPath.item]
+            
+        }else if segue.identifier == "AddPhotoSegue" {
+            guard let addPhotoVC = segue.destination as? PhotoDetailViewController else { return }
+            addPhotoVC.themeHelper = themeHelper
+            addPhotoVC.photoController = photoController
+            
+        }else if segue.identifier == "SelectThemeSegue" {
+            guard let selectThemeVC = segue.destination as? ThemeSelectionViewController else { return }
+            selectThemeVC.themeHelper = themeHelper
+            
+        }
+    
     }
-    */
+
 
     // MARK: UICollectionViewDataSource
 
