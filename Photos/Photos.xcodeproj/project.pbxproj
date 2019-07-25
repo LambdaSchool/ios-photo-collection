@@ -14,6 +14,7 @@
 		37B4CD2F22EA40A8007366DD /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD2E22EA40A8007366DD /* PhotoController.swift */; };
 		37B4CD3122EA4786007366DD /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD3022EA4786007366DD /* PhotosCollectionViewController.swift */; };
 		37B4CD3322EA47E7007366DD /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD3222EA47E7007366DD /* PhotoCollectionViewCell.swift */; };
+		37B4CD3522EA65FC007366DD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD3422EA65FC007366DD /* Colors.swift */; };
 		DD91C3AB22EA35BA006A40C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91C3AA22EA35BA006A40C9 /* AppDelegate.swift */; };
 		DD91C3B022EA35BA006A40C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD91C3AE22EA35BA006A40C9 /* Main.storyboard */; };
 		DD91C3B222EA35BB006A40C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD91C3B122EA35BB006A40C9 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		37B4CD2E22EA40A8007366DD /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		37B4CD3022EA4786007366DD /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		37B4CD3222EA47E7007366DD /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		37B4CD3422EA65FC007366DD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DD91C3A722EA35BA006A40C9 /* Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD91C3AA22EA35BA006A40C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD91C3AF22EA35BA006A40C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				37B4CD2E22EA40A8007366DD /* PhotoController.swift */,
 				37B4CD2622EA3FF8007366DD /* Photo.swift */,
 				37B4CD2C22EA407B007366DD /* ThemeHelper.swift */,
+				37B4CD3422EA65FC007366DD /* Colors.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				37B4CD2F22EA40A8007366DD /* PhotoController.swift in Sources */,
 				37B4CD3322EA47E7007366DD /* PhotoCollectionViewCell.swift in Sources */,
 				37B4CD2722EA3FF8007366DD /* Photo.swift in Sources */,
+				37B4CD3522EA65FC007366DD /* Colors.swift in Sources */,
 				37B4CD2B22EA406C007366DD /* AddPhotoViewController.swift in Sources */,
 				37B4CD3122EA4786007366DD /* PhotosCollectionViewController.swift in Sources */,
 				37B4CD2D22EA407B007366DD /* ThemeHelper.swift in Sources */,

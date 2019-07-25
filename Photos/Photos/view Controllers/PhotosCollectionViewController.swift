@@ -17,14 +17,8 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+		guard let theme = themeHelper.themePreference else { return }
+		
     }
 
 
@@ -34,21 +28,22 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         switch segue.identifier {
         case "SetThemeSegue":
-            guard let setThemeVC = segue.destination as? ThemeSelectionViewController else {return}
+            guard let setThemeVC = segue.destination as? ThemeSelectionViewController else { return }
             setThemeVC.themeHelper = themeHelper
         case "AddPhotoSegue":
-            guard let addPhotoVC = segue.destination as? AddPhotoViewController else {return}
+            guard let addPhotoVC = segue.destination as? AddPhotoViewController else { return }
             addPhotoVC.photoController = photoController
             addPhotoVC.themeHelper = themeHelper
         case "PhotoDetailSegue":
-            guard let photoDetailVC = segue.destination as? AddPhotoViewController else {return}
-            guard let photo = collectionView.indexPathsForSelectedItems else {return}
-            
-            
+            guard let photoDetailVC = segue.destination as? AddPhotoViewController else { return }
+			guard let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
+			let photo = photoController.photos[indexPath.item]
+			photoDetailVC.photo = photo
         default:
             ()
         }
     }
+
 
     // MARK: UICollectionViewDataSource
 
@@ -61,9 +56,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
 
 //		let photo = photoController.photos[indexPath.item]
-
-    
-        // Configure the cell
     
         return cell
     }
