@@ -10,6 +10,13 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
     
+    //
+    // MARK: - IBOutlets and Properties
+    //
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textField: UITextField!
+    
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?

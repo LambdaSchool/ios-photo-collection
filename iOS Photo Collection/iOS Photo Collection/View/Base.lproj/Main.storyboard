@@ -132,6 +132,10 @@
                     <navigationItem key="navigationItem" title="Create Photo" id="PnL-13-AUs">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="LrL-Hc-2wV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="ybz-cb-Zr1" id="yzc-Iq-tAc"/>
+                        <outlet property="textField" destination="WUl-Hy-OtL" id="TgO-z5-Vxo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZB-1u-cN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
