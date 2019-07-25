@@ -10,12 +10,14 @@ import UIKit
 
 class ThemeSelectionViewController: UIViewController {
 	
+	@IBOutlet weak var themeColorLabel: UILabel!
+	
 	var themeHelper: ThemeHelper?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        themeColorLabel.text = themeHelper?.themePreference ?? "Select a theme"
     }
     
 

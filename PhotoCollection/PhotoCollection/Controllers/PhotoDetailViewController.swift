@@ -15,14 +15,14 @@ class PhotoDetailViewController: UIViewController {
 	
 	var photoController: PhotoController?
 	var photo: Photo?
-	var themeHelper: ThemeHelper?	
-
+	var themeHelper: ThemeHelper?
+	var pickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+		
+		pickerController.delegate = self
         updateViews()
-        // Do any additional setup after loading the view.
     }
 
 	@IBAction func addPhoto(_ sender: Any) {
@@ -57,3 +57,11 @@ class PhotoDetailViewController: UIViewController {
     
 }
 
+extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+			imageView.contentMode = .scaleAspectFit
+			imageView.image = pickedImage
+		}
+	}
+}
