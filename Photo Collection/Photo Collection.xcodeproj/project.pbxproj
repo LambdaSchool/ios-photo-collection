@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38078B9022EA4C32007EAD92 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38078B8F22EA4C32007EAD92 /* ThemeHelper.swift */; };
 		91976E6722EA35E70080A68A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91976E6622EA35E70080A68A /* AppDelegate.swift */; };
 		91976E6C22EA35E70080A68A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91976E6A22EA35E70080A68A /* Main.storyboard */; };
 		91976E6E22EA35E80080A68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91976E6D22EA35E80080A68A /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38078B8F22EA4C32007EAD92 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		91976E6322EA35E70080A68A /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91976E6622EA35E70080A68A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91976E6B22EA35E70080A68A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				91976E7822EA42350080A68A /* Photo.swift */,
 				91976E7C22EA45240080A68A /* PhotoController.swift */,
+				38078B8F22EA4C32007EAD92 /* ThemeHelper.swift */,
 				91976E6622EA35E70080A68A /* AppDelegate.swift */,
 				91976E6A22EA35E70080A68A /* Main.storyboard */,
 				91976E6D22EA35E80080A68A /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				91976E7D22EA45240080A68A /* PhotoController.swift in Sources */,
 				91976E7922EA42350080A68A /* Photo.swift in Sources */,
 				91976E6722EA35E70080A68A /* AppDelegate.swift in Sources */,
+				38078B9022EA4C32007EAD92 /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
