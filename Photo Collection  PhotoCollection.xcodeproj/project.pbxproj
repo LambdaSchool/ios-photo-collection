@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8609F8D022EA61AE00B9328D /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8609F8CF22EA61AE00B9328D /* ThemeSelectionViewController.swift */; };
 		8632B9BB22EA40910020F4F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632B9BA22EA40910020F4F3 /* AppDelegate.swift */; };
 		8632B9C022EA40910020F4F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8632B9BE22EA40910020F4F3 /* Main.storyboard */; };
 		8632B9C322EA40910020F4F3 /* Photo_Collection__PhotoCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8632B9C122EA40910020F4F3 /* Photo_Collection__PhotoCollection.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8609F8CF22EA61AE00B9328D /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 		8632B9B722EA40910020F4F3 /* Photo Collection  PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection  PhotoCollection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8632B9BA22EA40910020F4F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8632B9BF22EA40910020F4F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		8632B9DB22EA5C6C0020F4F3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8609F8CF22EA61AE00B9328D /* ThemeSelectionViewController.swift */,
 				8632B9D522EA4BFD0020F4F3 /* PhotosCollectionViewController.swift */,
 				8632B9D922EA5BCF0020F4F3 /* PhotoDetailViewController.swift */,
 			);
@@ -168,6 +171,7 @@
 				8632B9D822EA4DCC0020F4F3 /* PhotosCollectionViewCell.swift in Sources */,
 				8632B9DA22EA5BCF0020F4F3 /* PhotoDetailViewController.swift in Sources */,
 				8632B9BB22EA40910020F4F3 /* AppDelegate.swift in Sources */,
+				8609F8D022EA61AE00B9328D /* ThemeSelectionViewController.swift in Sources */,
 				8632B9C322EA40910020F4F3 /* Photo_Collection__PhotoCollection.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
