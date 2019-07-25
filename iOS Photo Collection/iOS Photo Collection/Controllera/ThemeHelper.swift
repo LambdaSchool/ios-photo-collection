@@ -38,7 +38,7 @@ class ThemeHelper {
     
     #warning("Check later if correct")
     
-    init(themePreference: String?) {
+        init() {
         if themePreference == nil {
             setThemePreferenceToDark()
         }
