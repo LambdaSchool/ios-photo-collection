@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		38078B9022EA4C32007EAD92 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38078B8F22EA4C32007EAD92 /* ThemeHelper.swift */; };
+		38078B9222EA5508007EAD92 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38078B9122EA5508007EAD92 /* PhotosCollectionViewController.swift */; };
+		38078B9422EA55EF007EAD92 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38078B9322EA55EF007EAD92 /* PhotosCollectionViewCell.swift */; };
+		38078B9C22EA5B13007EAD92 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38078B9B22EA5B13007EAD92 /* PhotoDetailViewController.swift */; };
+		38078B9E22EA60AC007EAD92 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38078B9D22EA60AC007EAD92 /* ThemeSelectionViewController.swift */; };
 		91976E6722EA35E70080A68A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91976E6622EA35E70080A68A /* AppDelegate.swift */; };
 		91976E6C22EA35E70080A68A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91976E6A22EA35E70080A68A /* Main.storyboard */; };
 		91976E6E22EA35E80080A68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91976E6D22EA35E80080A68A /* Assets.xcassets */; };
@@ -18,6 +22,10 @@
 
 /* Begin PBXFileReference section */
 		38078B8F22EA4C32007EAD92 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		38078B9122EA5508007EAD92 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		38078B9322EA55EF007EAD92 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		38078B9B22EA5B13007EAD92 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		38078B9D22EA60AC007EAD92 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 		91976E6322EA35E70080A68A /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91976E6622EA35E70080A68A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91976E6B22EA35E70080A68A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,10 +47,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38078B9522EA55FD007EAD92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91976E7822EA42350080A68A /* Photo.swift */,
+				91976E7C22EA45240080A68A /* PhotoController.swift */,
+				38078B8F22EA4C32007EAD92 /* ThemeHelper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		38078B9622EA5614007EAD92 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38078B9122EA5508007EAD92 /* PhotosCollectionViewController.swift */,
+				38078B9B22EA5B13007EAD92 /* PhotoDetailViewController.swift */,
+				38078B9D22EA60AC007EAD92 /* ThemeSelectionViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		38078B9822EA562A007EAD92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38078B9322EA55EF007EAD92 /* PhotosCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		38078B9922EA564F007EAD92 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				91976E6622EA35E70080A68A /* AppDelegate.swift */,
+				91976E6D22EA35E80080A68A /* Assets.xcassets */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		38078B9A22EA5663007EAD92 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				91976E6A22EA35E70080A68A /* Main.storyboard */,
+				91976E6F22EA35E80080A68A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		91976E5A22EA35E70080A68A = {
 			isa = PBXGroup;
 			children = (
 				91976E6522EA35E70080A68A /* Photo Collection */,
+				38078B9922EA564F007EAD92 /* Extras */,
 				91976E6422EA35E70080A68A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,14 +113,11 @@
 		91976E6522EA35E70080A68A /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
-				91976E7822EA42350080A68A /* Photo.swift */,
-				91976E7C22EA45240080A68A /* PhotoController.swift */,
-				38078B8F22EA4C32007EAD92 /* ThemeHelper.swift */,
-				91976E6622EA35E70080A68A /* AppDelegate.swift */,
-				91976E6A22EA35E70080A68A /* Main.storyboard */,
-				91976E6D22EA35E80080A68A /* Assets.xcassets */,
-				91976E6F22EA35E80080A68A /* LaunchScreen.storyboard */,
 				91976E7222EA35E80080A68A /* Info.plist */,
+				38078B9622EA5614007EAD92 /* View Controller */,
+				38078B9822EA562A007EAD92 /* View */,
+				38078B9522EA55FD007EAD92 /* Model */,
+				38078B9A22EA5663007EAD92 /* Storyboard */,
 			);
 			path = "Photo Collection";
 			sourceTree = "<group>";
@@ -142,9 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				91976E7D22EA45240080A68A /* PhotoController.swift in Sources */,
+				38078B9E22EA60AC007EAD92 /* ThemeSelectionViewController.swift in Sources */,
 				91976E7922EA42350080A68A /* Photo.swift in Sources */,
 				91976E6722EA35E70080A68A /* AppDelegate.swift in Sources */,
+				38078B9C22EA5B13007EAD92 /* PhotoDetailViewController.swift in Sources */,
+				38078B9222EA5508007EAD92 /* PhotosCollectionViewController.swift in Sources */,
 				38078B9022EA4C32007EAD92 /* ThemeHelper.swift in Sources */,
+				38078B9422EA55EF007EAD92 /* PhotosCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
