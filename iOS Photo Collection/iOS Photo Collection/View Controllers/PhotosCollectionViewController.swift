@@ -20,6 +20,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setTheme()
+        collectionView.reloadData()
     }
 
     //
@@ -59,8 +60,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell()}
-    
-        // Configure the cell
         let photo = photoController.photos[indexPath.item]
         cell.photo = photo
         

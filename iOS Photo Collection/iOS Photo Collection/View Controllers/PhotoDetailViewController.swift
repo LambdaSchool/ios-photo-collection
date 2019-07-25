@@ -54,8 +54,13 @@ class PhotoDetailViewController: UIViewController {
     //
     
     @IBAction func addPhoto(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
+        picker.delegate = self
+       
     }
-    @IBAction func sveButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         
         guard let photoController = photoController, let title = textField.text, let newPhoto = imageView.image?.pngData() else { return }
         if photo == nil {
@@ -67,17 +72,17 @@ class PhotoDetailViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
-    
-    /*
-     //
-     // MARK: - Navigation
-     //
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension PhotoDetailViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageView.image = image
+        dismiss(animated: true, completion: nil)
+        
     }
-    */
+}
 
+extension PhotoDetailViewController: UINavigationControllerDelegate {
+    
 }

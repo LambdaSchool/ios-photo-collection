@@ -140,7 +140,7 @@
                     <navigationItem key="navigationItem" title="Create Photo" id="PnL-13-AUs">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="LrL-Hc-2wV">
                             <connections>
-                                <action selector="sveButtonTapped:" destination="DZu-sn-58W" id="JWH-g8-QFE"/>
+                                <action selector="saveButtonTapped:" destination="DZu-sn-58W" id="JWH-g8-QFE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
