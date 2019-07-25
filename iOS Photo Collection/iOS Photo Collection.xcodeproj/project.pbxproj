@@ -12,6 +12,9 @@
 		3290A53122EA28AA00C52396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3290A52F22EA28AA00C52396 /* Main.storyboard */; };
 		3290A53322EA28AC00C52396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3290A53222EA28AC00C52396 /* Assets.xcassets */; };
 		3290A53622EA28AC00C52396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3290A53422EA28AC00C52396 /* LaunchScreen.storyboard */; };
+		3290A54022EA39D200C52396 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290A53F22EA39D200C52396 /* Photo.swift */; };
+		3290A54322EA3A1200C52396 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290A54222EA3A1200C52396 /* PhotoController.swift */; };
+		3290A54622EA3B0100C52396 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290A54522EA3B0100C52396 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		3290A53222EA28AC00C52396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3290A53522EA28AC00C52396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3290A53722EA28AC00C52396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3290A53F22EA39D200C52396 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		3290A54222EA3A1200C52396 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		3290A54522EA3B0100C52396 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		3290A52A22EA28AA00C52396 /* iOS Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
-				3290A52B22EA28AA00C52396 /* AppDelegate.swift */,
-				3290A52D22EA28AA00C52396 /* ViewController.swift */,
-				3290A52F22EA28AA00C52396 /* Main.storyboard */,
-				3290A53222EA28AC00C52396 /* Assets.xcassets */,
-				3290A53422EA28AC00C52396 /* LaunchScreen.storyboard */,
-				3290A53722EA28AC00C52396 /* Info.plist */,
+				3290A54122EA39FB00C52396 /* Models */,
+				3290A53E22EA39B100C52396 /* View */,
+				3290A54422EA3A1A00C52396 /* Controllera */,
+				3290A53D22EA39A200C52396 /* Resources */,
 			);
 			path = "iOS Photo Collection";
+			sourceTree = "<group>";
+		};
+		3290A53D22EA39A200C52396 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3290A52B22EA28AA00C52396 /* AppDelegate.swift */,
+				3290A52D22EA28AA00C52396 /* ViewController.swift */,
+				3290A53222EA28AC00C52396 /* Assets.xcassets */,
+				3290A53722EA28AC00C52396 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3290A53E22EA39B100C52396 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3290A52F22EA28AA00C52396 /* Main.storyboard */,
+				3290A53422EA28AC00C52396 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3290A54122EA39FB00C52396 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3290A53F22EA39D200C52396 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3290A54422EA3A1A00C52396 /* Controllera */ = {
+			isa = PBXGroup;
+			children = (
+				3290A54222EA3A1200C52396 /* PhotoController.swift */,
+				3290A54522EA3B0100C52396 /* ThemeHelper.swift */,
+			);
+			path = Controllera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3290A54022EA39D200C52396 /* Photo.swift in Sources */,
 				3290A52E22EA28AA00C52396 /* ViewController.swift in Sources */,
+				3290A54322EA3A1200C52396 /* PhotoController.swift in Sources */,
+				3290A54622EA3B0100C52396 /* ThemeHelper.swift in Sources */,
 				3290A52C22EA28AA00C52396 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
