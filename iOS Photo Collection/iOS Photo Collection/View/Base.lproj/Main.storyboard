@@ -103,37 +103,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybz-cb-Zr1">
-                                <rect key="frame" x="20" y="230" width="374" height="264"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-b0-Kak">
-                                <rect key="frame" x="20" y="534" width="374" height="68"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="7US-7I-bsY">
+                                <rect key="frame" x="20" y="160" width="374" height="372"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APC-UW-kc4">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
-                                        <state key="normal" title="Add Photo"/>
-                                        <connections>
-                                            <action selector="addPhoto:" destination="DZu-sn-58W" eventType="touchUpInside" id="7G0-Ee-maz"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUl-Hy-OtL">
-                                        <rect key="frame" x="0.0" y="38" width="374" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybz-cb-Zr1">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="264"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="374" id="DkS-lG-88z"/>
+                                            <constraint firstAttribute="width" secondItem="ybz-cb-Zr1" secondAttribute="height" multiplier="17:12" id="QqM-mA-y5g"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-b0-Kak">
+                                        <rect key="frame" x="0.0" y="304" width="374" height="68"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APC-UW-kc4">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                <state key="normal" title="Add Photo">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addPhoto:" destination="DZu-sn-58W" eventType="touchUpInside" id="7G0-Ee-maz"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUl-Hy-OtL">
+                                                <rect key="frame" x="0.0" y="38" width="374" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cr4-1x-VLy" firstAttribute="bottom" secondItem="7sE-b0-Kak" secondAttribute="bottom" constant="260" id="HS0-0i-P1i"/>
-                            <constraint firstItem="ybz-cb-Zr1" firstAttribute="leading" secondItem="cr4-1x-VLy" secondAttribute="leading" constant="20" id="N7f-Zf-gob"/>
-                            <constraint firstItem="cr4-1x-VLy" firstAttribute="trailing" secondItem="ybz-cb-Zr1" secondAttribute="trailing" constant="20" id="cgd-HW-a6t"/>
-                            <constraint firstItem="7sE-b0-Kak" firstAttribute="top" secondItem="ybz-cb-Zr1" secondAttribute="bottom" constant="40" id="hJB-mC-MHs"/>
-                            <constraint firstItem="cr4-1x-VLy" firstAttribute="trailing" secondItem="7sE-b0-Kak" secondAttribute="trailing" constant="20" id="jz4-J9-89F"/>
-                            <constraint firstItem="ybz-cb-Zr1" firstAttribute="top" secondItem="cr4-1x-VLy" secondAttribute="top" constant="90" id="t9R-8K-Mt6"/>
-                            <constraint firstItem="7sE-b0-Kak" firstAttribute="leading" secondItem="cr4-1x-VLy" secondAttribute="leading" constant="20" id="x9P-O0-27S"/>
+                            <constraint firstItem="7US-7I-bsY" firstAttribute="top" secondItem="cr4-1x-VLy" secondAttribute="top" constant="20" id="03h-a1-eBy"/>
+                            <constraint firstItem="cr4-1x-VLy" firstAttribute="trailing" secondItem="7US-7I-bsY" secondAttribute="trailing" constant="20" id="7DA-9g-31K"/>
+                            <constraint firstItem="7US-7I-bsY" firstAttribute="leading" secondItem="cr4-1x-VLy" secondAttribute="leading" constant="20" id="xaP-lL-wJe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cr4-1x-VLy"/>
                     </view>

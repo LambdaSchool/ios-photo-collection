@@ -37,6 +37,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             showDetailVC.photoController = photoController
             showDetailVC.photo = photoController.photos[indexPath.item]
             
+            
         }else if segue.identifier == "AddPhotoSegue" {
             guard let addPhotoVC = segue.destination as? PhotoDetailViewController else { return }
             addPhotoVC.themeHelper = themeHelper
