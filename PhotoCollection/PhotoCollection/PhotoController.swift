@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PhotoControlle{
+class PhotoController{
     var photos: [Photo] = []
     
     func updatePhoto(photo: Photo, data: Data, string: String){
