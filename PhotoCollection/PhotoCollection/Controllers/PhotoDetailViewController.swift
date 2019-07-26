@@ -12,6 +12,7 @@ class PhotoDetailViewController: UIViewController {
 	
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var descriptionTextField: UITextField!
+	@IBOutlet weak var saveBtn: UIBarButtonItem!
 	
 	var photoController: PhotoController?
 	var photo: Photo?

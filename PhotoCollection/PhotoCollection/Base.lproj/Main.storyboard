@@ -117,6 +117,9 @@
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyp-PA-RSc">
                                         <rect key="frame" x="62" y="656.5" width="290" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JqG-Ck-UMA"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -155,6 +158,7 @@
                     <connections>
                         <outlet property="descriptionTextField" destination="lyp-PA-RSc" id="Tjk-DF-J9H"/>
                         <outlet property="imageView" destination="ZAO-tq-dsu" id="PWN-8F-06T"/>
+                        <outlet property="saveBtn" destination="fhA-t6-fGv" id="jPV-Nj-wuI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AqL-EY-Snq" userLabel="First Responder" sceneMemberID="firstResponder"/>
