@@ -9,8 +9,14 @@
 import Foundation
 
 class ThemeHelper {
+
+    let themePreferenceKey = "themePreferenceKey"
     
-    let themePreferenceKey: String
+    var themePreference: String? {
+        let userDefaults = UserDefaults.standard
+        let chosenTheme = userDefaults.string(forKey: themePreferenceKey)
+        return chosenTheme
+    }
     
     func setThemePreferenceToDark() {
         UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
@@ -20,16 +26,9 @@ class ThemeHelper {
         UserDefaults.standard.set("Light", forKey: themePreferenceKey)
     }
     
-    var themePreference: String? {
-        return UserDefaults.standard.string(forKey: themePreferenceKey)
-    }
-    
-    init(themePreferenceKey: String) {
-        self.themePreferenceKey = themePreferenceKey
-        
-        if themePreferenceKey == "" {
+    init() {
+        if themePreference == nil {
             setThemePreferenceToDark()
         }
     }
-    
 }

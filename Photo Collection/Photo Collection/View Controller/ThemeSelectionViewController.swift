@@ -14,12 +14,28 @@ class ThemeSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
+        
     }
     
     @IBAction func darkButtonPressed(_ sender: UIButton) {
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func lightButtonPressed(_ sender: UIButton) {
+        themeHelper?.setThemePreferenceToYouColorHue()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func setTheme() {
+        guard let themeChosen = themeHelper?.themePreference else {return}
+        
+        if themeChosen == "Dark" {
+            view.backgroundColor = UIColor.darkGray
+        } else {
+            view.backgroundColor = UIColor.white
+        }
     }
     
 }

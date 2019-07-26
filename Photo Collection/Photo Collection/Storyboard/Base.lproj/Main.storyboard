@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LwB-Gm-9FV" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PhotoCell" id="LwB-Gm-9FV" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -67,6 +67,8 @@
                                     <constraint firstAttribute="trailing" secondItem="u1V-LQ-hJh" secondAttribute="trailing" id="zgH-1C-zSG"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="imageLabel" destination="GSQ-hH-2dP" id="rMI-CN-egV"/>
+                                    <outlet property="imageView" destination="dsU-qf-p8y" id="mSn-xz-BKx"/>
                                     <segue destination="Tic-Jc-zjU" kind="show" identifier="ShowDetailFromCell" id="L9Y-iK-bXM"/>
                                 </connections>
                             </collectionViewCell>
