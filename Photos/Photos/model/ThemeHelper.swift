@@ -11,7 +11,7 @@ import Foundation
 
 class ThemeHelper {
 
-	static let themePreferenceKey = "selectTheme"
+	let themePreferenceKey = "selectTheme"
 
 	init() {
 		if themePreference == nil {
@@ -21,20 +21,18 @@ class ThemeHelper {
 
 	var themePreference: String? {
 		let defaults = UserDefaults.standard
-		let color = defaults.string(forKey: ThemeHelper.themePreferenceKey)
-		return color
+		let theme = defaults.string(forKey: themePreferenceKey)
+		return theme
 	}
 
 
 	func setThemePreferenceDark() {
 		let defaults = UserDefaults.standard
-		defaults.set("Dark", forKey: ThemeHelper.themePreferenceKey)
+		defaults.set("Dark", forKey: themePreferenceKey)
 	}
 
 	func setThemePreferenceRaspberry() {
 		let defaults = UserDefaults.standard
-		defaults.set("Raspberry Red", forKey: ThemeHelper.themePreferenceKey)
+		defaults.set("Raspberry Red", forKey: themePreferenceKey)
 	}
-
-
 }

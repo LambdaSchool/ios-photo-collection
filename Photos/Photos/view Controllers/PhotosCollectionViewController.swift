@@ -18,13 +18,31 @@ class PhotosCollectionViewController: UICollectionViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		collectionView.reloadData()
+		setTheme()
 	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		guard let theme = themeHelper.themePreference else { return }
-		
+
     }
+
+	func setTheme() {
+		guard let theme = themeHelper.themePreference else { return }
+		switch theme {
+		case "Dark":
+			collectionView.backgroundColor = Colors.dark
+			navigationController?.navigationBar.barTintColor = Colors.dark
+			navigationController?.navigationBar.tintColor = Colors.darkBGText
+			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.darkBGText]
+		case "Raspberry Red":
+			collectionView.backgroundColor = Colors.raspberryRed
+			navigationController?.navigationBar.barTintColor = Colors.raspberryRed
+			navigationController?.navigationBar.tintColor = Colors.redBGAccent
+			navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.redBGAccent]
+		default:
+			()
+		}
+	}
 
 
     // MARK: - Navigation
@@ -42,6 +60,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         case "PhotoDetailSegue":
             guard let photoDetailVC = segue.destination as? AddPhotoViewController else { return }
 			guard let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
+			photoDetailVC.themeHelper = themeHelper
 			let photo = photoController.photos[indexPath.item]
 			photoDetailVC.photo = photo
         default:
@@ -61,6 +80,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
 
 		let photo = photoController.photos[indexPath.item]
+		cell.themeHelper = themeHelper
 		cell.photo = photo
 
         return cell

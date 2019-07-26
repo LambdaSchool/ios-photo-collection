@@ -25,11 +25,13 @@ class AddPhotoViewController: UIViewController {
         super.viewDidLoad()
 		updateViews()
 		imageView.layer.cornerRadius = 8
+		selectPhotoButton.layer.cornerRadius = 8
 		pickerController.delegate = self
         
     }
 
 	func updateViews() {
+		setTheme()
 		switch photo {
 		case .none:
 			title = "Add Photo"
@@ -45,6 +47,26 @@ class AddPhotoViewController: UIViewController {
 //		imageView.image = UIImage(data: photo.imageData)
 //		titleTextField.text = photo.title
 //		title = "Update Photo"
+	}
+
+	func setTheme() {
+		guard let theme = themeHelper?.themePreference else { return }
+		switch theme {
+		case "Dark":
+			view.backgroundColor = Colors.dark
+			titleTextField.backgroundColor = Colors.darkBGText
+			selectPhotoButton.layer.borderWidth = 2
+			selectPhotoButton.layer.borderColor = Colors.darkBGAccent.cgColor
+			selectPhotoButton.tintColor = Colors.darkBGText
+		case "Raspberry Red":
+			view.backgroundColor = Colors.raspberryRed
+			titleTextField.backgroundColor = Colors.redBGAccent
+			selectPhotoButton.layer.borderWidth = 2
+			selectPhotoButton.layer.borderColor = Colors.redBGAccent.cgColor
+			selectPhotoButton.tintColor = Colors.redBGText
+		default:
+			()
+		}
 	}
     
     //MARK: -Actions

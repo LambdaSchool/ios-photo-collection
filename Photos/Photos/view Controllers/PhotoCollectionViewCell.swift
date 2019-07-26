@@ -13,6 +13,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
 	// MARK: - Outlets & Properties
 
+	var themeHelper: ThemeHelper?
 	var photo: Photo? {
 		didSet {
 			updateViews()
@@ -23,17 +24,28 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 
-
-
-
 	override func awakeFromNib() {
 		super.awakeFromNib()
 
 		viewForCell.layer.cornerRadius = 8
 	}
 
+	func setTheme() {
+		guard let theme = themeHelper?.themePreference else { return }
+		switch theme {
+		case "Dark":
+			viewForCell.backgroundColor = Colors.cellDarkBG
+			titleLabel.textColor = Colors.darkBGText
+		case "Raspberry Red":
+			viewForCell.backgroundColor = Colors.redBGAccent
+			titleLabel.textColor = Colors.redBGText
+		default:
+			()
+		}
+	}
 
 	private func updateViews() {
+		setTheme()
 		guard let photo = photo else { return }
 		imageView.image = UIImage(data: photo.imageData)
 		titleLabel.text = photo.title
