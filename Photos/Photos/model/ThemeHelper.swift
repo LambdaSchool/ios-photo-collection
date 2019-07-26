@@ -8,6 +8,9 @@
 
 import Foundation
 
+protocol ThemeHelperAccessable: AnyObject {
+	var themeHelper: ThemeHelper? { set get }
+}
 
 class ThemeHelper {
 

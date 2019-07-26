@@ -105,24 +105,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lre-8X-cTU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="98"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-gR-lKk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="77.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="75.5"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObL-2R-Q49">
-                                                            <rect key="frame" x="29" y="79.5" width="42" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jD6-3E-D98">
+                                                            <rect key="frame" x="5" y="77.5" width="90" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ObL-2R-Q49">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="jD6-3E-D98" secondAttribute="trailing" constant="5" id="ElR-79-OXD"/>
+                                                        <constraint firstItem="jD6-3E-D98" firstAttribute="leading" secondItem="Lre-8X-cTU" secondAttribute="leading" constant="5" id="y1a-Kc-Oav"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Lre-8X-cTU" firstAttribute="leading" secondItem="2wd-oP-AUM" secondAttribute="leading" id="Cij-Qx-edo"/>
-                                                <constraint firstAttribute="bottom" secondItem="Lre-8X-cTU" secondAttribute="bottom" id="IZd-Or-Joa"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lre-8X-cTU" secondAttribute="bottom" constant="2" id="IZd-Or-Joa"/>
                                                 <constraint firstItem="Lre-8X-cTU" firstAttribute="top" secondItem="2wd-oP-AUM" secondAttribute="top" id="OTb-ca-RHl"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lre-8X-cTU" secondAttribute="trailing" id="j7f-UM-TDA"/>
                                             </constraints>

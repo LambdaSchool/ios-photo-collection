@@ -8,13 +8,13 @@
 
 import UIKit
 
-class AddPhotoViewController: UIViewController {
+class AddPhotoViewController: UIViewController, ThemeHelperAccessable {
 
     // MARK: -Properties & Outlets
 
     var photoController: PhotoController?
     var photo:Photo?
-    var themeHelper:ThemeHelper?
+    var themeHelper: ThemeHelper?
 	let pickerController = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
@@ -74,7 +74,9 @@ class AddPhotoViewController: UIViewController {
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
 		guard let imageData = imageView.image?.pngData(),
 			let photoController = photoController,
-			let title = titleTextField.text else { return }
+			let title = titleTextField.text else {
+				return
+		}
 
 		let newPhoto = Photo(imageData: imageData, title: title)
 

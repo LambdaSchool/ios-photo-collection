@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ThemeSelectionViewController: UIViewController {
+class ThemeSelectionViewController: UIViewController, ThemeHelperAccessable {
     
-    var themeHelper: ThemeHelper? 
+    var themeHelper: ThemeHelper?
     
     @IBOutlet weak var doneButton: UIButton!
 	@IBOutlet weak var swipInstructionLabel: UILabel!

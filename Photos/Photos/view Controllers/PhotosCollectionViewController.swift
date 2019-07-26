@@ -48,24 +48,19 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        switch segue.identifier {
-        case "SetThemeSegue":
-            guard let setThemeVC = segue.destination as? ThemeSelectionViewController else { return }
-            setThemeVC.themeHelper = themeHelper
-        case "AddPhotoSegue":
-            guard let addPhotoVC = segue.destination as? AddPhotoViewController else { return }
-            addPhotoVC.photoController = photoController
-            addPhotoVC.themeHelper = themeHelper
-        case "PhotoDetailSegue":
-            guard let photoDetailVC = segue.destination as? AddPhotoViewController else { return }
-			guard let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
-			photoDetailVC.themeHelper = themeHelper
-			let photo = photoController.photos[indexPath.item]
-			photoDetailVC.photo = photo
-        default:
-            ()
-        }
+
+		if let themedVC = segue.destination as? ThemeHelperAccessable {
+			themedVC.themeHelper = themeHelper
+		}
+
+		if let photoVC = segue.destination as? AddPhotoViewController {
+			photoVC.photoController = photoController
+			if segue.identifier == "PhotoDetailSegue" {
+				guard let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
+				let photo = photoController.photos[indexPath.item]
+				photoVC.photo = photo
+			}
+		}
     }
 
 

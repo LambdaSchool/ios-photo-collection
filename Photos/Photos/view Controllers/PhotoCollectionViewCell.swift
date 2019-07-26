@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
+class PhotoCollectionViewCell: UICollectionViewCell, ThemeHelperAccessable {
 
 
 	// MARK: - Outlets & Properties
