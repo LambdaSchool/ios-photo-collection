@@ -23,7 +23,10 @@ class PhotoCell: UICollectionViewCell {
     private func updateViews() {
         guard let photo = photo  else { return }
         photoImage.image = UIImage(data: photo.imageData)
-        photoLabel.text = photo.title
+        photoLabel.text = photo.title.capitalized
+		
+		photoLabel.layer.cornerRadius = 10
+		photoLabel.clipsToBounds = true
     }
     
     

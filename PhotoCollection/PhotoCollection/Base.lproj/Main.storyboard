@@ -39,10 +39,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="145"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5qN-kv-LQC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="119.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="110"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-XZ-vvo">
-                                                            <rect key="frame" x="0.0" y="124.5" width="180" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="115" width="180" height="30"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="L1i-sy-YXt"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -50,7 +54,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="eQp-n1-A8X" firstAttribute="top" secondItem="UKd-yG-Iwk" secondAttribute="top" id="8xh-cb-FrH"/>
                                                 <constraint firstAttribute="trailing" secondItem="eQp-n1-A8X" secondAttribute="trailing" id="DnG-bz-O82"/>
@@ -60,6 +64,7 @@
                                         </view>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="UKd-yG-Iwk" firstAttribute="leading" secondItem="Uwe-2R-f68" secondAttribute="leading" id="Ho3-9S-AEM"/>
                                     <constraint firstAttribute="trailing" secondItem="UKd-yG-Iwk" secondAttribute="trailing" id="Sw0-Bv-NOO"/>

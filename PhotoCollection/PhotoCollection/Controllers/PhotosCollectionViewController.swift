@@ -30,9 +30,11 @@ class PhotosCollectionViewController: UICollectionViewController {
 	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let photoDetailVC = segue.destination as? PhotoDetailViewController {
-            guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
-            let photo = photoController.photos[indexPath.item]
-            photoDetailVC.photo = photo
+			if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+				let photo = photoController.photos[indexPath.item]
+				photoDetailVC.photo = photo
+			}
+			photoDetailVC.photoController = photoController
             photoDetailVC.themeHelper = themeHelper
     
         } else if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
@@ -44,12 +46,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-	override func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return 1
-	}
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return photoController.photos.count
     }
 
