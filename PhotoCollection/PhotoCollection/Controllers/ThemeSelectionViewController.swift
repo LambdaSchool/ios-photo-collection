@@ -8,36 +8,37 @@
 
 import UIKit
 
+protocol ThemeSelectionViewControllerDelegate: AnyObject {
+	func themeUpdated()
+}
+
 class ThemeSelectionViewController: UIViewController {
 	
 	@IBOutlet weak var themeColorLabel: UILabel!
 	
 	var themeHelper: ThemeHelper?
+	weak var delegate: ThemeSelectionViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         themeColorLabel.text = themeHelper?.themePreference ?? "Select a theme"
+		setTheme()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 	@IBAction func darkMode(_ sender: Any) {
         themeHelper?.setThemePreferenceToDark()
-        dismiss(animated: true, completion: nil)
+		delegate?.themeUpdated()
 	}
 	
 	@IBAction func blueMode(_ sender: Any) {
         themeHelper?.setThemePreferenceToYourColorHere()
-        dismiss(animated: true, completion: nil)
+		delegate?.themeUpdated()
+	}
+	
+	func setTheme() {
+		guard let themePreference = themeHelper?.themePreference else { return }
+		delegate?.themeUpdated()
+		view.backgroundColor = UIColor(named: themePreference)
 	}
 }

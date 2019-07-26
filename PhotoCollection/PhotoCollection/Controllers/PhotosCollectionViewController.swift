@@ -37,6 +37,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         } else if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
             themeSelectionVC.themeHelper = themeHelper
+			themeSelectionVC.delegate = self
         }
     }
     
@@ -65,4 +66,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         collectionView.backgroundColor = UIColor(named: themePreference)
     }
 
+}
+
+extension PhotosCollectionViewController: ThemeSelectionViewControllerDelegate {
+	func themeUpdated() {
+		setTheme()
+		dismiss(animated: true, completion: nil)
+	}
 }
