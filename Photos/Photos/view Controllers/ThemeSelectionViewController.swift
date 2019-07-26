@@ -12,10 +12,14 @@ class ThemeSelectionViewController: UIViewController, ThemeHelperAccessable {
     
     var themeHelper: ThemeHelper?
     
-    @IBOutlet weak var doneButton: UIButton!
+
+	@IBOutlet weak var doneButton: UIButton!
 	@IBOutlet weak var swipInstructionLabel: UILabel!
 	@IBOutlet weak var titleLabel: UILabel!
+	@IBOutlet weak var swipeText: UILabel!
 
+
+	// MARK: - Lifecycle
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -26,12 +30,16 @@ class ThemeSelectionViewController: UIViewController, ThemeHelperAccessable {
 		doneButton.layer.borderWidth = 2
 		doneButton.layer.cornerRadius = 8
     }
-    
+
+
+	// MARK: - Store Themes
+
     @IBAction func rightGestureSwipe(_ sender: UISwipeGestureRecognizer) {
 		guard let themeHelper = themeHelper else { return }
 		themeHelper.setThemePreferenceRaspberry()
 		view.backgroundColor = Colors.raspberryRed
-		titleLabel.textColor = Colors.redBGText
+		titleLabel.textColor = Colors.redBGAccent
+		swipeText.textColor = Colors.redBGAccent
 		swipInstructionLabel.textColor = Colors.redBGText
 		doneButton.tintColor = Colors.redBGText
 		doneButton.layer.borderColor = Colors.redBGAccent.cgColor
@@ -41,6 +49,7 @@ class ThemeSelectionViewController: UIViewController, ThemeHelperAccessable {
 		themeHelper.setThemePreferenceDark()
 		view.backgroundColor = Colors.dark
 		titleLabel.textColor = Colors.darkBGText
+		swipeText.textColor = Colors.darkBGAccent
 		swipInstructionLabel.textColor = Colors.darkBGText
 		doneButton.tintColor = Colors.darkBGText
 		doneButton.layer.borderColor = Colors.darkBGAccent.cgColor
@@ -49,9 +58,13 @@ class ThemeSelectionViewController: UIViewController, ThemeHelperAccessable {
         dismiss(animated: true, completion: nil)
     }
 
+
+	// MARK: - Theme Method
+
 	func setTheme() {
 		guard let themeHelper = themeHelper,
 			let theme = themeHelper.themePreference else { return }
+
 		switch theme {
 		case "Dark":
 			view.backgroundColor = Colors.dark
@@ -69,6 +82,4 @@ class ThemeSelectionViewController: UIViewController, ThemeHelperAccessable {
 			()
 		}
 	}
-    
-
 }

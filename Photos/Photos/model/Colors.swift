@@ -18,6 +18,7 @@ struct Colors {
 	static let redBGText = #colorLiteral(red: 0.1773413345, green: 0.1517599032, blue: 0.1428308185, alpha: 1)
 	static let cellDarkBG = #colorLiteral(red: 0.1437202838, green: 0.1528356137, blue: 0.1614122962, alpha: 1)
 	static let cellRedBG = #colorLiteral(red: 0.9140061129, green: 0.5708852957, blue: 0.6558443512, alpha: 1)
+	static let darkTextField = #colorLiteral(red: 0.149204244, green: 0.149204244, blue: 0.149204244, alpha: 1)
 
 
 	static let darkBGAccent = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)

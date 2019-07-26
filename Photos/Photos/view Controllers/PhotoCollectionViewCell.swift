@@ -24,11 +24,17 @@ class PhotoCollectionViewCell: UICollectionViewCell, ThemeHelperAccessable {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 
+
+	// MARK: - Lifecycle
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
 
 		viewForCell.layer.cornerRadius = 8
 	}
+
+
+	// MARK: - Theme Method
 
 	func setTheme() {
 		guard let theme = themeHelper?.themePreference else { return }
@@ -44,11 +50,13 @@ class PhotoCollectionViewCell: UICollectionViewCell, ThemeHelperAccessable {
 		}
 	}
 
+
+	// MARK: - Update Views
+
 	private func updateViews() {
 		setTheme()
 		guard let photo = photo else { return }
 		imageView.image = UIImage(data: photo.imageData)
 		titleLabel.text = photo.title
 	}
-
 }

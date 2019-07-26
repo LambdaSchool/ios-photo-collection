@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		37B4CD2722EA3FF8007366DD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD2622EA3FF8007366DD /* Photo.swift */; };
-		37B4CD2922EA4053007366DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD2822EA4053007366DD /* SettingsViewController.swift */; };
 		37B4CD2B22EA406C007366DD /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD2A22EA406C007366DD /* AddPhotoViewController.swift */; };
 		37B4CD2D22EA407B007366DD /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD2C22EA407B007366DD /* ThemeHelper.swift */; };
 		37B4CD2F22EA40A8007366DD /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4CD2E22EA40A8007366DD /* PhotoController.swift */; };
@@ -24,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		37B4CD2622EA3FF8007366DD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Photos/StoryBoards/Photo.swift; sourceTree = SOURCE_ROOT; };
-		37B4CD2822EA4053007366DD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37B4CD2A22EA406C007366DD /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		37B4CD2C22EA407B007366DD /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		37B4CD2E22EA40A8007366DD /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				37B4CD3022EA4786007366DD /* PhotosCollectionViewController.swift */,
 				DD91C3C122EA5727006A40C9 /* ThemeSelectionViewController.swift */,
 				37B4CD3222EA47E7007366DD /* PhotoCollectionViewCell.swift */,
-				37B4CD2822EA4053007366DD /* SettingsViewController.swift */,
 				37B4CD2A22EA406C007366DD /* AddPhotoViewController.swift */,
 			);
 			path = "view Controllers";
@@ -192,7 +189,6 @@
 				37B4CD2D22EA407B007366DD /* ThemeHelper.swift in Sources */,
 				DD91C3AB22EA35BA006A40C9 /* AppDelegate.swift in Sources */,
 				DD91C3C222EA5727006A40C9 /* ThemeSelectionViewController.swift in Sources */,
-				37B4CD2922EA4053007366DD /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

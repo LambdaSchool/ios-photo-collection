@@ -12,8 +12,13 @@ private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+	// MARK: - Properties
+
 	let photoController = PhotoController()
 	let themeHelper = ThemeHelper()
+
+
+	// MARK: - Lifecycle
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -21,10 +26,8 @@ class PhotosCollectionViewController: UICollectionViewController {
 		setTheme()
 	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-    }
+	// MARK: - Theme Method
 
 	func setTheme() {
 		guard let theme = themeHelper.themePreference else { return }
@@ -80,5 +83,4 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         return cell
     }
-
 }
