@@ -26,7 +26,7 @@ class PhotoDetailViewController: UIViewController {
     }
 
 	@IBAction func addPhoto(_ sender: Any) {
-        
+        present(pickerController, animated: true, completion: nil)
 	}
 	
 	@IBAction func savePhoto(_ sender: Any) {
@@ -49,6 +49,7 @@ class PhotoDetailViewController: UIViewController {
     
     func updateViews() {
         setTheme()
+		
         guard let photo = photo else { return }
         imageView.image = UIImage(data: photo.imageData)
         descriptionTextField.text = photo.title
@@ -63,5 +64,6 @@ extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigati
 			imageView.contentMode = .scaleAspectFit
 			imageView.image = pickedImage
 		}
+		dismiss(animated: true, completion: nil)
 	}
 }

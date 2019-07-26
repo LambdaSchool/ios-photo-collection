@@ -15,12 +15,19 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		setTheme()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		collectionView.reloadData()
+	}
 
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let photoDetailVC = segue.destination as? PhotoDetailViewController {
             guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
@@ -31,7 +38,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         } else if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
             themeSelectionVC.themeHelper = themeHelper
         }
-        
     }
     
 
