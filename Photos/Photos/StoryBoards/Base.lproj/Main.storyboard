@@ -180,17 +180,15 @@
                                     <constraint firstAttribute="width" constant="300" id="vb7-Zo-uWP"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuK-UD-K6E">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuK-UD-K6E">
                                 <rect key="frame" x="163" y="376" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Photo"/>
                                 <connections>
                                     <action selector="selectButtonPressed:" destination="QeQ-ji-gCS" eventType="touchUpInside" id="DmT-9H-W8Z"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hi" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kN-oV-brx">
-                                <rect key="frame" x="159" y="433" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your photo" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1kN-oV-brx">
+                                <rect key="frame" x="57" y="436" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -198,8 +196,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NuK-UD-K6E" firstAttribute="top" secondItem="vGn-M7-4dO" secondAttribute="bottom" constant="16" id="6vS-bE-URw"/>
                             <constraint firstItem="vGn-M7-4dO" firstAttribute="centerX" secondItem="hvG-bB-9aW" secondAttribute="centerX" id="II2-tk-uB0"/>
                             <constraint firstItem="vGn-M7-4dO" firstAttribute="top" secondItem="Nd7-da-2Ai" secondAttribute="top" constant="20" id="euf-Jg-QUE"/>
+                            <constraint firstItem="1kN-oV-brx" firstAttribute="leading" secondItem="Nd7-da-2Ai" secondAttribute="leading" constant="57" id="hhN-AX-hW0"/>
+                            <constraint firstItem="1kN-oV-brx" firstAttribute="top" secondItem="NuK-UD-K6E" secondAttribute="bottom" constant="30" id="leI-2s-b9f"/>
+                            <constraint firstItem="Nd7-da-2Ai" firstAttribute="trailing" secondItem="1kN-oV-brx" secondAttribute="trailing" constant="57" id="m0t-t4-hmD"/>
+                            <constraint firstItem="NuK-UD-K6E" firstAttribute="centerX" secondItem="hvG-bB-9aW" secondAttribute="centerX" id="prJ-ST-CmE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nd7-da-2Ai"/>
                     </view>
@@ -213,6 +216,7 @@
                     <connections>
                         <outlet property="imageView" destination="vGn-M7-4dO" id="H0k-6u-idF"/>
                         <outlet property="selectPhotoButton" destination="NuK-UD-K6E" id="qR3-8x-30d"/>
+                        <outlet property="titleTextField" destination="1kN-oV-brx" id="L8O-e0-FMz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h56-ZB-Otp" userLabel="First Responder" sceneMemberID="firstResponder"/>

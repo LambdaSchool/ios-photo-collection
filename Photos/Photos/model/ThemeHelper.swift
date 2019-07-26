@@ -14,11 +14,8 @@ class ThemeHelper {
 	static let themePreferenceKey = "selectTheme"
 
 	init() {
-		guard let theme = themePreference else { return }
-		if theme == "Dark" {
+		if themePreference == nil {
 			setThemePreferenceDark()
-		} else {
-			setThemePreferenceRaspberry()
 		}
 	}
 

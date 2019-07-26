@@ -15,6 +15,11 @@ class PhotosCollectionViewController: UICollectionViewController {
 	let photoController = PhotoController()
 	let themeHelper = ThemeHelper()
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		collectionView.reloadData()
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
 		guard let theme = themeHelper.themePreference else { return }
@@ -55,8 +60,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
 
-//		let photo = photoController.photos[indexPath.item]
-    
+		let photo = photoController.photos[indexPath.item]
+		cell.photo = photo
+
         return cell
     }
 
