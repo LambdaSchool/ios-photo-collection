@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos Collection View Controller-->
+        <!--Photo Collection-->
         <scene sceneID="i7I-rc-lOq">
             <objects>
                 <collectionViewController id="spQ-ol-oo8" customClass="PhotosCollectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,6 +72,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="Adk-Qi-bSn" id="DTz-WQ-xW0"/>
                                     <outlet property="textLabel" destination="2Gz-wz-r2X" id="gmS-2u-tKL"/>
+                                    <segue destination="zmd-9u-yDG" kind="show" identifier="ShowDetail" id="6JC-Ok-XhH"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -79,21 +81,91 @@
                             <outlet property="delegate" destination="spQ-ol-oo8" id="EzI-IF-48C"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="4sz-dX-qix">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5ZE-jr-I9p"/>
+                    <navigationItem key="navigationItem" title="Photo Collection" id="4sz-dX-qix">
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="KNJ-IC-L2N"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5ZE-jr-I9p">
+                            <connections>
+                                <segue destination="zmd-9u-yDG" kind="show" identifier="CreatePhoto" id="nQb-4c-vJ2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvz-OX-H6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224.6376811594205" y="146.65178571428569"/>
         </scene>
+        <!--Create Photo-->
+        <scene sceneID="uiM-n7-y6y">
+            <objects>
+                <viewController id="zmd-9u-yDG" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hE8-xp-rUD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="39c-Yh-933">
+                                <rect key="frame" x="0.0" y="361.5" width="414" height="279"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oZn-zK-gdL">
+                                        <rect key="frame" x="57" y="0.0" width="300" height="169"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="3Tu-pf-IX2"/>
+                                            <constraint firstAttribute="width" secondItem="oZn-zK-gdL" secondAttribute="height" multiplier="16:9" id="HhW-yq-X3n"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REq-wI-QUb">
+                                        <rect key="frame" x="171" y="189" width="72" height="30"/>
+                                        <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="zmd-9u-yDG" eventType="touchUpInside" id="ICr-hw-N8F"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7s-15-Cbb">
+                                        <rect key="frame" x="20" y="239" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="avF-v0-gsF"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="J7s-15-Cbb" firstAttribute="leading" secondItem="39c-Yh-933" secondAttribute="leading" constant="20" id="Vlp-Zt-Ckh"/>
+                                    <constraint firstAttribute="trailing" secondItem="J7s-15-Cbb" secondAttribute="trailing" constant="20" id="cPO-Lu-cog"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="39c-Yh-933" firstAttribute="leading" secondItem="Qla-5f-bhk" secondAttribute="leading" id="4cd-9j-5BT"/>
+                            <constraint firstItem="Qla-5f-bhk" firstAttribute="trailing" secondItem="39c-Yh-933" secondAttribute="trailing" id="Vye-iJ-vwx"/>
+                            <constraint firstItem="39c-Yh-933" firstAttribute="centerY" secondItem="Qla-5f-bhk" secondAttribute="centerY" id="f0F-KL-ydv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qla-5f-bhk"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Photo" id="xBf-vT-1JA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LWi-9w-WEB">
+                            <connections>
+                                <action selector="savePhoto:" destination="zmd-9u-yDG" id="5ba-Us-ha2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="oZn-zK-gdL" id="zeP-4b-RQu"/>
+                        <outlet property="textField" destination="J7s-15-Cbb" id="azf-mW-LmM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jA-RQ-UJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="147"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="1sM-au-VcC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Hk-Jn-gWh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SZE-hh-Xq9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="SZE-hh-Xq9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -106,4 +178,7 @@
             <point key="canvasLocation" x="314.49275362318843" y="146.65178571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6JC-Ok-XhH"/>
+    </inferredMetricsTieBreakers>
 </document>
