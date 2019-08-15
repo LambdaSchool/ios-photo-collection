@@ -82,7 +82,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="4sz-dX-qix">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="KNJ-IC-L2N"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="KNJ-IC-L2N">
+                            <connections>
+                                <segue destination="Lwy-w9-blp" kind="presentation" identifier="SelectTheme" id="BQG-8p-7pV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5ZE-jr-I9p">
                             <connections>
                                 <segue destination="zmd-9u-yDG" kind="show" identifier="CreatePhoto" id="nQb-4c-vJ2"/>
@@ -93,6 +97,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvz-OX-H6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224.6376811594205" y="146.65178571428569"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="0Yc-yt-5aH">
+            <objects>
+                <viewController id="Lwy-w9-blp" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CIz-zj-aHh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TkB-qN-pfb">
+                                <rect key="frame" x="39" y="144" width="336.5" height="68"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wer-Y8-opH">
+                                        <rect key="frame" x="0.0" y="0.0" width="336.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRT-Nq-Lxl">
+                                                <rect key="frame" x="0.0" y="0.0" width="336.5" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-84-rGK">
+                                        <rect key="frame" x="0.0" y="38" width="336.5" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGY-ST-qD6">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="30"/>
+                                                <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="Lwy-w9-blp" eventType="touchUpInside" id="wbP-pP-Rm0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNF-as-pAe">
+                                                <rect key="frame" x="168" y="0.0" width="168.5" height="30"/>
+                                                <state key="normal" title="Pink"/>
+                                                <connections>
+                                                    <action selector="selectPinkTheme:" destination="Lwy-w9-blp" eventType="touchUpInside" id="0ap-v6-CvH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TkB-qN-pfb" firstAttribute="centerX" secondItem="CIz-zj-aHh" secondAttribute="centerX" id="HfL-eh-9p6"/>
+                            <constraint firstItem="TkB-qN-pfb" firstAttribute="top" secondItem="L62-4x-69k" secondAttribute="top" constant="100" id="emB-XF-aj0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L62-4x-69k"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfg-IA-l69" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986.9565217391305" y="-563.16964285714278"/>
         </scene>
         <!--Create Photo-->
         <scene sceneID="uiM-n7-y6y">
