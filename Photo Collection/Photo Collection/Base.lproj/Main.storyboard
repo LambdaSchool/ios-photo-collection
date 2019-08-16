@@ -85,7 +85,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="Om1-ns-Vh2">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="ppP-gc-wKD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="ppP-gc-wKD">
+                            <connections>
+                                <segue destination="lGN-HQ-CJq" kind="presentation" identifier="SelectThemeModalSegue" id="jcH-Lf-zrx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vqa-Z8-cQQ">
                             <connections>
                                 <segue destination="OPS-vx-KEW" kind="show" identifier="AddPhotoDetailSegue" id="kgU-mp-VWZ"/>
@@ -96,6 +100,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbd-pq-TFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="656.52173913043487" y="-142.63392857142856"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="oXk-94-BUc">
+            <objects>
+                <viewController id="lGN-HQ-CJq" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hLd-xj-Zv4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wFD-S9-5s2">
+                                <rect key="frame" x="16" y="60" width="382" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOl-X7-5Gw">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-h5-EVm">
+                                        <rect key="frame" x="0.0" y="20.5" width="382" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hd-cj-E4j">
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
+                                                <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="lGN-HQ-CJq" eventType="touchUpInside" id="GBW-5Z-qgX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmj-D7-guC">
+                                                <rect key="frame" x="191" y="0.0" width="191" height="30"/>
+                                                <state key="normal" title="Teal"/>
+                                                <connections>
+                                                    <action selector="selectTealTheme:" destination="lGN-HQ-CJq" eventType="touchUpInside" id="vih-en-ojo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w6S-ih-q4g" firstAttribute="trailing" secondItem="wFD-S9-5s2" secondAttribute="trailing" constant="16" id="7f3-ws-0Z7"/>
+                            <constraint firstItem="wFD-S9-5s2" firstAttribute="leading" secondItem="w6S-ih-q4g" secondAttribute="leading" constant="16" id="dgx-LZ-y64"/>
+                            <constraint firstItem="wFD-S9-5s2" firstAttribute="top" secondItem="w6S-ih-q4g" secondAttribute="top" constant="16" id="zpQ-OK-aZM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w6S-ih-q4g"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnW-58-GVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="-820"/>
         </scene>
         <!--Title-->
         <scene sceneID="itR-yc-iir">
