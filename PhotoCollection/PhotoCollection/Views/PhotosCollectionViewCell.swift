@@ -20,6 +20,10 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
+        if let photo = photo {
+            imageView.image = UIImage(data: photo.imageData)
+            textLabel.text = photo.title
+        }
         
     }
     
