@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F3B5E0412305AA7300A24BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B5E0402305AA7300A24BCE /* AppDelegate.swift */; };
-		F3B5E0432305AA7300A24BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B5E0422305AA7300A24BCE /* ViewController.swift */; };
 		F3B5E0462305AA7300A24BCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B5E0442305AA7300A24BCE /* Main.storyboard */; };
 		F3B5E0482305AA7500A24BCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B5E0472305AA7500A24BCE /* Assets.xcassets */; };
 		F3B5E04B2305AA7500A24BCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B5E0492305AA7500A24BCE /* LaunchScreen.storyboard */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		F3B5E03D2305AA7300A24BCE /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B5E0402305AA7300A24BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3B5E0422305AA7300A24BCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F3B5E0452305AA7300A24BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3B5E0472305AA7500A24BCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3B5E04A2305AA7500A24BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,12 +71,10 @@
 				F3B5E0532305AAE200A24BCE /* View */,
 				F3B5E0522305AADD00A24BCE /* Model */,
 				F3B5E0402305AA7300A24BCE /* AppDelegate.swift */,
-				F3B5E0422305AA7300A24BCE /* ViewController.swift */,
 				F3B5E0442305AA7300A24BCE /* Main.storyboard */,
 				F3B5E0472305AA7500A24BCE /* Assets.xcassets */,
 				F3B5E0492305AA7500A24BCE /* LaunchScreen.storyboard */,
 				F3B5E04C2305AA7500A24BCE /* Info.plist */,
-				F3B5E05A2305DB8C00A24BCE /* ThemeHelper.swift */,
 			);
 			path = PhotoCollection;
 			sourceTree = "<group>";
@@ -94,6 +90,7 @@
 		F3B5E0532305AAE200A24BCE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3B5E05A2305DB8C00A24BCE /* ThemeHelper.swift */,
 				F3B5E05E2305FF8300A24BCE /* PhotosCollectionViewCell.swift */,
 			);
 			path = View;
@@ -190,7 +187,6 @@
 			files = (
 				F3B5E0572305AB1C00A24BCE /* Photo.swift in Sources */,
 				F3B5E05F2305FF8300A24BCE /* PhotosCollectionViewCell.swift in Sources */,
-				F3B5E0432305AA7300A24BCE /* ViewController.swift in Sources */,
 				F3B5E0592305AD5000A24BCE /* PhotoController.swift in Sources */,
 				F3B5E05D2305FE5400A24BCE /* PhotosCollectionViewController.swift in Sources */,
 				F3B5E05B2305DB8C00A24BCE /* ThemeHelper.swift in Sources */,

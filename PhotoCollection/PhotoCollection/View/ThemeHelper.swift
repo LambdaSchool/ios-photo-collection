@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ThemeHelper {
     let themePreferenceKey = "ThemePreference"
@@ -20,6 +21,7 @@ class ThemeHelper {
     func setThemePreferenceToDark() {
         let userDefaults = UserDefaults.standard
         userDefaults.set("Dark", forKey: themePreferenceKey)
+        
     }
     
     func setThemePreferenceToYourColorHere() {
