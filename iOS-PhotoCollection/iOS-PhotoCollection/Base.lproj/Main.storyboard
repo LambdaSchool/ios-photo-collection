@@ -19,45 +19,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uw8-va-WLq">
-                            <size key="itemSize" width="359" height="236"/>
+                            <size key="itemSize" width="173" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="Sdv-mI-cs4" customClass="PhotosCollectionViewCell" customModule="iOS_PhotoCollection" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="359" height="236"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" reuseIdentifier="PhotoCell" id="Z00-5O-WeB" customClass="PhotosCollectionViewCell" customModule="iOS_PhotoCollection" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="174" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="359" height="236"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-xn-8sw">
-                                            <rect key="frame" x="158.5" y="188" width="42" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="32" id="Now-Ps-MlV"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UAx-su-99M">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="147.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEz-w8-bbv">
+                                            <rect key="frame" x="66" y="150.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gnc-AU-rBf">
-                                            <rect key="frame" x="59" y="53" width="241" height="127"/>
-                                        </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Gnc-AU-rBf" firstAttribute="centerX" secondItem="Sdv-mI-cs4" secondAttribute="centerX" id="9n0-gs-FFy"/>
-                                    <constraint firstItem="2Zp-xn-8sw" firstAttribute="centerX" secondItem="Sdv-mI-cs4" secondAttribute="centerX" id="APH-t1-1PR"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="2Zp-xn-8sw" secondAttribute="bottom" constant="8" id="dC5-D5-sWA"/>
-                                    <constraint firstItem="2Zp-xn-8sw" firstAttribute="top" secondItem="Gnc-AU-rBf" secondAttribute="bottom" constant="8" id="dGi-gT-RHI"/>
-                                    <constraint firstItem="Gnc-AU-rBf" firstAttribute="leading" secondItem="Sdv-mI-cs4" secondAttribute="leadingMargin" constant="51" id="hq7-vq-WtH"/>
-                                    <constraint firstItem="Gnc-AU-rBf" firstAttribute="top" relation="lessThanOrEqual" secondItem="Sdv-mI-cs4" secondAttribute="topMargin" constant="25" id="k4L-rL-R7U"/>
+                                    <constraint firstItem="UAx-su-99M" firstAttribute="leading" secondItem="Z00-5O-WeB" secondAttribute="leading" id="5fJ-Ng-8G4"/>
+                                    <constraint firstItem="UAx-su-99M" firstAttribute="top" secondItem="Z00-5O-WeB" secondAttribute="top" id="8XL-LA-KEu"/>
+                                    <constraint firstAttribute="trailing" secondItem="UAx-su-99M" secondAttribute="trailing" id="TM4-xJ-PWR"/>
+                                    <constraint firstItem="xEz-w8-bbv" firstAttribute="centerX" secondItem="Z00-5O-WeB" secondAttribute="centerX" id="XIb-UA-Qx8"/>
+                                    <constraint firstAttribute="bottom" secondItem="xEz-w8-bbv" secondAttribute="bottom" constant="3" id="ayG-xc-ZPB"/>
+                                    <constraint firstItem="xEz-w8-bbv" firstAttribute="top" secondItem="UAx-su-99M" secondAttribute="bottom" constant="3" id="mCj-cD-qUy"/>
                                 </constraints>
+                                <size key="customSize" width="174" height="174"/>
                                 <connections>
-                                    <outlet property="photoNameLabel" destination="2Zp-xn-8sw" id="lsA-HT-IOH"/>
-                                    <outlet property="photoView" destination="Gnc-AU-rBf" id="2P3-UY-KBN"/>
-                                    <segue destination="0aV-1D-dZf" kind="show" identifier="ShowDetailSegue" id="2as-Bn-YcQ"/>
+                                    <outlet property="photoNameLabel" destination="xEz-w8-bbv" id="SOx-zQ-GTK"/>
+                                    <outlet property="photoView" destination="UAx-su-99M" id="dym-iv-ih4"/>
+                                    <segue destination="0aV-1D-dZf" kind="show" identifier="ShowDetailSegue" id="I5R-BV-z93"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -219,6 +217,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2as-Bn-YcQ"/>
+        <segue reference="I5R-BV-z93"/>
     </inferredMetricsTieBreakers>
 </document>

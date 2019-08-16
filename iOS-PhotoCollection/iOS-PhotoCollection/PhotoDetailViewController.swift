@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     var photoController: PhotoController?
     var photo: Photo?
@@ -18,6 +18,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         present(picker, animated: true)
     }
     
+    
     // MARK: - UIPickerControllerDelegate Methods
     var imageData: Data?
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -32,11 +33,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func savePhoto(_ sender: Any) {
         if let photo = photo {
-            photoController?.update(photo: photo, data: imageData!, title: detailTextField.text ?? "")
+            photoController?.update(photo: photo, data: imageData ?? photo.imageData, title: detailTextField.text ?? "")
         }else {
             photoController?.create(imageData: self.imageData!, title: detailTextField.text ?? "")
         }
-        print(photoController?.photos)
         navigationController?.popViewController(animated: true)
     }
     
@@ -44,23 +44,14 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateViews()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    // MARK: - Methods
+    // MARK: - Helper Methods
     func setTheme() {
         guard let themPref = themeHelper?.themePreference else { return }
         if themPref == "Red" {
@@ -74,7 +65,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         setTheme()
         guard let photo = photo else { return }
         detailImageView.image = UIImage(data: photo.imageData)
-        detailTextField.text = photo.title
+        detailTextField.text = "ARGHHH!"//photo.title
     }
 
 }
