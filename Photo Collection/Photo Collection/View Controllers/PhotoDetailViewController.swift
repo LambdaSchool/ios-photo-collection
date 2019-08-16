@@ -70,9 +70,13 @@ class PhotoDetailViewController: UIViewController {
     
     private func updateViews() {
         setTheme()
-        if let imageData = photo?.imageData, let image = UIImage(data: imageData) {
+        guard let photo = photo else { return }
+        let imageData = photo.imageData
+        if let image = UIImage(data: imageData) {
             imageView.image = image
         }
+        photoTitleTextField.text = "\(photo.title)"
+        self.title = photo.title
     }
 
 }
