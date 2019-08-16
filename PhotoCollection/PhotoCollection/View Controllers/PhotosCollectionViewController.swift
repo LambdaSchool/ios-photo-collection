@@ -23,17 +23,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
     // MARK: UICollectionViewDataSource
 
 //    override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -54,6 +44,43 @@ class PhotosCollectionViewController: UICollectionViewController {
         let photo = photoController.photos[indexPath.item]
         cell.photo = photo
         return cell
+    }
+
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case "createPhotoSegue":
+            if let createPhotoVC = segue.destination as? PhotoDetailViewController {
+                themeHelper
+                photoController
+            }
+        case "showPhotoDetailSegue":
+            if let photoDetailVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems {
+                
+                //photoDetailVC.view.backgroundColor = themeHelper.themePreference
+                photoDetailVC.photo?.imageData = photoController.photos[indexPath[item]]
+            }
+        case "selectThemeModalSegue":
+            if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
+                
+            }
+        default:
+            print()
+        }
+    }
+    
+    func setTheme() {
+        guard let theme = themeHelper.themePreference else { return }
+        
+        if theme == "Dark" {
+            self.collectionView.backgroundColor = .darkGray
+        } else {
+            self.collectionView.backgroundColor = .cyan
+        }
     }
 
     // MARK: UICollectionViewDelegate

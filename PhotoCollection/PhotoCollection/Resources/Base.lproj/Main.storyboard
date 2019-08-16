@@ -89,7 +89,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dS3-nd-ZqD">
                             <connections>
-                                <segue destination="NLM-B6-gMR" kind="show" identifier="addNewPhotolSegue" id="Qja-bs-li4"/>
+                                <segue destination="NLM-B6-gMR" kind="show" identifier="createPhotoSegue" id="Qja-bs-li4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,6 +226,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jeD-Ud-nBt"/>
+        <segue reference="Qja-bs-li4"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -95,9 +95,9 @@
 		957C62DC230506BF0038029D /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
+				957C62DD230506BF0038029D /* AppDelegate.swift */,
 				950C2FEB2306421A0008AC20 /* Views */,
 				950C2FE8230640100008AC20 /* View Controllers */,
-				957C62DD230506BF0038029D /* AppDelegate.swift */,
 				957C62F22305075B0038029D /* Model Controllers */,
 				957C62EF230507080038029D /* Models */,
 				950C2FE723063B4E0008AC20 /* Resources */,
