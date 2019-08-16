@@ -11,11 +11,11 @@ import Foundation
 class PhotoController {
     var photos: [Photo] = []
     
-    private func create(photo: Photo) {
+    func create(photo: Photo) {
         photos.append(photo)
     }
     
-    private func update(photo: Photo, data: Data, string: String) {
+    func update(photo: Photo, data: Data, string: String) {
         
     }
 }
