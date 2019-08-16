@@ -21,7 +21,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -29,7 +29,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -51,7 +51,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     func setTheme() {
         guard let selectedTheme = themeHelper.themePreference else { return }
         
-       
+        if selectedTheme == "Dark" {
+            view.backgroundColor = .black
+            
+        } else {
+            view.backgroundColor = .blue
+        }
         
         
     }

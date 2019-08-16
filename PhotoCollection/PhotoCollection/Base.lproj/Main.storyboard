@@ -86,12 +86,12 @@
                     <navigationItem key="navigationItem" id="JK3-YW-Je9">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="bGf-fx-Pb4">
                             <connections>
-                                <segue destination="ufz-iK-Znw" kind="presentation" identifier="SelectThemeSegue" id="WA7-eW-TkZ"/>
+                                <segue destination="ufz-iK-Znw" kind="show" identifier="SelectThemeSegue" id="WA7-eW-TkZ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YKI-Bw-ap3">
                             <connections>
-                                <segue destination="ccx-K6-BuW" kind="showDetail" identifier="AddPhotoSegue" id="TJT-4Q-P2J"/>
+                                <segue destination="ccx-K6-BuW" kind="show" identifier="AddPhotoSegue" id="TJT-4Q-P2J"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="842.02898550724649" y="83.705357142857139"/>
         </scene>
-        <!--Theme Selection View Controller-->
+        <!--Settings-->
         <scene sceneID="v4c-ge-tNx">
             <objects>
                 <viewController id="ufz-iK-Znw" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-2N-Wci">
-                                <rect key="frame" x="80" y="124" width="254" height="105"/>
+                                <rect key="frame" x="80" y="168" width="254" height="105"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frz-nP-EmA">
                                         <rect key="frame" x="19" y="0.0" width="216.5" height="36"/>
@@ -154,12 +154,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qUs-e6-QxG"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="9qo-a1-MoX">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="nT8-wg-66I"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3R7-aB-OYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="829" y="806"/>
         </scene>
-        <!--Title-->
+        <!--Add Photo-->
         <scene sceneID="Ok7-Y7-aBJ">
             <objects>
                 <viewController id="ccx-K6-BuW" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,7 +216,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rb7-a9-GgU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="etQ-Mz-Oad">
+                    <navigationItem key="navigationItem" title="Add Photo" id="etQ-Mz-Oad">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Wn1-WY-U7X"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="2jF-gY-bxe">
                             <connections>
                                 <action selector="savePhoto:" destination="ccx-K6-BuW" id="2Xx-Ry-4XQ"/>
@@ -249,6 +253,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bwr-ur-zVx"/>
+        <segue reference="TJT-4Q-P2J"/>
     </inferredMetricsTieBreakers>
 </document>
