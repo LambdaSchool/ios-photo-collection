@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		970A98E023063DC0002B1038 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A98DF23063DC0002B1038 /* AppDelegate.swift */; };
-		970A98E223063DC0002B1038 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A98E123063DC0002B1038 /* ViewController.swift */; };
 		970A98E523063DC0002B1038 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970A98E323063DC0002B1038 /* Main.storyboard */; };
 		970A98E723063DC1002B1038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970A98E623063DC1002B1038 /* Assets.xcassets */; };
 		970A98EA23063DC1002B1038 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970A98E823063DC1002B1038 /* LaunchScreen.storyboard */; };
 		970A98F3230643A1002B1038 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A98F2230643A1002B1038 /* Photo.swift */; };
 		970A98F623064496002B1038 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A98F523064496002B1038 /* PhotoController.swift */; };
+		970A98F823065666002B1038 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A98F723065666002B1038 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		970A98DC23063DC0002B1038 /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		970A98DF23063DC0002B1038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		970A98E123063DC0002B1038 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		970A98E423063DC0002B1038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		970A98E623063DC1002B1038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		970A98E923063DC1002B1038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		970A98EB23063DC1002B1038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970A98F2230643A1002B1038 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		970A98F523064496002B1038 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		970A98F723065666002B1038 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +58,10 @@
 		970A98DE23063DC0002B1038 /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
+				970A98F923066429002B1038 /* Helpers */,
 				970A98F423064475002B1038 /* View Controllers */,
 				970A98F12306438A002B1038 /* Models */,
 				970A98DF23063DC0002B1038 /* AppDelegate.swift */,
-				970A98E123063DC0002B1038 /* ViewController.swift */,
 				970A98E323063DC0002B1038 /* Main.storyboard */,
 				970A98E623063DC1002B1038 /* Assets.xcassets */,
 				970A98E823063DC1002B1038 /* LaunchScreen.storyboard */,
@@ -84,6 +84,14 @@
 			children = (
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		970A98F923066429002B1038 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				970A98F723065666002B1038 /* ThemeHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +166,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				970A98F3230643A1002B1038 /* Photo.swift in Sources */,
-				970A98E223063DC0002B1038 /* ViewController.swift in Sources */,
 				970A98F623064496002B1038 /* PhotoController.swift in Sources */,
+				970A98F823065666002B1038 /* ThemeHelper.swift in Sources */,
 				970A98E023063DC0002B1038 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
