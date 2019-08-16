@@ -107,31 +107,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TkB-qN-pfb">
-                                <rect key="frame" x="39" y="144" width="336.5" height="68"/>
+                                <rect key="frame" x="39" y="144" width="336.5" height="153"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wer-Y8-opH">
-                                        <rect key="frame" x="0.0" y="0.0" width="336.5" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wer-Y8-opH">
+                                        <rect key="frame" x="0.0" y="0.0" width="336.5" height="72.5"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duX-0x-Dqs">
+                                                <rect key="frame" x="0.0" y="0.0" width="336.5" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRT-Nq-Lxl">
-                                                <rect key="frame" x="0.0" y="0.0" width="336.5" height="30"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <rect key="frame" x="0.0" y="48.5" width="336.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1PT-84-rGK">
-                                        <rect key="frame" x="0.0" y="38" width="336.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="80.5" width="336.5" height="72.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGY-ST-qD6">
-                                                <rect key="frame" x="0.0" y="0.0" width="168" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="72.5"/>
                                                 <state key="normal" title="Dark"/>
                                                 <connections>
                                                     <action selector="selectDarkTheme:" destination="Lwy-w9-blp" eventType="touchUpInside" id="wbP-pP-Rm0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNF-as-pAe">
-                                                <rect key="frame" x="168" y="0.0" width="168.5" height="30"/>
+                                                <rect key="frame" x="168" y="0.0" width="168.5" height="72.5"/>
                                                 <state key="normal" title="Pink"/>
                                                 <connections>
                                                     <action selector="selectPinkTheme:" destination="Lwy-w9-blp" eventType="touchUpInside" id="0ap-v6-CvH"/>

@@ -32,7 +32,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         if themeColor == "Dark" {
             collectionView.backgroundColor = .black
         } else if themeColor == "Pink" {
-            collectionView.backgroundColor = .purple
+            collectionView.backgroundColor = UIColor(hue: 0.8583, saturation: 0.22, brightness: 0.98, alpha: 1.0) 
         }
     }
 

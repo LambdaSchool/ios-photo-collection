@@ -37,7 +37,7 @@ class PhotoDetailViewController: UIViewController {
         if themeColor == "Dark" {
             view.backgroundColor = .black
         } else if themeColor == "Pink" {
-            view.backgroundColor = .purple
+            view.backgroundColor = UIColor(hue: 0.8583, saturation: 0.22, brightness: 0.98, alpha: 1.0) 
         }
     }
     
