@@ -16,6 +16,7 @@
 		924CBF5B230642DC00BDA3CB /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CBF5A230642DC00BDA3CB /* ThemeHelper.swift */; };
 		924CBF5D2306472800BDA3CB /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CBF5C2306472800BDA3CB /* PhotosCollectionViewController.swift */; };
 		924CBF5F230647CC00BDA3CB /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CBF5E230647CC00BDA3CB /* PhotoCollectionViewCell.swift */; };
+		924CBF6123064B1200BDA3CB /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CBF6023064B1200BDA3CB /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		924CBF5A230642DC00BDA3CB /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		924CBF5C2306472800BDA3CB /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		924CBF5E230647CC00BDA3CB /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		924CBF6023064B1200BDA3CB /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				924CBF5C2306472800BDA3CB /* PhotosCollectionViewController.swift */,
 				924CBF5E230647CC00BDA3CB /* PhotoCollectionViewCell.swift */,
+				924CBF6023064B1200BDA3CB /* PhotoDetailViewController.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				924CBF5423063F7D00BDA3CB /* Photo.swift in Sources */,
 				924CBF5923063FFA00BDA3CB /* PhotoController.swift in Sources */,
 				924CBF5B230642DC00BDA3CB /* ThemeHelper.swift in Sources */,
+				924CBF6123064B1200BDA3CB /* PhotoDetailViewController.swift in Sources */,
 				924CBF5D2306472800BDA3CB /* PhotosCollectionViewController.swift in Sources */,
 				924CBF4123063D8100BDA3CB /* AppDelegate.swift in Sources */,
 				924CBF5F230647CC00BDA3CB /* PhotoCollectionViewCell.swift in Sources */,
