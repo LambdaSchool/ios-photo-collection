@@ -17,29 +17,77 @@ class PhotoDetailViewController: UIViewController {
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
-    
+    let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
+        picker.delegate = self
     }
     
     
     @IBAction func addPhoto(_ sender: Any) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
     }
     
     @IBAction func savePhoto(_ sender: Any) {
+        if photo != nil {
+            guard let photo = photo else { return }
+            var newPhoto = photo
+            guard let imageData = imageView.image?.pngData(),
+                let title = photoTitleTextField.text,
+                !title.isEmpty else { return }
+            
+            newPhoto.title = title
+            newPhoto.imageData = imageData
+            
+            if let index = photoController?.photos.firstIndex(of: photo) {
+                photoController?.photos[index] = newPhoto
+            }
+        } else if photo == nil {
+            if let title = photoTitleTextField.text,
+                let image = imageView.image,
+                let imageData = image.pngData() {
+                let newPhoto = Photo(title: title, imageData: imageData)
+                photoController?.photos.append(newPhoto)
+            }
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setTheme() {
+        guard let themePreference = themeHelper?.themePreference else { return }
+        
+        if themePreference == "Dark" {
+            view.backgroundColor = .lightGray
+        } else if themePreference == "Red" {
+            view.backgroundColor = .red
+        }
     }
-    */
+    
+    private func updateViews() {
+        setTheme()
+        if let imageData = photo?.imageData, let image = UIImage(data: imageData) {
+            imageView.image = image
+        }
+    }
 
 }
+
+extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = chosenImage
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+

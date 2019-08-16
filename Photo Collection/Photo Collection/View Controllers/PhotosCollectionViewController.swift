@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "PhotoCell"
-
 class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
@@ -18,14 +16,15 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView.reloadData()
     }
 
     
@@ -37,19 +36,19 @@ class PhotosCollectionViewController: UICollectionViewController {
             guard let addPhotoDetailVC = segue.destination as? PhotoDetailViewController else { return }
             addPhotoDetailVC.themeHelper = themeHelper
             addPhotoDetailVC.photoController = photoController
-//        } else if segue.identifier == "ShowPhotoDetailSegue" {
-//            guard let photoDetailVC = segue.destination as? PhotoDetailViewController else { return }
-//
-//            photoDetailVC.themeHelper = themeHelper
-//            photoDetailVC.photoController = photoController
+        } else if segue.identifier == "ShowPhotoDetailSegue" {
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController else { return }
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                photoDetailVC.themeHelper = themeHelper
+                photoDetailVC.photoController = photoController
+                photoDetailVC.photo = photoController.photos[indexPath.row]
+            }
         } else if segue.identifier == "SelectThemeModalSegue" {
             guard let selectThemeVC = segue.destination as? ThemeSelectionViewController else { return }
             selectThemeVC.themeHelper = themeHelper
         }
     }
     
-
-
 
     // MARK: UICollectionViewDataSource
 
@@ -74,9 +73,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         guard let themePreference = themeHelper.themePreference else { return }
         
         if themePreference == "Dark" {
-            view.backgroundColor = .lightGray
-        } else if themePreference == "Teal" {
-            view.backgroundColor = .green
+            collectionView.backgroundColor = .lightGray
+        } else if themePreference == "Red" {
+            collectionView.backgroundColor = .red
         }
     }
 
