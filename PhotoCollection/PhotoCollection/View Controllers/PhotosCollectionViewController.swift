@@ -21,6 +21,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setTheme()
+        collectionView.reloadData()
     }
     
     // MARK: - Navigation
@@ -31,7 +32,10 @@ class PhotosCollectionViewController: UICollectionViewController {
             guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
             destinationVC.themeHelper = themeHelper
             destinationVC.photoController = photoController
-//            destinationVC.photo = photo
+            
+            guard let photoIndex = collectionView.indexPathsForSelectedItems?.first?.item else { return }
+            let photo = photoController.photos[photoIndex]
+            destinationVC.photo = photo
         } else if segue.identifier == "AddNewPhotoSegue" {
             guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
             destinationVC.themeHelper = themeHelper
@@ -52,8 +56,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
         
         let photo = photoController.photos[indexPath.item]
-        cell.imageView.image = UIImage(data: photo.imageData)
-        cell.textLabel.text = photo.title
+        cell.photo = photo
         
         return cell
     }
@@ -63,7 +66,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     func setTheme() {
         guard let currentTheme = themeHelper.themePreference else { return }
         
-        collectionView.backgroundColor = UIColor(named: currentTheme)
+        if currentTheme == "Dark" {
+            collectionView.backgroundColor = .darkGray
+        } else if currentTheme == "Blue" {
+            collectionView.backgroundColor = .blue
+        }
+        
     }
     
 }

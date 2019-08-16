@@ -17,6 +17,12 @@ class PhotoController {
     }
     
     func update(photo: Photo, image: Data, title: String) {
+        guard let index = photos.firstIndex(of: photo) else { return }
+        var updatedPhoto = photo
+        photos.remove(at: index)
         
+        updatedPhoto.imageData = image
+        updatedPhoto.title = title
+        photos.append(updatedPhoto)
     }
 }

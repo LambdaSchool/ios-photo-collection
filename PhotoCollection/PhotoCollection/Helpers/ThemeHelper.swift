@@ -20,7 +20,7 @@ class ThemeHelper {
     func setThemePreferenceToDark() {
         let userDefaults = UserDefaults.standard
         
-        userDefaults.set("Iron", forKey: themePreferenceKey)
+        userDefaults.set("Dark", forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToBlue() {
@@ -30,7 +30,7 @@ class ThemeHelper {
     }
     
     init() {
-        if themePreference == nil {
+        if themePreference == "" {
             setThemePreferenceToDark()
         }
     }
