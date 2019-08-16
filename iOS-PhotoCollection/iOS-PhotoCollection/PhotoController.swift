@@ -10,7 +10,7 @@ class PhotoController{
     }
     
     func update(photo: Photo, data: Data, title: String){
-        guard let index = photos.index(of: photo) else {return}
+        guard let index = photos.firstIndex(of: photo) else {return}
         
         // remove photo
         photos.remove(at: index)
