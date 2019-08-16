@@ -76,7 +76,7 @@
                             <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dgF-M4-fw1" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="dgF-M4-fw1" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
                                 <rect key="frame" x="10" y="0.0" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -121,6 +121,8 @@
                                     <constraint firstItem="mhN-wt-wrZ" firstAttribute="leading" secondItem="dgF-M4-fw1" secondAttribute="leading" id="z39-0X-1VB"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="imageView" destination="yZy-kc-Uyk" id="tO0-00-14w"/>
+                                    <outlet property="textLabel" destination="WGe-8g-hze" id="D6A-xI-3Ot"/>
                                     <segue destination="nff-VG-ExL" kind="show" identifier="ShowPhotoDetailSegue" id="dUo-F0-yOY"/>
                                 </connections>
                             </collectionViewCell>
@@ -230,6 +232,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dUo-F0-yOY"/>
+        <segue reference="2AH-Sw-6D2"/>
     </inferredMetricsTieBreakers>
 </document>
