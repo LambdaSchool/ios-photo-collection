@@ -10,6 +10,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="peL-rk-3hq">
+            <objects>
+                <viewController id="AoZ-8M-FMt" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cCa-Mu-Ccu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSe-z1-BNn">
+                                <rect key="frame" x="16" y="84" width="382" height="63.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-Gi-D5s">
+                                <rect key="frame" x="40" y="187.5" width="334" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-PV-Qfk">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="30"/>
+                                        <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkTheme:" destination="AoZ-8M-FMt" eventType="touchUpInside" id="peK-VQ-rg4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-7i-zjx">
+                                        <rect key="frame" x="192" y="0.0" width="142" height="30"/>
+                                        <state key="normal" title="Blue"/>
+                                        <connections>
+                                            <action selector="selectBlueTheme:" destination="AoZ-8M-FMt" eventType="touchUpInside" id="Abq-l7-57y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fSe-z1-BNn" firstAttribute="top" secondItem="egZ-Yt-hbr" secondAttribute="top" constant="40" id="2iR-x6-mhy"/>
+                            <constraint firstItem="sBS-Gi-D5s" firstAttribute="leading" secondItem="egZ-Yt-hbr" secondAttribute="leading" constant="40" id="5bE-gA-I35"/>
+                            <constraint firstItem="fSe-z1-BNn" firstAttribute="leading" secondItem="cCa-Mu-Ccu" secondAttribute="leading" constant="16" id="VSs-Fh-Zi8"/>
+                            <constraint firstItem="egZ-Yt-hbr" firstAttribute="trailing" secondItem="sBS-Gi-D5s" secondAttribute="trailing" constant="40" id="hSE-w0-hdg"/>
+                            <constraint firstAttribute="trailing" secondItem="fSe-z1-BNn" secondAttribute="trailing" constant="16" id="hTf-3j-FqG"/>
+                            <constraint firstItem="fSe-z1-BNn" firstAttribute="centerX" secondItem="cCa-Mu-Ccu" secondAttribute="centerX" id="mRe-Sb-g3d"/>
+                            <constraint firstItem="sBS-Gi-D5s" firstAttribute="top" secondItem="fSe-z1-BNn" secondAttribute="bottom" constant="40" id="xcQ-Fc-8Ri"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="egZ-Yt-hbr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43M-wK-CH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740.57971014492762" y="-524.33035714285711"/>
+        </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="vc0-Y8-N8F">
             <objects>
@@ -80,7 +131,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="bWh-D0-P2l">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Mz8-Ra-fRq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Mz8-Ra-fRq">
+                            <connections>
+                                <segue destination="AoZ-8M-FMt" kind="presentation" identifier="ShowThemeSelectorSegue" id="fE6-Sy-a1p"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cl0-8l-Ob3">
                             <connections>
                                 <segue destination="nff-VG-ExL" kind="show" identifier="AddNewPhotoSegue" id="2AH-Sw-6D2"/>
