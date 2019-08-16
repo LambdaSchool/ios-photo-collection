@@ -61,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="740.57971014492762" y="-524.33035714285711"/>
         </scene>
-        <!--Photos Collection View Controller-->
+        <!--Photo Collection-->
         <scene sceneID="vc0-Y8-N8F">
             <objects>
                 <collectionViewController id="QF9-KH-Hd1" customClass="PhotosCollectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,13 +98,13 @@
                                                                 <constraint firstAttribute="height" constant="20" id="Ktl-HB-xW2"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="kQB-rx-utO" firstAttribute="top" secondItem="mhN-wt-wrZ" secondAttribute="top" id="8vN-If-7zc"/>
                                                 <constraint firstItem="kQB-rx-utO" firstAttribute="leading" secondItem="mhN-wt-wrZ" secondAttribute="leading" id="IxB-rE-2Ak"/>
@@ -132,7 +132,7 @@
                             <outlet property="delegate" destination="QF9-KH-Hd1" id="3md-np-R3y"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="bWh-D0-P2l">
+                    <navigationItem key="navigationItem" title="Photo Collection" id="bWh-D0-P2l">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Mz8-Ra-fRq">
                             <connections>
                                 <segue destination="AoZ-8M-FMt" kind="presentation" identifier="ShowThemeSelectorSegue" id="fE6-Sy-a1p"/>
@@ -179,7 +179,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13B-rD-c0P">
-                                <rect key="frame" x="20" y="108" width="374" height="300"/>
+                                <rect key="frame" x="20" y="160" width="374" height="248"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -217,8 +217,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qt1-4d-g7H" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oMf-fO-Mjl">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="oMf-fO-Mjl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -24,6 +24,8 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         updateViews()
         
+        navigationItem.largeTitleDisplayMode = .never
+        
         imagePicker.delegate = self
     }
     
