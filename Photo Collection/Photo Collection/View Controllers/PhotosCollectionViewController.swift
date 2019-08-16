@@ -11,7 +11,12 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,21 +41,18 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as?
+            PhotoCollectionViewCell else { return UICollectionViewCell() }
+        
+        let photo = photoController.photos[indexPath.item]
+        cell.titleLabel.text = photo.title
+        cell.imageView.image = UIImage(data: photo.imageData)
     
         return cell
     }
