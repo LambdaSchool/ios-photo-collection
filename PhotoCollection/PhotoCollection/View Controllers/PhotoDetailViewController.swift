@@ -17,7 +17,7 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var detailTextField: UITextField!
     
-    var photoComtroller: PhotoController?
+    var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
@@ -29,11 +29,20 @@ class PhotoDetailViewController: UIViewController {
     }
     
     @IBAction func savePhoto(_ sender: Any) {
-        
-        guard let photoImage = photoImageView.image,
-            let detailText = detailTextField.text,
-            !detailText.isEmpty else { return }
-        
+        if photo != nil {
+            updateViews()
+        } else {
+            guard let image = photoImageView.image,
+                let detailText = detailTextField.text,
+                !detailText.isEmpty else { return }
+            
+            guard let photoData = image.pngData() else { return } //jpegData(image, 1.0)
+            photoController?.createPhoto(data: photoData, title: detailText)
+        }
+//
+//
+//
+//        if
         //var photo = Photo(imageData: Data(photoImage), title: detailText)
         //delegate?.photoWasCreated(photo)
         self.navigationController?.popViewController(animated: true)
@@ -53,14 +62,11 @@ class PhotoDetailViewController: UIViewController {
     private func updateViews() {
         setTheme()
         
-        guard let photoImage = photoImageView.image,
-            let detailText = detailTextField.text,
-            !detailText.isEmpty else { return }
+        guard let photo = photo else { return }
         
-        
-        
+        photoImageView.image = UIImage(data: photo.imageData)
+        detailTextField.text = photo.title
     }
-    
 }
 
 extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -79,9 +85,6 @@ extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigati
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             photoImageView.image = image
         }
-        
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
