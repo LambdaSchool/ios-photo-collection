@@ -28,6 +28,12 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView.reloadData()
+    }
 
 
     // MARK: - Navigation
@@ -53,14 +59,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return photoController.photos.count
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,11 +93,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         switch theme {
         case "Blue":
-            view.backgroundColor = .blue
+            collectionView.backgroundColor = .blue
         case "Dark":
-            view.backgroundColor = .lightGray
+            collectionView.backgroundColor = .lightGray
         default:
-            view.backgroundColor = .white
+            collectionView.backgroundColor = .white
         }
     }
 
