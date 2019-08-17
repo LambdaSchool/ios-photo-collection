@@ -48,21 +48,22 @@ class PhotosCollectionViewController: UICollectionViewController {
         if segue.identifier == "createPhotoSegue" {
             
             if let createPhotoVC = segue.destination as? PhotoDetailViewController {
-                photoController.self
-                createPhotoVC.delegate = self
+                createPhotoVC.photoController = photoController
+                createPhotoVC.themeHelper = themeHelper
             }
         } else if segue.identifier == "showPhotoDetailSegue" {
         
             if let photoDetailVC = segue.destination as? PhotoDetailViewController,
                 let indexPath = collectionView.indexPathsForSelectedItems?.first {
                 
-                //photoDetailVC.view.backgroundColor = themeHelper.themePreferenceKey
                 photoDetailVC.photo = photoController.photos[indexPath.row]
+                photoDetailVC.photoController = photoController
+                photoDetailVC.themeHelper = themeHelper
             }
         } else if segue.identifier == "selectThemeModalSegue" {
             
             if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
-                
+                selectThemeVC.themeHelper = themeHelper
             }
         }
         
