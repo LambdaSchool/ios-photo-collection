@@ -22,7 +22,7 @@ class ThemeHelper {
 //        if let unwrappedThemePreference = themePreference {
 //            self.themePreference = unwrappedThemePreference
 //        } else {
-//            themePreference =
+//            themePreference = 
 //        }
     }
     
