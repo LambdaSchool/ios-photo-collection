@@ -8,14 +8,18 @@
 
 import UIKit
 
+protocol ThemeSelectionDelegate {
+    func themeWasSelected(_ theme: ThemeHelper)
+}
+
 class ThemeSelectionViewController: UIViewController {
 
     var themeHelper: ThemeHelper?
     
+    var delegate: ThemeSelectionDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -30,8 +34,12 @@ class ThemeSelectionViewController: UIViewController {
     */
 
     @IBAction func selectDarkTheme(_ sender: UIButton) {
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectYouColorHereTheme(_ sender: UIButton) {
+        themeHelper?.setThemePreferenceToYourColorHere()
+        dismiss(animated: true, completion: nil)
     }
 }

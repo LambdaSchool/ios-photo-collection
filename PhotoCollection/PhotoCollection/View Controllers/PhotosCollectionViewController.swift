@@ -15,22 +15,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-
-        // Do any additional setup after loading the view.
+        setTheme()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
-
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -51,35 +45,56 @@ class PhotosCollectionViewController: UICollectionViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        switch segue.identifier {
-        case "createPhotoSegue":
+        if segue.identifier == "createPhotoSegue" {
+            
             if let createPhotoVC = segue.destination as? PhotoDetailViewController {
-                themeHelper
-                photoController
+                photoController.self
+                createPhotoVC.delegate = self
             }
-        case "showPhotoDetailSegue":
+        } else if segue.identifier == "showPhotoDetailSegue" {
+        
             if let photoDetailVC = segue.destination as? PhotoDetailViewController,
-                let indexPath = collectionView.indexPathsForSelectedItems {
+                let indexPath = collectionView.indexPathsForSelectedItems?.first {
                 
-                //photoDetailVC.view.backgroundColor = themeHelper.themePreference
-                photoDetailVC.photo?.imageData = photoController.photos[indexPath[item]]
+                //photoDetailVC.view.backgroundColor = themeHelper.themePreferenceKey
+                photoDetailVC.photo = photoController.photos[indexPath.row]
             }
-        case "selectThemeModalSegue":
+        } else if segue.identifier == "selectThemeModalSegue" {
+            
             if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
                 
             }
-        default:
-            print()
         }
+        
+//        switch segue.identifier {
+//        case "createPhotoSegue":
+//            if let createPhotoVC = segue.destination as? PhotoDetailViewController {
+//                photoController.self
+//                createPhotoVC.delegate = self
+//            }
+//        case "showPhotoDetailSegue":
+//            if let photoDetailVC = segue.destination as? PhotoDetailViewController,
+//                let indexPath = collectionView.indexPathsForSelectedItems?.first {
+//
+//                //photoDetailVC.view.backgroundColor = themeHelper.themePreferenceKey
+//                photoDetailVC.photo = photoController.photos[indexPath.row]
+//            }
+//        case "selectThemeModalSegue":
+//            if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
+//
+//        }
+//        default:
+//            print()
+//        }
     }
     
     func setTheme() {
         guard let theme = themeHelper.themePreference else { return }
         
         if theme == "Dark" {
-            self.collectionView.backgroundColor = .darkGray
-        } else {
-            self.collectionView.backgroundColor = .cyan
+            collectionView.backgroundColor = .darkGray
+        } else if theme == "Sapphire" {
+            collectionView.backgroundColor = .cyan
         }
     }
 
@@ -114,4 +129,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension PhotosCollectionViewController: CreatePhotoDelegate {
+    // MARK: Step 6 - Write/Implement the function
+    func photoWasCreated(_ photo: Photo) {
+        photoController.photos.append(photo)
+        dismiss(animated: true, completion: nil)
+        collectionView.reloadData()
+    }
 }
