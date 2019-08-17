@@ -91,27 +91,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSg-x2-nKy">
-                                <rect key="frame" x="20" y="69" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfd-Fl-eEh">
-                                <rect key="frame" x="121" y="273" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Photo"/>
-                                <connections>
-                                    <action selector="addPhoto:" destination="djV-Sc-UwL" eventType="touchUpInside" id="JHo-Am-TTE"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1Y-fI-Qna">
-                                <rect key="frame" x="109" y="219" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D3z-Nr-R6v">
+                                <rect key="frame" x="40" y="133" width="334" height="329"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="QSg-x2-nKy">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="253"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfd-Fl-eEh">
+                                        <rect key="frame" x="0.0" y="261" width="334" height="30"/>
+                                        <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="djV-Sc-UwL" eventType="touchUpInside" id="JHo-Am-TTE"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1Y-fI-Qna">
+                                        <rect key="frame" x="0.0" y="299" width="334" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HC5-lk-knR" firstAttribute="trailing" secondItem="D3z-Nr-R6v" secondAttribute="trailing" constant="40" id="Wpc-X6-O7M"/>
+                            <constraint firstItem="D3z-Nr-R6v" firstAttribute="centerX" secondItem="TZt-HN-Q57" secondAttribute="centerX" id="XFY-VT-3Su"/>
+                            <constraint firstItem="D3z-Nr-R6v" firstAttribute="top" secondItem="HC5-lk-knR" secondAttribute="top" constant="45" id="dxy-JD-41E"/>
+                            <constraint firstItem="D3z-Nr-R6v" firstAttribute="leading" secondItem="HC5-lk-knR" secondAttribute="leading" constant="40" id="jKR-uu-MZT"/>
+                            <constraint firstItem="HC5-lk-knR" firstAttribute="bottom" secondItem="D3z-Nr-R6v" secondAttribute="bottom" constant="400" id="v0l-9n-mvI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HC5-lk-knR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="xja-5y-Msw">
@@ -128,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPg-gy-Q3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="-266"/>
+            <point key="canvasLocation" x="2231.8840579710145" y="-181.47321428571428"/>
         </scene>
         <!--Theme Selection View Controller-->
         <scene sceneID="Op6-nh-QwG">
@@ -138,37 +147,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qac-H5-kUu">
-                                <rect key="frame" x="148" y="162" width="119" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bu3-AE-A2D">
-                                <rect key="frame" x="111" y="280" width="84" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dark Theme"/>
-                                <connections>
-                                    <action selector="selectDarkTheme:" destination="3XZ-iD-J6w" eventType="touchUpInside" id="t2p-eK-1FD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ut-AV-jxZ">
-                                <rect key="frame" x="112" y="370" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Blue Theme"/>
-                                <connections>
-                                    <action selector="selectBlueTheme:" destination="3XZ-iD-J6w" eventType="touchUpInside" id="PGI-du-7Cd"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="fjf-6h-KPo">
+                                <rect key="frame" x="75" y="119" width="264" height="136"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Theme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qac-H5-kUu">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="QQk-EV-7Hj">
+                                        <rect key="frame" x="0.0" y="106" width="264" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bu3-AE-A2D">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
+                                                <state key="normal" title="Dark Theme"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="3XZ-iD-J6w" eventType="touchUpInside" id="t2p-eK-1FD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ut-AV-jxZ">
+                                                <rect key="frame" x="182" y="0.0" width="82" height="30"/>
+                                                <state key="normal" title="Blue Theme"/>
+                                                <connections>
+                                                    <action selector="selectBlueTheme:" destination="3XZ-iD-J6w" eventType="touchUpInside" id="PGI-du-7Cd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ky8-IX-SOC" firstAttribute="trailing" secondItem="fjf-6h-KPo" secondAttribute="trailing" constant="75" id="7DG-No-Enw"/>
+                            <constraint firstItem="fjf-6h-KPo" firstAttribute="centerX" secondItem="SBE-sP-D79" secondAttribute="centerX" id="dLG-zb-Qhu"/>
+                            <constraint firstItem="fjf-6h-KPo" firstAttribute="top" secondItem="Ky8-IX-SOC" secondAttribute="top" constant="75" id="mom-FA-Fwy"/>
+                            <constraint firstItem="fjf-6h-KPo" firstAttribute="leading" secondItem="Ky8-IX-SOC" secondAttribute="leading" constant="75" id="nPF-Al-B53"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ky8-IX-SOC"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cho-u3-dIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="438"/>
+            <point key="canvasLocation" x="2232" y="563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xKM-SV-DDv">
