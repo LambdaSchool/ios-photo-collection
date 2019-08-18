@@ -27,7 +27,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return photoController.photos.count
     }
 
@@ -56,7 +55,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             if let photoDetailVC = segue.destination as? PhotoDetailViewController,
                 let indexPath = collectionView.indexPathsForSelectedItems?.first {
                 
-                photoDetailVC.photo = photoController.photos[indexPath.row]
+                photoDetailVC.photo = photoController.photos[indexPath.item]
                 photoDetailVC.photoController = photoController
                 photoDetailVC.themeHelper = themeHelper
             }
@@ -93,7 +92,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         guard let theme = themeHelper.themePreference else { return }
         
         if theme == "Dark" {
-            collectionView.backgroundColor = .darkGray
+            collectionView.backgroundColor = .lightGray
         } else if theme == "Sapphire" {
             collectionView.backgroundColor = .cyan
         }
@@ -132,11 +131,11 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 }
 
-extension PhotosCollectionViewController: CreatePhotoDelegate {
-    // MARK: Step 6 - Write/Implement the function
-    func photoWasCreated(_ photo: Photo) {
-        photoController.photos.append(photo)
-        dismiss(animated: true, completion: nil)
-        collectionView.reloadData()
-    }
-}
+//extension PhotosCollectionViewController: CreatePhotoDelegate {
+//    // MARK: Step 6 - Write/Implement the function
+//    func photoWasCreated(_ photo: Photo) {
+//        photoController.photos.append(photo)
+//        dismiss(animated: true, completion: nil)
+//        collectionView.reloadData()
+//    }
+//}

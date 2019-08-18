@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 protocol CreatePhotoDelegate {
     func photoWasCreated(_ photo: Photo)
@@ -53,7 +54,7 @@ class PhotoDetailViewController: UIViewController {
         guard let theme = themeHelp.themePreference else { return }
         
         if theme == "Dark" {
-            view.backgroundColor = .darkGray
+            view.backgroundColor = .lightGray
         } else if theme == "Sapphire" {
             view.backgroundColor = .cyan
         }
@@ -72,6 +73,12 @@ class PhotoDetailViewController: UIViewController {
 extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBAction func addPhoto(_ sender: UIButton) {
+        let status = PHPhotoLibrary.authorizationStatus()
+        if status == PHAuthorizationStatus.authorized {
+            PHPhotoLibrary.requestAuthorization({ (newStatus) in })
+        } else {
+            PHPhotoLibrary.requestAuthorization({ (newStatus) in })
+        }
         let photo = UIImagePickerController()
         photo.delegate = self
         photo.sourceType = UIImagePickerController.SourceType.photoLibrary
