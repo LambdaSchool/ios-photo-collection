@@ -73,6 +73,7 @@ class PhotoDetailViewController: UIViewController {
         setTheme()
         guard let photo = photo else { return }
         imgPhoto.image = UIImage(data: photo.imageData)
+        txtTitle.text = photo.title
     }
 }
 

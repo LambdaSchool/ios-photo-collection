@@ -19,6 +19,8 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var themeHelper: ThemeHelper?
+    
     func updateViews() {
         guard let photo = photo else { return }
         image.image = UIImage.init(data: photo.imageData)
