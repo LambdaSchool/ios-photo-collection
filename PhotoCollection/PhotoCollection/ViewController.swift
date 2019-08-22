@@ -9,12 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        themeHelper.setThemePreferenceToBlue()
     }
-
-
 }
 
