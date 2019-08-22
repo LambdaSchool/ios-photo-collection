@@ -10,6 +10,8 @@ import UIKit
 
 class AddPhotoViewController: UIViewController {
 
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var imageTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +19,15 @@ class AddPhotoViewController: UIViewController {
     }
     
 
+    
+    
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -10,6 +10,8 @@ import UIKit
 
 class ThemeViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +19,13 @@ class ThemeViewController: UIViewController {
     }
     
 
+    @IBAction func darkButtonTapped(_ sender: Any) {
+    }
+    @IBAction func lightButtonTapped(_ sender: Any) {
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

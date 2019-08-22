@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Photo Collection View Controller-->
         <scene sceneID="MQI-Nc-9il">
             <objects>
-                <collectionViewController id="mxJ-Rn-Usg" sceneMemberID="viewController">
+                <collectionViewController id="mxJ-Rn-Usg" customClass="PhotoCollectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uVP-XJ-adl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B6r-dE-aGf">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B6r-dE-aGf" customClass="PhotoCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -69,6 +69,8 @@
                                 </constraints>
                                 <size key="customSize" width="120" height="140"/>
                                 <connections>
+                                    <outlet property="imageNameLabel" destination="hHK-06-1I8" id="cz2-lb-3h6"/>
+                                    <outlet property="photoImageView" destination="Ofw-RG-pwf" id="9Wd-lQ-lDt"/>
                                     <segue destination="917-jh-Feu" kind="show" identifier="ViewPhotoSegue" id="LrN-Jg-IPm"/>
                                 </connections>
                             </collectionViewCell>
@@ -95,23 +97,29 @@
             </objects>
             <point key="canvasLocation" x="952.17391304347836" y="20.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Theme View Controller-->
         <scene sceneID="Wuu-OT-k3W">
             <objects>
-                <viewController id="X7t-4n-fft" sceneMemberID="viewController">
+                <viewController id="X7t-4n-fft" customClass="ThemeViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C9v-Dw-FQF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ur-yo-sq9">
-                                <rect key="frame" x="210" y="253" width="33" height="30"/>
+                                <rect key="frame" x="116" y="244" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="darkButtonTapped:" destination="X7t-4n-fft" eventType="touchUpInside" id="PQB-qd-9h4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vx-Sx-nPk">
-                                <rect key="frame" x="213" y="433" width="46" height="28"/>
+                                <rect key="frame" x="255" y="244" width="46" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Light"/>
+                                <connections>
+                                    <action selector="lightButtonTapped:" destination="X7t-4n-fft" eventType="touchUpInside" id="XkC-1u-U3a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,7 +133,7 @@
         <!--Add Photo-->
         <scene sceneID="Qwj-CR-HMt">
             <objects>
-                <viewController id="917-jh-Feu" sceneMemberID="viewController">
+                <viewController id="917-jh-Feu" customClass="AddPhotoViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W6z-dU-d64">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,6 +153,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cM-Kt-cQZ">
                                         <rect key="frame" x="121" y="242" width="72" height="30"/>
                                         <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addButtonTapped:" destination="917-jh-Feu" eventType="touchUpInside" id="nXU-Zc-mbb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -163,8 +174,16 @@
                         <viewLayoutGuide key="safeArea" id="Xac-qs-kt0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Photo" id="mCH-5x-X2O">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oBK-lo-raq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oBK-lo-raq">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="917-jh-Feu" id="1wh-9N-Y2f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageTextField" destination="g7Q-8n-yy6" id="Iod-og-gfH"/>
+                        <outlet property="photoImageView" destination="fbY-pB-lHo" id="Ihk-5D-3x6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIy-ug-BtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
