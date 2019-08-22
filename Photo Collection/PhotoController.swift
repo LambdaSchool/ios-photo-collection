@@ -7,13 +7,11 @@
 //
 
 import Foundation
-import UIKit
+
 
 class PhotoController{
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    
+ 
     var  photos: [Photo] = []
     
     func createPhoto(){
