@@ -15,8 +15,7 @@ class PhotoController{
     var  photos: [Photo] = []
     
     func createPhoto(){
-        let image = Data(imageView)
-        guard let text = label.text else {return}
+      
         let newPhoto = Photo(imageData: image, title: text)
     }
     
