@@ -50,9 +50,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         let photo = photoController.photos[indexPath.item]
         cell.photo = photo
         
-        
-        // Configure the cell
-    
         return cell
     }
 
