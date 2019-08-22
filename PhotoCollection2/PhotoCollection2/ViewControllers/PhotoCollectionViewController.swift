@@ -38,9 +38,9 @@ class PhotoCollectionViewController: UICollectionViewController {
 			themeSelectorVC.themeHelper = themeHelper
 		} else if segue.identifier == "addPhotoShowSegue" {
 			guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let selectedIndexPath = collectionView.indexPathsForSelectedItems else { return }
-			let photo = photoController.photos[selectedIndexPath]
+		//	let photo = photoController.photos[selectedIndexPath.item]
 			photoDetailVC.themeHelper = themeHelper
-			photoDetailVC.photo = photo
+		//	photoDetailVC.photo = photo
 		} else if segue.identifier == "ShowPhotoDetailSeguea" {
 			guard let photoDetailVC = segue.destination as? PhotoDetailViewController else { return }
 			photoDetailVC.photoController = photoController
@@ -55,7 +55,6 @@ class PhotoCollectionViewController: UICollectionViewController {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return photoController.photos.count
@@ -63,20 +62,18 @@ class PhotoCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell else { return  UICollectionViewCell() }
-
 		let photo = photoController.photos[indexPath.item]
 		cell.photo = photo
-
-    
         return cell
     }
 
+    /// sets background theme to value of user defaults
 	func setTheme() {
 		if let selectedTheme = themeHelper.themePreference {
-			if selectedTheme == "Dark" {
-				//setThemePreferenceToDark()
-			} else if selectedTheme == "blue" {
-				//setThemePreferenceToAnotherColor()
+			if selectedTheme == "dark" {
+                view.backgroundColor = .darkGray
+        } else if selectedTheme == "blue" {
+				view.backgroundColor = .blue
 			}
 		}
 	}

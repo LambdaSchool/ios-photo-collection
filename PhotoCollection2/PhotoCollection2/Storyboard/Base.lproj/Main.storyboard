@@ -146,7 +146,7 @@
         <!--Create Photo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoCollection2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotoDetailViewController" customModule="PhotoCollection2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +160,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9w1-KZ-ehw">
                                 <rect key="frame" x="50" y="353.5" width="314" height="64.5"/>
                                 <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0i-Ji-NH6"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ow2-MS-dz8">
                                 <rect key="frame" x="20" y="160" width="374" height="173.5"/>
@@ -185,12 +188,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Photo" id="2j5-mt-EvH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JYP-U5-GzN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JYP-U5-GzN">
+                            <connections>
+                                <action selector="savePhoto:" destination="BYZ-38-t0r" id="BG5-ME-HL9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="PhotoImage" destination="ow2-MS-dz8" id="kp8-iW-GIA"/>
+                        <outlet property="photoTextField" destination="S4V-lW-7sj" id="VGE-A1-HBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1166.6666666666667" y="107.8125"/>
+            <point key="canvasLocation" x="1368" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Diu-li-4I8">

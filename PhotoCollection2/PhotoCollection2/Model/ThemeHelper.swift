@@ -18,13 +18,11 @@ class ThemeHelper {
     
     var themePreference: String? {
         
-        let selectedTheme = UserDefaults.standard.string(forKey: .themePreferenceKey)
-        if selectedTheme == "Dark" {
-            setThemePreferenceToDark()
-        } else if selectedTheme == "blue" {
-            setThemePreferenceToAnotherColor()
-        }
+        if  let selectedTheme = UserDefaults.standard.string(forKey: .themePreferenceKey) {
         return selectedTheme
+        } else {
+            return nil
+        }
     }
     
     init() {
@@ -42,4 +40,5 @@ class ThemeHelper {
         let userDefaults = UserDefaults.standard
         userDefaults.set("blue", forKey: .themePreferenceKey)
     }
+    
 }
