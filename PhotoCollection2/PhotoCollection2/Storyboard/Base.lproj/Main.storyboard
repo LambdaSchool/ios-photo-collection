@@ -110,6 +110,9 @@
                                     <constraint firstAttribute="bottom" secondItem="nrg-Ro-hL6" secondAttribute="bottom" id="kri-6S-CTq"/>
                                     <constraint firstItem="nrg-Ro-hL6" firstAttribute="leading" secondItem="gae-Vs-eTd" secondAttribute="leading" id="tb9-lm-70T"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowPhotoDetailSegue" id="1bO-bj-ZBC"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -125,7 +128,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qyP-ci-BHD">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="UBK-U2-c4f"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="addPhotoShowSegue" id="UBK-U2-c4f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -202,4 +205,7 @@
             <point key="canvasLocation" x="-494.20289855072468" y="108.48214285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1bO-bj-ZBC"/>
+    </inferredMetricsTieBreakers>
 </document>
