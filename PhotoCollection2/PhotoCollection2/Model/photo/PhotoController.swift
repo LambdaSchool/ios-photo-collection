@@ -8,14 +8,21 @@
 
 import Foundation
 class PhotoController {
-    var photos: [Photo] = []
+   private(set) var photos: [Photo] = []
     
     func createPhoto(withTitle title: String , image: Data) {
         let photo = Photo(imageData: image, title: title)
         photos.append(photo)
     }
     
-    func updatePhoto(_ photo:Photo, data:Data, title:String ) {
+    func updatePhoto(_ photo: Photo, data: Data, title: String ) {
+        guard let index = photos.firstIndex(of: photo) else {return}
+        var photo = photo
+        photo.imageData = data
+        photo.title = title
+        photos.remove(at: index)
+        photos.append(photo)
+        print(photo)
         
     }
 }

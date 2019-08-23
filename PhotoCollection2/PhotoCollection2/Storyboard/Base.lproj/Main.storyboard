@@ -63,7 +63,7 @@
         <!--Photos-->
         <scene sceneID="QhO-c9-InH">
             <objects>
-                <collectionViewController id="c1H-4n-q3c" sceneMemberID="viewController">
+                <collectionViewController id="c1H-4n-q3c" customClass="PhotoCollectionViewController" customModule="PhotoCollection2" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OeT-mv-sGR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="gae-Vs-eTd">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="gae-Vs-eTd" customClass="PhotoCollectionViewCell" customModule="PhotoCollection2" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -117,6 +117,8 @@
                                     <constraint firstItem="nrg-Ro-hL6" firstAttribute="leading" secondItem="gae-Vs-eTd" secondAttribute="leading" id="tb9-lm-70T"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="PhotoImage" destination="2mY-v3-FMF" id="SSR-IB-bzL"/>
+                                    <outlet property="photoNameLabel" destination="pwC-Mg-Yix" id="0h2-1Z-Df2"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowPhotoDetailSegue" id="1bO-bj-ZBC"/>
                                 </connections>
                             </collectionViewCell>

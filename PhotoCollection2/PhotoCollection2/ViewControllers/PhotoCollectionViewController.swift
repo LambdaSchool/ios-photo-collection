@@ -8,60 +8,43 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 class PhotoCollectionViewController: UICollectionViewController {
 
 	let photoController = PhotoController()
 	let themeHelper = ThemeHelper()
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
-
 
     // MARK: - Navigation
 
      //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "themeSelectorModalSegue" {
-			guard let themeSelectorVC = segue.destination as? ThemeSelectionViewController else { return }
-			themeSelectorVC.themeHelper = themeHelper
-		} else if segue.identifier == "addPhotoShowSegue" {
-			guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let selectedIndexPath = collectionView.indexPathsForSelectedItems else { return }
-		//	let photo = photoController.photos[selectedIndexPath.item]
-			photoDetailVC.themeHelper = themeHelper
-		//	photoDetailVC.photo = photo
-		} else if segue.identifier == "ShowPhotoDetailSeguea" {
-			guard let photoDetailVC = segue.destination as? PhotoDetailViewController else { return }
-			photoDetailVC.photoController = photoController
-		}
+        if segue.identifier == "ShowPhotoDetailSegue" {
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let selectedIndexPath = collectionView?.indexPathsForSelectedItems?.first else {return}
+                photoDetailVC.photo = photoController.photos[selectedIndexPath.item]
+                photoDetailVC.photoController = photoController
+            
+        } else if segue.identifier == "addPhotoShowSegue" {
+            guard let addPhotoVC = segue.destination as? PhotoDetailViewController else {return}
+            addPhotoVC.photoController = photoController
+        }
     }
 
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-
-        return 1
-    }
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
+        print(photoController.photos.count)
         return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell else { return  UICollectionViewCell() }
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCollectionViewCell else { return  UICollectionViewCell() }
 		let photo = photoController.photos[indexPath.item]
 		cell.photo = photo
         return cell

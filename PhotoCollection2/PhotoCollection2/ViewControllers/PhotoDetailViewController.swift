@@ -26,16 +26,28 @@ class PhotoDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let photo = photo else {return}
         setTheme()
-        PhotoImage.image = UIImage(data: photo.imageData)
+         guard let photo = photo else {return}
+            PhotoImage.image = UIImage(data: photo.imageData)
+            photoTextField.text = photo.title
+        
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
         PhotoLibrary()
     }
+    
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
         
+        guard let photoName = photoTextField.text, let image = PhotoImage.image?.pngData() else {return}
+        if photo == nil {
+        photoController?.createPhoto(withTitle: photoName, image: image)
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            guard let photo = photo else {return}
+            photoController?.updatePhoto(photo, data: image, title: photoName)
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
     
 
@@ -60,6 +72,12 @@ extension PhotoDetailViewController: UIImagePickerControllerDelegate {
             myPickerController.sourceType = .photoLibrary
             self.present(myPickerController, animated: true, completion: nil)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        PhotoImage.image = image
+        dismiss(animated: true, completion: nil)
     }
 }
 
