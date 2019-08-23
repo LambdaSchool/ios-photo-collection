@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
-    
+    let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -26,18 +26,18 @@ class PhotoDetailViewController: UIViewController {
             guard let imageData = imageView.image else { return }
             photoController?.create(textField.text ?? "", imageData)
         }
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addPhotoTapped(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
-        present (imagePicker, animated: true)
+        present(imagePicker, animated: true, completion: nil)
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         updateViews()
     }
     
@@ -50,9 +50,11 @@ class PhotoDetailViewController: UIViewController {
         imageView.image = photo.imageData
     }
     
-
-}
-
-extension PhotoDetailViewController: UIImagePickerControllerDelegate {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }
