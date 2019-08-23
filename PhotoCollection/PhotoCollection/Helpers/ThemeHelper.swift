@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 enum ThemeColor: String, CaseIterable {
     case dark = "Dark"
     case light = "Light"
-    case blue = "Sky"
+    case blue = "Blue"
 }
 
 class ThemeHelper {
@@ -34,6 +35,18 @@ class ThemeHelper {
     init (default color: ThemeColor = .dark) {
         if themePreference == nil {
             setThemePreference(to: color)
+        }
+    }
+    
+    func setTheme(view: UIView) {
+        guard let theme = self.themePreference else { return }
+        switch theme {
+        case .blue:
+            view.backgroundColor = .blue
+        case .dark:
+            view.backgroundColor = .darkGray
+        case .light:
+            view.backgroundColor = .white
         }
     }
 }

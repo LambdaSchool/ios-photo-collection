@@ -41,21 +41,10 @@ class PhotoDetailViewController: UIViewController {
         updateViews()
     }
     
-    #warning("come back and add this to ThemeHelper")
-    func setTheme() {
-        guard let theme = themeHelper?.themePreference else { return }
-        switch theme {
-        case .blue:
-            view.backgroundColor = .blue
-        case .dark:
-            view.backgroundColor = .darkGray
-        case .light:
-            view.backgroundColor = .white
-        }
-    }
-    
     func updateViews() {
-        setTheme()
+        if let themeHelper = themeHelper {
+            themeHelper.setTheme(view: view)
+        }
         guard let photo = photo else { return }
         textField.text = photo.title
         imageView.image = photo.imageData
