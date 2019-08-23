@@ -20,15 +20,12 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        
-        
-
-        // Do any additional setup after loading the view.
     }
+    
     func setTheme() {
         guard let theme = themeHelper?.themePreference else {
             view.backgroundColor = .darkGray
@@ -40,26 +37,17 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
             view.backgroundColor = .blue
         }
     }
-
+    
     @IBAction func addPhotoTapped(_ sender: Any) {
-        //let photoLibrary = PHPhotoLibrary.authorizationStatus()
-        
-        
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary;
             imagePicker.allowsEditing = true
-//            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
     
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-//        imageView.image = image
-//        dismiss(animated:true, completion: nil)
-//    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit
@@ -74,7 +62,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         if let photo = photo {
             photoController?.update(from: photo, title: name, data: data)
         } else {
-        photoController?.addPhoto(title: name, data: data)
+            photoController?.addPhoto(title: name, data: data)
         }
         
         navigationController?.popViewController(animated: true)
@@ -88,6 +76,4 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
             imageView.image = photo.data
         }
     }
- 
-
 }
