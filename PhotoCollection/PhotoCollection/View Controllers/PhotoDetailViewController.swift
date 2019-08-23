@@ -21,10 +21,9 @@ class PhotoDetailViewController: UIViewController {
     
     @IBAction func saveTapped(_ sender: Any) {
         if let photo = photo {
-            photoController?.update(photo, data: photo.imageData, title: textField.text ?? "")
+            photoController?.update(photo, image: photo.imageData, title: textField.text ?? "")
         } else {
-            guard let imageViewData = imageView.image else { return }
-            guard let imageData = imageViewData.pngData() else { return }
+            guard let imageData = imageView.image else { return }
             photoController?.create(textField.text ?? "", imageData)
         }
     }
@@ -59,7 +58,7 @@ class PhotoDetailViewController: UIViewController {
         setTheme()
         guard let photo = photo else { return }
         textField.text = photo.title
-        imageView.image = UIImage(data: photo.imageData)
+        imageView.image = photo.imageData
     }
     
 

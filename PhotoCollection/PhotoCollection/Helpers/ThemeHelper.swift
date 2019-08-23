@@ -19,7 +19,8 @@ class ThemeHelper {
     
     var themePreference: ThemeColor? {
         if let result = UserDefaults.standard.object(forKey: themePreferenceKey) {
-            return result as? ThemeColor
+            let result = ThemeColor (rawValue: result as! String)
+            return result
         } else {
             return nil
         }
@@ -27,7 +28,7 @@ class ThemeHelper {
     
     func setThemePreference (to color: ThemeColor) {
         let userDefaults = UserDefaults.standard
-        userDefaults.set(color, forKey: themePreferenceKey)
+        userDefaults.set(color.rawValue, forKey: themePreferenceKey)
     }
     
     init (default color: ThemeColor = .dark) {
