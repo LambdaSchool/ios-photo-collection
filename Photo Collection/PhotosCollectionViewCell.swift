@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosCollectionViewCell: UICollectionCell {
+class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageOutlet: UIImageView!
     
     @IBOutlet weak var imageLabel: UILabel!
