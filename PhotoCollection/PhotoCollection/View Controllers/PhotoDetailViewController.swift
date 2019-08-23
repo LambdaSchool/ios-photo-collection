@@ -23,14 +23,18 @@ class PhotoDetailViewController: UIViewController {
         if let photo = photo {
             photoController?.update(photo, data: photo.imageData, title: textField.text ?? "")
         } else {
-            guard let imageData = imageView.image else { return }
+            guard let imageViewData = imageView.image else { return }
+            guard let imageData = imageViewData.pngData() else { return }
             photoController?.create(textField.text ?? "", imageData)
-            #warning("we stopped here for the night")
         }
     }
     
     @IBAction func addPhotoTapped(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        present (imagePicker, animated: true)
     }
+    
     
     
     override func viewDidLoad() {
@@ -59,4 +63,8 @@ class PhotoDetailViewController: UIViewController {
     }
     
 
+}
+
+extension PhotoDetailViewController: UIImagePickerControllerDelegate {
+    
 }

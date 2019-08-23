@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class PhotoController {
     var photos: [Photo] = []
     
-    func create (_ title: String, _ imageData: Data) {
-        let photo = Photo(title: title, imageData: imageData)
+    func create (_ title: String, _ image: UIImage) {
+        let photo = Photo(title: title, imageData: image)
         photos.append(photo)
     }
     
-    func update (_ photo: Photo, data: Data, title: String) {
+    func update (_ photo: Photo, image: UIImage, title: String) {
         guard let index = photos.firstIndex(of: photo) else { return }
         photos[index].title = title
-        photos[index].imageData = data
+        photos[index].imageData = image
     }
 }

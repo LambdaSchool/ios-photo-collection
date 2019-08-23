@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 struct Photo: Equatable {
     var title: String
-    var imageData: Data
+    var imageData: UIImage
 }
