@@ -23,14 +23,28 @@ class ThemeSelectionViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveTapped(_ sender: Any) {
+        let selected = themePicker.selectedRow(inComponent: 0)
+        themeHelper?.setThemePreference(to: ThemeColor.allCases[selected])
+        print (themeHelper?.themePreference ?? "")
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+extension ThemeSelectionViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ThemeColor.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ThemeColor.allCases[row].rawValue
+    }
 }

@@ -8,10 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoItem"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    @IBOutlet var photosCollectionView: UICollectionView!
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,37 +29,65 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "showPhotoDetailVCSegue","addPhotoSegue":
+            guard let VC = segue.destination as? PhotoDetailViewController else { return }
+            VC.themeHelper = self.themeHelper
+            VC.photoController = self.photoController
+            if segue.identifier == "showPhotoDetailVCSegue" {
+                if let selected = photosCollectionView.indexPathsForSelectedItems {
+                    VC.photo = photoController.photos[selected[0].item]
+                }
+            }
+        case "selectThemeSegue":
+            guard let VC = segue.destination as? ThemeSelectionViewController else { return }
+            VC.themeHelper = self.themeHelper
+        default:
+            break
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else {return UICollectionViewCell()}
+        
+        let photo = photoController.photos[indexPath.item]
+        cell.photo = photo
         return cell
     }
 
+    func setTheme() {
+        guard let theme = themeHelper.themePreference else { return }
+        switch theme {
+        case .blue:
+            view.backgroundColor = .blue
+        case .dark:
+            view.backgroundColor = .darkGray
+        case .light:
+            view.backgroundColor = .white
+        }
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

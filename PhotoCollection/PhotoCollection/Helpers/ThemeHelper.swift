@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ThemeColor: String {
+enum ThemeColor: String, CaseIterable {
     case dark = "Dark"
     case light = "Light"
     case blue = "Sky"
