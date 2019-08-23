@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Photo Collection
+//  PhotoCollection
 //
-//  Created by William Chen on 8/22/19.
-//  Copyright © 2019 William Chen. All rights reserved.
+//  Created by Austin Potts on 8/22/19.
+//  Copyright © 2019 Lambda School. All rights reserved.
 //
 
 import UIKit
