@@ -19,45 +19,75 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
+        
+        
 
         // Do any additional setup after loading the view.
     }
-    
+    func setTheme() {
+        guard let theme = themeHelper?.themePreference else {
+            view.backgroundColor = .darkGray
+            return
+        }
+        if theme == "Dark" {
+            view.backgroundColor = .darkGray
+        } else {
+            view.backgroundColor = .blue
+        }
+    }
 
     @IBAction func addPhotoTapped(_ sender: Any) {
-        let photoLibrary = PHPhotoLibrary.authorizationStatus()
+        //let photoLibrary = PHPhotoLibrary.authorizationStatus()
         
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) && photoLibrary == .authorized {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             var imagePicker = UIImagePickerController()
-            imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary;
             imagePicker.allowsEditing = true
+//            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        imageView.image = image
-        dismiss(animated:true, completion: nil)
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+//        imageView.image = image
+//        dismiss(animated:true, completion: nil)
+//    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
-
     
     @IBAction func saveTapped(_ sender: Any) {
         guard let name = nameTextField.text, let data = imageView.image else { return }
+        if let photo = photo {
+            photoController?.update(from: photo, title: name, data: data)
+        } else {
         photoController?.addPhoto(title: name, data: data)
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func updateViews() {
+        setTheme()
+        
+        if let photo = photo {
+            nameTextField.text = photo.title
+            imageView.image = photo.data
+        }
     }
-    */
+ 
 
 }
