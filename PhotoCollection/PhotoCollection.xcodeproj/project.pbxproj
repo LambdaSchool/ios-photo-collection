@@ -14,6 +14,7 @@
 		841606322334391E00A03FEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841606302334391E00A03FEE /* LaunchScreen.storyboard */; };
 		8416063A2334398B00A03FEE /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841606392334398B00A03FEE /* Photo.swift */; };
 		8416063C23343A4500A03FEE /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416063B23343A4500A03FEE /* PhotoController.swift */; };
+		8416063E23343DDF00A03FEE /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416063D23343DDF00A03FEE /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		841606332334391E00A03FEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841606392334398B00A03FEE /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8416063B23343A4500A03FEE /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		8416063D23343DDF00A03FEE /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				841606332334391E00A03FEE /* Info.plist */,
 				841606392334398B00A03FEE /* Photo.swift */,
 				8416063B23343A4500A03FEE /* PhotoController.swift */,
+				8416063D23343DDF00A03FEE /* ThemeHelper.swift */,
 			);
 			path = PhotoCollection;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				8416063A2334398B00A03FEE /* Photo.swift in Sources */,
 				8416062A2334391700A03FEE /* ViewController.swift in Sources */,
 				8416063C23343A4500A03FEE /* PhotoController.swift in Sources */,
+				8416063E23343DDF00A03FEE /* ThemeHelper.swift in Sources */,
 				841606282334391700A03FEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
