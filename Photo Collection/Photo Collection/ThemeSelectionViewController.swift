@@ -11,18 +11,16 @@ import UIKit
 class ThemeSelectionViewController: UIViewController {
     
     var themeHelper: ThemeHelper?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     //MARK: Actions
     
     @IBAction func selectDarkTheme(_ sender: UIButton) {
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectOrangeTheme(_ sender: UIButton) {
+        themeHelper?.setThemePreferenceToOrange()
+        dismiss(animated: true, completion: nil)
     }
 }
