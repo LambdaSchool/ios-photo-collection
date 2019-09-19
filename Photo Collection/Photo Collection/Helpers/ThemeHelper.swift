@@ -23,15 +23,15 @@ class ThemeHelper {
         userDefaults.set("Dark", forKey: themePreferenceKey)
     }
     
-    func setThemePreferenceToMaroon() {
+    func setThemePreferenceToMagenta() {
         let userDefaults = UserDefaults.standard
-        userDefaults.set("Maroon", forKey: themePreferenceKey)
+        userDefaults.set("Magenta", forKey: themePreferenceKey)
     }
     
     var themePreference: String? {
         let darkPreference = UserDefaults.standard.string(forKey: "Dark")
         return darkPreference
-        let maroonPreference = UserDefaults.standard.string(forKey: "Maroon")
-        return maroonPreference
+        let magentaPreference = UserDefaults.standard.string(forKey: "Magenta")
+        return magentaPreference
     }
 }

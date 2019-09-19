@@ -18,9 +18,25 @@ class PhotoDetailViewController: UIViewController {
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    
+    // MARK: - Methods
+    func setTheme() {
+        guard let currentTheme = themeHelper?.themePreference else { return }
+        if currentTheme == "Dark" {
+            view.backgroundColor = UIColor.darkGray
+        } else {
+            view.backgroundColor = UIColor.magenta
+        }
+    }
+    
+    func updateViews() {
+        setTheme()
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
     
     // MARK: - Actions
