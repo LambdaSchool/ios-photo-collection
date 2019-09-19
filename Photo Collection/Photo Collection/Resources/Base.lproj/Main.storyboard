@@ -67,7 +67,7 @@
                                     <constraint firstItem="ly8-pD-fzb" firstAttribute="top" secondItem="ipV-Hl-0UP" secondAttribute="top" id="xlh-W3-0VD"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="image" destination="h8V-HA-x4y" id="sNg-46-7D7"/>
+                                    <outlet property="imageView" destination="h8V-HA-x4y" id="sNg-46-7D7"/>
                                     <outlet property="textLabel" destination="I2m-rk-k2Z" id="7Z2-oi-4rk"/>
                                     <segue destination="JSz-x9-yHq" kind="show" identifier="ShowPhotoSegue" id="clJ-47-khr"/>
                                 </connections>
