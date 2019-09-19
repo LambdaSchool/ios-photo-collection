@@ -13,6 +13,7 @@
 		FA12673E23340A8C008C31C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12673C23340A8C008C31C0 /* LaunchScreen.storyboard */; };
 		FA12674A23340BEE008C31C0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12674923340BEE008C31C0 /* Photo.swift */; };
 		FA12674E23340CDC008C31C0 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12674D23340CDC008C31C0 /* PhotoController.swift */; };
+		FA12675023341189008C31C0 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12674F23341189008C31C0 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FA12673F23340A8C008C31C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA12674923340BEE008C31C0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		FA12674D23340CDC008C31C0 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		FA12674F23341189008C31C0 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		FA12674723340B17008C31C0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA12674F23341189008C31C0 /* ThemeHelper.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				FA12674E23340CDC008C31C0 /* PhotoController.swift in Sources */,
 				FA12674A23340BEE008C31C0 /* Photo.swift in Sources */,
 				FA12673423340A8A008C31C0 /* AppDelegate.swift in Sources */,
+				FA12675023341189008C31C0 /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
