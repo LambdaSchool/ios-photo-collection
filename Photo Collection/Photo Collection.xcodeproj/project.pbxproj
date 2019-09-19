@@ -16,6 +16,7 @@
 		FA12675023341189008C31C0 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12674F23341189008C31C0 /* ThemeHelper.swift */; };
 		FA126754233421F7008C31C0 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA126753233421F7008C31C0 /* PhotosCollectionViewController.swift */; };
 		FA126756233430F5008C31C0 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA126755233430F5008C31C0 /* PhotosCollectionViewCell.swift */; };
+		FA126758233432DB008C31C0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA126757233432DB008C31C0 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA12674F23341189008C31C0 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		FA126753233421F7008C31C0 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		FA126755233430F5008C31C0 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA126757233432DB008C31C0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				FA12674F23341189008C31C0 /* ThemeHelper.swift */,
 				FA126753233421F7008C31C0 /* PhotosCollectionViewController.swift */,
+				FA126757233432DB008C31C0 /* PhotoDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				FA12674E23340CDC008C31C0 /* PhotoController.swift in Sources */,
 				FA12674A23340BEE008C31C0 /* Photo.swift in Sources */,
 				FA12673423340A8A008C31C0 /* AppDelegate.swift in Sources */,
+				FA126758233432DB008C31C0 /* PhotoDetailViewController.swift in Sources */,
 				FA126754233421F7008C31C0 /* PhotosCollectionViewController.swift in Sources */,
 				FA12675023341189008C31C0 /* ThemeHelper.swift in Sources */,
 				FA126756233430F5008C31C0 /* PhotosCollectionViewCell.swift in Sources */,
