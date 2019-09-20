@@ -125,7 +125,4 @@ class PhotosCollectionViewController: UICollectionViewController {
         } else { return }
         
     }
-    
-    
-
 }

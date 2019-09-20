@@ -16,10 +16,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
             updateViews()
         }
     }
-    
-    
-    
-    
+   
     
     //MARK: - Outlets
     @IBOutlet weak var textLabel: UILabel!
@@ -35,7 +32,4 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         imageView.image = image
         
     }
-    
-    
-    
 }

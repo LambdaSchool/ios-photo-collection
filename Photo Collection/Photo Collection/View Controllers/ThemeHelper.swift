@@ -18,8 +18,6 @@ class ThemeHelper {
     }
 //    ^^ should return an optional string because if the user's theme preference hasn't been saved, the value returned from UserDefaults will be nil.
     
-    
-    
     func setThemePreferenceToDark() {
         
         let userDefaults = UserDefaults.standard
@@ -41,8 +39,6 @@ class ThemeHelper {
             return
         }
     }
-
-    
 }
 
 

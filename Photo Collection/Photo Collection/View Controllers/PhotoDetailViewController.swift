@@ -25,15 +25,35 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-
-        
     }
     
+    
+    
+    // MARK: - IBActions
+    
+    // Add Photo
     @IBAction func addPhoto(_ sender: UIButton) {
     }
-    @IBAction func saveButton(_ sender: UIBarButtonItem) {
-    }
     
+    
+    
+    // Save Button
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        
+        guard let title = textField.text,
+            let imageData = imageView.image,
+            title != "",
+            imageData != nil else { return }
+        
+        if let photo = photo {
+           // photoController?.updatePhoto(photo: photo, imageData: imageData, title: textField.text)
+            
+        } else {
+            //photoController?.createPhoto(imageData: imageData, title: title)
+        }
+        
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     
     //MARK: - SET Theme function
@@ -54,21 +74,4 @@ class PhotoDetailViewController: UIViewController {
         guard let photo = photo else { return }
         imageView.image = UIImage(data: photo.imageData)
     }
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
