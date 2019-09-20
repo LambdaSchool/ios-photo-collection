@@ -25,7 +25,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
     }
 
     
@@ -119,14 +118,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         guard let theme = themeHelper.themePreference else { return }
         
         if theme == "Dark" {
-            view.backgroundColor = .darkGray
+            collectionView.backgroundColor = .darkGray
         }
         else if theme == "Green" {
-            view.backgroundColor = .green
+            collectionView.backgroundColor = .green
         } else { return }
-        
-        
-        
         
     }
     

@@ -24,6 +24,7 @@ class PhotoDetailViewController: UIViewController {
     // VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
 
         
     }
@@ -32,6 +33,33 @@ class PhotoDetailViewController: UIViewController {
     }
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
     }
+    
+    
+    
+    //MARK: - SET Theme function
+    func setTheme() {
+        guard let theme = themeHelper?.themePreference else { return }
+        
+        if theme == "Dark" {
+            view.backgroundColor = .darkGray
+        }
+        else if theme == "Green" {
+            view.backgroundColor = .green
+        } else { return }
+    }
+    
+    
+    func updateViews() {
+        setTheme()
+        guard let photo = photo else { return }
+        imageView.image = UIImage(data: photo.imageData)
+    }
+    
+    
+    
+    
+    
+    
     
     /*
     // MARK: - Navigation
