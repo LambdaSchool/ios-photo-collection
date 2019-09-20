@@ -10,12 +10,11 @@ import Foundation
 
 
 class ThemeHelper {
-    
-    let themePreferenceKey: String = "themePreference" 
+   
     
     
     var themePreference: String? {
-        return UserDefaults.standard.string(forKey: themePreferenceKey)
+        return UserDefaults.standard.string(forKey: .themePreferenceKey)
     }
 //    ^^ should return an optional string because if the user's theme preference hasn't been saved, the value returned from UserDefaults will be nil.
     
@@ -24,13 +23,13 @@ class ThemeHelper {
     func setThemePreferenceToDark() {
         
         let userDefaults = UserDefaults.standard
-        userDefaults.set("Dark", forKey: themePreferenceKey)
+        userDefaults.set("Dark", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToGreen() {
         
         let userDefaults = UserDefaults.standard
-        userDefaults.set("Green", forKey: themePreferenceKey)
+        userDefaults.set("Green", forKey: .themePreferenceKey)
     }
     
     
@@ -38,6 +37,8 @@ class ThemeHelper {
     init() {
         if themePreference == nil {
             setThemePreferenceToDark()
+        } else {
+            return
         }
     }
 

@@ -18,6 +18,7 @@
 		FA126756233430F5008C31C0 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA126755233430F5008C31C0 /* PhotosCollectionViewCell.swift */; };
 		FA126758233432DB008C31C0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA126757233432DB008C31C0 /* PhotoDetailViewController.swift */; };
 		FA12675A2334372E008C31C0 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1267592334372E008C31C0 /* ThemeSelectionViewController.swift */; };
+		FA12675C23344C5A008C31C0 /* StringKeysAndIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12675B23344C5A008C31C0 /* StringKeysAndIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FA126755233430F5008C31C0 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA126757233432DB008C31C0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		FA1267592334372E008C31C0 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
+		FA12675B23344C5A008C31C0 /* StringKeysAndIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringKeysAndIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,8 @@
 		FA12673223340A8A008C31C0 /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
+				FA12673F23340A8C008C31C0 /* Info.plist */,
+				FA12675B23344C5A008C31C0 /* StringKeysAndIdentifiers.swift */,
 				FA12674823340B25008C31C0 /* Controllers */,
 				FA12674B23340C55008C31C0 /* Model Controllers */,
 				FA12674623340B02008C31C0 /* Models */,
@@ -83,7 +87,6 @@
 				FA12673323340A8A008C31C0 /* AppDelegate.swift */,
 				FA12673A23340A8C008C31C0 /* Assets.xcassets */,
 				FA12673C23340A8C008C31C0 /* LaunchScreen.storyboard */,
-				FA12673F23340A8C008C31C0 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				FA126754233421F7008C31C0 /* PhotosCollectionViewController.swift in Sources */,
 				FA12675023341189008C31C0 /* ThemeHelper.swift in Sources */,
 				FA126756233430F5008C31C0 /* PhotosCollectionViewCell.swift in Sources */,
+				FA12675C23344C5A008C31C0 /* StringKeysAndIdentifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

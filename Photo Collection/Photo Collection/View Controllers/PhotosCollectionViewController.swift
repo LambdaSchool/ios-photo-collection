@@ -11,6 +11,10 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
+    // MARK: - Instances of other files
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,33 +28,58 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == String.showPhotoSegue {
+            
+            if let photoDetailVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView?.indexPathsForSelectedItems?.first {
+                
+                photoDetailVC.themeHelper = themeHelper
+                photoDetailVC.photoController = photoController
+                photoDetailVC.photo = photoController.photos[indexPath.row]
+            }
+            
+                
+        } else if segue.identifier == String.addNewPhotoSegue {
+            
+            if let photoDetailVC = segue.destination as? PhotoDetailViewController {
+                photoDetailVC.themeHelper = themeHelper
+                photoDetailVC.photoController = photoController
+            }
+            
+        } else if segue.identifier == String.selectThemeSegue {
+            
+            if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
+                themeSelectionVC.themeHelper = themeHelper
+                
+            }
+        }
+ 
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//      I think this should default to 1 **
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
+        
+        let photo = photoController.photos[indexPath.item]
+        cell.photo = photo
     
         return cell
     }
@@ -85,5 +114,22 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    func setTheme() {
+        guard let theme = themeHelper.themePreference else { return }
+        
+        if theme == "Dark" {
+            view.backgroundColor = .darkGray
+        }
+        else if theme == "Green" {
+            view.backgroundColor = .green
+        } else { return }
+        
+        
+        
+        
+    }
+    
+    
 
 }
