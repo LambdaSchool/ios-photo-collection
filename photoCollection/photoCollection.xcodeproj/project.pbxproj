@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F56108523344C7200BA519F /* ThemeSettingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56108423344C7200BA519F /* ThemeSettingKey.swift */; };
 		4F89FBF52334130200BFE9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89FBF42334130200BFE9C5 /* AppDelegate.swift */; };
 		4F89FBF72334130200BFE9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F89FBF62334130200BFE9C5 /* SceneDelegate.swift */; };
 		4F89FBFC2334130200BFE9C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F89FBFA2334130200BFE9C5 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F56108423344C7200BA519F /* ThemeSettingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingKey.swift; sourceTree = "<group>"; };
 		4F89FBF12334130100BFE9C5 /* photoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F89FBF42334130200BFE9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F89FBF62334130200BFE9C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +83,7 @@
 				4F89FBFD2334130500BFE9C5 /* Assets.xcassets */,
 				4F89FBFF2334130500BFE9C5 /* LaunchScreen.storyboard */,
 				4F89FC022334130500BFE9C5 /* Info.plist */,
-				4F89FC0C233414C000BFE9C5 /* ThemeHelper.swift */,
+				4F56108423344C7200BA519F /* ThemeSettingKey.swift */,
 			);
 			path = photoCollection;
 			sourceTree = "<group>";
@@ -115,6 +117,7 @@
 		4F89FC19233417B700BFE9C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F89FC0C233414C000BFE9C5 /* ThemeHelper.swift */,
 				4F89FC17233417B000BFE9C5 /* PhotosCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -200,6 +203,7 @@
 				4F89FC14233415BD00BFE9C5 /* PhotoDetailViewController.swift in Sources */,
 				4F89FC0F2334150800BFE9C5 /* PhotosCollectionViewController.swift in Sources */,
 				4F89FC0D233414C000BFE9C5 /* ThemeHelper.swift in Sources */,
+				4F56108523344C7200BA519F /* ThemeSettingKey.swift in Sources */,
 				4F89FBF72334130200BFE9C5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

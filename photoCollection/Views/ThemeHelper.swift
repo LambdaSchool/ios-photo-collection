@@ -8,11 +8,22 @@
 
 import Foundation
 
-extension String {
-    static var themePreferenceKey = "ThemePreferenceKey" }
-
-    class ThemeHelper {
+class ThemeHelper {
     
+    //MARK: Properties
+    var themePreference: String? {
+            return UserDefaults.standard.string(forKey: .themePreferenceKey)
+        }
+    
+    init () {
+        if themePreference == nil {
+            setThemePreferenceToDark()
+        } else {
+            return
+        }
+    }
+//    let themePreferenceKey: String = "ThemePreferenceKey"
+        
         //MARK: Methods
 // use the set methods of user defaults set the value as type string and preference key you created above as the key
     func setThemePreferenceToDark() {
@@ -23,7 +34,7 @@ extension String {
         let setThemePreferenceToLight = UserDefaults.standard.set("Light", forKey: .themePreferenceKey)
         }
         
-        var themePreference: (String?) -> String {
-            
-        }
+    
 }
+
+
