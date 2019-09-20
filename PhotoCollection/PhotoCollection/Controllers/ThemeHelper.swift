@@ -25,7 +25,7 @@ class ThemeHelper {
         if themePreference == nil {
             setThemePreferenceToDark()
         } else if randomColor == nil {
-            randomColor = UIColor.white
+            randomColor = UIColor.gray
         }
     }
     

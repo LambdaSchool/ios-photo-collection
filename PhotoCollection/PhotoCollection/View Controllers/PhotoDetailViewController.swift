@@ -19,18 +19,14 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoTextField: UITextField!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    // MARK: Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
         updateViews()
     }
-    
-//    // MARK: Methods
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//        updateViews()
-//    }
     
     func setTheme() {
         guard let themeHelper = themeHelper, let themePreference = themeHelper.themePreference else { return }
@@ -89,5 +85,6 @@ extension PhotoDetailViewController: UIImagePickerControllerDelegate {
         }
         picker.dismiss(animated: true)
         photoImageView.image = image
+        
     }
 }

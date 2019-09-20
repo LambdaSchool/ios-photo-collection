@@ -43,14 +43,18 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt4-Pk-xUH">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
-                                                <state key="normal" title="Dark"/>
+                                                <state key="normal" title="Dark">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="selectDarkTheme:" destination="ata-L6-BHz" eventType="touchUpInside" id="ns6-8q-6ul"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-Q9-hGU">
                                                 <rect key="frame" x="87" y="0.0" width="57" height="30"/>
-                                                <state key="normal" title="Random"/>
+                                                <state key="normal" title="Random">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="selectRandomTheme:" destination="ata-L6-BHz" eventType="touchUpInside" id="N2c-B9-2V0"/>
                                                 </connections>
@@ -60,7 +64,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Tfk-KE-yNC" firstAttribute="centerX" secondItem="cJn-nd-786" secondAttribute="centerX" id="88Q-Bd-687"/>
                             <constraint firstItem="Tfk-KE-yNC" firstAttribute="top" secondItem="9RF-LP-PCX" secondAttribute="top" constant="50" id="c6k-EG-PJv"/>
@@ -80,8 +84,8 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xY8-12-uaF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bTK-JT-Ohx">
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="bTK-JT-Ohx">
                             <size key="itemSize" width="150" height="175"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -109,6 +113,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Image Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJx-Vh-QAf">
                                                             <rect key="frame" x="0.0" y="150" width="150" height="25"/>
+                                                            <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -177,20 +182,23 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-jo-ZZ3">
-                                <rect key="frame" x="171" y="544" width="72" height="30"/>
-                                <state key="normal" title="Add Photo"/>
+                                <rect key="frame" x="166.5" y="544" width="81" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="addPhotoTabbed:" destination="Hxn-3K-Lh3" eventType="touchUpInside" id="c8W-wH-Jqj"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Photo Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KOs-vJ-Rcl">
-                                <rect key="frame" x="30" y="594" width="354" height="30"/>
+                                <rect key="frame" x="30" y="597" width="354" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KOs-vJ-Rcl" firstAttribute="top" secondItem="aPD-jo-ZZ3" secondAttribute="bottom" constant="20" id="0Hk-qR-5Qy"/>
                             <constraint firstItem="aPD-jo-ZZ3" firstAttribute="centerX" secondItem="Ndd-pL-2Vs" secondAttribute="centerX" id="N0H-Gz-Cst"/>
