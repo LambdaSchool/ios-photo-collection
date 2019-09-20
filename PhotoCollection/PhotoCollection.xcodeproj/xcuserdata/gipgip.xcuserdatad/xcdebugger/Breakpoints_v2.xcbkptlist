@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoCollection/View Controllers/PhotosCollectionViewController.swift"
-            timestampString = "590649422.879729"
+            timestampString = "590650295.009119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoCollection/View Controllers/PhotosCollectionViewController.swift"
-            timestampString = "590649422.879793"
+            timestampString = "590650295.009215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoCollection/Controllers/ThemeHelper.swift"
-            timestampString = "590649422.87984"
+            timestampString = "590650295.009267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoCollection/View Controllers/PhotosCollectionViewController.swift"
-            timestampString = "590649422.879886"
+            timestampString = "590650295.009321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -122,23 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoCollection/View Controllers/PhotoDetailViewController.swift"
-            timestampString = "590649422.879976"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "saveTabbed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PhotoCollection/View Controllers/PhotoDetailViewController.swift"
-            timestampString = "590649422.880294"
+            timestampString = "590650295.00941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -154,11 +138,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoCollection/View Controllers/PhotoDetailViewController.swift"
-            timestampString = "590649422.880505"
+            timestampString = "590650295.009449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "saveTabbed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoCollection/View Controllers/PhotoDetailViewController.swift"
+            timestampString = "590650295.009485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoCollection/View Controllers/PhotoDetailViewController.swift"
-            timestampString = "590649422.880707"
+            timestampString = "590650295.009519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "updateViews()"
             landmarkType = "7">
          </BreakpointContent>
