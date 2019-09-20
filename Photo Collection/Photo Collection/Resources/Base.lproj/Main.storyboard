@@ -69,7 +69,7 @@
                                 <connections>
                                     <outlet property="photoCellImageView" destination="GSK-Vg-cmA" id="SFz-w1-A9o"/>
                                     <outlet property="photoCellLabel" destination="fsb-L3-tRr" id="AwU-J3-AK4"/>
-                                    <segue destination="dnn-dH-ONS" kind="show" identifier="ShowImageInfoSegue" id="TDb-xN-Li6"/>
+                                    <segue destination="09U-co-Mbg" kind="show" identifier="ShowImageInfoSegue" id="Qex-qB-kcP"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -81,12 +81,12 @@
                     <navigationItem key="navigationItem" id="cmG-2N-1hP">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="kTj-3D-q79">
                             <connections>
-                                <segue destination="utz-lt-iot" kind="presentation" identifier="SelectThemeModalSegue" id="jha-yR-OwY"/>
+                                <segue destination="N9o-b6-QOp" kind="presentation" identifier="SelectThemeModalSegue" id="LHU-gQ-m9j"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zy8-Hk-p9k">
                             <connections>
-                                <segue destination="dnn-dH-ONS" kind="show" identifier="AddNewPhotoSegue" id="z1y-Y1-bzT"/>
+                                <segue destination="09U-co-Mbg" kind="show" identifier="AddNewPhotoSegue" id="JKE-dP-is2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,55 +96,46 @@
             <point key="canvasLocation" x="1086.9565217391305" y="35.491071428571423"/>
         </scene>
         <!--Theme Selection View Controller-->
-        <scene sceneID="1Dp-fD-QXn">
+        <scene sceneID="gFk-Hi-Z97">
             <objects>
-                <viewController id="RJv-Q1-waj" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="2w0-sF-MIw">
+                <viewController id="N9o-b6-QOp" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MF2-rM-Vfm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme you would like to use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwq-cw-CaP">
-                                <rect key="frame" x="65" y="128" width="284" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a theme you would like to use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwq-cw-CaP">
+                                <rect key="frame" x="65" y="73" width="284" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="4uc-yj-tRR">
-                                <rect key="frame" x="90" y="188.5" width="234" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-dC-VN2">
-                                        <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
-                                        <state key="normal" title="Dark"/>
-                                        <connections>
-                                            <action selector="selectDarkTheme:" destination="RJv-Q1-waj" eventType="touchUpInside" id="M5k-x5-8XQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5U-DQ-J0L">
-                                        <rect key="frame" x="174" y="0.0" width="60" height="30"/>
-                                        <state key="normal" title="Magenta"/>
-                                        <connections>
-                                            <action selector="selectMagentaTheme:" destination="RJv-Q1-waj" eventType="touchUpInside" id="dDV-v4-3Hv"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hq-Vd-Rdg">
+                                <rect key="frame" x="84" y="145" width="51" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkMode:" destination="N9o-b6-QOp" eventType="touchUpInside" id="7Z9-yQ-3LJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHo-9f-9Ph">
+                                <rect key="frame" x="249" y="145" width="95" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Magenta"/>
+                                <connections>
+                                    <action selector="selectMagentaMode:" destination="N9o-b6-QOp" eventType="touchUpInside" id="5fH-Tb-X5b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Hwq-cw-CaP" firstAttribute="top" secondItem="QeO-pG-zwb" secondAttribute="top" constant="40" id="A6j-Tn-rca"/>
-                            <constraint firstItem="QeO-pG-zwb" firstAttribute="trailing" secondItem="4uc-yj-tRR" secondAttribute="trailing" constant="90" id="BiT-mE-6zJ"/>
-                            <constraint firstItem="4uc-yj-tRR" firstAttribute="leading" secondItem="QeO-pG-zwb" secondAttribute="leading" constant="90" id="H7C-e1-mXw"/>
-                            <constraint firstItem="4uc-yj-tRR" firstAttribute="top" secondItem="Hwq-cw-CaP" secondAttribute="bottom" constant="40" id="NbW-D2-6ZI"/>
-                            <constraint firstItem="Hwq-cw-CaP" firstAttribute="leading" secondItem="QeO-pG-zwb" secondAttribute="leading" constant="65" id="Ogk-oL-Ani"/>
-                            <constraint firstItem="QeO-pG-zwb" firstAttribute="trailing" secondItem="Hwq-cw-CaP" secondAttribute="trailing" constant="65" id="mny-xg-y32"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QeO-pG-zwb"/>
+                        <viewLayoutGuide key="safeArea" id="yJc-6K-nm1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cxg-kQ-MUY"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q1n-jL-rVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="diw-uW-Iha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3021.739130434783" y="-620.08928571428567"/>
+            <point key="canvasLocation" x="2112" y="-636"/>
         </scene>
         <!--Title-->
         <scene sceneID="qgk-7m-Exl">
@@ -191,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2E-nt-WA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="694"/>
+            <point key="canvasLocation" x="2112" y="686"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dNc-gF-Fb2">
@@ -211,44 +202,8 @@
             </objects>
             <point key="canvasLocation" x="176.81159420289856" y="35.491071428571423"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ArM-hW-KSr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dnn-dH-ONS" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HuA-RK-Tco">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="09U-co-Mbg" kind="relationship" relationship="rootViewController" id="2Ay-Ob-U93"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0e0-NE-XgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2113" y="694"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dy8-GF-fvo">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="utz-lt-iot" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xYf-my-cqh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="RJv-Q1-waj" kind="relationship" relationship="rootViewController" id="cXB-GK-Yig"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uUe-PI-Ta9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2111.594202898551" y="-620.08928571428567"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="z1y-Y1-bzT"/>
+        <segue reference="JKE-dP-is2"/>
     </inferredMetricsTieBreakers>
 </document>

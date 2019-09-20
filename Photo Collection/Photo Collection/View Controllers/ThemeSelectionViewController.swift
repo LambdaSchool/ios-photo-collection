@@ -18,12 +18,22 @@ class ThemeSelectionViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction func selectDarkTheme(_ sender: UIButton) {
+//    @IBAction func selectDarkTheme(_ sender: UIButton) {
+//        themeHelper?.setThemePreferenceToDark()
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    @IBAction func selectMagentaTheme(_ sender: UIButton) {
+//        themeHelper?.setThemePreferenceToMagenta()
+//        dismiss(animated: true, completion: nil)
+//    }
+    
+    @IBAction func selectDarkMode(_ sender: UIButton) {
         themeHelper?.setThemePreferenceToDark()
         dismiss(animated: true, completion: nil)
     }
-
-    @IBAction func selectMagentaTheme(_ sender: UIButton) {
+    
+    @IBAction func selectMagentaMode(_ sender: UIButton) {
         themeHelper?.setThemePreferenceToMagenta()
         dismiss(animated: true, completion: nil)
     }

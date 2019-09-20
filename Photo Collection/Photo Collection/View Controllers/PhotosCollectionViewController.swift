@@ -16,13 +16,20 @@ class PhotosCollectionViewController: UICollectionViewController {
     let photoController = PhotoController()
     let themeHelper = ThemeHelper(themePreferenceKey: "Dark") // TODO: Come back and edit
     
+    // MARK: - View Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        collectionView.reloadData()
+    }
+    
     // MARK: - Methods
     func setTheme() {
         let currentTheme = themeHelper.themePreference
         if currentTheme == "Dark" {
-            view.backgroundColor = UIColor.darkGray
+            collectionView.backgroundColor = UIColor.darkGray
         } else {
-            view.backgroundColor = UIColor.magenta
+            collectionView.backgroundColor = UIColor.magenta
         }
     }
     
@@ -58,4 +65,6 @@ class PhotosCollectionViewController: UICollectionViewController {
             selectTheme.themeHelper = themeHelper
         }
     }
+    
+    @IBAction func unwindToCollectionView(for unwindSegue: UIStoryboardSegue) {}
 }
