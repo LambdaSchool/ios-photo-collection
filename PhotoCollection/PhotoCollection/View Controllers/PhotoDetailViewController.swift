@@ -13,35 +13,33 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
-//    let pickerController = UIImagePickerController()
     
     @IBOutlet weak var navigationTitle: UINavigationItem!
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoTextField: UITextField!
     
-    // MARK: Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-//        pickerController.delegate = self
-//        pickerController.allowsEditing = true
-//        pickerController.mediaTypes = ["public.image", "public.movie"]
-//        pickerController.sourceType = .photoLibrary
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateViews()
     }
+    
+//    // MARK: Methods
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        // Do any additional setup after loading the view.
+//        updateViews()
+//    }
     
     func setTheme() {
         guard let themeHelper = themeHelper, let themePreference = themeHelper.themePreference else { return }
         
         switch themePreference {
         case "Dark":
-            view.backgroundColor = UIColor(hue: 360, saturation: 0, brightness: 8, alpha: 1)
+            view.backgroundColor = UIColor.gray
         case "Random":
-            view.backgroundColor = UIColor(hue: CGFloat(themeHelper.hueValue), saturation: 70, brightness: 70, alpha: 1)
+            view.backgroundColor = themeHelper.randomColor
         default:
             print("Invalid themePreference")
             return
@@ -57,7 +55,11 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
     }
 
     @IBAction func addPhotoTabbed(_ sender: UIButton) {
-        
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.allowsEditing = true
+        pickerController.sourceType = .photoLibrary
+        present(pickerController, animated: true)
     }
     
     @IBAction func saveTabbed(_ sender: UIBarButtonItem) {
@@ -79,10 +81,13 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
     }
 }
 
-//extension PhotoDetailViewController: UIImagePickerControllerDelegate {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        guard let image = info[.editedImage] as? UIImage else { pickerController(picker, didSelect: nil) }
-//
-//        pickerController(picker, didSelect: image)
-//    }
-//}
+extension PhotoDetailViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        picker.dismiss(animated: true)
+        photoImageView.image = image
+    }
+}

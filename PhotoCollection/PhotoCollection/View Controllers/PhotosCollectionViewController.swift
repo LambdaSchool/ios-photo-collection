@@ -15,14 +15,18 @@ class PhotosCollectionViewController: UICollectionViewController {
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setTheme()
-        
+        collectionView.reloadData()
     }
+
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Register cell classes
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        setTheme()
+//    }
 
     // MARK: UICollectionViewDataSource
 
@@ -54,7 +58,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         case "Dark":
             collectionView.backgroundColor = UIColor.gray
         case "Random":
-            collectionView.backgroundColor = UIColor(hue: CGFloat(themeHelper.hueValue), saturation: 70, brightness: 70, alpha: 1)
+            collectionView.backgroundColor = themeHelper.randomColor
         default:
             print("Invalid themePreference")
             return
