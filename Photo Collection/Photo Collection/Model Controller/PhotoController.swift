@@ -7,8 +7,9 @@
 //
 
 import Foundation
-
+    //here is our controller which will do the work for our Photos/Adding photos or updating/Deleting 
 class PhotoController {
+    //MARK: Properties
     var photos: [Photo] = []
     
     func addPhoto(data: Data, title: String) {

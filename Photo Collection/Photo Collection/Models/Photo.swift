@@ -8,7 +8,8 @@
 
 import Foundation
 
-
+    //MARK: Models
+    //Here we created a simple model that explains the Data aka properies of what makes a photo in our application.
 struct Photo: Equatable {
     var imageData: Data
     var title: String
