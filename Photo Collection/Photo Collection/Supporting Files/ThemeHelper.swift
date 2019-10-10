@@ -10,6 +10,13 @@ import Foundation
     //MARK: Settings
 class ThemeHelper{
     
+  // MARK: - Init Method
+  
+  init() {
+      if themePreference == nil {
+          setThemePreferenceToBlue()
+      }
+  }
     
     //MARK: Properties
     static var themePreferenceKey = "themePreferenceKey"
@@ -25,7 +32,7 @@ class ThemeHelper{
     
     var themePreference: String? {
         let userDefaults = UserDefaults.standard
-        return userDefaults.string(forKey: (ThemeHelper.themePreferenceKey))
+        return userDefaults.string(forKey: ThemeHelper.themePreferenceKey)
     }
-//TODO: set up the rest of the settings, part 2 - step 4
+
 }
