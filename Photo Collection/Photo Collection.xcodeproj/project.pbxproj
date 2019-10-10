@@ -17,6 +17,7 @@
 		8335B00B234FD870007DFDDC /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335B00A234FD870007DFDDC /* PhotosCollectionViewController.swift */; };
 		8335B00D234FD9AA007DFDDC /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335B00C234FD9AA007DFDDC /* PhotosCollectionViewCell.swift */; };
 		8335B00F234FE355007DFDDC /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335B00E234FE355007DFDDC /* PhotoDetailViewController.swift */; };
+		8335B011234FE7A2007DFDDC /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335B010234FE7A2007DFDDC /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8335B00A234FD870007DFDDC /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotosCollectionViewController.swift; path = "Photo Collection/Supporting Files/PhotosCollectionViewController.swift"; sourceTree = SOURCE_ROOT; };
 		8335B00C234FD9AA007DFDDC /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		8335B00E234FE355007DFDDC /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = "Photo Collection/Supporting Files/PhotoDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		8335B010234FE7A2007DFDDC /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeSelectionViewController.swift; path = "Photo Collection/Supporting Files/ThemeSelectionViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				8335B00A234FD870007DFDDC /* PhotosCollectionViewController.swift */,
 				8335B00E234FE355007DFDDC /* PhotoDetailViewController.swift */,
+				8335B010234FE7A2007DFDDC /* ThemeSelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27519B6D23073B2000A213F1 /* PhotoController.swift in Sources */,
+				8335B011234FE7A2007DFDDC /* ThemeSelectionViewController.swift in Sources */,
 				27519B6A2307357600A213F1 /* Photo.swift in Sources */,
 				27519B55230665A700A213F1 /* AppDelegate.swift in Sources */,
 				8335B00F234FE355007DFDDC /* PhotoDetailViewController.swift in Sources */,
