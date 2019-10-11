@@ -106,10 +106,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrL-NF-G6K">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
                                         <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="darkButtonPressed:" destination="EfV-uG-2le" eventType="touchUpInside" id="3ls-ys-6ri"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmx-ce-xSD">
                                         <rect key="frame" x="187" y="0.0" width="187" height="30"/>
                                         <state key="normal" title="Blue"/>
+                                        <connections>
+                                            <action selector="blueButtonPressed:" destination="EfV-uG-2le" eventType="touchUpInside" id="Ncz-u0-e6W"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
