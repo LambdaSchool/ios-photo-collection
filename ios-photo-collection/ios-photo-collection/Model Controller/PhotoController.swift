@@ -8,7 +8,8 @@
 
 import Foundation
 
-class PhotoController{
+class PhotoController {
+    
     var photos: [Photo] = []
     
     func create(imageData: Data, title: String){

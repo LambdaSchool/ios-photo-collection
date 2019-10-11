@@ -15,6 +15,7 @@ class ThemeSelectionViewController: UIViewController {
     
     @IBAction func selectDarkTheme(_ sender: Any) {
     }
+    
     var themeHelper: ThemeHelper?
     
     override func viewDidLoad() {
