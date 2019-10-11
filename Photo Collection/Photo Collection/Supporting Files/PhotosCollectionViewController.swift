@@ -21,6 +21,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         
+        
     }
 
     
@@ -28,14 +29,27 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
         switch segue.identifier {
         case "EditPhotoSegue":
-            guard let editPhotoVC = segue.destination as? PhotoDetailViewController else {fatalError()}
+            guard let editPhotoVC = segue.destination as? PhotoDetailViewController,
+                let cell = sender as? PhotosCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell) else {fatalError()}
             editPhotoVC.themeHelper = themeHelper
             editPhotoVC.photoController = photoController
-            editPhotoVC.photo = photoController.photos
-        default:
-            <#code#>
+            editPhotoVC.photo = photoController.photos[indexPath.item]
+        case "CreatePhotoSegue":
+            guard let createPhotoVC = segue.destination as? PhotoDetailViewController else {return}
+            createPhotoVC.themeHelper = themeHelper
+            createPhotoVC.photoController = photoController
+        case "SelectThemeSegue":
+            guard let selectThemeVC = segue.destination as? ThemeSelectionViewController else {return}
+            selectThemeVC.themeHelper = themeHelper
+        case .none:
+            fatalError("There was no segue ID \(String(describing: segue.identifier)) <ERROR>")
+        case .some(_):
+            fatalError("There Was an unknown segue <NOT UNWRAPPED> called during the prepare(for segue:) function")
         }
     }
     
@@ -72,4 +86,6 @@ class PhotosCollectionViewController: UICollectionViewController {
             collectionView.backgroundView?.backgroundColor = UIColor.blue
         }
     }
+    
+    
 }
