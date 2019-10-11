@@ -11,10 +11,10 @@ import Foundation
 class ThemeHelper{
     
   // MARK: - Init Method
-  
+
   init() {
       if themePreference == nil {
-          setThemePreferenceToBlue()
+          setThemePreferenceToDark()
       }
   }
     

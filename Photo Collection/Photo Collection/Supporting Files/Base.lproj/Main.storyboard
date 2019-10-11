@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHs-6P-sdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="997"/>
+            <point key="canvasLocation" x="1087" y="909"/>
         </scene>
         <!--Create Photo-->
         <scene sceneID="lQH-mJ-Qd6">
