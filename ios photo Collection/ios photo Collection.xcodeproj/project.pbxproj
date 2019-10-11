@@ -47,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EF3111323502ABF007C68BC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3EF3111423502BA8007C68BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EF7391123063BB800D61D5C /* Photo.swift */,
+				3E8BD2C9230791B200856FCD /* ThemeHelper.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3EF738F323063B9700D61D5C = {
 			isa = PBXGroup;
 			children = (
@@ -67,14 +83,14 @@
 			isa = PBXGroup;
 			children = (
 				3EF738FF23063B9700D61D5C /* AppDelegate.swift */,
-				3E8BD2C52307913D00856FCD /* PhotoViewController.swift */,
-				3E8BD2C72307916F00856FCD /* ThemeSelectionViewController.swift */,
-				3E8BD2C9230791B200856FCD /* ThemeHelper.swift */,
-				3E4FAB5B23432DC200CD536D /* PhotoCollectionViewController.swift */,
+				3EF3111323502ABF007C68BC /* Controllers */,
 				3E4FAB5D234333F200CD536D /* PhotosCollectionViewController.swift */,
-				3EF7391123063BB800D61D5C /* Photo.swift */,
+				3E8BD2C72307916F00856FCD /* ThemeSelectionViewController.swift */,
+				3E4FAB5B23432DC200CD536D /* PhotoCollectionViewController.swift */,
 				3EF7391323063D8A00D61D5C /* PhotoController.swift */,
+				3E8BD2C52307913D00856FCD /* PhotoViewController.swift */,
 				3EF7390323063B9700D61D5C /* Main.storyboard */,
+				3EF3111423502BA8007C68BC /* Models */,
 				3EF7390623063B9900D61D5C /* Assets.xcassets */,
 				3EF7390823063B9900D61D5C /* LaunchScreen.storyboard */,
 				3EF7390B23063B9900D61D5C /* Info.plist */,
