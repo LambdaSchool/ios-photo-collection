@@ -27,7 +27,7 @@ class ThemeHelper{
     UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
     }
 
-    func setThemePreferenceToYourColorHere(){
+    func setThemePreferenceToColor(){
     UserDefaults.standard.set("Color", forKey: themePreferenceKey)
     }
 }
