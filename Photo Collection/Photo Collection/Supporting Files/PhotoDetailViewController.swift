@@ -30,6 +30,21 @@ class PhotoDetailViewController: UIViewController {
     
     @IBAction func addPhotoPressed(_ sender: UIButton) {
     }
+    //FIXME: set theme, update views last part
+    func setTheme(){
+        guard let themeHelper = themeHelper?.themePreference else {return}
+        if themeHelper == "Dark" {
+            view.backgroundColor = UIColor.darkGray
+        }else {
+            view.backgroundColor = UIColor.blue
+        }
+    }
+    
+    func updateViews() {
+        setTheme()
+        guard let photo = photo else {fatalError("No Photo to Parse")}
+        
+    }
     
 
     /*
