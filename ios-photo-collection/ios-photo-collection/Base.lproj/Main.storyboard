@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" id="2Bz-ZM-MSM">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="hgf-3T-G1g">
                             <connections>
-                                <segue destination="D8a-4L-ezZ" kind="presentation" id="2th-F8-9fM"/>
+                                <segue destination="D8a-4L-ezZ" kind="presentation" identifier="selectThemeSegue" id="2th-F8-9fM"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="p9N-h4-Eo9">
