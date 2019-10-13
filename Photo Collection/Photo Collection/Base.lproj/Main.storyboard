@@ -70,7 +70,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="e1z-mi-tRw" id="yKk-pn-Czy"/>
                                     <outlet property="photoNameLabel" destination="2AC-og-0z2" id="UoM-L2-nlq"/>
-                                    <segue destination="RQy-IW-EvQ" kind="show" identifier="CollectionSegue" id="Q7d-S3-V0P"/>
+                                    <segue destination="RQy-IW-EvQ" kind="show" identifier="CollectionCell" id="Q7d-S3-V0P"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -119,6 +119,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJU-fI-PgK">
                                         <rect key="frame" x="145" y="292" width="84" height="30"/>
                                         <state key="normal" title="Add a Photo"/>
+                                        <connections>
+                                            <action selector="addPhotoTapped:" destination="RQy-IW-EvQ" eventType="touchUpInside" id="xTo-2x-5hm"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1l-Vt-mSE">
                                         <rect key="frame" x="20" y="333" width="334" height="34"/>
@@ -142,8 +145,16 @@
                         <viewLayoutGuide key="safeArea" id="aXt-3h-ZBN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create a Photo" id="YQf-Rf-7RJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Qw2-3q-UHs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Qw2-3q-UHs">
+                            <connections>
+                                <action selector="saveTapped:" destination="RQy-IW-EvQ" id="7hb-wv-lsi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="I3T-Wm-mMI" id="KjK-n9-2cT"/>
+                        <outlet property="nameTextField" destination="w1l-Vt-mSE" id="TZj-H8-leL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHN-al-i7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,10 +183,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v0-RC-Cjg">
                                                 <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                 <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="w6p-yZ-ZK8" eventType="touchUpInside" id="rB9-dc-aKE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RJ-X7-9jA">
                                                 <rect key="frame" x="99" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="Red"/>
+                                                <connections>
+                                                    <action selector="selectRedTheme:" destination="w6p-yZ-ZK8" eventType="touchUpInside" id="qV5-Gg-24e"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -216,6 +233,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Q7d-S3-V0P"/>
+        <segue reference="1ds-iN-tdB"/>
     </inferredMetricsTieBreakers>
 </document>

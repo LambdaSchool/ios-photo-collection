@@ -8,32 +8,36 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "CollectionCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    func updateViews() {
+        setTheme()
+        collectionView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if let photoDetailVC = segue.destination as? PhotoDetailViewController {
+            photoDetailVC.photoController = photoController
+            if segue.identifier == "DetailViewControllerSegue",
+                let indexPath = collectionView.indexPathsForSelectedItems {
+                photoDetailVC.photo = photoController.photos[indexPath[0].item]
+            }
+        } else if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
+            themeSelectionVC.themeHelper = themeHelper
+        }
     }
-    */
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -87,3 +91,4 @@ class PhotosCollectionViewController: UICollectionViewController {
     */
 
 }
+
