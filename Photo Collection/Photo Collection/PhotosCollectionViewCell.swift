@@ -13,5 +13,17 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var photoNameLabel: UILabel!
     
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    func updateViews() {
+        if let imageData = photo?.imageData {
+            imageView.image = UIImage(data: imageData)
+        }
+        photoNameLabel.text = photo?.title
+    }
 
 }
