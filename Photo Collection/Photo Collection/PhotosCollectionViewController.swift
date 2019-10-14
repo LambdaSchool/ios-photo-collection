@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "CollectionCell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
@@ -28,15 +28,22 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let photoDetailVC = segue.destination as? PhotoDetailViewController {
-            photoDetailVC.photoController = photoController
-            if segue.identifier == "DetailViewControllerSegue",
-                let indexPath = collectionView.indexPathsForSelectedItems {
-                photoDetailVC.photo = photoController.photos[indexPath[0].item]
-            }
-        } else if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
-            themeSelectionVC.themeHelper = themeHelper
+        if segue.identifier == "CollectionCell" {
+            guard let getInfo = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+            let photo = photoController.photos[indexPath.item]
+            getInfo.photo = photo
+            getInfo.photoController = photoController
+            getInfo.themeHelper = themeHelper
+        } else if segue.identifier == "DetailViewControllerSegue" {
+            guard let addPhoto = segue.destination as? PhotoDetailViewController else { return }
+            addPhoto.themeHelper = themeHelper
+            addPhoto.photoController = photoController
+        } else if segue.identifier == "ThemeSelectorSegue" {
+            guard let selectTheme = segue.destination as? ThemeSelectionViewController else { return }
+            selectTheme.themeHelper = themeHelper
         }
+        
     }
     // MARK: UICollectionViewDataSource
 
@@ -66,7 +73,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         case "Dark":
             view.backgroundColor = UIColor(hue: 0/360, saturation: 0/100, brightness: 30/100, alpha: 1.0)
         case "Red":
-            view.backgroundColor = UIColor(hue: 40/360, saturation: 55/100, brightness: 100/100, alpha: 1.0)
+            view.backgroundColor = UIColor(hue: 8/360, saturation: 100/100, brightness: 99/100, alpha: 1.0)
         default:
             view.backgroundColor = .white
             

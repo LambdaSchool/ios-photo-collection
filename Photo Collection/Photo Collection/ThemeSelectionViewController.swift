@@ -16,9 +16,18 @@ class ThemeSelectionViewController: UIViewController {
         themeHelper?.setThemePreferenceToDark()
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func unwindToPhotoCollection(_ sender: Any) {
+    navigationController?.popToRootViewController(animated: true)
+        
+    }
+    @IBAction func unwindToPhoto(_ sender: Any) {
+    navigationController?.popToRootViewController(animated: true)
+        
+    }
     
     @IBAction func selectRedTheme(_ sender: UIButton) {
         themeHelper?.setThemePreferenceToRed()
         dismiss(animated: true, completion: nil)
+        
     }
 }

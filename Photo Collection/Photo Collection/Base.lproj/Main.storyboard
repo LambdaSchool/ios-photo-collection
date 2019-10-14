@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x6F-L8-OUS" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="x6F-L8-OUS" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="78.5" y="0.0" width="257" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xz8-bP-ai1">
@@ -81,14 +81,9 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photo Collection" id="Hsn-ak-N4w">
                         <barButtonItem key="backBarButtonItem" title="Photo Collection" id="aig-6c-CSq"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="VRd-jd-VvR">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Skx-nK-aI0">
-                                <rect key="frame" x="20" y="7" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Theme"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="scribble" catalog="system" id="L5A-na-av2">
                             <connections>
-                                <segue destination="w6p-yZ-ZK8" kind="show" identifier="ThemeSelectorSegue" id="ngc-u1-HM5"/>
+                                <segue destination="d23-Db-4zg" kind="show" identifier="ThemeSelectorSegue" id="twI-Go-OWu"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="b3I-Ad-yUw">
@@ -100,7 +95,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ve3-Zg-Xq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947.82608695652186" y="215.625"/>
+            <point key="canvasLocation" x="951" y="216"/>
         </scene>
         <!--Create a Photo-->
         <scene sceneID="eTD-3P-t77">
@@ -158,18 +153,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHN-al-i7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="216"/>
+            <point key="canvasLocation" x="1657" y="216"/>
         </scene>
         <!--PhotoCollection-->
-        <scene sceneID="bOn-jB-A1T">
+        <scene sceneID="IfE-In-aDQ">
             <objects>
-                <viewController id="w6p-yZ-ZK8" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lp2-r3-J8T">
+                <viewController id="d23-Db-4zg" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RL9-Ib-uQm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FJC-lJ-cdf">
-                                <rect key="frame" x="55" y="252" width="305.5" height="75.5"/>
+                                <rect key="frame" x="54.5" y="410.5" width="305.5" height="75.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBM-cj-85l">
                                         <rect key="frame" x="0.0" y="0.0" width="305.5" height="20.5"/>
@@ -178,20 +173,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="DJX-bk-flH">
-                                        <rect key="frame" x="88.5" y="45.5" width="129" height="30"/>
+                                        <rect key="frame" x="88" y="45.5" width="129" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v0-RC-Cjg">
                                                 <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                 <state key="normal" title="Dark"/>
                                                 <connections>
-                                                    <action selector="selectDarkTheme:" destination="w6p-yZ-ZK8" eventType="touchUpInside" id="rB9-dc-aKE"/>
+                                                    <action selector="selectDarkTheme:" destination="d23-Db-4zg" eventType="touchUpInside" id="6Ko-jt-ANY"/>
+                                                    <action selector="unwindToPhotoCollection:" destination="d23-Db-4zg" eventType="touchUpInside" id="mbc-f3-Lsa"/>
+                                                    <segue destination="UuA-xG-oI2" kind="unwind" unwindAction="unwindToPhotoCollectionWithSegue:" id="9Mf-Go-ccg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RJ-X7-9jA">
                                                 <rect key="frame" x="99" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="Red"/>
                                                 <connections>
-                                                    <action selector="selectRedTheme:" destination="w6p-yZ-ZK8" eventType="touchUpInside" id="qV5-Gg-24e"/>
+                                                    <action selector="selectRedTheme:" destination="d23-Db-4zg" eventType="touchUpInside" id="qPO-s8-Jv9"/>
+                                                    <action selector="unwindToPhoto:" destination="d23-Db-4zg" eventType="touchUpInside" id="2nB-xl-LPH"/>
+                                                    <segue destination="UuA-xG-oI2" kind="unwind" unwindAction="unwindToPhotoWithSegue:" id="Lpc-mD-hgt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -201,17 +200,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="z9s-7U-D2S" firstAttribute="trailing" secondItem="FJC-lJ-cdf" secondAttribute="trailing" constant="53.5" id="8R5-pV-aFP"/>
-                            <constraint firstItem="FJC-lJ-cdf" firstAttribute="top" secondItem="z9s-7U-D2S" secondAttribute="top" constant="112" id="Tux-6w-0EB"/>
-                            <constraint firstItem="FJC-lJ-cdf" firstAttribute="leading" secondItem="z9s-7U-D2S" secondAttribute="leading" constant="55" id="v5H-Gg-cn8"/>
+                            <constraint firstItem="FJC-lJ-cdf" firstAttribute="centerX" secondItem="RL9-Ib-uQm" secondAttribute="centerX" id="KTt-7t-2e9"/>
+                            <constraint firstItem="FJC-lJ-cdf" firstAttribute="centerY" secondItem="RL9-Ib-uQm" secondAttribute="centerY" id="bSc-KA-npa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="z9s-7U-D2S"/>
+                        <viewLayoutGuide key="safeArea" id="ZbV-u6-VAJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PhotoCollection" id="f1n-0Z-3Uy"/>
+                    <navigationItem key="navigationItem" title="PhotoCollection" id="Ydw-GT-ayW"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gD5-mz-v0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BbQ-y7-A8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="UuA-xG-oI2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="216"/>
+            <point key="canvasLocation" x="2467" y="216"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MoX-ae-LOa">
@@ -232,6 +231,9 @@
             <point key="canvasLocation" x="37.681159420289859" y="215.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="scribble" catalog="system" width="64" height="54"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1ds-iN-tdB"/>
     </inferredMetricsTieBreakers>

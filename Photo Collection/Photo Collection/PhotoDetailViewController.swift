@@ -38,7 +38,7 @@ class PhotoDetailViewController: UIViewController {
         case "Dark":
             view.backgroundColor = UIColor(hue: 0/360, saturation: 0/100, brightness: 30/100, alpha: 1.0)
         case "Red":
-            view.backgroundColor = UIColor(hue: 40/360, saturation: 55/100, brightness: 100/100, alpha: 1.0)
+            view.backgroundColor = UIColor(hue: 8/360, saturation: 100/100, brightness: 99/100, alpha: 1.0)
         default:
             view.backgroundColor = .white
             
