@@ -24,19 +24,18 @@ class ThemeSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTheme()
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    func setTheme() {
+        guard let themePreference = themeHelper?.themePreference else {return}
+           
+           if themePreference == "Dark"{
+               view.backgroundColor = UIColor.gray
+           } else if themePreference == "Color"{
+               view.backgroundColor = UIColor.blue
+           }
+       }
 
 }

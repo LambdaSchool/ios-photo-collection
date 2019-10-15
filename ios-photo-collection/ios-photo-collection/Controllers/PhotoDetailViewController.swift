@@ -14,10 +14,10 @@ protocol PhotoPickerDelagte {
 
 class PhotoDetailViewController: UIViewController {
     
- var photoController: PhotoController?
-  var photo: Photo?
-  var themeHelper: ThemeHelper?
-  var delegate: PhotoPickerDelagte?
+      var photoController: PhotoController?
+      var photo: Photo?
+      var themeHelper: ThemeHelper?
+      var delegate: PhotoPickerDelagte?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +36,14 @@ class PhotoDetailViewController: UIViewController {
     
     func updateViews(){
         setTheme()
-        guard let photo = photo else {return}
+        guard let photo = photo, let imageTitle = detailTextField.text else {return}
         detailImageView.image = UIImage(data: photo.imageData)
-        detailTextField.text = photo.title
+        detailTextField.text = imageTitle
     }
     
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailTextField: UITextField!
+        
     @IBAction func addPhoto(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -56,13 +57,13 @@ class PhotoDetailViewController: UIViewController {
             let text = detailTextField.text else {return}
         
         if let photo = photo {
-        photoController?.update(photo: photo, data: imageData, string: text)
-        navigationController?.popViewController(animated: true)
-        }else {
-        
-        photoController?.create(imageData: imageData , title: text)
-        navigationController?.popViewController(animated: true)
-        }
+            photoController?.update(photo: photo, data: imageData, string: text)
+            navigationController?.popViewController(animated: true)
+            } else {
+            let thisPhoto = Photo(imageData: imageData, title: text)
+            photoController?.create(photo: thisPhoto)
+            navigationController?.popViewController(animated: true)
+            }
     
     }
 }
