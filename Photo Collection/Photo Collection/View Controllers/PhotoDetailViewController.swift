@@ -42,6 +42,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.delegate = self
         navigationController?.present(picker, animated: true, completion: nil)
     }
     

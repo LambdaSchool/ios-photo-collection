@@ -16,9 +16,9 @@ class ThemeSelectionViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        themeHelper?.setTheme(for: view)
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -38,6 +38,7 @@ class ThemeSelectionViewController: UIViewController {
     
     private func selectTheme(_ preference: ThemePreference) {
         themeHelper?.setTheme(to: preference)
+        themeHelper?.setTheme(for: view)
         dismiss(animated: true, completion: nil)
     }
 }

@@ -25,8 +25,15 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    }
+//
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        themeHelper.setTheme(for: self.view)
     }
 
     // MARK: - Navigation
@@ -39,15 +46,12 @@ class PhotosCollectionViewController: UICollectionViewController {
         case "SelectThemeSegue":
             guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController
                 else { return }
-            
             themeSelectionVC.themeHelper = themeHelper
         case "ViewPhotoDetailSegue", "AddNewPhotoSegue":
             guard let photoDetailVC = segue.destination as? PhotoDetailViewController
                 else { return }
-            
             photoDetailVC.themeHelper = themeHelper
             photoDetailVC.photoController = photoController
-            
             if let cell = sender as? PhotosCollectionViewCell, id == "ViewPhotoDetailSegue" {
                 photoDetailVC.photo = cell.photo
             }
@@ -107,11 +111,5 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
-    
-    func setTheme() {
-        guard let themePreference = themeHelper.themePreference else { return }
-        
-        themeHelper.setTheme(for: view)
-    }
 
 }

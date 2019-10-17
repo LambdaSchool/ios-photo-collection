@@ -40,7 +40,7 @@ class ThemeHelper {
         case .blue:
             view.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 1.0, alpha: 1.0)
         case .dark:
-            view.backgroundColor = UIColor.black
+            view.backgroundColor = UIColor.darkGray
         }
     }
 }

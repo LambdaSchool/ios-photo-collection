@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos Collection View Controller-->
+        <!--Photo Collection-->
         <scene sceneID="WYs-y6-Tfo">
             <objects>
                 <collectionViewController id="GS8-ke-HDs" customClass="PhotosCollectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,18 +30,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuV-WI-ela">
-                                            <rect key="frame" x="49" y="131" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="132" placeholderIntrinsicHeight="21" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuV-WI-ela">
+                                            <rect key="frame" x="4" y="131" width="132" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-hD-1Mb">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-hD-1Mb">
                                             <rect key="frame" x="8" y="0.0" width="124" height="123"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="CuV-WI-ela" firstAttribute="leading" secondItem="vFv-y6-5G5" secondAttribute="leading" constant="4" id="BKN-z2-Waf"/>
+                                        <constraint firstAttribute="bottom" secondItem="CuV-WI-ela" secondAttribute="bottom" constant="8" id="Ckj-36-ngd"/>
+                                        <constraint firstItem="CuV-WI-ela" firstAttribute="top" secondItem="Rzm-hD-1Mb" secondAttribute="bottom" constant="8" id="Dkh-qa-rc5"/>
+                                        <constraint firstAttribute="trailing" secondItem="CuV-WI-ela" secondAttribute="trailing" constant="4" id="Hh1-mw-7Zf"/>
+                                        <constraint firstItem="Rzm-hD-1Mb" firstAttribute="leading" secondItem="vFv-y6-5G5" secondAttribute="leading" constant="8" id="LGb-a2-Ahu"/>
+                                        <constraint firstItem="Rzm-hD-1Mb" firstAttribute="top" secondItem="vFv-y6-5G5" secondAttribute="top" id="RRA-FS-E3g"/>
+                                        <constraint firstAttribute="trailing" secondItem="Rzm-hD-1Mb" secondAttribute="trailing" constant="8" id="e6e-Lg-GiZ"/>
+                                        <constraint firstItem="CuV-WI-ela" firstAttribute="top" secondItem="Rzm-hD-1Mb" secondAttribute="bottom" constant="8" id="vwZ-Mf-fBq"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="imageView" destination="Rzm-hD-1Mb" id="Px2-pA-6l7"/>
@@ -55,7 +63,7 @@
                             <outlet property="delegate" destination="GS8-ke-HDs" id="Vl3-fF-ghu"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="vAd-0l-Z8X">
+                    <navigationItem key="navigationItem" title="Photo Collection" largeTitleDisplayMode="always" id="vAd-0l-Z8X">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="awO-Us-PRk">
                             <connections>
                                 <segue destination="u2Y-mQ-cRv" kind="presentation" identifier="SelectThemeSegue" id="yng-Xz-QhO"/>
@@ -70,7 +78,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwE-Le-7GA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="130" y="139"/>
         </scene>
         <!--Theme Selection View Controller-->
         <scene sceneID="lr6-EQ-6dP">
@@ -80,31 +88,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-Ov-wng">
-                                <rect key="frame" x="20" y="20" width="201" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-Ov-wng">
+                                <rect key="frame" x="20" y="20" width="200.5" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNl-zV-Y7r">
-                                <rect key="frame" x="283" y="120" width="33" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dark"/>
-                                <connections>
-                                    <action selector="selectDarkTheme:" destination="Kv2-fW-RYG" eventType="touchUpInside" id="p9x-tg-YFi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWm-Yr-Otq">
-                                <rect key="frame" x="105" y="120" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Blue"/>
-                                <connections>
-                                    <action selector="selectBlueTheme:" destination="Kv2-fW-RYG" eventType="touchUpInside" id="FL2-6N-xXS"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="147" translatesAutoresizingMaskIntoConstraints="NO" id="yfy-It-hrh">
+                                <rect key="frame" x="20" y="81" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWm-Yr-Otq">
+                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="30"/>
+                                        <state key="normal" title="Blue"/>
+                                        <connections>
+                                            <action selector="selectBlueTheme:" destination="Kv2-fW-RYG" eventType="touchUpInside" id="FL2-6N-xXS"/>
+                                            <action selector="selectBlueTheme:" destination="u2Y-mQ-cRv" eventType="touchUpInside" id="HCE-Ae-6Uw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNl-zV-Y7r">
+                                        <rect key="frame" x="260.5" y="0.0" width="113.5" height="30"/>
+                                        <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkTheme:" destination="u2Y-mQ-cRv" eventType="touchUpInside" id="07g-0H-vRh"/>
+                                            <action selector="selectDarkTheme:" destination="Kv2-fW-RYG" eventType="touchUpInside" id="p9x-tg-YFi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jbA-cF-35a" firstAttribute="trailing" secondItem="yfy-It-hrh" secondAttribute="trailing" constant="20" id="1Hf-vn-qQZ"/>
+                            <constraint firstItem="yfy-It-hrh" firstAttribute="top" secondItem="TIz-Ov-wng" secondAttribute="bottom" constant="20" id="5an-ft-Aey"/>
+                            <constraint firstItem="jbA-cF-35a" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yfy-It-hrh" secondAttribute="bottom" constant="8" id="6qf-sm-4o1"/>
+                            <constraint firstItem="TIz-Ov-wng" firstAttribute="top" secondItem="jbA-cF-35a" secondAttribute="top" constant="20" id="aFS-mt-kb4"/>
+                            <constraint firstItem="yfy-It-hrh" firstAttribute="leading" secondItem="jbA-cF-35a" secondAttribute="leading" constant="20" id="bTH-GU-m7u"/>
+                            <constraint firstItem="TIz-Ov-wng" firstAttribute="leading" secondItem="jbA-cF-35a" secondAttribute="leading" constant="20" id="dfd-WK-fMm"/>
+                            <constraint firstItem="jbA-cF-35a" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TIz-Ov-wng" secondAttribute="trailing" constant="20" id="zbp-94-E3h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jbA-cF-35a"/>
                     </view>
                 </viewController>
@@ -124,8 +145,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="pX2-5E-BxL">
                                 <rect key="frame" x="107" y="140" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="hKH-Us-dg4"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="tln-Jm-vAM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Lab-iS-gnk"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="dGG-Ng-v6A"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="hKH-Us-dg4"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="tln-Jm-vAM"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EIX-Pg-e0G">
