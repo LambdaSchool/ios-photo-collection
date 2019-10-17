@@ -12,14 +12,12 @@ class ThemeHelper {
     
     // MARK: - Properties
     
-    let PreferenceKeys = (
-        theme: "ThemePreference",
-        darkTheme: "Dark",
-        blueTheme: "Blue"
-    )
+    let themePreferenceKey = "ThemePreference"
     
-    var themePreference: String? {
-        return UserDefaults.standard.string(forKey: PreferenceKeys.theme)
+    var themePreference: ThemePreference? {
+        guard let themePrefRawValue = UserDefaults.standard.string(forKey: themePreferenceKey)
+            else { return nil }
+        return ThemePreference.init(rawValue: themePrefRawValue)
     }
     
     // MARK: - Methods
@@ -31,10 +29,15 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToBlue() {
-        UserDefaults.standard.set(PreferenceKeys.blueTheme, forKey: PreferenceKeys.theme)
+        UserDefaults.standard.set(ThemePreference.blue.rawValue, forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToDark() {
-        UserDefaults.standard.set(PreferenceKeys.darkTheme, forKey: PreferenceKeys.theme)
+        UserDefaults.standard.set(ThemePreference.dark.rawValue, forKey: themePreferenceKey)
     }
+}
+
+enum ThemePreference: String {
+    case blue = "Blue"
+    case dark = "Dark"
 }
