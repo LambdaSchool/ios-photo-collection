@@ -38,12 +38,16 @@ class PhotosCollectionViewController: UICollectionViewController {
         case "SelectThemeSegue":
             guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController
                 else { return }
+            
             themeSelectionVC.themeHelper = themeHelper
+            themeSelectionVC.delegate = self
         case "ViewPhotoDetailSegue", "AddNewPhotoSegue":
             guard let photoDetailVC = segue.destination as? PhotoDetailViewController
                 else { return }
+            
             photoDetailVC.themeHelper = themeHelper
             photoDetailVC.photoController = photoController
+            photoDetailVC.delegate = self
             if let cell = sender as? PhotosCollectionViewCell, id == "ViewPhotoDetailSegue" {
                 photoDetailVC.photo = cell.photo
             }

@@ -11,6 +11,7 @@ import UIKit
 class ThemeSelectionViewController: UIViewController {
     
     var themeHelper: ThemeHelper?
+    var delegate: PhotosCollectionViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,9 @@ class ThemeSelectionViewController: UIViewController {
     private func selectTheme(_ preference: ThemePreference) {
         themeHelper?.setTheme(to: preference)
         themeHelper?.setTheme(for: view)
+        if let collectionView = delegate?.collectionView {
+            themeHelper?.setTheme(for: collectionView)
+        }
         dismiss(animated: true, completion: nil)
     }
 }
