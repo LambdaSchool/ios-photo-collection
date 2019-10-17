@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     
@@ -38,7 +38,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - IB Actions
     
     @IBAction func addPhotoTapped(_ sender: UIButton) {
-         
+        let picker = UIImagePickerController()
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        navigationController?.present(picker, animated: true, completion: nil)
     }
     
     @IBAction func savePhotoTapped(_ sender: UIBarButtonItem) {
@@ -49,5 +53,15 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = chosenImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
