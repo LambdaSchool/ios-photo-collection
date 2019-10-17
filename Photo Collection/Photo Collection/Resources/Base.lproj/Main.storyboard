@@ -45,7 +45,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="imageView" destination="Rzm-hD-1Mb" id="Px2-pA-6l7"/>
-                                    <outlet property="label" destination="CuV-WI-ela" id="zAW-Qo-Y7m"/>
+                                    <outlet property="titleLabel" destination="CuV-WI-ela" id="zAW-Qo-Y7m"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ViewPhotoDetailSegue" id="t70-A3-RRL"/>
                                 </connections>
                             </collectionViewCell>
