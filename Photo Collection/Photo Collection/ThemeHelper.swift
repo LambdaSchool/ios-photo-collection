@@ -9,6 +9,12 @@
 import Foundation
 class ThemeHelper {
     
+    init() {
+        if themePreference == nil {
+            setThemePreferenceToPurple()
+        }
+    }
+    
     struct PropertyKeys {
         static let themeKey = ""
         static let dark = "Dark"
