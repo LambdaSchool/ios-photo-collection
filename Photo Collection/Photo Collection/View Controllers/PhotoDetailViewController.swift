@@ -46,11 +46,18 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func savePhotoTapped(_ sender: UIBarButtonItem) {
-        if let photo = photo, let visibleImage = imageView.image {
-            
+        guard let image = imageView.image,
+            let imageData = image.jpegData(compressionQuality: 1.0),
+            let title = textField.text
+            else { return }
+        
+        if let photo = photo {
+            photoController?.update(photo: photo, data: imageData, title: title)
         } else {
-            
+            photoController?.createPhoto(imageData: imageData, title: title)
         }
+        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

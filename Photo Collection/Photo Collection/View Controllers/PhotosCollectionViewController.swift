@@ -11,7 +11,9 @@ import UIKit
 private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
     // MARK: - Properties
+    
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
 
@@ -109,7 +111,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
         
-        themeHelper.setTheme(for: view, to: themePreference)
+        themeHelper.setTheme(for: view)
     }
 
 }
