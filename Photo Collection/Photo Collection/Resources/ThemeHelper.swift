@@ -24,16 +24,12 @@ class ThemeHelper {
     
     init() {
         if themePreference == nil {
-            setThemePreferenceToBlue()
+            setTheme(to: .blue)
         }
     }
     
-    func setThemePreferenceToBlue() {
-        UserDefaults.standard.set(ThemePreference.blue.rawValue, forKey: themePreferenceKey)
-    }
-    
-    func setThemePreferenceToDark() {
-        UserDefaults.standard.set(ThemePreference.dark.rawValue, forKey: themePreferenceKey)
+    func setTheme(to preference: ThemePreference) {
+        UserDefaults.standard.set(preference.rawValue, forKey: themePreferenceKey)
     }
 }
 
