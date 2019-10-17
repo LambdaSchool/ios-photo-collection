@@ -14,6 +14,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     struct PropertyKeys {
         static let cellID = "PhotoCell"
+        static let addSegue = "AddPhotoShowSegue"
+        static let editSegue = "EditPhotoShowSegue"
     }
 
     override func viewDidLoad() {
