@@ -21,6 +21,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
+    
+//    var themeSetting:  {
+//        didSet {
+//            setTheme()
+//        }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +39,12 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
         
+        setTheme()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
         setTheme()
     }
 
@@ -55,20 +67,19 @@ class PhotosCollectionViewController: UICollectionViewController {
             detailVC.photo = photo
         case PropertyKeys.themeSegue:
             guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+            themeVC.modalPresentationStyle = .fullScreen
             themeVC.themeHelper = themeHelper
         default:
             return
         }
     }
     
+    @IBAction func unwindToPhotosCollectionViewController(_ sender: UIStoryboardSegue) {
+        setTheme()
+        }
+    
 
     // MARK: UICollectionViewDataSource
-
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -83,37 +94,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
     
     // MARK: - Private
     private func setTheme() {
@@ -122,9 +102,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         switch themePreference {
         case ThemeHelper.PropertyKeys.dark:
             collectionView.backgroundColor = .darkGray
+            
         default:
             collectionView.backgroundColor = .purple
         }
     }
-
 }

@@ -1,5 +1,5 @@
 //
-//  Photo.swift
+//  SettingsKeys.swift
 //  Photo Collection
 //
 //  Created by morse on 10/17/19.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct Photo: Equatable, Codable {
-    var title: String
-    var imageData: Data
+extension String {
+    static let themeKey = "themeKey"
 }

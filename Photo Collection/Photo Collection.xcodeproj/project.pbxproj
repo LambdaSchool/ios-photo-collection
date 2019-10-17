@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C02675A5235908BF001B289E /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02675A4235908BF001B289E /* SettingsKeys.swift */; };
 		C077E8FD2358A878005DD2E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077E8FC2358A878005DD2E3 /* AppDelegate.swift */; };
 		C077E8FF2358A878005DD2E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077E8FE2358A878005DD2E3 /* SceneDelegate.swift */; };
 		C077E9042358A878005DD2E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C077E9022358A878005DD2E3 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C02675A4235908BF001B289E /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		C077E8F92358A878005DD2E3 /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C077E8FC2358A878005DD2E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C077E8FE2358A878005DD2E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				C077E8FC2358A878005DD2E3 /* AppDelegate.swift */,
 				C077E8FE2358A878005DD2E3 /* SceneDelegate.swift */,
+				C02675A4235908BF001B289E /* SettingsKeys.swift */,
 				C077E91B2358B20F005DD2E3 /* View Controllers */,
 				C077E9202358B302005DD2E3 /* Views */,
 				C077E9192358B1FC005DD2E3 /* Models */,
@@ -202,6 +205,7 @@
 				C077E9172358ADD9005DD2E3 /* ThemeHelper.swift in Sources */,
 				C077E91F2358B2FC005DD2E3 /* PhotoCollectionViewCell.swift in Sources */,
 				C077E8FD2358A878005DD2E3 /* AppDelegate.swift in Sources */,
+				C02675A5235908BF001B289E /* SettingsKeys.swift in Sources */,
 				C077E9222358B835005DD2E3 /* PhotoDetailViewController.swift in Sources */,
 				C077E9242358C4A1005DD2E3 /* ThemeSelectionViewController.swift in Sources */,
 				C077E8FF2358A878005DD2E3 /* SceneDelegate.swift in Sources */,

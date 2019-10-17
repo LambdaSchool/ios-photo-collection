@@ -16,22 +16,19 @@ class ThemeHelper {
     }
     
     struct PropertyKeys {
-        static let themeKey = ""
         static let dark = "Dark"
         static let purple = "Purple"
     }
     
-    let themePreferenceKey = PropertyKeys.themeKey
-    
     var themePreference: String? {
-        return UserDefaults.standard.string(forKey: PropertyKeys.purple)
+        return UserDefaults.standard.string(forKey: .themeKey)
     }
     
     func setThemePreferenceToDark() {
-        UserDefaults.standard.set(PropertyKeys.dark, forKey: themePreferenceKey)
+        UserDefaults.standard.set(PropertyKeys.dark, forKey: .themeKey)
     }
     
     func setThemePreferenceToPurple() {
-        UserDefaults.standard.set(PropertyKeys.purple, forKey: themePreferenceKey)
+        UserDefaults.standard.set(PropertyKeys.purple, forKey: .themeKey)
     }
 }
