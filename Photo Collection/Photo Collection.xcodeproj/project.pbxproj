@@ -15,6 +15,7 @@
 		9954370B2358F9A00077CC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 995437092358F9A00077CC87 /* LaunchScreen.storyboard */; };
 		995437132358FA2A0077CC87 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995437122358FA2A0077CC87 /* Photo.swift */; };
 		995437162358FA810077CC87 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995437152358FA810077CC87 /* PhotoController.swift */; };
+		99BA1B852358FCDE00E95881 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BA1B842358FCDE00E95881 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9954370C2358F9A00077CC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		995437122358FA2A0077CC87 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		995437152358FA810077CC87 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		99BA1B842358FCDE00E95881 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				995437042358F99E0077CC87 /* Main.storyboard */,
 				995437092358F9A00077CC87 /* LaunchScreen.storyboard */,
+				99BA1B842358FCDE00E95881 /* ThemeHelper.swift */,
 				995437072358F9A00077CC87 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -171,6 +174,7 @@
 				995437162358FA810077CC87 /* PhotoController.swift in Sources */,
 				995437132358FA2A0077CC87 /* Photo.swift in Sources */,
 				995437032358F99E0077CC87 /* ViewController.swift in Sources */,
+				99BA1B852358FCDE00E95881 /* ThemeHelper.swift in Sources */,
 				995436FF2358F99E0077CC87 /* AppDelegate.swift in Sources */,
 				995437012358F99E0077CC87 /* SceneDelegate.swift in Sources */,
 			);
