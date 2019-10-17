@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PhotoDetailViewController.swift
 //  Photo Collection
 //
 //  Created by Jon Bash on 2019-10-17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
