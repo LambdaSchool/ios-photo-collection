@@ -8,13 +8,24 @@
 
 import Foundation
 class ThemeHelper {
-    let themePreferenceKey = ""
+    
+    struct PropertyKeys {
+        static let themeKey = ""
+        static let dark = "Dark"
+        static let purple = "Purple"
+    }
+    
+    let themePreferenceKey = PropertyKeys.themeKey
+    
+    var themePreference: String? {
+        return UserDefaults.standard.string(forKey: PropertyKeys.purple)
+    }
     
     func setThemePreferenceToDark() {
-        UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
+        UserDefaults.standard.set(PropertyKeys.dark, forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToPurple() {
-        UserDefaults.standard.set("Purple", forKey: themePreferenceKey)
+        UserDefaults.standard.set(PropertyKeys.purple, forKey: themePreferenceKey)
     }
 }
