@@ -46,6 +46,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="Rzm-hD-1Mb" id="Px2-pA-6l7"/>
                                     <outlet property="label" destination="CuV-WI-ela" id="zAW-Qo-Y7m"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ViewPhotoDetailSegue" id="t70-A3-RRL"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -56,7 +57,11 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="vAd-0l-Z8X">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="awO-Us-PRk"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A5b-sB-x4V"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A5b-sB-x4V">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="AddNewPhotoSegue" id="W5f-nt-Q7f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwE-Le-7GA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -66,13 +71,44 @@
         <!--Photo Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Photo Detail View Controller" id="BYZ-38-t0r" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pX2-5E-BxL">
+                                <rect key="frame" x="20" y="140" width="374" height="394"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asd-4v-kWd">
+                                <rect key="frame" x="159" y="542" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NMM-Ja-8Tt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2X-td-AQW">
+                                <rect key="frame" x="147" y="580" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="A6E-nn-ynb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fT0-np-eDC">
+                            <connections>
+                                <action selector="savePhotoTapped:" destination="BYZ-38-t0r" id="5aG-Ii-9NZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="image" destination="pX2-5E-BxL" id="eQH-zO-o9B"/>
+                        <outlet property="textField" destination="v2X-td-AQW" id="98Y-Xd-FyN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,8 +119,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aKr-FD-jYk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lsi-mj-enJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Lsi-mj-enJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -97,4 +133,7 @@
             <point key="canvasLocation" x="-772.46376811594212" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="t70-A3-RRL"/>
+    </inferredMetricsTieBreakers>
 </document>
