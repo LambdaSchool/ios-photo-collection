@@ -25,15 +25,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-//
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        themeHelper.setTheme(for: self.view)
+        themeHelper.setTheme(for: collectionView)
     }
 
     // MARK: - Navigation
