@@ -14,6 +14,7 @@
 		C077E9062358A879005DD2E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C077E9052358A879005DD2E3 /* Assets.xcassets */; };
 		C077E9092358A879005DD2E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C077E9072358A879005DD2E3 /* LaunchScreen.storyboard */; };
 		C077E9132358ABAE005DD2E3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077E9122358ABAE005DD2E3 /* Photo.swift */; };
+		C077E9152358AC1D005DD2E3 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077E9142358AC1D005DD2E3 /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C077E9082358A879005DD2E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C077E90A2358A879005DD2E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C077E9122358ABAE005DD2E3 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C077E9142358AC1D005DD2E3 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C077E8FE2358A878005DD2E3 /* SceneDelegate.swift */,
 				C077E9002358A878005DD2E3 /* ViewController.swift */,
 				C077E9122358ABAE005DD2E3 /* Photo.swift */,
+				C077E9142358AC1D005DD2E3 /* PhotoController.swift */,
 				C077E9022358A878005DD2E3 /* Main.storyboard */,
 				C077E9052358A879005DD2E3 /* Assets.xcassets */,
 				C077E9072358A879005DD2E3 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C077E9152358AC1D005DD2E3 /* PhotoController.swift in Sources */,
 				C077E9132358ABAE005DD2E3 /* Photo.swift in Sources */,
 				C077E9012358A878005DD2E3 /* ViewController.swift in Sources */,
 				C077E8FD2358A878005DD2E3 /* AppDelegate.swift in Sources */,
