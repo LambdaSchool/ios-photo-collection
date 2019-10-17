@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ThemeHelper {
     
@@ -30,6 +31,17 @@ class ThemeHelper {
     
     func setTheme(to preference: ThemePreference) {
         UserDefaults.standard.set(preference.rawValue, forKey: themePreferenceKey)
+    }
+    
+    func setTheme(for view: UIView) {
+        guard let themePref = themePreference else { return }
+        
+        switch themePref {
+        case .blue:
+            view.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 1.0, alpha: 1.0)
+        case .dark:
+            view.backgroundColor = UIColor.black
+        }
     }
 }
 

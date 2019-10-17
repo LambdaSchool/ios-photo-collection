@@ -151,7 +151,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="image" destination="pX2-5E-BxL" id="eQH-zO-o9B"/>
+                        <outlet property="imageView" destination="pX2-5E-BxL" id="eQH-zO-o9B"/>
                         <outlet property="textField" destination="v2X-td-AQW" id="98Y-Xd-FyN"/>
                     </connections>
                 </viewController>
