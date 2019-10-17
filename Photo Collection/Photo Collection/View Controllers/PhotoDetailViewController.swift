@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
-    @IBOutlet weak var image: UIImageView!
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate {
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     
     var photoController: PhotoController?
@@ -19,12 +19,34 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        updateViews()
+    }
+    
+    // MARK: - Methods
+    
+    func updateViews() {
+        if let themeHelper = themeHelper {
+            themeHelper.setTheme(for: view)
+        }
+        
+        if let photo = photo {
+            imageView.image = UIImage(data: photo.imageData)
+            navigationItem.title = photo.title
+        }
     }
 
+    // MARK: - IB Actions
+    
     @IBAction func addPhotoTapped(_ sender: UIButton) {
+         
     }
     
     @IBAction func savePhotoTapped(_ sender: UIBarButtonItem) {
+        if let photo = photo, let visibleImage = imageView.image {
+            
+        } else {
+            
+        }
     }
     
 }
