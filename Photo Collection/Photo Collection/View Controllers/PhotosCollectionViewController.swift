@@ -16,6 +16,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         static let cellID = "PhotoCell"
         static let addSegue = "AddPhotoShowSegue"
         static let editSegue = "EditPhotoShowSegue"
+        static let themeSegue = "SelectThemeModalSegue"
     }
 
     override func viewDidLoad() {
