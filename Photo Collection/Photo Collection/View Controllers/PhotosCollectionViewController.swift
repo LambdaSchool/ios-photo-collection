@@ -88,5 +88,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    func setTheme() {
+        guard let themePreference = themeHelper.themePreference else { return }
+        
+        switch themePreference {
+        case .blue:
+            view.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 1.0, alpha: 1.0)
+        case .dark:
+            view.backgroundColor = UIColor.darkGray
+        }
+    }
 
 }
