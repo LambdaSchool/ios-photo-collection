@@ -8,5 +8,11 @@
 
 import Foundation
 class ThemeHelper {
+    let themePreferenceKey = ""
+    
+    func setThemePreferenceToDark() {
+        UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
+    }
+    
     
 }
