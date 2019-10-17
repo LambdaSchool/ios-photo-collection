@@ -18,6 +18,7 @@
 		99BA1B852358FCDE00E95881 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BA1B842358FCDE00E95881 /* ThemeHelper.swift */; };
 		99BA1B87235900A600E95881 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BA1B86235900A600E95881 /* PhotosCollectionViewController.swift */; };
 		99BA1B8A2359018800E95881 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BA1B892359018800E95881 /* PhotosCollectionViewCell.swift */; };
+		99BA1B8D2359060300E95881 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BA1B8C2359060300E95881 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		99BA1B842358FCDE00E95881 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		99BA1B86235900A600E95881 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		99BA1B892359018800E95881 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		99BA1B8C2359060300E95881 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				99BA1B86235900A600E95881 /* PhotosCollectionViewController.swift */,
 				995437022358F99E0077CC87 /* PhotoDetailViewController.swift */,
+				99BA1B8C2359060300E95881 /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				99BA1B852358FCDE00E95881 /* ThemeHelper.swift in Sources */,
 				99BA1B8A2359018800E95881 /* PhotosCollectionViewCell.swift in Sources */,
 				995436FF2358F99E0077CC87 /* AppDelegate.swift in Sources */,
+				99BA1B8D2359060300E95881 /* ThemeSelectionViewController.swift in Sources */,
 				995437012358F99E0077CC87 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
