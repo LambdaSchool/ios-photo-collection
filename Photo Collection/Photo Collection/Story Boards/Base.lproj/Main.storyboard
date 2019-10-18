@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,6 +68,7 @@
                                 <connections>
                                     <outlet property="photoImageView" destination="tfy-n3-Akg" id="dPL-UW-Dg2"/>
                                     <outlet property="photoLabelTextView" destination="xKB-UU-s7W" id="mU3-j4-qEb"/>
+                                    <segue destination="21K-sQ-apm" kind="show" identifier="detailSegue" id="aG0-Di-2yl"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -76,13 +78,123 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="tuL-66-JEz">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="FPW-W2-nMs"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LX9-5n-epu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="FPW-W2-nMs">
+                            <connections>
+                                <segue destination="Qj1-vJ-GiK" kind="presentation" identifier="selectThemeSegue" id="tYP-tW-Kuo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LX9-5n-epu">
+                            <connections>
+                                <segue destination="21K-sQ-apm" kind="show" identifier="addSegue" id="twp-aI-VN6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4d-fg-PZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884" y="-15"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="g0x-j5-W95">
+            <objects>
+                <viewController id="Qj1-vJ-GiK" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9vZ-3c-uqH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buU-PU-NOh">
+                                <rect key="frame" x="186" y="154" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32M-FQ-w6G">
+                                <rect key="frame" x="261" y="400" width="53" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Darcula"/>
+                                <connections>
+                                    <action selector="selectYourColorHereTheme:" destination="Qj1-vJ-GiK" eventType="touchUpInside" id="lqU-y8-x5i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86P-ZW-qTW">
+                                <rect key="frame" x="114" y="415" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkTheme:" destination="Qj1-vJ-GiK" eventType="touchUpInside" id="3rg-A9-NJQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CIq-T3-i4O"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BuL-by-GUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608.69565217391312" y="690.40178571428567"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="dRJ-DG-SU4">
+            <objects>
+                <viewController id="21K-sQ-apm" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Krm-bG-Lmr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fy-Hu-3de">
+                                <rect key="frame" x="138" y="413" width="138" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="My7-sp-odD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="21K-sQ-apm" eventType="touchUpInside" id="O6e-e8-E39"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ER-J0-nDB">
+                                <rect key="frame" x="106" y="506" width="221" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Py-TK-Gxr">
+                                <rect key="frame" x="87" y="194" width="240" height="137"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Py-TK-Gxr" firstAttribute="centerX" secondItem="Krm-bG-Lmr" secondAttribute="centerX" id="4BD-14-moW"/>
+                            <constraint firstItem="2Py-TK-Gxr" firstAttribute="trailing" secondItem="1ER-J0-nDB" secondAttribute="trailing" id="D8p-CA-eN3"/>
+                            <constraint firstItem="8Nw-oH-xK1" firstAttribute="bottom" secondItem="1ER-J0-nDB" secondAttribute="bottom" constant="273" id="FM7-sL-g2H"/>
+                            <constraint firstItem="1ER-J0-nDB" firstAttribute="top" secondItem="0fy-Hu-3de" secondAttribute="bottom" constant="42" id="SeH-tW-WsS"/>
+                            <constraint firstItem="2Py-TK-Gxr" firstAttribute="top" secondItem="8Nw-oH-xK1" secondAttribute="top" constant="106" id="TxT-50-QeG"/>
+                            <constraint firstItem="2Py-TK-Gxr" firstAttribute="leading" secondItem="8Nw-oH-xK1" secondAttribute="leading" constant="87" id="VU1-rh-TyW"/>
+                            <constraint firstItem="1ER-J0-nDB" firstAttribute="leading" secondItem="8Nw-oH-xK1" secondAttribute="leading" constant="106" id="cau-j7-CTl"/>
+                            <constraint firstItem="0fy-Hu-3de" firstAttribute="leading" secondItem="8Nw-oH-xK1" secondAttribute="leading" constant="138" id="hKu-ed-ZXP"/>
+                            <constraint firstItem="0fy-Hu-3de" firstAttribute="top" secondItem="2Py-TK-Gxr" secondAttribute="bottom" constant="82" id="uSZ-sX-jRP"/>
+                            <constraint firstItem="2Py-TK-Gxr" firstAttribute="centerX" secondItem="0fy-Hu-3de" secondAttribute="centerX" id="zve-cY-qPx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Nw-oH-xK1"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Jch-gJ-4Tb"/>
+                        <barButtonItem systemItem="save" id="CLI-7d-92w">
+                            <connections>
+                                <action selector="savePhoto:" destination="21K-sQ-apm" id="3BE-Un-Xcz"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="cOD-FP-30j"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="2Py-TK-Gxr" id="qAL-P9-vel"/>
+                        <outlet property="textView" destination="1ER-J0-nDB" id="13N-Mv-gXb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGG-nV-Gih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682.608695652174" y="-32.142857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WAT-qo-Usj">
@@ -103,4 +215,7 @@
             <point key="canvasLocation" x="24.637681159420293" y="-15.401785714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aG0-Di-2yl"/>
+    </inferredMetricsTieBreakers>
 </document>
