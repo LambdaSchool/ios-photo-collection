@@ -41,7 +41,7 @@ class ThemeSelectionViewController: UIViewController {
         themeHelper?.setTheme(to: preference)
         themeHelper?.setTheme(for: view)
         if let collectionView = delegate?.collectionView {
-            themeHelper?.setTheme(for: collectionView)
+            themeHelper?.setTheme(for: collectionView.backgroundView ?? collectionView)
         }
         dismiss(animated: true, completion: nil)
     }
