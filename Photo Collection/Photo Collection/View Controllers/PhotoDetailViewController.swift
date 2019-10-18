@@ -33,6 +33,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         if let photo = photo {
             imageView.image = UIImage(data: photo.imageData)
             navigationItem.title = photo.title
+            textField.text = photo.title
         }
     }
 
