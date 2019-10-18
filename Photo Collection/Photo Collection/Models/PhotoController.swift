@@ -17,13 +17,14 @@ class PhotoController{
     
     func create(usingThisData image: Data, andNameIt title: String){
         let newPhoto = Photo(image: image, title: title)
-    
-    func update(thisPhoto photo: Photo, usingThisData data: Data){
-        guard let index = photos.firstIndex(of: photo) else {return}
         
-        var updatedPhoto = photos[index]
-        updatedPhoto.image = image
-        updatedPhoto.title = title    }
+        func update(thisPhoto photo: Photo, usingThisData data: Data){
+            guard let index = photos.firstIndex(of: photo) else {return}
+            
+            photos[index].image = image
+            photos[index].title = title
+            
+        }
     }
     
 }
