@@ -72,6 +72,7 @@
                                 <connections>
                                     <outlet property="imageLabel" destination="Lxd-g8-7CN" id="fgJ-oY-aB9"/>
                                     <outlet property="imageView" destination="RYY-BW-dcd" id="piM-bw-uak"/>
+                                    <segue destination="hag-AV-KcJ" kind="show" identifier="DetailPhotoSegue" id="Tem-5Q-PNi"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -132,12 +133,6 @@
                                     <constraint firstItem="e9V-25-qzp" firstAttribute="width" secondItem="63w-fj-fwE" secondAttribute="width" id="aE3-rl-gYJ"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBs-te-Oq9">
-                                <rect key="frame" x="159" y="611" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -222,4 +217,7 @@
             <point key="canvasLocation" x="1410" y="-579"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tem-5Q-PNi"/>
+    </inferredMetricsTieBreakers>
 </document>

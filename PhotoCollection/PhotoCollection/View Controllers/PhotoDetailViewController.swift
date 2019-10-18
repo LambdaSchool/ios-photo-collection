@@ -36,9 +36,9 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
     private func updateViews() {
         setTheme()
         
-//        guard let photo = photo else { return }
-//        imageView.image = UIImage(data: photo.imageData)
-//        photoTextField.text = photo.title
+        guard let photo = photo else { return }
+        imageView.image = UIImage(data: photo.imageData)
+        photoTextField.text = photo.title
     }
     
     func setTheme() {
