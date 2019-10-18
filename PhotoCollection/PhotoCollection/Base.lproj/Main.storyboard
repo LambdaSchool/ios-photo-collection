@@ -72,7 +72,6 @@
                                 <connections>
                                     <outlet property="imageLabel" destination="Lxd-g8-7CN" id="fgJ-oY-aB9"/>
                                     <outlet property="imageView" destination="RYY-BW-dcd" id="piM-bw-uak"/>
-                                    <segue destination="AsB-XC-0Vc" kind="show" identifier="DetailPhotoSegue" id="ACN-LI-QrL"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -89,7 +88,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y7L-wW-UtF">
                             <connections>
-                                <segue destination="AsB-XC-0Vc" kind="show" identifier="AddPhotoSegue" id="s8R-9x-1BG"/>
+                                <segue destination="hag-AV-KcJ" kind="show" identifier="AddPhotoSegue" id="9P8-Mt-HUx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -133,6 +132,12 @@
                                     <constraint firstItem="e9V-25-qzp" firstAttribute="width" secondItem="63w-fj-fwE" secondAttribute="width" id="aE3-rl-gYJ"/>
                                 </constraints>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBs-te-Oq9">
+                                <rect key="frame" x="159" y="611" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -151,12 +156,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="63w-fj-fwE" id="UDK-lB-tF5"/>
-                        <outlet property="photoTextField" destination="e9V-25-qzp" id="38C-3X-G4p"/>
+                        <outlet property="photoTextField" destination="e9V-25-qzp" id="yDb-gY-PRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67z-tr-kta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3081.1594202898555" y="-175.44642857142856"/>
+            <point key="canvasLocation" x="2294" y="19"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="taf-K4-HYn">
@@ -188,11 +193,17 @@
                                 <rect key="frame" x="191" y="337" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkThemeTapped:" destination="2A4-7q-8FD" eventType="touchUpInside" id="hqs-U0-1TN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxw-UH-9us">
                                 <rect key="frame" x="192" y="393" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Blue"/>
+                                <connections>
+                                    <action selector="selectBlueTheme:" destination="2A4-7q-8FD" eventType="touchUpInside" id="Vq1-Ii-H2t"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1v-Pc-r1Y">
                                 <rect key="frame" x="154" y="261" width="106" height="21"/>
@@ -210,27 +221,5 @@
             </objects>
             <point key="canvasLocation" x="1410" y="-579"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dJb-vp-eQv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AsB-XC-0Vc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="kBd-Cc-z4v"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7o8-xi-Q3x">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hag-AV-KcJ" kind="relationship" relationship="rootViewController" id="bIA-09-iBJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UaB-hk-R0j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2171.0144927536235" y="-175.44642857142856"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ACN-LI-QrL"/>
-    </inferredMetricsTieBreakers>
 </document>

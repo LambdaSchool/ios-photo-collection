@@ -30,12 +30,12 @@ class ThemeHelper {
 
     // MARK: - Class functions
     
-    private func setThemePreferenceToDark() {
+    func setThemePreferenceToDark() {
         let userDefaults = UserDefaults.standard
         userDefaults.set("Dark", forKey: .themePreferenceKey)
     }
     
-    private func setThemePreferenceToYourColorHere() {
+    func setThemePreferenceToYourColorHere() {
         let userDefaults = UserDefaults.standard
         userDefaults.set("Blue", forKey: .themePreferenceKey)
     }

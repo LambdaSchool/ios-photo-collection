@@ -12,6 +12,15 @@ private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    
+    // MARK: - Properties
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
+    
+    // MARK: - View Lifecycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,35 +32,76 @@ class PhotosCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView?.reloadData()
+        setTheme()
+    }
+    
+    // MARK: - Class Functions
+    
+    func setTheme() {
+        if let themePreference = themeHelper.themePreference {
+            if(themePreference == "Dark") {
+                collectionView?.backgroundColor = UIColor.darkGray
+            } else if (themePreference == "Blue") {
+                collectionView?.backgroundColor = UIColor.blue
+            }
+        }
+    }
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "AddPhotoSegue") {
+            if let addPhotoVC = segue.destination as? PhotoDetailViewController {
+                addPhotoVC.themeHelper = self.themeHelper
+                addPhotoVC.photoController = self.photoController
+            }
+            
+        } else if (segue.identifier == "DetailPhotoSegue") {
+            guard let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
+            if let detailPhotoVC = segue.destination as? PhotoDetailViewController {
+                detailPhotoVC.themeHelper = self.themeHelper
+                detailPhotoVC.photoController = self.photoController
+                detailPhotoVC.photo = self.photoController.photos[indexPath.item]
+            }
+            
+        } else if (segue.identifier == "ThemeSelectionModalSegue") {
+            if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
+                themeSelectionVC.themeHelper = self.themeHelper
+                themeSelectionVC.modalPresentationStyle = .fullScreen
+            }
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
     
         // Configure the cell
-    
+        let photo = photoController.photos[indexPath.item]
+        cell.photo = photo
+        
         return cell
     }
 

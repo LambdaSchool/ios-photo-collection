@@ -17,12 +17,12 @@ class PhotoController {
     
     // MARK: - Class Functions
     
-    private func createPhoto(_ imageData: Data, _ imageTitle: String) {
+    func createPhoto(_ imageData: Data, _ imageTitle: String) {
         let photo = Photo(imageData: imageData, title: imageTitle)
         photos.append(photo)
     }
     
-    private func updatePhoto(for photo: Photo, updated imageData: Data, updated imageTitle: String) {
+    func updatePhoto(for photo: Photo, updatedData imageData: Data, updatedTitle imageTitle: String) {
         if let photoIndex = photos.firstIndex(of: photo) {
             photos[photoIndex].imageData = imageData
             photos[photoIndex].title = imageTitle
