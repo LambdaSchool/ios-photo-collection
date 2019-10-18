@@ -59,6 +59,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             photoController?.createPhoto(imageData: imageData, title: title)
         }
         
+        if let photoController = photoController {
+            for photo in photoController.photos {
+                print("photo \(photo)")
+            }
+        }
         navigationController?.popToRootViewController(animated: true)
     }
     

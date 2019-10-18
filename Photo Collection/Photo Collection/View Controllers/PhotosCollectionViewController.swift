@@ -26,6 +26,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         themeHelper.setTheme(for: collectionView)
+        collectionView?.reloadData()
     }
 
     // MARK: - Navigation
@@ -67,13 +68,14 @@ class PhotosCollectionViewController: UICollectionViewController {
         return photoController.photos.count
     }
 
+    
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
             as? PhotosCollectionViewCell else { return UICollectionViewCell() }
         
         cell.photo = photoController.photos[indexPath.item]
-    
+
         return cell
     }
 
