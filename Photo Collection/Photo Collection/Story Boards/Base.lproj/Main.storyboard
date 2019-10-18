@@ -22,7 +22,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="edW-Jt-vTB">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="edW-Jt-vTB" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="148" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mpO-v5-aEa">
@@ -64,6 +64,10 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="148" height="103"/>
+                                <connections>
+                                    <outlet property="photoImageView" destination="tfy-n3-Akg" id="dPL-UW-Dg2"/>
+                                    <outlet property="photoLabelTextView" destination="xKB-UU-s7W" id="mU3-j4-qEb"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -71,7 +75,10 @@
                             <outlet property="delegate" destination="yDf-pd-LNN" id="VIm-Eu-dem"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="tuL-66-JEz"/>
+                    <navigationItem key="navigationItem" id="tuL-66-JEz">
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="FPW-W2-nMs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LX9-5n-epu"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4d-fg-PZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

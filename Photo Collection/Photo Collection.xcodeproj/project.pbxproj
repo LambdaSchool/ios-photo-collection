@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				1C80417D23595DAE00B47C69 /* Other */,
-				1C80417E23595DCB00B47C69 /* Storey Boards */,
+				1C80417E23595DCB00B47C69 /* Story Boards */,
 				1C804178235924F600B47C69 /* ThemeHelper.swift */,
 				1C80418023595FDC00B47C69 /* PhotosCollectionViewCell.swift */,
 				1C80417A23593DE400B47C69 /* Model + Model Controller */,
@@ -94,13 +94,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		1C80417E23595DCB00B47C69 /* Storey Boards */ = {
+		1C80417E23595DCB00B47C69 /* Story Boards */ = {
 			isa = PBXGroup;
 			children = (
 				1C8041652359086300B47C69 /* Main.storyboard */,
 				1C80416A2359086400B47C69 /* LaunchScreen.storyboard */,
 			);
-			path = "Storey Boards";
+			path = "Story Boards";
 			sourceTree = "<group>";
 		};
 		1C80417F23595E1000B47C69 /* View Controllers */ = {
