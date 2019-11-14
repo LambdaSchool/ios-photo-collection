@@ -13,6 +13,7 @@ struct Cells {
     static let photoCell = "PhotoCell"
 }
 
+/// Constants for Segue Identifiers
 struct Segues {
     static let addPhotoSegue = "AddPhotoSegue"
     static let editPhotoSegue = "EditPhotoSegue"

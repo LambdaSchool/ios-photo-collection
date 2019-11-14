@@ -29,6 +29,8 @@ class PhotoDetailViewController: UIViewController {
         updateViews()
     }
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Helper Methods
     /// Function to update the views for the ViewController
     private func updateViews() {
         setTheme()
@@ -84,6 +86,8 @@ class PhotoDetailViewController: UIViewController {
     }
 }
 
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+// MARK: - ImagePicker Delegate
 extension PhotoDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage

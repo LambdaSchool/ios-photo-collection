@@ -14,10 +14,14 @@ class ThemeSelectionViewController: UIViewController {
     // MARK: - Properties
     var themeHelper: ThemeHelper?
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Actions
     @IBAction func darkModeButtonTapped(_ sender: UIButton) {
         themeHelper?.setThemePreferenceToDark()
         dismiss(animated: true)

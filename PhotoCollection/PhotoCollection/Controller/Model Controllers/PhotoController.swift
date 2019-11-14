@@ -10,8 +10,12 @@ import Foundation
 
 /// Model Controller for Photo Objects
 class PhotoController {
+    
+    /// Data source for Photo Controller
     var photos = [Photo]()
     
+    
+    /// Initializes PhotoController woth objects from Plist
     init() {
         loadFromPersistentStore()
     }
@@ -25,7 +29,6 @@ class PhotoController {
         return documentsDirectory.appendingPathComponent(fileName)
     }
     
-    
     /// Function to create Photo Objects
     /// - Parameters:
     ///   - title: The title for the Photo
@@ -35,7 +38,6 @@ class PhotoController {
         photos.append(photo)
         saveToPersistentStore()
     }
-    
     
     /// Function to update existing Photo objects
     /// - Parameters:
@@ -49,6 +51,7 @@ class PhotoController {
         saveToPersistentStore()
     }
     
+    /// Function to save Photos to Plist
     private func saveToPersistentStore() {
         guard let url = persistentFileURL else { return }
         let encoder = PropertyListEncoder()
@@ -60,6 +63,7 @@ class PhotoController {
         }
     }
     
+    /// Function to load Photos from Plist
     private func loadFromPersistentStore() {
         let fm = FileManager.default
         guard let url = persistentFileURL, fm.fileExists(atPath: url.path) else { return }
