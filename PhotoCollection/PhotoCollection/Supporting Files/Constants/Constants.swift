@@ -13,6 +13,12 @@ struct Cells {
     static let photoCell = "PhotoCell"
 }
 
+struct Segues {
+    static let addPhotoSegue = "AddPhotoSegue"
+    static let editPhotoSegue = "EditPhotoSegue"
+    static let showThemePickerSegue = "ShowThemePickerSegue"
+}
+
 /// Constants for UserDefaults Keys
 struct UserDefaultKeys {
     static let themePreferenceKey = "ThemePreferenceKey"
