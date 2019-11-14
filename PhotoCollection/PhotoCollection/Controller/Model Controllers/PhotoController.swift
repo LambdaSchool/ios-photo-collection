@@ -12,6 +12,19 @@ import Foundation
 class PhotoController {
     var photos = [Photo]()
     
+    init() {
+        loadFromPersistentStore()
+    }
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Persistence
+    private var persistentFileURL: URL? {
+        let fm = FileManager.default
+        guard let documentsDirectory = fm.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let fileName = "Photos.plist"
+        return documentsDirectory.appendingPathComponent(fileName)
+    }
+    
     
     /// Function to create Photo Objects
     /// - Parameters:
@@ -20,6 +33,7 @@ class PhotoController {
     func create(with title: String, imageData: Data) {
         let photo = Photo(imageData: imageData, title: title)
         photos.append(photo)
+        saveToPersistentStore()
     }
     
     
@@ -32,5 +46,29 @@ class PhotoController {
         guard let index = photos.firstIndex(of: photo) else { return }
         photos[index].title = title
         photos[index].imageData = imageData
+        saveToPersistentStore()
+    }
+    
+    private func saveToPersistentStore() {
+        guard let url = persistentFileURL else { return }
+        let encoder = PropertyListEncoder()
+        do {
+            let photosData = try encoder.encode(photos)
+            try photosData.write(to: url)
+        } catch let saveError {
+            print("Error saving photos to file: \(saveError.localizedDescription)")
+        }
+    }
+    
+    private func loadFromPersistentStore() {
+        let fm = FileManager.default
+        guard let url = persistentFileURL, fm.fileExists(atPath: url.path) else { return }
+        let decoder = PropertyListDecoder()
+        do {
+            let photosData = try Data(contentsOf: url)
+            photos = try decoder.decode([Photo].self, from: photosData)
+        } catch let loadError {
+            print("Error loading photos from file: \(loadError.localizedDescription)")
+        }
     }
 }

@@ -19,10 +19,12 @@ class ThemeSelectionViewController: UIViewController {
     }
     
     @IBAction func darkModeButtonTapped(_ sender: UIButton) {
-        
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true)
     }
     
     @IBAction func lightModeButtonTapped(_ sender: UIButton) {
-        
+        themeHelper?.setThemePreferenceToLight()
+        dismiss(animated: true)
     }
 }

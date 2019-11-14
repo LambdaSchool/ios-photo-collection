@@ -91,23 +91,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="350" height="165"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ILn-bb-LHb">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="128"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuk-pG-CN0">
-                                            <rect key="frame" x="154" y="136" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLY-kB-aYN">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="165"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ILn-bb-LHb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="116"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuk-pG-CN0">
+                                                    <rect key="frame" x="154" y="129" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="ILn-bb-LHb" firstAttribute="top" secondItem="jLY-kB-aYN" secondAttribute="top" id="4Sa-gj-Yh0"/>
+                                                <constraint firstAttribute="trailing" secondItem="ILn-bb-LHb" secondAttribute="trailing" id="BhX-Fz-Gue"/>
+                                                <constraint firstAttribute="bottom" secondItem="wuk-pG-CN0" secondAttribute="bottom" constant="15" id="TP1-VQ-DoG"/>
+                                                <constraint firstItem="ILn-bb-LHb" firstAttribute="leading" secondItem="jLY-kB-aYN" secondAttribute="leading" id="X74-WR-Hqu"/>
+                                                <constraint firstItem="wuk-pG-CN0" firstAttribute="centerX" secondItem="jLY-kB-aYN" secondAttribute="centerX" id="fHE-7O-M8v"/>
+                                                <constraint firstItem="wuk-pG-CN0" firstAttribute="top" secondItem="ILn-bb-LHb" secondAttribute="bottom" constant="13" id="kL5-y0-fOa"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="wuk-pG-CN0" firstAttribute="top" secondItem="ILn-bb-LHb" secondAttribute="bottom" constant="8" id="2XA-D3-8hg"/>
-                                        <constraint firstItem="ILn-bb-LHb" firstAttribute="leading" secondItem="NRz-vr-JgC" secondAttribute="leading" id="OhD-Ny-JqL"/>
-                                        <constraint firstItem="wuk-pG-CN0" firstAttribute="centerX" secondItem="NRz-vr-JgC" secondAttribute="centerX" id="RZC-vg-PoI"/>
-                                        <constraint firstAttribute="bottom" secondItem="wuk-pG-CN0" secondAttribute="bottom" constant="8" id="oZP-G1-xaF"/>
-                                        <constraint firstAttribute="trailing" secondItem="ILn-bb-LHb" secondAttribute="trailing" id="xLd-od-aF4"/>
-                                        <constraint firstItem="ILn-bb-LHb" firstAttribute="top" secondItem="NRz-vr-JgC" secondAttribute="top" id="zh6-rL-Uu9"/>
+                                        <constraint firstItem="jLY-kB-aYN" firstAttribute="leading" secondItem="NRz-vr-JgC" secondAttribute="leading" id="FaD-BM-NCA"/>
+                                        <constraint firstAttribute="bottom" secondItem="jLY-kB-aYN" secondAttribute="bottom" id="FzU-sY-lhS"/>
+                                        <constraint firstAttribute="trailing" secondItem="jLY-kB-aYN" secondAttribute="trailing" id="a6M-NU-tDv"/>
+                                        <constraint firstItem="jLY-kB-aYN" firstAttribute="top" secondItem="NRz-vr-JgC" secondAttribute="top" id="qdP-qV-NQu"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="350" height="165"/>
@@ -158,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="198.55072463768118" y="122.54464285714285"/>
         </scene>
-        <!--Photo Detail View Controller-->
+        <!--Create Photo-->
         <scene sceneID="cWm-yU-vt9">
             <objects>
                 <viewController id="40G-4D-koi" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -167,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rAz-Ed-WOq">
-                                <rect key="frame" x="20" y="341.5" width="374" height="267"/>
+                                <rect key="frame" x="20" y="367.5" width="374" height="267"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="at6-MY-Vrl">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="187"/>
@@ -198,7 +210,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m1j-e1-gIW"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="aa1-OA-2na">
+                    <navigationItem key="navigationItem" title="Create Photo" largeTitleDisplayMode="always" id="aa1-OA-2na">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="uvs-sf-EJp">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="40G-4D-koi" id="rHE-yD-D6X"/>
