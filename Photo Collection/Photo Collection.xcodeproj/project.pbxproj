@@ -19,6 +19,7 @@
 		DEFEDDD1237E0369004F5D8D /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFEDDD0237E0369004F5D8D /* PhotosCollectionViewCell.swift */; };
 		DEFEDDD3237E0A62004F5D8D /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFEDDD2237E0A62004F5D8D /* PhotoDetailViewController.swift */; };
 		DEFEDDD5237E108B004F5D8D /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFEDDD4237E108B004F5D8D /* ThemeSelectionViewController.swift */; };
+		DEFEDDD7237E1930004F5D8D /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFEDDD6237E1930004F5D8D /* PropertyKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DEFEDDD0237E0369004F5D8D /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEFEDDD2237E0A62004F5D8D /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		DEFEDDD4237E108B004F5D8D /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
+		DEFEDDD6237E1930004F5D8D /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +72,11 @@
 			children = (
 				DEFEDDB9237DEC6E004F5D8D /* Main.storyboard */,
 				DEFEDDC8237DED34004F5D8D /* Photo.swift */,
+				DEFEDDD6237E1930004F5D8D /* PropertyKeys.swift */,
 				DEFEDDCC237DEEE2004F5D8D /* ThemeHelper.swift */,
 				DEFEDDCA237DEDC3004F5D8D /* PhotoController.swift */,
-				DEFEDDCE237E02A1004F5D8D /* PhotosCollectionViewController.swift */,
 				DEFEDDD0237E0369004F5D8D /* PhotosCollectionViewCell.swift */,
+				DEFEDDCE237E02A1004F5D8D /* PhotosCollectionViewController.swift */,
 				DEFEDDD2237E0A62004F5D8D /* PhotoDetailViewController.swift */,
 				DEFEDDD4237E108B004F5D8D /* ThemeSelectionViewController.swift */,
 				DEFEDDBC237DEC6E004F5D8D /* Assets.xcassets */,
@@ -166,6 +169,7 @@
 			files = (
 				DEFEDDC9237DED34004F5D8D /* Photo.swift in Sources */,
 				DEFEDDD1237E0369004F5D8D /* PhotosCollectionViewCell.swift in Sources */,
+				DEFEDDD7237E1930004F5D8D /* PropertyKeys.swift in Sources */,
 				DEFEDDB4237DEC6E004F5D8D /* AppDelegate.swift in Sources */,
 				DEFEDDCB237DEDC3004F5D8D /* PhotoController.swift in Sources */,
 				DEFEDDCF237E02A1004F5D8D /* PhotosCollectionViewController.swift in Sources */,

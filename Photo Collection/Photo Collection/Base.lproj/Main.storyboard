@@ -68,7 +68,7 @@
                         <barButtonItem key="backBarButtonItem" title="Photo Collection" id="90J-Ne-gKs"/>
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="MBz-HM-Mmn">
                             <connections>
-                                <segue destination="kdj-fI-yCr" kind="presentation" identifier="selectThemeModally" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="hL8-U7-UHF"/>
+                                <segue destination="kdj-fI-yCr" kind="presentation" identifier="SelectThemeModally" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="hL8-U7-UHF"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bOc-aN-9vv">
