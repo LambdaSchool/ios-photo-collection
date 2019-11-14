@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		2CBC2D75237E012E00866F44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D74237E012E00866F44 /* AppDelegate.swift */; };
 		2CBC2D77237E012E00866F44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D76237E012E00866F44 /* SceneDelegate.swift */; };
-		2CBC2D79237E012E00866F44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D78237E012E00866F44 /* ViewController.swift */; };
 		2CBC2D7C237E012E00866F44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC2D7A237E012E00866F44 /* Main.storyboard */; };
 		2CBC2D7E237E012F00866F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC2D7D237E012F00866F44 /* Assets.xcassets */; };
 		2CBC2D81237E012F00866F44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC2D7F237E012F00866F44 /* LaunchScreen.storyboard */; };
 		2CBC2D89237E017F00866F44 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D88237E017F00866F44 /* ThemeHelper.swift */; };
 		2CBC2D8B237E018700866F44 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D8A237E018700866F44 /* PhotoController.swift */; };
 		2CBC2D8D237E018E00866F44 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D8C237E018D00866F44 /* Photo.swift */; };
+		2CBC2D8F237E023700866F44 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D8E237E023700866F44 /* PhotosCollectionViewController.swift */; };
+		2CBC2D91237E040500866F44 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D90237E040500866F44 /* PhotosCollectionViewCell.swift */; };
+		2CBC2D93237E086F00866F44 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D92237E086F00866F44 /* PhotoDetailViewController.swift */; };
+		2CBC2D95237E0FA400866F44 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2D94237E0FA400866F44 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CBC2D71237E012E00866F44 /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBC2D74237E012E00866F44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CBC2D76237E012E00866F44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CBC2D78237E012E00866F44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2CBC2D7B237E012E00866F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CBC2D7D237E012F00866F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CBC2D80237E012F00866F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,10 @@
 		2CBC2D88237E017F00866F44 /* ThemeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		2CBC2D8A237E018700866F44 /* PhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		2CBC2D8C237E018D00866F44 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		2CBC2D8E237E023700866F44 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		2CBC2D90237E040500866F44 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CBC2D92237E086F00866F44 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		2CBC2D94237E0FA400866F44 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +73,11 @@
 				2CBC2D88237E017F00866F44 /* ThemeHelper.swift */,
 				2CBC2D74237E012E00866F44 /* AppDelegate.swift */,
 				2CBC2D76237E012E00866F44 /* SceneDelegate.swift */,
-				2CBC2D78237E012E00866F44 /* ViewController.swift */,
 				2CBC2D7A237E012E00866F44 /* Main.storyboard */,
+				2CBC2D92237E086F00866F44 /* PhotoDetailViewController.swift */,
+				2CBC2D94237E0FA400866F44 /* ThemeSelectionViewController.swift */,
+				2CBC2D90237E040500866F44 /* PhotosCollectionViewCell.swift */,
+				2CBC2D8E237E023700866F44 /* PhotosCollectionViewController.swift */,
 				2CBC2D7D237E012F00866F44 /* Assets.xcassets */,
 				2CBC2D7F237E012F00866F44 /* LaunchScreen.storyboard */,
 				2CBC2D82237E012F00866F44 /* Info.plist */,
@@ -148,10 +157,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBC2D8D237E018E00866F44 /* Photo.swift in Sources */,
+				2CBC2D91237E040500866F44 /* PhotosCollectionViewCell.swift in Sources */,
 				2CBC2D8B237E018700866F44 /* PhotoController.swift in Sources */,
-				2CBC2D79237E012E00866F44 /* ViewController.swift in Sources */,
 				2CBC2D75237E012E00866F44 /* AppDelegate.swift in Sources */,
+				2CBC2D8F237E023700866F44 /* PhotosCollectionViewController.swift in Sources */,
 				2CBC2D77237E012E00866F44 /* SceneDelegate.swift in Sources */,
+				2CBC2D93237E086F00866F44 /* PhotoDetailViewController.swift in Sources */,
+				2CBC2D95237E0FA400866F44 /* ThemeSelectionViewController.swift in Sources */,
 				2CBC2D89237E017F00866F44 /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
