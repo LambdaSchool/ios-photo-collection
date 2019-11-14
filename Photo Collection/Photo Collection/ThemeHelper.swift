@@ -30,7 +30,7 @@ class ThemeHelper {
         UserDefaults.standard.set(PropertyKeys.dark, forKey: .themePreference)
     }
     
-    func setThemePreferenceToYourColorHere() {
+    func setThemePreferenceToBlue() {
         UserDefaults.standard.set(PropertyKeys.blue, forKey: .themePreference)
     }
 }

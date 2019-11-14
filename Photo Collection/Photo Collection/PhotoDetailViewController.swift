@@ -13,10 +13,6 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var addPhotoImageView: UIImageView!
     @IBOutlet weak var addTitleTextField: UITextField!
     
-    
-    
-    
-    
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?

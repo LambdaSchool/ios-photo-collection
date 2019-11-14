@@ -161,10 +161,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jX-HY-kZ6">
                                                 <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                 <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="kdj-fI-yCr" eventType="touchUpInside" id="TYv-1T-YLY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1y-gv-0u2">
                                                 <rect key="frame" x="103" y="0.0" width="31" height="30"/>
                                                 <state key="normal" title="Blue"/>
+                                                <connections>
+                                                    <action selector="selectBlueTheme:" destination="kdj-fI-yCr" eventType="touchUpInside" id="NTd-hp-fQq"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

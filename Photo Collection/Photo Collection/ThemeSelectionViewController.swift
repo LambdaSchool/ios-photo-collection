@@ -17,6 +17,10 @@ class ThemeSelectionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func selectDarkTheme(_ sender: Any) {
+    }
+    @IBAction func selectBlueTheme(_ sender: Any) {
+    }
     
 
     /*
