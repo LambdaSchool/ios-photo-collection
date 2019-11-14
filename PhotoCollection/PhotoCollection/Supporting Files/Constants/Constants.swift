@@ -8,6 +8,12 @@
 
 import Foundation
 
+/// Constants for Cell Identifiers
+struct Cells {
+    static let photoCell = "PhotoCell"
+}
+
+/// Constants for UserDefaults Keys
 struct UserDefaultKeys {
     static let themePreferenceKey = "ThemePreferenceKey"
 }
