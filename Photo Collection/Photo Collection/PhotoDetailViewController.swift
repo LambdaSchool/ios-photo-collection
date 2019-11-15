@@ -32,7 +32,7 @@ class PhotoDetailViewController: UIViewController {
     
     @IBAction func addPhoto(_ sender: Any) {
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate & UICollectionViewDelegateFlowLayout
+        imagePicker.delegate = self 
         
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -71,7 +71,7 @@ class PhotoDetailViewController: UIViewController {
     }
 }
 
-extension PhotoDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDelegateFlowLayout {
+extension PhotoDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage, let _ = image.pngData() else { return }
