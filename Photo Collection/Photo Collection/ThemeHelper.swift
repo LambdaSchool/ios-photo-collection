@@ -17,13 +17,14 @@ class ThemeHelper {
     
     init() {
         if themePreferenceKey == nil {
-            setThemePreferenceToYourColorHere()
+            setThemePreferenceToWhite()
         }
     }
     
     struct PropertyKeys {
         static let dark = "Dark"
         static let blue = "Blue"
+        static let white = "White"
     }
     
     func setThemePreferenceToDark() {
@@ -32,6 +33,10 @@ class ThemeHelper {
     
     func setThemePreferenceToBlue() {
         UserDefaults.standard.set(PropertyKeys.blue, forKey: .themePreference)
+    }
+    
+    func setThemePreferenceToWhite() {
+        UserDefaults.standard.set(PropertyKeys.white, forKey: .themePreference)
     }
 }
 

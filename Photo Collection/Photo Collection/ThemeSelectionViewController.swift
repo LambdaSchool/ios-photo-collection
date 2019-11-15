@@ -18,19 +18,13 @@ class ThemeSelectionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func selectDarkTheme(_ sender: Any) {
+        UserDefaults.standard.set(ThemeHelper.PropertyKeys.dark, forKey: .themePreference)
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func selectBlueTheme(_ sender: Any) {
+        UserDefaults.standard.set(ThemeHelper.PropertyKeys.blue, forKey: .themePreference)
+        themeHelper?.setThemePreferenceToBlue()
+        dismiss(animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
