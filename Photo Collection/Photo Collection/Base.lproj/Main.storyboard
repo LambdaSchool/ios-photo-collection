@@ -52,6 +52,7 @@
                                         <constraint firstItem="pRz-Dc-ZQf" firstAttribute="leading" secondItem="58G-fM-apu" secondAttribute="leading" id="l78-Oq-UBt"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <viewLayoutGuide key="safeArea" id="kNz-Bk-pOe"/>
                                 <size key="customSize" width="211" height="222"/>
                                 <connections>
                                     <outlet property="photoLabel" destination="LUo-zn-eQK" id="F9I-Ij-1u4"/>
