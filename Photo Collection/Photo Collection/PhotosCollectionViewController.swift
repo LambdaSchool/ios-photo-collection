@@ -63,10 +63,10 @@ class PhotosCollectionViewController: UICollectionViewController {
         switch themePreference {
         case ThemeHelper.PropertyKeys.dark:
             collectionView.backgroundColor = .darkGray
-        case ThemeHelper.PropertyKeys.white:
-            collectionView.backgroundColor = .white
-        default:
+        case ThemeHelper.PropertyKeys.blue:
             collectionView.backgroundColor = .blue
+        default:
+            collectionView.backgroundColor = .white
         }
     }
 }
