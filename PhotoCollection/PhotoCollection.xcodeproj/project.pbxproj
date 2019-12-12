@@ -14,6 +14,7 @@
 		4227F3FB23A2D3E300752A1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4227F3FA23A2D3E300752A1E /* Assets.xcassets */; };
 		4227F3FE23A2D3E300752A1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4227F3FC23A2D3E300752A1E /* LaunchScreen.storyboard */; };
 		4289810A23A2D90F00B586EF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289810923A2D90F00B586EF /* Photo.swift */; };
+		4289810C23A2D98A00B586EF /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289810B23A2D98A00B586EF /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4227F3FD23A2D3E300752A1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4227F3FF23A2D3E300752A1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4289810923A2D90F00B586EF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		4289810B23A2D98A00B586EF /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,10 @@
 		4227F3F023A2D3E100752A1E /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
+				4289810D23A2D9A000B586EF /* Model Controller */,
 				4237A6A923A2D6E800501562 /* Model */,
 				4289810623A2D71300B586EF /* View */,
-				4289810723A2D71800B586EF /* Controllers */,
+				4289810723A2D71800B586EF /* View Controllers */,
 				4289810823A2D72100B586EF /* Resources */,
 			);
 			path = PhotoCollection;
@@ -83,12 +86,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4289810723A2D71800B586EF /* Controllers */ = {
+		4289810723A2D71800B586EF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				4227F3F523A2D3E100752A1E /* ViewController.swift */,
 			);
-			path = Controllers;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		4289810823A2D72100B586EF /* Resources */ = {
@@ -100,6 +103,14 @@
 				4227F3F123A2D3E100752A1E /* AppDelegate.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4289810D23A2D9A000B586EF /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4289810B23A2D98A00B586EF /* PhotoController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4289810C23A2D98A00B586EF /* PhotoController.swift in Sources */,
 				4289810A23A2D90F00B586EF /* Photo.swift in Sources */,
 				4227F3F623A2D3E100752A1E /* ViewController.swift in Sources */,
 				4227F3F223A2D3E100752A1E /* AppDelegate.swift in Sources */,
