@@ -1,5 +1,5 @@
 //
-//  PhotoDetailViewController.swift
+//  ThemeSelectionViewController.swift
 //  Photo-IOSPT4
 //
 //  Created by David Williams on 12/12/19.
@@ -8,15 +8,11 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class ThemeSelectionViewController: UIViewController {
     
-    var photoController: PhotoController?
-    var photo: Photo?
     var themeHelper: ThemeHelper?
-
-    @IBOutlet weak var imageView: UIImageView!    
-    @IBOutlet weak var photoName: UITextField!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +30,8 @@ class PhotoDetailViewController: UIViewController {
     }
     */
 
-    @IBAction func addPhotoButtonTapped(_ sender: Any) {
+    @IBAction func darkThemeButtonTapped(_ sender: Any) {
+    }
+    @IBAction func greenThemeButtonTapped(_ sender: Any) {
     }
 }

@@ -53,6 +53,9 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="126" height="125"/>
+                                <connections>
+                                    <segue destination="mNL-nT-202" kind="show" identifier="ShowPhotoDetailSegue" id="yNv-y5-3HE"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -61,10 +64,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="Exw-Lp-dUy">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Awa-gs-J78"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Awa-gs-J78">
+                            <connections>
+                                <segue destination="GD6-hl-mqj" kind="presentation" identifier="ThemeSelectionModalSegue" id="ukN-om-JfQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ccd-oM-djs">
                             <connections>
-                                <segue destination="mNL-nT-202" kind="presentation" id="Li1-6Z-qg8"/>
+                                <segue destination="mNL-nT-202" kind="show" identifier="CreatePhotoSegue" id="Gvb-og-4ho"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -73,12 +80,12 @@
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="118.52678571428571"/>
         </scene>
-        <!--Photo Detail View Controller-->
+        <!--Create Photo-->
         <scene sceneID="JmS-cA-A8F">
             <objects>
                 <viewController id="mNL-nT-202" customClass="PhotoDetailViewController" customModule="Photo_IOSPT4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3AC-FX-q33">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxp-FU-T2v">
@@ -89,6 +96,9 @@
                                 <rect key="frame" x="119" y="385" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoButtonTapped:" destination="mNL-nT-202" eventType="touchUpInside" id="ROG-J4-qcb"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-vW-NdR">
                                 <rect key="frame" x="94" y="300" width="97" height="34"/>
@@ -100,10 +110,65 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="UoQ-KA-kwc"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create Photo" id="ZK6-kN-C6L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9tb-Ph-qGg"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="yxp-FU-T2v" id="ARh-5a-b9k"/>
+                        <outlet property="photoName" destination="Fqh-vW-NdR" id="QqJ-Bt-pnp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBQ-6w-UQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1787" y="119"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="7i9-O5-ui7">
+            <objects>
+                <viewController id="GD6-hl-mqj" customClass="ThemeSelectionViewController" customModule="Photo_IOSPT4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rjL-4T-5Id">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme you would like to use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NK-mj-NHe">
+                                <rect key="frame" x="66" y="75" width="282.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="Nxo-7f-Sfa">
+                                <rect key="frame" x="126.5" y="140.5" width="161" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32b-rL-GlD">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <state key="normal" title="DARK"/>
+                                        <connections>
+                                            <action selector="darkThemeButtonTapped:" destination="GD6-hl-mqj" eventType="touchUpInside" id="IMg-uf-hIi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJp-9X-k3a">
+                                        <rect key="frame" x="112" y="0.0" width="49" height="30"/>
+                                        <state key="normal" title="GREEN"/>
+                                        <connections>
+                                            <action selector="greenThemeButtonTapped:" destination="GD6-hl-mqj" eventType="touchUpInside" id="oDU-ea-FgA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Nxo-7f-Sfa" firstAttribute="centerX" secondItem="rjL-4T-5Id" secondAttribute="centerX" id="5Ig-jI-NhB"/>
+                            <constraint firstItem="0NK-mj-NHe" firstAttribute="centerX" secondItem="rjL-4T-5Id" secondAttribute="centerX" id="Ow9-h7-20k"/>
+                            <constraint firstItem="0NK-mj-NHe" firstAttribute="top" secondItem="BW9-i0-HUG" secondAttribute="top" constant="75" id="QTr-XY-VOw"/>
+                            <constraint firstItem="Nxo-7f-Sfa" firstAttribute="top" secondItem="0NK-mj-NHe" secondAttribute="bottom" constant="45" id="Wbq-bi-pON"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BW9-i0-HUG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eag-2R-nMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2484" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T4d-tE-D1y">
@@ -124,4 +189,7 @@
             <point key="canvasLocation" x="134.78260869565219" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yNv-y5-3HE"/>
+    </inferredMetricsTieBreakers>
 </document>
