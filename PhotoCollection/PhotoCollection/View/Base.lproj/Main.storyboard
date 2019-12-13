@@ -161,6 +161,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addPhotoImageView" destination="QE3-pe-72g" id="EiZ-zm-Gxv"/>
+                        <outlet property="addTitleTextField" destination="mNb-WP-T9U" id="22Y-LV-Jum"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAT-kb-MRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
