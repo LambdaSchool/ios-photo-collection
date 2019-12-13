@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoDetailViewController: UIViewController {
     
@@ -43,11 +44,56 @@ class PhotoDetailViewController: UIViewController {
         imageTitleField.text = photo.title
     }
 
+
+    
     //IB Actions
     @IBAction func addPhotoButtonWasPressed(_ sender: UIButton) {
-    }
-    @IBAction func savePhotoButtonWasPressed(_ sender: UIBarButtonItem) {
+        let imagePicker = UIImagePickerController()
+        let authStatus = PHPhotoLibrary.authorizationStatus()
+        switch authStatus {
+        case .authorized:
+            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            present(imagePicker, animated: true, completion: nil)
+        case .denied:
+            print("Go away")
+        case .notDetermined:
+            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            present(imagePicker, animated: true, completion: nil)
+        default:
+            break
+        }
+        
+
+//
+        
     }
     
+    @IBAction func savePhotoButtonWasPressed(_ sender: UIBarButtonItem) {
+        guard let photoController = photoController,
+        let image = imageOutlet.image,
+            let imageTitle = imageTitleField.text,
+            let imageData = image.pngData(),
+            !imageTitle.isEmpty else { return }
+        
+        if let photo = photo {
+            photoController.updatePhoto(photo: photo, imageData: imageData, imageTitle: imageTitle)
+        } else {
+            photoController.createPhoto(imageData: imageData, title: imageTitle)
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
 
+}
+// delegate for photoPicker
+extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        imageOutlet.image = image
+        
+    }
 }

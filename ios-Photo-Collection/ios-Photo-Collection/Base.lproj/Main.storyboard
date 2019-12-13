@@ -13,7 +13,7 @@
             <objects>
                 <collectionViewController id="BIk-sI-U2p" customClass="PhotosCollectionViewController" customModule="ios_Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OWm-CK-Gm6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VBO-mc-mU9">
@@ -36,7 +36,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AVT-xo-ghS">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="121.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDz-Ow-3Ch">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDz-Ow-3Ch">
                                                     <rect key="frame" x="0.0" y="129.5" width="150" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -46,10 +46,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="or5-Gl-K3x" firstAttribute="leading" secondItem="Paf-bw-5bJ" secondAttribute="leading" id="hGB-QN-pXR"/>
-                                        <constraint firstAttribute="trailing" secondItem="or5-Gl-K3x" secondAttribute="trailing" id="nDs-8U-Jqc"/>
-                                        <constraint firstAttribute="bottom" secondItem="or5-Gl-K3x" secondAttribute="bottom" id="wDb-KP-Gmh"/>
-                                        <constraint firstItem="or5-Gl-K3x" firstAttribute="top" secondItem="Paf-bw-5bJ" secondAttribute="top" id="zxt-CF-OGx"/>
+                                        <constraint firstItem="or5-Gl-K3x" firstAttribute="top" secondItem="Paf-bw-5bJ" secondAttribute="top" id="2sG-HO-43R"/>
+                                        <constraint firstAttribute="trailing" secondItem="or5-Gl-K3x" secondAttribute="trailing" id="6Nz-Kh-TkA"/>
+                                        <constraint firstAttribute="bottom" secondItem="or5-Gl-K3x" secondAttribute="bottom" id="VBd-bA-shT"/>
+                                        <constraint firstItem="or5-Gl-K3x" firstAttribute="leading" secondItem="Paf-bw-5bJ" secondAttribute="leading" id="jBE-lM-9zK"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="150" height="150"/>
@@ -72,7 +72,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="M9I-ZZ-W9a">
                             <connections>
-                                <segue destination="ImJ-xd-y42" kind="show" identifier="showPhotoDetail" id="OYA-g6-Wdv"/>
+                                <segue destination="ImJ-xd-y42" kind="show" identifier="AddPhoto" id="OYA-g6-Wdv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -86,24 +86,23 @@
             <objects>
                 <viewController id="ImJ-xd-y42" customClass="PhotoDetailViewController" customModule="ios_Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LPL-T8-W4q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="awT-Us-oBG">
-                                <rect key="frame" x="40" y="30" width="334" height="200"/>
+                                <rect key="frame" x="40" y="170" width="334" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="PJX-md-iKU"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="k5i-ih-DOl">
-                                <rect key="frame" x="20" y="260" width="374" height="83"/>
+                                <rect key="frame" x="20" y="400" width="374" height="83"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kf6-gL-h9X">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhotoButtonWasPressed:" destination="ImJ-xd-y42" eventType="touchUpInside" id="GPz-ZX-EUw"/>
-                                            <segue destination="BIk-sI-U2p" kind="show" identifier="AddPhotoSegue" id="eFy-0z-6Ta"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Title " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZH-4J-d1Z">
@@ -140,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zm-wr-fa3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="42"/>
+            <point key="canvasLocation" x="2609" y="68"/>
         </scene>
         <!--Theme Settings-->
         <scene sceneID="zcz-33-VFH">
@@ -210,7 +209,4 @@
             <point key="canvasLocation" x="202.89855072463769" y="142.63392857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="eFy-0z-6Ta"/>
-    </inferredMetricsTieBreakers>
 </document>
