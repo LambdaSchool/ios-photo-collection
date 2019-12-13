@@ -11,9 +11,9 @@ import UIKit
 class PhotoDetailViewController: UIViewController {
     
     // MARK: - Properties
-    let photoController: PhotoController?
-    let photo: Photo?
-    let themeHelper: ThemeHelper?
+    var photoController: PhotoController?
+    var photo: Photo?
+    var themeHelper: ThemeHelper?
 
     override func viewDidLoad() {
         super.viewDidLoad()
