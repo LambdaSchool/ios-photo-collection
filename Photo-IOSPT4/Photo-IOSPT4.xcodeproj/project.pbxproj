@@ -70,11 +70,11 @@
 		3830886F23A20155001922F4 /* Photo-IOSPT4 */ = {
 			isa = PBXGroup;
 			children = (
-				3830889523A30601001922F4 /* Views */,
 				3830887023A20155001922F4 /* AppDelegate.swift */,
 				3830887223A20155001922F4 /* SceneDelegate.swift */,
 				3830887423A20155001922F4 /* ViewController.swift */,
 				3830887623A20155001922F4 /* Main.storyboard */,
+				3830889523A30601001922F4 /* Views */,
 				3830887923A20158001922F4 /* Assets.xcassets */,
 				3830887B23A20159001922F4 /* LaunchScreen.storyboard */,
 				3830887E23A20159001922F4 /* Info.plist */,

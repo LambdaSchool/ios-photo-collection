@@ -11,6 +11,9 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +46,8 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,15 +57,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         return cell
     }
+    
+    func setTheme() {
+        
+    }
 
     // MARK: UICollectionViewDelegate
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
+   
 
     /*
     // Uncomment this method to specify if the specified item should be selected

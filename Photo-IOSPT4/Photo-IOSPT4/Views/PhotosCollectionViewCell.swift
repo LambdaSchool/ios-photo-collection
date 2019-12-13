@@ -10,7 +10,7 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    var photo = Photo?{
+    var photo = Photo? .self{
         didSet {
             updateViews()
         }
