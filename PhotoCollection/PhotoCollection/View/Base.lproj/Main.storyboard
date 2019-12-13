@@ -75,7 +75,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2El-o6-Fd8">
-                                            <rect key="frame" x="129" y="136" width="42" height="21"/>
+                                            <rect key="frame" x="129" y="136" width="42" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -85,6 +85,8 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="300" height="200"/>
                                 <connections>
+                                    <outlet property="photoImageView" destination="0b5-K1-psj" id="2Uk-Ms-wkA"/>
+                                    <outlet property="photoLabel" destination="2El-o6-Fd8" id="oIC-IJ-vOm"/>
                                     <segue destination="D5H-0b-bbP" kind="show" identifier="photoDetailSegue" id="Syp-8U-6Fk"/>
                                 </connections>
                             </collectionViewCell>
