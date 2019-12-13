@@ -21,10 +21,27 @@ class PhotoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
+       func setTheme() {
+            guard let themeHelper = themeHelper else { return }
+            if let themePreference = themeHelper.themePreference {
+                if themePreference == "Dark" {
+                    view.backgroundColor = UIColor.darkGray
+                } else if themePreference == "Red" {
+                    view.backgroundColor = UIColor.red
+                }
+            }
+        }
+        
+    func updateViews() {
+        setTheme()
+        guard let photo = photo else { return }
+        imageOutlet.image = UIImage(data: photo.imageData)
+        imageTitleField.text = photo.title
+    }
 
     //IB Actions
     @IBAction func addPhotoButtonWasPressed(_ sender: UIButton) {
