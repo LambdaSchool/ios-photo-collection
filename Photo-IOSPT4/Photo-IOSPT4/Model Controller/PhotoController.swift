@@ -19,5 +19,4 @@ class PhotoController {
     func update(photo: Photo, imageData: Data, title: String) {
         
     }
-    
 }
