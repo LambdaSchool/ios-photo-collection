@@ -7,32 +7,39 @@
 //
 
 import Foundation
+import UIKit
 
 class ThemeHelper {
-    
+
     var themePreferenceKey: String? {
-        return UserDefaults.standard.string(forKey: .themePreference)
+        return userDefaults.string(forKey: .themePreference)
     }
     
     init() {
         if themePreferenceKey == nil {
-            setThemePreferenceToYourColorHere()
+            setThemePreferenceToWhite()
         }
     }
     struct PropertyKeys {
         static let dark = "Dark"
-        static let blue = "Blue"
+        static let red = "Red"
+        static let white = "White"
     }
 
+    let userDefaults = UserDefaults.standard
+    
     func setThemePreferenceToDark() {
-        UserDefaults.standard.set(PropertyKeys.dark, forKey: .themePreference)
+        userDefaults.set(PropertyKeys.dark, forKey: .themePreference)
     }
 
     func setThemePreferenceToYourColorHere() {
-        UserDefaults.standard.set(PropertyKeys.blue, forKey: .themePreference)
+        userDefaults.set(PropertyKeys.red, forKey: .themePreference)
+    }
+
+    func setThemePreferenceToWhite() {
+        userDefaults.set(PropertyKeys.white, forKey: .themePreference)
     }
 }
-
 
 extension String {
     static var themePreference = "themePreference"
