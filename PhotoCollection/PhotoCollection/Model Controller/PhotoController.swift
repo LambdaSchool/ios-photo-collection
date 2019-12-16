@@ -22,14 +22,14 @@ class PhotoController {
     }
     
     func updatePhoto(photo: Photo, newImageData: Data? = nil, newTitle: String? = nil) {
-        var updatedPhoto = photo
+        guard let photoIndex = photos.firstIndex(of: photo) else { return }
         
         if let imageData = newImageData {
-            updatedPhoto.imageData = imageData
+            photos[photoIndex].imageData = imageData
         }
         
         if let title = newTitle {
-            updatedPhoto.title = title
+            photos[photoIndex].title = title
         }
     }
 }

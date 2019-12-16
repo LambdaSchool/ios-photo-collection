@@ -35,11 +35,11 @@ class PhotoDetailViewController: UIViewController {
     }
     
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
-        if let photo = photo {
-            photoController?.updatePhoto(photo: photo)
-        } else {
-            if let imageData = imageView.image?.pngData(),
-                let title = titleTextField.text {
+        if let imageData = imageView.image?.pngData(),
+            let title = titleTextField.text {
+            if let photo = photo {
+                photoController?.updatePhoto(photo: photo, newImageData: imageData, newTitle: title)
+            } else {
                 photoController?.createPhoto(from: imageData, title: title)
             }
         }
