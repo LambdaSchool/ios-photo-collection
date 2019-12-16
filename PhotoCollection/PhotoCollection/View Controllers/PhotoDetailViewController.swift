@@ -24,28 +24,58 @@ class PhotoDetailViewController: UIViewController {
     // MARK: IBActions
 
     @IBAction func addPhoto(_ sender: UIButton) {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
         
+        let pickerController = UIImagePickerController()
+        pickerController.sourceType = .photoLibrary
+        pickerController.delegate = self
+        pickerController.modalPresentationStyle = UIModalPresentationStyle.currentContext
+        
+        present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
+        if let photo = photo {
+            photoController?.updatePhoto(photo: photo)
+        } else {
+            if let imageData = imageView.image?.pngData(),
+                let title = titleTextField.text {
+                photoController?.createPhoto(from: imageData, title: title)
+            }
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: Methods
+    
+    func setTheme() {
+        guard let themeHelper = themeHelper else { return }
+        view.backgroundColor = themeHelper.themeColor
+    }
+
+    func updateViews() {
+        setTheme()
         
+        guard let photo = photo else { return }
+        imageView.image = UIImage(data: photo.imageData)
+        titleTextField.text = photo.title
+        print(photo.title)
+        print(titleTextField.text ?? "nil")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension PhotoDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            imageView.image = image
+        }
+        self.dismiss(animated: true, completion: nil)
+        return
     }
-    */
-
 }

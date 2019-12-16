@@ -20,22 +20,23 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: Methods
 
     func setTheme() {
-        guard let theme = themeHelper.themePreference else { return }
-        self.collectionView.backgroundColor = theme == "Dark" ? #colorLiteral(red: 0.1686089337, green: 0.1686392725, blue: 0.1686023176, alpha: 1) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        collectionView.backgroundColor = themeHelper.themeColor
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        //collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        setTheme()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        setTheme()
+        collectionView.reloadData()
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,21 +44,22 @@ class PhotosCollectionViewController: UICollectionViewController {
         case "ShowPhotoDetail":
             if let PhotoDetailVC = segue.destination as? PhotoDetailViewController,
                 let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                PhotoDetailVC.themeHelper = self.themeHelper
-                PhotoDetailVC.photoController = self.photoController
+                PhotoDetailVC.themeHelper = themeHelper
+                PhotoDetailVC.photoController = photoController
                 PhotoDetailVC.photo = photoController.photos[indexPath.row]
             }
         case "AddPhoto":
             if let PhotoDetailVC = segue.destination as? PhotoDetailViewController {
-                PhotoDetailVC.themeHelper = self.themeHelper
-                PhotoDetailVC.photoController = self.photoController
+                PhotoDetailVC.themeHelper = themeHelper
+                PhotoDetailVC.photoController = photoController
             }
         case "SelectTheme":
             if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
-                themeSelectionVC.themeHelper = self.themeHelper
+                themeSelectionVC.themeHelper = themeHelper
+                themeSelectionVC.delegate = self
             }
         default:
-            print("Error: Unexpected segue identifer.")
+            print("Error: Unexpected segue identifer: \(segue.identifier ?? "nil").")
         }
     }
 
@@ -70,7 +72,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
     
-        // Configure the cell
         cell.photo = photoController.photos[indexPath.item]
         
         return cell
@@ -107,4 +108,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension PhotosCollectionViewController: themeSelectionDelegate {
+    func themeWasSelected() {
+        setTheme()
+    }
 }
