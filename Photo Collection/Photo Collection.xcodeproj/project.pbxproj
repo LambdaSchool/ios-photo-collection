@@ -15,6 +15,8 @@
 		B9D5D7DE23AC2133005FA2D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D7DC23AC2133005FA2D8 /* LaunchScreen.storyboard */; };
 		B9D5D7E923AC2134005FA2D8 /* Photo_CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D7E823AC2134005FA2D8 /* Photo_CollectionTests.swift */; };
 		B9D5D7F423AC2134005FA2D8 /* Photo_CollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D7F323AC2134005FA2D8 /* Photo_CollectionUITests.swift */; };
+		B9D5D80823AC297A005FA2D8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D80723AC297A005FA2D8 /* Photo.swift */; };
+		B9D5D80A23AC29B6005FA2D8 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D80923AC29B6005FA2D8 /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B9D5D7EF23AC2134005FA2D8 /* Photo CollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Photo CollectionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D5D7F323AC2134005FA2D8 /* Photo_CollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_CollectionUITests.swift; sourceTree = "<group>"; };
 		B9D5D7F523AC2134005FA2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9D5D80723AC297A005FA2D8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B9D5D80923AC29B6005FA2D8 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,11 @@
 		B9D5D7D023AC2131005FA2D8 /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
-				B9D5D7D123AC2131005FA2D8 /* AppDelegate.swift */,
-				B9D5D7D323AC2131005FA2D8 /* SceneDelegate.swift */,
+				B9D5D80323AC2274005FA2D8 /* Model */,
+				B9D5D80223AC226D005FA2D8 /* View */,
+				B9D5D80523AC2283005FA2D8 /* Controller */,
+				B9D5D80123AC2208005FA2D8 /* Resources */,
 				B9D5D7D523AC2131005FA2D8 /* ViewController.swift */,
-				B9D5D7D723AC2131005FA2D8 /* Main.storyboard */,
-				B9D5D7DA23AC2133005FA2D8 /* Assets.xcassets */,
-				B9D5D7DC23AC2133005FA2D8 /* LaunchScreen.storyboard */,
-				B9D5D7DF23AC2133005FA2D8 /* Info.plist */,
 			);
 			path = "Photo Collection";
 			sourceTree = "<group>";
@@ -126,6 +128,58 @@
 				B9D5D7F523AC2134005FA2D8 /* Info.plist */,
 			);
 			path = "Photo CollectionUITests";
+			sourceTree = "<group>";
+		};
+		B9D5D80123AC2208005FA2D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D7D123AC2131005FA2D8 /* AppDelegate.swift */,
+				B9D5D7D323AC2131005FA2D8 /* SceneDelegate.swift */,
+				B9D5D7DA23AC2133005FA2D8 /* Assets.xcassets */,
+				B9D5D7DF23AC2133005FA2D8 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B9D5D80223AC226D005FA2D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D7D723AC2131005FA2D8 /* Main.storyboard */,
+				B9D5D7DC23AC2133005FA2D8 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9D5D80323AC2274005FA2D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D80723AC297A005FA2D8 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B9D5D80423AC2279005FA2D8 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D80923AC29B6005FA2D8 /* PhotoController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		B9D5D80523AC2283005FA2D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D80423AC2279005FA2D8 /* Model Controller */,
+				B9D5D80623AC228C005FA2D8 /* View Controller */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9D5D80623AC228C005FA2D8 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D5D80A23AC29B6005FA2D8 /* PhotoController.swift in Sources */,
+				B9D5D80823AC297A005FA2D8 /* Photo.swift in Sources */,
 				B9D5D7D623AC2131005FA2D8 /* ViewController.swift in Sources */,
 				B9D5D7D223AC2131005FA2D8 /* AppDelegate.swift in Sources */,
 				B9D5D7D423AC2131005FA2D8 /* SceneDelegate.swift in Sources */,
@@ -436,11 +492,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34P4RF23ET;
-				INFOPLIST_FILE = "Photo Collection/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Photo Collection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hazystudios.Photo-Collection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,11 +511,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34P4RF23ET;
-				INFOPLIST_FILE = "Photo Collection/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Photo Collection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hazystudios.Photo-Collection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
