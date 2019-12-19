@@ -17,11 +17,18 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToDark() {
-        
+        userDefaults.set("Dark", forKey: .themePreferenceKey)
     }
     
-    func setThemePreferenceToYourColorHere() {
+    func setThemePreferenceToLight() {
         
+        userDefaults.set("Light", forKey: .themePreferenceKey)
+    }
+    
+    init() {
+        if themePreference == nil {
+            setThemePreferenceToLight()
+        }
     }
 
     
