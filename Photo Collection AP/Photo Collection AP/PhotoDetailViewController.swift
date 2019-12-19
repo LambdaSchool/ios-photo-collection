@@ -20,6 +20,7 @@ class PhotoDetailViewController: UIViewController {
     
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
         print("\(#function)")
+        navigationController?.popViewController(animated: true)
     }
     
     

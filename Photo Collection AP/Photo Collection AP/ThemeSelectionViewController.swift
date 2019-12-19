@@ -13,10 +13,12 @@ class ThemeSelectionViewController: UIViewController {
     
     @IBAction func selectDarkTheme(_ sender: UIButton) {
         print("\(#function)")
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectYourColorHereTheme(_ sender: UIButton) {
         print("\(#function)")
+        dismiss(animated: true, completion: nil)
     }
     
     var themeHelper: ThemeHelper?
