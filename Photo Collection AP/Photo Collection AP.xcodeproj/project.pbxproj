@@ -13,6 +13,7 @@
 		1B34CC1323AC103D00F65496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B34CC1123AC103D00F65496 /* LaunchScreen.storyboard */; };
 		1B34CC1B23AC109700F65496 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34CC1A23AC109700F65496 /* Photo.swift */; };
 		1B34CC1D23AC10E600F65496 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34CC1C23AC10E600F65496 /* PhotoController.swift */; };
+		1B34CC1F23AC123A00F65496 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34CC1E23AC123A00F65496 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1B34CC1423AC103D00F65496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B34CC1A23AC109700F65496 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1B34CC1C23AC10E600F65496 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		1B34CC1E23AC123A00F65496 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				1B34CC1A23AC109700F65496 /* Photo.swift */,
 				1B34CC1C23AC10E600F65496 /* PhotoController.swift */,
+				1B34CC1E23AC123A00F65496 /* ThemeHelper.swift */,
 				1B34CC0823AC103A00F65496 /* AppDelegate.swift */,
 				1B34CC0C23AC103A00F65496 /* Main.storyboard */,
 				1B34CC0F23AC103D00F65496 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				1B34CC1D23AC10E600F65496 /* PhotoController.swift in Sources */,
 				1B34CC1B23AC109700F65496 /* Photo.swift in Sources */,
 				1B34CC0923AC103A00F65496 /* AppDelegate.swift in Sources */,
+				1B34CC1F23AC123A00F65496 /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
