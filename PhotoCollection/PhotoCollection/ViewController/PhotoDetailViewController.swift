@@ -16,9 +16,9 @@ class PhotoDetailViewController: UIViewController {
 
     @IBOutlet weak var newPhotoImageView: UIImageView!
     @IBOutlet weak var newPhotoTitleTextField: UITextField!
-    @IBAction func addPhoto(_ sender: Any) {
+    @IBAction func addPhotoTapped(_ sender: Any) {
     }
-    @IBAction func savePhoto(_ sender: Any) {
+    @IBAction func savePhotoTapped(_ sender: Any) {
     }
     
     override func viewDidLoad() {

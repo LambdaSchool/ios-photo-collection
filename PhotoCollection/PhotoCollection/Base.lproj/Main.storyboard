@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n8h-kX-qSY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n8h-kX-qSY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,7 +56,7 @@
                                 <connections>
                                     <outlet property="photoImageView" destination="iCy-yG-HQE" id="8BP-JV-TfQ"/>
                                     <outlet property="photoLabel" destination="B83-5G-EE4" id="dIb-P0-Afu"/>
-                                    <segue destination="wvX-fg-bkT" kind="show" identifier="9" id="2CZ-O2-2zb"/>
+                                    <segue destination="wvX-fg-bkT" kind="show" identifier="ShowPhotoDetailSegue" id="2CZ-O2-2zb"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -68,19 +68,19 @@
                     <navigationItem key="navigationItem" title="Photo Collection" id="Yxa-bB-4j1">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="2sN-ai-bFx">
                             <connections>
-                                <segue destination="yvL-Xe-vQZ" kind="presentation" identifier="SelectTheme" id="F0d-E4-ada"/>
+                                <segue destination="yvL-Xe-vQZ" kind="presentation" identifier="SelectThemeSegue" id="F0d-E4-ada"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d0B-2I-9Hs">
                             <connections>
-                                <segue destination="wvX-fg-bkT" kind="show" identifier="AddNewPhoto" id="Z5z-Cv-WEU"/>
+                                <segue destination="wvX-fg-bkT" kind="show" identifier="AddPhotoSegue" id="Z5z-Cv-WEU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfU-Kj-chk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.68115942028987" y="139.95535714285714"/>
+            <point key="canvasLocation" x="938" y="140"/>
         </scene>
         <!--Create Photo-->
         <scene sceneID="H6R-r7-D2p">
@@ -127,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IY-fl-tVE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="140"/>
+            <point key="canvasLocation" x="1725" y="140"/>
         </scene>
         <!--Theme Selection View Controller-->
         <scene sceneID="knl-fn-JFM">
@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCO-gn-shs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2443" y="140"/>
+            <point key="canvasLocation" x="938" y="883"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jOn-q1-ZTc">
@@ -185,7 +185,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdj-TH-3cl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="27.536231884057973" y="139.95535714285714"/>
+            <point key="canvasLocation" x="152" y="140"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

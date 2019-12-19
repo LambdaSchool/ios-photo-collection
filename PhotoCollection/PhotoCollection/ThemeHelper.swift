@@ -10,14 +10,15 @@ import Foundation
 
 class ThemeHelper {
     
-    let themePreferenceKey: String
+    let themePreferenceKey = "ThemePreference"
     
     init(themePreferenceKey: String) {
-        self.themePreferenceKey = themePreferenceKey
+        if themePreference == nil {
+            setThemePreferenceToDark()
+        }
     }
     
     func setThemePreferenceToDark() {
-        
         UserDefaults.standard.set("Dark", forKey: .themePreferenceKey)
         
     }
@@ -28,12 +29,13 @@ class ThemeHelper {
         
     }
     
-    var themePreference: String? // {
-       // let shouldShowPluto = UserDefaults.standard.string(forKey: .themePrefrenceKey)
-  //  }
+    var themePreference: String? {
+        let shouldShowPluto = UserDefaults.standard.string(forKey: .themePreferenceKey)
+        return shouldShowPluto
+    }
     
 }
 
 extension String {
-    static var themePreferenceKey = ""
+    static var themePreferenceKey = "ThemePreference"
 }

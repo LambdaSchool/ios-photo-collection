@@ -29,7 +29,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -38,13 +37,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     
-
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          // #warning Incomplete implementation, return the number of items
@@ -64,8 +57,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
-        
+        guard let themePreference = themeHelper.themePreference else { return }
+        self.ba = themePreferenceKey
     }
+    
+
 
     // MARK: UICollectionViewDelegate
 

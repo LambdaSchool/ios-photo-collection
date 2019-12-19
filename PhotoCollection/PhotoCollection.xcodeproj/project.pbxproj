@@ -49,12 +49,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E169F28B23AC1DB300801B88 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9DBE4237DEFBC00D6CC87 /* AppDelegate.swift */,
+				E1D9DBE6237DEFBC00D6CC87 /* SceneDelegate.swift */,
+				E1D9DBED237DEFC000D6CC87 /* Assets.xcassets */,
+				E1D9DBEF237DEFC000D6CC87 /* LaunchScreen.storyboard */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E169F28C23AC1DD200801B88 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9DC04237E0B8500D6CC87 /* ThemeSelectionViewController.swift */,
+				E1D9DC02237E069100D6CC87 /* PhotoDetailViewController.swift */,
+				E1D9DBFE237E036A00D6CC87 /* PhotosCollectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		E1D9DBD8237DEFBB00D6CC87 = {
 			isa = PBXGroup;
 			children = (
-				E1D9DBF8237DF02E00D6CC87 /* Photo.swift */,
-				E1D9DBFC237DF1AD00D6CC87 /* PhotoController.swift */,
-				E1D9DBFA237DF0C000D6CC87 /* ThemeHelper.swift */,
 				E1D9DBE3237DEFBC00D6CC87 /* PhotoCollection */,
 				E1D9DBE2237DEFBC00D6CC87 /* Products */,
 			);
@@ -71,15 +89,13 @@
 		E1D9DBE3237DEFBC00D6CC87 /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
-				E1D9DBE4237DEFBC00D6CC87 /* AppDelegate.swift */,
-				E1D9DBE6237DEFBC00D6CC87 /* SceneDelegate.swift */,
-				E1D9DBEA237DEFBC00D6CC87 /* Main.storyboard */,
-				E1D9DC04237E0B8500D6CC87 /* ThemeSelectionViewController.swift */,
-				E1D9DC02237E069100D6CC87 /* PhotoDetailViewController.swift */,
+				E1D9DBF8237DF02E00D6CC87 /* Photo.swift */,
+				E1D9DBFC237DF1AD00D6CC87 /* PhotoController.swift */,
+				E1D9DBFA237DF0C000D6CC87 /* ThemeHelper.swift */,
 				E1D9DC00237E04C700D6CC87 /* PhotosCollectionViewCell.swift */,
-				E1D9DBFE237E036A00D6CC87 /* PhotosCollectionViewController.swift */,
-				E1D9DBED237DEFC000D6CC87 /* Assets.xcassets */,
-				E1D9DBEF237DEFC000D6CC87 /* LaunchScreen.storyboard */,
+				E1D9DBEA237DEFBC00D6CC87 /* Main.storyboard */,
+				E169F28C23AC1DD200801B88 /* ViewController */,
+				E169F28B23AC1DB300801B88 /* New Group */,
 				E1D9DBF2237DEFC000D6CC87 /* Info.plist */,
 			);
 			path = PhotoCollection;
