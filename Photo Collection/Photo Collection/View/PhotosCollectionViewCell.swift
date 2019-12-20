@@ -22,6 +22,9 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     
     //MARK: Helper Methods
     func updateViews() {
-        
+        guard let data = photo?.imageData else {return}
+        guard let title = photo?.title else {return}
+        self.imageView.image = UIImage(data: data)
+        self.nameLbl.text = title
     }
 }

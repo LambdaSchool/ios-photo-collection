@@ -16,12 +16,15 @@ class PhotosCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setTheme()
+        collectionView.reloadData()
     }
     
 
@@ -61,7 +64,7 @@ class PhotosCollectionViewController: UIViewController {
 
 extension PhotosCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        0
+        photoController.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,8 +72,5 @@ extension PhotosCollectionViewController: UICollectionViewDelegate, UICollection
         
         cell.photo = photoController.photos[indexPath.row]
         return cell
-        
     }
-    
-    
 }
