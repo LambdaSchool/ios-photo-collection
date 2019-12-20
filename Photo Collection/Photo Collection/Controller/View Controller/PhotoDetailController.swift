@@ -21,6 +21,10 @@ class PhotoDetailController: UIViewController, UINavigationControllerDelegate {
     @IBAction func saveBtn(_ sender: UIBarButtonItem) {
         guard let title = addPhotoTextField.text else {print("no text in textField");return}
         guard let imgData = imgView.image?.pngData() else {print("no image data");return}
+        var testImg = UIImage(data: imgData)
+        if testImg?.imageOrientation == .left {
+            print("this image is rotated")
+        }
         let newPhoto = Photo(imageData: imgData, title: title)
         if let photo = photo {
            photoController?.update(photo: photo, data: imgData, name: title)
