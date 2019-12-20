@@ -22,9 +22,10 @@ class ThemeSelectionViewController: UIViewController {
     
     var themeHelper: ThemeHelper?
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setTheme()
+        // Do any additional setup after loading the view.
     }
     
     func setTheme() {

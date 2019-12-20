@@ -78,7 +78,7 @@
                     <navigationItem key="navigationItem" id="RKg-G1-QP3">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="KzN-SS-PWk">
                             <connections>
-                                <segue destination="Nss-DE-u82" kind="presentation" identifier="SelectThemeSegue" id="czd-OK-xi9"/>
+                                <segue destination="Nss-DE-u82" kind="presentation" identifier="SelectThemeSegue" modalPresentationStyle="fullScreen" id="czd-OK-xi9"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RWd-aw-VKc">
@@ -158,6 +158,10 @@
                     <navigationItem key="navigationItem" id="Ugu-U7-cjq">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="IDX-GJ-Die"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoTextField" destination="OH5-pW-3SI" id="eOT-kE-3C0"/>
+                        <outlet property="imgView" destination="rlH-Uv-JRq" id="kbu-ta-nT0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTj-Kf-f40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,11 +172,11 @@
             <objects>
                 <viewController id="Nss-DE-u82" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zy9-q4-HV4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="J7D-v8-qNh">
-                                <rect key="frame" x="48" y="60" width="318" height="77.5"/>
+                                <rect key="frame" x="48" y="104" width="318" height="77.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdu-OF-uvm">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="41"/>
@@ -189,7 +193,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="144" translatesAutoresizingMaskIntoConstraints="NO" id="sf6-Aw-jWv">
-                                <rect key="frame" x="101" y="389" width="212" height="30"/>
+                                <rect key="frame" x="101" y="438" width="212" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiB-JL-pDW">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>

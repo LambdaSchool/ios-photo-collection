@@ -9,9 +9,10 @@
 import Foundation
 
 class PhotoController {
-    
+    //MARK: Class properties
     var photos: [Photo] = []
     
+    //MARK: Class Methods
     func create(photo: Photo) {
         self.photos.append(photo)
     }

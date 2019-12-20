@@ -9,25 +9,31 @@
 import UIKit
 
 class PhotoDetailController: UIViewController {
-
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var addPhotoTextField: UITextField!
+    
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setTheme()
-    }
-    
+    //MARK: Helper Methods
     func setTheme() {
         guard let themePreference = themeHelper?.themePreference else {return}
         self.view.backgroundColor = UIColor(named: themePreference)
+    }
+    
+    func updateViews() {
+        setTheme()
+        if let imageData = photo?.imageData {
+            let image = UIImage(data: imageData)
+            imgView.image = image
+        }
     }
 
     /*
