@@ -20,6 +20,15 @@ class PhotoDetailController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+    }
+    
+    func setTheme() {
+        guard let themePreference = themeHelper?.themePreference else {return}
+        self.view.backgroundColor = UIColor(named: themePreference)
+    }
 
     /*
     // MARK: - Navigation
