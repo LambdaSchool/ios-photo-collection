@@ -12,4 +12,14 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    //MARK: Helper Methods
+    func updateViews() {
+        
+    }
 }

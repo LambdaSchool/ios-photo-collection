@@ -21,7 +21,6 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToLight() {
-        
         userDefaults.set("Light", forKey: .themePreferenceKey)
     }
     
