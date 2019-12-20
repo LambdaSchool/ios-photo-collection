@@ -16,8 +16,12 @@ class PhotosCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTheme()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
     }
     
 
@@ -50,9 +54,7 @@ class PhotosCollectionViewController: UIViewController {
     //MARK: Helper Methods
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else {return}
-        if themePreference == "Dark" {
-            self.collectionView.backgroundColor = UIColor(named: "Dark")
-        }
+        self.collectionView.backgroundColor = UIColor(named: themePreference)
     }
     
 }

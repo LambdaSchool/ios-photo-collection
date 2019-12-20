@@ -11,21 +11,25 @@ import UIKit
 class ThemeSelectionViewController: UIViewController {
     
     @IBAction func selectLightTheme(_ sender: Any) {
+        themeHelper?.setThemePreferenceToLight()
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectDarkTheme(_ sender: Any) {
+        themeHelper?.setThemePreferenceToDark()
         dismiss(animated: true, completion: nil)
     }
     
     var themeHelper: ThemeHelper?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
     }
     
-
+    func setTheme() {
+        guard let preference = themeHelper?.themePreference else {return}
+        self.view.backgroundColor = UIColor(named: preference)
+    }
     
 }
