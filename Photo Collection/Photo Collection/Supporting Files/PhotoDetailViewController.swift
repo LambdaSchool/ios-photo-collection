@@ -24,12 +24,15 @@ class PhotoDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
     //MARK: Actions
     
     @IBAction func addPhotoPressed(_ sender: UIButton) {
+        
     }
+    
     //FIXME: set theme, update views last part
     func setTheme(){
         guard let themeHelper = themeHelper?.themePreference else {return}
@@ -41,20 +44,7 @@ class PhotoDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        setTheme()
-        guard let photo = photo else {fatalError("No Photo to Parse")}
-        
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
