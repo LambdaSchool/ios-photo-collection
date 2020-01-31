@@ -19,6 +19,7 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
     func setTheme() {
         guard let theme = themeHelper.themePreference else { return }
         switch theme {
+            
         case "Dark":
             collectionView.backgroundColor = .gray
             
@@ -91,7 +92,7 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
             guard let destVC = segue.destination as? PhotoDetailVC else { return }
             destVC.themeHelper = themeHelper
             destVC.photoController = photoController
-            let cell = sender as! PhotoCell
+            guard  let cell = sender as? PhotoCell else { return }
             guard  let indexPath = collectionView.indexPath(for: cell) else { return }
             destVC.photo = photoController.photos[indexPath.item]
         }

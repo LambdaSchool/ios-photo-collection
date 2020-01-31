@@ -25,6 +25,7 @@ class PhotoDetailVC: UIViewController   {
            super.viewDidLoad()
            updateViews()
            textField.becomeFirstResponder()
+        
            title = "Create Photo"
        
            navigationController?.navigationBar.prefersLargeTitles = true

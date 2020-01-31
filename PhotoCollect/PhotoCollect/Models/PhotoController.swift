@@ -53,7 +53,7 @@ class PhotoController {
                let photosData = try encoder.encode(photos)
                try photosData.write(to: fileURL)
            } catch  let err{
-               print("Can't save books.Error : \(err)")
+               print("Can't save photos.Error : \(err)")
            }
           
        }
