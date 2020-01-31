@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FAE7549C23E2B25F0076E7D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7549B23E2B25F0076E7D8 /* AppDelegate.swift */; };
 		FAE7549E23E2B25F0076E7D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7549D23E2B25F0076E7D8 /* SceneDelegate.swift */; };
-		FAE754A023E2B25F0076E7D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7549F23E2B25F0076E7D8 /* ViewController.swift */; };
 		FAE754A323E2B25F0076E7D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE754A123E2B25F0076E7D8 /* Main.storyboard */; };
 		FAE754A523E2B2610076E7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE754A423E2B2610076E7D8 /* Assets.xcassets */; };
 		FAE754A823E2B2610076E7D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE754A623E2B2610076E7D8 /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 		FAE7549823E2B25F0076E7D8 /* ios-photo-collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-photo-collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE7549B23E2B25F0076E7D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE7549D23E2B25F0076E7D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAE7549F23E2B25F0076E7D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAE754A223E2B25F0076E7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAE754A423E2B2610076E7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE754A723E2B2610076E7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 				FAE754AF23E2B3DD0076E7D8 /* Models */,
 				FAE7549B23E2B25F0076E7D8 /* AppDelegate.swift */,
 				FAE7549D23E2B25F0076E7D8 /* SceneDelegate.swift */,
-				FAE7549F23E2B25F0076E7D8 /* ViewController.swift */,
 				FAE754A123E2B25F0076E7D8 /* Main.storyboard */,
 				FAE754A423E2B2610076E7D8 /* Assets.xcassets */,
 				FAE754A623E2B2610076E7D8 /* LaunchScreen.storyboard */,
@@ -196,7 +193,6 @@
 				FAE754B523E2B47B0076E7D8 /* PhotosCollectionViewCell.swift in Sources */,
 				FAE754C023E2B5EA0076E7D8 /* ThemeHelper.swift in Sources */,
 				FAE754B923E2B5260076E7D8 /* PhotosCollectionViewController.swift in Sources */,
-				FAE754A023E2B25F0076E7D8 /* ViewController.swift in Sources */,
 				FAE7549C23E2B25F0076E7D8 /* AppDelegate.swift in Sources */,
 				FAE754BB23E2B5780076E7D8 /* PhotoDetailViewController.swift in Sources */,
 				FAE754BD23E2B5A10076E7D8 /* ThemeSelectionViewController.swift in Sources */,
@@ -347,6 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZRJMVZ49H;
 				INFOPLIST_FILE = "ios-photo-collection/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZRJMVZ49H;
 				INFOPLIST_FILE = "ios-photo-collection/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
