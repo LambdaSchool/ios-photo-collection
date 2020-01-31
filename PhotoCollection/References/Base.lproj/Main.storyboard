@@ -118,7 +118,12 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nlc-yK-0zG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZBp-Cg-27r"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZBp-Cg-27r">
+                            <connections>
+                                <action selector="saveButton:" destination="aQx-SH-ATr" id="ipq-t8-ewg"/>
+                                <segue destination="Agd-Bx-F9E" kind="unwind" unwindAction="unwindToPhotoCollection:" id="jkz-OZ-usx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -127,6 +132,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgd-XY-4Vb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Agd-Bx-F9E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1891" y="49"/>
         </scene>
@@ -151,6 +157,7 @@
                                 <state key="normal" title="Dark"/>
                                 <connections>
                                     <action selector="selectDarkTheme:" destination="Xen-hy-Lbv" eventType="touchUpInside" id="Q3s-Jf-ts5"/>
+                                    <segue destination="Xen-hy-Lbv" kind="unwind" unwindAction="unwindToPhotoCollection:" id="0cq-sL-ZM5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xU-37-my0">
@@ -159,6 +166,7 @@
                                 <state key="normal" title="Green"/>
                                 <connections>
                                     <action selector="selectGreenTheme:" destination="Xen-hy-Lbv" eventType="touchUpInside" id="yjY-r1-1no"/>
+                                    <segue destination="Xen-hy-Lbv" kind="unwind" unwindAction="unwindToPhotoCollection:" id="eLw-sG-Pha"/>
                                 </connections>
                             </button>
                         </subviews>

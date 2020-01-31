@@ -73,9 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				7265608E23E36E6200C6E040 /* Main.storyboard */,
+				7265609623E36E6200C6E040 /* Info.plist */,
 				7265609123E36E6200C6E040 /* Assets.xcassets */,
 				7265609C23E36EA200C6E040 /* Additional Files */,
-				7265609623E36E6200C6E040 /* Info.plist */,
 			);
 			path = References;
 			sourceTree = "<group>";
@@ -349,7 +349,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PhotoCollection/Info.plist;
+				DEVELOPMENT_TEAM = 36JMR38FZL;
+				INFOPLIST_FILE = "$(SRCROOT)/References/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +367,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PhotoCollection/Info.plist;
+				DEVELOPMENT_TEAM = 36JMR38FZL;
+				INFOPLIST_FILE = "$(SRCROOT)/References/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

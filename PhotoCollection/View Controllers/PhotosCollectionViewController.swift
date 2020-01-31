@@ -27,6 +27,10 @@ class PhotosCollectionViewController: UICollectionViewController {
         
     }
     
+    @IBAction func unwindToPhotoCollection(_ sender: UIStoryboardSegue){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,10 +45,24 @@ class PhotosCollectionViewController: UICollectionViewController {
     
  
      // MARK: - Navigation
+    
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
+        if segue.identifier == "AddPhotoSegue"{
+            if let photoDetailVC = segue.destination as? PhotoDetailViewController{
+                photoDetailVC.photoController = photoController
+                photoDetailVC.themeHelper = themeHelper
+            }
+        }
         
+        if segue.identifier == "EditPhotoSegue"{
+            guard let indexPath = collectionView.indexPathsForSelectedItems?.first,
+                let photoDetailVC = segue.destination as? PhotoDetailViewController else {return}
+            photoDetailVC.photo = photoController.photos[indexPath.item]
+            photoDetailVC.themeHelper = themeHelper
+            photoDetailVC.photoController = photoController
+        }
         
         
         
