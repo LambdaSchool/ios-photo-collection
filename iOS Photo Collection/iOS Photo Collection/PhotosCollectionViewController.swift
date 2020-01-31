@@ -27,15 +27,31 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+        
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "cellToImageViewSegue" {
+            if let viewImageVC = segue.destination as? PhotoDetailViewController {
+                viewImageVC.photo =
+                
+            } else if segue.identifier == "addPhotoSegue" {
+                if let addPhotoVC = segue.destination as? PhotoDetailViewController {
+                    addPhotoVC.photoController?.create() =
+                    
+                } else if segue.identifier == "selectThemeSegue" {
+                    if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
+                        selectThemeVC.themeHelper = 
+                    }
+                }
+            }
+        }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -61,8 +77,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     func setTheme() {
         
-        themeHelper.themePreference
-        self.view.backgroundColor = myColor.PineGreen
+        if themeHelper.themePreferenceKey == "Pine" {
+            self.view.backgroundColor = UIColor(red: 0.190, green: 0.264, blue: 0.046, alpha: 1)
+        } else {
+            self.view.backgroundColor = UIColor.darkGray
+        }
+        
     }
     
     

@@ -47,7 +47,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="JzK-Zl-GkS" id="eTx-7X-M3Z"/>
                                     <outlet property="photoImageView" destination="fmd-45-WSz" id="yf3-hy-BRe"/>
-                                    <segue destination="BRc-Hy-SaI" kind="show" id="uPQ-ft-rnX"/>
+                                    <segue destination="BRc-Hy-SaI" kind="show" identifier="cellToImageViewSegue" id="uPQ-ft-rnX"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

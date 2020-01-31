@@ -20,7 +20,5 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func updateViews() {
-        
-    }
+    
 }
