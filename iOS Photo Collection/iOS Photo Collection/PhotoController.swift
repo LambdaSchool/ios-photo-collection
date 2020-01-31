@@ -8,19 +8,19 @@
 
 import Foundation
 
-var photos: [Photo] = []
+class PhotoController {
+    var photos: [Photo] = []
 
-func create() {
+    func create() {
     
-    var photo: Photo? {
-        didSet {
+        var photo: Photo? {
+            didSet {
             updateViews()
         }
     }
 }
 
-func updateViews(Photo: String, Data: Data, String: String) {
+    func updateViews(Photo: String, Data: Data, String: String) {
     
-    
+    }
 }
-

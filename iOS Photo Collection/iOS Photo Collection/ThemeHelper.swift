@@ -17,7 +17,7 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToYourColorHere() {
-        UserDefaults.standard.set("Orange", forKey: themePreferenceKey)
+        UserDefaults.standard.set("Pine", forKey: themePreferenceKey)
     }
     
     var themePreference: String? {
@@ -29,7 +29,7 @@ class ThemeHelper {
         if themePreference == nil {
             setThemePreferenceToYourColorHere()
         } else {
-           themePreference
+           setThemePreferenceToDark()
             
         }
         init()

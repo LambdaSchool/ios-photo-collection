@@ -18,7 +18,11 @@ class ThemeSelectionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func selectDarkTheme(_ sender: Any) {
+    }
+    
+    @IBAction func selectYourColorHereTheme(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
