@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class PhotoCollectionVC: UICollectionViewController {
+class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateFlowLayout {
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
@@ -31,16 +31,23 @@ class PhotoCollectionVC: UICollectionViewController {
             break
         }
     }
-   
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-         title = "Photo Collection"
-        
-      
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
+ 
+    private func setUpNavBar() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
+             let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+             navigationController?.navigationBar.titleTextAttributes = textAttributes
+             collectionView.delegate = self
+             navigationController?.navigationBar.backgroundColor = .white
+             navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    //MARK: - App Life Cycle
+    override func viewDidLoad() {
+          super.viewDidLoad()
+        
+           title = "Photo Collection"
+         setUpNavBar()
+      }
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
@@ -48,45 +55,24 @@ class PhotoCollectionVC: UICollectionViewController {
            if collectionView.backgroundColor
                == UIColor.gray {
                  navigationController?.navigationBar.backgroundColor = .lightGray
-              setUpStatusBarColorToGray()
+            setUpStatusBarColor(to: UIColor.lightGray)
               
            } else if collectionView.backgroundColor == UIColor.purple {
                navigationController?.navigationBar.backgroundColor = UIColor.systemPurple
-            setUpStatusBarColorToPurple()
+            setUpStatusBarColor(to: UIColor.systemPurple)
                
            }
               collectionView.reloadData()
           }
     
     
-    func setUpStatusBarColorToGray() {
-          if #available(iOS 13.0, *) {
-              let app = UIApplication.shared
-              let statusBarHeight: CGFloat = app.statusBarFrame.size.height
-
-              let statusbarView = UIView()
-              statusbarView.backgroundColor = UIColor.lightGray
-              view.addSubview(statusbarView)
-
-              statusbarView.translatesAutoresizingMaskIntoConstraints = false
-              statusbarView.heightAnchor
-                  .constraint(equalToConstant: statusBarHeight).isActive = true
-              statusbarView.widthAnchor
-                  .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
-              statusbarView.topAnchor
-                  .constraint(equalTo: view.topAnchor).isActive = true
-              statusbarView.centerXAnchor
-                  .constraint(equalTo: view.centerXAnchor).isActive = true
-
-          }
-      }
-    func setUpStatusBarColorToPurple() {
+    func setUpStatusBarColor(to color : UIColor) {
             if #available(iOS 13.0, *) {
                 let app = UIApplication.shared
                 let statusBarHeight: CGFloat = app.statusBarFrame.size.height
 
                 let statusbarView = UIView()
-                statusbarView.backgroundColor = UIColor.systemPurple
+                statusbarView.backgroundColor = color
                 view.addSubview(statusbarView)
 
                 statusbarView.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +87,7 @@ class PhotoCollectionVC: UICollectionViewController {
 
             }
         }
-    
+    // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.tapCellSegue {
             guard let destVC = segue.destination as? PhotoDetailVC else { return }
@@ -123,7 +109,7 @@ class PhotoCollectionVC: UICollectionViewController {
     }
   
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoController.photos.count
@@ -138,6 +124,10 @@ class PhotoCollectionVC: UICollectionViewController {
         cell.photo = photo
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+          return CGSize(width: view.frame.width  / 3, height: view.frame.width  / 3)
+      }
 
    
 

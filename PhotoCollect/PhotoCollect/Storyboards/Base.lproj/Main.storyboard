@@ -12,7 +12,7 @@
         <scene sceneID="mkQ-Ev-eck">
             <objects>
                 <collectionViewController id="7xA-MA-kZc" customClass="PhotoCollectionVC" customModule="PhotoCollect" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CU2-dw-sGn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="CU2-dw-sGn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -20,11 +20,11 @@
                             <size key="itemSize" width="196" height="240"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="qlk-2b-R1x" customClass="PhotoCell" customModule="PhotoCollect" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="196" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="196" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="648-qA-S3S">
                                     <rect key="frame" x="0.0" y="0.0" width="196" height="240"/>
@@ -38,6 +38,11 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IK7-J9-Ryl">
                                             <rect key="frame" x="2" y="2" width="192" height="198.66666666666666"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -66,11 +71,13 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="WPt-vz-chz">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="7Vq-OZ-non">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="vBh-SK-Hke" kind="presentation" identifier="ThemeSegue" modalPresentationStyle="fullScreen" id="Zga-WH-h6r"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BWM-bD-KEm">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="ZQx-60-8X4" kind="show" identifier="AddSegue" id="JDt-fW-nYL"/>
                             </connections>
@@ -173,8 +180,9 @@
                                             <action selector="addTapped:" destination="ZQx-60-8X4" eventType="touchUpInside" id="Zhw-7z-evc"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title ..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgr-6E-dke">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a title ..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xgr-6E-dke">
                                         <rect key="frame" x="0.0" y="398" width="374" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="zke-Nm-WgQ"/>
                                         </constraints>
@@ -199,6 +207,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GCT-Lj-ME7">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="E55-sa-f3S">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="saveTapped:" destination="ZQx-60-8X4" id="fix-Fq-Wub"/>
                             </connections>
@@ -223,6 +232,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u2L-bH-ZYf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -237,4 +249,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="35K-54-ar2"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
