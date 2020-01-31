@@ -20,6 +20,7 @@
 		B621B30623E37E4A00E128A6 /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621B30523E37E4A00E128A6 /* PhotoDetailVC.swift */; };
 		B621B30823E3839700E128A6 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621B30723E3839700E128A6 /* Segue.swift */; };
 		B621B30A23E3843700E128A6 /* ThemeSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621B30923E3843700E128A6 /* ThemeSettingVC.swift */; };
+		B6785A5C23E46E0E00F9DD67 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6785A5B23E46E0E00F9DD67 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B621B30523E37E4A00E128A6 /* PhotoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
 		B621B30723E3839700E128A6 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		B621B30923E3843700E128A6 /* ThemeSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingVC.swift; sourceTree = "<group>"; };
+		B6785A5B23E46E0E00F9DD67 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				B621B2FD23E3788D00E128A6 /* ThemeHelper.swift */,
 				B621B30723E3839700E128A6 /* Segue.swift */,
+				B6785A5B23E46E0E00F9DD67 /* Color.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			files = (
 				B621B30323E37CEA00E128A6 /* PhotoCell.swift in Sources */,
 				B621B2FC23E377A400E128A6 /* PhotoController.swift in Sources */,
+				B6785A5C23E46E0E00F9DD67 /* Color.swift in Sources */,
 				B621B30023E37C2D00E128A6 /* PhotoCollectionVC.swift in Sources */,
 				B621B2FA23E3776B00E128A6 /* Photo.swift in Sources */,
 				B621B2FE23E3788D00E128A6 /* ThemeHelper.swift in Sources */,

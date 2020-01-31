@@ -21,10 +21,10 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
         switch theme {
             
         case "Dark":
-            collectionView.backgroundColor = .gray
+            collectionView.backgroundColor = Color.gray
             
         case "Purple":
-            collectionView.backgroundColor = .purple
+            collectionView.backgroundColor = Color.purple
           
         default:
             break
@@ -44,6 +44,7 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
 
     override func viewDidLoad() {
           super.viewDidLoad()
+
            title = "Photo Collection"
            setUpNavBar()
       }
@@ -53,11 +54,11 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
       
             setTheme()
            if collectionView.backgroundColor
-               == UIColor.gray {
+        == Color.gray {
                  navigationController?.navigationBar.backgroundColor = .lightGray
             setUpStatusBarColor(to: UIColor.lightGray)
               
-           } else if collectionView.backgroundColor == UIColor.purple {
+           } else if collectionView.backgroundColor == Color.purple {
                navigationController?.navigationBar.backgroundColor = UIColor.systemPurple
             setUpStatusBarColor(to: UIColor.systemPurple)
                

@@ -73,13 +73,13 @@ class PhotoDetailVC: UIViewController   {
     func setTheme() {
         guard let theme = themeHelper?.themePreference else { return }
         if theme == "Dark" {
-            view.backgroundColor = UIColor.gray
+            view.backgroundColor = Color.gray
             setUpStatusBarColor(to: UIColor.lightGray)
             
             
             
         } else if theme == "Purple" {
-            view.backgroundColor = UIColor.purple
+            view.backgroundColor = Color.purple
             setUpStatusBarColor(to: UIColor.systemPurple)
         }
        
