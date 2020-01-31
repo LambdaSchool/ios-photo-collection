@@ -36,7 +36,7 @@ class PhotoCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          title = "Photo Collection"
-     
+        
       
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
