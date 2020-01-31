@@ -41,15 +41,16 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
     }
     
     //MARK: - App Life Cycle
+
     override func viewDidLoad() {
           super.viewDidLoad()
-
            title = "Photo Collection"
            setUpNavBar()
       }
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
+      
             setTheme()
            if collectionView.backgroundColor
                == UIColor.gray {
