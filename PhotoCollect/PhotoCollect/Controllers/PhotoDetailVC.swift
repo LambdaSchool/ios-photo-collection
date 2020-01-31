@@ -24,8 +24,9 @@ class PhotoDetailVC: UIViewController   {
     override func viewDidLoad() {
            super.viewDidLoad()
            updateViews()
+        
+        
            textField.becomeFirstResponder()
-           title = "Create Photo"
            navigationController?.navigationBar.prefersLargeTitles = true
         
        }
@@ -47,9 +48,10 @@ class PhotoDetailVC: UIViewController   {
         guard let photoController = photoController else { return }
         guard let text = textField.text else { return }
         guard let photoData = photoImage.image?.jpegData(compressionQuality: 1) else { return }
+        
+        
         if let photo = photo {
             photoController.update(photo: photo, image: photoData, title: text )
-            
         }
         else {
             
@@ -125,8 +127,11 @@ class PhotoDetailVC: UIViewController   {
                  }
     }
     
-    func updateViews() {
-        guard let photo = photo else { return }
+    private func updateViews() {
+        guard let photo = photo else {
+            title = "Create photo"
+            return }
+        title = photo.title
         photoImage.image = UIImage(data: photo.imageData)
         setTheme()
     }

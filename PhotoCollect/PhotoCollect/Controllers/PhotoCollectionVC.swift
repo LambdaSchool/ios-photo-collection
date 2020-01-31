@@ -49,21 +49,12 @@ class PhotoCollectionVC: UICollectionViewController {
                == UIColor.gray {
                  navigationController?.navigationBar.backgroundColor = .lightGray
               setUpStatusBarColorToGray()
-//            if #available(iOS 13, *) {
-//                let statusBar1 =  UIView()
-//                statusBar1.frame = UIApplication.shared.statusBarFrame
-//                statusBar1.backgroundColor = UIColor.lightGray
-//                UIApplication.shared.keyWindow?.addSubview(statusBar1)
-//            }
               
            } else if collectionView.backgroundColor == UIColor.purple {
                navigationController?.navigationBar.backgroundColor = UIColor.systemPurple
             setUpStatusBarColorToPurple()
-           
                
            }
-        
-         
               collectionView.reloadData()
           }
     
@@ -118,12 +109,14 @@ class PhotoCollectionVC: UICollectionViewController {
             destVC.photoController = photoController
             let cell = sender as! PhotoCell
             guard  let indexPath = collectionView.indexPath(for: cell) else { return }
-            destVC.photo = photoController.photos[indexPath.item ]
-        } else if segue.identifier == Segue.addSegue {
+            destVC.photo = photoController.photos[indexPath.item]
+        }
+        else if segue.identifier == Segue.addSegue {
             guard let destVC = segue.destination as? PhotoDetailVC else { return }
             destVC.photoController = photoController
             destVC.themeHelper = themeHelper
-        } else if segue.identifier == Segue.themeSegue {
+        }
+        else if segue.identifier == Segue.themeSegue {
             guard let destVC = segue.destination as? ThemeSettingVC else { return }
             destVC.themeHelper = themeHelper
         }
