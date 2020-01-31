@@ -20,13 +20,11 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
         guard let theme = themeHelper.themePreference else { return }
         switch theme {
         case "Dark":
-           
             collectionView.backgroundColor = .gray
             
         case "Purple":
             collectionView.backgroundColor = .purple
           
-           
         default:
             break
         }
@@ -44,9 +42,9 @@ class PhotoCollectionVC: UICollectionViewController  , UICollectionViewDelegateF
     //MARK: - App Life Cycle
     override func viewDidLoad() {
           super.viewDidLoad()
-        
+
            title = "Photo Collection"
-         setUpNavBar()
+           setUpNavBar()
       }
     
     override func viewWillAppear(_ animated: Bool) {
