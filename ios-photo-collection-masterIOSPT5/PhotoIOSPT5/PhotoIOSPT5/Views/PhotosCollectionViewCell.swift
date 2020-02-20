@@ -17,7 +17,11 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-        
+        if UserDefaults.standard.string(forKey: .themePreferenceDark) != nil {
+            backgroundColor = .darkGray
+        } else if UserDefaults.standard.string(forKey: .themePreferenceGreen) != nil {
+            backgroundColor = .systemGreen
+        }
     }
     
     

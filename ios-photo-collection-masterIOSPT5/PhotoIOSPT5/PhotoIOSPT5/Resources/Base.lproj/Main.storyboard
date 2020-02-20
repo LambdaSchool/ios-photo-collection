@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Photo Collection-->
         <scene sceneID="pHo-Va-neH">
             <objects>
                 <collectionViewController id="Ll4-OY-3Ob" sceneMemberID="viewController">
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="10" minY="5" maxX="5" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ljp-jw-cD1" customClass="PhotosCollectionViewCell" customModule="PhotoIOSPT5" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotosCell" id="Ljp-jw-cD1" customClass="PhotosCollectionViewCell" customModule="PhotoIOSPT5" customModuleProvider="target">
                                 <rect key="frame" x="10" y="5" width="108" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GGU-Z7-lMW">
@@ -65,8 +65,12 @@
                             <outlet property="delegate" destination="Ll4-OY-3Ob" id="4b7-dl-4FN"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="t8D-oe-rCk">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="sPI-Iw-PwX"/>
+                    <navigationItem key="navigationItem" title="Photo Collection" id="t8D-oe-rCk">
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="sPI-Iw-PwX">
+                            <connections>
+                                <segue destination="exz-VD-zSo" kind="presentation" id="cm7-zP-1mR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0bq-Vw-CoH">
                             <connections>
                                 <segue destination="ipQ-TX-7JE" kind="show" identifier="CreatePhotoSegue" id="sR2-iw-nvC"/>
@@ -78,7 +82,7 @@
             </objects>
             <point key="canvasLocation" x="1787" y="78"/>
         </scene>
-        <!--Photo Detail View Controller-->
+        <!--Create Photo-->
         <scene sceneID="jCY-UU-53q">
             <objects>
                 <viewController id="ipQ-TX-7JE" customClass="PhotoDetailViewController" customModule="PhotoIOSPT5" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,32 +90,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Sx-Ut-dvg">
-                                <rect key="frame" x="87" y="117" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Sx-Ut-dvg">
+                                <rect key="frame" x="25" y="169" width="364" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="IbD-6g-N5P"/>
+                                    <constraint firstAttribute="height" constant="220" id="h3U-S7-Ija"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zug-ng-a9b">
-                                <rect key="frame" x="193" y="394" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Photo"/>
-                                <connections>
-                                    <action selector="addPhotoButtonTapped:" destination="ipQ-TX-7JE" eventType="touchUpInside" id="5sP-hx-PHU"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dp5-3s-ZEj">
-                                <rect key="frame" x="181" y="296" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KR1-El-lIo">
+                                <rect key="frame" x="10" y="424" width="394" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zug-ng-a9b">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
+                                        <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhotoButtonTapped:" destination="ipQ-TX-7JE" eventType="touchUpInside" id="5sP-hx-PHU"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dp5-3s-ZEj">
+                                        <rect key="frame" x="0.0" y="38" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KR1-El-lIo" firstAttribute="top" secondItem="4Sx-Ut-dvg" secondAttribute="bottom" constant="35" id="16I-mv-fxc"/>
+                            <constraint firstItem="KR1-El-lIo" firstAttribute="leading" secondItem="dd3-Z3-Vck" secondAttribute="leading" constant="10" id="2oa-X2-aa1"/>
+                            <constraint firstItem="dd3-Z3-Vck" firstAttribute="trailing" secondItem="KR1-El-lIo" secondAttribute="trailing" constant="10" id="JgU-rH-BDj"/>
+                            <constraint firstItem="4Sx-Ut-dvg" firstAttribute="top" secondItem="dd3-Z3-Vck" secondAttribute="top" constant="29" id="JxF-fp-BGP"/>
+                            <constraint firstItem="4Sx-Ut-dvg" firstAttribute="leading" secondItem="dd3-Z3-Vck" secondAttribute="leading" constant="25" id="x7S-G0-5IR"/>
+                            <constraint firstItem="dd3-Z3-Vck" firstAttribute="trailing" secondItem="4Sx-Ut-dvg" secondAttribute="trailing" constant="25" id="zng-Dn-CyH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dd3-Z3-Vck"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Item" id="Z3N-yE-yuD"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="I5D-Ut-EgK">
+                    <navigationItem key="navigationItem" title="Create Photo" id="I5D-Ut-EgK">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="t05-F7-NF8">
                             <connections>
                                 <action selector="savePhotoTapped:" destination="ipQ-TX-7JE" id="4EK-L7-Xsx"/>
@@ -126,41 +144,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnM-Go-ERb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510" y="78"/>
+            <point key="canvasLocation" x="2508.6956521739135" y="77.678571428571431"/>
         </scene>
         <!--Theme Selection View Controller-->
         <scene sceneID="gKn-an-e0F">
             <objects>
                 <viewController id="exz-VD-zSo" customClass="ThemeSelectionViewController" customModule="PhotoIOSPT5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I07-DI-xZi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCk-LV-8hZ">
-                                <rect key="frame" x="99" y="234" width="33" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dark"/>
-                                <connections>
-                                    <action selector="darkThemeButtonTapped:" destination="exz-VD-zSo" eventType="touchUpInside" id="59I-1l-rZv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5la-9k-dtq">
-                                <rect key="frame" x="274" y="234" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Green"/>
-                                <connections>
-                                    <action selector="greenThemeButtonTapped:" destination="exz-VD-zSo" eventType="touchUpInside" id="wTK-d9-fZ9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which Theme Would You like To Use?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-PU-zpo">
-                                <rect key="frame" x="78" y="148" width="287" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="M4V-Km-ZVh">
+                                <rect key="frame" x="99.5" y="233.5" width="215" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCk-LV-8hZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                        <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="darkThemeButtonTapped:" destination="exz-VD-zSo" eventType="touchUpInside" id="59I-1l-rZv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5la-9k-dtq">
+                                        <rect key="frame" x="173" y="0.0" width="42" height="30"/>
+                                        <state key="normal" title="Green"/>
+                                        <connections>
+                                            <action selector="greenThemeButtonTapped:" destination="exz-VD-zSo" eventType="touchUpInside" id="wTK-d9-fZ9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which Theme Would You like To Use?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-PU-zpo">
+                                <rect key="frame" x="63.5" y="148" width="287" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="M4V-Km-ZVh" firstAttribute="centerX" secondItem="I07-DI-xZi" secondAttribute="centerX" id="1cm-sS-V7w"/>
+                            <constraint firstItem="M4V-Km-ZVh" firstAttribute="top" secondItem="Yws-PU-zpo" secondAttribute="bottom" constant="65" id="XEc-dj-sF7"/>
+                            <constraint firstItem="Yws-PU-zpo" firstAttribute="top" secondItem="kjg-rt-D5a" secondAttribute="top" constant="148" id="cgo-xV-6Kh"/>
+                            <constraint firstItem="Yws-PU-zpo" firstAttribute="centerX" secondItem="I07-DI-xZi" secondAttribute="centerX" id="dFT-De-HPu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kjg-rt-D5a"/>
                     </view>
                 </viewController>
@@ -173,8 +199,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="opb-h0-sZO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="02Q-fl-0Fi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="02Q-fl-0Fi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

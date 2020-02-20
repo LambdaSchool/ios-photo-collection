@@ -21,6 +21,7 @@
 		3821B3D123FE6AA40011B0DA /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821B3D023FE6AA40011B0DA /* PhotosCollectionViewCell.swift */; };
 		3821B3D423FE6CBD0011B0DA /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821B3D323FE6CBD0011B0DA /* PhotoDetailViewController.swift */; };
 		388FF1A823FE704D00EA2095 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FF1A723FE704D00EA2095 /* ThemeSelectionViewController.swift */; };
+		388FF1AD23FF315900EA2095 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388FF1AC23FF315900EA2095 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3821B3D023FE6AA40011B0DA /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		3821B3D323FE6CBD0011B0DA /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		388FF1A723FE704D00EA2095 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
+		388FF1AC23FF315900EA2095 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388FF1AD23FF315900EA2095 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 			children = (
 				3821B3AF23FE63A20011B0DA /* PhotoIOSPT5 */,
 				3821B3AE23FE63A20011B0DA /* Products */,
+				388FF1AB23FF315900EA2095 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,21 +76,15 @@
 		3821B3AF23FE63A20011B0DA /* PhotoIOSPT5 */ = {
 			isa = PBXGroup;
 			children = (
-				3821B3C723FE64140011B0DA /* Model Controller */,
-				3821B3B023FE63A20011B0DA /* AppDelegate.swift */,
-				3821B3B223FE63A20011B0DA /* SceneDelegate.swift */,
-				3821B3B423FE63A20011B0DA /* ViewController.swift */,
-				3821B3B623FE63A20011B0DA /* Main.storyboard */,
-				3821B3B923FE63A50011B0DA /* Assets.xcassets */,
-				3821B3BB23FE63A50011B0DA /* LaunchScreen.storyboard */,
-				3821B3BE23FE63A50011B0DA /* Info.plist */,
+				388FF1A923FE7ACA00EA2095 /* View Controllers */,
 				3821B3C623FE63EC0011B0DA /* Model */,
+				3821B3C723FE64140011B0DA /* Model Controller */,
+				3821B3D223FE6AAC0011B0DA /* Views */,
+				388FF1AA23FE7AEA00EA2095 /* Resources */,
+				3821B3B923FE63A50011B0DA /* Assets.xcassets */,
+				3821B3BE23FE63A50011B0DA /* Info.plist */,
 				3821B3CA23FE648F0011B0DA /* ThemeHelper.swift */,
 				3821B3CC23FE66A50011B0DA /* String+UserDefaults.swift */,
-				3821B3CE23FE68DE0011B0DA /* PhotosCollectionViewController.swift */,
-				3821B3D223FE6AAC0011B0DA /* Views */,
-				3821B3D323FE6CBD0011B0DA /* PhotoDetailViewController.swift */,
-				388FF1A723FE704D00EA2095 /* ThemeSelectionViewController.swift */,
 			);
 			path = PhotoIOSPT5;
 			sourceTree = "<group>";
@@ -113,6 +111,36 @@
 				3821B3D023FE6AA40011B0DA /* PhotosCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		388FF1A923FE7ACA00EA2095 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3821B3CE23FE68DE0011B0DA /* PhotosCollectionViewController.swift */,
+				3821B3D323FE6CBD0011B0DA /* PhotoDetailViewController.swift */,
+				388FF1A723FE704D00EA2095 /* ThemeSelectionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		388FF1AA23FE7AEA00EA2095 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3821B3B023FE63A20011B0DA /* AppDelegate.swift */,
+				3821B3B223FE63A20011B0DA /* SceneDelegate.swift */,
+				3821B3B423FE63A20011B0DA /* ViewController.swift */,
+				3821B3B623FE63A20011B0DA /* Main.storyboard */,
+				3821B3BB23FE63A50011B0DA /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		388FF1AB23FF315900EA2095 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				388FF1AC23FF315900EA2095 /* Photos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

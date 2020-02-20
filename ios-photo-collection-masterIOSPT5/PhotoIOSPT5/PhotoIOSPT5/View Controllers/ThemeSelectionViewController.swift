@@ -11,14 +11,21 @@ import UIKit
 class ThemeSelectionViewController: UIViewController {
 
     var themeHelper: ThemeHelper?
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+updateViews()
         // Do any additional setup after loading the view.
     }
     
 
+    func updateViews() {
+        if UserDefaults.standard.bool(forKey: .themePreferenceDark) {
+            view.backgroundColor = .darkGray
+        } else if UserDefaults.standard.bool(forKey: .themePreferenceGreen) {
+            view.backgroundColor = .systemGreen
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -30,7 +37,14 @@ class ThemeSelectionViewController: UIViewController {
     */
 
     @IBAction func darkThemeButtonTapped(_ sender: Any) {
+        themeHelper?.setThemePreferenceToDark()
+        updateViews()
+        dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func greenThemeButtonTapped(_ sender: Any) {
+        themeHelper?.setThemePreferenceToYourColorHere()
+        updateViews()
+        dismiss(animated: true, completion: nil)
     }
 }
