@@ -35,5 +35,6 @@ class PhotoDetailViewController: UIViewController {
     */
 
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
+        
     }
 }

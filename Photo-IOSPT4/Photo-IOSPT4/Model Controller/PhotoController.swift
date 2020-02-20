@@ -12,8 +12,8 @@ class PhotoController {
     var photos: [Photo] = []
     
     func create() {
-        var newPhoto = Photo(imageData: Data, title: String)
-        newPhoto.append(photos)
+    //    var newPhoto = Photo(imageData: Data, title: String)
+    //    newPhoto.append(photos)
     }
     
     func update(photo: Photo, imageData: Data, title: String) {

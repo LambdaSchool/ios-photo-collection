@@ -1,29 +1,29 @@
 //
 //  ThemeHelper.swift
-//  Photo-IOSPT4
+//  PhotoIOSPT5
 //
-//  Created by David Williams on 12/11/19.
-//  Copyright © 2019 david williams. All rights reserved.
+//  Created by David Williams on 2/19/20.
+//  Copyright © 2020 david williams. All rights reserved.
 //
 
 import Foundation
 
 class ThemeHelper {
     
-    var themePreferenceKey: String
+    let themePreferenceKey: String
     
     init(themePreferenceKey: String){
         self.themePreferenceKey = themePreferenceKey
     }
     
     func setThemePreferenceToDark() {
-       // let userDefaults = UserDefaults.standard
-        UserDefaults.standard.register(defaults: ["Dark" : themePreferenceKey])
+        let userDefaults = UserDefaults.standard
+        UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToYourColorHere() {
-       // let userDefaults = UserDefaults.standard
-        UserDefaults.standard.register(defaults: ["Green" : themePreferenceKey])
+        let userDefaults = UserDefaults.standard
+        UserDefaults.standard.set("Green", forKey: themePreferenceKey)
     }
     
     var themePreference: String {
@@ -32,5 +32,4 @@ class ThemeHelper {
         guard let themeKey = theme else { return "" }
         return themeKey
     }
-    
 }

@@ -1,18 +1,17 @@
 //
 //  ThemeSelectionViewController.swift
-//  Photo-IOSPT4
+//  PhotoIOSPT5
 //
-//  Created by David Williams on 12/12/19.
-//  Copyright © 2019 david williams. All rights reserved.
+//  Created by David Williams on 2/19/20.
+//  Copyright © 2020 david williams. All rights reserved.
 //
 
 import UIKit
 
 class ThemeSelectionViewController: UIViewController {
-    
+
     var themeHelper: ThemeHelper?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,11 +30,7 @@ class ThemeSelectionViewController: UIViewController {
     */
 
     @IBAction func darkThemeButtonTapped(_ sender: Any) {
-        
     }
-    
-    
     @IBAction func greenThemeButtonTapped(_ sender: Any) {
-        
     }
 }

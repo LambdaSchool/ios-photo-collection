@@ -13,7 +13,7 @@ private let reuseIdentifier = "Cell"
 class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
-    let themeHelper = ThemeHelper()
+   // let themeHelper = ThemeHelper(themePreferenceKey: )
 
     override func viewDidLoad() {
         super.viewDidLoad()
