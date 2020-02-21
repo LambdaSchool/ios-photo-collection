@@ -12,38 +12,19 @@ private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
     
-    // MARK Properties
+    // MARK: Properties
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
@@ -53,9 +34,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
         
         let photo = photoController.photos[indexPath.item]
     
@@ -64,19 +44,22 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme () {
-        if themeHelper = themeHelper.setThemePreferenceToDark() {
-            self.view.backgroundColor = .gray
-        } else if themeHelper = themeHelper.setThemePreferenceToPurple() {
-            self.view.backgroundColor = .purple
-        } else if themeHelper == nil {
-            self.view.backgroundColor = .purple
+        if let themeHelper = themeHelper.themePreference{
+            if themeHelper == "Dark" {
+                self.view.backgroundColor = .gray
+            } else if themeHelper == "Purple" {
+                self.view.backgroundColor = .purple
+            } else if themeHelper == nil {
+                self.view.backgroundColor = .purple
+            }
         }
     }
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SelectThemeModalSegue" {
-            if let themeVC = segue.destination as? ThemeSelectionViewController {
-                themeVC.themehelper = themehelper
-            }
+        if segue.identifier == "AddPhotShowSegue" {
+            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
+                
+            destinationVC.photoController = photoController
         }
     }
 }

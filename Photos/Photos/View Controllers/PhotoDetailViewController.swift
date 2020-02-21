@@ -10,17 +10,17 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // Properties
+    // MARK: Properties
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
     var imagePicker = UIImagePickerController()
     
-    //MARK IBOutlets
+    //MARK: IBOutlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var photoText: UITextField!
     
-    // MARK IBACtions
+    // MARK: IBACtions
     @IBAction func savePhoto(_ sender: Any){
         guard let image = imageView.image,
             let imageData = image.pngData(),
@@ -43,7 +43,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        // Do any additional setup after loading the view.
     }
 }
 

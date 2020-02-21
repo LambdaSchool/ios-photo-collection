@@ -10,7 +10,7 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    // MARK Properties
+    // MARK: Properties
     var photo: Photo? {
         didSet {
         updateViews()
@@ -23,7 +23,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         photoImage.image = UIImage(data: photo.imageData)
     }
     
-    // MARK IBOutlets
+    // MARK: IBOutlets
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var photoTextLabel: UILabel!
     

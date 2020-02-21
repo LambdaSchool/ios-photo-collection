@@ -37,6 +37,9 @@
                                         <rect key="frame" x="137" y="0.0" width="50" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Purple"/>
+                                        <connections>
+                                            <action selector="selectPurpleTheme:" destination="s4Q-Sv-Pux" eventType="touchUpInside" id="P8F-TD-Wm0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
