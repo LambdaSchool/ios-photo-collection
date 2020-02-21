@@ -13,6 +13,8 @@
 		631AB03423FF840F00D28456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631AB03223FF840F00D28456 /* Main.storyboard */; };
 		631AB03623FF841000D28456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631AB03523FF841000D28456 /* Assets.xcassets */; };
 		631AB03923FF841000D28456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631AB03723FF841000D28456 /* LaunchScreen.storyboard */; };
+		631AB04623FF866200D28456 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631AB04523FF866200D28456 /* Photo.swift */; };
+		631AB04823FF866D00D28456 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631AB04723FF866D00D28456 /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		631AB03523FF841000D28456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		631AB03823FF841000D28456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		631AB03A23FF841000D28456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631AB04523FF866200D28456 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		631AB04723FF866D00D28456 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		631AB02B23FF840F00D28456 /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
-				631AB02C23FF840F00D28456 /* AppDelegate.swift */,
-				631AB02E23FF840F00D28456 /* SceneDelegate.swift */,
-				631AB03023FF840F00D28456 /* ViewController.swift */,
-				631AB03223FF840F00D28456 /* Main.storyboard */,
-				631AB03523FF841000D28456 /* Assets.xcassets */,
-				631AB03723FF841000D28456 /* LaunchScreen.storyboard */,
+				631AB04223FF861C00D28456 /* Models */,
+				631AB04323FF861F00D28456 /* Controllers */,
+				631AB04423FF864800D28456 /* View Controllers */,
+				631AB04123FF860E00D28456 /* Views */,
 				631AB03A23FF841000D28456 /* Info.plist */,
+				631AB04023FF85F800D28456 /* Resources */,
 			);
 			path = PhotoCollection;
+			sourceTree = "<group>";
+		};
+		631AB04023FF85F800D28456 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				631AB02C23FF840F00D28456 /* AppDelegate.swift */,
+				631AB02E23FF840F00D28456 /* SceneDelegate.swift */,
+				631AB03523FF841000D28456 /* Assets.xcassets */,
+				631AB03723FF841000D28456 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		631AB04123FF860E00D28456 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				631AB03223FF840F00D28456 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		631AB04223FF861C00D28456 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				631AB04523FF866200D28456 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		631AB04323FF861F00D28456 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				631AB04723FF866D00D28456 /* PhotoController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		631AB04423FF864800D28456 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				631AB03023FF840F00D28456 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +184,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631AB04823FF866D00D28456 /* PhotoController.swift in Sources */,
+				631AB04623FF866200D28456 /* Photo.swift in Sources */,
 				631AB03123FF840F00D28456 /* ViewController.swift in Sources */,
 				631AB02D23FF840F00D28456 /* AppDelegate.swift in Sources */,
 				631AB02F23FF840F00D28456 /* SceneDelegate.swift in Sources */,
