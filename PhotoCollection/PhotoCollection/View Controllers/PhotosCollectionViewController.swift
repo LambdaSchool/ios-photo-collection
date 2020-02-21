@@ -38,6 +38,16 @@ class PhotosCollectionViewController: UICollectionViewController {
             themeHelper.setThemePreferenceToGreen()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddPhotoSegue" {
+            let addPhotoVC = segue.destination as? PhotoDetailViewController
+        } else if segue.identifier == "PhotoDetailSegue" {
+            let photoDetailVC = segue.destination as? PhotoDetailViewController
+        } else if segue.identifier == "ThemeSelectionSegue" {
+            let themeSelectionVC = segue.destination as? ThemeSelectionViewController
+        }
+    }
 
 
 }
