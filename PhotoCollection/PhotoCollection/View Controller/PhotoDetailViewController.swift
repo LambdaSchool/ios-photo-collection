@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet var photoImageView: UIImageView!
@@ -28,17 +28,23 @@ class PhotoDetailViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
     }
     
     @IBAction func saveTapped(_ sender: Any) {
         guard let photoController = photoController else { return }
         
-        guard let title = photo?.title, !title.isEmpty,
-            let imageData = photo?.imageData, !imageData.isEmpty else { return }
+        guard let title = photoTitleTextField.text, !title.isEmpty,
+            let imageData = photoImageView.image?.pngData() else { return }
         
         if let photo = photo {
+            print("updating image")
             photoController.update(Photo: photo, data: imageData, title: title)
         } else {
+            print("new image added")
             photoController.create(imageData: imageData, title: title)
         }
         
@@ -59,14 +65,11 @@ class PhotoDetailViewController: UIViewController {
         photoImageView.image = UIImage(data: photo.imageData)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        
+        photoImageView.image = image
+        dismiss(animated: true)
     }
-    */
 
 }
