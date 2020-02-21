@@ -15,4 +15,15 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var photoTitleLabel: UILabel!
     
     
+    //MARK: - Properties
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    func updateViews() {
+        
+    }
+    
 }
