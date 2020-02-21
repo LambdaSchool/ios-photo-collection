@@ -20,16 +20,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     
-    override func viewDidLoad() {
-           super.viewDidLoad()
-       
-           // Register cell classes
-           self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotosCell")
-        view.backgroundColor = UIColor(named: .themePreferenceDark)
-           // Do any additional setup after loading the view.
-  
-       }
-    
+//    override func viewDidLoad() {
+//           super.viewDidLoad()
+//
+////           // Register cell classes
+////           self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotosCell")
+////       // view.backgroundColor = UIColor(named: .themePreferenceDark)
+//           // Do any additional setup after loading the view.
+//
+//       }
+//
        
        // MARK: - Navigation -
     
@@ -37,9 +37,15 @@ class PhotosCollectionViewController: UICollectionViewController {
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreatePhotoSegue" {
             print("The segue identifier is correct")
+           
             guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
             print("If it was good we would see this\(photoController)")
             destinationVC.photoController = photoController
+        }
+        if segue.identifier == "ShowPhotoSegue" {
+            if let destinationVC = segue.destination as? PhotoDetailViewController {
+                ///////////////
+            }
         }
     }
        
@@ -51,7 +57,7 @@ class PhotosCollectionViewController: UICollectionViewController {
        }
 
        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotosCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
+        guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
         let photo = photoController.photos[indexPath.item]
         cell.photo = photo
            // Configure the cell
