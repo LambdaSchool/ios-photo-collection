@@ -31,7 +31,18 @@ class PhotoDetailViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        photoController.
+        guard let photoController = photoController else { return }
+        
+        guard let title = photo?.title, !title.isEmpty,
+            let imageData = photo?.imageData, !imageData.isEmpty else { return }
+        
+        if let photo = photo {
+            photoController.update(Photo: photo, data: imageData, title: title)
+        } else {
+            photoController.create(imageData: imageData, title: title)
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
     
     
