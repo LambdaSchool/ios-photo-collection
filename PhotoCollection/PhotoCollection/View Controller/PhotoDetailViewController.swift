@@ -41,10 +41,8 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             let imageData = photoImageView.image?.pngData() else { return }
         
         if let photo = photo {
-            print("updating image")
             photoController.update(Photo: photo, data: imageData, title: title)
         } else {
-            print("new image added")
             photoController.create(imageData: imageData, title: title)
         }
         
@@ -55,9 +53,8 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     //MARK: - Functions
     func setTheme() {
         guard let themePreference = themeHelper?.themePreference else { return }
-        print("Theme Preference: \(themePreference)")
         //Change the view's background color
-        if themeHelper?.themePreference == "Dark" {
+        if themePreference == "Dark" {
             view.backgroundColor = .darkGray
         } else {
             view.backgroundColor = .cyan

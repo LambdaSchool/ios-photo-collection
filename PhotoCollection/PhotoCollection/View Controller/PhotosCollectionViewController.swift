@@ -21,16 +21,15 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-           setTheme()
-           collectionView.reloadData()
-       }
+        setTheme()
+        collectionView.reloadData()
+    }
     
     //MARK: - Functions
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
-        print("Theme Preference: \(themePreference)")
         //Change the collection view's background color
-        if themeHelper.themePreference == "Dark" {
+        if themePreference == "Dark" {
             collectionView.backgroundColor = .darkGray
         } else {
             collectionView.backgroundColor = .cyan
@@ -39,7 +38,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addPhotoSegue" {
             let addPhotoVC = segue.destination as! PhotoDetailViewController
@@ -62,7 +60,6 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 
     // MARK: UICollectionViewDataSource
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoController.photos.count
     }
