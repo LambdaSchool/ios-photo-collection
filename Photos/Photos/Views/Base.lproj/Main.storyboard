@@ -154,6 +154,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikz-O8-TrN">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
                                         <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="erp-Ty-LoV" eventType="touchUpInside" id="v4U-a5-4Ia"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3M-6y-bzE">
                                         <rect key="frame" x="0.0" y="50" width="354" height="34"/>
@@ -178,7 +181,11 @@
                         <barButtonItem id="Vwo-bO-Ub3"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="P7U-3o-6f5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rvh-YY-P4u"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rvh-YY-P4u">
+                            <connections>
+                                <action selector="savePhoto:" destination="erp-Ty-LoV" id="9n8-xE-ceq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
