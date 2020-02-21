@@ -20,35 +20,35 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     
-//    override func viewDidLoad() {
-//           super.viewDidLoad()
-//
-////           // Register cell classes
-////           self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotosCell")
-////       // view.backgroundColor = UIColor(named: .themePreferenceDark)
-//           // Do any additional setup after loading the view.
-//
-//       }
-//
-       
+    override func viewDidLoad() {
+           super.viewDidLoad()
+
+       }
+
        // MARK: - Navigation -
     
        // In a storyboard-based application, you will often want to do a little preparation before navigation
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreatePhotoSegue" {
-            print("The segue identifier is correct")
-           
             guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
-            print("If it was good we would see this\(photoController)")
             destinationVC.photoController = photoController
         }
         if segue.identifier == "ShowPhotoSegue" {
-            if let destinationVC = segue.destination as? PhotoDetailViewController {
-                ///////////////
+            if let showPhotoVC = segue.destination as? PhotoDetailViewController {
+                if let indexPath = collectionView.indexPathsForSelectedItems {
+                    
+                    showPhotoVC.photoController = photoController
+                }
             }
         }
     }
        
+//    private func photoFor(indexPath: IndexPath)  -> Photo {
+//        var photo = Photo?.self
+//        photo = photoController.sortPhotos[indexPath.item]
+//        return photo
+//    }
+    
        // MARK: UICollectionViewDataSource
 
        override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -65,9 +65,9 @@ class PhotosCollectionViewController: UICollectionViewController {
            return cell
        }
        
+    
        func setTheme() {
         guard let theme = themeHelper.themePreference else { return }
-        
         switch theme {
         case "Dark":
             view.backgroundColor = .darkGray
@@ -76,7 +76,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         default:
             break
         }
-        
     }
       
 
