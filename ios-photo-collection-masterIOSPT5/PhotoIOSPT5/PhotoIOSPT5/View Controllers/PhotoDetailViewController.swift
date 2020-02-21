@@ -59,14 +59,18 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         picker.dismiss(animated: true, completion: nil)
     }
     
-
     @IBAction func savePhotoTapped(_ sender: Any) {
-        guard let imageData = imageView.image?.pngData(),
-        let photoController = photoController,
+        guard let image = imageView.image,
+            let imageData = image.pngData(),
             let title = photoNameField.text else { return }
-
-        photoController.createPhoto(named: title, image: imageData)
+        if let photo = photo {
             
+            photoController?.update(photo: photo, imageData: imageData, title: title)
+        } else {
+           print("\(photoController)")
+            photoController?.createPhoto(with: title, imageData: imageData)
+            
+        }
         navigationController?.popViewController(animated: true)
     }
 }

@@ -22,6 +22,8 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         } else if UserDefaults.standard.string(forKey: .themePreferenceGreen) != nil {
             backgroundColor = .systemGreen
         }
+        guard let photo = photo else { return }
+        photoImage.image =  UIImage(data: photo.imageData)
     }
     
     
