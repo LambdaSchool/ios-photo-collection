@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		44FDBC3B23FE419F008BACC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FDBC3A23FE419F008BACC0 /* AppDelegate.swift */; };
 		44FDBC3D23FE419F008BACC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FDBC3C23FE419F008BACC0 /* SceneDelegate.swift */; };
-		44FDBC3F23FE419F008BACC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FDBC3E23FE419F008BACC0 /* ViewController.swift */; };
+		44FDBC3F23FE419F008BACC0 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FDBC3E23FE419F008BACC0 /* PhotoDetailViewController.swift */; };
 		44FDBC4223FE419F008BACC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FDBC4023FE419F008BACC0 /* Main.storyboard */; };
 		44FDBC4423FE41A1008BACC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FDBC4323FE41A1008BACC0 /* Assets.xcassets */; };
 		44FDBC4723FE41A1008BACC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FDBC4523FE41A1008BACC0 /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		44FDBC3723FE419F008BACC0 /* Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FDBC3A23FE419F008BACC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FDBC3C23FE419F008BACC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44FDBC3E23FE419F008BACC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44FDBC3E23FE419F008BACC0 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		44FDBC4123FE419F008BACC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44FDBC4323FE41A1008BACC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44FDBC4623FE41A1008BACC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		44FDBC4F23FE41CE008BACC0 /* View Conrollers */ = {
 			isa = PBXGroup;
 			children = (
-				44FDBC3E23FE419F008BACC0 /* ViewController.swift */,
+				44FDBC3E23FE419F008BACC0 /* PhotoDetailViewController.swift */,
 				44FDBC5823FF5016008BACC0 /* PhotosCollectionViewController.swift */,
 				44FDBC5A23FF53FE008BACC0 /* PhotosCollectionViewCell.swift */,
 			);
@@ -187,7 +187,7 @@
 			files = (
 				44FDBC5523FE42F8008BACC0 /* PhotoController.swift in Sources */,
 				44FDBC5323FE4265008BACC0 /* Photo.swift in Sources */,
-				44FDBC3F23FE419F008BACC0 /* ViewController.swift in Sources */,
+				44FDBC3F23FE419F008BACC0 /* PhotoDetailViewController.swift in Sources */,
 				44FDBC5923FF5016008BACC0 /* PhotosCollectionViewController.swift in Sources */,
 				44FDBC5723FE479C008BACC0 /* ThemeHelper.swift in Sources */,
 				44FDBC5B23FF53FE008BACC0 /* PhotosCollectionViewCell.swift in Sources */,
