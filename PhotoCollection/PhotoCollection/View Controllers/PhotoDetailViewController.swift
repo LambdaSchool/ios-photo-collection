@@ -8,38 +8,35 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    var imagePicker = UIImagePickerController()
     
     // MARK: - IBOutlets
     @IBOutlet weak var photoDetailImageView: UIImageView!
     @IBOutlet weak var photoTitleTextField: UITextField!
     
-    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setTheme()
-        updateViews()
-    }
-    
     // MARK: - IBActions
     @IBAction func addPhoto(_ sender: Any) {
-//        var imagePickerController = UIImagePickerController
-//        UIImagePickerController.SourceType.photoLibrary
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func savePhoto(_ sender: Any) {
-        if photo != nil {
-            updateViews()
-        } else {
-            photoController?.createPhoto(imageData: <#T##Data#>, title: <#T##String#>)
-            self.navigationController?.popToRootViewController(animated: true)
+        guard let image = photoDetailImageView.image,
+            let imageData = image.pngData(),
+            let title = photoTitleTextField.text else { return }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            photoDetailImageView.image = image
         }
-        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func setTheme() {
@@ -57,9 +54,13 @@ class PhotoDetailViewController: UIViewController {
         photoDetailImageView.image = UIImage(data: photo.imageData)
         photoTitleTextField.text = photo.title
     }
-  
+      override func viewDidLoad() {
+            super.viewDidLoad()
+            setTheme()
+            updateViews()
+        }
+        
 }
 
-extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
     
-}
