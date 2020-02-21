@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		C941B9D623FE414D0048404F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9D523FE414D0048404F /* AppDelegate.swift */; };
 		C941B9D823FE414D0048404F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9D723FE414D0048404F /* SceneDelegate.swift */; };
-		C941B9DA23FE414D0048404F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9D923FE414D0048404F /* ViewController.swift */; };
 		C941B9DD23FE414D0048404F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C941B9DB23FE414D0048404F /* Main.storyboard */; };
 		C941B9DF23FE414F0048404F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C941B9DE23FE414F0048404F /* Assets.xcassets */; };
 		C941B9E223FE414F0048404F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C941B9E023FE414F0048404F /* LaunchScreen.storyboard */; };
+		C941B9EA23FE41CD0048404F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9E923FE41CD0048404F /* Photo.swift */; };
+		C941B9ED23FE42160048404F /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9EC23FE42160048404F /* PhotoController.swift */; };
+		C941B9EF23FE440B0048404F /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9EE23FE440B0048404F /* ThemeHelper.swift */; };
+		C941B9F323FE479F0048404F /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9F223FE479F0048404F /* PhotosCollectionViewController.swift */; };
+		C941B9F523FE483C0048404F /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9F423FE483C0048404F /* PhotosCollectionViewCell.swift */; };
+		C941B9F723FE49610048404F /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9F623FE49610048404F /* PhotoDetailViewController.swift */; };
+		C941B9F923FE4D0D0048404F /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C941B9F823FE4D0D0048404F /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C941B9D223FE414D0048404F /* ios-photo-collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-photo-collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C941B9D523FE414D0048404F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C941B9D723FE414D0048404F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C941B9D923FE414D0048404F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C941B9DC23FE414D0048404F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C941B9DE23FE414F0048404F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C941B9E123FE414F0048404F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C941B9E323FE414F0048404F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C941B9E923FE41CD0048404F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C941B9EC23FE42160048404F /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		C941B9EE23FE440B0048404F /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		C941B9F223FE479F0048404F /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		C941B9F423FE483C0048404F /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		C941B9F623FE49610048404F /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		C941B9F823FE4D0D0048404F /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +70,43 @@
 			children = (
 				C941B9D523FE414D0048404F /* AppDelegate.swift */,
 				C941B9D723FE414D0048404F /* SceneDelegate.swift */,
-				C941B9D923FE414D0048404F /* ViewController.swift */,
-				C941B9DB23FE414D0048404F /* Main.storyboard */,
+				C941B9EB23FE41D30048404F /* Model */,
+				C941B9F023FE47170048404F /* Views */,
+				C941B9F123FE471E0048404F /* View Controllers */,
 				C941B9DE23FE414F0048404F /* Assets.xcassets */,
 				C941B9E023FE414F0048404F /* LaunchScreen.storyboard */,
 				C941B9E323FE414F0048404F /* Info.plist */,
+				C941B9EC23FE42160048404F /* PhotoController.swift */,
+				C941B9EE23FE440B0048404F /* ThemeHelper.swift */,
 			);
 			path = "ios-photo-collection";
+			sourceTree = "<group>";
+		};
+		C941B9EB23FE41D30048404F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C941B9E923FE41CD0048404F /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C941B9F023FE47170048404F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C941B9DB23FE414D0048404F /* Main.storyboard */,
+				C941B9F423FE483C0048404F /* PhotosCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C941B9F123FE471E0048404F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C941B9F223FE479F0048404F /* PhotosCollectionViewController.swift */,
+				C941B9F623FE49610048404F /* PhotoDetailViewController.swift */,
+				C941B9F823FE4D0D0048404F /* ThemeSelectionViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C941B9DA23FE414D0048404F /* ViewController.swift in Sources */,
+				C941B9ED23FE42160048404F /* PhotoController.swift in Sources */,
+				C941B9F523FE483C0048404F /* PhotosCollectionViewCell.swift in Sources */,
+				C941B9EA23FE41CD0048404F /* Photo.swift in Sources */,
+				C941B9EF23FE440B0048404F /* ThemeHelper.swift in Sources */,
+				C941B9F323FE479F0048404F /* PhotosCollectionViewController.swift in Sources */,
 				C941B9D623FE414D0048404F /* AppDelegate.swift in Sources */,
+				C941B9F723FE49610048404F /* PhotoDetailViewController.swift in Sources */,
+				C941B9F923FE4D0D0048404F /* ThemeSelectionViewController.swift in Sources */,
 				C941B9D823FE414D0048404F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
