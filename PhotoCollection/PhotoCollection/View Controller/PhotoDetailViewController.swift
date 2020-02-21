@@ -57,6 +57,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         guard let themePreference = themeHelper?.themePreference else { return }
         print("Theme Preference: \(themePreference)")
         //Change the view's background color
+        if themeHelper?.themePreference == "Dark" {
+            view.backgroundColor = .darkGray
+        } else {
+            view.backgroundColor = .cyan
+        }
     }
     
     func updateViews() {

@@ -30,6 +30,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         guard let themePreference = themeHelper.themePreference else { return }
         print("Theme Preference: \(themePreference)")
         //Change the collection view's background color
+        if themeHelper.themePreference == "Dark" {
+            collectionView.backgroundColor = .darkGray
+        } else {
+            collectionView.backgroundColor = .cyan
+        }
     }
 
 
