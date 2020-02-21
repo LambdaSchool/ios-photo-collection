@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		E4AB525B23FF70460016DD36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525A23FF70460016DD36 /* AppDelegate.swift */; };
 		E4AB525D23FF70460016DD36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525C23FF70460016DD36 /* SceneDelegate.swift */; };
-		E4AB525F23FF70460016DD36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB525E23FF70460016DD36 /* ViewController.swift */; };
 		E4AB526223FF70460016DD36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526023FF70460016DD36 /* Main.storyboard */; };
 		E4AB526423FF70480016DD36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526323FF70480016DD36 /* Assets.xcassets */; };
 		E4AB526723FF70480016DD36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AB526523FF70480016DD36 /* LaunchScreen.storyboard */; };
 		E4AB527323FF71160016DD36 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527223FF71160016DD36 /* Photo.swift */; };
 		E4AB527623FF71E20016DD36 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527523FF71E20016DD36 /* PhotoController.swift */; };
 		E4AB527823FF73B90016DD36 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527723FF73B90016DD36 /* ThemeHelper.swift */; };
+		E4AB527A23FF784A0016DD36 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527923FF784A0016DD36 /* PhotosCollectionViewController.swift */; };
+		E4AB527C23FF79940016DD36 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527B23FF79940016DD36 /* PhotosCollectionViewCell.swift */; };
+		E4AB527E23FF7C760016DD36 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527D23FF7C760016DD36 /* PhotoDetailViewController.swift */; };
+		E4AB528023FF87490016DD36 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB527F23FF87490016DD36 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E4AB525723FF70460016DD36 /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4AB525A23FF70460016DD36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4AB525C23FF70460016DD36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E4AB525E23FF70460016DD36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E4AB526123FF70460016DD36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4AB526323FF70480016DD36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4AB526623FF70480016DD36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,10 @@
 		E4AB527223FF71160016DD36 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E4AB527523FF71E20016DD36 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		E4AB527723FF73B90016DD36 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		E4AB527923FF784A0016DD36 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		E4AB527B23FF79940016DD36 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4AB527D23FF7C760016DD36 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		E4AB527F23FF87490016DD36 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +81,9 @@
 		E4AB526E23FF70690016DD36 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E4AB525E23FF70460016DD36 /* ViewController.swift */,
+				E4AB527923FF784A0016DD36 /* PhotosCollectionViewController.swift */,
+				E4AB527D23FF7C760016DD36 /* PhotoDetailViewController.swift */,
+				E4AB527F23FF87490016DD36 /* ThemeSelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -83,7 +91,7 @@
 		E4AB526F23FF70780016DD36 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E4AB526023FF70460016DD36 /* Main.storyboard */,
+				E4AB527B23FF79940016DD36 /* PhotosCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +99,7 @@
 		E4AB527023FF708B0016DD36 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4AB526023FF70460016DD36 /* Main.storyboard */,
 				E4AB525A23FF70460016DD36 /* AppDelegate.swift */,
 				E4AB525C23FF70460016DD36 /* SceneDelegate.swift */,
 				E4AB526323FF70480016DD36 /* Assets.xcassets */,
@@ -188,10 +197,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4AB527623FF71E20016DD36 /* PhotoController.swift in Sources */,
+				E4AB527C23FF79940016DD36 /* PhotosCollectionViewCell.swift in Sources */,
 				E4AB527323FF71160016DD36 /* Photo.swift in Sources */,
-				E4AB525F23FF70460016DD36 /* ViewController.swift in Sources */,
 				E4AB527823FF73B90016DD36 /* ThemeHelper.swift in Sources */,
+				E4AB527A23FF784A0016DD36 /* PhotosCollectionViewController.swift in Sources */,
 				E4AB525B23FF70460016DD36 /* AppDelegate.swift in Sources */,
+				E4AB527E23FF7C760016DD36 /* PhotoDetailViewController.swift in Sources */,
+				E4AB528023FF87490016DD36 /* ThemeSelectionViewController.swift in Sources */,
 				E4AB525D23FF70460016DD36 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
