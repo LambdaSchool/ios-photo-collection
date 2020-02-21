@@ -30,5 +30,4 @@ class ThemeSelectionViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
 }
