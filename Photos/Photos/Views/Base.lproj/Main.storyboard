@@ -190,6 +190,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addPhotoButtonTapped" destination="Ikz-O8-TrN" id="5GG-Sc-lD7"/>
+                        <outlet property="imageView" destination="0fz-el-18E" id="ec3-ul-wzD"/>
+                        <outlet property="photoText" destination="W3M-6y-bzE" id="UCd-oZ-bC7"/>
                         <outlet property="saveButtonTapped" destination="Rvh-YY-P4u" id="UOC-79-zd1"/>
                     </connections>
                 </viewController>

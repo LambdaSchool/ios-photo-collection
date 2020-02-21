@@ -15,12 +15,16 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var photo: Photo?
     var themeHelper: ThemeHelper?
     var imagePicker = UIImagePickerController()
-
+    
+    //MARK IBOutlets
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var photoText: UITextField!
+    
     // MARK IBACtions
     @IBAction func savePhoto(_ sender: Any){
         guard let image = imageView.image,
-            let imageData = image.png(),
-            let title = photoNameField.text else { return }
+            let imageData = image.pngData(),
+            let title = photoText.text else { return }
     }
     
     @IBAction func addPhoto(_ sender: Any) {
