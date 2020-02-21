@@ -61,9 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				631AB04223FF861C00D28456 /* Models */,
-				631AB04323FF861F00D28456 /* Controllers */,
 				631AB04423FF864800D28456 /* View Controllers */,
 				631AB04123FF860E00D28456 /* Views */,
+				631AB04323FF861F00D28456 /* Helpers */,
 				631AB03A23FF841000D28456 /* Info.plist */,
 				631AB04023FF85F800D28456 /* Resources */,
 			);
@@ -93,16 +93,16 @@
 			isa = PBXGroup;
 			children = (
 				631AB04523FF866200D28456 /* Photo.swift */,
+				631AB04723FF866D00D28456 /* PhotoController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		631AB04323FF861F00D28456 /* Controllers */ = {
+		631AB04323FF861F00D28456 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				631AB04723FF866D00D28456 /* PhotoController.swift */,
 			);
-			path = Controllers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		631AB04423FF864800D28456 /* View Controllers */ = {
