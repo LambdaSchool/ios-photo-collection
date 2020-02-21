@@ -58,7 +58,8 @@ class PhotosCollectionViewController: UICollectionViewController {
 
        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
-        let photo = photoController.photos[indexPath.item]
+        let photo = photoController.sortPhotos[indexPath.item]
+       // let photo = photoController.photos[indexPath.item]
         cell.photo = photo
            // Configure the cell
        
