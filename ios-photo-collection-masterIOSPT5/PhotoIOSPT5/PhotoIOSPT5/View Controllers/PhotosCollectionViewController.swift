@@ -10,22 +10,22 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
 
-   
+
     let photoController = PhotoController()
-    let themeHelper = ThemeHelper(themePreferenceKey: .themePreferenceDark)
+    let themeHelper = ThemeHelper()
     
     override func viewDidLoad() {
            super.viewDidLoad()
        
            // Register cell classes
            self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotosCell")
-
+        view.backgroundColor = UIColor(named: .themePreferenceDark)
            // Do any additional setup after loading the view.
        }
-
+    
        
-       // MARK: - Navigation
-
+       // MARK: - Navigation -
+    
        // In a storyboard-based application, you will often want to do a little preparation before navigation
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            // Get the new view controller using [segue destinationViewController].
@@ -50,7 +50,9 @@ class PhotosCollectionViewController: UICollectionViewController {
        
        func setTheme() {
         
-       }
+        
+    }
+      
 
        // MARK: UICollectionViewDelegate
 
@@ -68,8 +70,6 @@ class PhotosCollectionViewController: UICollectionViewController {
        override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
            return false
        }
-
-      
        */
 
 }

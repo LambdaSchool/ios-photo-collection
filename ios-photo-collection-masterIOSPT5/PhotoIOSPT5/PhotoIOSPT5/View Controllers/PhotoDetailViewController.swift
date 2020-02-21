@@ -33,6 +33,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
+    func setTheme() {
+    
+    }
+    
     /*
      // MARK: - Navigation
      
@@ -55,12 +59,14 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         picker.dismiss(animated: true, completion: nil)
     }
     
+
     @IBAction func savePhotoTapped(_ sender: Any) {
-        guard let photoName = photoNameField.text,
-            !photoName.isEmpty else { return }
-        if let image = imageView.image!.pngData() as NSData? {
-            photoController!.createPhoto(named: photoName, image: image as Data)
-        }
+        guard let imageData = imageView.image?.pngData(),
+        let photoController = photoController,
+            let title = photoNameField.text else { return }
+
+        photoController.createPhoto(named: title, image: imageData)
+            
         navigationController?.popViewController(animated: true)
     }
 }

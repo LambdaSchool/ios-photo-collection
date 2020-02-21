@@ -20,11 +20,7 @@ updateViews()
     
 
     func updateViews() {
-        if UserDefaults.standard.bool(forKey: .themePreferenceDark) {
-            view.backgroundColor = .darkGray
-        } else if UserDefaults.standard.bool(forKey: .themePreferenceGreen) {
-            view.backgroundColor = .systemGreen
-        }
+        
     }
     /*
     // MARK: - Navigation
@@ -43,7 +39,7 @@ updateViews()
     }
     
     @IBAction func greenThemeButtonTapped(_ sender: Any) {
-        themeHelper?.setThemePreferenceToYourColorHere()
+        themeHelper?.setThemePreferenceToGreen()
         updateViews()
         dismiss(animated: true, completion: nil)
     }
