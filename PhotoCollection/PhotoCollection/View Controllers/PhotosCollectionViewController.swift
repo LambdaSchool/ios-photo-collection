@@ -15,6 +15,24 @@ class PhotosCollectionViewController: UICollectionViewController {
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
     
+    
+    
+    // MARK: - Life Cycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTheme()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTheme()
+        
+    }
+    
+    override func viewDidLoad() {
+        setTheme()
+    }
+    
 
     // MARK: UICollectionViewDataSource
     
@@ -31,21 +49,28 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
-        guard themeHelper.themePreference == nil else { return }
-        if themeHelper.themePreference == "Dark" {
-            themeHelper.setThemePreferenceToDark()
-        } else if themeHelper.themePreference == "Green" {
-            themeHelper.setThemePreferenceToGreen()
+        guard let preference = themeHelper.themePreference  else { return }
+        print("\(preference)")
+    
+        if preference == "Dark" {
+            collectionView.backgroundColor = .darkGray
+        } else if preference == "Green" {
+            collectionView.backgroundColor = .green
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPhotoSegue" {
             let addPhotoVC = segue.destination as? PhotoDetailViewController
+            addPhotoVC?.photoController = photoController
+            addPhotoVC?.themeHelper = themeHelper
         } else if segue.identifier == "PhotoDetailSegue" {
-            let photoDetailVC = segue.destination as? PhotoDetailViewController
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController, let indexPath = collectionView?.indexPathsForSelectedItems?.first else {return}
+            photoDetailVC.photo = photoController.photos[indexPath.item]
+            photoDetailVC.themeHelper = themeHelper
         } else if segue.identifier == "ThemeSelectionSegue" {
             let themeSelectionVC = segue.destination as? ThemeSelectionViewController
+            themeSelectionVC?.themeHelper = themeHelper
         }
     }
 

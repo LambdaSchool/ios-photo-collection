@@ -30,6 +30,9 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         guard let image = photoDetailImageView.image,
             let imageData = image.pngData(),
             let title = photoTitleTextField.text else { return }
+        photoController?.createPhoto(imageData: imageData, title: title)
+        photoDetailImageView.image = image
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -40,11 +43,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func setTheme() {
-        guard themeHelper?.themePreference == nil else { return }
-        if themeHelper?.themePreference == "Dark" {
-            self.view.backgroundColor = .darkGray
-        } else if themeHelper?.themePreference == "Green" {
-            self.view.backgroundColor = .green
+        guard let preference = themeHelper?.themePreference else { return }
+        if preference == "Dark" {
+            view.backgroundColor = .darkGray
+        } else if preference == "Green" {
+            view.backgroundColor = .green
         }
     }
     
@@ -59,6 +62,18 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             setTheme()
             updateViews()
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setTheme()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setTheme()
+    }
         
 }
 

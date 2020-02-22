@@ -68,7 +68,7 @@
                     <navigationItem key="navigationItem" title="Photo Collection" id="Kgd-ei-KEg">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Mht-F3-lJy">
                             <connections>
-                                <segue destination="4mM-eP-RXY" kind="presentation" identifier="ThemeSelectionSegue" id="KDu-Kw-jVA"/>
+                                <segue destination="4mM-eP-RXY" kind="show" identifier="ThemeSelectionSegue" id="KDu-Kw-jVA"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aHd-AK-W8E">
@@ -87,11 +87,11 @@
             <objects>
                 <viewController id="4mM-eP-RXY" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vZ1-5v-scu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-s2-bdJ">
-                                <rect key="frame" x="40" y="100" width="334" height="208"/>
+                                <rect key="frame" x="40" y="240" width="334" height="122"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="job-Nu-CME">
                                         <rect key="frame" x="11.5" y="0.0" width="311" height="20.5"/>
@@ -100,17 +100,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="97" translatesAutoresizingMaskIntoConstraints="NO" id="Q6P-fd-CBL">
-                                        <rect key="frame" x="81" y="87.5" width="172" height="120.5"/>
+                                        <rect key="frame" x="81" y="87.5" width="172" height="34.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-UB-FTQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="33" height="120.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="34.5"/>
                                                 <state key="normal" title="Dark"/>
                                                 <connections>
                                                     <action selector="darkThemeTapped:" destination="4mM-eP-RXY" eventType="touchUpInside" id="rdv-Pt-Ujg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96z-t6-Jrz">
-                                                <rect key="frame" x="130" y="0.0" width="42" height="120.5"/>
+                                                <rect key="frame" x="130" y="0.0" width="42" height="34.5"/>
                                                 <state key="normal" title="Green"/>
                                                 <connections>
                                                     <action selector="greenThemeTapped:" destination="4mM-eP-RXY" eventType="touchUpInside" id="98E-V6-cJK"/>
@@ -121,7 +121,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38G-CK-cdC">
-                                <rect key="frame" x="80" y="40" width="254" height="40"/>
+                                <rect key="frame" x="80" y="180" width="254" height="40"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

@@ -15,7 +15,7 @@ class ThemeSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
     // MARK: - IBActions
@@ -23,9 +23,9 @@ class ThemeSelectionViewController: UIViewController {
         themeHelper?.setThemePreferenceToDark()
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func greenThemeTapped(_ sender: Any) {
         themeHelper?.setThemePreferenceToGreen()
         dismiss(animated: true, completion: nil)
     }
-    
 }
