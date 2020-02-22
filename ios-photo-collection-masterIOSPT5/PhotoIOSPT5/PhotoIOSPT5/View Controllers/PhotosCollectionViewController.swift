@@ -10,22 +10,23 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
 
-
-    let photoController = PhotoController()
+    var photoController = PhotoController()
     let themeHelper = ThemeHelper()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         collectionView?.reloadData()
+        themeHelper.themePreferenceKey = "Green"
     }
     
-    
     override func viewDidLoad() {
-           super.viewDidLoad()
-setTheme()
-       }
-
-       // MARK: - Navigation -
+        super.viewDidLoad()
+        
+        setTheme()
+    }
+    
+    // MARK: - Navigation -
     
        // In a storyboard-based application, you will often want to do a little preparation before navigation
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,37 +68,17 @@ setTheme()
        
     
        func setTheme() {
-        guard let theme = themeHelper.themePreference else { return }
-        print(" At start of app")
-        switch theme {
-        case "Dark":
-            print("switched theme to Dark")
-            view.backgroundColor = .darkGray
-        case "Green":
-            print("switch theme to Green")
-            view.backgroundColor = .systemGreen
-        default:
-            break
-        }
-    }
-      
-
-       // MARK: UICollectionViewDelegate
-
-      
-
-       /*
-       // Uncomment this method to specify if the specified item should be selected
-       override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-           return true
+         let theme = themeHelper.themePreferenceKey// else { return }
+              print("In PhotosCollectionView")
+              switch theme {
+              case "Dark":
+                  print("switched theme to Dark")
+                  view.backgroundColor = .darkGray
+              case "Green":
+                  print("switch theme to Green")
+                  view.backgroundColor = .systemGreen
+              default:
+                  break
+              }
        }
-       */
-
-       /*
-       // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-       override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-           return false
-       }
-       */
-
 }

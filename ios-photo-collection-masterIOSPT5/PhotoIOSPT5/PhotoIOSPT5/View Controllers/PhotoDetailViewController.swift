@@ -37,7 +37,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func setTheme() {
-        guard let theme = themeHelper?.themePreference else { return }
+        guard let theme = themeHelper?.themePreferenceKey else { return }
            print("In PhotoDetailView")
            switch theme {
            case "Dark":
@@ -50,16 +50,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
                break
            }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
    
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
