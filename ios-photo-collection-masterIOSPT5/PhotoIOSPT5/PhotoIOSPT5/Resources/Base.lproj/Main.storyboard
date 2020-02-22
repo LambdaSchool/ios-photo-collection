@@ -34,14 +34,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ywi-Dp-IzY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="7Ao-uh-prl"/>
+                                                        <constraint firstAttribute="height" constant="100" id="7Ao-uh-prl"/>
                                                         <constraint firstAttribute="width" constant="100" id="x9c-jm-CqA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-GX-M33">
-                                                    <rect key="frame" x="29" y="120" width="42" height="0.0"/>
+                                                    <rect key="frame" x="29" y="100" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                             <outlet property="delegate" destination="Ll4-OY-3Ob" id="4b7-dl-4FN"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Photo Collection" id="t8D-oe-rCk">
+                    <navigationItem key="navigationItem" title="Photo Collection" id="t8D-oe-rCk" customClass="CollectioViewCell">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="sPI-Iw-PwX">
                             <connections>
                                 <segue destination="exz-VD-zSo" kind="presentation" identifier="SelectThemeSegue" id="cm7-zP-1mR"/>
@@ -143,6 +143,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editPhotoLabel" destination="Zug-ng-a9b" id="XLv-re-gaV"/>
                         <outlet property="imageView" destination="4Sx-Ut-dvg" id="Res-Am-gGN"/>
                         <outlet property="photoNameField" destination="dp5-3s-ZEj" id="mGr-PG-uG4"/>
                     </connections>

@@ -17,15 +17,19 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         
         collectionView?.reloadData()
-        themeHelper.themePreferenceKey = "Green"
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setTheme()
+       
     }
     
+    func updateViews() {
+        setTheme()
+    }
     // MARK: - Navigation -
     
        // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -67,18 +71,18 @@ class PhotosCollectionViewController: UICollectionViewController {
        }
        
     
-       func setTheme() {
-         let theme = themeHelper.themePreferenceKey// else { return }
-              print("In PhotosCollectionView")
-              switch theme {
-              case "Dark":
-                  print("switched theme to Dark")
-                  view.backgroundColor = .darkGray
-              case "Green":
-                  print("switch theme to Green")
-                  view.backgroundColor = .systemGreen
-              default:
-                  break
-              }
-       }
+    func setTheme() {
+        let theme = themeHelper.themePrefer// else { return }
+        print("In PhotosCollectionView")
+        switch theme {
+        case "Dark":
+            print("switched theme to Dark")
+            collectionView.backgroundColor = .darkGray
+        case "Green":
+            print("switch theme to Green")
+            collectionView.backgroundColor = .systemGreen
+        default:
+            break
+        }
+    }
 }

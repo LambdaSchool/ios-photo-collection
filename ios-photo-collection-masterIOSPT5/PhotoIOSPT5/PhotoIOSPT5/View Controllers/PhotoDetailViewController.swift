@@ -17,6 +17,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var photoNameField: UITextField!
+    @IBOutlet weak var editPhotoLabel: UIButton!
     
     var imagePicker = UIImagePickerController()
     
@@ -34,10 +35,11 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         guard let photo = photo else { return }
         imageView.image =  UIImage(data: photo.imageData)
         photoNameField.text = photo.title
+        editPhotoLabel.setTitle("Change Photo", for: [])
     }
     
     func setTheme() {
-        guard let theme = themeHelper?.themePreferenceKey else { return }
+        guard let theme = themeHelper?.themePreference else { return }
            print("In PhotoDetailView")
            switch theme {
            case "Dark":

@@ -17,11 +17,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-//        if UserDefaults.standard.string(forKey: .themePreferenceDark) != nil {
-//            backgroundColor = .darkGray
-//        } else if UserDefaults.standard.string(forKey: .themePreferenceGreen) != nil {
-//            backgroundColor = .systemGreen
-//        }
         guard let photo = photo else { return }
         photoImage.image =  UIImage(data: photo.imageData)
         photoTitleLabel.text = photo.title
