@@ -49,20 +49,27 @@ class PhotoController {
         }
     }
     
-    
    func createPhoto(with title: String, imageData: Data) {
     let  photo = Photo(title: title, imageData: imageData)
         photos.append(photo)
    saveToPersistentStore()
     }
     
-    func update(photo: Photo, imageData: Data, title: String) {
+    func update(photo: Photo, imageData: Data? = nil, title: String? = nil) {
         guard let item = photos.firstIndex(of: photo) else { return }
+//        if let title = title {
+//            photos[item].title = title
+//        }
+//        if let imageData = imageData {
+//            photos[item].imageData
+//        }
         var scratch = photo
-        scratch.imageData = imageData
-        scratch.title = title
+        scratch.imageData = imageData!
+        scratch.title = title!
         photos.remove(at: item)
-        photos.insert(scratch, at: item)
+        photos.append(scratch)
+       // photos.insert(scratch, at: item)
+        
         saveToPersistentStore()
     }
 }

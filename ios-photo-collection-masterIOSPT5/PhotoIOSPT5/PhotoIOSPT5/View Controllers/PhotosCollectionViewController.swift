@@ -22,7 +22,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
-
+setTheme()
        }
 
        // MARK: - Navigation -
@@ -30,25 +30,25 @@ class PhotosCollectionViewController: UICollectionViewController {
        // In a storyboard-based application, you will often want to do a little preparation before navigation
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreatePhotoSegue" {
-            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
-            destinationVC.photoController = photoController
+            guard let creationVC = segue.destination as? PhotoDetailViewController else { return }
+            creationVC.photoController = photoController
+            creationVC.themeHelper = themeHelper
+        }
+        if segue.identifier == "SelectThemeSegue" {
+            guard let selectThemeVC = segue.destination as? ThemeSelectionViewController else { return }
+            selectThemeVC.themeHelper = themeHelper
         }
         if segue.identifier == "ShowPhotoSegue" {
             if let showPhotoVC = segue.destination as? PhotoDetailViewController {
-                if let indexPath = collectionView.indexPathsForSelectedItems {
-                    
+                guard let indexPath = collectionView.indexPath(for: sender as! PhotosCollectionViewCell) else { return }
+                     
                     showPhotoVC.photoController = photoController
-                }
+                    showPhotoVC.themeHelper = themeHelper
+                showPhotoVC.photo = photoController.sortPhotos[indexPath.item]
+                
             }
         }
     }
-       
-//    private func photoFor(indexPath: IndexPath)  -> Photo {
-//        var photo = Photo?.self
-//        photo = photoController.sortPhotos[indexPath.item]
-//        return photo
-//    }
-    
        // MARK: UICollectionViewDataSource
 
        override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -61,18 +61,20 @@ class PhotosCollectionViewController: UICollectionViewController {
         let photo = photoController.sortPhotos[indexPath.item]
        // let photo = photoController.photos[indexPath.item]
         cell.photo = photo
-           // Configure the cell
-       
+   
            return cell
        }
        
     
        func setTheme() {
         guard let theme = themeHelper.themePreference else { return }
+        print(" At start of app")
         switch theme {
         case "Dark":
+            print("switched theme to Dark")
             view.backgroundColor = .darkGray
         case "Green":
+            print("switch theme to Green")
             view.backgroundColor = .systemGreen
         default:
             break

@@ -25,16 +25,30 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.delegate = self
         
         // Do any additional setup after loading the view.
+        updateViews()
     }
     
     
     func updateViews() {
-     
+        setTheme()
+        guard let photo = photo else { return }
+        imageView.image =  UIImage(data: photo.imageData)
+        photoNameField.text = photo.title
     }
     
-    
     func setTheme() {
-    
+        guard let theme = themeHelper?.themePreference else { return }
+           print("In PhotoDetailView")
+           switch theme {
+           case "Dark":
+               print("switched theme to Dark")
+               view.backgroundColor = .darkGray
+           case "Green":
+               print("switch theme to Green")
+               view.backgroundColor = .systemGreen
+           default:
+               break
+           }
     }
     
     /*
@@ -64,10 +78,8 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             let imageData = image.pngData(),
             let title = photoNameField.text else { return }
         if let photo = photo {
-            
             photoController?.update(photo: photo, imageData: imageData, title: title)
         } else {
-           print("\(photoController)")
             photoController?.createPhoto(with: title, imageData: imageData)
             
         }
