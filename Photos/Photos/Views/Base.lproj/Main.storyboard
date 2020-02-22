@@ -32,13 +32,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkTheme:" destination="s4Q-Sv-Pux" eventType="touchUpInside" id="BPQ-WG-Qgm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvQ-t0-fEY">
                                         <rect key="frame" x="137" y="0.0" width="50" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Purple"/>
                                         <connections>
-                                            <action selector="selectPurpleTheme:" destination="s4Q-Sv-Pux" eventType="touchUpInside" id="P8F-TD-Wm0"/>
+                                            <action selector="selectPurpleTheme:" destination="s4Q-Sv-Pux" eventType="touchUpInside" id="PNF-Fo-fbY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -54,10 +57,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hin-yP-X3d"/>
                     </view>
-                    <connections>
-                        <outlet property="selectDarkTheme" destination="KBU-2Q-UFx" id="b6s-eS-9QT"/>
-                        <outlet property="selectPurpleTheme" destination="TvQ-t0-fEY" id="5NI-nl-XuK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p28-Jw-cbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

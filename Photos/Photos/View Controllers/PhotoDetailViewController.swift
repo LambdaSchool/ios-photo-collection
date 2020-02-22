@@ -14,35 +14,66 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
-    var imagePicker = UIImagePickerController()
     
     //MARK: IBOutlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var photoText: UITextField!
     
     // MARK: IBACtions
-    @IBAction func savePhoto(_ sender: Any){
-        guard let image = imageView.image,
-            let imageData = image.pngData(),
-            let title = photoText.text else { return }
+    @IBAction func savePhoto(_ sender: UIButton){
+        if let photo = photo {
+            if let photoController = photoController {
+                if let text = photoText.text, !text.isEmpty, let photoData = imageView.image?.pngData() {
+                    photoController.update(photo: photo, data: photoData, title: text)
+                }
+            }
+        } else {
+            if let photoController = photoController {
+                if let text = photoText.text, !text.isEmpty {
+                    let photoData = imageView.image?.jpegData(compressionQuality: 1)
+                    
+                    photoController.create(imageData: photoData!, title: text)
+                }
+            }
+        }
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addPhoto(_ sender: Any) {
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
-        
+    @IBAction func addPhoto(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+  }
+    
+    func setTheme() {
+        guard let themeHelper = themeHelper else { return }
+        if themeHelper.themePreference == "Dark" {
+            view.backgroundColor = .gray
+        } else {
+            view.backgroundColor = .purple
+        }
+    }
+    
+    func updateViews() {
+        setTheme()
+        guard let photo = photo else { return }
+        imageView.image = UIImage(data: photo.imageData)
+        photoText.text = photo.title
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
+        guard let image = info[.originalImage] as? UIImage else {
+            print("No Image found")
+            return }
             imageView.image = image
-        }
-        picker.dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
+        updateViews()
+        self.title = "Create Photo"
     }
 }
 

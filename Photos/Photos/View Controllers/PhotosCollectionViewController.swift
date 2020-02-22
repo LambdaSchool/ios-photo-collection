@@ -17,18 +17,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+        setTheme()
+        self.title = "Photo Collection"
     }
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoController.photos.count
     }
@@ -36,30 +32,44 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
-        
         let photo = photoController.photos[indexPath.item]
-    
         cell.photo = photo
         return cell
     }
     
-    func setTheme () {
-        if let themeHelper = themeHelper.themePreference{
-            if themeHelper == "Dark" {
-                self.view.backgroundColor = .gray
-            } else if themeHelper == "Purple" {
-                self.view.backgroundColor = .purple
-            } else if themeHelper == nil {
-                self.view.backgroundColor = .purple
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "AddPhotoShowSegue":
+            if let addPhotoVC = segue.destination as? PhotoDetailViewController {
+                addPhotoVC.themeHelper = themeHelper
+                addPhotoVC.photoController = photoController
             }
+        case "PhotoDetailShowSegue":
+            guard let indexPath = collectionView.indexPathsForVisibleItems.first else { return }
+            if let photoDetailVC = segue.destination as? PhotoDetailViewController {
+                photoDetailVC.themeHelper = themeHelper
+                photoDetailVC.photoController = photoController
+                photoDetailVC.photo = photoController.photos[indexPath.item]
+            }
+        case "SelectThemeModalSegue":
+            if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
+                selectThemeVC.themeHelper = themeHelper
+            }
+        default:
+            break
         }
     }
-        
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddPhotShowSegue" {
-            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
-                
-            destinationVC.photoController = photoController
+    
+    func setTheme () {
+        guard let themePreference = themeHelper.themePreference else { return }
+        switch themePreference {
+        case "Dark":
+            collectionView.backgroundColor = .gray
+        case "Purple":
+            collectionView.backgroundColor = .purple
+        default:
+            break
+            
         }
     }
 }

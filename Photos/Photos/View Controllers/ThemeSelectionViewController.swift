@@ -16,16 +16,11 @@ class ThemeSelectionViewController: UIViewController {
     // MARK: IBActions
     @IBAction func selectDarkTheme(_ sender: UIButton) {
         themeHelper?.setThemePreferenceToDark()
-        dismiss(animated: true, completion: nil)
-    }
+        dismiss(animated: true, completion: nil)}
+    
     
     @IBAction func selectPurpleTheme(_ sender: UIButton) {
         themeHelper?.setThemePreferenceToPurple()
         dismiss(animated: true, completion: nil)
-    }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }
