@@ -17,9 +17,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         
         collectionView?.reloadData()
-        
+        setTheme()
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +41,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
         if segue.identifier == "SelectThemeSegue" {
             guard let selectThemeVC = segue.destination as? ThemeSelectionViewController else { return }
+            selectThemeVC.delegate = self
             selectThemeVC.themeHelper = themeHelper
         }
         if segue.identifier == "ShowPhotoSegue" {
@@ -84,5 +85,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         default:
             break
         }
+    }
+}
+
+extension PhotosCollectionViewController: ThemeSelectedDelegate {
+    func themeChosen() {
+        setTheme()
     }
 }
