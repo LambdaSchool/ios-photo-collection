@@ -16,22 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7q7-eM-RSa">
-                            <size key="itemSize" width="108" height="88"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="7q7-eM-RSa">
+                            <size key="itemSize" width="110" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="5" maxX="10" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="Bv9-G6-BMP" customClass="PhotosCollectionViewCell" customModule="PhotoIOSPT5" customModuleProvider="target">
-                                <rect key="frame" x="10" y="5" width="100" height="120"/>
+                                <rect key="frame" x="10" y="5" width="110" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fAX-Sz-2Wy">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x2d-Y9-7dc">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x2d-Y9-7dc">
+                                            <rect key="frame" x="0.0" y="0.5" width="100" height="117"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ywi-Dp-IzY">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -40,9 +40,12 @@
                                                         <constraint firstAttribute="width" constant="100" id="x9c-jm-CqA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-GX-M33">
-                                                    <rect key="frame" x="28.5" y="100" width="43.5" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-GX-M33">
+                                                    <rect key="frame" x="0.0" y="100" width="100" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="h2w-ld-ujw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -56,7 +59,7 @@
                                         <constraint firstItem="x2d-Y9-7dc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fAX-Sz-2Wy" secondAttribute="leading" id="s1L-No-WhD"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="100" height="120"/>
+                                <size key="customSize" width="110" height="120"/>
                                 <connections>
                                     <outlet property="photoImage" destination="ywi-Dp-IzY" id="paI-JM-RLl"/>
                                     <outlet property="photoTitleLabel" destination="8cq-GX-M33" id="xEG-Sd-GIJ"/>
@@ -202,6 +205,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="02Q-fl-0Fi">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
