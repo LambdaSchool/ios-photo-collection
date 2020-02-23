@@ -9,11 +9,5 @@
 import Foundation
 
 extension  String {
-    static var themePreferenceBlue = "Blue"
-    static var themePreferenceDark = "Dark"
-    static var themePreferenceGreen = "Green"
-    static var themePreferenceIndigo = "Indigo"
-    static var themePreferenceOrange = "Orange"
-    static var themePreferenceRed = "Red"
     static var themePreferenceKey = ""
 }
