@@ -40,20 +40,27 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
    
     func setTheme() {
         guard let theme = themeHelper?.themePreference else { return }
-        print("In PhotoDetailView")
            switch theme {
            case "Blue":
             view.backgroundColor = .blue
+           case "Brown":
+            view.backgroundColor = .brown
            case "Dark":
                view.backgroundColor = .darkGray
            case "Green":
-               view.backgroundColor = .green
+               view.backgroundColor = .systemGreen
            case "Indigo":
-            view.backgroundColor = .cyan
+            view.backgroundColor = .systemIndigo
            case "Orange":
-            view.backgroundColor = .orange
+            view.backgroundColor = .systemOrange
+           case "Purple":
+            view.backgroundColor = .systemPurple
            case "Red":
-            view.backgroundColor = .red
+            view.backgroundColor = .systemRed
+           case "Teal":
+            view.backgroundColor = .systemTeal
+           case "Yellow":
+            view.backgroundColor = .systemYellow
            default:
                break
            }

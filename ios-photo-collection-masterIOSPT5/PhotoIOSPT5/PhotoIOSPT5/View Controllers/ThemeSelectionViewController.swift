@@ -26,7 +26,7 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.themePicker.delegate = self
         self.themePicker.dataSource = self
         themePicker.delegate = self
-        pickerData = ["Blue", "Dark", "Green", "Indigo", "Orange", "Red"]
+        pickerData = ["Blue", "Brown", "Dark", "Green", "Indigo", "Orange", "Purple","Red", "Teal", "Yellow"]
         // Do any additional setup after loading the view.
         setTheme()
     }
@@ -48,10 +48,11 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let themePicked = pickerData[themePicker.selectedRow(inComponent: 0)]
-        print(themePicked)
         switch themePicked {
         case "Blue":
             themeHelper?.setThemePreferenceToBlue()
+        case "Brown":
+            themeHelper?.setThemePreferenceToBrown()
         case "Dark":
             themeHelper?.setThemePreferenceToDark()
         case "Green":
@@ -60,46 +61,44 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
             themeHelper?.setThemePreferenceToIndigo()
         case "Orange":
             themeHelper?.setThemePreferenceToOrange()
+        case "Purple":
+            themeHelper?.setThemePreferenceToPurple()
         case "Red":
+            print("red")
             themeHelper?.setThemePreferenceToRed()
+        case "Teal":
+            themeHelper?.setThemePreferenceToTeal()
+        case "Yellow":
+            themeHelper?.setThemePreferenceToYellow()
         default:
             break
         }
         choseTheme()
     }
-
-    @IBAction func darkThemeButtonTapped(_ sender: Any) {
-        themeHelper?.setThemePreferenceToDark()
-        delegate?.themeChosen()
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func greenThemeButtonTapped(_ sender: Any) {
-        themeHelper?.setThemePreferenceToGreen()
-        delegate?.themeChosen()
-        dismiss(animated: true, completion: nil)
-    }
     
     func setTheme() {
         let theme = themeHelper?.themePreference
-        print("In PhotosCollectionView")
         switch theme {
         case "Blue":
-            print("Blue")
-         view.backgroundColor = .blue
+            view.backgroundColor = .systemBlue
+        case "Brown":
+            view.backgroundColor = .brown
         case "Dark":
             view.backgroundColor = .darkGray
         case "Green":
-            view.backgroundColor = .green
+            view.backgroundColor = .systemGreen
         case "Indigo":
-            print("cyan")
-         view.backgroundColor = .cyan
+            view.backgroundColor = .systemIndigo
         case "Orange":
-            print("orange")
-         view.backgroundColor = .orange
+            view.backgroundColor = .systemOrange
+        case "Purple":
+            view.backgroundColor = .systemPurple
         case "Red":
-            print("red")
-         view.backgroundColor = .red
+            view.backgroundColor = .systemRed
+        case "Teal":
+            view.backgroundColor = .systemTeal
+        case "Yellow":
+            view.backgroundColor = .systemYellow
         default:
             break
         }

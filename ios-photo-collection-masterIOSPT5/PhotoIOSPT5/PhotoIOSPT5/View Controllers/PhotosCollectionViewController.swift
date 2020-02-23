@@ -71,21 +71,27 @@ class PhotosCollectionViewController: UICollectionViewController {
        
     func setTheme() {
         let theme = themeHelper.themePreference
-        print("In PhotosCollectionView")
         switch theme {
         case "Blue":
-            print("Blue")
-            view.backgroundColor = .blue
+            collectionView.backgroundColor = .systemBlue
+        case "Brown":
+            collectionView.backgroundColor = .brown
         case "Dark":
-            view.backgroundColor = .darkGray
+            collectionView.backgroundColor = .darkGray
         case "Green":
-            view.backgroundColor = .green
+            collectionView.backgroundColor = .systemGreen
         case "Indigo":
-         view.backgroundColor = .cyan
+         collectionView.backgroundColor = .systemIndigo
         case "Orange":
-         view.backgroundColor = .orange
+         collectionView.backgroundColor = .systemOrange
+        case "Purple":
+            collectionView.backgroundColor = .systemPurple
         case "Red":
-         view.backgroundColor = .red
+         collectionView.backgroundColor = .systemRed
+        case "Teal":
+            collectionView.backgroundColor = .systemTeal
+        case "Yellow":
+            collectionView.backgroundColor = .systemYellow
         default:
             break
         }
