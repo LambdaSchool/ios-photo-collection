@@ -15,4 +15,5 @@ extension  String {
     static var themePreferenceIndigo = "Indigo"
     static var themePreferenceOrange = "Orange"
     static var themePreferenceRed = "Red"
+    static var themePreferenceKey = ""
 }

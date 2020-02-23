@@ -10,41 +10,39 @@ import Foundation
 
 class ThemeHelper {
     
-    var themePreferenceKey: String = ""
-    var themePrefer: String = ""
-    //"Blue", "Dark", "Green", "Indigo", "Orange", "Red"
+  
     init() {
-        themePrefer = .themePreferenceIndigo
+        if themePreference == nil {
+           setThemePreferenceToIndigo()
+        }
     }
     
     func setThemePreferenceToBlue() {
-        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceBlue)) ?? ""
+        UserDefaults.standard.set("Blue", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToDark() {
-        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceDark)) ?? ""
+        UserDefaults.standard.set("Dark", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToGreen() {
-        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceGreen)) ?? ""
+        UserDefaults.standard.set("Green", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToIndigo() {
-        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceIndigo)) ?? ""
+        UserDefaults.standard.set("Indigo", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToOrange() {
-        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceOrange)) ?? ""
+        UserDefaults.standard.set("Orange", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToRed() {
-        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceRed)) ?? ""
+        UserDefaults.standard.set("Red", forKey: .themePreferenceKey)
     }
     
     var themePreference: String? {
-        let userDefaults = UserDefaults.standard
-        let theme = userDefaults.string(forKey: themePrefer)
-        guard let themeKey = theme else { return "" }
-        return themeKey
+        let theme = UserDefaults.standard.string(forKey: .themePreferenceKey)
+        return theme
     }
 }

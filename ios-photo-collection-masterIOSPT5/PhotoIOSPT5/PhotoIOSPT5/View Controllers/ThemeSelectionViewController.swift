@@ -81,7 +81,7 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     func setTheme() {
-        let theme = themeHelper?.themePrefer
+        let theme = themeHelper?.themePreference
         print("In PhotosCollectionView")
         switch theme {
         case "Blue":
@@ -109,7 +109,6 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
         delegate?.themeChosen()
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension ThemeSelectionViewController: ThemeSelectedDelegate {
