@@ -23,12 +23,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTheme()
-       
     }
     
     func updateViews() {
-        setTheme()
+      
     }
     // MARK: - Navigation -
     
@@ -73,15 +71,22 @@ class PhotosCollectionViewController: UICollectionViewController {
        
     
     func setTheme() {
-        let theme = themeHelper.themePrefer// else { return }
+        let theme = themeHelper.themePrefer
         print("In PhotosCollectionView")
         switch theme {
+        case "Blue":
+            print("Blue")
+         view.backgroundColor = .blue
         case "Dark":
-            print("switched theme to Dark")
-            collectionView.backgroundColor = .darkGray
+            view.backgroundColor = .darkGray
         case "Green":
-            print("switch theme to Green")
-            collectionView.backgroundColor = .systemGreen
+            view.backgroundColor = .green
+        case "Indigo":
+         view.backgroundColor = .cyan
+        case "Orange":
+         view.backgroundColor = .orange
+        case "Red":
+         view.backgroundColor = .red
         default:
             break
         }

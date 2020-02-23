@@ -37,17 +37,23 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         photoNameField.text = photo.title
         editPhotoLabel.setTitle("Change Photo", for: [])
     }
-    
+   
     func setTheme() {
         guard let theme = themeHelper?.themePreference else { return }
-           print("In PhotoDetailView")
+        print("In PhotoDetailView")
            switch theme {
+           case "Blue":
+            view.backgroundColor = .blue
            case "Dark":
-               print("switched theme to Dark")
                view.backgroundColor = .darkGray
            case "Green":
-               print("switch theme to Green")
-               view.backgroundColor = .systemGreen
+               view.backgroundColor = .green
+           case "Indigo":
+            view.backgroundColor = .cyan
+           case "Orange":
+            view.backgroundColor = .orange
+           case "Red":
+            view.backgroundColor = .red
            default:
                break
            }

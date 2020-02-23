@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" title="Photo Collection" id="t8D-oe-rCk" customClass="CollectioViewCell">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="sPI-Iw-PwX">
                             <connections>
-                                <segue destination="exz-VD-zSo" kind="presentation" identifier="SelectThemeSegue" id="cm7-zP-1mR"/>
+                                <segue destination="exz-VD-zSo" kind="presentation" identifier="SelectThemeSegue" modalPresentationStyle="fullScreen" id="cm7-zP-1mR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0bq-Vw-CoH">
@@ -157,11 +157,11 @@
             <objects>
                 <viewController id="exz-VD-zSo" customClass="ThemeSelectionViewController" customModule="PhotoIOSPT5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I07-DI-xZi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="M4V-Km-ZVh">
-                                <rect key="frame" x="99.5" y="233.5" width="215" height="30"/>
+                                <rect key="frame" x="99.5" y="277.5" width="215" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCk-LV-8hZ">
                                         <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
@@ -180,11 +180,14 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which Theme Would You like To Use?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-PU-zpo">
-                                <rect key="frame" x="63.5" y="148" width="287" height="20.5"/>
+                                <rect key="frame" x="63.5" y="192" width="287" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZw-tB-DD7">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -192,9 +195,14 @@
                             <constraint firstItem="M4V-Km-ZVh" firstAttribute="top" secondItem="Yws-PU-zpo" secondAttribute="bottom" constant="65" id="XEc-dj-sF7"/>
                             <constraint firstItem="Yws-PU-zpo" firstAttribute="top" secondItem="kjg-rt-D5a" secondAttribute="top" constant="148" id="cgo-xV-6Kh"/>
                             <constraint firstItem="Yws-PU-zpo" firstAttribute="centerX" secondItem="I07-DI-xZi" secondAttribute="centerX" id="dFT-De-HPu"/>
+                            <constraint firstItem="hZw-tB-DD7" firstAttribute="centerY" secondItem="I07-DI-xZi" secondAttribute="centerY" id="pod-mM-zBI"/>
+                            <constraint firstItem="hZw-tB-DD7" firstAttribute="centerX" secondItem="I07-DI-xZi" secondAttribute="centerX" id="rY8-8m-x1i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kjg-rt-D5a"/>
                     </view>
+                    <connections>
+                        <outlet property="themePicker" destination="hZw-tB-DD7" id="QjF-to-QVr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRW-fM-3fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

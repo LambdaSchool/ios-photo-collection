@@ -12,26 +12,33 @@ class ThemeHelper {
     
     var themePreferenceKey: String = ""
     var themePrefer: String = ""
-    
+    //"Blue", "Dark", "Green", "Indigo", "Orange", "Red"
     init() {
-        if themePrefer == .themePreferenceDark {
-            themePrefer = .themePreferenceDark
-        } else if themePrefer == .themePreferenceGreen {
-            themePrefer = .themePreferenceGreen
-        } else if themePrefer == "" {
-            themePrefer = .themePreferenceGreen
-        }
+        themePrefer = .themePreferenceIndigo
     }
-
+    
+    func setThemePreferenceToBlue() {
+        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceBlue)) ?? ""
+    }
     
     func setThemePreferenceToDark() {
-       themePrefer =  (UserDefaults.standard.string(forKey: .themePreferenceDark)) ?? ""
-        print(themePrefer)
+        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceDark)) ?? ""
     }
     
     func setThemePreferenceToGreen() {
-        themePrefer =  (UserDefaults.standard.string(forKey: .themePreferenceGreen)) ?? ""
-        print(themePrefer)
+        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceGreen)) ?? ""
+    }
+    
+    func setThemePreferenceToIndigo() {
+        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceIndigo)) ?? ""
+    }
+    
+    func setThemePreferenceToOrange() {
+        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceOrange)) ?? ""
+    }
+    
+    func setThemePreferenceToRed() {
+        themePrefer = (UserDefaults.standard.string(forKey: .themePreferenceRed)) ?? ""
     }
     
     var themePreference: String? {
