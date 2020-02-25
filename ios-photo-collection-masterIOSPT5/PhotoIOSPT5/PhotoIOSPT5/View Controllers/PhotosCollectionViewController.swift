@@ -15,7 +15,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+      
         collectionView?.reloadData()
         setTheme()
     }
@@ -78,16 +78,20 @@ class PhotosCollectionViewController: UICollectionViewController {
             collectionView.backgroundColor = .brown
         case "Dark":
             collectionView.backgroundColor = .darkGray
+        case "Gray":
+            collectionView.backgroundColor = .systemGray
         case "Green":
             collectionView.backgroundColor = .systemGreen
         case "Indigo":
-         collectionView.backgroundColor = .systemIndigo
+            collectionView.backgroundColor = .systemIndigo
+        case "Light":
+            collectionView.backgroundColor = .lightGray
         case "Orange":
-         collectionView.backgroundColor = .systemOrange
+            collectionView.backgroundColor = .systemOrange
         case "Purple":
             collectionView.backgroundColor = .systemPurple
         case "Red":
-         collectionView.backgroundColor = .systemRed
+            collectionView.backgroundColor = .systemRed
         case "Teal":
             collectionView.backgroundColor = .systemTeal
         case "Yellow":

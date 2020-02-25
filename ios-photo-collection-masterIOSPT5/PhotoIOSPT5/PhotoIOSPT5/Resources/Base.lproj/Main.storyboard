@@ -76,7 +76,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="sPI-Iw-PwX">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="exz-VD-zSo" kind="presentation" identifier="SelectThemeSegue" modalPresentationStyle="fullScreen" id="cm7-zP-1mR"/>
+                                <segue destination="exz-VD-zSo" kind="presentation" identifier="SelectThemeSegue" id="cm7-zP-1mR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0bq-Vw-CoH">
@@ -166,17 +166,17 @@
             <objects>
                 <viewController id="exz-VD-zSo" customClass="ThemeSelectionViewController" customModule="PhotoIOSPT5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I07-DI-xZi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which Theme Would You like To Use?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-PU-zpo">
-                                <rect key="frame" x="56" y="192" width="302.5" height="20.5"/>
+                                <rect key="frame" x="56" y="148" width="302.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZw-tB-DD7">
-                                <rect key="frame" x="47" y="340" width="320" height="216"/>
+                                <rect key="frame" x="47" y="313" width="320" height="216"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
                         </subviews>
@@ -189,6 +189,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kjg-rt-D5a"/>
                     </view>
+                    <navigationItem key="navigationItem" id="y9p-z5-buW"/>
                     <connections>
                         <outlet property="themePicker" destination="hZw-tB-DD7" id="QjF-to-QVr"/>
                     </connections>

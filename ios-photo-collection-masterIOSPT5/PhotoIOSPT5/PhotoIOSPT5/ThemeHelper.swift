@@ -29,12 +29,20 @@ class ThemeHelper {
         UserDefaults.standard.set("Dark", forKey: .themePreferenceKey)
     }
     
+    func setThemePreferenceToGray() {
+        UserDefaults.standard.set("Gray", forKey: .themePreferenceKey)
+    }
+    
     func setThemePreferenceToGreen() {
         UserDefaults.standard.set("Green", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToIndigo() {
         UserDefaults.standard.set("Indigo", forKey: .themePreferenceKey)
+    }
+    
+    func setThemePreferenceToLightGray() {
+        UserDefaults.standard.set("Light", forKey: .themePreferenceKey)
     }
     
     func setThemePreferenceToOrange() {

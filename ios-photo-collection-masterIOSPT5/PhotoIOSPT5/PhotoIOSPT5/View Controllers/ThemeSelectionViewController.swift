@@ -26,7 +26,7 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.themePicker.delegate = self
         self.themePicker.dataSource = self
         themePicker.delegate = self
-        pickerData = ["Blue", "Brown", "Dark", "Green", "Indigo", "Orange", "Purple","Red", "Teal", "Yellow"]
+        pickerData = ["Blue", "Brown", "Dark", "Gray", "Green", "Indigo", "Light", "Orange", "Purple","Red", "Teal", "Yellow"]
         // Do any additional setup after loading the view.
         setTheme()
     }
@@ -57,14 +57,17 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
             themeHelper?.setThemePreferenceToDark()
         case "Green":
             themeHelper?.setThemePreferenceToGreen()
+        case "Gray":
+            themeHelper?.setThemePreferenceToGray()
         case "Indigo":
             themeHelper?.setThemePreferenceToIndigo()
+        case "Light":
+            themeHelper?.setThemePreferenceToLightGray()
         case "Orange":
             themeHelper?.setThemePreferenceToOrange()
         case "Purple":
             themeHelper?.setThemePreferenceToPurple()
         case "Red":
-            print("red")
             themeHelper?.setThemePreferenceToRed()
         case "Teal":
             themeHelper?.setThemePreferenceToTeal()
@@ -87,8 +90,12 @@ class ThemeSelectionViewController: UIViewController, UIPickerViewDelegate, UIPi
             view.backgroundColor = .darkGray
         case "Green":
             view.backgroundColor = .systemGreen
+        case "Gray":
+            view.backgroundColor = .systemGray
         case "Indigo":
             view.backgroundColor = .systemIndigo
+        case "Light":
+            view.backgroundColor = .lightGray
         case "Orange":
             view.backgroundColor = .systemOrange
         case "Purple":

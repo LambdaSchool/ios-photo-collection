@@ -46,11 +46,15 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
            case "Brown":
             view.backgroundColor = .brown
            case "Dark":
-               view.backgroundColor = .darkGray
+            view.backgroundColor = .darkGray
+            case "Gray":
+            view.backgroundColor = .systemGray
            case "Green":
-               view.backgroundColor = .systemGreen
+            view.backgroundColor = .systemGreen
            case "Indigo":
             view.backgroundColor = .systemIndigo
+           case "Light":
+            view.backgroundColor = .lightGray
            case "Orange":
             view.backgroundColor = .systemOrange
            case "Purple":
