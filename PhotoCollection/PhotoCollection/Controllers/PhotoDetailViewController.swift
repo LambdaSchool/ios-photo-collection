@@ -20,6 +20,7 @@ class PhotoDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
 
         // Do any additional setup after loading the view.
     }
@@ -41,4 +42,16 @@ class PhotoDetailViewController: UIViewController {
     }
     */
 
+    
+    //MARK: - Methods
+     func setTheme() {
+        guard let preference = self.themeHelper?.themePreference else {return}
+           
+           if preference == "Dark" {
+            self.view.backgroundColor = .black
+           } else {
+               self.view.backgroundColor = .black
+            
+            }
+       }
 }
