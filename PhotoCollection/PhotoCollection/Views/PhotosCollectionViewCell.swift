@@ -25,7 +25,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         
         self.titleLabel.text = photo.title
         //FIXME: - Fix
-        self.imageView.image = photo.imageData as? UIImage
+        self.imageView.image = UIImage(data: photo.imageData)
     }
     
 }

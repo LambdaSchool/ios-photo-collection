@@ -21,6 +21,7 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTheme()
+        updateViews()
 
         // Do any additional setup after loading the view.
     }
@@ -54,4 +55,10 @@ class PhotoDetailViewController: UIViewController {
             
             }
        }
+    func updateViews() {
+        guard let photo = self.photo else {return}
+        textField.text = photo.title
+        
+        imageView.image = UIImage(data: photo.imageData)
+    }
 }
