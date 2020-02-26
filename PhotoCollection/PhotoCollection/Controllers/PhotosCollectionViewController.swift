@@ -91,3 +91,17 @@ class PhotosCollectionViewController: UICollectionViewController {
     */
 
 }
+
+
+//MARK: - ThemeHelper methods extensions
+
+extension PhotosCollectionViewController {
+    func setTheme() {
+        guard let preference = themeHelper.themePreference else {return}
+        
+        if preference == "Dark" {
+            self.collectionView.backgroundColor = .black
+        } else {
+            self.collectionView.backgroundColor = .green        }
+    }
+}
