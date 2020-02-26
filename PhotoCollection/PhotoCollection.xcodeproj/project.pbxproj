@@ -19,6 +19,7 @@
 		9C052FD12406EBE900C5B2EA /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C052FD02406EBE900C5B2EA /* PhotosCollectionViewController.swift */; };
 		9C052FD32406EC9B00C5B2EA /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C052FD22406EC9B00C5B2EA /* PhotosCollectionViewCell.swift */; };
 		9C052FD52406F5DE00C5B2EA /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C052FD42406F5DE00C5B2EA /* PhotoDetailViewController.swift */; };
+		9C052FD72406FB5400C5B2EA /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C052FD62406FB5400C5B2EA /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9C052FD02406EBE900C5B2EA /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		9C052FD22406EC9B00C5B2EA /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C052FD42406F5DE00C5B2EA /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		9C052FD62406FB5400C5B2EA /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				9C052FB32406E04100C5B2EA /* ViewController.swift */,
 				9C052FD02406EBE900C5B2EA /* PhotosCollectionViewController.swift */,
 				9C052FD42406F5DE00C5B2EA /* PhotoDetailViewController.swift */,
+				9C052FD62406FB5400C5B2EA /* ThemeSelectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				9C052FB42406E04100C5B2EA /* ViewController.swift in Sources */,
 				9C052FD12406EBE900C5B2EA /* PhotosCollectionViewController.swift in Sources */,
 				9C052FCD2406E3AE00C5B2EA /* ThemeHelper.swift in Sources */,
+				9C052FD72406FB5400C5B2EA /* ThemeSelectionViewController.swift in Sources */,
 				9C052FD32406EC9B00C5B2EA /* PhotosCollectionViewCell.swift in Sources */,
 				9C052FD52406F5DE00C5B2EA /* PhotoDetailViewController.swift in Sources */,
 				9C052FB02406E04100C5B2EA /* AppDelegate.swift in Sources */,

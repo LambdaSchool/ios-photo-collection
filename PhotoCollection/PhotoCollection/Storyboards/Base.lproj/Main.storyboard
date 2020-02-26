@@ -119,6 +119,21 @@
             </objects>
             <point key="canvasLocation" x="1917" y="-224"/>
         </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="wO0-xx-yqX">
+            <objects>
+                <viewController id="734-FB-uhh" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XlA-ib-7qw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="juz-ku-Sk4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpR-mM-poA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="-887"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ejF-yC-Tix">
             <objects>
