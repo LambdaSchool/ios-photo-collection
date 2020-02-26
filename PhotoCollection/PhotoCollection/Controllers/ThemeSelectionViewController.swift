@@ -10,7 +10,7 @@ import UIKit
 
 class ThemeSelectionViewController: UIViewController {
 
-    themeHelper: ThemeHelper?
+    var themeHelper: ThemeHelper?
     
     
     override func viewDidLoad() {
@@ -18,8 +18,12 @@ class ThemeSelectionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    //MARK: - Button Actions
+    @IBAction func selectDarkTheme(_ sender: Any) {
+    }
+    @IBAction func selectGreenTheme(_ sender: Any) {
+    }
     
-
     /*
     // MARK: - Navigation
 

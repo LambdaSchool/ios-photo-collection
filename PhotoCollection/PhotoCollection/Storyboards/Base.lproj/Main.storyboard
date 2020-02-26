@@ -57,7 +57,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="FHw-7x-haH">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="cPx-7S-s6h"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="cPx-7S-s6h">
+                            <connections>
+                                <segue destination="734-FB-uhh" kind="presentation" id="m6C-De-JQB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SGr-62-3gm">
                             <connections>
                                 <segue destination="33G-oU-Tgn" kind="show" identifier="AddPhotoSegue" id="dBZ-Rs-gHg"/>
@@ -124,15 +128,40 @@
             <objects>
                 <viewController id="734-FB-uhh" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XlA-ib-7qw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp5-rI-X8U">
+                                <rect key="frame" x="191" y="236" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkTheme:" destination="734-FB-uhh" eventType="touchUpInside" id="hCw-4z-Kfl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azj-XG-yCe">
+                                <rect key="frame" x="187" y="281" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Green"/>
+                                <connections>
+                                    <action selector="selectGreenTheme:" destination="734-FB-uhh" eventType="touchUpInside" id="UNZ-Ig-UB9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select your preferred theme:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bql-LY-rlG">
+                                <rect key="frame" x="98" y="198" width="220" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="juz-ku-Sk4"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpR-mM-poA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="-887"/>
+            <point key="canvasLocation" x="1155" y="-970"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ejF-yC-Tix">
