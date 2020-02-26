@@ -13,6 +13,8 @@ class PhotoDetailViewController: UIViewController {
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textField: UITextField!
     
     
 
@@ -20,6 +22,12 @@ class PhotoDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    //MARK: - Action Buttons
+    @IBAction func addPhoto(_ sender: Any) {
+    }
+    @IBAction func savePhoto(_ sender: Any) {
     }
     
 
