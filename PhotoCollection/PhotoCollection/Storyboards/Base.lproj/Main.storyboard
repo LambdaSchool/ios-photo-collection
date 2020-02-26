@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" id="FHw-7x-haH">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="cPx-7S-s6h">
                             <connections>
-                                <segue destination="734-FB-uhh" kind="presentation" id="m6C-De-JQB"/>
+                                <segue destination="734-FB-uhh" kind="presentation" identifier="SelectThemeSegue" id="m6C-De-JQB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SGr-62-3gm">
@@ -183,6 +183,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tza-Af-mJF"/>
+        <segue reference="dBZ-Rs-gHg"/>
     </inferredMetricsTieBreakers>
 </document>

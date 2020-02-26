@@ -27,15 +27,36 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "DetailViewSegue" {
+            guard let detailVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = self.collectionView.indexPathsForSelectedItems else {fatalError()}
+            detailVC.themeHelper = self.themeHelper
+            detailVC.photoController = self.photoController
+            detailVC.photo = photoController.photos[indexPath[0].row]
+            
+            
+            
+        } else if segue.identifier == "AddPhotoSegue" {
+            guard let addVC = segue.destination as? PhotoDetailViewController else {fatalError()}
+            addVC.themeHelper = self.themeHelper
+            addVC.photoController = self.photoController
+            
+            
+        } else if segue.identifier == "SelectThemeSegue" {
+            guard let themeVC = segue.destination as? ThemeSelectionViewController else {fatalError()}
+            themeVC.themeHelper = self.themeHelper
+            
+            
+        }
+        
     }
-    */
+
 
     // MARK: UICollectionViewDataSource
 
