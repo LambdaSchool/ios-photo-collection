@@ -12,6 +12,7 @@ class PhotoDetailViewController: UIViewController {
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -28,6 +29,14 @@ class PhotoDetailViewController: UIViewController {
     
     //MARK: - Action Buttons
     @IBAction func addPhoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            
+            present(imagePicker, animated: true, completion: nil)
+            
+        }
     }
     @IBAction func savePhoto(_ sender: Any) {
         guard let title = textField.text,
@@ -39,6 +48,7 @@ class PhotoDetailViewController: UIViewController {
         } else {
             photoController.create(data: image, title: title)
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
 
@@ -70,4 +80,13 @@ class PhotoDetailViewController: UIViewController {
         
         imageView.image = UIImage(data: photo.imageData)
     }
+    
+    //MARK: - ImagePicker method
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = pickedImage
+        }
+    }
 }
+
+
