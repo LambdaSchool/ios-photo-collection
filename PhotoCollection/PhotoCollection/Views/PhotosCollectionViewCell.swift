@@ -24,7 +24,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         guard let photo = self.photo else { return }
         
         self.titleLabel.text = photo.title
-        //FIXME: - Fix
         self.imageView.image = UIImage(data: photo.imageData)
     }
     

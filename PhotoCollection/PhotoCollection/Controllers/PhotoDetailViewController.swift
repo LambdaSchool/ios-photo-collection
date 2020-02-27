@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
@@ -23,19 +23,18 @@ class PhotoDetailViewController: UIViewController {
         super.viewDidLoad()
         setTheme()
         updateViews()
+        imagePicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
     
     //MARK: - Action Buttons
     @IBAction func addPhoto(_ sender: Any) {
+        
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            
             imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = false
-            
             present(imagePicker, animated: true, completion: nil)
-            
         }
     }
     @IBAction func savePhoto(_ sender: Any) {
@@ -82,9 +81,12 @@ class PhotoDetailViewController: UIViewController {
     
     //MARK: - ImagePicker method
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("This was triggered.")
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = pickedImage
+            print("We got down here.")
         }
+        dismiss(animated: true, completion: nil)
     }
 }
 
