@@ -64,7 +64,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="XbP-ST-cq2">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="LRU-KW-Grg"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="LRU-KW-Grg">
+                            <connections>
+                                <segue destination="dsy-Fq-J6O" kind="presentation" identifier="SelectThemeSegue" id="Q5m-bt-M7d"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vJY-pY-Uqb">
                             <connections>
                                 <segue destination="otc-fa-Xbs" kind="show" identifier="AddPhotoSegue" id="KzQ-qs-sVR"/>
@@ -75,6 +79,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uu8-jd-Eu7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="218.84057971014494" y="-7.3660714285714279"/>
+        </scene>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="2Sm-5t-cNB">
+            <objects>
+                <viewController id="dsy-Fq-J6O" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gbh-gk-QEj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z99-Bc-Boe">
+                                <rect key="frame" x="42" y="169" width="332" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="86" translatesAutoresizingMaskIntoConstraints="NO" id="acB-Ej-lQa">
+                                <rect key="frame" x="124" y="235" width="166" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wi8-kb-NAF">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                        <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkTheme:" destination="dsy-Fq-J6O" eventType="touchUpInside" id="Kvg-Xk-o44"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-cx-nSd">
+                                        <rect key="frame" x="119" y="0.0" width="47" height="30"/>
+                                        <state key="normal" title="Sienna"/>
+                                        <connections>
+                                            <action selector="selectYourColorHereTheme:" destination="dsy-Fq-J6O" eventType="touchUpInside" id="Xtg-4z-kf1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hzx-J6-gwl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8c-bS-cwU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="-346"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="72k-vp-cOz">
@@ -96,20 +143,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXH-Ti-iiW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dXH-Ti-iiW">
                                 <rect key="frame" x="57" y="175" width="300" height="202"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="dXH-Ti-iiW" firstAttribute="leading" secondItem="qz0-Gb-uqM" secondAttribute="leading" constant="57" id="9JQ-w2-qux"/>
                             <constraint firstItem="o4B-hy-BAt" firstAttribute="top" secondItem="att-KL-f3P" secondAttribute="bottom" constant="16" id="9WV-F8-Zi9"/>
                             <constraint firstItem="o4B-hy-BAt" firstAttribute="leading" secondItem="qz0-Gb-uqM" secondAttribute="leading" constant="20" id="CvF-aE-JfI"/>
                             <constraint firstItem="att-KL-f3P" firstAttribute="leading" secondItem="qz0-Gb-uqM" secondAttribute="leading" constant="100" id="VL7-N0-Beb"/>
                             <constraint firstItem="qz0-Gb-uqM" firstAttribute="trailing" secondItem="att-KL-f3P" secondAttribute="trailing" constant="100" id="W7m-Vn-4Q7"/>
                             <constraint firstItem="qz0-Gb-uqM" firstAttribute="bottom" secondItem="o4B-hy-BAt" secondAttribute="bottom" constant="397" id="ZDj-FE-tel"/>
                             <constraint firstItem="qz0-Gb-uqM" firstAttribute="trailing" secondItem="o4B-hy-BAt" secondAttribute="trailing" constant="20" id="gWE-1I-s0P"/>
+                            <constraint firstItem="dXH-Ti-iiW" firstAttribute="top" secondItem="qz0-Gb-uqM" secondAttribute="top" constant="87" id="md1-Ix-lL7"/>
                             <constraint firstItem="o4B-hy-BAt" firstAttribute="top" secondItem="att-KL-f3P" secondAttribute="bottom" constant="16" id="ow2-Rs-x5J"/>
                             <constraint firstItem="att-KL-f3P" firstAttribute="top" secondItem="dXH-Ti-iiW" secondAttribute="bottom" constant="8" id="vJx-Ou-1up"/>
+                            <constraint firstItem="dXH-Ti-iiW" firstAttribute="centerX" secondItem="att-KL-f3P" secondAttribute="centerX" id="xZZ-Lb-S7E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qz0-Gb-uqM"/>
                     </view>
@@ -128,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNW-LL-J2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913.04347826086962" y="-7.3660714285714279"/>
+            <point key="canvasLocation" x="1059" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7o5-23-LUq">
