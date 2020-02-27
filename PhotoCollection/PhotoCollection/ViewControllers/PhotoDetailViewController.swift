@@ -43,7 +43,7 @@ class PhotoDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addPhoto(_ sender: Any) {
+    @IBAction func selectPhoto(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.mediaTypes = ["public.image"]

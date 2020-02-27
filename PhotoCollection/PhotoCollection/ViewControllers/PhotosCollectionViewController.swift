@@ -10,22 +10,16 @@ import UIKit
 
 
 class PhotosCollectionViewController: UICollectionViewController {
+  
+    //MARK: - Properties
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setTheme()
-        collectionView.reloadData()
-    }
-
+    //MARK: - Private
     
-    func setTheme() {
+    private func setTheme() {
         switch themeHelper.themePreference {
         case ThemeHelper.indigoTheme:
             collectionView.backgroundColor = .systemIndigo
@@ -34,7 +28,15 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
     }
     
+    
+    //MARK: - View Lifecycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+          setTheme()
+          collectionView.reloadData()
+      }
 
+    
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,19 +53,20 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-    
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let photoDetailVC = segue.destination as? PhotoDetailViewController {
+            
             if segue.identifier == "ShowPhoto",
                let indexPath = collectionView.indexPathsForSelectedItems?.first {
                 photoDetailVC.photo = photoController.photos[indexPath.item]
             }
+            
             photoDetailVC.photoController = photoController
             photoDetailVC.themeHelper = themeHelper
+            
         } else if let themeSelectionVC = segue.destination as? ThemeSelectionViewController {
             themeSelectionVC.themeHelper = themeHelper
         }

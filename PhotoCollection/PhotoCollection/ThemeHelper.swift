@@ -12,6 +12,7 @@ private let themePreferenceKey = "themePreferenceKey"
 
 class ThemeHelper {
     
+    // Themes
     static let darkTheme = "Dark"
     static let indigoTheme = "Indigo"
     
