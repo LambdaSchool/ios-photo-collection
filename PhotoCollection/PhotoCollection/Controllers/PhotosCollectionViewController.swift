@@ -18,13 +18,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTheme()
+        photoController.loadFromPersistentStore()
         
 
 //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     override func viewWillAppear(_ animated: Bool) {
         setTheme()
-        print(photoController.photos.count)
+        photoController.loadFromPersistentStore()
         self.collectionView.reloadData()
     }
 

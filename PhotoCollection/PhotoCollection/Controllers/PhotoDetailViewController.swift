@@ -44,8 +44,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         
         if let photo = photo {
             photoController.update(photo: photo, data: image, title: title)
+            photoController.saveToPersistentStore()
         } else {
             photoController.create(data: image, title: title)
+            photoController.saveToPersistentStore()
         }
         self.navigationController?.popViewController(animated: true)
     }
