@@ -22,10 +22,12 @@ class ThemeSelectionViewController: UIViewController {
     //MARK: - Button Actions
     @IBAction func selectDarkTheme(_ sender: Any) {
         themeHelper!.setThemePreferenceToDark()
+        delegate!.themeWasChanged()
         dismiss(animated: true, completion: nil)
     }
     @IBAction func selectGreenTheme(_ sender: Any) {
         themeHelper!.setThemePreferenceToGreen()
+        delegate!.themeWasChanged()
         dismiss(animated: true, completion: nil)
     }
     
