@@ -14,6 +14,7 @@
 		9260481C240865EC00BBB69A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9260481B240865EC00BBB69A /* Assets.xcassets */; };
 		9260481F240865EC00BBB69A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9260481D240865EC00BBB69A /* LaunchScreen.storyboard */; };
 		926048272408674300BBB69A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926048262408674300BBB69A /* Photo.swift */; };
+		92604829240869E900BBB69A /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92604828240869E900BBB69A /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9260481E240865EC00BBB69A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92604820240865EC00BBB69A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926048262408674300BBB69A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		92604828240869E900BBB69A /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				9260481D240865EC00BBB69A /* LaunchScreen.storyboard */,
 				92604820240865EC00BBB69A /* Info.plist */,
 				926048262408674300BBB69A /* Photo.swift */,
+				92604828240869E900BBB69A /* PhotoController.swift */,
 			);
 			path = "Photo Collection";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92604829240869E900BBB69A /* PhotoController.swift in Sources */,
 				926048272408674300BBB69A /* Photo.swift in Sources */,
 				92604817240865E900BBB69A /* ViewController.swift in Sources */,
 				92604813240865E900BBB69A /* AppDelegate.swift in Sources */,
