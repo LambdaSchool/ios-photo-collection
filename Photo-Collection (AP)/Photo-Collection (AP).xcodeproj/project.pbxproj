@@ -13,6 +13,7 @@
 		2522066224084C690056231D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2522066124084C690056231D /* Assets.xcassets */; };
 		2522066524084C690056231D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2522066324084C690056231D /* LaunchScreen.storyboard */; };
 		2522066D24084CD70056231D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2522066C24084CD70056231D /* Photo.swift */; };
+		2522066F24084D640056231D /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2522066E24084D640056231D /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2522066424084C690056231D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2522066624084C690056231D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2522066C24084CD70056231D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		2522066E24084D640056231D /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				2522065A24084C680056231D /* SceneDelegate.swift */,
 				2522065E24084C680056231D /* Main.storyboard */,
 				2522066C24084CD70056231D /* Photo.swift */,
+				2522066E24084D640056231D /* PhotoController.swift */,
 				2522066124084C690056231D /* Assets.xcassets */,
 				2522066324084C690056231D /* LaunchScreen.storyboard */,
 				2522066624084C690056231D /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				2522066D24084CD70056231D /* Photo.swift in Sources */,
 				2522065924084C680056231D /* AppDelegate.swift in Sources */,
+				2522066F24084D640056231D /* PhotoController.swift in Sources */,
 				2522065B24084C680056231D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
