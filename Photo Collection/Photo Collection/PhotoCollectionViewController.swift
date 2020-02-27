@@ -46,7 +46,7 @@ class PhotoCollectionViewController: UICollectionViewController {
             PhotoDetailVC.photo = photoController.photos[selection[0].row]
             PhotoDetailVC.photoController = photoController
             PhotoDetailVC.themeHelper = themeHelper
-                        #warning("is [0] the last selected?")
+            // is [0] the last selected?
             
         } else if segue.identifier == "ModalSelectTheme" {
             

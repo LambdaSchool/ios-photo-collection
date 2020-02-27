@@ -85,10 +85,8 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
 
         if theme == "Light" {
             view.backgroundColor = .white
-            print("light")
         } else if theme == "Dark" {
             view.backgroundColor = .darkGray
-            print("dark")
         }
     }
 }
