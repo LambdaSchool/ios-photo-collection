@@ -23,22 +23,23 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Navigation
-
+   // FIXME: segue help
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPhotoSegue" {
             if let addPhotoVC = segue.destination as? PhotoDetailViewController {
-                addPhotoVC.themeHelper
-                addPhotoVC.photoController
+//                addPhotoVC.themeHelper
+//                addPhotoVC.photoController
                 
             } else if segue.identifier == "PhotoDetailSegue" {
                 if let viewImageVC = segue.destination as? PhotoDetailViewController {
-                    viewImageVC.themeHelper
-                    viewImageVC.photoController
-                    viewImageVC.photo
+//                    viewImageVC.themeHelper
+//                    viewImageVC.photoController
+//                    viewImageVC.photo
                     
                 } else if segue.identifier == "SelectThemeSegue" {
                     if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
-                        selectThemeVC.themeHelper
+//                        selectThemeVC.themeHelper
                     }
                 }
             }
