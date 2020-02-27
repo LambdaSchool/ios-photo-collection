@@ -23,13 +23,11 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     
-    // MARK: - IBActions
-    @IBAction func setThemeButton(_ sender: Any) {
-    }
-    
-    
-    
+    // MARK: - Methods
     func updateViews() {
+        guard let photo = photo else { return }
+        photoLabel.text = photo.name
+        photoImageView.image = UIImage(data: photo.imageData)
         
     }
     
