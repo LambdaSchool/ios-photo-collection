@@ -18,7 +18,6 @@ class PhotoCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +50,7 @@ class PhotoCollectionViewController: UICollectionViewController {
             
         } else if segue.identifier == "ModalSelectTheme" {
             
-            guard let SelectThemeVC = segue.destination as? PhotoDetailViewController else { return }
+            guard let SelectThemeVC = segue.destination as? ThemeSelectionViewController else { return }
             
             SelectThemeVC.themeHelper = themeHelper
         }
@@ -79,9 +78,9 @@ class PhotoCollectionViewController: UICollectionViewController {
         guard let theme = themeHelper.themePreference else { return }
         
         if theme == "Light" {
-            view.backgroundColor = .white
+            collectionView.backgroundColor = .white
         } else if theme == "Dark" {
-            view.backgroundColor = .darkGray
+            collectionView.backgroundColor = .darkGray
         }
         
     }

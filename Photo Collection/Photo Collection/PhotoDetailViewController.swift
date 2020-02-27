@@ -29,6 +29,7 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
         updateViews()
     }
     
+    
 
     @IBAction func addPhotoButtonTapped(_ sender: Any) {
         imagePicker.allowsEditing = false
@@ -77,11 +78,13 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
     
     func setTheme() {
         guard let theme = themeHelper?.themePreference else { return }
-        
+
         if theme == "Light" {
             view.backgroundColor = .white
+            print("light")
         } else if theme == "Dark" {
             view.backgroundColor = .darkGray
+            print("dark")
         }
     }
 }
