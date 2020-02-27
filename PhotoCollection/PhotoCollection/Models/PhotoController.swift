@@ -63,9 +63,5 @@ class PhotoController: Codable {
         } catch {
             print("Error decoding Photos: \(error)")
         }
-    }
-    
-    
-    
-    
+    } 
 }
