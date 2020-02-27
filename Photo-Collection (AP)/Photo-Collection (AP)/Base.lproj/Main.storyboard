@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,6 +59,7 @@
                                 <connections>
                                     <outlet property="photoImageView" destination="tz5-AA-ZSj" id="zgY-da-53e"/>
                                     <outlet property="titleLabel" destination="ntC-8U-boI" id="iR7-n5-j1y"/>
+                                    <segue destination="vQO-UU-ddx" kind="show" identifier="EditPhotoShowSegue" id="zBp-tC-unu"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -68,12 +70,58 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="ell-hj-eSB">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Qwe-wv-Vva"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nMB-nV-dLs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nMB-nV-dLs">
+                            <connections>
+                                <segue destination="vQO-UU-ddx" kind="show" identifier="AddPhotoShowSegue" id="ees-zr-KNR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1I-dE-VXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="981.15942028985512" y="18.75"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="vu4-cc-B03">
+            <objects>
+                <viewController id="vQO-UU-ddx" customClass="PhotoDetailViewController" customModule="Photo_Collection__AP_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y4J-Gh-z9h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUa-1e-VkV">
+                                <rect key="frame" x="87" y="158" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE5-m0-LVp">
+                                <rect key="frame" x="171" y="396" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="vQO-UU-ddx" eventType="touchUpInside" id="lO6-Ly-S9F"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="013-Ub-hvu">
+                                <rect key="frame" x="159" y="468" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="11R-Qc-UH1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZJE-jn-dfT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hQ5-6i-feI"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="eUa-1e-VkV" id="gu8-FK-I7S"/>
+                        <outlet property="titleTextField" destination="013-Ub-hvu" id="ZKL-KV-5Ss"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TfV-iX-Agc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1851" y="19"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DIb-eB-Ch3">
@@ -94,4 +142,7 @@
             <point key="canvasLocation" x="71.014492753623188" y="18.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zBp-tC-unu"/>
+    </inferredMetricsTieBreakers>
 </document>
