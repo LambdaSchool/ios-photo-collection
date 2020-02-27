@@ -10,5 +10,9 @@ import Foundation
 
 struct Photo: Equatable {
     var imageData: Data
-    var title: String?
+    var title: String
+    
+    static func == (lhs: Photo, rhs: Photo) -> Bool {
+        return lhs.title == rhs.title && lhs.imageData == rhs.imageData
+    }
 }

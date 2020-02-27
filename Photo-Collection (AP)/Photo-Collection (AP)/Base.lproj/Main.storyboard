@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ObQ-4y-3hp" customClass="PhotosCollectionViewCell" customModule="Photo_Collection__AP_" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="ObQ-4y-3hp" customClass="PhotosCollectionViewCell" customModule="Photo_Collection__AP_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="anr-IN-x66">
@@ -49,7 +49,6 @@
                                         <constraint firstAttribute="trailing" secondItem="ntC-8U-boI" secondAttribute="trailing" constant="9" id="55h-Sw-f53"/>
                                         <constraint firstItem="ntC-8U-boI" firstAttribute="top" secondItem="tz5-AA-ZSj" secondAttribute="bottom" constant="9" id="Cox-r0-L0M"/>
                                         <constraint firstItem="tz5-AA-ZSj" firstAttribute="top" secondItem="anr-IN-x66" secondAttribute="top" constant="8" id="I9n-K3-i7W"/>
-                                        <constraint firstItem="ntC-8U-boI" firstAttribute="top" secondItem="tz5-AA-ZSj" secondAttribute="bottom" constant="9" id="IZy-x2-xeX"/>
                                         <constraint firstItem="tz5-AA-ZSj" firstAttribute="leading" secondItem="anr-IN-x66" secondAttribute="leading" constant="8" id="Xkz-EO-Xd8"/>
                                         <constraint firstItem="ntC-8U-boI" firstAttribute="leading" secondItem="anr-IN-x66" secondAttribute="leading" constant="8" id="eek-my-yZP"/>
                                         <constraint firstAttribute="trailing" secondItem="tz5-AA-ZSj" secondAttribute="trailing" constant="8" id="iuq-1z-uC2"/>
@@ -71,7 +70,7 @@
                     <navigationItem key="navigationItem" id="ell-hj-eSB">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Qwe-wv-Vva">
                             <connections>
-                                <segue destination="lgh-5m-kll" kind="presentation" id="lpY-Hg-cdU"/>
+                                <segue destination="lgh-5m-kll" kind="presentation" identifier="SelectThemeModalSegue" modalPresentationStyle="fullScreen" id="lpY-Hg-cdU"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nMB-nV-dLs">
@@ -97,26 +96,30 @@
                                 <rect key="frame" x="87" y="158" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="013-Ub-hvu">
+                                <rect key="frame" x="87" y="431" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE5-m0-LVp">
-                                <rect key="frame" x="171" y="396" width="72" height="30"/>
+                                <rect key="frame" x="171" y="494" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Photo"/>
                                 <connections>
                                     <action selector="addPhoto:" destination="vQO-UU-ddx" eventType="touchUpInside" id="lO6-Ly-S9F"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="013-Ub-hvu">
-                                <rect key="frame" x="159" y="468" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="11R-Qc-UH1"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZJE-jn-dfT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hQ5-6i-feI"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hQ5-6i-feI">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="vQO-UU-ddx" id="oZt-HK-86l"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="photoImageView" destination="eUa-1e-VkV" id="gu8-FK-I7S"/>
@@ -125,24 +128,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfV-iX-Agc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="19"/>
+            <point key="canvasLocation" x="1850.7246376811595" y="18.75"/>
         </scene>
         <!--Theme Selection View Controller-->
         <scene sceneID="yMg-zm-2ce">
             <objects>
                 <viewController id="lgh-5m-kll" customClass="ThemeSelectionViewController" customModule="Photo_Collection__AP_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fue-ga-cLV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A THEME YOU WOULD LIKE TO USE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc6-sq-MMf">
-                                <rect key="frame" x="20" y="60" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="104" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-bB-ZDO">
-                                <rect key="frame" x="140.5" y="120.5" width="133" height="30"/>
+                                <rect key="frame" x="140.5" y="164.5" width="133" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xy6-Rf-vVM">
                                         <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
