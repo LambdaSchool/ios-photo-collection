@@ -17,6 +17,11 @@ class PhotoController {
     }
     
     func update(photo: Photo, imageData: Data, title: String) {
-        
+        for i in 0..<photos.count {
+            if photos[i] == photo {
+                photos[i].title = title
+                photos[i].imageData = imageData
+            }
+        }
     }
 }

@@ -62,7 +62,11 @@ class PhotoDetailViewController: UIViewController, UINavigationControllerDelegat
             
             photoController?.create(title: title, imageData: image.pngData()!)
         } else {
-            #warning("Need to use update() function")
+            guard let title = nameTextField.text, !title.isEmpty else { return }
+
+            guard let image = imageView.image else { return }
+            
+            photoController?.update(photo: photo!, imageData: image.pngData()!, title: title)
         }
         
         navigationController?.popViewController(animated: true)

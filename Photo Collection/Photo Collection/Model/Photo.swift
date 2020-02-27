@@ -10,6 +10,6 @@ import Foundation
 
 
 struct Photo: Equatable {
-    let title: String
-    let imageData: Data
+    var title: String
+    var imageData: Data
 }
