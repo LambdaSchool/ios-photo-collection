@@ -26,10 +26,14 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToDark() {
-        setThemePreferenceToYourColorHere("Dark")
+        setThemePreferenceTo("Dark")
     }
     
-    func setThemePreferenceToYourColorHere(_ color: String) {
+    func setThemePreferenceToBlue() {
+        setThemePreferenceTo("Blue")
+    }
+    
+    private func setThemePreferenceTo(_ color: String) {
         UserDefaults.standard.set(color, forKey: .themePreferenceKey)
     }
 }
