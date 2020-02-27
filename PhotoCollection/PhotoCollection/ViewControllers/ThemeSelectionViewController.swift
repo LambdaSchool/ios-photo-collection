@@ -23,12 +23,13 @@ class ThemeSelectionViewController: UIViewController {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            themeHelper?.setThemePreferenceToIndigo()
-        default:
             themeHelper?.setThemePreferenceToDark()
+        default:
+            themeHelper?.setThemePreferenceToIndigo()
         }
+        
+        setTheme()
     }
-    
     
     //MARK: - IBActions
     
@@ -37,12 +38,37 @@ class ThemeSelectionViewController: UIViewController {
     }
     
     
+    //MARK: - Private
+    
+    private func setTheme() {
+        guard let themeHelper = themeHelper else { return }
+        
+        switch themeHelper.themePreference {
+        case ThemeHelper.indigoTheme:
+            view.backgroundColor = .systemIndigo
+        default:
+            view.backgroundColor = .darkGray
+        }
+    }
+    
+    private func updateThemeSelector() {
+        guard let themeHelper = themeHelper else { return }
+        
+        switch themeHelper.themePreference {
+        case ThemeHelper.indigoTheme:
+            themeSelector.selectedSegmentIndex = 1
+        default:
+            themeSelector.selectedSegmentIndex = 0
+        }
+    }
+    
+    
     //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setTheme()
+        updateThemeSelector()
     }
 
 }

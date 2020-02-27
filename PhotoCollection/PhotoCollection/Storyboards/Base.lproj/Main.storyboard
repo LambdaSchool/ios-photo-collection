@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" id="uQN-pL-j52">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Un8-Ul-pIe">
                             <connections>
-                                <segue destination="Oh8-Ne-EOV" kind="presentation" id="XjN-RM-u5m"/>
+                                <segue destination="Oh8-Ne-EOV" kind="presentation" modalPresentationStyle="fullScreen" id="XjN-RM-u5m"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VKF-yA-PS8">
@@ -151,11 +151,11 @@
             <objects>
                 <viewController id="Oh8-Ne-EOV" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UTt-cR-O2o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-d9-c8a">
-                                <rect key="frame" x="149.5" y="391.5" width="115" height="59.5"/>
+                                <rect key="frame" x="149.5" y="418.5" width="115" height="59.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84S-6k-bGU">
                                         <rect key="frame" x="0.5" y="0.0" width="114.5" height="20.5"/>
@@ -166,8 +166,8 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="q0R-JN-aVD">
                                         <rect key="frame" x="0.0" y="28.5" width="115" height="32"/>
                                         <segments>
-                                            <segment title="Indigo"/>
                                             <segment title="Dark"/>
+                                            <segment title="Indigo"/>
                                         </segments>
                                         <connections>
                                             <action selector="themeSelected:" destination="Oh8-Ne-EOV" eventType="valueChanged" id="9nr-av-aWg"/>
@@ -175,9 +175,8 @@
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-ir-xy5">
-                                <rect key="frame" x="0.0" y="764" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-ir-xy5">
+                                <rect key="frame" x="0.0" y="867" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xgb-nd-ebi"/>
                                     <barButtonItem systemItem="done" id="XIy-3P-RBc">
@@ -190,6 +189,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Khh-ir-xy5" firstAttribute="trailing" secondItem="l5j-L0-ZV8" secondAttribute="trailing" id="7zl-4w-ve8"/>
+                            <constraint firstItem="Khh-ir-xy5" firstAttribute="bottom" secondItem="l5j-L0-ZV8" secondAttribute="bottom" id="Z4X-gP-WcA"/>
+                            <constraint firstItem="Khh-ir-xy5" firstAttribute="leading" secondItem="l5j-L0-ZV8" secondAttribute="leading" id="aMN-E1-ylg"/>
                             <constraint firstItem="DVg-d9-c8a" firstAttribute="centerX" secondItem="UTt-cR-O2o" secondAttribute="centerX" id="jJZ-HE-34e"/>
                             <constraint firstItem="DVg-d9-c8a" firstAttribute="centerY" secondItem="UTt-cR-O2o" secondAttribute="centerY" id="r6K-2f-SJk"/>
                         </constraints>

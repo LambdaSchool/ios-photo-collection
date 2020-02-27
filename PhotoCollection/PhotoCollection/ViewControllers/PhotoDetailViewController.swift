@@ -78,22 +78,18 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        upadateViews()
         setTheme()
     }
 }
 
-extension PhotoDetailViewController: UIImagePickerControllerDelegate {
+
+//MARK: - UIImagePickerControllerDelegate
+
+extension PhotoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         picker.dismiss(animated: true)
     }
 }
 
-extension PhotoDetailViewController: UINavigationControllerDelegate {
-    
-}
