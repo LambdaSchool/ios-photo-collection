@@ -11,6 +11,8 @@ import UIKit
 class PhotoDetailViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var addTitleTextField: UITextField!
     
     
     // MARK: - Properties
@@ -19,6 +21,11 @@ class PhotoDetailViewController: UIViewController {
     var themeHelper: ThemeHelper?
     
     // MARK: - IBActions
+    @IBAction func addPhoto(_ sender: Any) {
+    }
+    
+    @IBAction func savePhoto(_ sender: Any) {
+    }
     
 
     override func viewDidLoad() {
