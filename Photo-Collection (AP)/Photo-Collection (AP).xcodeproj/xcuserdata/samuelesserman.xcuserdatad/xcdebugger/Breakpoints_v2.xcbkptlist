@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9D9B1E38-4579-4161-8EB9-26931D05F085"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE7AABD8-6819-4C87-B1E4-0B4FA87AB99C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Photo-Collection (AP)/PhotosCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DE71D46-4DD2-4EA0-9F60-9E530A2FD64D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Photo-Collection (AP)/PhotosCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDC189D0-E874-4BD1-A0CE-B6D548902C87"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Photo-Collection (AP)/PhotosCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "photo"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "BDC189D0-E874-4BD1-A0CE-B6D548902C87 - 35cd5e0490430899"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Photo_Collection__AP_.PhotosCollectionViewCell.photo.modify : Swift.Optional&lt;Photo_Collection__AP_.Photo&gt;"
+                  moduleName = "Photo-Collection (AP)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelesserman/Desktop/iOS15/Week%20Three/ios-photo-collection/Photo-Collection%20(AP)/Photo-Collection%20(AP)/PhotosCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "BDC189D0-E874-4BD1-A0CE-B6D548902C87 - 2efdaef8f89b1a06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Photo_Collection__AP_.PhotosCollectionViewCell.photo.modify : Swift.Optional&lt;Photo_Collection__AP_.Photo&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Photo-Collection (AP)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelesserman/Desktop/iOS15/Week%20Three/ios-photo-collection/Photo-Collection%20(AP)/Photo-Collection%20(AP)/PhotosCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  uuid = "BDC189D0-E874-4BD1-A0CE-B6D548902C87 - d8b4fd2226cf5f52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Photo_Collection__AP_.PhotosCollectionViewCell.init(frame: __C.CGRect) -&gt; Photo_Collection__AP_.PhotosCollectionViewCell"
+                  moduleName = "Photo-Collection (AP)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelesserman/Desktop/iOS15/Week%20Three/ios-photo-collection/Photo-Collection%20(AP)/Photo-Collection%20(AP)/PhotosCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "345">
+               </Location>
+               <Location
+                  uuid = "BDC189D0-E874-4BD1-A0CE-B6D548902C87 - fc794b3e90504b66"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Photo_Collection__AP_.PhotosCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Photo_Collection__AP_.PhotosCollectionViewCell&gt;"
+                  moduleName = "Photo-Collection (AP)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelesserman/Desktop/iOS15/Week%20Three/ios-photo-collection/Photo-Collection%20(AP)/Photo-Collection%20(AP)/PhotosCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "301">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "786B5661-97EA-469F-8093-AD0E9375C24F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Photo-Collection (AP)/PhotoDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "saveButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
