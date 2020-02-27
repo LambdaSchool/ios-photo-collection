@@ -16,6 +16,7 @@
 		15D63A8C2408657200D74A67 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D63A8B2408657200D74A67 /* PhotoController.swift */; };
 		15D63A8F2408676700D74A67 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D63A8E2408676700D74A67 /* ThemeHelper.swift */; };
 		15D63A9124086CB600D74A67 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D63A9024086CB600D74A67 /* PhotosCollectionViewController.swift */; };
+		15D63A9424086DC600D74A67 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D63A9324086DC600D74A67 /* PhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		15D63A8B2408657200D74A67 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		15D63A8E2408676700D74A67 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		15D63A9024086CB600D74A67 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		15D63A9324086DC600D74A67 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				15D63A9024086CB600D74A67 /* PhotosCollectionViewController.swift */,
+				15D63A9324086DC600D74A67 /* PhotosCollectionViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15D63A89240864C100D74A67 /* Photo.swift in Sources */,
+				15D63A9424086DC600D74A67 /* PhotosCollectionViewCell.swift in Sources */,
 				15D63A732408644900D74A67 /* AppDelegate.swift in Sources */,
 				15D63A8C2408657200D74A67 /* PhotoController.swift in Sources */,
 				15D63A9124086CB600D74A67 /* PhotosCollectionViewController.swift in Sources */,
