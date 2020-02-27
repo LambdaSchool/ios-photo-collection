@@ -13,6 +13,7 @@
 		15D63A7C2408644A00D74A67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D63A7B2408644A00D74A67 /* Assets.xcassets */; };
 		15D63A7F2408644A00D74A67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D63A7D2408644A00D74A67 /* LaunchScreen.storyboard */; };
 		15D63A89240864C100D74A67 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D63A88240864C100D74A67 /* Photo.swift */; };
+		15D63A8C2408657200D74A67 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D63A8B2408657200D74A67 /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		15D63A7E2408644A00D74A67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15D63A802408644A00D74A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15D63A88240864C100D74A67 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		15D63A8B2408657200D74A67 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				15D63A872408646700D74A67 /* Storyboards */,
 				15D63A8A240864C600D74A67 /* Model */,
+				15D63A8D2408657F00D74A67 /* Model Controller */,
 				15D63A862408645800D74A67 /* Resources */,
 				15D63A802408644A00D74A67 /* Info.plist */,
 			);
@@ -89,6 +92,14 @@
 				15D63A88240864C100D74A67 /* Photo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		15D63A8D2408657F00D74A67 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15D63A8B2408657200D74A67 /* PhotoController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			files = (
 				15D63A89240864C100D74A67 /* Photo.swift in Sources */,
 				15D63A732408644900D74A67 /* AppDelegate.swift in Sources */,
+				15D63A8C2408657200D74A67 /* PhotoController.swift in Sources */,
 				15D63A752408644900D74A67 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
