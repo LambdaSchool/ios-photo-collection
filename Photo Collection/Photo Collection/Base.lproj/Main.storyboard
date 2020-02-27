@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +56,7 @@
                                 <connections>
                                     <outlet property="image" destination="lcm-Eo-4aH" id="Oby-Kz-j4s"/>
                                     <outlet property="label" destination="hWz-zU-SsS" id="11y-C6-s0j"/>
+                                    <segue destination="O7r-YF-t22" kind="show" identifier="ViewSegue" id="gfM-rG-ZMZ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -65,12 +67,66 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="CgO-Km-BtU">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Mn5-eG-rvj"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HeF-zi-MdB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HeF-zi-MdB">
+                            <connections>
+                                <segue destination="O7r-YF-t22" kind="show" identifier="AddSegue" id="6Sq-8t-bOm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyp-mO-u2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="BN5-J8-nb6">
+            <objects>
+                <viewController id="O7r-YF-t22" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RoV-kT-pCD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgg-cN-xo7">
+                                <rect key="frame" x="171" y="517" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="O7r-YF-t22" eventType="touchUpInside" id="GVF-5g-6Te"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PI2-NU-qyj">
+                                <rect key="frame" x="87" y="132" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rXF-0g-Aiy">
+                                <rect key="frame" x="159" y="385" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Hqe-YJ-vHN"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zgb-DF-LlA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="XV5-38-dJJ">
+                            <connections>
+                                <action selector="save:" destination="O7r-YF-t22" id="Kzx-AR-7cM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addPhoto" destination="lgg-cN-xo7" id="fD1-rv-q6t"/>
+                        <outlet property="imageView" destination="PI2-NU-qyj" id="2rp-R7-Z9U"/>
+                        <outlet property="save" destination="XV5-38-dJJ" id="Jk9-Na-sH8"/>
+                        <outlet property="theTextField" destination="rXF-0g-Aiy" id="qop-dN-CTE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xD2-0i-yno" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U7s-tQ-CQP">
@@ -91,4 +147,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gfM-rG-ZMZ"/>
+    </inferredMetricsTieBreakers>
 </document>
