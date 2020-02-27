@@ -17,7 +17,7 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToYourColorHere() {
-        UserDefaults.standard.set("Burnt Sienna", forKey: themePreferenceKey)
+        UserDefaults.standard.set("Sienna", forKey: themePreferenceKey)
     }
     
     var themePreference: String? {
@@ -25,8 +25,7 @@ class ThemeHelper {
         return themePreferenceKey
     }
     
-    init(themePreferenceKey: String) {
-        self.themePreferenceKey = themePreferenceKey
+    init() {
         
         if themePreference == nil {
             setThemePreferenceToYourColorHere()
