@@ -8,10 +8,13 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +27,21 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
+    func setTheme() {
+        var color: UIColor?
+        
+        switch themeHelper.themePreference {
+        case "Dark":
+            color = .darkGray
+        case "Blue":
+            color = .blue
+        default:
+            return
+        }
+        
+        self.view.backgroundColor = color
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -31,29 +49,30 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "ThemeSelectionSegue" {
+
             guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController else {return}
-            themeSelectionVC.themeHelper = nil // FIXME: Set to object type
+            themeSelectionVC.themeHelper = themeHelper
+
+        } else if segue.identifier == "AddSegue" {
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController else {return}
+
+            photoDetailVC.themeHelper = themeHelper
+            photoDetailVC.photoController = photoController
         }
     }
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { fatalError("PhotosCollectionViewCell was expected" ) }
     
         // Configure the cell
-    
+        cell.photo = photoController.photos[indexPath.item] // same as .row
+
         return cell
     }
 
