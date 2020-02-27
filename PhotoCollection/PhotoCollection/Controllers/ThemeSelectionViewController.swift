@@ -10,6 +10,7 @@ import UIKit
 
 class ThemeSelectionViewController: UIViewController {
 
+    var delegate: ThemeSelectionDelegate?
     var themeHelper: ThemeHelper?
     
     
@@ -38,4 +39,8 @@ class ThemeSelectionViewController: UIViewController {
     }
     */
 
+}
+
+protocol ThemeSelectionDelegate {
+    func themeWasChanged()
 }

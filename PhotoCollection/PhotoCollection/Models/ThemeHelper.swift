@@ -9,7 +9,6 @@
 import Foundation
 
 class ThemeHelper {
-    var delegate: ThemeHelperDelegate?
     let themePreferenceKey: String
     var themePreference: String? {
         get {
@@ -36,6 +35,4 @@ class ThemeHelper {
     
 }
 
-protocol ThemeHelperDelegate {
-    func themeWasChanged()
-}
+

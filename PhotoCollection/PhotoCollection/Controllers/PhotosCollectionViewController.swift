@@ -50,6 +50,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         } else if segue.identifier == "SelectThemeSegue" {
             guard let themeVC = segue.destination as? ThemeSelectionViewController else {fatalError()}
             themeVC.themeHelper = self.themeHelper
+            themeVC.delegate = self
             
             
         }
@@ -122,3 +123,15 @@ class PhotosCollectionViewController: UICollectionViewController {
             self.collectionView.backgroundColor = .green        }
     }
 }
+
+
+//MARK: - Delegate Protocols
+
+extension PhotosCollectionViewController: ThemeSelectionDelegate {
+    func themeWasChanged() {
+        setTheme()
+    }
+    
+    
+}
+
