@@ -65,13 +65,12 @@ class PhotoDetailViewController: UIViewController {
     
     //MARK: - Methods
      func setTheme() {
-        guard let preference = self.themeHelper?.themePreference else {return}
+        guard let preference = self.themeHelper else {return}
            
-           if preference == "Dark" {
+        if preference.themePreference == "Dark" {
             self.view.backgroundColor = .black
-           } else {
-               self.view.backgroundColor = .black
-            
+        } else if preference.themePreference == "Green" {
+               self.view.backgroundColor = .green
             }
        }
     func updateViews() {

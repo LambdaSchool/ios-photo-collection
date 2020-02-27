@@ -17,14 +17,13 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(themeHelper.themePreference)
+        setTheme()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        setTheme()
     }
 
 
@@ -111,18 +110,15 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     */
 
-}
-
 
 //MARK: - ThemeHelper methods extensions
 
-extension PhotosCollectionViewController {
     func setTheme() {
         guard let preference = themeHelper.themePreference else {return}
         
         if preference == "Dark" {
             self.collectionView.backgroundColor = .black
-        } else {
+        } else if preference == "Green" {
             self.collectionView.backgroundColor = .green        }
     }
 }
