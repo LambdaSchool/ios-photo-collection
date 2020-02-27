@@ -88,21 +88,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-RV-dVz">
-                                <rect key="frame" x="87" y="209" width="240" height="211.5"/>
+                                <rect key="frame" x="30" y="301" width="354" height="294"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-iT-9Ed">
-                                        <rect key="frame" x="0.0" y="1" width="240" height="115"/>
+                                        <rect key="frame" x="77" y="1" width="200" height="197.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="250" id="EwZ-xo-bZ1"/>
+                                            <constraint firstAttribute="height" constant="200" id="k6D-CF-Y6L"/>
+                                            <constraint firstAttribute="width" secondItem="kDZ-iT-9Ed" secondAttribute="height" multiplier="1:1" id="mPj-fS-lwG"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SA7-px-2aK">
-                                        <rect key="frame" x="0.0" y="132.5" width="240" height="34"/>
+                                        <rect key="frame" x="10" y="215" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lad-2K-ue7">
-                                        <rect key="frame" x="84" y="181.5" width="72" height="30"/>
+                                        <rect key="frame" x="141" y="264" width="72" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="33G-oU-Tgn" eventType="touchUpInside" id="Wgz-IX-un8"/>
@@ -110,18 +111,17 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="kDZ-iT-9Ed" firstAttribute="leading" secondItem="lp6-RV-dVz" secondAttribute="leadingMargin" id="YLr-FF-0f4"/>
-                                    <constraint firstItem="SA7-px-2aK" firstAttribute="leading" secondItem="lp6-RV-dVz" secondAttribute="leadingMargin" id="cWx-Ia-eIZ"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="SA7-px-2aK" secondAttribute="trailing" id="zwx-18-lf5"/>
+                                    <constraint firstItem="SA7-px-2aK" firstAttribute="leading" secondItem="lp6-RV-dVz" secondAttribute="leadingMargin" constant="10" id="bse-Lc-hU1"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="SA7-px-2aK" secondAttribute="trailing" constant="10" id="j3I-eC-szv"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="lp6-RV-dVz" firstAttribute="centerX" secondItem="I03-Xb-mCn" secondAttribute="centerX" id="Dqp-jr-b6i"/>
-                            <constraint firstItem="lp6-RV-dVz" firstAttribute="leading" secondItem="tve-Tv-UHp" secondAttribute="leading" constant="87" id="WLr-aD-Sry"/>
-                            <constraint firstItem="tve-Tv-UHp" firstAttribute="bottom" secondItem="lp6-RV-dVz" secondAttribute="bottom" constant="392.5" id="aX0-1a-kjd"/>
-                            <constraint firstItem="lp6-RV-dVz" firstAttribute="top" secondItem="tve-Tv-UHp" secondAttribute="top" constant="121" id="dDn-bv-Dj6"/>
+                            <constraint firstItem="tve-Tv-UHp" firstAttribute="trailing" secondItem="lp6-RV-dVz" secondAttribute="trailing" constant="30" id="8Bx-4H-Olb"/>
+                            <constraint firstItem="lp6-RV-dVz" firstAttribute="centerY" secondItem="I03-Xb-mCn" secondAttribute="centerY" id="Dun-Oe-LEu"/>
+                            <constraint firstItem="lp6-RV-dVz" firstAttribute="centerX" secondItem="I03-Xb-mCn" secondAttribute="centerX" id="dfl-NZ-WC2"/>
+                            <constraint firstItem="lp6-RV-dVz" firstAttribute="leading" secondItem="tve-Tv-UHp" secondAttribute="leading" constant="30" id="oOD-Wx-sri"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tve-Tv-UHp"/>
                     </view>
