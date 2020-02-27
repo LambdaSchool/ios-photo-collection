@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eaS-V3-wzM">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eaS-V3-wzM">
                             <size key="itemSize" width="141" height="170"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -75,14 +75,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="PhotoCell" id="muf-Ps-4JD" customClass="PhotoCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
-                                <rect key="frame" x="10" y="0.0" width="140" height="170"/>
+                                <rect key="frame" x="10" y="0.0" width="141" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bBw-Td-iwc">
-                                    <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="141" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSX-7o-Jhv">
-                                            <rect key="frame" x="8" y="148" width="124" height="21"/>
+                                            <rect key="frame" x="8" y="148" width="125" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -96,14 +96,14 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NOk-dc-DfL" firstAttribute="leading" secondItem="bBw-Td-iwc" secondAttribute="leading" id="DL3-0s-erI"/>
-                                        <constraint firstAttribute="trailing" secondItem="nSX-7o-Jhv" secondAttribute="trailing" constant="8" id="EHV-KP-vAG"/>
-                                        <constraint firstItem="nSX-7o-Jhv" firstAttribute="top" secondItem="NOk-dc-DfL" secondAttribute="bottom" constant="8" id="FwF-dR-swg"/>
-                                        <constraint firstItem="NOk-dc-DfL" firstAttribute="top" secondItem="bBw-Td-iwc" secondAttribute="top" id="XDX-OH-h2y"/>
-                                        <constraint firstItem="nSX-7o-Jhv" firstAttribute="leading" secondItem="bBw-Td-iwc" secondAttribute="leading" constant="8" id="nzN-Pl-KOJ"/>
+                                        <constraint firstItem="nSX-7o-Jhv" firstAttribute="leading" secondItem="bBw-Td-iwc" secondAttribute="leading" constant="8" id="gCH-fj-dW7"/>
+                                        <constraint firstItem="NOk-dc-DfL" firstAttribute="leading" secondItem="bBw-Td-iwc" secondAttribute="leading" id="qdi-gw-Rlr"/>
+                                        <constraint firstItem="NOk-dc-DfL" firstAttribute="top" secondItem="bBw-Td-iwc" secondAttribute="top" id="uTk-gM-0kj"/>
+                                        <constraint firstAttribute="trailing" secondItem="nSX-7o-Jhv" secondAttribute="trailing" constant="8" id="xPT-dF-Ipb"/>
+                                        <constraint firstItem="nSX-7o-Jhv" firstAttribute="top" secondItem="NOk-dc-DfL" secondAttribute="bottom" constant="8" id="xXG-QN-YTa"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="140" height="170"/>
+                                <size key="customSize" width="141" height="170"/>
                                 <connections>
                                     <outlet property="photoImageView" destination="NOk-dc-DfL" id="ghN-6r-4ky"/>
                                     <outlet property="photoLabel" destination="nSX-7o-Jhv" id="LFL-fS-LaD"/>
