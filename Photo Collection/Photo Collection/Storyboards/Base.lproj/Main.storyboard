@@ -74,7 +74,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="48h-Xg-t6U">
                             <connections>
-                                <segue destination="lJz-d6-jgU" kind="show" id="Y0E-EC-agL"/>
+                                <segue destination="lJz-d6-jgU" kind="show" identifier="ShowAddVC" id="Y0E-EC-agL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
