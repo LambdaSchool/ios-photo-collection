@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var addImage: UIImageView!
     @IBOutlet weak var addPhotoTitle: UITextField!
@@ -20,13 +20,39 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
 
     }
     
+    func setTheme() {
+        if themeHelper?.themePreference == "Sienna" {
+          self.view.backgroundColor = UIColor(red: 235, green: 100, blue: 100, alpha: 1)
+      } else {
+          self.view.backgroundColor = UIColor.darkGray
+      }
+    }
+    
+    func updateViews() {
+        
+        guard let newImage = photo?.imageData else { return }
+               let image = UIImage(data: newImage)
+               
+               addImage.image = image
+    }
+    
     @IBAction func addPhoto(_ sender: Any) {
+        
+        
+        
     }
     
     @IBAction func savePhoto(_ sender: Any) {
+        
+        if photo?.imageData != nil {
+                  updateViews()
+              }
+              navigationController?.popViewController(animated: true)
+        
     }
     /*
     // MARK: - Navigation
