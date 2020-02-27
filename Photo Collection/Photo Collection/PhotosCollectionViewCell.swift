@@ -24,8 +24,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         guard let photo = photo else { return }
         
         photoLabel.text = photo.title
-        //photoImageView.image =
-        #warning("Not Complete")
+        photoImageView.image = UIImage(data: photo.imageData)
     }
     
 }

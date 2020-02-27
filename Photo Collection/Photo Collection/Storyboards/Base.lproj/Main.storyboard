@@ -98,14 +98,20 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOD-i0-rX3">
-                                <rect key="frame" x="20" y="473" width="374" height="30"/>
-                                <state key="normal" title="Add Photo"/>
+                                <rect key="frame" x="20" y="458" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Cqp-c3-RxN"/>
+                                </constraints>
+                                <state key="normal" title="Add Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="addPhotoButtonTapped:" destination="lJz-d6-jgU" eventType="touchUpInside" id="8U1-Xp-VM7"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Photo Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-Ee-aFv">
-                                <rect key="frame" x="20" y="431" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-Ee-aFv">
+                                <rect key="frame" x="20" y="518" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -113,14 +119,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IJ0-Yn-MkU" firstAttribute="leading" secondItem="h3d-gk-HsW" secondAttribute="leading" constant="8" id="6rB-RR-6cU"/>
-                            <constraint firstItem="mgF-Ee-aFv" firstAttribute="centerY" secondItem="9LS-kK-0SX" secondAttribute="centerY" id="8yi-Ac-4TV"/>
+                            <constraint firstItem="h3d-gk-HsW" firstAttribute="trailing" secondItem="pOD-i0-rX3" secondAttribute="trailing" constant="20" id="7hR-DG-EeX"/>
                             <constraint firstItem="IJ0-Yn-MkU" firstAttribute="top" secondItem="h3d-gk-HsW" secondAttribute="top" constant="8" id="B0q-Rj-tYV"/>
-                            <constraint firstItem="h3d-gk-HsW" firstAttribute="trailing" secondItem="mgF-Ee-aFv" secondAttribute="trailing" constant="20" id="Hwl-mc-mpq"/>
-                            <constraint firstItem="pOD-i0-rX3" firstAttribute="top" secondItem="mgF-Ee-aFv" secondAttribute="bottom" constant="8" id="cja-ie-xbh"/>
-                            <constraint firstItem="h3d-gk-HsW" firstAttribute="trailing" secondItem="pOD-i0-rX3" secondAttribute="trailing" constant="20" id="mdb-Ff-utc"/>
+                            <constraint firstItem="pOD-i0-rX3" firstAttribute="leading" secondItem="h3d-gk-HsW" secondAttribute="leading" constant="20" id="DSb-ys-ogt"/>
+                            <constraint firstItem="pOD-i0-rX3" firstAttribute="top" secondItem="IJ0-Yn-MkU" secondAttribute="bottom" constant="10" id="Pfi-jf-pL5"/>
+                            <constraint firstItem="h3d-gk-HsW" firstAttribute="trailing" secondItem="mgF-Ee-aFv" secondAttribute="trailing" constant="20" id="Vzg-Xy-W2p"/>
+                            <constraint firstItem="mgF-Ee-aFv" firstAttribute="leading" secondItem="h3d-gk-HsW" secondAttribute="leading" constant="20" id="do8-6Y-rPM"/>
+                            <constraint firstItem="mgF-Ee-aFv" firstAttribute="top" secondItem="pOD-i0-rX3" secondAttribute="bottom" constant="10" id="s9t-71-bYR"/>
                             <constraint firstItem="h3d-gk-HsW" firstAttribute="trailing" secondItem="IJ0-Yn-MkU" secondAttribute="trailing" constant="8" id="tmo-eR-2QX"/>
-                            <constraint firstItem="pOD-i0-rX3" firstAttribute="leading" secondItem="h3d-gk-HsW" secondAttribute="leading" constant="20" id="w4B-cr-xSt"/>
-                            <constraint firstItem="mgF-Ee-aFv" firstAttribute="leading" secondItem="h3d-gk-HsW" secondAttribute="leading" constant="20" id="ygL-xs-9n4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h3d-gk-HsW"/>
                     </view>
@@ -132,6 +138,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoButton" destination="pOD-i0-rX3" id="JtP-8Q-XL0"/>
                         <outlet property="imageView" destination="IJ0-Yn-MkU" id="XWK-gy-jLi"/>
                         <outlet property="nameTextField" destination="mgF-Ee-aFv" id="hkc-vL-1P4"/>
                     </connections>
