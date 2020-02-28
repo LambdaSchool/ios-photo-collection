@@ -8,7 +8,9 @@
 
 import UIKit
 
-
+protocol ThemeSelectionDelegate {
+    func didSetTheme()
+}
 
 class PhotosCollectionViewController: UICollectionViewController {
 
@@ -82,7 +84,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { fatalError("Cell is not a PhotoCollectionViewCell") }
         
-        let photo = photoController.photos[indexPath.row]
+        let photo = photoController.photos[indexPath.item]
         cell.photo = photo
         
         
@@ -91,5 +93,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
   
+
+}
+extension PhotosCollectionViewController: ThemeSelectionDelegate {
+    func didSetTheme() {
+        setTheme()
+    }
 
 }

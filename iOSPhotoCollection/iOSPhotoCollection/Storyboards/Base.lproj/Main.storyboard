@@ -30,27 +30,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="191" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-vk-OwB">
-                                            <rect key="frame" x="12" y="16" width="166" height="131"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="2zB-vk-OwB" secondAttribute="height" multiplier="166:131" id="VzX-QU-LJn"/>
-                                                <constraint firstAttribute="width" constant="166" id="e1t-bP-FTB"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2zB-vk-OwB">
+                                            <rect key="frame" x="12" y="16.5" width="166" height="130"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMJ-fg-z5o">
-                                            <rect key="frame" x="8" y="155" width="175" height="16"/>
+                                            <rect key="frame" x="8" y="150.5" width="175" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="2zB-vk-OwB" secondAttribute="trailing" constant="13" id="GuX-Qe-zoC"/>
                                         <constraint firstAttribute="trailing" secondItem="sMJ-fg-z5o" secondAttribute="trailing" constant="8" id="H1L-bO-VqF"/>
-                                        <constraint firstItem="2zB-vk-OwB" firstAttribute="top" secondItem="CSZ-5Z-fO4" secondAttribute="top" constant="16" id="MqI-he-TwK"/>
-                                        <constraint firstItem="2zB-vk-OwB" firstAttribute="leading" secondItem="CSZ-5Z-fO4" secondAttribute="leading" constant="12" id="QbH-vB-vDh"/>
                                         <constraint firstAttribute="bottom" secondItem="sMJ-fg-z5o" secondAttribute="bottom" constant="8" id="Tf8-VZ-4mH"/>
-                                        <constraint firstItem="sMJ-fg-z5o" firstAttribute="top" secondItem="2zB-vk-OwB" secondAttribute="bottom" constant="8" id="ewz-ng-gXb"/>
                                         <constraint firstItem="sMJ-fg-z5o" firstAttribute="leading" secondItem="CSZ-5Z-fO4" secondAttribute="leading" constant="8" id="o1y-Yd-aNd"/>
                                     </constraints>
                                 </collectionViewCellContentView>
@@ -93,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PiA-Eb-fgD">
-                                <rect key="frame" x="30" y="134" width="354" height="246"/>
+                                <rect key="frame" x="30" y="118" width="354" height="262"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENk-Gv-tnB">
                                 <rect key="frame" x="171" y="419" width="72" height="30"/>
@@ -103,23 +96,23 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWY-72-Rf3">
-                                <rect key="frame" x="159" y="470" width="97" height="34"/>
+                                <rect key="frame" x="20" y="470" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="z2W-K9-ZIG" firstAttribute="trailing" secondItem="GWY-72-Rf3" secondAttribute="trailing" constant="20" id="0gu-aq-Sz5"/>
                             <constraint firstItem="ENk-Gv-tnB" firstAttribute="top" secondItem="PiA-Eb-fgD" secondAttribute="bottom" constant="39" id="1Tw-uQ-5v3"/>
-                            <constraint firstItem="GWY-72-Rf3" firstAttribute="leading" secondItem="z2W-K9-ZIG" secondAttribute="leading" constant="159" id="6yu-zo-0vx"/>
+                            <constraint firstItem="GWY-72-Rf3" firstAttribute="top" secondItem="ENk-Gv-tnB" secondAttribute="bottom" constant="21" id="9wG-Ys-trB"/>
+                            <constraint firstItem="GWY-72-Rf3" firstAttribute="leading" secondItem="z2W-K9-ZIG" secondAttribute="leading" constant="20" id="Ae5-dy-bRc"/>
                             <constraint firstItem="z2W-K9-ZIG" firstAttribute="trailing" secondItem="ENk-Gv-tnB" secondAttribute="trailing" constant="171" id="G6E-h8-nTE"/>
-                            <constraint firstItem="GWY-72-Rf3" firstAttribute="top" secondItem="ENk-Gv-tnB" secondAttribute="bottom" constant="21" id="Uac-tG-4Sl"/>
-                            <constraint firstItem="z2W-K9-ZIG" firstAttribute="trailing" secondItem="GWY-72-Rf3" secondAttribute="trailing" constant="158" id="Vf5-wi-KJ1"/>
-                            <constraint firstItem="z2W-K9-ZIG" firstAttribute="bottom" secondItem="GWY-72-Rf3" secondAttribute="bottom" constant="358" id="XOi-64-NHd"/>
+                            <constraint firstItem="z2W-K9-ZIG" firstAttribute="bottom" secondItem="GWY-72-Rf3" secondAttribute="bottom" constant="358" id="S4W-1R-ihA"/>
                             <constraint firstItem="ENk-Gv-tnB" firstAttribute="leading" secondItem="z2W-K9-ZIG" secondAttribute="leading" constant="171" id="dEG-ex-6Mk"/>
                             <constraint firstItem="z2W-K9-ZIG" firstAttribute="trailing" secondItem="PiA-Eb-fgD" secondAttribute="trailing" constant="30" id="eDT-fi-1xG"/>
                             <constraint firstItem="PiA-Eb-fgD" firstAttribute="leading" secondItem="z2W-K9-ZIG" secondAttribute="leading" constant="30" id="eRx-EC-ev5"/>
-                            <constraint firstItem="PiA-Eb-fgD" firstAttribute="top" secondItem="z2W-K9-ZIG" secondAttribute="top" constant="46" id="i04-lh-78j"/>
+                            <constraint firstItem="PiA-Eb-fgD" firstAttribute="top" secondItem="z2W-K9-ZIG" secondAttribute="top" constant="30" id="hRC-cb-aOF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z2W-K9-ZIG"/>
                     </view>
@@ -212,6 +205,9 @@
             <point key="canvasLocation" x="2076.8115942028985" y="370.98214285714283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kmm-kw-aWX"/>
     </inferredMetricsTieBreakers>
