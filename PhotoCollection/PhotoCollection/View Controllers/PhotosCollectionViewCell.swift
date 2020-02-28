@@ -18,7 +18,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     
     func updateViews() {
         
-        guard let photo = photo else { return }
+    
         
         
         

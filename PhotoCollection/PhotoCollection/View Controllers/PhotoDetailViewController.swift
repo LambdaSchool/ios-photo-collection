@@ -18,9 +18,12 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTheme()
+        imagePicker.delegate = self
 
     }
     
@@ -34,11 +37,15 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     func updateViews() {
         
-        guard let newImage = photo?.imageData else { return }
-               let image = UIImage(data: newImage)
+        guard let newImage = photo?.imageData,
+               let image = UIImage(data: newImage),
+               let title = addPhotoTitle.text else { return }
                
                addImage.image = image
+               addPhotoTitle.text = title
     }
+    
+    
     
     @IBAction func addPhoto(_ sender: Any) {
         

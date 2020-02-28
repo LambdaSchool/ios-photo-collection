@@ -18,9 +18,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           collectionView.reloadData()
+       }
     
     // MARK: - Navigation
    // FIXME: segue help - I don't think how I'm 'passing' the info correctly.

@@ -12,13 +12,10 @@ class PhotoController {
     
     var photos: [Photo] = []
     
-    func create() {
-        let photo = Photo(imageData: imageData, title: title)
-        photos.append(photo)
-        
-    }
     
-    func updateView(Photo: String, imageData: Data, title: String) {
+    func create() {
+        let photo = Photo(imageData: <#T##Data#>, title: <#T##String#>)
+        photos.append(photo)
         
     }
 }
