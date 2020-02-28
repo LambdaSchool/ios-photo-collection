@@ -65,6 +65,15 @@ class PhotosCollectionViewController: UICollectionViewController, PresentModally
 
             photoDetailVC.themeHelper = themeHelper
             photoDetailVC.photoController = photoController
+        } else if segue.identifier == "EditSegue" {
+            guard let photoDetailVC = segue.destination as? PhotoDetailViewController else {return}
+
+            photoDetailVC.themeHelper = themeHelper
+            photoDetailVC.photoController = photoController
+
+            if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
+                photoDetailVC.photo = photoController.photos[indexPath.item]
+            }
         }
     }
 

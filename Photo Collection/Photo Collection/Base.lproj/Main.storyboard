@@ -56,7 +56,7 @@
                                 <connections>
                                     <outlet property="image" destination="lcm-Eo-4aH" id="Oby-Kz-j4s"/>
                                     <outlet property="label" destination="hWz-zU-SsS" id="11y-C6-s0j"/>
-                                    <segue destination="O7r-YF-t22" kind="show" identifier="ViewSegue" id="gfM-rG-ZMZ"/>
+                                    <segue destination="O7r-YF-t22" kind="show" identifier="EditSegue" id="gfM-rG-ZMZ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -222,6 +222,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6Sq-8t-bOm"/>
+        <segue reference="gfM-rG-ZMZ"/>
     </inferredMetricsTieBreakers>
 </document>
