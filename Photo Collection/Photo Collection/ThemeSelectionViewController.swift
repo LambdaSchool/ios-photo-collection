@@ -21,10 +21,21 @@ class ThemeSelectionViewController: UIViewController {
     }
     
     @IBAction func selectDarkTheme(_ sender: Any) {
+        
+        var themeHelper = 
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectYourColorHereTheme(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

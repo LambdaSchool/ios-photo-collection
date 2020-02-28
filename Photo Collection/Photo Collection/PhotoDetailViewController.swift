@@ -28,6 +28,25 @@ class PhotoDetailViewController: UIViewController {
     
     @IBAction func savePhoto(_ sender: Any) {
     }
+    
+    
+    func setTheme() {
+        
+    }
+    
+    
+    
+    
+    func updateViews() {
+        guard let photo = photo else { return }
+               
+            imageView.image = UIImage(data: photo.imageData)
+            photoTextField.text = photo.title
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
