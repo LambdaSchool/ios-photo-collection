@@ -12,5 +12,7 @@ struct Photo: Equatable {
     var image: Data
     var title: String
     
-    
+ 
+
+      
 }

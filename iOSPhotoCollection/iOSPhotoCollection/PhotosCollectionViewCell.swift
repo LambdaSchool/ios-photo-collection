@@ -13,4 +13,18 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoLabel: UILabel!
     
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    
+    //    for the function is in order to update the view from the planets
+    func updateViews() {
+        guard let photo = photo else { return }
+        photoImageView.image = UIImage(data: photo.image)
+        photoLabel.text = photo.title
+        
+    }
 }
