@@ -30,6 +30,8 @@ class PhotosCollectionViewController: UICollectionViewController, PresentModally
     
     override func viewWillAppear(_ animated: Bool) {
         setTheme()
+
+        collectionView.reloadData()
     }
 
     func setTheme() {
@@ -70,7 +72,7 @@ class PhotosCollectionViewController: UICollectionViewController, PresentModally
 
             photoDetailVC.themeHelper = themeHelper
             photoDetailVC.photoController = photoController
-            photoDetailVC.viewTitle = "Edit Photo" // FIXME: Test
+            photoDetailVC.viewTitle = "Edit Photo"
 
             if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
                 photoDetailVC.photo = photoController.photos[indexPath.item]
