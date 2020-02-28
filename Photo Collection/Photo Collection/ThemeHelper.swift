@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    static let themePreferenceKey = "themePreferenceKey"
+    static let themePreferenceKey = "themePreference"
 }
 
 
@@ -27,7 +27,7 @@ class ThemeHelper {
     
     
     var themePreference: String? {
-        UserDefaults.standard.string(forKey: .themePreferenceKey)
+        UserDefaults.standard.string(forKey: .themePreferenceKey) ?? "Dark"
     }
     
     
