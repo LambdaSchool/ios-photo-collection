@@ -31,10 +31,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     //MARK: - View Lifecycle
     
+    
     override func viewDidAppear(_ animated: Bool) {
-          setTheme()
-          collectionView.reloadData()
-      }
+        setTheme()
+        collectionView.reloadData()
+    }
 
     
     // MARK: UICollectionViewDataSource
@@ -52,6 +53,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         return cell
     }
+
 
     
     // MARK: - Navigation
