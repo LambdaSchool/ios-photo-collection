@@ -20,12 +20,12 @@ class ThemeSelectionViewController: UIViewController {
     
     @IBAction func darkButton(_ sender: Any) {
         themeHelper?.setThemePreferenceToDark()
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func blueButton(_ sender: Any) {
         //FIXME: actually change the color!
         themeHelper?.setThemePreferenceToBlue()
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }

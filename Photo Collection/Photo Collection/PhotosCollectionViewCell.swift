@@ -20,8 +20,9 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
     
     func updateViews() {
-        if let data = photo?.imageData {
-//            image = data // FIXME:
+        if let data = photo?.imageData,
+            let pic = UIImage(data: data) {
+            image.image = pic
         }
         label.text = photo?.title
     }

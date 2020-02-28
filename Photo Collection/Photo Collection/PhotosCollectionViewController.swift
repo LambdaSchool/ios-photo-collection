@@ -22,9 +22,14 @@ class PhotosCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+// TODO:        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        setTheme()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setTheme()
     }
 
     func setTheme() {
