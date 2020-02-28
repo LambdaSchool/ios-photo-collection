@@ -15,7 +15,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VGi-Em-eoR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qR7-di-Hsh">
                             <size key="itemSize" width="150" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -71,7 +71,7 @@
                     <navigationItem key="navigationItem" id="uQN-pL-j52">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="Un8-Ul-pIe">
                             <connections>
-                                <segue destination="Oh8-Ne-EOV" kind="presentation" modalPresentationStyle="fullScreen" id="XjN-RM-u5m"/>
+                                <segue destination="Oh8-Ne-EOV" kind="presentation" modalPresentationStyle="automatic" id="XjN-RM-u5m"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VKF-yA-PS8">
@@ -163,11 +163,11 @@
             <objects>
                 <viewController id="Oh8-Ne-EOV" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UTt-cR-O2o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-d9-c8a">
-                                <rect key="frame" x="144" y="418" width="126" height="60.5"/>
+                                <rect key="frame" x="144" y="391" width="126" height="60.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84S-6k-bGU">
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="21.5"/>
@@ -188,7 +188,7 @@
                                 </subviews>
                             </stackView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-ir-xy5">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="705" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xgb-nd-ebi"/>
                                     <barButtonItem systemItem="done" id="XIy-3P-RBc">

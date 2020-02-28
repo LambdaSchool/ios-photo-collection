@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, ThemeHelperDelegate {
   
     //MARK: - Properties
     
@@ -20,12 +20,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     //MARK: - Private
     
     private func setTheme() {
-        switch themeHelper.themePreference {
-        case ThemeHelper.indigoTheme:
-            collectionView.backgroundColor = .systemIndigo
-        default:
-            collectionView.backgroundColor = .darkGray
-        }
+        let theme = themeHelper.themePreference
+        view.backgroundColor = UIColor.init(named: theme)
     }
     
     
@@ -33,8 +29,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        setTheme()
+        super.viewDidAppear(animated)
         collectionView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setTheme()
+        themeHelper.delegate = self
     }
 
     

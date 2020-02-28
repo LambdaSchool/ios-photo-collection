@@ -57,12 +57,8 @@ class PhotoDetailViewController: UIViewController {
     private func setTheme() {
         guard let themeHelper = themeHelper else { return }
         
-        switch themeHelper.themePreference {
-        case ThemeHelper.indigoTheme:
-            view.backgroundColor = .systemIndigo
-        default:
-            view.backgroundColor = .darkGray
-        }
+        let theme = themeHelper.themePreference
+        view.backgroundColor = UIColor.init(named: theme)
     }
     
     private func upadateViews() {

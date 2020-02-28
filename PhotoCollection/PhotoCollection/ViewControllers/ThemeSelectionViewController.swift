@@ -42,15 +42,11 @@ class ThemeSelectionViewController: UIViewController {
     //MARK: - Private
     
     private func setTheme() {
-        guard let themeHelper = themeHelper else { return }
-        
-        switch themeHelper.themePreference {
-        case ThemeHelper.indigoTheme:
-            view.backgroundColor = .systemIndigo
-        default:
-            view.backgroundColor = .darkGray
-        }
-    }
+          guard let themeHelper = themeHelper else { return }
+          
+          let theme = themeHelper.themePreference
+          view.backgroundColor = UIColor.init(named: theme)
+      }
     
     private func updateThemeSelector() {
         guard let themeHelper = themeHelper else { return }
