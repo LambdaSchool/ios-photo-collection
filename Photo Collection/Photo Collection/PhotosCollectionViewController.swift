@@ -70,6 +70,7 @@ class PhotosCollectionViewController: UICollectionViewController, PresentModally
 
             photoDetailVC.themeHelper = themeHelper
             photoDetailVC.photoController = photoController
+            photoDetailVC.viewTitle = "Edit Photo" // FIXME: Test
 
             if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
                 photoDetailVC.photo = photoController.photos[indexPath.item]

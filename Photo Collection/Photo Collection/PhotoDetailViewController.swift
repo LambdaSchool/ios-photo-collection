@@ -15,6 +15,7 @@ class PhotoDetailViewController: UIViewController,
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    var viewTitle = "Create Photo"
     
     let 🖼 = UIImagePickerController()
 
@@ -44,6 +45,7 @@ class PhotoDetailViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         🖼.delegate = self
+        self.title = viewTitle
 
         // Do any additional setup after loading the view.
         setTheme()
