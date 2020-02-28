@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Properties
     var photoController: PhotoController?
@@ -21,16 +21,36 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
+        setTheme()
     }
     
     
     // MARK: - Actions
     @IBAction func addPhoto(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.mediaTypes = ["public.image"]
+        present(imagePicker, animated: true)
     }
+    
     @IBAction func savePhoto(_ sender: Any) {
-    }
+            if let photo = photo {
+                if let photoController = photoController {
+                    if let title = addTitleTextField.text, !title.isEmpty, let data = addImageView.image?.pngData() {
+                        photoController.update(photo: photo, imageData: data, title: title)
+                    }
+                }
+            } else {
+                if let photoController = photoController {
+                    if let title = addTitleTextField.text, !title.isEmpty {
+                        let data1 = addImageView.image?.jpegData(compressionQuality: 1)
+                        photoController.create(imageData: data1!, title: title)
+                    }
+                }
+            }
+            navigationController?.popViewController(animated: true)
+        }
     /*
     // MARK: - Navigation
 
@@ -41,4 +61,26 @@ class PhotoDetailViewController: UIViewController {
     }
     */
 
+    func setTheme() {
+        guard let themeHelper = themeHelper else { return }
+        switch themeHelper.themePreference {
+        case ThemeHelper.redTheme:
+            view.backgroundColor = .red
+        default:
+            view.backgroundColor = .blue
+        }
+    }
+}
+
+extension PhotoDetailViewController {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        addImageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        picker.dismiss(animated: true)
+    }
+    
+    func updateViews() {
+        guard let photo = photo, let image = UIImage(data: photo.imageData) else { return }
+        addImageView.image = image
+        addTitleTextField.text = photo.title
+    }
 }

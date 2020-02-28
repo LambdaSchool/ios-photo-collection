@@ -15,15 +15,19 @@ class ThemeSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTheme()
         // Do any additional setup after loading the view.
     }
     
     // MARK: - Actions
     @IBAction func redTapped(_ sender: Any) {
+        themeHelper?.setThemePreferenceToRed()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func blueTapped(_ sender: Any) {
+        themeHelper?.setThemePreferenceToBlue()
+        dismiss(animated: true, completion: nil)
     }
     
     /*
@@ -35,5 +39,15 @@ class ThemeSelectionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setTheme() {
+        guard let themeHelper = themeHelper else { return }
+        switch themeHelper.themePreference {
+        case ThemeHelper.redTheme:
+            view.backgroundColor = .red
+        default:
+            view.backgroundColor = .blue
+        }
+    }
 
 }

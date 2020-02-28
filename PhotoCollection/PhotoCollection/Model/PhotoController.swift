@@ -18,6 +18,7 @@ class PhotoController {
         photos.append(newPhoto)
     }
     func update(photo: Photo, imageData: Data, title: String) {
-        // FIXME: - What is this supposed to do?
+        guard let index = photos.firstIndex(of: photo) else { return }
+        photos[index] = Photo(imageData: imageData, title: title)
     }
 }

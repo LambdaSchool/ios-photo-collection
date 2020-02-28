@@ -11,6 +11,4 @@ import Foundation
 struct Photo: Equatable {
     var imageData: Data
     var title: String
-    
-    // FIXME: - Conform to equatable
 }
