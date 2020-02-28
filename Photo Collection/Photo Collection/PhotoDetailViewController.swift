@@ -88,7 +88,6 @@ class PhotoDetailViewController: UIViewController,
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-             
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }
