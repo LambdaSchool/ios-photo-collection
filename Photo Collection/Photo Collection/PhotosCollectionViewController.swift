@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "PhotoCell"
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, fooDelegate {
 
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
@@ -44,7 +44,8 @@ class PhotosCollectionViewController: UICollectionViewController {
             return
         }
         
-        self.view.backgroundColor = color
+        // TODO: why is there view and collectionView? Can you have both at the same time?
+        self.collectionView.backgroundColor = color
     }
     
     // MARK: - Navigation
@@ -57,6 +58,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 
             guard let themeSelectionVC = segue.destination as? ThemeSelectionViewController else {return}
             themeSelectionVC.themeHelper = themeHelper
+            themeSelectionVC.delegate = self
 
         } else if segue.identifier == "AddSegue" {
             guard let photoDetailVC = segue.destination as? PhotoDetailViewController else {return}
@@ -112,4 +114,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     */
 
+    func somethingChanged() {
+        setTheme()
+    }
 }

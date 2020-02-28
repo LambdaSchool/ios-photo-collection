@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol fooDelegate {
+    func somethingChanged()
+}
+
 class ThemeSelectionViewController: UIViewController {
 
     var themeHelper: ThemeHelper?
+    var delegate: fooDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +25,14 @@ class ThemeSelectionViewController: UIViewController {
     
     @IBAction func darkButton(_ sender: Any) {
         themeHelper?.setThemePreferenceToDark()
+        delegate?.somethingChanged()
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func blueButton(_ sender: Any) {
         //FIXME: actually change the color!
         themeHelper?.setThemePreferenceToBlue()
+        delegate?.somethingChanged()
         dismiss(animated: true, completion: nil)
     }
 }
