@@ -16,11 +16,13 @@ class PhotoDetailViewController: UIViewController,
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
+    let 🖼 = UIImagePickerController()
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var theTextField: UITextField!
   
-    @IBAction func save(_ sender: Any) {
-        // FIXME: Unless you use an unwind, a segue always presents a new view controller each time it is called.
+    @IBAction func saveMe(_ sender: Any) {
+        // TODO: Unless you use an unwind, a segue always presents a new view controller each time it is called.
         
         // FIXME: The "Save" bar button item's action should either update the photo if it has a value, or create a new instance of photo using the methods in the photoController. "Pop" the view controller afterwards.
 
@@ -28,12 +30,17 @@ class PhotoDetailViewController: UIViewController,
     }
     
     @IBAction func addPhoto(_ sender: Any) {
-        // FIXME: should present a UIImagePickerController that allows the user to select an image to add to the Photo object.
+        🖼.allowsEditing = false
+        🖼.sourceType = .photoLibrary
+        🖼.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(🖼, animated: true, completion: nil)
+
         navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        🖼.delegate = self
 
         // Do any additional setup after loading the view.
         setTheme()
@@ -63,7 +70,14 @@ class PhotoDetailViewController: UIViewController,
         self.view.backgroundColor = color
     }
 
+    // MARK: Delegates
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // FIXME:
+
+        let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as! Data
+        photo?.imageData = chosenImage
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+             
     }
 }

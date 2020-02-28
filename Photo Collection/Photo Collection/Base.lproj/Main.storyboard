@@ -178,15 +178,13 @@
                     <navigationItem key="navigationItem" id="zgb-DF-LlA">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="XV5-38-dJJ">
                             <connections>
-                                <action selector="save:" destination="O7r-YF-t22" id="Kzx-AR-7cM"/>
+                                <action selector="saveMe:" destination="O7r-YF-t22" id="Kzx-AR-7cM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addPhoto" destination="lgg-cN-xo7" id="fD1-rv-q6t"/>
                         <outlet property="imageView" destination="PI2-NU-qyj" id="2rp-R7-Z9U"/>
-                        <outlet property="save" destination="XV5-38-dJJ" id="Jk9-Na-sH8"/>
                         <outlet property="theTextField" destination="rXF-0g-Aiy" id="qop-dN-CTE"/>
                     </connections>
                 </viewController>
@@ -214,6 +212,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gfM-rG-ZMZ"/>
+        <segue reference="6Sq-8t-bOm"/>
     </inferredMetricsTieBreakers>
 </document>
