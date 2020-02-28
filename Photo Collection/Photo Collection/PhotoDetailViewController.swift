@@ -21,21 +21,24 @@ class PhotoDetailViewController: UIViewController,
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var theTextField: UITextField!
   
-    @IBAction func saveMe(_ sender: Any) {
+    @IBAction func save(_ sender: Any) {
         // TODO: Unless you use an unwind, a segue always presents a new view controller each time it is called.
-        
-        // FIXME: The "Save" bar button item's action should either update the photo if it has a value, or create a new instance of photo using the methods in the photoController. "Pop" the view controller afterwards.
-
+        if let title = theTextField?.text,
+            let imageData = imageView.image?.pngData() {
+            
+            if photo == nil {
+                photoController?.create(title: title, image: imageData)
+            } else {
+                photoController?.update(pic: photo!, title: title, image: imageData)
+            }
+        }
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addPhoto(_ sender: Any) {
         🖼.allowsEditing = false
-        🖼.sourceType = .photoLibrary
-        🖼.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-        present(🖼, animated: true, completion: nil)
-
-        navigationController?.popViewController(animated: true)
+        🖼.delegate = self
+        present(🖼, animated: true)
     }
     
     override func viewDidLoad() {
@@ -73,11 +76,19 @@ class PhotoDetailViewController: UIViewController,
     // MARK: Delegates
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
-        let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as! Data
-        photo?.imageData = chosenImage
+        if let image = info[.originalImage] as? UIImage {
+            
+            imageView.image = image
+        }
+        
+        // TODO: Why did call this remove PhotoDetailViewController?
+        // navigationController?.popViewController(animated: true)
+
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
              
+        navigationController?.popViewController(animated: true)
     }
 }
