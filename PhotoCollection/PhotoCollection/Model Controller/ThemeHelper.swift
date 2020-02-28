@@ -9,7 +9,7 @@
 import Foundation
 
 class ThemeHelper {
-    // Use this whenever you need to save user's theme preference or get it from UserDefaults
+  
     let themePreferenceKey: String
     
     func setThemePreferenceToDark() {
@@ -32,5 +32,6 @@ class ThemeHelper {
         } else {
             setThemePreferenceToDark()
         }
+        init()
     }
 }

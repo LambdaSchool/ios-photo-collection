@@ -23,23 +23,23 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Navigation
-   // FIXME: segue help
+   // FIXME: segue help - I don't think how I'm 'passing' the info correctly.
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPhotoSegue" {
             if let addPhotoVC = segue.destination as? PhotoDetailViewController {
-//                addPhotoVC.themeHelper
-//                addPhotoVC.photoController
+                addPhotoVC.themeHelper = themeHelper
+                addPhotoVC.photoController = photoController
                 
             } else if segue.identifier == "PhotoDetailSegue" {
                 if let viewImageVC = segue.destination as? PhotoDetailViewController {
-//                    viewImageVC.themeHelper
-//                    viewImageVC.photoController
-//                    viewImageVC.photo
+                    viewImageVC.themeHelper = themeHelper
+                    viewImageVC.photoController = photoController
+                    viewImageVC.photoController?.photos = photoController.photos
                     
                 } else if segue.identifier == "SelectThemeSegue" {
                     if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
-//                        selectThemeVC.themeHelper
+                        selectThemeVC.themeHelper = themeHelper
                     }
                 }
             }
