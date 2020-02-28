@@ -66,7 +66,7 @@
                     <navigationItem key="navigationItem" id="XbP-ST-cq2">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="LRU-KW-Grg">
                             <connections>
-                                <segue destination="dsy-Fq-J6O" kind="presentation" identifier="SelectThemeSegue" id="Q5m-bt-M7d"/>
+                                <segue destination="dsy-Fq-J6O" kind="presentation" identifier="SelectThemeSegue" modalPresentationStyle="fullScreen" id="Q5m-bt-M7d"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vJY-pY-Uqb">
@@ -85,7 +85,7 @@
             <objects>
                 <viewController id="dsy-Fq-J6O" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbh-gk-QEj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z99-Bc-Boe">
@@ -200,6 +200,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CTl-3Y-HbU"/>
+        <segue reference="KzQ-qs-sVR"/>
     </inferredMetricsTieBreakers>
 </document>

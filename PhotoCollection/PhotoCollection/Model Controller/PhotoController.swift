@@ -12,9 +12,8 @@ class PhotoController {
     
     var photos: [Photo] = []
     
-    
-    func create() {
-        let photo = Photo(imageData: <#T##Data#>, title: <#T##String#>)
+    func create(with imageData: Data, title: String) {
+        let photo = Photo(imageData: imageData, title: title)
         photos.append(photo)
         
     }

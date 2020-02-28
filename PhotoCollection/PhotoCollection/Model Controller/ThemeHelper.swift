@@ -25,13 +25,13 @@ class ThemeHelper {
         return themePreferenceKey
     }
     
-    init() {
+    init(themePreferenceKey: String) {
+        self.themePreferenceKey = themePreferenceKey
         
         if themePreference == nil {
             setThemePreferenceToYourColorHere()
         } else {
             setThemePreferenceToDark()
         }
-        init()
     }
 }
