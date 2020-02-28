@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "PhotoCell"
 
-class PhotosCollectionViewController: UICollectionViewController, fooDelegate {
+class PhotosCollectionViewController: UICollectionViewController, PresentModallyDelegate {
 
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
@@ -44,7 +44,7 @@ class PhotosCollectionViewController: UICollectionViewController, fooDelegate {
             return
         }
         
-        // TODO: why is there view and collectionView? Can you have both at the same time?
+        // TODO: Why is there view and collectionView? Can you have both at the same time?
         self.collectionView.backgroundColor = color
     }
     
@@ -114,7 +114,9 @@ class PhotosCollectionViewController: UICollectionViewController, fooDelegate {
     }
     */
 
-    func somethingChanged() {
+    // TODO: viewWillAppear does not work with modal dialogs.
+    // https://stackoverflow.com/questions/56568967/detecting-sheet-was-dismissed-on-ios-13x
+    func modalDismiss() {
         setTheme()
     }
 }
