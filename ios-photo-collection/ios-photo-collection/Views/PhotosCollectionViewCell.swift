@@ -20,9 +20,10 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoLabel: UILabel!
     
     func updateView() {
-        guard let photo = photo else { return }
+        if let photo = photo {
         photoImageView.image = UIImage(data: photo.imageData)
         photoLabel.text = photo.title
+        }
     }
     
 }

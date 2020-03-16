@@ -13,6 +13,7 @@ class PhotoController {
     
     func create(title: String, imageData: Data) {
         photos.append(Photo(title: title, imageData: imageData))
+        print(photos)
     }
     
     func update(photo: Photo, imageData: Data, title: String?) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+//private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController, preferenceDelegate {
 
@@ -18,8 +18,10 @@ class PhotosCollectionViewController: UICollectionViewController, preferenceDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
     }
+    
+
     
     func themePreferred(colorString: String) {
         if colorString == "Dark" {
@@ -53,10 +55,13 @@ class PhotosCollectionViewController: UICollectionViewController, preferenceDele
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("hey hey")
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
             as? PhotosCollectionViewCell else { return UICollectionViewCell() }
         let photo = photoController.photos[indexPath.item]
+        
         cell.photo = photo
+        
         return cell
     }
 

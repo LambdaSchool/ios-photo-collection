@@ -30,11 +30,13 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
             self.view.backgroundColor = #colorLiteral(red: 0.1764146984, green: 0.1993693411, blue: 0.2962295413, alpha: 1)
         } else if themeHelper?.themePreference == "Gold" {
             self.view.backgroundColor = #colorLiteral(red: 1, green: 0.8357229829, blue: 0, alpha: 1)
+        } else {
+            self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
+        if let image = info[.editedImage] as? UIImage {
             photoAddedImageView.image = image
         }
         picker.dismiss(animated: true, completion: nil)
@@ -42,18 +44,30 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBAction func addPhotoButtonPressed(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
     
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        guard let image  = photoAddedImageView.image,
-            let imageData = image.pngData(),
-            let title = photoTitleTextField.text else { return }
-        photoController?.create(title: title, imageData: imageData)
+        guard let photoController = photoController else { return }
+        guard let imageData = photoAddedImageView.image?.pngData(),
+            let title = photoTitleTextField.text,
+            !title.isEmpty else { return }
         
+        if let photo = photo {
+            photoController.update(photo: photo, imageData: imageData, title: title)
+        } else {
+            photoController.create(title: title, imageData: imageData)
+        }
         navigationController?.popViewController(animated: true)
     }
+    
+    func updateViews() {
+        guard let photo = photo else { return }
+        photoTitleTextField.text = photo.title
+        photoAddedImageView.image = UIImage(data: photo.imageData)
+    }
+    
 }
-
 
