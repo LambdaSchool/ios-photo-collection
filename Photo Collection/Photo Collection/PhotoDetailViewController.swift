@@ -19,7 +19,8 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTheme()
+        updateViews()
     }
     
     @IBAction func addPhoto(_ sender: Any) {
@@ -27,7 +28,33 @@ class PhotoDetailViewController: UIViewController {
     
     
     @IBAction func savePhoto(_ sender: Any) {
+        guard let image = imageView.image,
+            let imageData = image.pngData(),
+            let title = addtitleTextField.text else { return }
+        
+        
+        if let photo = photo {
+            photoController?.update(photo: photo, imageData: imageData, title: title)
+        } else {
+            photoController?.createPhoto(imageData: imageData, title: title)
+        }
+        
+        navigationController?.popViewController(animated: true)
+        
     }
+    
+    private func updateViews() {
+           
+           guard let photo = photo else {
+               title = "Create Photo"
+               return
+           }
+           
+           title = photo.title
+           
+           imageView.image = UIImage(data: photo.imageData)
+           addtitleTextField.text = photo.title
+       }
     
     private func setTheme() {
         guard let themePreference = themeHelper?.themePreference else { return }
