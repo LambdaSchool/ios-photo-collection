@@ -29,16 +29,21 @@ class PhotoDetailViewController: UIViewController {
     @IBAction func savePhoto(_ sender: Any) {
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setTheme() {
+        guard let themePreference = themeHelper?.themePreference else { return }
+        
+        var backgroundColor: UIColor!
+        
+        switch themePreference {
+        case "Dark":
+            backgroundColor = .lightGray
+        case "Blue":
+            backgroundColor = UIColor(red: 61/255, green: 172/255, blue: 247/255, alpha: 1)
+        default:
+            break
+        }
+        
+        view.backgroundColor = backgroundColor
     }
-    */
 
 }
