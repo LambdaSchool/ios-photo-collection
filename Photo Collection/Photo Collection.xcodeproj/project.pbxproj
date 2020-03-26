@@ -14,6 +14,7 @@
 		27FD5D7B242D409100150547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FD5D79242D409100150547 /* LaunchScreen.storyboard */; };
 		27FD5D83242D410500150547 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D82242D410500150547 /* Photo.swift */; };
 		27FD5D85242D416A00150547 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D84242D416A00150547 /* PhotoController.swift */; };
+		27FD5D87242D468600150547 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D86242D468600150547 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		27FD5D7C242D409100150547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27FD5D82242D410500150547 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		27FD5D84242D416A00150547 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		27FD5D86242D468600150547 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				27FD5D74242D408900150547 /* Main.storyboard */,
 				27FD5D82242D410500150547 /* Photo.swift */,
 				27FD5D84242D416A00150547 /* PhotoController.swift */,
+				27FD5D86242D468600150547 /* ThemeHelper.swift */,
 				27FD5D77242D409100150547 /* Assets.xcassets */,
 				27FD5D79242D409100150547 /* LaunchScreen.storyboard */,
 				27FD5D7C242D409100150547 /* Info.plist */,
@@ -144,6 +147,7 @@
 				27FD5D83242D410500150547 /* Photo.swift in Sources */,
 				27FD5D6F242D408900150547 /* AppDelegate.swift in Sources */,
 				27FD5D85242D416A00150547 /* PhotoController.swift in Sources */,
+				27FD5D87242D468600150547 /* ThemeHelper.swift in Sources */,
 				27FD5D71242D408900150547 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
