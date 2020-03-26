@@ -9,15 +9,11 @@
 import Foundation
 
 
-//extension String {
-//    static let themePreferenceKey = "themePreference"
-//}
+
 
 
 class ThemeHelper {
-    
-    
-    
+
     func setThemePreferenceToDark() {
         UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
     }
@@ -35,5 +31,5 @@ class ThemeHelper {
         setThemePreferenceToWhite()
         
     }
-    private let themePreferenceKey = "themePreference"
+     private let themePreferenceKey = "themePreference"
 }
