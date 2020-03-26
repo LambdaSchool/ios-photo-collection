@@ -8,11 +8,12 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var photoController : PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    let pickerController = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addtitleTextField: UITextField!
@@ -24,6 +25,11 @@ class PhotoDetailViewController: UIViewController {
     }
     
     @IBAction func addPhoto(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+      
     }
     
     
@@ -64,13 +70,20 @@ class PhotoDetailViewController: UIViewController {
         switch themePreference {
         case "Dark":
             backgroundColor = .lightGray
-        case "Blue":
-            backgroundColor = UIColor(red: 61/255, green: 172/255, blue: 247/255, alpha: 1)
+        case "Purple":
+            backgroundColor = .purple
         default:
             break
         }
         
         view.backgroundColor = backgroundColor
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = image
+        }
+        dismiss(animated: true, completion: nil)
     }
 
 }
