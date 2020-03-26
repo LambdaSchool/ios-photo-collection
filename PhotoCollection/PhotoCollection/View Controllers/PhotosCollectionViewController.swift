@@ -8,53 +8,97 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class PhotosCollectionViewController: UICollectionViewController {
-
+    
+    //Variables
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        setTheme()
+    }
+    
+    //Functions
+    func setTheme() {
+        if let myTheme = themeHelper.themePreference {
+            switch myTheme {
+                
+            case Themes.dark.rawValue:
+                view.backgroundColor = .black
+                
+            case Themes.blue.rawValue:
+                view.backgroundColor = .blue
+                
+            default:
+                break
+            }
+        }
+        view.backgroundColor = .black
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if let identifier = segue.identifier {
+            
+            switch identifier {
+            case "AddPhotoSegue":
+                guard let destination = segue.destination as? PhotoDetailViewController else {
+                    return
+                }
+                
+                destination.themeHelper = themeHelper
+                destination.photoController = photoController
+                
+            case "EditPhotoSegue":
+                guard let destination = segue.destination as? PhotoDetailViewController else {
+                    return
+                }
+                guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+                destination.themeHelper = themeHelper
+                destination.photoController = photoController
+                destination.photo = photoController.photos[indexPath.row]
+            
+            case "ThemeSegue":
+                guard let destination = segue.destination as? ThemeSelectionViewController else {
+                    return
+                }
+                
+                destination.themeHelper = themeHelper
+                
+            default:
+                break
+            }
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
     
-        // Configure the cell
+        guard let myCell = cell as? PhotosCollectionViewCell else {
+            return cell
+        }
+        
+        myCell.photo = photoController.photos[indexPath.row]
     
-        return cell
+        return myCell
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .bottom)
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

@@ -18,6 +18,7 @@
 		DD9E2C92242D40D60016B925 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E2C91242D40D60016B925 /* PhotosCollectionViewController.swift */; };
 		DD9E2C95242D41120016B925 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E2C94242D41120016B925 /* PhotosCollectionViewCell.swift */; };
 		DD9E2C98242D42E50016B925 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E2C97242D42E50016B925 /* PhotoDetailViewController.swift */; };
+		DD9E2C9A242D54B50016B925 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E2C99242D54B50016B925 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DD9E2C91242D40D60016B925 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		DD9E2C94242D41120016B925 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD9E2C97242D42E50016B925 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		DD9E2C99242D54B50016B925 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				DD9E2C91242D40D60016B925 /* PhotosCollectionViewController.swift */,
 				DD9E2C97242D42E50016B925 /* PhotoDetailViewController.swift */,
+				DD9E2C99242D54B50016B925 /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				DD9E2C92242D40D60016B925 /* PhotosCollectionViewController.swift in Sources */,
 				DD9E2C90242D3A7D0016B925 /* ThemeHelper.swift in Sources */,
 				DD9E2C98242D42E50016B925 /* PhotoDetailViewController.swift in Sources */,
+				DD9E2C9A242D54B50016B925 /* ThemeSelectionViewController.swift in Sources */,
 				DD94FCD1242D041200116E47 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

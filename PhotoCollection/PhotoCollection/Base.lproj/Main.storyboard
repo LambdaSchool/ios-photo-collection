@@ -8,6 +8,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="cKm-Ax-GQ9">
+            <objects>
+                <viewController id="RL6-u9-S8C" customClass="ThemeSelectionViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HaS-v2-MWT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsE-Hu-m1b">
+                                <rect key="frame" x="120" y="52" width="174" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSR-9b-ElP">
+                                <rect key="frame" x="127" y="132" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="selectDarkTheme:" destination="RL6-u9-S8C" eventType="touchUpInside" id="zr9-Vf-i7u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go7-nw-Edn">
+                                <rect key="frame" x="256" y="132" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Blue"/>
+                                <connections>
+                                    <action selector="selectYourColorHereTheme:" destination="RL6-u9-S8C" eventType="touchUpInside" id="ZX8-Bd-PTg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Tyr-bv-AsK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfp-vE-TIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823" y="-556"/>
+        </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="LBi-fQ-Hlc">
             <objects>
@@ -23,7 +63,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="glt-5V-0II" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="glt-5V-0II" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jBd-s6-FLr">
@@ -57,7 +97,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="xRo-eq-paw">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="UWI-2I-PlT"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="UWI-2I-PlT">
+                            <connections>
+                                <segue destination="RL6-u9-S8C" kind="presentation" identifier="ThemeSegue" id="6Ir-nu-MAf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ohb-v2-6vA">
                             <connections>
                                 <segue destination="R7a-CD-NG4" kind="show" identifier="AddPhotoSegue" id="vWK-Gk-im0"/>
@@ -92,7 +136,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Photo"/>
                                 <connections>
-                                    <action selector="buttonAddPhoto:" destination="R7a-CD-NG4" eventType="touchUpInside" id="M3r-44-0Aq"/>
+                                    <action selector="addImage:" destination="R7a-CD-NG4" eventType="touchUpInside" id="MAb-zI-KrV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,7 +147,7 @@
                     <navigationItem key="navigationItem" id="NWq-dY-mfr">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="TE6-6U-Mt3">
                             <connections>
-                                <action selector="buttonSave:" destination="R7a-CD-NG4" id="pTq-0t-hpk"/>
+                                <action selector="buttonSavePhoto:" destination="R7a-CD-NG4" id="Y3N-VB-rrV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

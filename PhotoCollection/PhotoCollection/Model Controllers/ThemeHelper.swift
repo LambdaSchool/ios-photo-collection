@@ -8,6 +8,13 @@
 
 import Foundation
 
+//Enum
+enum Themes: String {
+    case dark = "dark"
+    case blue = "blue"
+}
+
+
 //Theme Helper
 /** Gets and Sets Users Theme Preferences. Saves Preferences Using UserDefaults
 */
@@ -15,11 +22,11 @@ class ThemeHelper {
     var themePreferenceKey = "My_Photo"
     
     func setThemePreferenceToDark() {
-        UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
+        UserDefaults.standard.set(Themes.dark.rawValue, forKey: themePreferenceKey)
     }
     
     func setThemePreferenceToYourColorHere() {
-        UserDefaults.standard.set("Blue", forKey: themePreferenceKey)
+    UserDefaults.standard.set(Themes.blue.rawValue, forKey: themePreferenceKey)
     }
     
     var themePreference: String? {
