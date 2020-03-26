@@ -23,8 +23,7 @@ class PhotoViewController: UIViewController {
     let pickerController = UIImagePickerController()
     
     // MARK: - View Lifecycle
-
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
         setTheme()
         updateViews()
 
@@ -76,8 +75,8 @@ class PhotoViewController: UIViewController {
         
         if theme == "Dark" {
             view.backgroundColor = .darkGray
-        } else if theme == "Blue" {
-            view.backgroundColor = .blue
+        } else if theme == "White" {
+            view.backgroundColor = .white
         }
     }
 }
