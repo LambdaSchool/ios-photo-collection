@@ -23,7 +23,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    // MARK: - Functions
+    // MARK: - View Lifecycle
     
     func updateViews() {
         guard let image = photo?.imageData else {return}

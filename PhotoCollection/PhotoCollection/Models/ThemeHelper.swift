@@ -28,7 +28,9 @@ class ThemeHelper {
     }
     
     init() {
-        if themePreference == nil {
+        if let _ = themePreference {
+            return
+        } else {
             setThemePreferenceToDark()
         }
     }

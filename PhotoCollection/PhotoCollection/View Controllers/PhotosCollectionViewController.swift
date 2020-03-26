@@ -16,25 +16,23 @@ class PhotosCollectionViewController: UICollectionViewController {
     let themeHelper = ThemeHelper()
     
     // MARK: - View Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Do any additional setup after loading the view.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        setTheme()
+        collectionView.reloadData()
     }
 
     // MARK: - Functions
     
     func setTheme() {
-        guard let theme = themeHelper.themePreference else {return}
-        
-        if theme == "Dark" {
-            view.backgroundColor = .darkGray
-        } else if theme == "Blue" {
-            view.backgroundColor = .blue
+        if let theme = themeHelper.themePreference {
+            if theme == "Dark" {
+                view.backgroundColor = .darkGray
+            } else if theme == "Blue" {
+                view.backgroundColor = .blue
+            }
         }
     }
     
