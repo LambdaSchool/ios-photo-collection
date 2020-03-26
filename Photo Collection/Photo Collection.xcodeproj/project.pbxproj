@@ -17,6 +17,7 @@
 		5E6FEFE7242D43E100C5A15E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6FEFE6242D43E100C5A15E /* ThemeHelper.swift */; };
 		5E6FEFE9242D4ACF00C5A15E /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6FEFE8242D4ACF00C5A15E /* PhotosCollectionViewController.swift */; };
 		5E6FEFEB242D4CB500C5A15E /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6FEFEA242D4CB500C5A15E /* PhotosCollectionViewCell.swift */; };
+		5E6FEFED242D4EC100C5A15E /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6FEFEC242D4EC100C5A15E /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5E6FEFE6242D43E100C5A15E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeHelper.swift; path = "Photo Collection/Views/ThemeHelper.swift"; sourceTree = SOURCE_ROOT; };
 		5E6FEFE8242D4ACF00C5A15E /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		5E6FEFEA242D4CB500C5A15E /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E6FEFEC242D4EC100C5A15E /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				5E6FEFE8242D4ACF00C5A15E /* PhotosCollectionViewController.swift */,
+				5E6FEFEC242D4EC100C5A15E /* PhotoDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				5E6FEFE5242D42A700C5A15E /* PhotoController.swift in Sources */,
 				5E6FEFE9242D4ACF00C5A15E /* PhotosCollectionViewController.swift in Sources */,
 				5E6FEFE7242D43E100C5A15E /* ThemeHelper.swift in Sources */,
+				5E6FEFED242D4EC100C5A15E /* PhotoDetailViewController.swift in Sources */,
 				5E6FEFCA242D40FA00C5A15E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

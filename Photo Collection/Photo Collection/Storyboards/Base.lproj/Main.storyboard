@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,6 +57,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="o17-Yy-hJ1" id="XVV-Cm-uuV"/>
                                     <outlet property="textLabel" destination="heY-nd-6pd" id="QdJ-XQ-hi4"/>
+                                    <segue destination="fA4-fN-31D" kind="show" identifier="photoDetailSegue" id="NkQ-Wa-Osa"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -66,12 +68,69 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="ti6-Be-0MR">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="CDA-NF-hwN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="87o-tL-4iZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="87o-tL-4iZ">
+                            <connections>
+                                <segue destination="fA4-fN-31D" kind="show" identifier="addPhotoSegue" id="dgd-qg-VSs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16a-40-Z8I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="888.40579710144937" y="21.428571428571427"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="6Y9-kg-hj0">
+            <objects>
+                <viewController id="fA4-fN-31D" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="km3-Ad-Wrr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZnK-rR-1q4">
+                                <rect key="frame" x="47" y="173" width="320" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="336-7I-Qys"/>
+                                    <constraint firstAttribute="width" secondItem="ZnK-rR-1q4" secondAttribute="height" multiplier="4:3" id="JnU-qc-oTj"/>
+                                    <constraint firstAttribute="height" constant="240" id="ob8-u3-ZTa"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOg-Sv-n4m">
+                                <rect key="frame" x="47" y="473" width="320" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67Y-cZ-7XK">
+                                <rect key="frame" x="171" y="517" width="72" height="30"/>
+                                <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="fA4-fN-31D" eventType="touchUpInside" id="1rT-mK-k6t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hOg-Sv-n4m" firstAttribute="trailing" secondItem="ZnK-rR-1q4" secondAttribute="trailing" id="5kF-gU-SFl"/>
+                            <constraint firstItem="ZnK-rR-1q4" firstAttribute="top" secondItem="Hd4-J7-enu" secondAttribute="top" constant="85" id="Hjw-oC-AuK"/>
+                            <constraint firstItem="ZnK-rR-1q4" firstAttribute="centerX" secondItem="Hd4-J7-enu" secondAttribute="centerX" id="MwU-6z-CZt"/>
+                            <constraint firstItem="67Y-cZ-7XK" firstAttribute="centerX" secondItem="Hd4-J7-enu" secondAttribute="centerX" id="ScP-ah-DJY"/>
+                            <constraint firstItem="hOg-Sv-n4m" firstAttribute="top" secondItem="ZnK-rR-1q4" secondAttribute="bottom" constant="60" id="aN5-Ei-eN8"/>
+                            <constraint firstItem="hOg-Sv-n4m" firstAttribute="leading" secondItem="ZnK-rR-1q4" secondAttribute="leading" id="hsM-vd-5X0"/>
+                            <constraint firstItem="67Y-cZ-7XK" firstAttribute="top" secondItem="hOg-Sv-n4m" secondAttribute="bottom" constant="10" id="mK9-Km-sLH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hd4-J7-enu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qrK-dI-Cyh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oIA-qw-CNm"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailImageView" destination="ZnK-rR-1q4" id="hV4-Hc-UUf"/>
+                        <outlet property="textField" destination="hOg-Sv-n4m" id="EHV-Nf-Lnu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVc-wP-KVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.8115942028987" y="19.419642857142858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Hu-9l-J5i">
@@ -92,4 +151,7 @@
             <point key="canvasLocation" x="-21.739130434782609" y="21.428571428571427"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NkQ-Wa-Osa"/>
+    </inferredMetricsTieBreakers>
 </document>
