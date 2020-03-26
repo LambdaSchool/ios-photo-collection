@@ -14,6 +14,7 @@
 		FEEAC280242D430700D43EB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEEAC27E242D430700D43EB8 /* LaunchScreen.storyboard */; };
 		FEEAC288242D431600D43EB8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEAC287242D431600D43EB8 /* Photo.swift */; };
 		FEEAC28A242D43C300D43EB8 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEAC289242D43C300D43EB8 /* PhotoController.swift */; };
+		FEEAC28C242D47E100D43EB8 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEAC28B242D47E100D43EB8 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FEEAC281242D430700D43EB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEEAC287242D431600D43EB8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		FEEAC289242D43C300D43EB8 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		FEEAC28B242D47E100D43EB8 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FEEAC279242D430600D43EB8 /* Main.storyboard */,
 				FEEAC287242D431600D43EB8 /* Photo.swift */,
 				FEEAC289242D43C300D43EB8 /* PhotoController.swift */,
+				FEEAC28B242D47E100D43EB8 /* ThemeHelper.swift */,
 				FEEAC27C242D430700D43EB8 /* Assets.xcassets */,
 				FEEAC27E242D430700D43EB8 /* LaunchScreen.storyboard */,
 				FEEAC281242D430700D43EB8 /* Info.plist */,
@@ -144,6 +147,7 @@
 				FEEAC288242D431600D43EB8 /* Photo.swift in Sources */,
 				FEEAC274242D430600D43EB8 /* AppDelegate.swift in Sources */,
 				FEEAC28A242D43C300D43EB8 /* PhotoController.swift in Sources */,
+				FEEAC28C242D47E100D43EB8 /* ThemeHelper.swift in Sources */,
 				FEEAC276242D430600D43EB8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
