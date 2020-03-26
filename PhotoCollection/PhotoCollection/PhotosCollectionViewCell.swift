@@ -32,4 +32,5 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     }
     
     
+    
 }
