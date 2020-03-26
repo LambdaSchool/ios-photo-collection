@@ -14,14 +14,23 @@ class PhotoDetailViewController: UIViewController {
     var photo: Photo?
     var themeHelper: ThemeHelper?
     
-    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addtitleTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-
+    @IBAction func addPhoto(_ sender: Any) {
+    }
+    
+    
+    @IBAction func savePhoto(_ sender: Any) {
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
