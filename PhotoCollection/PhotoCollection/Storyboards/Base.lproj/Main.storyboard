@@ -120,7 +120,7 @@
                     <navigationItem key="navigationItem" id="vqE-Me-abS">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="ouM-nK-MKx">
                             <connections>
-                                <segue destination="92R-B9-H9I" kind="presentation" id="esK-hr-T2A"/>
+                                <segue destination="92R-B9-H9I" kind="presentation" identifier="ModalSelectTheme" id="esK-hr-T2A"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ADP-Oh-72j">
