@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27DB6D0B242D56FD00E03B94 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB6D0A242D56FD00E03B94 /* ThemeSelectionViewController.swift */; };
 		27FD5D6F242D408900150547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D6E242D408900150547 /* AppDelegate.swift */; };
 		27FD5D71242D408900150547 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D70242D408900150547 /* SceneDelegate.swift */; };
 		27FD5D76242D408900150547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27FD5D74242D408900150547 /* Main.storyboard */; };
@@ -17,9 +18,11 @@
 		27FD5D87242D468600150547 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D86242D468600150547 /* ThemeHelper.swift */; };
 		27FD5D89242D4B8000150547 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D88242D4B8000150547 /* PhotosCollectionViewController.swift */; };
 		27FD5D8B242D4C2900150547 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D8A242D4C2900150547 /* PhotosCollectionViewCell.swift */; };
+		27FD5D8D242D4E8200150547 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FD5D8C242D4E8200150547 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27DB6D0A242D56FD00E03B94 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 		27FD5D6B242D408900150547 /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FD5D6E242D408900150547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27FD5D70242D408900150547 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		27FD5D86242D468600150547 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		27FD5D88242D4B8000150547 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		27FD5D8A242D4C2900150547 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		27FD5D8C242D4E8200150547 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				27FD5D6E242D408900150547 /* AppDelegate.swift */,
 				27FD5D70242D408900150547 /* SceneDelegate.swift */,
 				27FD5D74242D408900150547 /* Main.storyboard */,
+				27FD5D8C242D4E8200150547 /* PhotoDetailViewController.swift */,
+				27DB6D0A242D56FD00E03B94 /* ThemeSelectionViewController.swift */,
 				27FD5D8A242D4C2900150547 /* PhotosCollectionViewCell.swift */,
 				27FD5D88242D4B8000150547 /* PhotosCollectionViewController.swift */,
 				27FD5D82242D410500150547 /* Photo.swift */,
@@ -156,6 +162,8 @@
 				27FD5D85242D416A00150547 /* PhotoController.swift in Sources */,
 				27FD5D89242D4B8000150547 /* PhotosCollectionViewController.swift in Sources */,
 				27FD5D87242D468600150547 /* ThemeHelper.swift in Sources */,
+				27FD5D8D242D4E8200150547 /* PhotoDetailViewController.swift in Sources */,
+				27DB6D0B242D56FD00E03B94 /* ThemeSelectionViewController.swift in Sources */,
 				27FD5D71242D408900150547 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
