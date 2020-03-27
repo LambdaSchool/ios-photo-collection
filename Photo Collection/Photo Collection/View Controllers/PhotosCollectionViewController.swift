@@ -54,6 +54,23 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "selectThemeSegue" {
+            guard let destinationVC = segue.destination as? ThemeSelectionViewController else { return }
+            destinationVC.themeHelper = self.themeHelper
+        }
+        
+        if segue.identifier == "addPhotoSegue" {
+            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
+            destinationVC.photoController = self.photoController
+            destinationVC.themeHelper = self.themeHelper
+        }
+        
+        if segue.identifier == "photoDetailSegue" {
+            guard let destinationVC = segue.destination as? PhotoDetailViewController, let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+            destinationVC.photoController = self.photoController
+            destinationVC.themeHelper = self.themeHelper
+            destinationVC.photo = photoController.photos[indexPath.row]
+        }
     }
     
 
