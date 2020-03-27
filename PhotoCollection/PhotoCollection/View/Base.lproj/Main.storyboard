@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fx1-JN-aVn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fx1-JN-aVn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,6 +37,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="redTapped:" destination="rLg-yx-rfX" eventType="touchUpInside" id="gZa-Cm-J5L"/>
+                                                    <action selector="redTheme:" destination="rLg-yx-rfX" eventType="touchUpInside" id="Hfk-u4-hyQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooi-LK-FU4">
@@ -48,6 +49,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="blueTapped:" destination="rLg-yx-rfX" eventType="touchUpInside" id="1pB-RO-RcQ"/>
+                                                    <action selector="blueTheme:" destination="rLg-yx-rfX" eventType="touchUpInside" id="fa5-eq-KVF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -163,7 +165,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <state key="normal" title="+ Add Photo"/>
                                         <connections>
-                                            <action selector="addPhoto:" destination="LJO-gm-Q17" eventType="touchUpInside" id="ai8-Xz-lgc"/>
+                                            <action selector="addPhoto:" destination="LJO-gm-Q17" eventType="touchUpInside" id="HX7-26-MyX"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UK2-2j-s1p">
@@ -178,7 +180,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="savePhoto:" destination="LJO-gm-Q17" eventType="touchUpInside" id="vN2-Wa-orO"/>
+                                            <action selector="savePhoto:" destination="LJO-gm-Q17" eventType="touchUpInside" id="LdB-eD-wI6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -200,6 +202,8 @@
                     <connections>
                         <outlet property="addImageView" destination="Rx5-9M-3cI" id="jaO-UV-HFC"/>
                         <outlet property="addTitleTextField" destination="UK2-2j-s1p" id="MqF-XZ-86S"/>
+                        <outlet property="imageNameTextField" destination="UK2-2j-s1p" id="CJl-Vq-U4b"/>
+                        <outlet property="photoView" destination="Rx5-9M-3cI" id="cIi-sV-yom"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5s-xy-2Ev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
