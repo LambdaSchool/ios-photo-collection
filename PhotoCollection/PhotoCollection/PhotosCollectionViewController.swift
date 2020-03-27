@@ -18,21 +18,17 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     
     override func viewDidLoad() {
+        
+        setTheme()
+        
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func selectTheme(_ sender: Any) {
-    }
     
- 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

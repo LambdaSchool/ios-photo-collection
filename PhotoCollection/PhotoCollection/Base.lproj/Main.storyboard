@@ -68,7 +68,6 @@
                     <navigationItem key="navigationItem" id="3IL-f9-IIz">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="GR9-PN-YAX">
                             <connections>
-                                <action selector="selectTheme:" destination="NQv-IN-bps" id="XgF-aN-3zk"/>
                                 <segue destination="G7r-2Y-CqY" kind="presentation" identifier="SelectThemeSegue" modalPresentationStyle="fullScreen" id="TFd-hU-JDc"/>
                             </connections>
                         </barButtonItem>
@@ -173,8 +172,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-2l-PFx">
-                                <rect key="frame" x="252" y="216" width="33" height="30"/>
-                                <state key="normal" title="Gold"/>
+                                <rect key="frame" x="254" y="216" width="31" height="30"/>
+                                <state key="normal" title="Blue"/>
                                 <connections>
                                     <action selector="selectYourColorHereTheme:" destination="G7r-2Y-CqY" eventType="touchUpInside" id="VQK-p4-PCk"/>
                                 </connections>

@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -19,16 +19,58 @@ class PhotoDetailViewController: UIViewController {
     var themeHelper: ThemeHelper?
     
     override func viewDidLoad() {
+        
+        setTheme()
+        updateViews()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    func setTheme(){
+        
+        let themePreference = themeHelper?.themePreference
+        
+        if themePreference == "Dark"{
+            view.backgroundColor = .darkGray
+        }else{
+            view.backgroundColor = .blue
+        }
+    }
+    
+    func updateViews() {
+        
+        guard let imageData = photo?.imageData else {return}
+        
+        imageView.image = UIImage(data: imageData)
+        
+        nameTextField.text = photo?.title
+              
+       
+    }
+    
     @IBAction func addPhoto(_ sender: Any) {
+        
+        guard let image = imageView.image?.pngData(),
+            let name = nameTextField.text else {return}
+        
+       if let photo = photo {
+            photoController?.updatePhoto(photo: photo, imageData: image, title: name)
+        }else {
+            photoController?.creatPhoto(imageData: image, title: name)
+        }
+        navigationController?.popViewController(animated: true) //   ?????
     }
     
    
     @IBAction func save(_ sender: Any) {
+        
+      let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self 
+        
+    
+  
     }
     
     /*
@@ -41,4 +83,11 @@ class PhotoDetailViewController: UIViewController {
     }
     */
 
+}
+extension PhotoDetailViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func didFinishPickingMediaWithInfo(){
+        
+    }
+    
 }
