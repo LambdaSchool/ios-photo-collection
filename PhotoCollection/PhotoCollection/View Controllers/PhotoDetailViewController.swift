@@ -20,6 +20,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var photo: Photo?
     var themeHelper: ThemeHelper?
     var imageHolder: UIImage?
+    var delagate: PhotosCollectionViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     //Actions
     @IBAction func buttonSavePhoto(_ sender: Any) {
-        if let myImage = imageHolder {
-            photoController?.createPhoto(myPhoto: Photo(imageData: myImage.pngData() , title: textFieldTitle.text))
+        if let myImage = imageHolder?.pngData() {
+            photoController?.createPhoto(myPhoto: Photo(imageData: myImage, title: textFieldTitle?.text ?? ""))
         }
+        
         navigationController?.popViewController(animated: true)
     }
     
@@ -62,7 +64,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.editedImage] as? UIImage else { return }
+        guard let image = info[.originalImage] as? UIImage else { return }
         imageView.image = image
         imageHolder = image
     }

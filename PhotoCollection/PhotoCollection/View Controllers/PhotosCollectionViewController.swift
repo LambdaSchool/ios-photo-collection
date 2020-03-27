@@ -19,16 +19,22 @@ class PhotosCollectionViewController: UICollectionViewController {
         setTheme()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateView()
+        setTheme()
+    }
+    
     //Functions
     func setTheme() {
         if let myTheme = themeHelper.themePreference {
             switch myTheme {
                 
             case Themes.dark.rawValue:
-                view.backgroundColor = .black
+                collectionView.backgroundColor = .black
                 
             case Themes.blue.rawValue:
-                view.backgroundColor = .blue
+                collectionView.backgroundColor = .blue
                 
             default:
                 break
@@ -37,6 +43,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         view.backgroundColor = .black
     }
 
+    func updateView() {
+        collectionView.reloadData()
+    }
     
     // MARK: - Navigation
 
@@ -53,6 +62,7 @@ class PhotosCollectionViewController: UICollectionViewController {
                 
                 destination.themeHelper = themeHelper
                 destination.photoController = photoController
+                destination.delagate = self
                 
             case "EditPhotoSegue":
                 guard let destination = segue.destination as? PhotoDetailViewController else {
@@ -62,6 +72,7 @@ class PhotosCollectionViewController: UICollectionViewController {
                 destination.themeHelper = themeHelper
                 destination.photoController = photoController
                 destination.photo = photoController.photos[indexPath.row]
+                destination.delagate = self
             
             case "ThemeSegue":
                 guard let destination = segue.destination as? ThemeSelectionViewController else {
@@ -90,7 +101,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             return cell
         }
         
-        myCell.photo = photoController.photos[indexPath.row]
+        myCell.photo = photoController.photos[indexPath.item]
     
         return myCell
     }

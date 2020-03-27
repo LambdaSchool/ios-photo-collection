@@ -63,25 +63,38 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="glt-5V-0II" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="PhotoCell" id="glt-5V-0II" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jBd-s6-FLr">
                                     <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ede-yz-m4B">
-                                            <rect key="frame" x="41" y="104" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ede-yz-m4B">
+                                            <rect key="frame" x="8" y="98" width="109" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="109" id="yGj-Xa-5pc"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ZF-Ub-DKk">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ZF-Ub-DKk">
                                             <rect key="frame" x="8" y="8" width="109" height="88"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="88" id="VWl-ZU-NGf"/>
+                                                <constraint firstAttribute="width" constant="109" id="egt-GU-AyE"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ede-yz-m4B" firstAttribute="top" secondItem="6ZF-Ub-DKk" secondAttribute="bottom" constant="2" id="1BI-lk-MAE"/>
+                                        <constraint firstAttribute="trailing" secondItem="6ZF-Ub-DKk" secondAttribute="trailing" constant="8" id="YP2-72-K9B"/>
+                                        <constraint firstItem="6ZF-Ub-DKk" firstAttribute="leading" secondItem="jBd-s6-FLr" secondAttribute="leading" constant="8" id="Yys-pI-7kg"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ede-yz-m4B" secondAttribute="trailing" constant="8" id="gRe-xX-UK0"/>
+                                        <constraint firstItem="Ede-yz-m4B" firstAttribute="leading" secondItem="jBd-s6-FLr" secondAttribute="leading" constant="8" id="gSa-SA-M7Y"/>
+                                        <constraint firstItem="6ZF-Ub-DKk" firstAttribute="top" secondItem="jBd-s6-FLr" secondAttribute="top" constant="8" id="xwW-t9-k1i"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="125" height="125"/>
                                 <connections>
@@ -111,7 +124,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTB-MQ-Jy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="92"/>
+            <point key="canvasLocation" x="834.78260869565224" y="91.741071428571431"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="A7X-kB-dTW">
@@ -121,26 +134,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JB2-Ed-Q23">
-                                <rect key="frame" x="87" y="116" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAu-AU-Ajh">
-                                <rect key="frame" x="87" y="252" width="240" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylT-Fa-Hyg">
-                                <rect key="frame" x="171" y="294" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Photo"/>
-                                <connections>
-                                    <action selector="addImage:" destination="R7a-CD-NG4" eventType="touchUpInside" id="MAb-zI-KrV"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uWM-cK-uCl">
+                                <rect key="frame" x="87" y="119" width="240" height="208"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JB2-Ed-Q23">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAu-AU-Ajh">
+                                        <rect key="frame" x="53" y="136" width="134.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylT-Fa-Hyg">
+                                        <rect key="frame" x="84" y="178" width="72" height="30"/>
+                                        <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addImage:" destination="R7a-CD-NG4" eventType="touchUpInside" id="MAb-zI-KrV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="v94-ma-t8W"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uWM-cK-uCl" firstAttribute="top" secondItem="9kB-Ie-o2V" secondAttribute="top" constant="31" id="Rgj-MC-Gqf"/>
+                            <constraint firstItem="9kB-Ie-o2V" firstAttribute="trailing" secondItem="uWM-cK-uCl" secondAttribute="trailing" constant="87" id="vtk-Md-rAp"/>
+                            <constraint firstItem="uWM-cK-uCl" firstAttribute="leading" secondItem="9kB-Ie-o2V" secondAttribute="leading" constant="87" id="wdQ-zJ-IMW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9kB-Ie-o2V"/>
                     </view>
                     <toolbarItems/>
