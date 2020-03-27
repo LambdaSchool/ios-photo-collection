@@ -125,7 +125,11 @@
                         <viewLayoutGuide key="safeArea" id="Hd4-J7-enu"/>
                     </view>
                     <navigationItem key="navigationItem" id="qrK-dI-Cyh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oIA-qw-CNm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oIA-qw-CNm">
+                            <connections>
+                                <action selector="save:" destination="fA4-fN-31D" id="hOM-gd-Dry"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailImageView" destination="ZnK-rR-1q4" id="hV4-Hc-UUf"/>

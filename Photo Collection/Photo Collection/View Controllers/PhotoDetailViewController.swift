@@ -25,11 +25,45 @@ class PhotoDetailViewController: UIViewController {
     //ACTIONS AND FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
 
         // Do any additional setup after loading the view.
     }
         
     @IBAction func addPhoto(_ sender: Any) {
+        
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        guard let image = detailImageView.image?.pngData(), let title = textField.text else { return }
+        photoController?.create(imageData: image, title: title)
+        if let photo = photo {
+            photoController?.update(imageData: photo, with: image, and: title)
+        } else {
+            photoController?.createPhoto(imageData: image, title: title)
+        }
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    func setTheme () {
+        guard let themeSetting = themeHelper?.themePreference else { return }
+        if themeSetting == "Dark" {
+            self.view.backgroundColor = UIColor.darkGray
+        } else if themeSetting == "Blue" {
+            self.view.backgroundColor = .blue
+        }
+    }
+    
+    func updateViews() {
+        guard let photo = photo else { return }
+        
+        title = photo.title
+        
+        detailImageView.image = UIImage(data: photo.imageData)
+        
     }
     
     /*
