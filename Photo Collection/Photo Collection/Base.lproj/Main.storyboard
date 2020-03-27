@@ -54,6 +54,7 @@
                                 <connections>
                                     <outlet property="photoImageView" destination="r7H-YG-pRK" id="LYl-Mv-e39"/>
                                     <outlet property="titleLabel" destination="hn2-YB-OI5" id="xxE-Gf-D5V"/>
+                                    <segue destination="HZK-8x-oKO" kind="show" identifier="EditSegue" id="Plz-FV-cJd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -205,4 +206,7 @@
             <point key="canvasLocation" x="-217" y="294"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Plz-FV-cJd"/>
+    </inferredMetricsTieBreakers>
 </document>

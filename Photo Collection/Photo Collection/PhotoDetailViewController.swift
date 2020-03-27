@@ -18,14 +18,15 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setTheme()
         updateViews()
     }
     
     @IBAction func addPhoto(_ sender: Any) {
        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
+        imagePicker.mediaTypes = ["public.image"]
         imagePicker.delegate = self
         present(imagePicker, animated: true)
     }
@@ -49,9 +50,10 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func savePhoto(_ sender: Any) {
         if let photo = photo {
-            if let photoController = photoController {
-                if let text = titleTextField.text, !text.isEmpty, let photoData = imageView.image?.pngData() {
-                    photoController.update(photo: photo, title: text, imageData: photoData)
+                if let photoController = photoController {
+                    if let text = titleTextField.text, !text.isEmpty, let photoData = imageView.image?.pngData() {
+                        photoController.update(photo: photo, data: photoData, title: text)
+                    }
                 }
             } else {
                 if let photoController = photoController {
@@ -62,9 +64,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
                 }
             }
             navigationController?.popViewController(animated: true)
-            
     }
-}
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
@@ -74,3 +74,4 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
 
 }
+

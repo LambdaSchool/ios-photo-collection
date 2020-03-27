@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let resueIdentifer = "PhotoCell"
+
 class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
@@ -17,28 +19,22 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         setTheme()
         collectionView.reloadData()
     }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return photoController.photos.count
-    }
+        photoController.photos.count
+        }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
-       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
 
         let photo = photoController.photos[indexPath.item]
 
@@ -52,7 +48,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         if preference == "Dark" {
             collectionView.backgroundColor = .darkGray
         } else {
-            collectionView.backgroundColor = .white
+            collectionView.backgroundColor = .blue
         }
     }
     
@@ -68,21 +64,14 @@ class PhotosCollectionViewController: UICollectionViewController {
                destVC.themeHelper = themeHelper
            }
 
-       } else if segue.identifier == "" {
-           if let destVC = segue.destination as? PhotoDetailViewController {
-               destVC.photoController = photoController
-               destVC.themeHelper = themeHelper
-               let selectedIndex = collectionView.indexPathsForSelectedItems?.first
-               if let index = selectedIndex {
-                   destVC.photo = photoController.photos[index.item]
+       } else if segue.identifier == "EditSegue" {
+           guard let photoDetailViewController = segue.destination as? PhotoDetailViewController,
+           let indexPath = collectionView.indexPathsForSelectedItems?.first else { fatalError("EditSegue failure to downcast") }
+            photoDetailViewController.themeHelper = self.themeHelper
+            photoDetailViewController.photoController = self.photoController
+            photoDetailViewController.photo = photoController.photos[indexPath.row]
                }
 
            }
 
-       }
-
-    }
-    
-    
-    
 }
