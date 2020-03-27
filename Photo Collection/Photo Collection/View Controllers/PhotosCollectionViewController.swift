@@ -26,6 +26,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,12 +40,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     func setTheme() {
         guard let themeSetting = themeHelper.themePreference else { return }
         if themeSetting == "Dark" {
-            
+            self.view.backgroundColor = UIColor.darkGray
+        } else if themeSetting == "Blue" {
+            self.view.backgroundColor = .blue
         }
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -52,7 +55,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
