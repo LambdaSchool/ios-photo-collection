@@ -8,50 +8,69 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
 
+    // MARK: - Properties
+    var photoController = PhotoController()
+    var themeHelper = ThemeHelper()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
+        setTheme()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setTheme()
+        collectionView.reloadData()
     }
 
-    /*
+    // MARK: - Theme Methods
+    
+    func setTheme() {
+        guard let theme = themeHelper.themePreference else { return }
+        if theme == String.redTheme { collectionView.backgroundColor = .red } else { collectionView.backgroundColor = .blue }
+    }
+    
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddSegue" {
+            // Get the new view controller using [segue destinationViewController].
+            guard let photoDetailViewController = segue.destination as? PhotoDetailViewController else { fatalError("AddSegue failure to downcast") }
+            // Pass the selected object to the new view controller.
+            photoDetailViewController.themeHelper = self.themeHelper
+            photoDetailViewController.photoController = self.photoController
+        } else if segue.identifier == "EditSegue" {
+            // Get the new view controller using [segue destinationViewController].
+            guard let photoDetailViewController = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems?.first else { fatalError("EditSegue failure to downcast") }
+            // Pass the selected object to the new view controller.
+            photoDetailViewController.themeHelper = self.themeHelper
+            photoDetailViewController.photoController = self.photoController
+            photoDetailViewController.photo = photoController.photos[indexPath.row]
+        } else if segue.identifier == "ThemeSegue" {
+            // Get the new view controller using [segue destinationViewController].
+            guard let themeSelectionViewController = segue.destination as? ThemeSelectionViewController else { fatalError("ThemeSegue failure to downcast") }
+            // Pass the selected object to the new view controller.
+            themeSelectionViewController.themeHelper = self.themeHelper
+        }
     }
-    */
 
+
+    
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { photoController.photos.count }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { fatalError("failure to dequeue cell") }
         // Configure the cell
-    
+        cell.photo = photoController.photos[indexPath.row]
         return cell
     }
 
@@ -87,3 +106,5 @@ class PhotosCollectionViewController: UICollectionViewController {
     */
 
 }
+
+

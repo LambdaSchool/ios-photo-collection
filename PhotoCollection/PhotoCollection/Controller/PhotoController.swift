@@ -6,14 +6,14 @@
 //  Copyright © 2020 Shawn James. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PhotoController {
     
     // MARK: - Properties
     
-    var photos: [Photo]
-    
+    var photos: [Photo] = []
+
     
     // MARK: - CRUD Methods
     
@@ -24,7 +24,5 @@ class PhotoController {
         photos.remove(at: photoIndex)
         photos.insert(Photo(imageData: data, title: title), at: photoIndex)
     }
-    
-    // FIXME: - Add init
     
 }

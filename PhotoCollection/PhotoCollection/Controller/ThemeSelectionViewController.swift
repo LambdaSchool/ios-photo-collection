@@ -11,22 +11,32 @@ import UIKit
 class ThemeSelectionViewController: UIViewController {
 
     // MARK: - Properties
-    let themeHelper: ThemeHelper?
+    var themeHelper: ThemeHelper?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
     
     // MARK: - Actions
     @IBAction func redTheme(_ sender: Any) {
+        themeHelper?.setThemeToRed()
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func blueTheme(_ sender: Any) {
+        themeHelper?.setThemeToBlue()
+        dismiss(animated: true, completion: nil)
     }
     
+    
+    // MARK: - Methods
+    
+    func setTheme() {
+        guard let theme = themeHelper?.themePreference else { return }
+        if theme == String.redTheme { view.backgroundColor = .red } else { view.backgroundColor = .blue }
+    }
     
     /*
     // MARK: - Navigation

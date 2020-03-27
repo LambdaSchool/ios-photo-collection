@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     // MARK: - Outlets
     
@@ -18,25 +18,50 @@ class PhotoDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    let photoController: PhotoController?
-    let photo: Photo?
-    let themehelper: ThemeHelper?
+    var photoController: PhotoController?
+    var photo: Photo?
+    var themeHelper: ThemeHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        setTheme()
+        updateViews()
     }
     
     
     // MARK: - Actions
     
     @IBAction func addPhoto(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.mediaTypes = ["public.image"]
+        present(imagePicker, animated: true)
     }
+    
     @IBAction func savePhoto(_ sender: Any) {
+        if let photo = photo {
+            photoController?.Update(photo: photo, data: photo.imageData, title: photo.title)
+        } else {
+            guard let data = photoView.image?.jpegData(compressionQuality: 1) else { return }
+            photoController?.Create(data: data, title: imageNameTextField.text ?? "No Name")
+        }
+        navigationController?.popViewController(animated: true)
     }
     
 
+    // MARK: - Methods
+    
+    func setTheme() {
+        guard let theme = themeHelper?.themePreference else { return }
+        if theme == String.redTheme { view.backgroundColor = .red } else { view.backgroundColor = .blue }
+    }
+    
+    func updateViews() {
+        guard let photo = photo else { return }
+        photoView.image = UIImage(data: photo.imageData)
+        imageNameTextField.text = photo.title
+    }
     /*
     // MARK: - Navigation
 
@@ -47,4 +72,11 @@ class PhotoDetailViewController: UIViewController {
     }
     */
 
+}
+
+extension PhotoDetailViewController {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        photoView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        picker.dismiss(animated: true)
+    }
 }
