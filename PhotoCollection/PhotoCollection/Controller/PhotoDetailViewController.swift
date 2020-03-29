@@ -41,7 +41,9 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func savePhoto(_ sender: Any) {
         if let photo = photo {
-            photoController?.Update(photo: photo, data: photo.imageData, title: photo.title)
+            guard let newTitle = imageNameTextField.text,
+                let newPhotoData = photoView.image?.jpegData(compressionQuality: 1) else { return }
+            photoController?.Update(photo: photo, data: newPhotoData, title: newTitle)
         } else {
             guard let data = photoView.image?.jpegData(compressionQuality: 1) else { return }
             photoController?.Create(data: data, title: imageNameTextField.text ?? "No Name")
