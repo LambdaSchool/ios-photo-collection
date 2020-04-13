@@ -45,6 +45,8 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
                addPhotoTitle.text = title
     }
     
+
+    
     @IBAction func addPhoto(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
