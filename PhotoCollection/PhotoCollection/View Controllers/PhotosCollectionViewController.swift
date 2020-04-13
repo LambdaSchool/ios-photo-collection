@@ -13,13 +13,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            collectionView.reloadData()
+            
+        setTheme()
        }
     
     // MARK: - Navigation
