@@ -10,8 +10,9 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var addImage: UIImageView!
-    @IBOutlet weak var addPhotoTitle: UITextField!
+    private var imageView = UIImageView()
+    private var addPhotoTitle = UITextField()
+    private var addImageButton = UIButton()
     
     
     var photoController: PhotoController?
@@ -41,13 +42,45 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
                let image = UIImage(data: newImage),
                let title = addPhotoTitle.text else { return }
                
-               addImage.image = image
+               imageView.image = image
                addPhotoTitle.text = title
     }
     
-
+    func setUpSubviews() {
+        
+        // ImageView
+        view.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        
+        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 8).isActive = true
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.25).isActive = true
+        
+        // Add Image Button
+        view.addSubview(addImageButton)
+        addImageButton.translatesAutoresizingMaskIntoConstraints = false
+        addImageButton.setTitle("Add Image", for: .normal)
+        addImageButton.addTarget(self, action: #selector(addPhoto), for: .touchUpInside)
+        
+        addImageButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 45).isActive = true
+        addImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        // Photo Title Text Field
+        view.addSubview(addPhotoTitle)
+        addPhotoTitle.translatesAutoresizingMaskIntoConstraints = false
+        addPhotoTitle.placeholder = "Give this photo a title:"
+        
+        addPhotoTitle.topAnchor.constraint(equalTo: addImageButton.bottomAnchor, constant: 16).isActive = true
+        
+        
+        
+        
+        
+    }
     
-    @IBAction func addPhoto(_ sender: Any) {
+    @objc func addPhoto(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
