@@ -31,7 +31,7 @@ Please fork and clone this repository. This repository does not have an Xcode st
 2. Create a struct `Photo` in it with the following properties:
     - An `imageData: Data` variable.
     - A `title: String` variable. 
-3. Adopt the `Equatable Protocol.
+3. Adopt the `Equatable` Protocol.
 
 #### PhotoController
 
@@ -45,7 +45,8 @@ Please fork and clone this repository. This repository does not have an Xcode st
 
 You will now make a helper class that will contain functionality related to the user's theme preference and give access to that theme information throughout the application. It will use `UserDefaults` to save and load this preference. 
 
-1. Create a "ThemeHelper.swift" file. Add a `ThemeHelper` class inside of it. 2. Create a string constant called `themePreferenceKey`. This will be used whenever you need to save the user's theme preference or get it from `UserDefaults`.
+1. Create a "ThemeHelper.swift" file. Add a `ThemeHelper` class inside of it.
+2. Create a string constant called `themePreferenceKey`. This will be used whenever you need to save the user's theme preference or get it from `UserDefaults`.
 3. Create a function called `setThemePreferenceToDark()`. Using the `set` method of `UserDefaults` (remember that in order to access `set`, you have to use the `standard` property on `UserDefaults`), set the string "Dark" as the value, and the `themePreferenceKey` as the key.
 4. Create another function that does the same thing, but with a different color. Call the function `setThemePreferenceToYourColorHere`.
 5. Finally, create a computed property called `themePreference` of type `String?`. This should simply return the string value that you stored from either of the two methods you wrote above. Use the `UserDefaults` `string(forKey: ...)` method to get that value. The method should return an optional string because if the user's theme preference hasn't been saved, the value returned from `UserDefaults` will be `nil`.
