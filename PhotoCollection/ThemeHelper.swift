@@ -13,7 +13,7 @@ class ThemeHelper {
     let themePreferenceKey: String
 
     func setThemePreferenceToDark() {
-        set
+        setThemePreferenceToDark
     }
     
     
