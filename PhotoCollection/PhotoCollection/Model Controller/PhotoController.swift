@@ -16,6 +16,8 @@ class PhotoController {
       
         let photo = Photo(imageData: imageData, title: title)
         
+        photos.append(photo)
+        
         return photo
     }
 }
