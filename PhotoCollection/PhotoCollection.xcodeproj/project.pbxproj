@@ -16,6 +16,10 @@
 		B45E69C424521646006FDBBD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E69C324521646006FDBBD /* Photo.swift */; };
 		B45E69C6245216C2006FDBBD /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E69C5245216C2006FDBBD /* PhotoController.swift */; };
 		B45E69C8245218D5006FDBBD /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E69C7245218D5006FDBBD /* ThemeHelper.swift */; };
+		B45E69CA2452298B006FDBBD /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E69C92452298B006FDBBD /* PhotosCollectionViewController.swift */; };
+		B45E69CC24522BFC006FDBBD /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E69CB24522BFC006FDBBD /* PhotosCollectionViewCell.swift */; };
+		B45E69CE24522D3B006FDBBD /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E69CD24522D3B006FDBBD /* PhotoDetailViewController.swift */; };
+		B45E69D024523447006FDBBD /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E69CF24523447006FDBBD /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		B45E69C324521646006FDBBD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = PhotoCollection/Model/Photo.swift; sourceTree = "<group>"; };
 		B45E69C5245216C2006FDBBD /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		B45E69C7245218D5006FDBBD /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		B45E69C92452298B006FDBBD /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		B45E69CB24522BFC006FDBBD /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		B45E69CD24522D3B006FDBBD /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		B45E69CF24523447006FDBBD /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,10 @@
 				B45E69B124521600006FDBBD /* SceneDelegate.swift */,
 				B45E69B324521600006FDBBD /* ViewController.swift */,
 				B45E69B524521600006FDBBD /* Main.storyboard */,
+				B45E69CF24523447006FDBBD /* ThemeSelectionViewController.swift */,
+				B45E69CD24522D3B006FDBBD /* PhotoDetailViewController.swift */,
+				B45E69CB24522BFC006FDBBD /* PhotosCollectionViewCell.swift */,
+				B45E69C92452298B006FDBBD /* PhotosCollectionViewController.swift */,
 				B45E69B824521601006FDBBD /* Assets.xcassets */,
 				B45E69BA24521601006FDBBD /* LaunchScreen.storyboard */,
 				B45E69BD24521601006FDBBD /* Info.plist */,
@@ -150,7 +162,11 @@
 				B45E69C6245216C2006FDBBD /* PhotoController.swift in Sources */,
 				B45E69C424521646006FDBBD /* Photo.swift in Sources */,
 				B45E69B424521600006FDBBD /* ViewController.swift in Sources */,
+				B45E69CA2452298B006FDBBD /* PhotosCollectionViewController.swift in Sources */,
 				B45E69C8245218D5006FDBBD /* ThemeHelper.swift in Sources */,
+				B45E69D024523447006FDBBD /* ThemeSelectionViewController.swift in Sources */,
+				B45E69CC24522BFC006FDBBD /* PhotosCollectionViewCell.swift in Sources */,
+				B45E69CE24522D3B006FDBBD /* PhotoDetailViewController.swift in Sources */,
 				B45E69B024521600006FDBBD /* AppDelegate.swift in Sources */,
 				B45E69B224521600006FDBBD /* SceneDelegate.swift in Sources */,
 			);

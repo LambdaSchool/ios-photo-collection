@@ -9,14 +9,14 @@
 import Foundation
 
 class PhotoController {
+    
     var photos: [Photo] = []
     
-    func create(title: String, imageData: Data) {
-        let photo = Photo(title: title, imageData: imageData)
+    func create(imageDate: Data, title: String) {
+        let photo = Photo(title: title, imageData: imageDate)
         photos.append(photo)
     }
-    
-    func update(photo: Photo, title: String, imageData: Data) {
-       
+    func update(photo: Photo, data: Data, string: String) {
+        
     }
 }
