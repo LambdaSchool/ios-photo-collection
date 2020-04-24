@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 private let reuseIdentifier = "Cell"
 
@@ -22,20 +23,44 @@ class PhotosCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "photoViewCell")
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "photoViewCell")
 
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch segue.identifier ?? "" {
+        case "addPhotoSegue":
+            os_log("Add photo button pressed", log: OSLog.default , type: .debug)
+            
+        case "showPhotoSegue":
+            os_log("Photo view cell pressed", log: OSLog.default , type: .debug)
+            guard let photoDetailViewController = segue.destination as? PhotoDetailViewController else {
+                fatalError("Invalid segue destination: \(segue.destination)")
+            }
+            
+            guard let selectedPhotoCell = sender as? PhotosCollectionViewCell else {
+                fatalError("Unexpected sender: \(sender ?? "No sender available")")
+            }
+            
+            guard let indexPath = collectionView.indexPath(for: selectedPhotoCell) else {
+                fatalError("The selected cell is not being displayed by the collection view")
+            }
+            
+            let selectedPhoto = photoController.photos[indexPath.row]
+            photoDetailViewController.photo = selectedPhoto
+            
+        default:
+            fatalError("Invalid segue identifier: \(segue.identifier ?? "No segue identifier available")")
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -71,36 +96,13 @@ class PhotosCollectionViewController: UICollectionViewController {
             collectionView.backgroundColor = #colorLiteral(red: 0.1613258421, green: 0.1613600552, blue: 0.161321342, alpha: 1)
         }
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    @IBAction func unwindToPhotoCollection(_ sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? PhotoDetailViewController, let photo = sourceViewController.photo {
+            
+            photoController.createPhoto(photo.imageData, photo.title)
+            collectionView.reloadData()
+        }
     }
-    */
 
 }
