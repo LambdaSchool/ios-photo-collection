@@ -23,7 +23,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "photoViewCell")
+        // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "photoViewCell")
 
         // Do any additional setup after loading the view.
     }
@@ -100,9 +100,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     @IBAction func unwindToPhotoCollection(_ sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? PhotoDetailViewController, let photo = sourceViewController.photo {
             
-            photoController.createPhoto(photo.imageData, photo.title)
+            if let selectedIndexPaths = collectionView.indexPathsForSelectedItems, let selectedIndexPath = selectedIndexPaths.first?.row {
+                photoController.photos[selectedIndexPath] = photo
+            } else {
+                photoController.createPhoto(photo.imageData, photo.title)
+            }
             collectionView.reloadData()
         }
     }
 
 }
+
