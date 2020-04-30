@@ -19,6 +19,7 @@
 		0BC87DFF245A85E400875E63 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87DFE245A85E400875E63 /* PhotosCollectionViewController.swift */; };
 		0BC87E01245A864000875E63 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87E00245A864000875E63 /* PhotosCollectionViewCell.swift */; };
 		0BC87E03245A87B300875E63 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87E02245A87B300875E63 /* PhotoDetailViewController.swift */; };
+		0BC87E05245A8A2A00875E63 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87E04245A8A2A00875E63 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0BC87DFE245A85E400875E63 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		0BC87E00245A864000875E63 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BC87E02245A87B300875E63 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		0BC87E04245A8A2A00875E63 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				0BC87DFE245A85E400875E63 /* PhotosCollectionViewController.swift */,
 				0BC87E00245A864000875E63 /* PhotosCollectionViewCell.swift */,
 				0BC87E02245A87B300875E63 /* PhotoDetailViewController.swift */,
+				0BC87E04245A8A2A00875E63 /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				0BC87DF8245A81B700875E63 /* PhotoController.swift in Sources */,
 				0BC87DFF245A85E400875E63 /* PhotosCollectionViewController.swift in Sources */,
 				0BC87DFA245A82BD00875E63 /* ThemeHelper.swift in Sources */,
+				0BC87E05245A8A2A00875E63 /* ThemeSelectionViewController.swift in Sources */,
 				0BC87E01245A864000875E63 /* PhotosCollectionViewCell.swift in Sources */,
 				0BC87E03245A87B300875E63 /* PhotoDetailViewController.swift in Sources */,
 				0BC87DFC245A835000875E63 /* SettingsKey.swift in Sources */,
