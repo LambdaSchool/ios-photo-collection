@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos Collection View Controller-->
+        <!--Photo Collection-->
         <scene sceneID="tB0-Gc-9on">
             <objects>
                 <collectionViewController id="BLE-4C-bGb" customClass="PhotosCollectionViewController" customModule="PhotoCollectionView" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Bne-qQ-TtQ" customClass="PhotosCollectionViewCell" customModule="PhotoCollectionView" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="Bne-qQ-TtQ" customClass="PhotosCollectionViewCell" customModule="PhotoCollectionView" customModuleProvider="target">
                                 <rect key="frame" x="82" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x6q-t1-TuD">
@@ -66,7 +66,7 @@
                             <outlet property="delegate" destination="BLE-4C-bGb" id="H9Z-CP-D5m"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="9zv-5f-w4q">
+                    <navigationItem key="navigationItem" title="Photo Collection" id="9zv-5f-w4q">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="TSF-oL-okp">
                             <connections>
                                 <segue destination="kTs-zh-xMJ" kind="presentation" identifier="ChangeThemeSegue" id="JzP-Nh-WeY"/>

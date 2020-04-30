@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol PhotoDelegate{
+    func didAddPhoto(_ photo: Photo)
+}
+
+
 class PhotoDetailViewController: UIViewController {
 
     //MARK: - IBOutlets
@@ -19,7 +24,7 @@ class PhotoDetailViewController: UIViewController {
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
-    
+    var delegate: PhotoDelegate?
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -34,17 +39,8 @@ class PhotoDetailViewController: UIViewController {
     }
     
     @IBAction func savePhoto(_ sender: Any) {
-
+        guard let photo = Photo(imageData: imageView, title: textField.text) else {return}
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
