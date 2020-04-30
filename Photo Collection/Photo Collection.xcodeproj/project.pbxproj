@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		E471EAC8245A800B00C79E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E471EAC7245A800B00C79E06 /* AppDelegate.swift */; };
 		E471EACA245A800B00C79E06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E471EAC9245A800B00C79E06 /* SceneDelegate.swift */; };
-		E471EACC245A800B00C79E06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E471EACB245A800B00C79E06 /* ViewController.swift */; };
 		E471EACF245A800B00C79E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E471EACD245A800B00C79E06 /* Main.storyboard */; };
 		E471EAD1245A800D00C79E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E471EAD0245A800D00C79E06 /* Assets.xcassets */; };
 		E471EAD4245A800D00C79E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E471EAD2245A800D00C79E06 /* LaunchScreen.storyboard */; };
+		E471EADE245A80BB00C79E06 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E471EADD245A80BB00C79E06 /* Photo.swift */; };
+		E471EAE1245A812200C79E06 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E471EAE0245A812200C79E06 /* PhotoController.swift */; };
+		E471EAE5245A82AC00C79E06 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E471EAE4245A82AC00C79E06 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E471EAC4245A800B00C79E06 /* Photo Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E471EAC7245A800B00C79E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E471EAC9245A800B00C79E06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E471EACB245A800B00C79E06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E471EACE245A800B00C79E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E471EAD0245A800D00C79E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E471EAD3245A800D00C79E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E471EAD5245A800D00C79E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E471EADD245A80BB00C79E06 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		E471EAE0245A812200C79E06 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		E471EAE4245A82AC00C79E06 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		E471EAC6245A800B00C79E06 /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
-				E471EAC7245A800B00C79E06 /* AppDelegate.swift */,
-				E471EAC9245A800B00C79E06 /* SceneDelegate.swift */,
-				E471EACB245A800B00C79E06 /* ViewController.swift */,
-				E471EACD245A800B00C79E06 /* Main.storyboard */,
-				E471EAD0245A800D00C79E06 /* Assets.xcassets */,
-				E471EAD2245A800D00C79E06 /* LaunchScreen.storyboard */,
+				E471EADF245A810C00C79E06 /* ModelController */,
+				E471EADC245A80A500C79E06 /* Model */,
+				E471EAE3245A826A00C79E06 /* Views */,
+				E471EAE2245A824E00C79E06 /* View Controllers */,
+				E471EADB245A808200C79E06 /* Resources */,
 				E471EAD5245A800D00C79E06 /* Info.plist */,
 			);
 			path = "Photo Collection";
+			sourceTree = "<group>";
+		};
+		E471EADB245A808200C79E06 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E471EAC7245A800B00C79E06 /* AppDelegate.swift */,
+				E471EAC9245A800B00C79E06 /* SceneDelegate.swift */,
+				E471EAD0245A800D00C79E06 /* Assets.xcassets */,
+				E471EAD2245A800D00C79E06 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E471EADC245A80A500C79E06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E471EADD245A80BB00C79E06 /* Photo.swift */,
+				E471EAE4245A82AC00C79E06 /* ThemeHelper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E471EADF245A810C00C79E06 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				E471EAE0245A812200C79E06 /* PhotoController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		E471EAE2245A824E00C79E06 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E471EAE3245A826A00C79E06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E471EACD245A800B00C79E06 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E471EACC245A800B00C79E06 /* ViewController.swift in Sources */,
+				E471EADE245A80BB00C79E06 /* Photo.swift in Sources */,
 				E471EAC8245A800B00C79E06 /* AppDelegate.swift in Sources */,
+				E471EAE1245A812200C79E06 /* PhotoController.swift in Sources */,
+				E471EAE5245A82AC00C79E06 /* ThemeHelper.swift in Sources */,
 				E471EACA245A800B00C79E06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
