@@ -14,8 +14,11 @@ class ThemeHelper{
     var themePreferenceKey: String = "ThemePreferenceKey"
     
     var themePreference: String? {
-        let userDefault = UserDefaults.standard.string(forKey: themePreferenceKey)
-        return userDefault
+        if let themePreference = UserDefaults.standard.string(forKey: themePreferenceKey){
+            return themePreference
+        } else{
+            return nil
+        }
     }
     
     //MARK: - LifeCycle

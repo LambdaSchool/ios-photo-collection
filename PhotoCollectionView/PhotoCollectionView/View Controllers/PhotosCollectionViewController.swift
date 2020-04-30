@@ -9,7 +9,7 @@
 import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
-
+    
     //MARK: - Properties
     var photoController = PhotoController()
     var themeHelper = ThemeHelper()
@@ -19,75 +19,51 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setTheme()
-        collectionView?.reloadData()
+        collectionView.reloadData()
     }
-
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ViewPhotoDetailSegue"{
-            guard let detailVC = segue.destination as? PhotoDetailViewController,
-                let indexPath = collectionView.indexPathsForSelectedItems?.first
-                else {return}
-            detailVC.themeHelper = themeHelper
-            detailVC.photoController = photoController
-            let photo = photoController.photos[indexPath.item]
-            detailVC.photo = photo
-
-        }
-    }
-
-    // MARK: UICollectionViewDataSource
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoController.photos.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else {return UICollectionViewCell()}
-        
-        let photo = photoController.photos[indexPath.item]
-        cell.titleLabel.text = photo.title
-        cell.imageView.image = UIImage(data: photo.imageData)
-        return cell
-    }
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
     
     //MARK: - Helper Functions
     func setTheme(){
         guard let theme = themeHelper.themePreference else { return }
         if theme == "Dark"{
-            themeHelper.setThemePreferenceToDark()
+            self.collectionView.backgroundColor = .darkGray
         } else if theme == "Blue"{
-            themeHelper.setThemePreferenceToYourColorHere()
+            self.collectionView.backgroundColor = .cyan
         }
     }
-
+    
+    // MARK: UICollectionViewDataSource
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photoController.photos.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else {return UICollectionViewCell()}
+        let photo = photoController.photos[indexPath.item]
+        cell.titleLabel.text = photo.title
+        cell.imageView.image = UIImage(data: photo.imageData)
+        return cell
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ViewPhotoDetailSegue"{
+            guard let detailVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems?.first?.item
+                else {return}
+            detailVC.themeHelper = themeHelper
+            detailVC.photoController = photoController
+            let photo = photoController.photos[indexPath]
+            detailVC.photo = photo
+        }
+        else if segue.identifier == "AddPhotoDetailSegue"{
+            guard let addVC = segue.destination as? PhotoDetailViewController else { return }
+            addVC.themeHelper = themeHelper
+            addVC.photoController = photoController
+        }
+        else if segue.identifier == "ChangeThemeSegue"{
+            guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
+            themeVC.themeHelper = themeHelper
+        }
+    }
 }

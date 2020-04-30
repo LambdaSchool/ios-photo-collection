@@ -24,7 +24,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     //MARK: - LifeCycle
     func updateViews() {
         guard let photo = photo else {return}
+        titleLabel.text = photo.title
+        imageView.image = UIImage(data: photo.imageData)
     }
-    
-    
 }

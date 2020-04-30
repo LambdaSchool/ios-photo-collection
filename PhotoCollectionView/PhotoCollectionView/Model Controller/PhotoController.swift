@@ -10,7 +10,6 @@ import Foundation
 
 class PhotoController {
     
-    
     //MARK: - Properties
     
     var photos: [Photo] = []
