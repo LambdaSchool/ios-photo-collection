@@ -14,6 +14,8 @@
 		0BC87DE9245A810200875E63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC87DE7245A810200875E63 /* LaunchScreen.storyboard */; };
 		0BC87DF6245A817900875E63 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87DF5245A817900875E63 /* Photo.swift */; };
 		0BC87DF8245A81B700875E63 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87DF7245A81B700875E63 /* PhotoController.swift */; };
+		0BC87DFA245A82BD00875E63 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87DF9245A82BD00875E63 /* ThemeHelper.swift */; };
+		0BC87DFC245A835000875E63 /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC87DFB245A835000875E63 /* SettingsKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		0BC87DEA245A810200875E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BC87DF5245A817900875E63 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0BC87DF7245A81B700875E63 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		0BC87DF9245A82BD00875E63 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		0BC87DFB245A835000875E63 /* SettingsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				0BC87DDE245A810000875E63 /* SceneDelegate.swift */,
 				0BC87DE5245A810200875E63 /* Assets.xcassets */,
 				0BC87DEA245A810200875E63 /* Info.plist */,
+				0BC87DFB245A835000875E63 /* SettingsKey.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC87DF7245A81B700875E63 /* PhotoController.swift */,
+				0BC87DF9245A82BD00875E63 /* ThemeHelper.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -184,6 +190,8 @@
 				0BC87DF6245A817900875E63 /* Photo.swift in Sources */,
 				0BC87DDD245A810000875E63 /* AppDelegate.swift in Sources */,
 				0BC87DF8245A81B700875E63 /* PhotoController.swift in Sources */,
+				0BC87DFA245A82BD00875E63 /* ThemeHelper.swift in Sources */,
+				0BC87DFC245A835000875E63 /* SettingsKey.swift in Sources */,
 				0BC87DDF245A810000875E63 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
