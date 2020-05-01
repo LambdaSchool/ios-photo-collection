@@ -15,6 +15,10 @@
 		E320D1F1245B910200D2257E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E320D1F0245B910200D2257E /* Photo.swift */; };
 		E320D1F5245B915800D2257E /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E320D1F4245B915800D2257E /* PhotoController.swift */; };
 		E320D1F7245B935A00D2257E /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E320D1F6245B935A00D2257E /* ThemeHelper.swift */; };
+		E320D1FA245B96AA00D2257E /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E320D1F9245B96AA00D2257E /* PhotosCollectionViewController.swift */; };
+		E320D1FC245B975400D2257E /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E320D1FB245B975400D2257E /* PhotosCollectionViewCell.swift */; };
+		E320D1FE245B988600D2257E /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E320D1FD245B988600D2257E /* PhotoDetailViewController.swift */; };
+		E320D200245B9D6400D2257E /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E320D1FF245B9D6400D2257E /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		E320D1F0245B910200D2257E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E320D1F4245B915800D2257E /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		E320D1F6245B935A00D2257E /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		E320D1F9245B96AA00D2257E /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		E320D1FB245B975400D2257E /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		E320D1FD245B988600D2257E /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		E320D1FF245B9D6400D2257E /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		E320D1DB245B90BC00D2257E /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
+				E320D1F8245B967B00D2257E /* View Controllers */,
 				E320D1F3245B914600D2257E /* Model Controller */,
 				E320D1F2245B913900D2257E /* Model */,
 				E320D1DC245B90BC00D2257E /* AppDelegate.swift */,
@@ -87,6 +96,17 @@
 				E320D1F4245B915800D2257E /* PhotoController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		E320D1F8245B967B00D2257E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E320D1F9245B96AA00D2257E /* PhotosCollectionViewController.swift */,
+				E320D1FB245B975400D2257E /* PhotosCollectionViewCell.swift */,
+				E320D1FD245B988600D2257E /* PhotoDetailViewController.swift */,
+				E320D1FF245B9D6400D2257E /* ThemeSelectionViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,9 +181,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E320D1F1245B910200D2257E /* Photo.swift in Sources */,
+				E320D1FC245B975400D2257E /* PhotosCollectionViewCell.swift in Sources */,
 				E320D1DD245B90BC00D2257E /* AppDelegate.swift in Sources */,
 				E320D1F5245B915800D2257E /* PhotoController.swift in Sources */,
+				E320D1FA245B96AA00D2257E /* PhotosCollectionViewController.swift in Sources */,
 				E320D1F7245B935A00D2257E /* ThemeHelper.swift in Sources */,
+				E320D1FE245B988600D2257E /* PhotoDetailViewController.swift in Sources */,
+				E320D200245B9D6400D2257E /* ThemeSelectionViewController.swift in Sources */,
 				E320D1DF245B90BC00D2257E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
