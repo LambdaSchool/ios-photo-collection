@@ -68,11 +68,19 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		3C504A08245BD60500DF2BE5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		3CB666AB245B891B009280B1 = {
 			isa = PBXGroup;
 			children = (
 				3CB666B6245B891B009280B1 /* photoviewer */,
 				3CB666B5245B891B009280B1 /* Products */,
+				3C504A08245BD60500DF2BE5 /* New Group */,
 			);
 			sourceTree = "<group>";
 		};

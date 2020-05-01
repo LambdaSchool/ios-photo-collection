@@ -71,7 +71,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAu-o5-Y0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="883" y="98"/>
+            <point key="canvasLocation" x="882.60869565217399" y="97.767857142857139"/>
         </scene>
         <!--Theme Selection View Controller-->
         <scene sceneID="EAX-iO-E0L">
@@ -170,7 +170,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailImage" destination="eTM-nH-oGv" id="Rfs-xN-WgA"/>
-                        <outlet property="detailTextField" destination="vLy-ah-sgx" id="FNJ-Y0-Cx8"/>
+                        <outlet property="detailTextField" destination="vLy-ah-sgx" id="Kxf-Dj-REU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3f-SW-vb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,21 +8,40 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-   
+ 
     
     
     @IBOutlet weak var detailImage: UIImageView!
     
     
+
     @IBOutlet weak var detailTextField: UITextField!
     
     
     @IBAction func addPhoto(_ sender: UIButton) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.allowsEditing = false
+        
+        present(imagePicker, animated: true, completion:  nil)
+        
     }
     
     @IBAction func savePhoto(_ sender: Any) {
+        
+        guard let text = detailTextField.text,
+            let imageData = detailImage.image?.pngData() else { return  }
+        
+        if let photo = photo {
+            photoController?.updatePhoto(for: photo, with: imageData, and: text)
+        } else {
+            photoController?.createPhoto(imageData: imageData, title: text)
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -34,39 +53,40 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
 
     var photoController: PhotoController?
     var photo: Photo?
-    var themeHelper: ThemeHelper
+    var themeHelper: ThemeHelper?
     
     
     
     
     
+      func setTheme() {
+         guard let theme = themeHelper?.themePreference else { return }
+         
+         switch theme {
+         case "Green":
+            view.backgroundColor = UIColor.green
+         default:
+              view.backgroundColor = UIColor.darkGray
+     
+             
+         }
+     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateViews() {
+        setTheme()
+        
+        if let photo = photo {
+            detailImage.image = UIImage(data: photo.imageData)
+            detailTextField.text = photo.title
+        }
     }
-    */
-
+    
 }
+
