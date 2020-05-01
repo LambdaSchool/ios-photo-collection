@@ -9,6 +9,7 @@
 import Foundation
 
 class ThemeHelper {
+    
     var themePreference: String? {
         let themePreference = UserDefaults.standard.string(forKey: .themePreferenceKey)
         return themePreference
