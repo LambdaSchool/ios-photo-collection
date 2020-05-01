@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E15E2C51245AF72000761636 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E2C50245AF72000761636 /* ThemeHelper.swift */; };
+		E1686C66245BB1B800B8FBA5 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1686C65245BB1B800B8FBA5 /* PhotosCollectionViewController.swift */; };
+		E1686C69245BB57800B8FBA5 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1686C68245BB57800B8FBA5 /* PhotosCollectionViewCell.swift */; };
 		E1CC7E21245A83EC0006CE54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC7E20245A83EC0006CE54 /* AppDelegate.swift */; };
 		E1CC7E23245A83EC0006CE54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC7E22245A83EC0006CE54 /* SceneDelegate.swift */; };
 		E1CC7E25245A83EC0006CE54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC7E24245A83EC0006CE54 /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E15E2C50245AF72000761636 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		E1686C65245BB1B800B8FBA5 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		E1686C68245BB57800B8FBA5 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1CC7E1D245A83EC0006CE54 /* photoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CC7E20245A83EC0006CE54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1CC7E22245A83EC0006CE54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1686C63245BA85D00B8FBA5 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC7E37245A854F0006CE54 /* PhotoController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		E1686C64245BB16300B8FBA5 /* View Controllers  */ = {
+			isa = PBXGroup;
+			children = (
+				E1686C65245BB1B800B8FBA5 /* PhotosCollectionViewController.swift */,
+			);
+			path = "View Controllers ";
+			sourceTree = "<group>";
+		};
+		E1686C67245BB53D00B8FBA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1686C68245BB57800B8FBA5 /* PhotosCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E1CC7E14245A83EC0006CE54 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				E1CC7E34245A841A0006CE54 /* Model */,
+				E1686C63245BA85D00B8FBA5 /* Model Controller */,
+				E1686C67245BB53D00B8FBA5 /* Views */,
+				E1686C64245BB16300B8FBA5 /* View Controllers  */,
 				E1CC7E20245A83EC0006CE54 /* AppDelegate.swift */,
 				E1CC7E22245A83EC0006CE54 /* SceneDelegate.swift */,
 				E1CC7E24245A83EC0006CE54 /* ViewController.swift */,
@@ -76,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E1CC7E35245A84300006CE54 /* Photo.swift */,
-				E1CC7E37245A854F0006CE54 /* PhotoController.swift */,
+				E15E2C50245AF72000761636 /* ThemeHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +188,9 @@
 				E1CC7E38245A854F0006CE54 /* PhotoController.swift in Sources */,
 				E1CC7E36245A84300006CE54 /* Photo.swift in Sources */,
 				E1CC7E25245A83EC0006CE54 /* ViewController.swift in Sources */,
+				E1686C66245BB1B800B8FBA5 /* PhotosCollectionViewController.swift in Sources */,
+				E15E2C51245AF72000761636 /* ThemeHelper.swift in Sources */,
+				E1686C69245BB57800B8FBA5 /* PhotosCollectionViewCell.swift in Sources */,
 				E1CC7E21245A83EC0006CE54 /* AppDelegate.swift in Sources */,
 				E1CC7E23245A83EC0006CE54 /* SceneDelegate.swift in Sources */,
 			);
