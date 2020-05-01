@@ -24,13 +24,13 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func savePhotoTapped(_ sender: UIBarButtonItem) {
         guard let photoController = photoController else { return }
-        if let photo = photo {
-            if let title = titleTextView.text,
-                !title.isEmpty,
-                let imageData = photoImageView.image?.pngData() {
-                photoController.updatePhotos(photo: photo, image: imageData, title: title)
-            }
+        
+        if let title = titleTextView.text,
+            !title.isEmpty,
+            let imageData = photoImageView.image?.pngData() {
+            photoController.addPhoto(image: imageData, title: title)
         }
+        
         self.navigationController?.popViewController(animated: true)
     }
     
