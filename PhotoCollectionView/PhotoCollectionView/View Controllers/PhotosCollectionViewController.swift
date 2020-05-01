@@ -47,23 +47,30 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ViewPhotoDetailSegue"{
-            guard let detailVC = segue.destination as? PhotoDetailViewController,
-                let indexPath = collectionView.indexPathsForSelectedItems?.first?.item
-                else {return}
-            detailVC.themeHelper = themeHelper
-            detailVC.photoController = photoController
-            let photo = photoController.photos[indexPath]
-            detailVC.photo = photo
+        if segue.identifier == "AddPhotoDetailSegue"{
+            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
+            destinationVC.themeHelper = themeHelper
+            destinationVC.photoController = photoController
         }
-        else if segue.identifier == "AddPhotoDetailSegue"{
-            guard let addVC = segue.destination as? PhotoDetailViewController else { return }
-            addVC.themeHelper = themeHelper
-            addVC.photoController = photoController
+        else if segue.identifier == "ViewPhotoDetailSegue"{
+            guard let destinationVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems?.first
+                else {return}
+            destinationVC.themeHelper = themeHelper
+            destinationVC.photoController = photoController
+            destinationVC.photo = photoController.photos[indexPath.item]
         }
         else if segue.identifier == "ChangeThemeSegue"{
             guard let themeVC = segue.destination as? ThemeSelectionViewController else { return }
             themeVC.themeHelper = themeHelper
+            themeVC.delegate = self
         }
+    }
+}
+
+extension PhotosCollectionViewController: ThemeSelectionDelegate{
+    func themeWasUpdated() {
+        setTheme()
+        collectionView.reloadData()
     }
 }
