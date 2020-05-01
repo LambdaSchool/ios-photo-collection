@@ -58,7 +58,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
-                                    <segue destination="nIH-7B-sEQ" kind="show" identifier="collectionViewCell" id="iav-Nq-kTP"/>
+                                    <segue destination="nIH-7B-sEQ" kind="show" identifier="collectionViewCellSegue" id="iav-Nq-kTP"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -68,7 +68,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="7ZQ-Hy-0wH">
-                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="hXu-49-Lz2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="hXu-49-Lz2">
+                            <connections>
+                                <segue destination="s6l-tl-7a0" kind="presentation" identifier="selectThemeSegue" id="3iK-pQ-GhQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d1G-I6-e2K">
                             <connections>
                                 <segue destination="nIH-7B-sEQ" kind="show" identifier="addPhotoSegue" id="2vA-hL-Egy"/>
@@ -85,9 +89,45 @@
             <objects>
                 <viewController id="s6l-tl-7a0" customClass="ThemeSelectionViewController" customModule="photoCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lYu-dQ-ZL6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHJ-oW-56g">
+                                <rect key="frame" x="56" y="134" width="303" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="SPz-rx-7gW">
+                                <rect key="frame" x="142" y="209.5" width="131" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBe-KC-dGd">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                        <state key="normal" title="Dark"/>
+                                        <connections>
+                                            <action selector="selectDarkTheme:" destination="s6l-tl-7a0" eventType="touchUpInside" id="0in-Tb-qX0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9V-g0-Dlb">
+                                        <rect key="frame" x="100" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="Blue"/>
+                                        <connections>
+                                            <action selector="selectYourColorHereTheme:" destination="s6l-tl-7a0" eventType="touchUpInside" id="Qzi-u3-Yb4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AHJ-oW-56g" firstAttribute="top" secondItem="OrQ-Vo-4Hf" secondAttribute="top" constant="134" id="4Pz-IY-0bo"/>
+                            <constraint firstItem="OrQ-Vo-4Hf" firstAttribute="trailing" secondItem="AHJ-oW-56g" secondAttribute="trailing" constant="55" id="9GW-JG-qig"/>
+                            <constraint firstItem="AHJ-oW-56g" firstAttribute="leading" secondItem="OrQ-Vo-4Hf" secondAttribute="leading" constant="56" id="B1J-dW-gL0"/>
+                            <constraint firstItem="SPz-rx-7gW" firstAttribute="top" secondItem="AHJ-oW-56g" secondAttribute="bottom" constant="55" id="FhQ-vf-8zl"/>
+                            <constraint firstItem="OrQ-Vo-4Hf" firstAttribute="trailing" secondItem="SPz-rx-7gW" secondAttribute="trailing" constant="141" id="e8a-sm-tCA"/>
+                            <constraint firstItem="OrQ-Vo-4Hf" firstAttribute="bottom" secondItem="SPz-rx-7gW" secondAttribute="bottom" constant="568.5" id="oYS-Ft-3fw"/>
+                            <constraint firstItem="SPz-rx-7gW" firstAttribute="leading" secondItem="OrQ-Vo-4Hf" secondAttribute="leading" constant="142" id="pXS-Fh-wUB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OrQ-Vo-4Hf"/>
                     </view>
                 </viewController>
