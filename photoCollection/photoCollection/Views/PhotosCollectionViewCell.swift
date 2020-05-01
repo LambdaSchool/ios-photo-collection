@@ -10,4 +10,14 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
+    var photo: Photo? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    func updateViews() {
+        
+    }
+    
 }
