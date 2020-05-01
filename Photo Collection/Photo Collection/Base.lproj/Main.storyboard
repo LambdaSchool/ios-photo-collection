@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo Library-->
+        <!--Photo Collection-->
         <scene sceneID="iko-HR-yWT">
             <objects>
                 <collectionViewController id="pfw-1I-mV8" customClass="PhotosCollectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                             <outlet property="delegate" destination="pfw-1I-mV8" id="zCZ-Jo-wH5"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Photo Library" id="5l6-x0-Cbl">
+                    <navigationItem key="navigationItem" title="Photo Collection" id="5l6-x0-Cbl">
                         <barButtonItem key="leftBarButtonItem" title="Theme" id="V82-vq-jEj">
                             <connections>
                                 <segue destination="MQV-ko-rhd" kind="presentation" identifier="ChooseThemeSegue" id="Hfd-qe-nKj"/>
