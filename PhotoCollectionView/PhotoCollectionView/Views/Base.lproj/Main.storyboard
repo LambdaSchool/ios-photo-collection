@@ -95,31 +95,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-uA-HJ9">
-                                <rect key="frame" x="24" y="320" width="84" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-uA-HJ9">
+                                <rect key="frame" x="70" y="254" width="84" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jIF-up-2id"/>
+                                    <constraint firstAttribute="width" constant="84" id="q2y-ef-dqZ"/>
+                                </constraints>
                                 <state key="normal" title="Dark"/>
                                 <connections>
                                     <action selector="selectDarkTheme:" destination="kTs-zh-xMJ" eventType="touchUpInside" id="SQC-46-v7z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30v-wD-qLg">
-                                <rect key="frame" x="272" y="320" width="84" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXq-5B-TId">
+                                <rect key="frame" x="16" y="60" width="193" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30v-wD-qLg">
+                                <rect key="frame" x="239" y="254" width="84" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CLl-WT-iGd"/>
+                                    <constraint firstAttribute="width" constant="84" id="iwU-DE-0Gv"/>
+                                </constraints>
                                 <state key="normal" title="Blue"/>
                                 <connections>
                                     <action selector="selectYourColorHereTheme:" destination="kTs-zh-xMJ" eventType="touchUpInside" id="ucy-Vq-Cs6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXq-5B-TId">
-                                <rect key="frame" x="20" y="130" width="193" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="i5g-aZ-djT" firstAttribute="trailing" secondItem="30v-wD-qLg" secondAttribute="trailing" constant="91" id="77A-eu-dlf"/>
+                            <constraint firstItem="dg4-uA-HJ9" firstAttribute="leading" secondItem="i5g-aZ-djT" secondAttribute="leading" constant="70" id="S3e-yl-QSG"/>
+                            <constraint firstItem="dg4-uA-HJ9" firstAttribute="top" secondItem="pXq-5B-TId" secondAttribute="bottom" constant="154" id="TUI-3f-JmY"/>
+                            <constraint firstItem="30v-wD-qLg" firstAttribute="top" secondItem="i5g-aZ-djT" secondAttribute="top" constant="254" id="f7S-16-rul"/>
+                            <constraint firstItem="i5g-aZ-djT" firstAttribute="trailing" secondItem="pXq-5B-TId" secondAttribute="trailing" constant="205" id="g4O-NE-udh"/>
+                            <constraint firstItem="pXq-5B-TId" firstAttribute="top" secondItem="i5g-aZ-djT" secondAttribute="top" constant="60" id="mdL-Ra-chf"/>
+                            <constraint firstItem="pXq-5B-TId" firstAttribute="leading" secondItem="i5g-aZ-djT" secondAttribute="leading" constant="16" id="v50-zH-N5e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i5g-aZ-djT"/>
                     </view>
                 </viewController>
@@ -145,18 +159,18 @@
                                             <constraint firstAttribute="width" constant="398" id="3V2-BB-foY"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7hn-80-wPN">
-                                        <rect key="frame" x="0.0" y="330" width="398" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frp-2M-hLs">
-                                        <rect key="frame" x="0.0" y="394" width="398" height="30"/>
+                                        <rect key="frame" x="0.0" y="330" width="398" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="20z-f5-RBp" eventType="touchUpInside" id="kuk-7y-IWx"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7hn-80-wPN">
+                                        <rect key="frame" x="0.0" y="390" width="398" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
                         </subviews>
