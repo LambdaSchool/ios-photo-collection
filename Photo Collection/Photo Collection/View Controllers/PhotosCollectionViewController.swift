@@ -21,20 +21,23 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTheme()
         collectionView.reloadData()
+        setTheme()
     }
     
     func setTheme() {
         guard let themePreference = themeHelper.themePreference else { return }
+        var backgroundColor: UIColor!
+        
         switch themePreference {
         case "Dark":
-            collectionView.backgroundColor = .gray
+            backgroundColor = .gray
         case "Blue":
-            collectionView.backgroundColor = .blue
+            backgroundColor = .blue
         default:
             break
         }
+        collectionView.backgroundColor = backgroundColor
     }
 
     // MARK: - Navigation
@@ -77,7 +80,5 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
 
 }

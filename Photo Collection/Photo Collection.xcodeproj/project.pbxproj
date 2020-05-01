@@ -70,14 +70,11 @@
 			children = (
 				E320D1F8245B967B00D2257E /* View Controllers */,
 				E320D1F3245B914600D2257E /* Model Controller */,
+				E3EEA7ED245BC6AB00C28BF2 /* Resources */,
 				E320D1F2245B913900D2257E /* Model */,
-				E320D1DC245B90BC00D2257E /* AppDelegate.swift */,
-				E320D1DE245B90BC00D2257E /* SceneDelegate.swift */,
 				E320D1E2245B90BC00D2257E /* Main.storyboard */,
 				E320D1E5245B90BE00D2257E /* Assets.xcassets */,
-				E320D1E7245B90BE00D2257E /* LaunchScreen.storyboard */,
 				E320D1EA245B90BE00D2257E /* Info.plist */,
-				E320D1F6245B935A00D2257E /* ThemeHelper.swift */,
 			);
 			path = "Photo Collection";
 			sourceTree = "<group>";
@@ -107,6 +104,17 @@
 				E320D1FF245B9D6400D2257E /* ThemeSelectionViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E3EEA7ED245BC6AB00C28BF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E320D1DC245B90BC00D2257E /* AppDelegate.swift */,
+				E320D1DE245B90BC00D2257E /* SceneDelegate.swift */,
+				E320D1E7245B90BE00D2257E /* LaunchScreen.storyboard */,
+				E320D1F6245B935A00D2257E /* ThemeHelper.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
