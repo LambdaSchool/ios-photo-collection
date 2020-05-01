@@ -12,4 +12,16 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
+    var photo: Photo? {
+        didSet {
+            self.updateViews()
+        }
+    }
+    
+    func updateViews() {
+        guard let photo = self.photo else { return }
+        
+        cellImage.image = UIImage(data: photo.imageData)
+        cellLabel.text = photo.title
+    }
 }
