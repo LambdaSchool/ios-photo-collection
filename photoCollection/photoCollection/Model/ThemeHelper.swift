@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol ThemeHelperDelegate {
+    func selectDarkTheme()
+}
+
 class ThemeHelper {
     
     init() {
