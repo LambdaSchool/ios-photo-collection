@@ -33,6 +33,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             addController.themeHelper = themeHelper
             addController.photoController = photoController
         } else if let themeController = segue.destination as? ThemeSelectionViewController {
+            themeController.delegate = self
             themeController.themeHelper = themeHelper
         }
     }
