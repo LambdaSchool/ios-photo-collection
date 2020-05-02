@@ -14,39 +14,30 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setTheme()
+        collectionView.reloadData()
     }
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UpdatePhotoSegue" {
-            if let addController = segue.destination as? PhotoDetailViewController {
-                guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
-                addController.themeHelper = themeHelper
-                addController.photoController = photoController
+        if let addController = segue.destination as? PhotoDetailViewController {
+            if segue.identifier == "UpdatePhotoSegue" {
+                guard let indexPath = collectionView?.indexPathsForSelectedItems?.first?.item else { return }
+                addController.photo = photoController.photos[indexPath]
             }
+            addController.themeHelper = themeHelper
+            addController.photoController = photoController
+        } else if let themeController = segue.destination as? ThemeSelectionViewController {
+            themeController.themeHelper = themeHelper
         }
     }
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoController.photos.count
@@ -64,43 +55,20 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     func setTheme() {
         guard let theme = themeHelper.themePreference else { return }
-        
+        print(theme)
         if theme == "Dark" {
-            self.view.backgroundColor = UIColor.darkGray
-        } else {
-            self.view.backgroundColor = UIColor.green
+            collectionView.backgroundColor = .darkGray
+        } else if theme == "Green" {
+            collectionView.backgroundColor = .green
         }
     }
 
-    // MARK: UICollectionViewDelegate
+}
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+extension PhotosCollectionViewController: ThemeDelegate {
+    func didChangeTheme() {
+        print("Function called")
+        setTheme()
+        collectionView.reloadData()
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

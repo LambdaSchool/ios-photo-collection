@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
+class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoController: PhotoController?
     var photo: Photo?
@@ -16,31 +16,61 @@ class PhotoDetailViewController: UIViewController {
     
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setTheme()
+        updateViews()
     }
     
     @IBAction func addPhoto(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.allowsEditing = false
+        pickerController.mediaTypes = ["public.image"]
+        pickerController.sourceType = .photoLibrary
+        
+        present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func savePhoto(_ sender: Any) {
+        guard let pic = photoView.image,
+            let title = titleTextField.text,
+            let data = pic.pngData() else { return }
+        
+        if let photo = self.photo {
+            photoController?.updatePhoto(photo: photo, data: data, title: title)
+        } else {
+            photoController?.createPhoto(data: data, title: title)
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setTheme() {
+        guard let theme = themeHelper?.themePreference else { return }
+        
+        if theme == "Dark" {
+            self.view.backgroundColor = UIColor.darkGray
+        } else {
+            self.view.backgroundColor = UIColor.green
+        }
     }
-    */
+    
+    func updateViews() {
+        guard let photo = self.photo else { return }
+        
+        photoView.image = UIImage(data: photo.imageData)
+        titleTextField.text = photo.title
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            photoView.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
 
 }

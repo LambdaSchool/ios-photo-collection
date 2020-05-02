@@ -26,7 +26,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="Zmq-sa-9nO" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gdt-Oq-lv3">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J9D-iX-NLQ">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -38,16 +38,20 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K4q-Q8-SY8">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="113"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="1oC-bh-Zse"/>
+                                                <constraint firstAttribute="height" constant="113" id="gkn-eK-ERh"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="zOg-e3-OuP" firstAttribute="centerX" secondItem="Gdt-Oq-lv3" secondAttribute="centerX" id="6hZ-Q9-um3"/>
+                                        <constraint firstItem="zOg-e3-OuP" firstAttribute="centerX" secondItem="J9D-iX-NLQ" secondAttribute="centerX" id="6hZ-Q9-um3"/>
                                         <constraint firstItem="zOg-e3-OuP" firstAttribute="top" secondItem="K4q-Q8-SY8" secondAttribute="bottom" constant="8" id="Mgh-di-NKT"/>
-                                        <constraint firstItem="K4q-Q8-SY8" firstAttribute="top" secondItem="Gdt-Oq-lv3" secondAttribute="top" id="RYO-oz-Ciw"/>
+                                        <constraint firstItem="K4q-Q8-SY8" firstAttribute="top" secondItem="J9D-iX-NLQ" secondAttribute="top" id="RYO-oz-Ciw"/>
                                         <constraint firstItem="zOg-e3-OuP" firstAttribute="top" secondItem="K4q-Q8-SY8" secondAttribute="bottom" constant="8" id="Zjo-lV-Coe"/>
                                         <constraint firstAttribute="bottom" secondItem="zOg-e3-OuP" secondAttribute="bottom" constant="8" id="akg-nu-8lN"/>
                                         <constraint firstAttribute="trailing" secondItem="K4q-Q8-SY8" secondAttribute="trailing" id="ip1-qy-saP"/>
-                                        <constraint firstItem="K4q-Q8-SY8" firstAttribute="leading" secondItem="Gdt-Oq-lv3" secondAttribute="leading" id="lKA-nf-hxX"/>
+                                        <constraint firstItem="K4q-Q8-SY8" firstAttribute="leading" secondItem="J9D-iX-NLQ" secondAttribute="leading" id="lKA-nf-hxX"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="150" height="150"/>
