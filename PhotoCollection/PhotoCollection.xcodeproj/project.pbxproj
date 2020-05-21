@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		B116B6B3247714C200435C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6B2247714C200435C12 /* AppDelegate.swift */; };
 		B116B6B5247714C200435C12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6B4247714C200435C12 /* SceneDelegate.swift */; };
-		B116B6B7247714C200435C12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6B6247714C200435C12 /* ViewController.swift */; };
 		B116B6BA247714C200435C12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B116B6B8247714C200435C12 /* Main.storyboard */; };
 		B116B6BC247714C500435C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B116B6BB247714C500435C12 /* Assets.xcassets */; };
 		B116B6BF247714C500435C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B116B6BD247714C500435C12 /* LaunchScreen.storyboard */; };
 		B116B6CA247715BE00435C12 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6C9247715BE00435C12 /* Photo.swift */; };
 		B116B6CD2477167300435C12 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6CC2477167300435C12 /* PhotoController.swift */; };
 		B116B6CF247731B600435C12 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6CE247731B600435C12 /* ThemeHelper.swift */; };
+		B116B6D2247737AA00435C12 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6D1247737AA00435C12 /* PhotosCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B116B6AF247714C200435C12 /* PhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B116B6B2247714C200435C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B116B6B4247714C200435C12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B116B6B6247714C200435C12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B116B6B9247714C200435C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B116B6BB247714C500435C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B116B6BE247714C500435C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		B116B6C9247715BE00435C12 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B116B6CC2477167300435C12 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		B116B6CE247731B600435C12 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		B116B6D1247737AA00435C12 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotosCollectionViewController.swift; path = PhotoCollection/Storyboards/PhotosCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		B116B6C72477154C00435C12 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B116B6B6247714C200435C12 /* ViewController.swift */,
+				B116B6D1247737AA00435C12 /* PhotosCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -189,8 +189,8 @@
 			files = (
 				B116B6CD2477167300435C12 /* PhotoController.swift in Sources */,
 				B116B6CA247715BE00435C12 /* Photo.swift in Sources */,
-				B116B6B7247714C200435C12 /* ViewController.swift in Sources */,
 				B116B6CF247731B600435C12 /* ThemeHelper.swift in Sources */,
+				B116B6D2247737AA00435C12 /* PhotosCollectionViewController.swift in Sources */,
 				B116B6B3247714C200435C12 /* AppDelegate.swift in Sources */,
 				B116B6B5247714C200435C12 /* SceneDelegate.swift in Sources */,
 			);
