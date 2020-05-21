@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+
+class ThemeHelper {
+    var themePreferenceKey: String = "Dark"
+    
+    func setThemePreferenceToDark() {
+        let defaults = UserDefaults.standard
+        defaults.set("Dark", forKey: themePreferenceKey)
+    
+    }
+}
