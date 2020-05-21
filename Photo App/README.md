@@ -1,5 +1,6 @@
 # Photo Collection
 
+
 A student that completes this project shows that they can:
 
 - understand and explain what a collection view is along with common scenarios for its use
@@ -25,13 +26,6 @@ Please fork and clone this repository. This repository does not have an Xcode st
 
 ### Part 1 - Model Layer Set Up
 
-#### Photo
-
-1. Create a swift file called "Photo.swift". 
-2. Create a struct `Photo` in it with the following properties:
-    - An `imageData: Data` variable.
-    - A `title: String` variable. 
-3. Adopt the `Equatable Protocol.
 
 #### PhotoController
 
