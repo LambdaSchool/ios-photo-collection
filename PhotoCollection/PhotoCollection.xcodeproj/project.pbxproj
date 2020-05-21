@@ -16,6 +16,7 @@
 		B116B6CD2477167300435C12 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6CC2477167300435C12 /* PhotoController.swift */; };
 		B116B6CF247731B600435C12 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6CE247731B600435C12 /* ThemeHelper.swift */; };
 		B116B6D2247737AA00435C12 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6D1247737AA00435C12 /* PhotosCollectionViewController.swift */; };
+		B116B6D424773AA500435C12 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116B6D324773AA500435C12 /* PhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B116B6CC2477167300435C12 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		B116B6CE247731B600435C12 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		B116B6D1247737AA00435C12 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotosCollectionViewController.swift; path = PhotoCollection/Storyboards/PhotosCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		B116B6D324773AA500435C12 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotosCollectionViewCell.swift; path = Storyboards/PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		B116B6B1247714C200435C12 /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
+				B116B6D324773AA500435C12 /* PhotosCollectionViewCell.swift */,
 				B116B6CB247715CA00435C12 /* Modals  */,
 				B116B6D0247731BB00435C12 /* Helpers */,
 				B116B6C72477154C00435C12 /* ViewControllers */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B116B6CD2477167300435C12 /* PhotoController.swift in Sources */,
+				B116B6D424773AA500435C12 /* PhotosCollectionViewCell.swift in Sources */,
 				B116B6CA247715BE00435C12 /* Photo.swift in Sources */,
 				B116B6CF247731B600435C12 /* ThemeHelper.swift in Sources */,
 				B116B6D2247737AA00435C12 /* PhotosCollectionViewController.swift in Sources */,
