@@ -9,6 +9,7 @@
 import Foundation
 
 class PhotoController {
+    
     var photos: [Photo] = []
     
     func create(imageData: Data, title: String) {
@@ -17,6 +18,8 @@ class PhotoController {
     }
     
     func update(photo: Photo, data: Data, string: String){
-        
+        guard let updatedPhoto = photos.firstIndex(of: photo) else { return }
+        photos[updatedPhoto].imageData = data
+        photos[updatedPhoto].title = string
     }
 }
