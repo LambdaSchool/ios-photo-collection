@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct iPhoto: Equatable {
+struct Photo: Equatable {
     
     var imageData: Data
     var title: String
