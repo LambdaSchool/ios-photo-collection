@@ -12,6 +12,8 @@
 		E8E4623C24771ED2005AF445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E4623A24771ED2005AF445 /* Main.storyboard */; };
 		E8E4623E24771ED6005AF445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E4623D24771ED6005AF445 /* Assets.xcassets */; };
 		E8E4624124771ED6005AF445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E4623F24771ED6005AF445 /* LaunchScreen.storyboard */; };
+		E8E46251247721F1005AF445 /* iPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E46250247721F1005AF445 /* iPhoto.swift */; };
+		E8E46254247724A0005AF445 /* iPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E46253247724A0005AF445 /* iPhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E8E4623D24771ED6005AF445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8E4624024771ED6005AF445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8E4624224771ED6005AF445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8E46250247721F1005AF445 /* iPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoto.swift; sourceTree = "<group>"; };
+		E8E46253247724A0005AF445 /* iPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		E8E4623324771ED2005AF445 /* iPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				E8E46255247724A6005AF445 /* ModelController */,
+				E8E462522477224F005AF445 /* Models */,
 				E8E4624824771F08005AF445 /* ReSources */,
 				E8E4624A24771F32005AF445 /* ViewControllers */,
 				E8E4624924771F16005AF445 /* StoryBoards */,
@@ -86,6 +92,22 @@
 			children = (
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E8E462522477224F005AF445 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8E46250247721F1005AF445 /* iPhoto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E8E46255247724A6005AF445 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				E8E46253247724A0005AF445 /* iPhotoController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,8 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E46254247724A0005AF445 /* iPhotoController.swift in Sources */,
 				E8E4623524771ED2005AF445 /* AppDelegate.swift in Sources */,
 				E8E4623724771ED2005AF445 /* SceneDelegate.swift in Sources */,
+				E8E46251247721F1005AF445 /* iPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
