@@ -18,6 +18,8 @@ class PhotoController {
     
     func updatePhoto(photo: Photo, data: Data, string: String) {
         guard let index = photos.firstIndex(of: photo) else { return }
-        photos.remove(at: index)
+        var photo = photos[index] // specific photo from the index
+        photo.imageData = data // passing that new value into parameter up top
+        photo.title = string // ditto 
     }
 }
