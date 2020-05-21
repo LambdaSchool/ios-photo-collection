@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,11 +20,11 @@
                             <size key="itemSize" width="132" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1oc-Vl-IDr" customClass="PhotosCollectionViewCell" customModule="PhotoCollection" customModuleProvider="target">
-                                <rect key="frame" x="10" y="0.0" width="120" height="140"/>
+                                <rect key="frame" x="10" y="10" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JbI-ey-Cav">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
@@ -75,12 +76,61 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="CGv-wo-J0X">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme " id="pc3-Iy-h0O"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Nf-wL-JCW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Nf-wL-JCW">
+                            <connections>
+                                <segue destination="yv1-r0-65g" kind="show" identifier="AddPhotoDetailSegue" id="GWf-qW-3Z3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruT-Kf-FYy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926.08695652173924" y="100.44642857142857"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="HdM-ZO-WMT">
+            <objects>
+                <viewController id="yv1-r0-65g" customClass="PhotoDetailViewController" customModule="PhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dki-fI-Zxi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dwJ-dK-vg5">
+                                <rect key="frame" x="20" y="227" width="374" height="192"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6k-g2-TV1">
+                                <rect key="frame" x="171" y="479" width="72" height="30"/>
+                                <state key="normal" title="Add Photo"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yE1-J4-5OQ">
+                                <rect key="frame" x="30" y="529" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TCr-4f-dn9" firstAttribute="trailing" secondItem="yE1-J4-5OQ" secondAttribute="trailing" constant="30" id="4Kg-XR-vUl"/>
+                            <constraint firstItem="yE1-J4-5OQ" firstAttribute="top" secondItem="d6k-g2-TV1" secondAttribute="bottom" constant="20" id="67E-El-cXt"/>
+                            <constraint firstItem="yE1-J4-5OQ" firstAttribute="leading" secondItem="TCr-4f-dn9" secondAttribute="leading" constant="30" id="HiC-1z-aDP"/>
+                            <constraint firstItem="dwJ-dK-vg5" firstAttribute="centerX" secondItem="Dki-fI-Zxi" secondAttribute="centerX" id="NYy-KC-Qju"/>
+                            <constraint firstItem="dwJ-dK-vg5" firstAttribute="leading" secondItem="TCr-4f-dn9" secondAttribute="leading" constant="20" id="Ou1-aa-l0a"/>
+                            <constraint firstItem="d6k-g2-TV1" firstAttribute="centerX" secondItem="Dki-fI-Zxi" secondAttribute="centerX" id="TuC-YW-xCI"/>
+                            <constraint firstItem="TCr-4f-dn9" firstAttribute="bottom" secondItem="yE1-J4-5OQ" secondAttribute="bottom" constant="299" id="UZS-yz-jnd"/>
+                            <constraint firstItem="dwJ-dK-vg5" firstAttribute="top" secondItem="TCr-4f-dn9" secondAttribute="top" constant="139" id="eCq-eD-26U"/>
+                            <constraint firstItem="yE1-J4-5OQ" firstAttribute="centerX" secondItem="Dki-fI-Zxi" secondAttribute="centerX" id="oy9-tD-XAX"/>
+                            <constraint firstItem="TCr-4f-dn9" firstAttribute="trailing" secondItem="dwJ-dK-vg5" secondAttribute="trailing" constant="20" id="pjI-FI-22L"/>
+                            <constraint firstItem="d6k-g2-TV1" firstAttribute="top" secondItem="dwJ-dK-vg5" secondAttribute="bottom" constant="60" id="uW0-cq-Gbk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TCr-4f-dn9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z8X-5g-dRU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GrB-u2-aZH"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dl4-d9-wrI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786.9565217391305" y="99.776785714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="80S-dr-AG0">
