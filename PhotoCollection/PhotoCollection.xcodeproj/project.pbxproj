@@ -15,6 +15,9 @@
 		4BB80E8A24770D4500259E05 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80E8924770D4500259E05 /* Photo.swift */; };
 		4BB80E8C2477107000259E05 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80E8B2477107000259E05 /* PhotoController.swift */; };
 		4BB80E8E247716C000259E05 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80E8D247716C000259E05 /* ThemeHelper.swift */; };
+		4BB80EB4247759BA00259E05 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80EB3247759BA00259E05 /* PhotosCollectionViewController.swift */; };
+		4BB80EB624775BF800259E05 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80EB524775BF800259E05 /* PhotoDetailViewController.swift */; };
+		4BB80EB824775E9A00259E05 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80EB724775E9A00259E05 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		4BB80E8924770D4500259E05 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		4BB80E8B2477107000259E05 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		4BB80E8D247716C000259E05 /* ThemeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeHelper.swift; path = "../../../../../../../../Library/Autosave Information/ThemeHelper.swift"; sourceTree = "<group>"; };
+		4BB80EB3247759BA00259E05 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		4BB80EB524775BF800259E05 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		4BB80EB724775E9A00259E05 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				4BB80E752477010A00259E05 /* AppDelegate.swift */,
 				4BB80E772477010A00259E05 /* SceneDelegate.swift */,
 				4BB80E7B2477010A00259E05 /* Main.storyboard */,
+				4BB80EB3247759BA00259E05 /* PhotosCollectionViewController.swift */,
+				4BB80EB524775BF800259E05 /* PhotoDetailViewController.swift */,
+				4BB80EB724775E9A00259E05 /* ThemeSelectionViewController.swift */,
 				4BB80E8924770D4500259E05 /* Photo.swift */,
 				4BB80E8B2477107000259E05 /* PhotoController.swift */,
 				4BB80E8D247716C000259E05 /* ThemeHelper.swift */,
@@ -145,8 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB80E8A24770D4500259E05 /* Photo.swift in Sources */,
+				4BB80EB824775E9A00259E05 /* ThemeSelectionViewController.swift in Sources */,
 				4BB80E762477010A00259E05 /* AppDelegate.swift in Sources */,
 				4BB80E8C2477107000259E05 /* PhotoController.swift in Sources */,
+				4BB80EB624775BF800259E05 /* PhotoDetailViewController.swift in Sources */,
+				4BB80EB4247759BA00259E05 /* PhotosCollectionViewController.swift in Sources */,
 				4BB80E8E247716C000259E05 /* ThemeHelper.swift in Sources */,
 				4BB80E782477010A00259E05 /* SceneDelegate.swift in Sources */,
 			);
