@@ -51,10 +51,17 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else {
+            fatalError("Collection view cell identifier is wrong or the cell is not a PhotoCollectionViewCell")
+        }
     
         // Configure the cell
+        let photo = photoController.photos[indexPath.item]
+        cell.imageView.image = UIImage(data: photo.imageData)
+        cell.photoLabel.text = photo.title
     
+        
+        
         return cell
     }
 
