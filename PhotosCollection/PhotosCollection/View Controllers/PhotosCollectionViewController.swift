@@ -12,22 +12,40 @@ import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
     
     let photoController = PhotoController()
-    let themeHelper = ThemeHelper(themePreferenceKey: <#String#>)
+    let themeHelper = ThemeHelper(themePreferenceKey: "Dark")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
     }
+    
+    func setTheme() {
+        guard let themePreference = themeHelper.themePreference else {
+            return
+        }
+        
+        if themePreference == "Dark" {
+            view.backgroundColor = UIColor(named: "black")
+        } else if themePreference == "Blue" {
+            view.backgroundColor = UIColor(named: "blue")
+        }
+    }
 
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    
+        switch segue.identifier {
+        case "SelectThemeSegue":
+            
+            let destinationVC = segue.destination
+            
+        } else if segue.identifier == "PhotoDetailSegue" {
+            let destinationVC = segue.destination
+            destinationVC.
+            }
+        }}
 
     // MARK: UICollectionViewDataSource
 /*

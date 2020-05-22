@@ -8,6 +8,8 @@
 
 import UIKit
 
+protocol PhotoDetailViewControllerDelegate
+
 class PhotoDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
