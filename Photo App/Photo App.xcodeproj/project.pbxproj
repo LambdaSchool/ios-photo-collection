@@ -15,6 +15,7 @@
 		382056CA24771E8D000EEC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382056C824771E8D000EEC43 /* LaunchScreen.storyboard */; };
 		382056D2247721C9000EEC43 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382056D1247721C9000EEC43 /* Photo.swift */; };
 		382056D82477276B000EEC43 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382056D72477276A000EEC43 /* PhotoController.swift */; };
+		382056DD24775158000EEC43 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382056DC24775158000EEC43 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		382056CB24771E8D000EEC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		382056D1247721C9000EEC43 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		382056D72477276A000EEC43 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		382056DC24775158000EEC43 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		382056D3247721D5000EEC43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				382056DC24775158000EEC43 /* ThemeHelper.swift */,
 				382056D1247721C9000EEC43 /* Photo.swift */,
 				382056D72477276A000EEC43 /* PhotoController.swift */,
 			);
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382056DD24775158000EEC43 /* ThemeHelper.swift in Sources */,
 				382056D82477276B000EEC43 /* PhotoController.swift in Sources */,
 				382056D2247721C9000EEC43 /* Photo.swift in Sources */,
 				382056C224771E7C000EEC43 /* ViewController.swift in Sources */,
