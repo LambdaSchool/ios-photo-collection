@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A38FE2F924780F290093EE61 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FE2F824780F290093EE61 /* PhotoDetailViewController.swift */; };
 		A38FE2FC24780F920093EE61 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FE2FB24780F920093EE61 /* Photo.swift */; };
+		A38FE300247810B60093EE61 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FE2FF247810B60093EE61 /* PhotoController.swift */; };
 		A3A4BEA224771DA400904DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A4BEA124771DA400904DDD /* AppDelegate.swift */; };
 		A3A4BEA424771DA400904DDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A4BEA324771DA400904DDD /* SceneDelegate.swift */; };
 		A3A4BEA924771DA400904DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A4BEA724771DA400904DDD /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		A38FE2F824780F290093EE61 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		A38FE2FB24780F920093EE61 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A38FE2FF247810B60093EE61 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		A3A4BE9E24771DA400904DDD /* ios-photo-collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-photo-collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A4BEA124771DA400904DDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3A4BEA324771DA400904DDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A38FE2FE2478107E0093EE61 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A38FE2FF247810B60093EE61 /* PhotoController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		A3A4BE9524771DA400904DDD = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		A3A4BEA024771DA400904DDD /* ios-photo-collection */ = {
 			isa = PBXGroup;
 			children = (
+				A38FE2FE2478107E0093EE61 /* Model Controllers */,
 				A38FE2FD24780F9E0093EE61 /* Models */,
 				A38FE2FA24780F2D0093EE61 /* view controllers */,
 				A38FE2F724780ECD0093EE61 /* resources */,
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38FE300247810B60093EE61 /* PhotoController.swift in Sources */,
 				A38FE2FC24780F920093EE61 /* Photo.swift in Sources */,
 				A38FE2F924780F290093EE61 /* PhotoDetailViewController.swift in Sources */,
 				A3A4BEA224771DA400904DDD /* AppDelegate.swift in Sources */,
