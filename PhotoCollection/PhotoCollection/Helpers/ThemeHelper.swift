@@ -30,7 +30,7 @@ class ThemeHelper {
         defaults.set("Dark", forKey: themePreferenceKey)
     }
     
-    func setThemePreferenceToYourColorHere() {
+    func setThemePreferenceToRed() {
         let defaults = UserDefaults.standard
         defaults.set("Red", forKey: themePreferenceKey)
     }
