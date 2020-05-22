@@ -11,12 +11,12 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
     
-    let photoController = PhotoController()
-    let themeHelper = ThemeHelper()
+    var photoController = PhotoController()
+    var themeHelper = ThemeHelper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setTheme()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -26,7 +26,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func setTheme() {
-        
+        guard let theme = themeHelper.themePreference else { return }
+        if theme == "Dark" {
+            view.backgroundColor = UIColor.gray
+        } else if theme == "Red" {
+            view.backgroundColor = UIColor.red
+            
+        }
         
     }
     
@@ -59,15 +65,34 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CollectionViewCellSegue" {
-            guard let photoCollectionVC = segue.destination as? PhotosCollectionViewController else {
-                return
-            }
-//            photoCollectionVC.delegate = self
+        switch segue.identifier {
+        case "CollectionViewCellSegue":
+            let collectionVC = segue.destination as? PhotosCollectionViewController
+            collectionVC?.themeHelper = self.themeHelper
+            collectionVC?.photoController = self.photoController
+            
+        case "AddPhotoDetailSegue":
+            guard let addPhotoDetailVC = segue.destination as? PhotoDetailViewController,
+                let indexPath = collectionView?.indexPathsForSelectedItems?.first else { return }
+            addPhotoDetailVC.themeHelper = self.themeHelper
+            addPhotoDetailVC.photoController = self.photoController
+            addPhotoDetailVC.photo = self.photoController.photos[indexPath.row]
+            
+        case "selectThemeSegue":
+            let themeSelectionVC = segue.destination as? ThemeSelectionViewController
+            themeSelectionVC?.themeHelper = self.themeHelper
+        default:
+            break
         }
     }
+    //            photoCollectionVC.delegate = self
 }
+
+
+
+
 
 // MARK: UICollectionViewDelegate
 
