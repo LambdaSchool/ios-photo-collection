@@ -65,6 +65,7 @@
 				382056D3247721D5000EEC43 /* Model */,
 				382056D4247724A4000EEC43 /* View */,
 				382056D5247724B3000EEC43 /* Controller */,
+				382056DE24775F91000EEC43 /* Helper */,
 				382056D6247724BC000EEC43 /* Resources */,
 				382056CB24771E8D000EEC43 /* Info.plist */,
 			);
@@ -74,7 +75,6 @@
 		382056D3247721D5000EEC43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				382056DC24775158000EEC43 /* ThemeHelper.swift */,
 				382056D1247721C9000EEC43 /* Photo.swift */,
 				382056D72477276A000EEC43 /* PhotoController.swift */,
 			);
@@ -106,6 +106,14 @@
 				382056C624771E8D000EEC43 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		382056DE24775F91000EEC43 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				382056DC24775158000EEC43 /* ThemeHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

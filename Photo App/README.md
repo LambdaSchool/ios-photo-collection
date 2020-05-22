@@ -1,18 +1,4 @@
 
-1. Create a "ThemeHelper.swift" file. Add a `ThemeHelper` class inside of it. 2. Create a string constant called `themePreferenceKey`. This will be used whenever you need to save the user's theme preference or get it from `UserDefaults`.
-3. Create a function called `setThemePreferenceToDark()`. Using the `set` method of `UserDefaults` (remember that in order to access `set`, you have to use the `standard` property on `UserDefaults`), set the string "Dark" as the value, and the `themePreferenceKey` as the key.
-4. Create another function that does the same thing, but with a different color. Call the function `setThemePreferenceToYourColorHere`.
-5. Finally, create a computed property called `themePreference` of type `String?`. This should simply return the string value that you stored from either of the two methods you wrote above. Use the `UserDefaults` `string(forKey: ...)` method to get that value. The method should return an optional string because if the user's theme preference hasn't been saved, the value returned from `UserDefaults` will be `nil`.
-6. In the initializer for this class (you will have to call it), check if the `themePreference` value is nil. If it is, then call one of the `setThemePreference` functions you just created. This will make it so the first time the user opens the app a preference will be set for them until they choose to change it. 
-
-Keep in mind that the implementation of this class is not the absolute best. You haven't been introduced to a few concepts that would facilitate and keep this class a bit cleaner, especially if this were to be expanded into a full theme helper class for an actual application. Don't worry though, we'll get there!
-
-### Part 3 - Storyboard Set Up
-
-The layout of this application uses the master-detail pattern. It also includes a view controller that will allow the user to change the application's theme.
-
-Delete the view controller scene that comes with the Main.storyboard.
-
 #### CollectionViewController Scene
 
 1. Add a `UICollectionViewController` scene. Embed it in a navigation controller and set the navigation controller as the initial view controller.

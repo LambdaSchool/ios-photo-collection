@@ -16,10 +16,17 @@ class ThemeHelper {
     }
     
     func setThemePreferenceToYourColorHere() {
-        UserDefaults.standard.set("Light Blue", forKey: themePreferenceKey)
+        UserDefaults.standard.set("Blue", forKey: themePreferenceKey)
     }
     
     var themePreference: String? {
-        return UserDefaults.string(forKey: themePreferenceKey)
+        return UserDefaults.standard.string(forKey: themePreferenceKey)
     }
+    
+    init () {
+        if themePreference == nil {
+            setThemePreferenceToYourColorHere()
+        }
+    }
+    
 }
