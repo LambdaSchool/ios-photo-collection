@@ -16,6 +16,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     func updateViews() {
         guard let photo = photo else { return }
         photoLabel?.text = photo.title
+        imageView.image = UIImage(data: photo.imageData)
          
     }
     

@@ -100,30 +100,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="6KM-qr-9yz">
-                                <rect key="frame" x="58" y="46.000000000000007" width="298.66666666666669" height="68.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="89" translatesAutoresizingMaskIntoConstraints="NO" id="LB6-KK-SWQ">
+                                <rect key="frame" x="60" y="100" width="320" height="208"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the theme you would like to use:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yj-ZI-v2H">
-                                        <rect key="frame" x="0.0" y="0.0" width="298.33333333333331" height="10.666666666666666"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="1vc-mD-IFV"/>
+                                            <constraint firstAttribute="height" constant="60" id="NGp-cG-r9v"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="qFB-GS-EJt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="134" translatesAutoresizingMaskIntoConstraints="NO" id="ZSg-sb-NoT">
-                                        <rect key="frame" x="50.666666666666686" y="38.666666666666671" width="197" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="106" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-6E-UVI">
+                                        <rect key="frame" x="75.666666666666657" y="149" width="169" height="59"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0X-3y-xfe">
-                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
-                                                <state key="normal" title="Dark"/>
-                                                <connections>
-                                                    <action selector="selectDarkTheme:" destination="ljr-jH-R0t" eventType="touchUpInside" id="CRM-Bl-zpV"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pI2-Dq-z15">
-                                                <rect key="frame" x="167" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="59"/>
                                                 <state key="normal" title="Red"/>
                                                 <connections>
                                                     <action selector="selectRedTheme:" destination="ljr-jH-R0t" eventType="touchUpInside" id="Qwl-Gr-S9O"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0X-3y-xfe">
+                                                <rect key="frame" x="136.00000000000003" y="0.0" width="33" height="59"/>
+                                                <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="ljr-jH-R0t" eventType="touchUpInside" id="CRM-Bl-zpV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -133,10 +138,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6KM-qr-9yz" firstAttribute="leading" secondItem="cgK-5n-0N9" secondAttribute="leading" constant="58" id="2Lf-AN-can"/>
-                            <constraint firstItem="cgK-5n-0N9" firstAttribute="trailing" secondItem="6KM-qr-9yz" secondAttribute="trailing" constant="57.5" id="97p-56-W4V"/>
-                            <constraint firstItem="cgK-5n-0N9" firstAttribute="bottom" secondItem="6KM-qr-9yz" secondAttribute="bottom" constant="693.5" id="sgf-NR-LAU"/>
-                            <constraint firstItem="6KM-qr-9yz" firstAttribute="top" secondItem="cgK-5n-0N9" secondAttribute="top" constant="46" id="vW2-eV-jGI"/>
+                            <constraint firstItem="LB6-KK-SWQ" firstAttribute="top" secondItem="cgK-5n-0N9" secondAttribute="top" constant="100" id="BlR-vy-ans"/>
+                            <constraint firstItem="LB6-KK-SWQ" firstAttribute="leading" secondItem="cgK-5n-0N9" secondAttribute="leading" constant="60" id="HA8-bF-ZzZ"/>
+                            <constraint firstItem="cgK-5n-0N9" firstAttribute="trailing" secondItem="LB6-KK-SWQ" secondAttribute="trailing" constant="60" id="VNx-Y8-DG5"/>
+                            <constraint firstItem="cgK-5n-0N9" firstAttribute="bottom" secondItem="LB6-KK-SWQ" secondAttribute="bottom" constant="500" id="vHj-pH-M6D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cgK-5n-0N9"/>
                     </view>
