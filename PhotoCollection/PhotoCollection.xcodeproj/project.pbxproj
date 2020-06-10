@@ -15,6 +15,7 @@
 		1A1FF7D92491476500966201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1FF7D72491476500966201 /* LaunchScreen.storyboard */; };
 		1A1FF7E12491478A00966201 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FF7E02491478A00966201 /* Photo.swift */; };
 		1A1FF7E3249147FE00966201 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FF7E2249147FE00966201 /* PhotoController.swift */; };
+		1A1FF7E524914C4800966201 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FF7E424914C4800966201 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1A1FF7DA2491476500966201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A1FF7E02491478A00966201 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1A1FF7E2249147FE00966201 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		1A1FF7E424914C4800966201 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1A1FF7CE2491476200966201 /* SceneDelegate.swift */,
 				1A1FF7E02491478A00966201 /* Photo.swift */,
 				1A1FF7E2249147FE00966201 /* PhotoController.swift */,
+				1A1FF7E424914C4800966201 /* ThemeHelper.swift */,
 				1A1FF7D02491476200966201 /* ViewController.swift */,
 				1A1FF7D22491476200966201 /* Main.storyboard */,
 				1A1FF7D52491476500966201 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				1A1FF7E3249147FE00966201 /* PhotoController.swift in Sources */,
 				1A1FF7E12491478A00966201 /* Photo.swift in Sources */,
 				1A1FF7D12491476200966201 /* ViewController.swift in Sources */,
+				1A1FF7E524914C4800966201 /* ThemeHelper.swift in Sources */,
 				1A1FF7CD2491476200966201 /* AppDelegate.swift in Sources */,
 				1A1FF7CF2491476200966201 /* SceneDelegate.swift in Sources */,
 			);
