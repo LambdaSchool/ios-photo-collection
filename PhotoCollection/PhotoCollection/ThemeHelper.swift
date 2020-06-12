@@ -24,6 +24,8 @@ class ThemeHelper {
     var themePreference: String? {
         if let theme = UserDefaults.standard.string(forKey: themePreferenceKey) {
             return theme
+        } else {
+            return nil
         }
     }
     
