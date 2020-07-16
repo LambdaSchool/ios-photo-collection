@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Fa-m1-Zhg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Fa-m1-Zhg">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo CollectionVC-->
+        <!--Photo Collection View Controller-->
         <scene sceneID="mkQ-Ev-eck">
             <objects>
-                <collectionViewController id="7xA-MA-kZc" customClass="PhotoCollectionVC" customModule="PhotoCollect" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="7xA-MA-kZc" customClass="PhotoCollectionViewController" customModule="PhotoCollect" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="CU2-dw-sGn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="qlk-2b-R1x" customClass="PhotoCell" customModule="PhotoCollect" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="qlk-2b-R1x" customClass="PhotoCollectionCell" customModule="PhotoCollect" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="196" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="648-qA-S3S">
@@ -38,11 +38,6 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IK7-J9-Ryl">
                                             <rect key="frame" x="2" y="2" width="192" height="198.66666666666666"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="15"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -88,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="4"/>
         </scene>
-        <!--Theme SettingVC-->
+        <!--Theme Setting View Controller-->
         <scene sceneID="Qs0-Fa-fLe">
             <objects>
-                <viewController id="vBh-SK-Hke" customClass="ThemeSettingVC" customModule="PhotoCollect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vBh-SK-Hke" customClass="ThemeSettingViewController" customModule="PhotoCollect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88e-J7-fSI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="971" y="779"/>
         </scene>
-        <!--Photo DetailVC-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="Xqc-8K-MAl">
             <objects>
-                <viewController id="ZQx-60-8X4" customClass="PhotoDetailVC" customModule="PhotoCollect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZQx-60-8X4" customClass="PhotoDetailViewController" customModule="PhotoCollect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXH-88-l8W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Segue {
     static let addSegue = "AddSegue"
     static let tapCellSegue = "TapCellSegue"
