@@ -2,78 +2,112 @@
 //  PhotoDetailViewController.swift
 //  Photo Collection
 //
-//  Created by Bling Morley on 3/26/20.
+//  Created by Cody Morley on 8/3/20.
 //  Copyright © 2020 Cody Morley. All rights reserved.
 //
 
 import UIKit
 
-class PhotoDetailViewController: UIViewController {
-    //OUTLETS
-    @IBOutlet weak var detailImageView: UIImageView!
-    @IBOutlet weak var textField: UITextField!
+class PhotoDetailViewController: UIViewController, UINavigationControllerDelegate {
+    //MARK: - Properties -
+    ///outlets
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var addPhotoButton: UIButton!
     
-    
-    
-    //DELEGATES
+    ///properties
     var photoController: PhotoController?
     var photo: Photo?
     var themeHelper: ThemeHelper?
+    var picker = UIImagePickerController()
+
     
-    
-    
-    //ACTIONS AND FUNCTIONS
+    //MARK: - Life Cycles -
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTheme()
         updateViews()
-
-        // Do any additional setup after loading the view.
-    }
-        
-    @IBAction func addPhoto(_ sender: Any) {
-        
+        picker.delegate = self
     }
     
-    @IBAction func save(_ sender: Any) {
-        guard let image = detailImageView.image?.pngData(), let title = textField.text else { return }
-        photoController?.create(imageData: image, title: title)
-        if let photo = photo {
-            photoController?.update(imageData: photo, with: image, and: title)
-        } else {
-            photoController?.createPhoto(imageData: image, title: title)
+    
+    //MARK: - Actions -
+    @IBAction func addPhotoTapped(_ sender: Any) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        self.present(picker,
+                     animated: true)
+    }
+    
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        if photo == nil, let pickedImage = imageView.image {
+            let newPhoto = Photo(imageData: pickedImage.pngData()!, title: "")
+            photo = newPhoto
+        }
+        
+        guard let photo = photo else { return }
+        
+        guard let photoController = photoController,
+            let text = self.titleField.text,
+            !text.isEmpty,
+            text != "" else {
+                return
+                
+        }
+        
+        var photoMatches: Int = 0
+        
+        for savedPhoto in photoController.photos {
+            if savedPhoto == photo {
+                photoController.update(savedPhoto,
+                                       with: photo.imageData,
+                                       and: text)
+                photoMatches += 1
+            }
+        }
+        
+        if photoMatches == 0 {
+            photoController.photos.append(photo)
         }
         
         navigationController?.popViewController(animated: true)
+        
     }
     
     
-    
-    func setTheme () {
-        guard let themeSetting = themeHelper?.themePreference else { return }
-        if themeSetting == "Dark" {
-            self.view.backgroundColor = UIColor.darkGray
-        } else if themeSetting == "Blue" {
-            self.view.backgroundColor = .blue
+    //MARK: - Methods -
+    private func setTheme() {
+        guard let themeHelper = themeHelper, let themePreference = themeHelper.themePreference else { return }
+        
+        switch themePreference {
+        case themeHelper.darkValue:
+            self.view.backgroundColor = UIColor.black
+            titleField.textColor = UIColor.white
+        case themeHelper.lambdaValue:
+            self.view.backgroundColor = UIColor.white
+            titleField.textColor = UIColor.red
+        default:
+            print("No theme data for detail view.")
         }
     }
     
-    func updateViews() {
+    private func updateViews() {
+        imageView.contentMode = .scaleAspectFit
         guard let photo = photo else { return }
-        
-        title = photo.title
-        
-        detailImageView.image = UIImage(data: photo.imageData)
-        
+        imageView.image = UIImage(data: photo.imageData)
+        titleField.text = photo.title
     }
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+extension PhotoDetailViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
+        }
+        picker.dismiss(animated: true,
+                       completion: nil)
     }
-    */
-
 }

@@ -2,50 +2,49 @@
 //  ThemeSelectionViewController.swift
 //  Photo Collection
 //
-//  Created by Bling Morley on 3/26/20.
+//  Created by Cody Morley on 8/3/20.
 //  Copyright © 2020 Cody Morley. All rights reserved.
 //
 
 import UIKit
 
 class ThemeSelectionViewController: UIViewController {
-    
-    
-    
-    
-    
+    //MARK: - Properties -
     var themeHelper: ThemeHelper?
-    
-    
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setTheme()
+    }
+    
+    
+    //MARK: - Actions -
+    @IBAction func selectLambdaTheme(_ sender: Any) {
+        guard let themeHelper = themeHelper else { return }
+        themeHelper.setThemePreferenceToLambda()
+        self.dismiss(animated: true,
+                     completion: nil)
     }
     
     @IBAction func selectDarkTheme(_ sender: Any) {
-        themeHelper?.setThemePreferenceToDark()
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func selectBlueTheme(_ sender: Any) {
-        themeHelper?.setThemePreferenceToBlue()
-        dismiss(animated: true, completion: nil)
+        guard let themeHelper = themeHelper else { return }
+        themeHelper.setThemePreferenceToDark()
+        self.dismiss(animated: true,
+                     completion: nil)
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Methods -
+    private func setTheme() {
+        guard let themeHelper = themeHelper, let themePreference = themeHelper.themePreference else { return }
+        
+        switch themePreference {
+        case themeHelper.darkValue:
+            self.view.backgroundColor = UIColor.black
+        case themeHelper.lambdaValue:
+            self.view.backgroundColor = UIColor.white
+        default:
+            print("No theme data for collection view.")
+        }
     }
-    */
-
 }

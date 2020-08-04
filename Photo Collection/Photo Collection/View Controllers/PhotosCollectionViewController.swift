@@ -2,80 +2,63 @@
 //  PhotosCollectionViewController.swift
 //  Photo Collection
 //
-//  Created by Bling Morley on 3/26/20.
+//  Created by Cody Morley on 8/3/20.
 //  Copyright © 2020 Cody Morley. All rights reserved.
 //
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "PhotoCell"
 
 class PhotosCollectionViewController: UICollectionViewController {
-
-    
+    //MARK: - Properties -
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
     
     
-    
-    
-    
-    
-    
-    
-    
+    //MARK: - Life Cycles -
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTheme()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        setTheme()
     }
     
-    func setTheme() {
-        guard let themeSetting = themeHelper.themePreference else { return }
-        if themeSetting == "Dark" {
-            self.view.backgroundColor = UIColor.darkGray
-        } else if themeSetting == "Blue" {
-            self.view.backgroundColor = .blue
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
     }
-    
 
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Navigation -
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "selectThemeSegue" {
-            guard let destinationVC = segue.destination as? ThemeSelectionViewController else { return }
-            destinationVC.themeHelper = self.themeHelper
-        }
-        
-        if segue.identifier == "addPhotoSegue" {
-            guard let destinationVC = segue.destination as? PhotoDetailViewController else { return }
-            destinationVC.photoController = self.photoController
-            destinationVC.themeHelper = self.themeHelper
-        }
-        
-        if segue.identifier == "photoDetailSegue" {
-            guard let destinationVC = segue.destination as? PhotoDetailViewController, let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
-            destinationVC.photoController = self.photoController
-            destinationVC.themeHelper = self.themeHelper
-            destinationVC.photo = photoController.photos[indexPath.row]
+        switch segue.identifier {
+        case String.addSegue:
+            if let addVC = segue.destination as? PhotoDetailViewController {
+                addVC.photoController = photoController
+                addVC.themeHelper = themeHelper
+            }
+        case String.detailSegue:
+            if let detailVC = segue.destination as? PhotoDetailViewController {
+                detailVC.photoController = photoController
+                detailVC.themeHelper = themeHelper
+                if let indexPath = self.collectionView.indexPathsForSelectedItems?.first?.item {
+                    detailVC.photo = photoController.photos[indexPath]
+                }
+            }
+        case String.themeSegue:
+            if let themeVC = segue.destination as? ThemeSelectionViewController {
+                themeVC.themeHelper = themeHelper
+            }
+        default:
+            NSLog("Tried a segue ID that does not exist.")
         }
     }
     
 
     // MARK: UICollectionViewDataSource
-
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,45 +67,26 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else { fatalError("Not a PhotosCollectionCell") }
-        let photo = photoController.photos[indexPath.row]
-        cell.photo = photo
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell, let themePreference = themeHelper.themePreference else { return UICollectionViewCell() }
         
-        // Configure the cell
-    
+        cell.photo = photoController.photos[indexPath.item]
+        cell.theme = themePreference
         return cell
     }
     
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    //MARK: - Methods -
+    private func setTheme() {
+        guard let themePreference = themeHelper.themePreference else { return }
+        
+        switch themePreference {
+        case themeHelper.darkValue:
+            view.backgroundColor = UIColor.black
+            collectionView.backgroundColor = UIColor.black
+        case themeHelper.lambdaValue:
+            collectionView.backgroundColor = UIColor.white
+        default:
+            print("No theme data for collection view.")
+        }
     }
-    */
-
 }
