@@ -20,7 +20,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     // MARK: Methods
 
     func setTheme() {
-        collectionView.backgroundColor = themeHelper.themeColor
+        collectionView.backgroundColor = themeHelper.backgroundColor
+        collectionView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -110,8 +111,9 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 }
 
-extension PhotosCollectionViewController: themeSelectionDelegate {
+extension PhotosCollectionViewController: ThemeSelectionDelegate {
     func themeWasSelected() {
+        print("PhotosCollectionViewController.themeWasSelected()")
         setTheme()
     }
 }

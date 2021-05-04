@@ -29,7 +29,7 @@ class PhotoDetailViewController: UIViewController {
         let pickerController = UIImagePickerController()
         pickerController.sourceType = .photoLibrary
         pickerController.delegate = self
-        pickerController.modalPresentationStyle = UIModalPresentationStyle.currentContext
+        pickerController.modalPresentationStyle = .currentContext
         
         present(pickerController, animated: true, completion: nil)
     }
@@ -50,7 +50,7 @@ class PhotoDetailViewController: UIViewController {
     
     func setTheme() {
         guard let themeHelper = themeHelper else { return }
-        view.backgroundColor = themeHelper.themeColor
+        view.backgroundColor = themeHelper.backgroundColor
     }
 
     func updateViews() {
@@ -59,8 +59,6 @@ class PhotoDetailViewController: UIViewController {
         guard let photo = photo else { return }
         imageView.image = UIImage(data: photo.imageData)
         titleTextField.text = photo.title
-        print(photo.title)
-        print(titleTextField.text ?? "nil")
     }
     
     override func viewDidLoad() {

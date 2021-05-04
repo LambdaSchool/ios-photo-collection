@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol themeSelectionDelegate {
+protocol ThemeSelectionDelegate: AnyObject {
     func themeWasSelected()
 }
 
@@ -17,27 +17,41 @@ class ThemeSelectionViewController: UIViewController {
     // MARK: Properties
     
     var themeHelper: ThemeHelper?
-    var delegate: themeSelectionDelegate?
+    weak var delegate: ThemeSelectionDelegate?
     
     // MARK: IBActions
     
     @IBAction func selectLightTheme(_ sender: UIButton) {
-        guard let themeHelper = themeHelper else { return }
-        themeHelper.setThemePreferenceToLight()
-        delegate?.themeWasSelected()
-        dismiss(animated: true, completion: nil)
+        selectTheme(.light)
     }
     
     @IBAction func selectDarkTheme(_ sender: UIButton) {
-        guard let themeHelper = themeHelper else { return }
-        themeHelper.setThemePreferenceToDark()
-        delegate?.themeWasSelected()
-        dismiss(animated: true, completion: nil)
+        selectTheme(.dark)
     }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setTheme()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func selectTheme(_ theme: ThemeHelper.Theme) {
+        defer { dismiss(animated: true, completion: nil) }
+        
+        guard let themeHelper = themeHelper, themeHelper.theme != theme else { return }
+        
+        themeHelper.theme = theme
+        
+        setTheme()
+        delegate?.themeWasSelected()
+    }
+    
+    private func setTheme() {
         guard let themeHelper = themeHelper else { return }
-        view.backgroundColor = themeHelper.themeColor
+        view.backgroundColor = themeHelper.backgroundColor
     }
 }

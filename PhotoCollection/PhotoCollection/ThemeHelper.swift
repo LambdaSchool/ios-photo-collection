@@ -10,43 +10,34 @@ import UIKit
 
 class ThemeHelper {
     
-    // MARK: - Properties
-    
-    let themePreferenceKey: String = "ThemePreference"
-    
-    var themePreference: String? {
-        let userDefaults = UserDefaults.standard
-        let theme = userDefaults.string(forKey: themePreferenceKey)
-        return theme
+    enum Theme: Int {
+        case dark, light
     }
     
-    var themeColor: UIColor {
-        //guard let themeString = themePreference else { return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) }
-        switch themePreference {
-        case "Dark":
-            return #colorLiteral(red: 0.1686089337, green: 0.1686392725, blue: 0.1686023176, alpha: 1)
-        case "Light":
-            return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        default:
-            return #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    // MARK: - Public Properties
+    
+    var theme: Theme {
+        get {
+            guard let rawValue = defaults.value(forKey: themeKey) as? Int,
+                  let theme = Theme(rawValue: rawValue) else { return .light }
+            return theme
+        }
+        set {
+            defaults.set(newValue.rawValue, forKey: themeKey)
         }
     }
     
-    // MARK: - Methods
-
-    func setThemePreferenceToDark() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set("Dark", forKey: themePreferenceKey)
-    }
-    
-    func setThemePreferenceToLight() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set("Light", forKey: themePreferenceKey)
-    }
-    
-    init() {
-        if themePreference == nil {
-            setThemePreferenceToLight()
+    var backgroundColor: UIColor {
+        switch theme {
+        case .dark: return #colorLiteral(red: 0.1686089337, green: 0.1686392725, blue: 0.1686023176, alpha: 1)
+        case .light: return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
     }
+    
+    // MARK: - Private Properties
+    
+    private let defaults = UserDefaults.standard
+    
+    private let themeKey: String = "UserDefaultsThemeKey"
+    
 }
