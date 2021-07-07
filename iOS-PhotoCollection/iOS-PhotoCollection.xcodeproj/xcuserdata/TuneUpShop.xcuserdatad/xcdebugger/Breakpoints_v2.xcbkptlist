@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+            timestampString = "578557009.9765919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "updateViews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+            timestampString = "578557009.9766639"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "updateViews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+            timestampString = "578557009.976724"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "photo"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+            timestampString = "578557009.976782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "photo"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_PhotoCollection.PhotosCollectionViewCell.photo.modify : Swift.Optional&lt;iOS_PhotoCollection.Photo&gt;"
+                  moduleName = "iOS-PhotoCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/strugglingfish/Developer/ios-photo-collection/iOS-PhotoCollection/iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+                  timestampString = "578554584.364019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_PhotoCollection.PhotosCollectionViewCell.photo.modify : Swift.Optional&lt;iOS_PhotoCollection.Photo&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "iOS-PhotoCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/strugglingfish/Developer/ios-photo-collection/iOS-PhotoCollection/iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+                  timestampString = "578554584.366873"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_PhotoCollection.PhotosCollectionViewCell.init(frame: __C.CGRect) -&gt; iOS_PhotoCollection.PhotosCollectionViewCell"
+                  moduleName = "iOS-PhotoCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/strugglingfish/Developer/ios-photo-collection/iOS-PhotoCollection/iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+                  timestampString = "578554584.369669"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "343">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_PhotoCollection.PhotosCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;iOS_PhotoCollection.PhotosCollectionViewCell&gt;"
+                  moduleName = "iOS-PhotoCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/strugglingfish/Developer/ios-photo-collection/iOS-PhotoCollection/iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+                  timestampString = "578554584.372263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "322">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+            timestampString = "578557009.976842"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "photo"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-PhotoCollection/PhotosCollectionViewCell.swift"
+            timestampString = "578557009.976898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "updateViews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
